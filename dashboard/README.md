@@ -1,34 +1,31 @@
 # Jev Benchmark Observatory
 
-A static metrics dashboard for the measured Jev classification study. It reads the sanitized `dist/data.json` snapshot and makes no model API calls.
+A static dashboard for the numerical classification experiment: six LLMs at zero-shot and four examples per class, their Jev-reviewed decisions, direct Jev and four native classical estimators. The default page reads the audited 68-condition aggregate snapshot; the earlier broad study is preserved at `historical.html`.
 
-**[Open the hosted dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)**. The site is private to the owning account. Deployment provenance and the exact hosted data hash are recorded in [DEPLOYMENT.json](DEPLOYMENT.json). This is the historical broad-study dashboard. The later [numerical-only decision experiment](../results/numeric_decisions/FINDINGS.md) is reported separately; rebuilding this historical snapshot preserves its measurements but records the current builder hash.
+The hosted site is private to the owning account. It makes no model API calls. Source links point to the private benchmark repository.
 
-The dashboard includes data type, task, dataset, family, model, method, label-budget, seed, probability-coverage and replication filters; per-dataset charts; a Jev-focused view; run search; confidence intervals; per-class metrics and confusion matrices; probability quality and execution context; whole-study cost accounting; filtered CSV and SVG exports. Filters are preserved in the page URL.
+## Numerical view
 
-All 318 execution records are retained. The default hides 28 classical replication records and selects seed 42 with zero or four examples per class. The full study contains 290 distinct conditions across eight datasets. Missing measurements stay absent. Recorded failures remain in scores. Text and tabular confidence intervals retain their different bootstrap definitions.
+Filter the binary Breast Cancer or multiclass Wine task, supplied examples, source LLM and accuracy/macro-F1. Compare the reviewed pipeline with its source or with Jev alone. The paired table gives exact 95% bootstrap intervals, predictions corrected/harmed, and pipeline failures including inherited source failures. Native XGBoost, LightGBM, logistic regression and random forest have a separate matched/full label-budget selector. No cross-dataset pooled score or controlled latency ranking is shown.
 
-## Local preview
+The CSV exports the selected paired comparison, with its metric, endpoints and separate source/reviewer failure counts. Filters are retained in the page URL.
+
+## Reproduce locally
+
+From the benchmark repository, generate the aggregate assets:
+
+```bash
+python scripts/summarize_expanded_numeric.py --bootstrap-samples 2000
+python scripts/build_expanded_numeric_dashboard.py --allow-incomplete
+python scripts/build_dashboard_data.py --output dashboard/dist/data.json
+```
+
+The numeric builder revalidates predictions, manifests, protocol and accounting. Its default mode refuses incomplete reports; the explicit `--allow-incomplete` flag exports the current billing-paused snapshot with 61/68 completed conditions, null pending scores and visible status. Both modes reject stale reports. Remove that flag to require a completed experiment. The output allowlist excludes raw feature rows, prompts, credentials and local paths. Copy `dashboard/dist/numeric-data.json` into this site's `dist` directory when deploying from its separate checkout.
 
 ```bash
 python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
+node tests/dashboard.smoke.cjs
+node tests/numeric-dashboard.smoke.cjs
 ```
 
-Open `http://127.0.0.1:8766/`. A web server is required because the page fetches its JSON asset. The site uses native browser controls and SVG; no package installation or build step is needed. Optional Google Fonts fall back to system fonts when unavailable.
-
-## Refresh the measured data
-
-From the benchmark repository, regenerate the sanitized snapshot using `scripts/build_dashboard_data.py`, then copy the generated asset to `dist/data.json`. The builder verifies saved metrics against predictions, attaches audited tabular group intervals and checks source hashes. It excludes raw feature/text rows, prompts, credentials and machine paths.
-
-```bash
-python scripts/build_dashboard_data.py --output dashboard/dist/data.json
-node dashboard/tests/dashboard.smoke.cjs
-```
-
-The dashboard can be served from `dashboard/dist` when copied into the benchmark repository. Source links require access to the private GitHub repository. The Sites deployment is owner-private unless its audience is explicitly changed.
-
-## Verification
-
-The data builder has 14 semantic tests. The browser checks cover combined numeric/multiclass/Jev filters, canonical versus replica counts, Jev views, search, run details, cost coverage and phone-sized layout. Two optional WebMCP tools read the current view or configure filters; both valid and invalid calls were checked against visible state. `node tests/dashboard.smoke.cjs` verifies filters, missing values, failure denominators, CSV search scope/interval columns and chart scores.
-
-Hosted accounting covers the entire study and deliberately does not follow sidebar filters. No controlled speed ranking or pooled cross-dataset accuracy is shown. Intervals condition on the fixed public-data experiment and do not rule out pretraining contamination.
+The historical view retains all 318 broad-study executions (290 distinct conditions). Its measurements do not replace the later numerical study. Both views keep unavailable values distinct from zero and retain failures in accuracy. The numerical experiment uses two familiar public datasets, one split/seed and fixed inference recipes; pretraining exposure cannot be excluded. Full-training ML uses more labels. No new LoRA training is included in the expansion.

@@ -11,9 +11,11 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-      - run: python -m pip install -e '.[dev,numeric]' 'nbformat>=5.10,<6'
+      - run: python -m pip install -e '.[dev,numeric]' 'nbformat>=5.10,<6' 'transformers==4.57.6' 'huggingface-hub==0.36.2' 'scikit-learn==1.9.1' 'numpy==2.5.3' 'scipy==1.18.1'
       - name: CPU tensor runtime for offline helper tests
         run: python -m pip install 'torch>=2.4,<3' --index-url https://download.pytorch.org/whl/cpu
+      - name: Recreate frozen numeric feature bundles
+        run: python scripts/tabular_data.py --datasets breast_cancer wine --output data/tabular-full --seed 42
       - name: Base tests (neural-only tests skip without optional dependencies)
         env:
           HF_HUB_OFFLINE: '1'
@@ -23,6 +25,10 @@ jobs:
         run: |
           node --check dashboard/dist/app.js
           node dashboard/tests/dashboard.smoke.cjs
+          node --check dashboard/dist/numeric.js
+          node dashboard/tests/numeric-dashboard.smoke.cjs
+          python scripts/build_expanded_numeric_dashboard.py --allow-incomplete --output /tmp/jev-numeric-dashboard-data.json
+          cmp /tmp/jev-numeric-dashboard-data.json dashboard/dist/numeric-data.json
           python scripts/build_dashboard_data.py --output /tmp/jev-dashboard-data.json
           cmp /tmp/jev-dashboard-data.json dashboard/dist/data.json
       - name: Validate unexecuted notebook and source bundle

@@ -1,0 +1,48 @@
+{
+  "dataset": "breast_cancer",
+  "dataset_manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "smollm2",
+  "schema_version": 1,
+  "shots_per_class": 0,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "3448e9627693beae1db00af2c75aec1d332788726ad1ae5d6a29d0dda2ca5e48",
+      "run.json": "ddbf4cb3a33847c5ab0c569525de21ef9166046aeed76f624be7dfe9bcd53934",
+      "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+    },
+    "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b",
+    "provider": "hf"
+  },
+  "source_config_sha256": "f151ee40f6383dddf176edf018cc7c52249e0c919d7b32bee73726d80be43a2d",
+  "source_model_config": {
+    "device": "cuda",
+    "dtype": "float16",
+    "max_context_tokens": 8192,
+    "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "provider": "hf",
+    "renderer": {
+      "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+      "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+      "model_key": "smollm2",
+      "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+      "system_message": "You are a helpful assistant.",
+      "thinking": false,
+      "tokenizer_files_sha256": {
+        "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+        "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+        "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+        "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+        "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+      },
+      "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+      "version": "fixed-system-no-thinking-v1"
+    },
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "shots_per_class": 0
+  },
+  "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+  "training_example_ids": []
+}

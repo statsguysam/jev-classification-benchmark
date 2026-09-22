@@ -1,0 +1,164 @@
+{
+  "adapter_training": false,
+  "checks": [
+    {
+      "candidate_token_lengths": [
+        2,
+        2
+      ],
+      "dataset": "breast_cancer",
+      "max_prompt_plus_label_tokens": 503,
+      "n_test": 114,
+      "shots_per_class": 0,
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835"
+    },
+    {
+      "candidate_token_lengths": [
+        2,
+        2
+      ],
+      "dataset": "breast_cancer",
+      "max_prompt_plus_label_tokens": 3883,
+      "n_test": 114,
+      "shots_per_class": 4,
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835"
+    },
+    {
+      "candidate_token_lengths": [
+        2,
+        2,
+        2
+      ],
+      "dataset": "wine",
+      "max_prompt_plus_label_tokens": 281,
+      "n_test": 36,
+      "shots_per_class": 0,
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1"
+    },
+    {
+      "candidate_token_lengths": [
+        2,
+        2,
+        2
+      ],
+      "dataset": "wine",
+      "max_prompt_plus_label_tokens": 2640,
+      "n_test": 36,
+      "shots_per_class": 4,
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1"
+    }
+  ],
+  "device": "cuda",
+  "dtype": "float16",
+  "jobs": [
+    {
+      "dataset": "breast_cancer",
+      "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+      "n_test": 114,
+      "shots_per_class": 0,
+      "training_example_ids": []
+    },
+    {
+      "dataset": "breast_cancer",
+      "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+      "n_test": 114,
+      "shots_per_class": 4,
+      "training_example_ids": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ]
+    },
+    {
+      "dataset": "wine",
+      "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+      "n_test": 36,
+      "shots_per_class": 0,
+      "training_example_ids": []
+    },
+    {
+      "dataset": "wine",
+      "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+      "n_test": 36,
+      "shots_per_class": 4,
+      "training_example_ids": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ]
+    }
+  ],
+  "models": {
+    "granite": {
+      "device": "cuda",
+      "dtype": "float16",
+      "max_context_tokens": 8192,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "provider": "hf",
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+    },
+    "smollm2": {
+      "device": "cuda",
+      "dtype": "float16",
+      "max_context_tokens": 8192,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "provider": "hf",
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674"
+    }
+  },
+  "network_downloads_authorized": true,
+  "new_hosted_calls": 0,
+  "prediction_rows": 600,
+  "status": "preflight_complete"
+}

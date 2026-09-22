@@ -1,12 +1,14 @@
 {
   "project_id": "appgprj_6ab28f8eabfc819197f234c5b7c1cb02",
-  "deployment_id": "appgdep_6ab2959c3ad881918e239d301f6ea436",
-  "version_id": "appgprj_6ab28f8eabfc819197f234c5b7c1cb02~appgver_990299f535048191b5291b120ee3d51c",
-  "site_source_commit": "489348aa7d1610e33a6bdfcb046152b16427cb82",
-  "benchmark_dashboard_commit": "7a65afb16a930f68781ba2cad29454165aba06aa",
+  "deployment_id": "appgdep_6ab2cd5982f48191a2ffe417dfd09bc0",
+  "version_id": "appgprj_6ab28f8eabfc819197f234c5b7c1cb02~appgver_d687a57c7c908191bca3d160a2ff454c",
+  "site_source_commit": "1d23a289b24d6028dc7a7fc4cabb2c7e3db67769",
   "status": "succeeded",
   "audience": "owner-private",
   "url": "https://jev-benchmark-observatory.statsguysalim.chatgpt.site",
-  "verified_at": "2026-09-22T14:52:21.369930+00:00",
-  "data_sha256": "2a7c17c4a3664acb3ad3cb26fd8367174848b556bcd8dba53c88e1ce709c3d3c"
+  "verified_at": "2026-09-22T18:48:20.352125+00:00",
+  "data_sha256": "c055aacbb48c660b5549c8ac03898d9c999d2ec07c52402dae890be386c253a2",
+  "numeric_conditions_complete": 61,
+  "numeric_conditions_planned": 68,
+  "numeric_data_sha256": "660d64745e1e6427d1700124a747f331d60aa2152530da89fafd324dc028d92e"
 }

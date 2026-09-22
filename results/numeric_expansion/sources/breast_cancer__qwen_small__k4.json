@@ -1,0 +1,38 @@
+{
+  "dataset": "breast_cancer",
+  "dataset_manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "qwen_small",
+  "schema_version": 1,
+  "shots_per_class": 4,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "30395487ab9517a445331ac9c206f7a4f8d21c445aa858a08dd79cd9db182f2c",
+      "run.json": "816232cb92bc7ebee1f451ed8d626a117d66f5bb2eb0ce54cbb59f0e625bcc59",
+      "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+    },
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "path": "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6",
+    "provider": "hf"
+  },
+  "source_config_sha256": "0d7c07c2c75f5f5581312d5491ef2e531cf2da23d672d7cb2ee6d3417be1829c",
+  "source_model_config": {
+    "device": "mps",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "shots_per_class": 4
+  },
+  "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+  "training_example_ids": [
+    "breast_cancer:source:00012:70aebe6dfd338fdd",
+    "breast_cancer:source:00423:446b7f2f44b4deda",
+    "breast_cancer:source:00420:b908936d1566426d",
+    "breast_cancer:source:00556:a8f72a1a1caada64",
+    "breast_cancer:source:00244:57821d18bbbd874b",
+    "breast_cancer:source:00373:b4487d3696aa457a",
+    "breast_cancer:source:00330:6fe4c1eb838cee67",
+    "breast_cancer:source:00493:f64e85a045cb30c5"
+  ]
+}

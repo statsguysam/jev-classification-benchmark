@@ -1,0 +1,92 @@
+{
+  "archive_sha256": "244464d88e929c3f9c0db6a2d9957f60b6cb31cfb723038bffd6bcc29ce2296c",
+  "conditions": [
+    {
+      "dataset": "breast_cancer",
+      "model_key": "smollm2",
+      "n_predictions": 114,
+      "run_id": "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "breast_cancer",
+      "model_key": "smollm2",
+      "n_predictions": 114,
+      "run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "breast_cancer",
+      "model_key": "granite",
+      "n_predictions": 114,
+      "run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "breast_cancer",
+      "model_key": "granite",
+      "n_predictions": 114,
+      "run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "model_key": "smollm2",
+      "n_predictions": 36,
+      "run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "model_key": "smollm2",
+      "n_predictions": 36,
+      "run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "wine",
+      "model_key": "granite",
+      "n_predictions": 36,
+      "run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "model_key": "granite",
+      "n_predictions": 36,
+      "run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+      "shots_per_class": 0
+    }
+  ],
+  "files_sha256": {
+    "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b/predictions.jsonl": "3448e9627693beae1db00af2c75aec1d332788726ad1ae5d6a29d0dda2ca5e48",
+    "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b/run.json": "ddbf4cb3a33847c5ab0c569525de21ef9166046aeed76f624be7dfe9bcd53934",
+    "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+    "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+    "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+    "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+    "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/predictions.jsonl": "7354e1f8f4004cd8b5d7ce365805ee398bfa157869a3ea2be333e108f0bb14a1",
+    "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/run.json": "1fae2fc598159e17ba106497df0aac6a9ed34701fcadaa62b904ddba8d8cddc6",
+    "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "plans/colab-runtime-preflight.json": "63a7fe196b888df715277737256a36cc07f3b81af6ce59b3bfeed8a064b033c9",
+    "plans/granite-cuda-preflight.json": "316bc27c058ea6b054adaa88a693c41357bf1326e2692b5aeba8096f2a41c9ba",
+    "plans/smollm2-cuda-preflight.json": "631926cefc7fda4713baae13575331b3376c257adf3cb97d7ae801a760e7285a",
+    "wine__SmolLM2-1.7B-Instruct__61b7e37b5455/predictions.jsonl": "92594bfe34cea905411dadde88619088f980e9cb4fe5ff6ac3205e7806719bff",
+    "wine__SmolLM2-1.7B-Instruct__61b7e37b5455/run.json": "b9c9a31d709d2ad5e4baff909f0d5d632972a7f672ec275158cd2de5ff4b9445",
+    "wine__SmolLM2-1.7B-Instruct__61b7e37b5455/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "wine__SmolLM2-1.7B-Instruct__709bcc1f2998/predictions.jsonl": "a2a79d7c51f5f94ba89792517cd08bfbe8f42f047447a8a19acab36d187c2c86",
+    "wine__SmolLM2-1.7B-Instruct__709bcc1f2998/run.json": "b9aaebf43a2110f0b164e5043b029dd1e06791bb9f377dbfdb5e59cdc4181f31",
+    "wine__SmolLM2-1.7B-Instruct__709bcc1f2998/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "wine__granite-3.3-2b-instruct__16efece16c12/predictions.jsonl": "04cdf6e5d6f7c1695b7d20aee318634e9b6c5658b51b2f7845f6885b1f91f192",
+    "wine__granite-3.3-2b-instruct__16efece16c12/run.json": "c3f6f198a8842f5554a57d34fb2253549ad14218f9ecedea32ab9409a23d50c2",
+    "wine__granite-3.3-2b-instruct__16efece16c12/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "wine__granite-3.3-2b-instruct__29b8530e4f40/predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+    "wine__granite-3.3-2b-instruct__29b8530e4f40/run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+    "wine__granite-3.3-2b-instruct__29b8530e4f40/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+  },
+  "schema_version": 1,
+  "status": "imported"
+}

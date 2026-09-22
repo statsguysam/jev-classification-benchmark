@@ -1,0 +1,29 @@
+{
+  "dataset": "wine",
+  "dataset_manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "qwen_main",
+  "schema_version": 1,
+  "shots_per_class": 0,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "31bc44ecf4883a33688cbaf11b64a13967d47a105835a5adb8294662d49115c7",
+      "run.json": "b1c0d456a3abe5d53a8a4767541f56b83ee15c81e442b2233e81e0df8e5af96a",
+      "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+    },
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "path": "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__c923604a4ba1",
+    "provider": "hf"
+  },
+  "source_config_sha256": "b8e25f2e06c5a0feecb6b9f86f5b400c38d4cf29a4f4d6cbe328d1d4f53e14ca",
+  "source_model_config": {
+    "device": "cuda",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "provider": "hf",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "shots_per_class": 0
+  },
+  "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+  "training_example_ids": []
+}

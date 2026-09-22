@@ -1,0 +1,565 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-22T17:47:03.829112+00:00",
+  "config": {
+    "device": "cuda",
+    "dtype": "float16",
+    "max_context_tokens": 8192,
+    "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "provider": "hf",
+    "renderer": {
+      "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+      "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+      "model_key": "smollm2",
+      "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+      "system_message": "You are a helpful assistant.",
+      "thinking": false,
+      "tokenizer_files_sha256": {
+        "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+        "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+        "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+        "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+        "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+      },
+      "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+      "version": "fixed-system-no-thinking-v1"
+    },
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "shots_per_class": 4
+  },
+  "dataset": "wine",
+  "dataset_manifest": {
+    "files_sha256": {
+      "test.jsonl": "012f2cb463a98820b96b36b8fb837a1dbd56bceb5e535efcc92159014bf1180c",
+      "train.jsonl": "ccf3ec82d09adf391557fe10a0fc05df932b7ff095b2dc01d2788a95739a8206",
+      "validation.jsonl": "652ab95628a68c9a16e6385b4ab5abe6c2233fb546ffd12a84669fc5126c1ee5"
+    },
+    "labels": [
+      "cultivar 1",
+      "cultivar 2",
+      "cultivar 3"
+    ],
+    "limits": {
+      "test": null,
+      "train": null,
+      "validation": null
+    },
+    "name": "wine",
+    "prepared_content_sha256": "18c72ee80d75f0b47ca996abc176b6b9b094236719f03fcd6111a549e7e14cd7",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "attribution": "Aeberhard, S. and Forina, M. (1992). Wine. UCI Machine Learning Repository. DOI:10.24432/C5PC7J. Scikit-learn target 0/1/2 maps to original cultivar 1/2/3.",
+      "dictionary": "https://scikit-learn.org/stable/datasets/toy_dataset.html#wine-recognition-dataset",
+      "excluded_columns": [
+        "class",
+        "cultivar"
+      ],
+      "feature_names": [
+        "alcohol",
+        "malic_acid",
+        "ash",
+        "alcalinity_of_ash",
+        "magnesium",
+        "total_phenols",
+        "flavanoids",
+        "nonflavanoid_phenols",
+        "proanthocyanins",
+        "color_intensity",
+        "hue",
+        "od280/od315_of_diluted_wines",
+        "proline"
+      ],
+      "filename": "wine_data.csv",
+      "homepage": "https://archive.ics.uci.edu/dataset/109/wine",
+      "labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "license": "CC-BY-4.0 per UCI source.",
+      "loader": "load_wine",
+      "observed_sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+      "rows": 178,
+      "selected_records_sha256": "2cc249b501bcf847ccfc87bb49bba3487f8534d5c22af09b2fcfc30f48698481",
+      "sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+      "sklearn_version": "1.9.1",
+      "source": "sklearn_bundled",
+      "target_column": "cultivar",
+      "task_description": "Wine cultivar classification from 13 chemical measurements. Three anonymous cultivars follow the original source class order 1, 2, 3. Original source scales; no scaling or imputation. Missing=NA."
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 12,
+          "1": 14,
+          "2": 10
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "56224b682cb71d7b5307e7641f122250bf595277b66a4c12c749f497706c2f36",
+        "rows": 36
+      },
+      "train": {
+        "class_counts": {
+          "0": 35,
+          "1": 43,
+          "2": 28
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "c008b8ba3eee815dfb1608555767f69aef66d8b1c4302610a40e7d3a3f45da22",
+        "rows": 106
+      },
+      "validation": {
+        "class_counts": {
+          "0": 12,
+          "1": 14,
+          "2": 10
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "2bf1a5cfcba26fafa20acab57e10718b48c405d7aa115b69d844f8666af6899d",
+        "rows": 36
+      }
+    },
+    "tabular": {
+      "config_sha256": "e00a1431bd7fa205f95af800313ce79727b33438843b179a220eb3cc004014e9",
+      "duplicate_policy": "Retain all natural duplicates and conflicting-label groups in one split; no exact-feature overlap across splits",
+      "excluded_test_row_ids": [],
+      "features": [
+        {
+          "description": "alcohol",
+          "kind": "numeric",
+          "name": "alcohol",
+          "source_name": "alcohol",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "malic_acid",
+          "kind": "numeric",
+          "name": "malic_acid",
+          "source_name": "malic_acid",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "ash",
+          "kind": "numeric",
+          "name": "ash",
+          "source_name": "ash",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "alcalinity_of_ash",
+          "kind": "numeric",
+          "name": "alcalinity_of_ash",
+          "source_name": "alcalinity_of_ash",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "magnesium",
+          "kind": "numeric",
+          "name": "magnesium",
+          "source_name": "magnesium",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "total_phenols",
+          "kind": "numeric",
+          "name": "total_phenols",
+          "source_name": "total_phenols",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "flavanoids",
+          "kind": "numeric",
+          "name": "flavanoids",
+          "source_name": "flavanoids",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "nonflavanoid_phenols",
+          "kind": "numeric",
+          "name": "nonflavanoid_phenols",
+          "source_name": "nonflavanoid_phenols",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "proanthocyanins",
+          "kind": "numeric",
+          "name": "proanthocyanins",
+          "source_name": "proanthocyanins",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "color_intensity",
+          "kind": "numeric",
+          "name": "color_intensity",
+          "source_name": "color_intensity",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "hue",
+          "kind": "numeric",
+          "name": "hue",
+          "source_name": "hue",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "od280/od315_of_diluted_wines",
+          "kind": "numeric",
+          "name": "od280/od315_of_diluted_wines",
+          "source_name": "od280/od315_of_diluted_wines",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "proline",
+          "kind": "numeric",
+          "name": "proline",
+          "source_name": "proline",
+          "unit": "original source scale (units not supplied)"
+        }
+      ],
+      "full_splits_before_test_subset": {
+        "test": {
+          "class_counts": {
+            "0": 12,
+            "1": 14,
+            "2": 10
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "56224b682cb71d7b5307e7641f122250bf595277b66a4c12c749f497706c2f36",
+          "rows": 36
+        },
+        "train": {
+          "class_counts": {
+            "0": 35,
+            "1": 43,
+            "2": 28
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "c008b8ba3eee815dfb1608555767f69aef66d8b1c4302610a40e7d3a3f45da22",
+          "rows": 106
+        },
+        "validation": {
+          "class_counts": {
+            "0": 12,
+            "1": 14,
+            "2": 10
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "2bf1a5cfcba26fafa20acab57e10718b48c405d7aa115b69d844f8666af6899d",
+          "rows": 36
+        }
+      },
+      "group_definition": "SHA256 of normalized serialized features, excluding target and row ID",
+      "leakage_limitations": "Exact feature grouping does not prevent related-family similarity or pretraining memorization of these public datasets. Wine cultivar IDs are arbitrary; zero-shot interpretation is limited.",
+      "max_serialized_characters": 444,
+      "native_files_sha256": {
+        "native/test.jsonl": "d30c289939c5bc534d28f808240b05b036d71dd82ec91a94b8582410212ac982",
+        "native/train.jsonl": "a0e33ff566c5eda8b68eeaaaf9024d4501f24e428525a85bea3021d0418a50cf",
+        "native/validation.jsonl": "276260eee973c0e0ee77fc478f2d94285c42a3a06b8c5d2f0849df98b1f1f44c"
+      },
+      "native_records_sha256": {
+        "test": "e96712ccb2c8c5b1a996dfed19b983266848c4d36198ce94e2af9203e632dc95",
+        "train": "2a3588184a86be6e6a72a1c1c178d666db063d2f62d4959d07772da22b218703",
+        "validation": "6fb96b1eb1c010a0b254393dcd0b8e8649c225876301c628b8d2a7caff0b3f63"
+      },
+      "nominal_split_fractions": {
+        "test": 0.2,
+        "train": 0.6,
+        "validation": 0.2
+      },
+      "numeric_roundtrip_exact": true,
+      "preparation_implementation_sha256": "339ead1c818e05868d889a8d397a4eac522a3d949a6ea31a08f8b455f45b87a6",
+      "schema_version": 1,
+      "serialization": {
+        "categorical_format": "JSON-quoted UTF-8 strings",
+        "feature_order": "declared features list",
+        "fitted_preprocessing": "none",
+        "missing_value": "NA",
+        "number_format": ".12g (12 significant decimal digits; no data-dependent rounding)",
+        "prefix": "fixed task description followed by newline",
+        "separator": "; ",
+        "target_or_row_id_in_features": false,
+        "text_truncation": "none",
+        "version": "name-value-v1"
+      },
+      "source_rows": 178,
+      "split_method": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed): fold0=test; fold1=validation; remaining folds=train",
+      "task_description": "Wine cultivar classification from 13 chemical measurements. Three anonymous cultivars follow the original source class order 1, 2, 3. Original source scales; no scaling or imputation. Missing=NA.",
+      "test_subset_policy": "Frozen core deterministic proportional stratified subset; excluded rows remain held out and are never reassigned"
+    },
+    "text_policy": {
+      "applies_to": "all serialized model arms",
+      "kind": "none",
+      "max_chars": null
+    }
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.14.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.1.3",
+      "peft": "0.20.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.6.1",
+      "scipy": "1.16.3",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6"
+    },
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "execution": {
+    "automatic_retries": 0,
+    "concurrency": 1,
+    "max_new_requests": 36,
+    "paid_authorized": false
+  },
+  "execution_sessions": [
+    {
+      "cached_rows": 0,
+      "environment": {
+        "packages": {
+          "accelerate": "1.14.0",
+          "huggingface-hub": "0.36.2",
+          "numpy": "2.1.3",
+          "peft": "0.20.0",
+          "pyarrow": "23.0.1",
+          "scikit-learn": "1.6.1",
+          "scipy": "1.16.3",
+          "torch": "2.11.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+        "python": "3.13.15",
+        "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+      },
+      "new_rows_requested": 36,
+      "started_at": "2026-09-22T17:45:59.042439+00:00"
+    }
+  ],
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "cultivar 1",
+    "cultivar 2",
+    "cultivar 3"
+  ],
+  "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+  "method": "few_shot",
+  "metrics": {
+    "accuracy": 0.3333333333333333,
+    "balanced_accuracy": 0.3333333333333333,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "estimate": 0.3333333333333333
+        },
+        "macro_f1": {
+          "ci95": [
+            0.16666666666666666,
+            0.16666666666666666
+          ],
+          "estimate": 0.16666666666666666
+        }
+      },
+      "samples": 1000,
+      "seed": 42
+    },
+    "brier_sum": 0.7806048508306549,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        12,
+        0,
+        0,
+        0
+      ],
+      [
+        14,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      2,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.25712620052413554,
+    "failure_rate": 0.0,
+    "input_tokens": 91022,
+    "input_tokens_coverage": 1.0,
+    "input_tokens_known_total": 91022,
+    "latency_p50_s": 1.751413542000023,
+    "latency_p95_s": 1.7813692117499613,
+    "log_loss": 1.2498937745149563,
+    "macro_f1": 0.16666666666666666,
+    "n_classes": 3,
+    "n_failures": 0,
+    "n_probability_rows": 36,
+    "n_test": 36,
+    "output_tokens": 0,
+    "output_tokens_coverage": 1.0,
+    "output_tokens_known_total": 0,
+    "per_class": [
+      {
+        "f1": 0.5,
+        "label": 0,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "support": 12
+      },
+      {
+        "f1": 0.0,
+        "label": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 14
+      },
+      {
+        "f1": 0.0,
+        "label": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 10
+      }
+    ],
+    "prediction_time_s": 63.04150929399998,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 5,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 5,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 6,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 7,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.5217391304347826,
+        "bin": 8,
+        "count": 23,
+        "mean_confidence": 0.5790378205764187
+      },
+      {
+        "accuracy": 0.0,
+        "bin": 9,
+        "count": 13,
+        "mean_confidence": 0.6106671804316345
+      },
+      {
+        "accuracy": null,
+        "bin": 10,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 11,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 12,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 13,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 14,
+        "count": 0,
+        "mean_confidence": null
+      }
+    ],
+    "valid_response_accuracy": 0.3333333333333333,
+    "zero_true_class_probability_rows": 0
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+  "seed": 42,
+  "started_at": "2026-09-22T17:45:59.026334+00:00",
+  "status": "complete",
+  "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+  "training_example_ids": [
+    "wine:source:00009:b2851af2c23f0284",
+    "wine:source:00013:67316b208ee4739e",
+    "wine:source:00059:438cec4c95bd5d30",
+    "wine:source:00017:747b53537b68cf87",
+    "wine:source:00117:f2833f585f3c0599",
+    "wine:source:00159:7717132974a84a71",
+    "wine:source:00155:ea1d0005bf5963e5",
+    "wine:source:00073:47dbd1b1bab9c6af",
+    "wine:source:00150:e255613d024e8c4d",
+    "wine:source:00092:6aef6a094fe9bec9",
+    "wine:source:00154:939e8819c810c335",
+    "wine:source:00030:00682191078f98d3"
+  ]
+}

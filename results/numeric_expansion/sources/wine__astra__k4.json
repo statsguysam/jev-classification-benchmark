@@ -1,0 +1,69 @@
+{
+  "dataset": "wine",
+  "dataset_manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "astra",
+  "schema_version": 1,
+  "shots_per_class": 4,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "dbe5ff17012aec89bf5588be1493217451e25607eb725b6a422fedda986156ab",
+      "run.json": "c3162e3b5defb51b2d0fe24d9d05a5e131c67f2ff7ce1f0dfa02077256999622",
+      "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+    },
+    "model": "gpt-6-astra",
+    "path": "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f",
+    "provider": "openai"
+  },
+  "source_config_sha256": "cd38a73f2713001a28f50c283e3d693b0d69dc96908a1f8ea293f41ebcf75d91",
+  "source_model_config": {
+    "api_key_env": "OPENAI_API_KEY",
+    "budget_guard": {
+      "aggregate_authorized_usd": "20.00",
+      "dataset": "wine",
+      "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+      "ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "model_key": "openai_frontier",
+      "pricing_sha256": "27b33bb81f80a13854f1b0681e9665658b9a47dc5dcb0f1a54a82e9debf5e3e2",
+      "prior_charged_or_reserved_usd": "5.293007000",
+      "prior_ledgers": {
+        "jev-budget.jsonl": {
+          "cap": "2.50",
+          "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+          "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+        },
+        "openai-budget.jsonl": {
+          "cap": "7.50",
+          "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+          "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+        }
+      },
+      "seed": 42,
+      "shots_per_class": 4,
+      "stage_cap_usd": "14.70",
+      "tabular_wrapper_sha256": "53936be5c051b80cbee74943ec6544f29bc28044d99f5fd20226560f7163b230",
+      "verified_on": "2026-09-22",
+      "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+    },
+    "max_output_tokens": 1024,
+    "model": "gpt-6-astra",
+    "provider": "openai",
+    "reasoning_effort": "low",
+    "shots_per_class": 4
+  },
+  "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+  "training_example_ids": [
+    "wine:source:00009:b2851af2c23f0284",
+    "wine:source:00013:67316b208ee4739e",
+    "wine:source:00059:438cec4c95bd5d30",
+    "wine:source:00017:747b53537b68cf87",
+    "wine:source:00117:f2833f585f3c0599",
+    "wine:source:00159:7717132974a84a71",
+    "wine:source:00155:ea1d0005bf5963e5",
+    "wine:source:00073:47dbd1b1bab9c6af",
+    "wine:source:00150:e255613d024e8c4d",
+    "wine:source:00092:6aef6a094fe9bec9",
+    "wine:source:00154:939e8819c810c335",
+    "wine:source:00030:00682191078f98d3"
+  ]
+}

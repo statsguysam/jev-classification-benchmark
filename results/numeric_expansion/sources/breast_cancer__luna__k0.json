@@ -1,0 +1,56 @@
+{
+  "dataset": "breast_cancer",
+  "dataset_manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "luna",
+  "schema_version": 1,
+  "shots_per_class": 0,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "6ce8f56cd634cb9657f0fa40d741f389d86a4dbbbbfc7e29a45e071fb4b27f52",
+      "run.json": "559aa6e9229c304cc11cdf13993588c396b181409e30b2de8b20df5ed7339f50",
+      "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+    },
+    "model": "gpt-5.6-luna",
+    "path": "results/tabular/hosted/breast_cancer__gpt-5.6-luna__b8612044e1e5",
+    "provider": "openai"
+  },
+  "source_config_sha256": "7cbbe83074dd7d68c5b97c07eaef4fa33db58360a46c4f2fb40e64c4ce9d30c8",
+  "source_model_config": {
+    "api_key_env": "OPENAI_API_KEY",
+    "budget_guard": {
+      "aggregate_authorized_usd": "20.00",
+      "dataset": "breast_cancer",
+      "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+      "ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "model_key": "openai_economical",
+      "pricing_sha256": "b51594ac146d6546ad57ab770d50f45a97f3c96a585b0400302a5a3b487190a9",
+      "prior_charged_or_reserved_usd": "5.293007000",
+      "prior_ledgers": {
+        "jev-budget.jsonl": {
+          "cap": "2.50",
+          "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+          "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+        },
+        "openai-budget.jsonl": {
+          "cap": "7.50",
+          "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+          "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+        }
+      },
+      "seed": 42,
+      "shots_per_class": 0,
+      "stage_cap_usd": "14.70",
+      "tabular_wrapper_sha256": "53936be5c051b80cbee74943ec6544f29bc28044d99f5fd20226560f7163b230",
+      "verified_on": "2026-09-22",
+      "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+    },
+    "max_output_tokens": 256,
+    "model": "gpt-5.6-luna",
+    "provider": "openai",
+    "reasoning_effort": "none",
+    "shots_per_class": 0
+  },
+  "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+  "training_example_ids": []
+}

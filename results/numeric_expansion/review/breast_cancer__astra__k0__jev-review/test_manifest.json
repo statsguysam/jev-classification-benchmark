@@ -1,0 +1,580 @@
+{
+  "dataset": "breast_cancer",
+  "labels": [
+    "malignant",
+    "benign"
+  ],
+  "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+  "rows": [
+    {
+      "id": "breast_cancer:source:00007:85bb43827ef3811a",
+      "label": 0,
+      "text_sha256": "69bc71f7370362c39fbeac92ddf3ad7b5f627055f13fad23f783b6d3b4c10127"
+    },
+    {
+      "id": "breast_cancer:source:00014:81342240bd142b4a",
+      "label": 0,
+      "text_sha256": "1bc27cdde351c0b2e3691351b1189fedd82a1d12e0a19782f24f94e9fcb12086"
+    },
+    {
+      "id": "breast_cancer:source:00024:3cb4ff826c388a9d",
+      "label": 0,
+      "text_sha256": "26aa5ad6fa98746673fd16960d66692fd7fa55f05dc526ebf70d6f637860a703"
+    },
+    {
+      "id": "breast_cancer:source:00025:d3db054111d104e5",
+      "label": 0,
+      "text_sha256": "2e0e7af7279c70d57e7a4a6c1c5901fea9ae2f9feb376ecbcd6bb33fa9d0ea60"
+    },
+    {
+      "id": "breast_cancer:source:00029:2fd20f9f1db6a0b1",
+      "label": 0,
+      "text_sha256": "55013f712c6ce140f0ddfb2134869531a0ce6dba87a4fcbc12c365db79a14ed1"
+    },
+    {
+      "id": "breast_cancer:source:00035:0b4481d3121bb40c",
+      "label": 0,
+      "text_sha256": "2c67319610ac5e596751b16680d4cf96e29f2c919f5c4d0faabdf85a42ee7b96"
+    },
+    {
+      "id": "breast_cancer:source:00056:b9d4079b9e5b1de0",
+      "label": 0,
+      "text_sha256": "39dc402f3ea0968f9a04d38cbc0895da86294767ab5bf32a9d95499d5ef25d59"
+    },
+    {
+      "id": "breast_cancer:source:00060:31a4481f6a8b9489",
+      "label": 1,
+      "text_sha256": "623d7008255dcc1c2fdf1554c0b8cfff3dee24a6c6caae1feb1c3d6d39da8d6b"
+    },
+    {
+      "id": "breast_cancer:source:00061:fed205d8860b73ce",
+      "label": 1,
+      "text_sha256": "031a5530309317afd0b72ddfaea48ce0b9c8112ead8e0700473c0a0fdeff4482"
+    },
+    {
+      "id": "breast_cancer:source:00069:3a082e0fe537900e",
+      "label": 1,
+      "text_sha256": "0035567c0a5e1744d255f1ff94cb90e00ac4d0fff0e12ec66229dcaf28e1a2b8"
+    },
+    {
+      "id": "breast_cancer:source:00070:011f89fd67ff16ea",
+      "label": 0,
+      "text_sha256": "2aa82fd286299f5a021af9196d0199fa325ee84a4d6048d325e0d96e78b8bf3d"
+    },
+    {
+      "id": "breast_cancer:source:00078:e1c8439a363648b7",
+      "label": 0,
+      "text_sha256": "efb636a2a0153f8b729c2f2512b9a567a0ebe9671879ac83f3838a85752e6e21"
+    },
+    {
+      "id": "breast_cancer:source:00081:5a08a8dc7b0629b8",
+      "label": 1,
+      "text_sha256": "7fd84ea2399731469e85d722a3427c58f46297b4c4c236ffc41013305ac861b8"
+    },
+    {
+      "id": "breast_cancer:source:00086:d152c33a08df00bb",
+      "label": 0,
+      "text_sha256": "984f1db9e1f56061f8d6403ebc63ba576e048225a1b8b00beeb8c46bc0ee7887"
+    },
+    {
+      "id": "breast_cancer:source:00087:14097fb439513330",
+      "label": 0,
+      "text_sha256": "23574fe9a8bbfc9f3f9f9bdf8967cd29fa168b7905948b88014065aea8a30673"
+    },
+    {
+      "id": "breast_cancer:source:00092:5ead4cf554c4aa7a",
+      "label": 1,
+      "text_sha256": "f3a9023129617f6848b8c34ec178c070d31def2376dea7459cafc568ec473e7f"
+    },
+    {
+      "id": "breast_cancer:source:00104:55f40ab90d604dc6",
+      "label": 1,
+      "text_sha256": "a6984f613e4233b0897829c9b833146a32eba9fd50cee7394b890d92b3eb5cf3"
+    },
+    {
+      "id": "breast_cancer:source:00107:9f768480e3b73d8b",
+      "label": 1,
+      "text_sha256": "4223a84626a5293db9476a713448f5e0b74ed470359c6a4da4b3ac8844b52a79"
+    },
+    {
+      "id": "breast_cancer:source:00109:15250696c0cd3558",
+      "label": 1,
+      "text_sha256": "e4333b0ebb7f4cf0e435ce1cdb61befc563f350098934e679176754a9ad08d6c"
+    },
+    {
+      "id": "breast_cancer:source:00111:bb2b5196e21fbc71",
+      "label": 1,
+      "text_sha256": "05ea3d4a6364089bc0aecba52f16d3c8f69bac5cb0502759530c38a03d735bed"
+    },
+    {
+      "id": "breast_cancer:source:00113:c50cb79af4358582",
+      "label": 1,
+      "text_sha256": "520cefa3cf1d1d3d6825175b5aceb1b974cd1ee0f22176d1619a23e1793ab6f3"
+    },
+    {
+      "id": "breast_cancer:source:00114:cc1befb35b0a2596",
+      "label": 1,
+      "text_sha256": "cdfad90784c5846720d63ffb5bcb73d20cd9a9042117c95359d1bb8fd3311d69"
+    },
+    {
+      "id": "breast_cancer:source:00115:67bfee72e580647a",
+      "label": 1,
+      "text_sha256": "2f93f3cf0c0d856c3da6b1094eb3866311d53d75e20912aa80966d4b86b42f11"
+    },
+    {
+      "id": "breast_cancer:source:00122:e297e802bb3e875b",
+      "label": 0,
+      "text_sha256": "6937573a1f062a13d70ae4d03f8d26ba631c434711d9179f5e3dd85f7052415c"
+    },
+    {
+      "id": "breast_cancer:source:00129:4c1d3d794c41e9d3",
+      "label": 0,
+      "text_sha256": "be11788f98bd7255d01d4ba9a46014d5ae83efbdef634c03a908386a76c4d37f"
+    },
+    {
+      "id": "breast_cancer:source:00131:12218ae0a458879b",
+      "label": 0,
+      "text_sha256": "6454282f9a37917915f0f76e48b81e35ae96a2022c128b316846910cb281de11"
+    },
+    {
+      "id": "breast_cancer:source:00168:89abb9c4ead426fc",
+      "label": 0,
+      "text_sha256": "ca1e78e0bf3b56ae468d8eb822583e0dcdd4878d951921a5a8cf53a9f71d48bc"
+    },
+    {
+      "id": "breast_cancer:source:00169:a35438fbadf97f57",
+      "label": 1,
+      "text_sha256": "93a94d3d80a0ea5364a4271e1c3e6269b66cf5733627a920319f42e2ff97ece2"
+    },
+    {
+      "id": "breast_cancer:source:00174:3ae6bd1d27f5c06b",
+      "label": 1,
+      "text_sha256": "210e942204f28b228b65e0a499749713d11c4cb864e722279385a9aa54ea7486"
+    },
+    {
+      "id": "breast_cancer:source:00177:2e95cabad6cc0ed1",
+      "label": 0,
+      "text_sha256": "e4094b8d6c9cf11a2a09d9a8cbd451053638b987163cd57eaa8c1791e5d96767"
+    },
+    {
+      "id": "breast_cancer:source:00178:517f45d30829df46",
+      "label": 1,
+      "text_sha256": "b0da753ee8d50919c194eff58fedf4e350d4d6919c7a00a170c55c649430f063"
+    },
+    {
+      "id": "breast_cancer:source:00179:b5a294f6f1b804da",
+      "label": 1,
+      "text_sha256": "7eec2295ac7ce4f5d9ec2a8abf4e996f55282ceb859941fec539ce3204c86b9c"
+    },
+    {
+      "id": "breast_cancer:source:00183:0a9669614a3a3074",
+      "label": 1,
+      "text_sha256": "bd58c22f8ec51375f3005d199416dd0e6ff6839451201527d143f88ad47cc9e1"
+    },
+    {
+      "id": "breast_cancer:source:00192:da1ef950f5ba612d",
+      "label": 1,
+      "text_sha256": "71067f9a9748c0b7aa59df4b0a0177d5a98ab74b9d9066335bc69beb8aa281e3"
+    },
+    {
+      "id": "breast_cancer:source:00199:add44081f786a96c",
+      "label": 0,
+      "text_sha256": "b4e83608e4c7d68329f71b017b8b852f22dfddc568b30a1857c8c088db61dffb"
+    },
+    {
+      "id": "breast_cancer:source:00200:3e69524f5b79ccdc",
+      "label": 1,
+      "text_sha256": "d2f93f9fca19d6eccd551d397fa23ed36392a76bd6c0e194c4ad2a015e61e67b"
+    },
+    {
+      "id": "breast_cancer:source:00201:dbbca20ab0a25a2c",
+      "label": 0,
+      "text_sha256": "8ed47eadc081956bd6725b6961c1fae1b6f8daf17c89d9d36de6fc33d0c8a01c"
+    },
+    {
+      "id": "breast_cancer:source:00204:eccf60b4172ff2d3",
+      "label": 1,
+      "text_sha256": "571bbc45c44af113c816a40aa9224a2c27aef475dbbe6e7d47c6078dede907b2"
+    },
+    {
+      "id": "breast_cancer:source:00205:2a27ea606ae5a27f",
+      "label": 0,
+      "text_sha256": "779e1cd3aeefe3f3f01899aa804f2c37708437ebd7ea66313ee6af50da836de8"
+    },
+    {
+      "id": "breast_cancer:source:00210:09943cdccb41259f",
+      "label": 0,
+      "text_sha256": "d3332b77c6e97eae5fd7979429e235fa14e659630e159847e96ddb7751e53984"
+    },
+    {
+      "id": "breast_cancer:source:00211:ed8400cd29ffd46c",
+      "label": 1,
+      "text_sha256": "aa3c0598eb5e47e17d55f0d32a331d2f81a245d2b75c8e57b6e44d4dd56d8e4e"
+    },
+    {
+      "id": "breast_cancer:source:00218:70913b91f7c5402f",
+      "label": 0,
+      "text_sha256": "116d84833c49a5e46e3ae428377c109da4f8f847a3f1d8ba44c3c1adfd29d57f"
+    },
+    {
+      "id": "breast_cancer:source:00222:1fd61b9ca3626f2d",
+      "label": 1,
+      "text_sha256": "a25e111eee602692d7611c350d88aed0d7de4430f420f12aa7cb6de526d74c27"
+    },
+    {
+      "id": "breast_cancer:source:00226:0973bc8364233e16",
+      "label": 1,
+      "text_sha256": "2ada0483a91a86dfb67966147ff8d3aa6d2ddcb2e59d7d39ee15a136225d8b9e"
+    },
+    {
+      "id": "breast_cancer:source:00239:f75f3d1c007c7417",
+      "label": 0,
+      "text_sha256": "ecf013a1c58fb814a76ada8772525d1fddc36457d2ebb51125a3e6bd2195edbd"
+    },
+    {
+      "id": "breast_cancer:source:00241:a7ef446b83e04b89",
+      "label": 1,
+      "text_sha256": "fbdff2cfc2d10b47233253f6b055a13e387d2c4ea6c0d294fafefb3482f1a730"
+    },
+    {
+      "id": "breast_cancer:source:00242:bb9c4e427c336184",
+      "label": 1,
+      "text_sha256": "d70c97a839ad59d1b04705202a5892ef75c332b20daaeedda0f1a519c8558c28"
+    },
+    {
+      "id": "breast_cancer:source:00246:f5adc57b48890848",
+      "label": 1,
+      "text_sha256": "1e08f9b2b1dca391d8b030b02bcfb0c3e719b4faf352ecdb6b57de63f8400306"
+    },
+    {
+      "id": "breast_cancer:source:00253:0acae4a503eab71e",
+      "label": 0,
+      "text_sha256": "3cc96dd12034ba51fabc97285e5dfcbfa435d67bbd60706b328ad8408d393394"
+    },
+    {
+      "id": "breast_cancer:source:00254:2b87765b83949d9c",
+      "label": 0,
+      "text_sha256": "9af9a033749aa21e33398f774424a9cbeb1bb4a77ffa7b266b54a018d91296ff"
+    },
+    {
+      "id": "breast_cancer:source:00258:c45b22c60e19c1e1",
+      "label": 0,
+      "text_sha256": "c73732eb211ad4ac0f9c3f7ef98a10b31562bd49ff31ae5207bbeddd3128dacf"
+    },
+    {
+      "id": "breast_cancer:source:00260:8578547e102efa1d",
+      "label": 0,
+      "text_sha256": "41bfaacd43a88ea22ea57f524c399298625b423424ebb3e066b374c2385af0a2"
+    },
+    {
+      "id": "breast_cancer:source:00261:f740c724bab895b5",
+      "label": 0,
+      "text_sha256": "42343548268f5c8342f91f356c2f229c21fe80bbc2eb7fe3b24e658ef59ac8ec"
+    },
+    {
+      "id": "breast_cancer:source:00262:592467f069188787",
+      "label": 0,
+      "text_sha256": "3ae9f912e42e88e73e4366dd8ef28f825032dd5ddb345b2c4d961cc4e3685a36"
+    },
+    {
+      "id": "breast_cancer:source:00269:640c25ced4ffe595",
+      "label": 1,
+      "text_sha256": "9ac2808e3643cf412758c02d8874795a8834e9d260a1983aa5599ad4e9e3a0de"
+    },
+    {
+      "id": "breast_cancer:source:00277:107dda63c7edf72e",
+      "label": 0,
+      "text_sha256": "0d43caf607b770f81dfa9686b10c7337c5cec0c9e869da0a7c01d9578f6ef334"
+    },
+    {
+      "id": "breast_cancer:source:00282:0413bbf6ec9bd866",
+      "label": 0,
+      "text_sha256": "7bba5ad25d3982b74b2d8dc0758d46f4b2ceba60baf9a36d71929897c02ffcdc"
+    },
+    {
+      "id": "breast_cancer:source:00283:91a534564cd0b9f1",
+      "label": 0,
+      "text_sha256": "128611a95321100b4f2a44e8825dc803ac089424a973d1a0095417b51723fac9"
+    },
+    {
+      "id": "breast_cancer:source:00294:7263df827b680756",
+      "label": 1,
+      "text_sha256": "9f8ff55618ef7b45032ff8ab0d721bac899282e06e487df9077a83882c91f19d"
+    },
+    {
+      "id": "breast_cancer:source:00310:bd0ed6aa32065e96",
+      "label": 1,
+      "text_sha256": "64c80e89480d92a7eec8e19677384e994e2c932395227c73c2b47dd689fedb92"
+    },
+    {
+      "id": "breast_cancer:source:00311:e606e5694b4ef81d",
+      "label": 1,
+      "text_sha256": "0be60327cc98a5e9e2579a6a12993936844816d99d00161b543d559d973acf0d"
+    },
+    {
+      "id": "breast_cancer:source:00312:36ccc9484ab56a47",
+      "label": 1,
+      "text_sha256": "9508290e52e394341cb188f8abdb116a6452575033a4de2f393d02b3bd70d70d"
+    },
+    {
+      "id": "breast_cancer:source:00317:1145b7fa8c2fb771",
+      "label": 0,
+      "text_sha256": "0eb247196f6435e54dbb616a5b6508ad71a251a08da160d32151e2a69718f12e"
+    },
+    {
+      "id": "breast_cancer:source:00318:8710c573c722f8a8",
+      "label": 1,
+      "text_sha256": "c7b4262c4431c227a54fe612fa891e758e6e7021b6c02bcbe4406e9b7458a3cc"
+    },
+    {
+      "id": "breast_cancer:source:00319:98ed12117a537c55",
+      "label": 1,
+      "text_sha256": "6004534b9deef3a2fc96d5a771f7d5a7febdb09833892225b04080585040f41c"
+    },
+    {
+      "id": "breast_cancer:source:00320:1670636876bb8176",
+      "label": 1,
+      "text_sha256": "cbb9b988c1ebcb130b56cb753d2623d189794dc67b3e2c3d0cbb2bfcbbf95bf6"
+    },
+    {
+      "id": "breast_cancer:source:00326:44ec714151eee2bf",
+      "label": 1,
+      "text_sha256": "f26bf64b6c8080de1f120eccd984c1898d7b4109e0af4dca78293e4b2cc520f9"
+    },
+    {
+      "id": "breast_cancer:source:00329:55d1dc33326fbcb0",
+      "label": 0,
+      "text_sha256": "b239e2fc789c590778214c041745782399df37ddc655dd4f9a9ddfd61c042363"
+    },
+    {
+      "id": "breast_cancer:source:00332:87dcb61c2a81b3a4",
+      "label": 1,
+      "text_sha256": "f322a262a873e861141aca698a74427534041b3b6d38cb1554dc627b3446c39b"
+    },
+    {
+      "id": "breast_cancer:source:00336:9991d061b399d5b7",
+      "label": 1,
+      "text_sha256": "86c076042d0704b9c406003d0178700a4473c1dce9d8035537106c21d2807f06"
+    },
+    {
+      "id": "breast_cancer:source:00339:99b007d3e1d7cc39",
+      "label": 0,
+      "text_sha256": "600df670419e7a37c05614cbe571435c359b4a45f6de7eab5352543d88a1c4b6"
+    },
+    {
+      "id": "breast_cancer:source:00348:860ecd74443b5c86",
+      "label": 1,
+      "text_sha256": "7805a00a9872acb6e6e01e65ab410c685dee6eaf084b80f55768b0341325d187"
+    },
+    {
+      "id": "breast_cancer:source:00352:b907d80ce24b1eab",
+      "label": 0,
+      "text_sha256": "7f9f7654d35f9493e272d2f1d9fc0f995932c1c5cd777c838c531ba29ca4f310"
+    },
+    {
+      "id": "breast_cancer:source:00360:ce241318bc9f0d83",
+      "label": 1,
+      "text_sha256": "8f06a5575fb367418eab23b9838c091bc9448c9baab188637ab9c673f3ad5ad9"
+    },
+    {
+      "id": "breast_cancer:source:00370:1c827b272813d998",
+      "label": 0,
+      "text_sha256": "6f4eb60eb855b4165b2580d73789c8faa1cd3f3ce5b0f8ba997d0600417430ea"
+    },
+    {
+      "id": "breast_cancer:source:00375:ae45b3a95b87c316",
+      "label": 1,
+      "text_sha256": "ba34d961cd3b9d512c7d2c54b0c5a84a4490e6179243576b0e965e0eab874fe9"
+    },
+    {
+      "id": "breast_cancer:source:00379:1a9b516ef2c8b154",
+      "label": 0,
+      "text_sha256": "68b80ba94f3b7078eeeefac046d5498a227d486dc63e65f131886cc4c56aeb5e"
+    },
+    {
+      "id": "breast_cancer:source:00386:3591263a42b2292e",
+      "label": 1,
+      "text_sha256": "9905eb0a6d00d56b3e5786f61b5da7637b224a9536f18ad15b315c2644cea2eb"
+    },
+    {
+      "id": "breast_cancer:source:00389:84ced4866c177887",
+      "label": 0,
+      "text_sha256": "aeb0c59b94546f93f79ddc0d8397ca5a628ae3c4c70ad5ea6acdac46564558a4"
+    },
+    {
+      "id": "breast_cancer:source:00391:329f603a286992a8",
+      "label": 1,
+      "text_sha256": "c313ba7852b9c0dc93d0a30820c79a6437935892e8ffb09064fd0665c297c396"
+    },
+    {
+      "id": "breast_cancer:source:00398:f50e11609ef3e550",
+      "label": 1,
+      "text_sha256": "9eaae6c46b7fb1d1bf1be55f9158e174fb69f7ab65d2a2439a37a0d2a68b77db"
+    },
+    {
+      "id": "breast_cancer:source:00402:e63ca5d2501ca69b",
+      "label": 1,
+      "text_sha256": "a92f9c460fe0920ea5fa9ec9dfb93a22696c68d1dd70a0e0478d0016609b234d"
+    },
+    {
+      "id": "breast_cancer:source:00403:87561888be5dd48f",
+      "label": 1,
+      "text_sha256": "84cc977f48ea2b82ec5dcda9b246903907ff81885b1581663a91e5af1c41e671"
+    },
+    {
+      "id": "breast_cancer:source:00406:988ceba59dc227d9",
+      "label": 1,
+      "text_sha256": "2986298083b5d614bd5846dbd16189e76e89617d892cb3f7d27c767ba759a925"
+    },
+    {
+      "id": "breast_cancer:source:00407:ebb9bae6e3c43491",
+      "label": 1,
+      "text_sha256": "a34c8a0a627d37f31e602fc81c3c67b41ed81e22e044370e89d54d25cf8a9b96"
+    },
+    {
+      "id": "breast_cancer:source:00409:d83ef2bbf424db01",
+      "label": 1,
+      "text_sha256": "3b0447a1b29669e6e47ece660412cfd02a020e4987d8f73f95adc82f17a37ce5"
+    },
+    {
+      "id": "breast_cancer:source:00410:bf813ee3f3c3236a",
+      "label": 1,
+      "text_sha256": "64184404a60e593c3ef447ec76bf0c5aff0eec281e734e443024ff340d3efffe"
+    },
+    {
+      "id": "breast_cancer:source:00414:2605a007f913ee55",
+      "label": 0,
+      "text_sha256": "5b2b3f4c025ca4344e4ad410944960a8768bf5c196e7f01f9adc3c7247cf38f9"
+    },
+    {
+      "id": "breast_cancer:source:00417:aae8463f36d37e77",
+      "label": 0,
+      "text_sha256": "54e2fa127be0c6c0eb675508040ca484d6e40703813bf28eb1ba6cefa96ad7b3"
+    },
+    {
+      "id": "breast_cancer:source:00418:0525573f528ff6fe",
+      "label": 1,
+      "text_sha256": "e8cc2e6558cb615d9c8e1a0ffad9c7e24d8030aea3d167f929821a42c10b3f62"
+    },
+    {
+      "id": "breast_cancer:source:00433:b9d08ebcce4717f2",
+      "label": 0,
+      "text_sha256": "06c6a83aee10f27b53cf4a4cbfe6d94e7c858c333dd79fc79d55e2efcf3da2d6"
+    },
+    {
+      "id": "breast_cancer:source:00438:31524e32d241af7d",
+      "label": 1,
+      "text_sha256": "35c3d0eb69b02e20ea841374a3c997f99f3dd4494e380eec9dab57073b3b60ba"
+    },
+    {
+      "id": "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+      "label": 1,
+      "text_sha256": "52dac76b90ed7164e635a2849e15ac8134a3075f9135905197b84923558dc557"
+    },
+    {
+      "id": "breast_cancer:source:00448:9e598e6dff34d397",
+      "label": 1,
+      "text_sha256": "fcb7d3caaf627b5aeb92ac848d83f2fd43ab963553fc4187b796917ee0edb0f0"
+    },
+    {
+      "id": "breast_cancer:source:00453:700556f98ddb7a94",
+      "label": 1,
+      "text_sha256": "ec68c6b50a6fe76c2263b14dded135dea4c40a31936f67a86e39a985cae9b1e9"
+    },
+    {
+      "id": "breast_cancer:source:00455:6ec7d486925e7fa8",
+      "label": 1,
+      "text_sha256": "4aa70c61e3803446b648cd26a6864f8fe7bf8c2ada834d64da6bd378e5e4d440"
+    },
+    {
+      "id": "breast_cancer:source:00457:72fa4fb310ea68dd",
+      "label": 1,
+      "text_sha256": "a9abba8be128ac9ff6ae398fb1875db5cb190facc8a0ab28e30bcbd1a22cfd73"
+    },
+    {
+      "id": "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+      "label": 1,
+      "text_sha256": "ffb47b8e706918a06c0a8486f50794feb1af206455292bd66bfd295c78a688e1"
+    },
+    {
+      "id": "breast_cancer:source:00466:6a7e6b96a2b161b2",
+      "label": 1,
+      "text_sha256": "847ffe672c239a2dc983ad06cc07bb3620240737d7810f8004fadc84c700b694"
+    },
+    {
+      "id": "breast_cancer:source:00468:456a8dda3a657609",
+      "label": 0,
+      "text_sha256": "f8465b9aefa7baa2aa2f66ecb97be8d08dea91d20731dfc5c013c01dd873b9b0"
+    },
+    {
+      "id": "breast_cancer:source:00478:ea382a156cce5ced",
+      "label": 1,
+      "text_sha256": "45b9b23d3f2f5eb8e584243506c2937f1c66f5871dfa187d9e189635e2f56e81"
+    },
+    {
+      "id": "breast_cancer:source:00485:5db666ef49627665",
+      "label": 1,
+      "text_sha256": "e2edf54d853071162624a616281fd7b99c11b31eb272e813aa2a7c99eeca3b49"
+    },
+    {
+      "id": "breast_cancer:source:00506:93a70980871cecf3",
+      "label": 1,
+      "text_sha256": "d179cde93459e5a16598db2af7a98965808c41296572738cb7a6ec4a1919f8be"
+    },
+    {
+      "id": "breast_cancer:source:00512:724c0198d50b22ad",
+      "label": 0,
+      "text_sha256": "a71a09d2eafb513e04695563e6c97f90b1312d6816fb7e06229cd3bad4604f77"
+    },
+    {
+      "id": "breast_cancer:source:00519:7ca17fbb7c26a040",
+      "label": 1,
+      "text_sha256": "a58c1111c99125ef19bee5cfd6ed3ad658dc5b9160b14ebf3638afc6f4a42b73"
+    },
+    {
+      "id": "breast_cancer:source:00528:7c5dcdc36c16c92c",
+      "label": 1,
+      "text_sha256": "9593694d298d2d12db0f5faaf687325c9f57cd470029f756884ae7ad84295afe"
+    },
+    {
+      "id": "breast_cancer:source:00529:8ff78e3e9cbaafbf",
+      "label": 1,
+      "text_sha256": "206c1584c4b4ce094b9d7d7e73b50f80c56fddcd5150cf02f94f3c01c99cffc3"
+    },
+    {
+      "id": "breast_cancer:source:00534:014eddbe3c4e3ff8",
+      "label": 1,
+      "text_sha256": "dfcc13c34819d3ac3619e9adb1507cb455f4f9e7163d73639d4d419fae553cd1"
+    },
+    {
+      "id": "breast_cancer:source:00539:494e27284f068721",
+      "label": 1,
+      "text_sha256": "2aa584cea723dd0c3c48ac9657bde46087b62b1460873f3e97681fec4eaa2461"
+    },
+    {
+      "id": "breast_cancer:source:00546:803630ad541ca8de",
+      "label": 1,
+      "text_sha256": "392a6165479d979260328c1c8dfb9d7f5f53c769963847c8054591f781be66c5"
+    },
+    {
+      "id": "breast_cancer:source:00551:cf1f8a196d7890f6",
+      "label": 1,
+      "text_sha256": "592a9405f4cb6da9cf00173eda20a8569e871e66f243b8f48edbf10eb262ebb4"
+    },
+    {
+      "id": "breast_cancer:source:00553:89aea9f4eb804004",
+      "label": 1,
+      "text_sha256": "8f2d93a6d929ecf20a13f7810c0e19d200d5a66d70516e6b4804f21ca578d733"
+    },
+    {
+      "id": "breast_cancer:source:00555:342b7c434f1efca9",
+      "label": 1,
+      "text_sha256": "d83c52df89d5132d83270cc1b3abf44bf9f7c320ad2747820bcecee1db13e8d2"
+    },
+    {
+      "id": "breast_cancer:source:00560:2fa91fd3a7bf7699",
+      "label": 1,
+      "text_sha256": "4e5abb0dcfe0652c47d4f59bf4051976c0801a587850a03e79a6899b83251a24"
+    }
+  ]
+}

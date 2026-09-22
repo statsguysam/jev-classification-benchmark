@@ -1,0 +1,706 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-22T17:38:14.126664+00:00",
+  "config": {
+    "api_key_env": "OPENROUTER_API_KEY",
+    "base_url": "https://openrouter.ai/api/v1",
+    "budget_guard": {
+      "aggregate_authorized_usd": "25.00",
+      "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+      "dataset": "breast_cancer",
+      "endpoint": "https://openrouter.ai/api/v1/systemone",
+      "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+      "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+      "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "model_key": "qwen_main",
+      "price": {
+        "catalog_context_tokens": 32000,
+        "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+        "input_usd_per_million": "0.042",
+        "output_usd_per_million": "0",
+        "per_request_reserved_usd": "0.002688000",
+        "reserve_input_tokens": 64000,
+        "source": "https://openrouter.ai/typesafe/jev-1.13",
+        "verified_on": "2026-09-22"
+      },
+      "prior_charged_or_reserved_usd": "19.325827700",
+      "prior_ledgers": {
+        "results/jev-budget.jsonl": {
+          "cap": "2.50",
+          "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+          "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+        },
+        "results/numeric_decisions/review-budget.jsonl": {
+          "cap": "0.90",
+          "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+          "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+        },
+        "results/openai-budget.jsonl": {
+          "cap": "7.50",
+          "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+          "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+        },
+        "results/tabular/api-budget.jsonl": {
+          "cap": "14.70",
+          "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+          "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+        }
+      },
+      "proposal_key": "qwen_main_k0",
+      "review_prompt_version": "cached-label-proposal-review-v1",
+      "route": "OpenRouter",
+      "seed": 42,
+      "shots_per_class": 0,
+      "source_files_sha256": {
+        "predictions.jsonl": "111f04f33a536dfbbe49b71ea3bcc12979ca2231a94ea0970234eea8f772b7ed",
+        "run.json": "9441d6b4366fbb7d10e695d5ce5a7ce065c15d8a208519700897e686dcd4a1ab",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__qwen_main__k0.json",
+      "source_manifest_sha256": "ef176498650fce52dab8131420a3bf5afac3191303abb971f8787942460faf7c",
+      "source_run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+      "source_shots_per_class": 0,
+      "stage_cap_usd": "5.00",
+      "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+    },
+    "model": "typesafe/jev-1.13",
+    "provider": "jev",
+    "shots_per_class": 0,
+    "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+    "source_run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+    "source_shots_per_class": 0,
+    "timeout": 120
+  },
+  "dataset": "breast_cancer",
+  "dataset_manifest": {
+    "files_sha256": {
+      "test.jsonl": "beff2bc4df24f3ae504b9cb2a1b52ed09e508c0ea44a839089a4600dc3efd24a",
+      "train.jsonl": "814439c8823cf01e5e09411582698f065df9a7c68c9f2ac894167751b83923e0",
+      "validation.jsonl": "b9d66260490d7c26f50af14f429e4131f0c572d7967e4e8609e283fa1a887e37"
+    },
+    "labels": [
+      "malignant",
+      "benign"
+    ],
+    "limits": {
+      "test": null,
+      "train": null,
+      "validation": null
+    },
+    "name": "breast_cancer",
+    "prepared_content_sha256": "4cdf9773cfbddaddafcb04bb99c691b93f0494aeb44d728076bcfebac34b8f27",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "attribution": "Wolberg, W., Mangasarian, O., Street, N., and Street, W. (1993). Breast Cancer Wisconsin (Diagnostic). UCI Machine Learning Repository. DOI:10.24432/C5DW2B. Scikit-learn bundled copy.",
+      "dictionary": "https://scikit-learn.org/stable/datasets/toy_dataset.html#breast-cancer-wisconsin-diagnostic-dataset",
+      "excluded_columns": [
+        "diagnosis",
+        "ID"
+      ],
+      "feature_names": [
+        "mean radius",
+        "mean texture",
+        "mean perimeter",
+        "mean area",
+        "mean smoothness",
+        "mean compactness",
+        "mean concavity",
+        "mean concave points",
+        "mean symmetry",
+        "mean fractal dimension",
+        "radius error",
+        "texture error",
+        "perimeter error",
+        "area error",
+        "smoothness error",
+        "compactness error",
+        "concavity error",
+        "concave points error",
+        "symmetry error",
+        "fractal dimension error",
+        "worst radius",
+        "worst texture",
+        "worst perimeter",
+        "worst area",
+        "worst smoothness",
+        "worst compactness",
+        "worst concavity",
+        "worst concave points",
+        "worst symmetry",
+        "worst fractal dimension"
+      ],
+      "filename": "breast_cancer.csv",
+      "homepage": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+      "labels": [
+        "malignant",
+        "benign"
+      ],
+      "license": "CC-BY-4.0 per UCI source.",
+      "loader": "load_breast_cancer",
+      "observed_sha256": "fed3eb72d0575ef6192293f5093c6e801b1476b577d0386bf4455504522172ed",
+      "rows": 569,
+      "selected_records_sha256": "fb0802719b9f375636ab0b0625c0f86833ffa66c242a51020630033f81a2927a",
+      "sha256": "fed3eb72d0575ef6192293f5093c6e801b1476b577d0386bf4455504522172ed",
+      "sklearn_version": "1.9.1",
+      "source": "sklearn_bundled",
+      "target_column": "diagnosis",
+      "task_description": "Breast mass diagnosis from cell-nucleus measurements. mean=feature mean; error=standard error; worst=mean of three largest values. Original source scales; no scaling or imputation. Missing=NA."
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 43,
+          "1": 71
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "1e3e49c64c0f3fd516ff557246f31770eccb50bcfdfdbe9449f76af174407ddf",
+        "rows": 114
+      },
+      "train": {
+        "class_counts": {
+          "0": 127,
+          "1": 214
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "9a65761e05db15fe041e1383f9c0aa41e9aa8be668230d4d5fb2d5e887f39cf3",
+        "rows": 341
+      },
+      "validation": {
+        "class_counts": {
+          "0": 42,
+          "1": 72
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "361c5a3b05c54dc533f7557b7ca2373550d6ef47abfaa99356881df0a2324b95",
+        "rows": 114
+      }
+    },
+    "tabular": {
+      "config_sha256": "9c29f16ddd18ee9c0c4bac31d3c84fb1d18e981aeac3124a34bff04a37ac00a9",
+      "duplicate_policy": "Retain all natural duplicates and conflicting-label groups in one split; no exact-feature overlap across splits",
+      "excluded_test_row_ids": [],
+      "features": [
+        {
+          "description": "mean radius",
+          "kind": "numeric",
+          "name": "mean_radius",
+          "source_name": "mean radius",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean texture",
+          "kind": "numeric",
+          "name": "mean_texture",
+          "source_name": "mean texture",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean perimeter",
+          "kind": "numeric",
+          "name": "mean_perimeter",
+          "source_name": "mean perimeter",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean area",
+          "kind": "numeric",
+          "name": "mean_area",
+          "source_name": "mean area",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean smoothness",
+          "kind": "numeric",
+          "name": "mean_smoothness",
+          "source_name": "mean smoothness",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean compactness",
+          "kind": "numeric",
+          "name": "mean_compactness",
+          "source_name": "mean compactness",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean concavity",
+          "kind": "numeric",
+          "name": "mean_concavity",
+          "source_name": "mean concavity",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean concave points",
+          "kind": "numeric",
+          "name": "mean_concave_points",
+          "source_name": "mean concave points",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean symmetry",
+          "kind": "numeric",
+          "name": "mean_symmetry",
+          "source_name": "mean symmetry",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "mean fractal dimension",
+          "kind": "numeric",
+          "name": "mean_fractal_dimension",
+          "source_name": "mean fractal dimension",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "radius error",
+          "kind": "numeric",
+          "name": "radius_error",
+          "source_name": "radius error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "texture error",
+          "kind": "numeric",
+          "name": "texture_error",
+          "source_name": "texture error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "perimeter error",
+          "kind": "numeric",
+          "name": "perimeter_error",
+          "source_name": "perimeter error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "area error",
+          "kind": "numeric",
+          "name": "area_error",
+          "source_name": "area error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "smoothness error",
+          "kind": "numeric",
+          "name": "smoothness_error",
+          "source_name": "smoothness error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "compactness error",
+          "kind": "numeric",
+          "name": "compactness_error",
+          "source_name": "compactness error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "concavity error",
+          "kind": "numeric",
+          "name": "concavity_error",
+          "source_name": "concavity error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "concave points error",
+          "kind": "numeric",
+          "name": "concave_points_error",
+          "source_name": "concave points error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "symmetry error",
+          "kind": "numeric",
+          "name": "symmetry_error",
+          "source_name": "symmetry error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "fractal dimension error",
+          "kind": "numeric",
+          "name": "fractal_dimension_error",
+          "source_name": "fractal dimension error",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst radius",
+          "kind": "numeric",
+          "name": "worst_radius",
+          "source_name": "worst radius",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst texture",
+          "kind": "numeric",
+          "name": "worst_texture",
+          "source_name": "worst texture",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst perimeter",
+          "kind": "numeric",
+          "name": "worst_perimeter",
+          "source_name": "worst perimeter",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst area",
+          "kind": "numeric",
+          "name": "worst_area",
+          "source_name": "worst area",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst smoothness",
+          "kind": "numeric",
+          "name": "worst_smoothness",
+          "source_name": "worst smoothness",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst compactness",
+          "kind": "numeric",
+          "name": "worst_compactness",
+          "source_name": "worst compactness",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst concavity",
+          "kind": "numeric",
+          "name": "worst_concavity",
+          "source_name": "worst concavity",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst concave points",
+          "kind": "numeric",
+          "name": "worst_concave_points",
+          "source_name": "worst concave points",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst symmetry",
+          "kind": "numeric",
+          "name": "worst_symmetry",
+          "source_name": "worst symmetry",
+          "unit": "original source scale (units not supplied)"
+        },
+        {
+          "description": "worst fractal dimension",
+          "kind": "numeric",
+          "name": "worst_fractal_dimension",
+          "source_name": "worst fractal dimension",
+          "unit": "original source scale (units not supplied)"
+        }
+      ],
+      "full_splits_before_test_subset": {
+        "test": {
+          "class_counts": {
+            "0": 43,
+            "1": 71
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "1e3e49c64c0f3fd516ff557246f31770eccb50bcfdfdbe9449f76af174407ddf",
+          "rows": 114
+        },
+        "train": {
+          "class_counts": {
+            "0": 127,
+            "1": 214
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "9a65761e05db15fe041e1383f9c0aa41e9aa8be668230d4d5fb2d5e887f39cf3",
+          "rows": 341
+        },
+        "validation": {
+          "class_counts": {
+            "0": 42,
+            "1": 72
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "361c5a3b05c54dc533f7557b7ca2373550d6ef47abfaa99356881df0a2324b95",
+          "rows": 114
+        }
+      },
+      "group_definition": "SHA256 of normalized serialized features, excluding target and row ID",
+      "leakage_limitations": "Exact feature grouping does not prevent related-family similarity or pretraining memorization of these public datasets. Wine cultivar IDs are arbitrary; zero-shot interpretation is limited.",
+      "max_serialized_characters": 929,
+      "native_files_sha256": {
+        "native/test.jsonl": "5f6204a3870284b15e8150c183f515b3951fa1d7bcbfdf3122633838c865eca4",
+        "native/train.jsonl": "115933257762ef76c895341976ad1b05aba7db1cffeb91074bb2d3951d824bab",
+        "native/validation.jsonl": "5b7a0fccda2fc49036cecdda138ba89bbb321e38f38ddea837494d213974ef81"
+      },
+      "native_records_sha256": {
+        "test": "be813c8b3810afc1549706ff3cca8fc2a1061230c3e417f10e7a66b5a6be06cf",
+        "train": "f4ac85915abb52d905a666db50e02848d8853b0dfa3661663a3dcd81de6f11aa",
+        "validation": "c796a045622dd6c28ff7830ff8c7d4162ef3c1c1657d64a6456e382a608c6e12"
+      },
+      "nominal_split_fractions": {
+        "test": 0.2,
+        "train": 0.6,
+        "validation": 0.2
+      },
+      "numeric_roundtrip_exact": true,
+      "preparation_implementation_sha256": "339ead1c818e05868d889a8d397a4eac522a3d949a6ea31a08f8b455f45b87a6",
+      "schema_version": 1,
+      "serialization": {
+        "categorical_format": "JSON-quoted UTF-8 strings",
+        "feature_order": "declared features list",
+        "fitted_preprocessing": "none",
+        "missing_value": "NA",
+        "number_format": ".12g (12 significant decimal digits; no data-dependent rounding)",
+        "prefix": "fixed task description followed by newline",
+        "separator": "; ",
+        "target_or_row_id_in_features": false,
+        "text_truncation": "none",
+        "version": "name-value-v1"
+      },
+      "source_rows": 569,
+      "split_method": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed): fold0=test; fold1=validation; remaining folds=train",
+      "task_description": "Breast mass diagnosis from cell-nucleus measurements. mean=feature mean; error=standard error; worst=mean of three largest values. Original source scales; no scaling or imputation. Missing=NA.",
+      "test_subset_policy": "Frozen core deterministic proportional stratified subset; excluded rows remain held out and are never reassigned"
+    },
+    "text_policy": {
+      "applies_to": "all serialized model arms",
+      "kind": "none",
+      "max_chars": null
+    }
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "execution": {
+    "automatic_retries": 0,
+    "concurrency": 1,
+    "latency_scope": "Jev review only; source runtime is stored in the source run",
+    "max_total_review_requests": 1500,
+    "proposal_source": "cached_labels_only",
+    "source_and_reviewer_shots_matched": true
+  },
+  "execution_sessions": [
+    {
+      "cached_rows": 0,
+      "started_at": "2026-09-22T17:36:35.762546+00:00"
+    }
+  ],
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "malignant",
+    "benign"
+  ],
+  "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+  "method": "cached_label_jev_review",
+  "method_label": "cached-label proposal + Jev review",
+  "metrics": {
+    "accuracy": 0.9298245614035088,
+    "average_precision": 0.9887225392228866,
+    "balanced_accuracy": 0.911562397641664,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.8859649122807017,
+            0.9736842105263158
+          ],
+          "estimate": 0.9298245614035088
+        },
+        "macro_f1": {
+          "ci95": [
+            0.8708496732026143,
+            0.9715828832571666
+          ],
+          "estimate": 0.922972972972973
+        }
+      },
+      "samples": 1000,
+      "seed": 42
+    },
+    "brier_sum": 0.1742982456140351,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        36,
+        7,
+        0
+      ],
+      [
+        1,
+        70,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.19140350877192977,
+    "failure_rate": 0.0,
+    "input_tokens": 94935,
+    "input_tokens_coverage": 1.0,
+    "input_tokens_known_total": 94935,
+    "latency_p50_s": 0.8299166874494404,
+    "latency_p95_s": 0.9033432353753597,
+    "log_loss": 0.3158369182657295,
+    "macro_f1": 0.922972972972973,
+    "n_classes": 2,
+    "n_failures": 0,
+    "n_probability_rows": 114,
+    "n_test": 114,
+    "output_tokens": 3534,
+    "output_tokens_coverage": 1.0,
+    "output_tokens_known_total": 3534,
+    "per_class": [
+      {
+        "f1": 0.9,
+        "label": 0,
+        "precision": 0.972972972972973,
+        "recall": 0.8372093023255814,
+        "support": 43
+      },
+      {
+        "f1": 0.9459459459459459,
+        "label": 1,
+        "precision": 0.9090909090909091,
+        "recall": 0.9859154929577465,
+        "support": 71
+      }
+    ],
+    "prediction_time_s": 95.57389187172521,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 0,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 5,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 6,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.3333333333333333,
+        "bin": 7,
+        "count": 6,
+        "mean_confidence": 0.5183333333333334
+      },
+      {
+        "accuracy": 0.9166666666666666,
+        "bin": 8,
+        "count": 12,
+        "mean_confidence": 0.5658333333333334
+      },
+      {
+        "accuracy": 0.9411764705882353,
+        "bin": 9,
+        "count": 17,
+        "mean_confidence": 0.6335294117647059
+      },
+      {
+        "accuracy": 0.875,
+        "bin": 10,
+        "count": 16,
+        "mean_confidence": 0.7006249999999999
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 11,
+        "count": 8,
+        "mean_confidence": 0.77
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 12,
+        "count": 22,
+        "mean_confidence": 0.8340909090909091
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 13,
+        "count": 29,
+        "mean_confidence": 0.9041379310344828
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 14,
+        "count": 4,
+        "mean_confidence": 0.9475
+      }
+    ],
+    "roc_auc": 0.9828037995414347,
+    "valid_response_accuracy": 0.9298245614035088,
+    "zero_true_class_probability_rows": 0
+  },
+  "new_proposal_generation": false,
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "proposal": {
+    "hashes": {
+      "predictions.jsonl": "111f04f33a536dfbbe49b71ea3bcc12979ca2231a94ea0970234eea8f772b7ed",
+      "run.json": "9441d6b4366fbb7d10e695d5ce5a7ce065c15d8a208519700897e686dcd4a1ab",
+      "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+    },
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "path": "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+    "provider": "hf"
+  },
+  "run_id": "breast_cancer__qwen_main__k0__jev-review",
+  "seed": 42,
+  "source_manifest_sha256": "ef176498650fce52dab8131420a3bf5afac3191303abb971f8787942460faf7c",
+  "started_at": "2026-09-22T17:36:35.757401+00:00",
+  "status": "complete",
+  "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+  "training_example_ids": []
+}

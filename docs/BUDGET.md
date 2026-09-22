@@ -1,8 +1,55 @@
 # Hosted API budget and resumption
 
-The approved cumulative total is now **US$20**: the original US$10 ceiling plus an additional US$10 authorized for the tabular extension. The completed text study conservatively used **US$5.293007**. Its two ledgers are frozen. The new tabular stage has one shared **US$14.70** ledger, so the prior retained amount plus the entire new allocation is **US$19.993007**. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
+The approved cumulative total is now **US$25**: the original US$10 ceiling, US$10 for the tabular extension, and US$5 for the expanded numerical zero/few-shot review experiment. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
 
-## Current tabular stage
+## Expanded numerical review stage
+
+All four earlier ledgers and their lock files remain frozen. Their cumulative conservative amount is **US$19.325827700**, including the first four numerical review runs. The new `results/numeric_expansion/review-budget.jsonl` has a **US$5 allocation** and a **1,500-call limit**. Each Jev call reserves US$0.002688, so the complete expansion can reserve at most **US$4.032000**, bringing cumulative conservative accounting to at most **US$23.357827700**. Reported API charges are recorded separately; reservations are never released in this stage.
+
+Six source models are compared at zero and four examples per class on Breast Cancer and Wine. Existing source predictions and the four original Qwen3 4B/Astra few-shot reviews are reused. SmolLM2 and Granite inference runs locally or on Colab with public weights. No new paid source-LLM calls are required.
+
+### Current halt and guarded recovery
+
+The audited snapshot is **61/68 conditions complete**: 24 source runs, 17 reviews, four direct Jev references and 16 native references. Seven reviews remain unfinished, and 54/72 comparisons are complete. See [the current status](../results/numeric_expansion/STATUS.md) for the exact remaining conditions. The ledger contains **1,099 new Jev requests**, including seven calls with unknown reported cost. Known reported charges total **US$0.084934668**; these are not the complete expense. Retained reservations total **US$2.954112000** for this stage and **US$22.279939700 of US$25** cumulatively.
+
+The Breast Cancer SmolLM2 four-per-class checkpoint has **85/114 saved rows**, including **six HTTP 402 failures**. The current halt follows three consecutive billing failures. Those failures stay in the evidence and count as incorrect when the full condition completes. Partial predictions are not scored as a completed test. **401 next-unseen rows remain across seven conditions.**
+
+Recovery requires funded provider credits as well as the existing benchmark budget headroom. The ordinary runner alone cannot clear the current billing halt. Do not delete or reset the ledger, lock, failed predictions, source manifests or halted checkpoint, and do not retry already recorded failed rows. Stop any previous worker before recovery; the wrapper also acquires the same execution lock.
+
+The [billing-recovery wrapper](../scripts/recover_expanded_numeric_billing.py) defaults to a read-only audit and does not read credentials in this mode:
+
+```bash
+python scripts/recover_expanded_numeric_billing.py \
+  --dataset breast_cancer --model-key smollm2 --shots 4 --dry-run
+```
+
+After funding is available, the following command checks authenticated available account credit, preserves the halted checkpoint and recovery evidence, and attempts **one next-unseen row** through the frozen inference producer:
+
+```bash
+python scripts/recover_expanded_numeric_billing.py \
+  --dataset breast_cancer --model-key smollm2 --shots 4 \
+  --execute --prompt-api-key --stop-after-new-requests 1
+```
+
+The credit check must be fresh and positive; a key's configured quota is not proof of funded account credit. A positive balance does not guarantee that every remaining request will be funded. The wrapper records an immutable halted-run snapshot, the credit-check receipt and before/after evidence hashes under `results/numeric_expansion/billing_recovery/`. It permits one reservation past the exact acknowledged HTTP-402 tail, for the next unseen row only. Original ledger events and all 85 saved predictions remain unchanged. No failed row is retried. If that first resumed request fails, the producer stops again immediately.
+
+**The dated transport guard still applies.** The frozen route/pricing declaration is verified for **22 September 2026 UTC**, regardless of the local calendar date. After that UTC date, recovery refuses to authenticate or mutate the checkpoint until the route and prices have been explicitly reverified and a compatible recovery path reviewed. Do not merely change the date or edit frozen producers to bypass this check. Funding alone does not clear a stale-date guard.
+
+Only after the guarded next-row request succeeds and its checkpoint/ledger reconcile can the normal runner continue the remaining SmolLM2/Granite conditions, skipping completed arms and saved rows:
+
+```bash
+python scripts/run_expanded_numeric_review.py \
+  --datasets breast_cancer wine --model-keys smollm2 granite --shots 0 4 \
+  --execute --prompt-api-key
+```
+
+The expansion ledger is already initialized; never add `--init-ledger` to recovery or resumption. All 24 source conditions are complete. Source manifests freeze each individual model/dataset/shot artifact, and changing model, prompt, source code or provenance is not a resume. Unknown costs and interrupted calls retain their reservation; no automatic retries occur. Reconcile with `python scripts/audit_expanded_numeric_costs.py` after execution, then regenerate the numerical summary before updating completion claims. The remaining 401 planned calls would retain another US$1.077888, bringing cumulative conservative accounting to US$23.357827700 if all are executed under the unchanged per-request reservation.
+
+## Historical tabular allocation
+
+Before this expansion the approved ceiling was US$20. The completed text study conservatively used **US$5.293007**. Its two ledgers were frozen before the tabular stage received one shared **US$14.70** ledger, making the prior retained amount plus that allocation **US$19.993007**.
+
+## Completed tabular stage
 
 All three hosted providers share `results/tabular/api-budget.jsonl` and its `.lock` file. The driver checks SHA-256 identities of both old ledgers and their lock files before every reservation. Do not resume the old text workers while running this stage: changing an old ledger makes the new driver stop. Do not delete, reset, duplicate or independently replace any budget ledger.
 

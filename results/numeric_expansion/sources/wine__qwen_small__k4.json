@@ -1,0 +1,42 @@
+{
+  "dataset": "wine",
+  "dataset_manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "qwen_small",
+  "schema_version": 1,
+  "shots_per_class": 4,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "59f736d542c53a94980b51ebe93e69bcd3a6680121da366b299cbce3c1a0ae38",
+      "run.json": "12d0532066452c7b2ec41c17acba0cbb3e034d08d043d0f5751e6d8146b35852",
+      "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+    },
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+    "provider": "hf"
+  },
+  "source_config_sha256": "0d7c07c2c75f5f5581312d5491ef2e531cf2da23d672d7cb2ee6d3417be1829c",
+  "source_model_config": {
+    "device": "mps",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "shots_per_class": 4
+  },
+  "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+  "training_example_ids": [
+    "wine:source:00009:b2851af2c23f0284",
+    "wine:source:00013:67316b208ee4739e",
+    "wine:source:00059:438cec4c95bd5d30",
+    "wine:source:00017:747b53537b68cf87",
+    "wine:source:00117:f2833f585f3c0599",
+    "wine:source:00159:7717132974a84a71",
+    "wine:source:00155:ea1d0005bf5963e5",
+    "wine:source:00073:47dbd1b1bab9c6af",
+    "wine:source:00150:e255613d024e8c4d",
+    "wine:source:00092:6aef6a094fe9bec9",
+    "wine:source:00154:939e8819c810c335",
+    "wine:source:00030:00682191078f98d3"
+  ]
+}

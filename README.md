@@ -1,32 +1,35 @@
 # Jev classification benchmark
 
-A reproducible comparison of Jev, open-weight language models, hosted frontier models, LoRA adaptation, and classical machine learning on public **text and numerical/mixed-feature tabular classification** datasets.
+A reproducible study of **numerical tabular classification**: six language models, Jev as a bounded decision reviewer, Jev alone, and native classical machine learning. Earlier text/tabular and LoRA experiments remain archived below.
 
 ## Current question: bounded decisions on numerical data
 
-The focused study asks: **how does Jev perform against XGBoost and LightGBM on numerical tabular classification, and does adding Jev as a reviewer improve an LLM's proposed class?** Start with the [conclusions and figures](results/numeric_decisions/INTERPRETATION.md), [full numeric-only findings](results/numeric_decisions/FINDINGS.md), [corrected experimental protocol](docs/NUMERIC_DECISIONS_PROTOCOL.md), and [machine-readable comparisons](results/numeric_decisions/COMPARISON.json).
+The focused study asks: **how does Jev perform against XGBoost and LightGBM on numerical tabular classification, and does adding Jev as a reviewer improve an LLM's proposed class?** Start with the [conclusions](results/numeric_expansion/INTERPRETATION.md), [LinkedIn draft](results/numeric_expansion/LINKEDIN_DRAFT.md), [expanded numeric-only findings](results/numeric_expansion/FINDINGS.md), [experimental protocol](docs/EXPANDED_NUMERIC_PROTOCOL.md), [machine-readable comparisons](results/numeric_expansion/COMPARISON.json), and [Colab reproduction guide](docs/EXPANDED_NUMERIC_REPRODUCTION.md).
 
-The earlier work below compared separate models across text and tabular tasks. It did **not** measure an LLM → Jev pipeline. The numerical supplement excludes text and Titanic, adds actual XGBoost/LightGBM runs, and evaluates cached Qwen3 4B and GPT-6 Astra class proposals followed by Jev review. Training labels and held-out rows match exactly; full-training ML baselines are reported separately. This is an exploratory two-dataset pilot, not a general claim that bounded answers are correct or that Jev improves every LLM.
+**Current status: 61/68 conditions complete.** Every source-model run is finished (24/24), including the eight new SmolLM2/Granite conditions. Jev review is complete for 17/24 conditions; seven remain unfinished after a provider billing halt. The paused run keeps six HTTP 402 failures and continues with unseen rows only after funding is restored. Pending scores are unavailable. See [execution status](results/numeric_expansion/STATUS.md).
+
+The expanded numerical study covers **Qwen2.5 0.5B, SmolLM2 1.7B, Granite 3.3 2B, Qwen3 4B, GPT-5.6 Luna and GPT-6 Astra**, each at **zero-shot and four examples per class**, alone and followed by Jev review. Jev alone and native XGBoost, LightGBM, logistic regression and random forest provide references. Breast Cancer uses 114 held-out rows and Wine uses 36; few-shot supplies eight and twelve training labels respectively. Both pipeline stages receive the same examples. Full-training ML uses additional labels and is reported separately.
+
+The earlier broad work below compared separate models across text and tabular tasks. The numerical study excludes text and Titanic and tests cached proposed classes followed by Jev review, without generating new rationales. This is an exploratory two-dataset pilot, not a general claim that bounded answers are correct or that Jev improves every LLM. The [first four review runs and their conclusions](results/numeric_decisions/INTERPRETATION.md) remain preserved; their measured predictions are reused in the expansion. No new LoRA training is added by this expansion.
 
 ```bash
-python -m pip install -e '.[dev,numeric]'
+python -m pip install -e '.[dev,numeric,neural]' 'transformers==4.57.6'
 python scripts/tabular_data.py --datasets breast_cancer wine --output data/tabular-full
 python scripts/run_numeric_boosting.py
-python scripts/run_numeric_jev_review.py --dry-run
-python scripts/summarize_numeric_decisions.py
+python scripts/run_expanded_numeric_local.py --device cuda
+python scripts/run_expanded_numeric_review.py
+python scripts/summarize_expanded_numeric.py
 ```
 
-The review runner requires the existing frozen data and source predictions. Actual Jev calls require `--execute`, the existing credential mechanism, and the one cumulative-budget ledger. Never initialize a replacement ledger when resuming.
+The model commands above only plan. For actual public-weight inference, follow the Colab guide; for Jev calls use `--execute` with the existing credential mechanism. The review runner requires frozen data and source predictions, reuses completed conditions, and enforces the expanded **US$25 cumulative ceiling** with one new US$5 ledger anchored to all earlier ledgers. Never initialize a replacement ledger when resuming. See the [budget guide](docs/BUDGET.md).
 
 ## Interactive metrics dashboard
 
-This dashboard is a historical view of the earlier broad study; use the focused report above for the corrected numerical experiment.
+**[Open the numerical dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)** — private to the owning account. Choose the binary or multiclass dataset, zero/few-shot, source LLM, accuracy/macro-F1, and pipeline-versus-source or pipeline-versus-direct-Jev comparison. Classical references have a separate matched/full training selector. Paired intervals, corrected/harmed decisions and total pipeline failures stay visible. Export the selected paired comparison as CSV.
 
-**[Open the private dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)** — sign in with the owning account. Its audience is separate from the private GitHub repository and has not been made public.
+The landing view contains the corrected **68-condition numerical study**, with **61 complete** and unfinished review scores clearly unavailable. The [historical broad study](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/historical.html) retains the earlier text/mixed-tabular filters and LoRA results. Both views read saved aggregate measurements and make no model calls. See [dashboard instructions](dashboard/README.md).
 
-The [dashboard source and instructions](dashboard/README.md) provide an interactive view of all **318 executions / 290 distinct conditions** across eight datasets. Filter text, numeric or mixed tabular data; binary or multiclass tasks; Jev, open LLMs, hosted LLMs or classical models; methods, label budgets and selection seeds. Explore per-dataset metrics with confidence intervals, the Jev zero/few-shot view, individual runs, confusion matrices and cost coverage. Export filtered CSV data or a labeled SVG chart.
-
-Serve locally with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist`, then open `http://127.0.0.1:8766/`. The dashboard uses saved measurements and makes no model API calls. It hides repeated classical executions by default, retains all failures, and marks missing metrics as unavailable. Rebuild its sanitized snapshot with `python scripts/build_dashboard_data.py --output dashboard/dist/data.json`.
+Serve locally with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist`. Rebuild the numerical snapshot with `python scripts/build_expanded_numeric_dashboard.py`; it requires complete evidence and independently reaudits the report. The repository and hosted dashboard remain private.
 
 ## Tabular extension
 

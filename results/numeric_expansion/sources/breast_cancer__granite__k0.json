@@ -1,0 +1,49 @@
+{
+  "dataset": "breast_cancer",
+  "dataset_manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "granite",
+  "schema_version": 1,
+  "shots_per_class": 0,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+      "run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+      "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+    },
+    "model": "ibm-granite/granite-3.3-2b-instruct",
+    "path": "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+    "provider": "hf"
+  },
+  "source_config_sha256": "a01e533ffb7b9699191aaf37b8b4537f3a9885990a83a304082e4521128f4de3",
+  "source_model_config": {
+    "device": "cuda",
+    "dtype": "float16",
+    "max_context_tokens": 8192,
+    "model": "ibm-granite/granite-3.3-2b-instruct",
+    "provider": "hf",
+    "renderer": {
+      "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+      "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+      "model_key": "granite",
+      "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+      "system_message": "You are a helpful assistant.",
+      "thinking": false,
+      "tokenizer_files_sha256": {
+        "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+        "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+        "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+        "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+        "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+        "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+      },
+      "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+      "version": "fixed-system-no-thinking-v1"
+    },
+    "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+    "shots_per_class": 0
+  },
+  "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+  "training_example_ids": []
+}
