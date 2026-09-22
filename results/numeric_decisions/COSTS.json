@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "new_model_requests": 299,
+  "reported_cost_requests": 298,
+  "unknown_cost_requests": 1,
+  "known_reported_api_usd": "0.047467518",
+  "review_conservative_usd": "0.803712000",
+  "prior_conservative_usd": "18.522115700",
+  "cumulative_conservative_usd": "19.325827700",
+  "cumulative_authorized_usd": "20.00",
+  "new_llm_generation_calls": 0,
+  "ledger_sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a",
+  "ledger_lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+  "unique_result_events": 299,
+  "checkpointed_paid_predictions": 299,
+  "reservations_without_result": 0,
+  "results_without_saved_prediction": 0,
+  "source_failure_rows_without_jev_call": 1,
+  "partial_checkpoint_files": 0,
+  "complete_checkpoint_conditions": 4,
+  "complete_summary_conditions": 4,
+  "note": "Review-only incremental expense. Unknown charges include reserved calls without reported cost. Source failures trigger no Jev call. Cached LLM proposal cost remains in the earlier study; local compute cost is unmeasured."
+}

@@ -1,0 +1,383 @@
+{
+  "protocol_sha256": "62b45510b90dd8a2c76e63ff24d212a663f401fa66863535c3e7f6d82fc698bb",
+  "runs": [
+    {
+      "accuracy": 0.8859649122807017,
+      "balanced_accuracy": 0.8580085162135604,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.8245614035087719,
+              0.9385964912280702
+            ],
+            "estimate": 0.8859649122807017
+          },
+          "macro_f1": {
+            "ci95": [
+              0.8006218422075398,
+              0.9337097595334599
+            ],
+            "estimate": 0.8725380579685216
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.20429684787426855,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "breast_cancer",
+      "log_loss": 0.361616957320983,
+      "macro_f1": 0.8725380579685216,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 114,
+      "probability_coverage": 1.0,
+      "run_id": "breast_cancer__xgboost__9c76aff839d2",
+      "run_json_sha256": "1ba1587f735c420ed1a9dc030032d52d774fff2de6dceff45ad7de0bacae1a72",
+      "train_per_class": 4,
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.9210526315789473,
+      "balanced_accuracy": 0.9091057975761545,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.868421052631579,
+              0.9649122807017544
+            ],
+            "estimate": 0.9210526315789473
+          },
+          "macro_f1": {
+            "ci95": [
+              0.857905982905983,
+              0.962667862353827
+            ],
+            "estimate": 0.9147486497714998
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.1454348814533686,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "breast_cancer",
+      "log_loss": 0.2762096562613785,
+      "macro_f1": 0.9147486497714998,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 114,
+      "probability_coverage": 1.0,
+      "run_id": "breast_cancer__lightgbm__faf40cbee821",
+      "run_json_sha256": "88975927f780fc3c0d95ecb2b956de22919c61b42d8e16949af9c5e0b9f00dae",
+      "train_per_class": 4,
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.9736842105263158,
+      "balanced_accuracy": 0.9697019325253848,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.9385964912280702,
+              1.0
+            ],
+            "estimate": 0.9736842105263158
+          },
+          "macro_f1": {
+            "ci95": [
+              0.935978598405619,
+              1.0
+            ],
+            "estimate": 0.9718634306869601
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.02957324112660556,
+      "comparison_track": "full training reference; more labels than Jev few-shot",
+      "dataset": "breast_cancer",
+      "log_loss": 0.05560648423519515,
+      "macro_f1": 0.9718634306869601,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 114,
+      "probability_coverage": 1.0,
+      "run_id": "breast_cancer__xgboost__1dd185c019f9",
+      "run_json_sha256": "6f380a06024b761d19fc8c9410872a23c0554371a608b70dee4dbea5734b6580",
+      "train_per_class": null,
+      "training_rows": 341
+    },
+    {
+      "accuracy": 0.9649122807017544,
+      "balanced_accuracy": 0.9534883720930232,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.9298245614035088,
+              0.9912280701754386
+            ],
+            "estimate": 0.9649122807017544
+          },
+          "macro_f1": {
+            "ci95": [
+              0.921045161854199,
+              0.9908558594689982
+            ],
+            "estimate": 0.9619111259605746
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.03446657026667489,
+      "comparison_track": "full training reference; more labels than Jev few-shot",
+      "dataset": "breast_cancer",
+      "log_loss": 0.061917386556463706,
+      "macro_f1": 0.9619111259605746,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 114,
+      "probability_coverage": 1.0,
+      "run_id": "breast_cancer__lightgbm__36bc7b3a8924",
+      "run_json_sha256": "4cf74e0ee626cf4cf33c72a4e0b092da9dc13b31bc10373eac61b829e5ddd7ad",
+      "train_per_class": null,
+      "training_rows": 341
+    },
+    {
+      "accuracy": 0.7222222222222222,
+      "balanced_accuracy": 0.692857142857143,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.5833333333333334,
+              0.8611111111111112
+            ],
+            "estimate": 0.7222222222222222
+          },
+          "macro_f1": {
+            "ci95": [
+              0.5084941208217071,
+              0.8384358331726751
+            ],
+            "estimate": 0.692268305171531
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.3638727230641237,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "wine",
+      "log_loss": 0.6692962661529336,
+      "macro_f1": 0.692268305171531,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 36,
+      "probability_coverage": 1.0,
+      "run_id": "wine__xgboost__381b6c451e40",
+      "run_json_sha256": "1fe2ad33939a075e3624d56a09a2bf7bcc00228100b0796ffa35e01ff192f11f",
+      "train_per_class": 4,
+      "training_rows": 12
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8150793650793652,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.6944444444444444,
+              0.9444444444444444
+            ],
+            "estimate": 0.8333333333333334
+          },
+          "macro_f1": {
+            "ci95": [
+              0.6632431305023796,
+              0.9377181693272226
+            ],
+            "estimate": 0.8204555129842487
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.27820445925407333,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "wine",
+      "log_loss": 0.5035406328802121,
+      "macro_f1": 0.8204555129842487,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 36,
+      "probability_coverage": 1.0,
+      "run_id": "wine__lightgbm__209e83797064",
+      "run_json_sha256": "cc42f44467c316ab6ece1254fae0061081518b9daaafb24d0c30317297e41c34",
+      "train_per_class": 4,
+      "training_rows": 12
+    },
+    {
+      "accuracy": 0.9444444444444444,
+      "balanced_accuracy": 0.942857142857143,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.8611111111111112,
+              1.0
+            ],
+            "estimate": 0.9444444444444444
+          },
+          "macro_f1": {
+            "ci95": [
+              0.8471625601995184,
+              1.0
+            ],
+            "estimate": 0.9409876543209875
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.11083095176824934,
+      "comparison_track": "full training reference; more labels than Jev few-shot",
+      "dataset": "wine",
+      "log_loss": 0.19155030146768504,
+      "macro_f1": 0.9409876543209875,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 36,
+      "probability_coverage": 1.0,
+      "run_id": "wine__xgboost__7a9a66463dea",
+      "run_json_sha256": "c478b52f72c485731f725b9aa7a1725991c6875fd577dd3b6de65f1ff6d38c29",
+      "train_per_class": null,
+      "training_rows": 106
+    },
+    {
+      "accuracy": 0.9444444444444444,
+      "balanced_accuracy": 0.9333333333333332,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.8611111111111112,
+              1.0
+            ],
+            "estimate": 0.9444444444444444
+          },
+          "macro_f1": {
+            "ci95": [
+              0.8413487112016523,
+              1.0
+            ],
+            "estimate": 0.9381353767560664
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.09272787083359829,
+      "comparison_track": "full training reference; more labels than Jev few-shot",
+      "dataset": "wine",
+      "log_loss": 0.16979218492697495,
+      "macro_f1": 0.9381353767560664,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 36,
+      "probability_coverage": 1.0,
+      "run_id": "wine__lightgbm__af442a516629",
+      "run_json_sha256": "d1cce7aaccadea38183905a79ca6f9f5355c822eb8751c45ff25cf9f01505503",
+      "train_per_class": null,
+      "training_rows": 106
+    }
+  ],
+  "status": "complete",
+  "study_status": "exploratory_supplement_after_prior_test_results_were_viewed"
+}

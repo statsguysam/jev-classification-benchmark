@@ -1,0 +1,79 @@
+{
+  "config": {
+    "bootstrap_samples": 2000,
+    "comparison": "4/class matches the existing Jev demonstration IDs; full training is a separately labeled unequal-data reference. Neither track isolates an LLM+Jev composition effect.",
+    "datasets": [
+      "breast_cancer",
+      "wine"
+    ],
+    "documentation": {
+      "lightgbm": "https://lightgbm.readthedocs.io/en/v4.6.0/pythonapi/lightgbm.LGBMClassifier.html",
+      "verified_on": "2026-09-22",
+      "xgboost": "https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBClassifier",
+      "xgboost_parameters": "https://xgboost.readthedocs.io/en/stable/parameter.html"
+    },
+    "models": {
+      "lightgbm": {
+        "colsample_bytree": 1.0,
+        "deterministic": true,
+        "force_col_wise": true,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_samples": 2,
+        "min_child_weight": 0.001,
+        "min_data_in_bin": 1,
+        "n_estimators": 100,
+        "n_jobs": 1,
+        "num_leaves": 8,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0,
+        "verbosity": -1
+      },
+      "xgboost": {
+        "colsample_bytree": 1.0,
+        "device": "cpu",
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 0.1,
+        "n_estimators": 100,
+        "n_jobs": 1,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0,
+        "tree_method": "hist",
+        "verbosity": 0
+      }
+    },
+    "parameter_rationale": "100 trees, learning rate 0.05, depth 3 and L2 regularization 1 are modest fixed choices. Small leaf constraints permit learning with only 8 or 12 labels. The same configuration is used in both training-budget tracks and both datasets.",
+    "preprocessing": "Native numerical columns in frozen schema order; training-only median imputation; all-missing training columns become zero; no scaling.",
+    "schema_version": 1,
+    "seed": 42,
+    "selection": "One fixed configuration per algorithm, saved before supplementary execution; no tuning or early stopping; validation labels excluded.",
+    "study_status": "exploratory_supplement_after_prior_test_results_were_viewed",
+    "train_per_class": [
+      4,
+      null
+    ],
+    "versions": {
+      "lightgbm": "4.6.0",
+      "xgboost": "3.4.1"
+    }
+  },
+  "config_file_sha256": "5d39e3b2a1f440c6b358c89ad2a15e5a37a484251e772dffeca3aeaa014f8997",
+  "hosted_model_calls": 0,
+  "prepared_manifest_sha256": {
+    "breast_cancer": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+    "wine": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2"
+  },
+  "prior_results_already_viewed": true,
+  "saved_before_first_fit_at": "2026-09-22T16:53:15.022925+00:00",
+  "source_sha256": {
+    "scripts/run_numeric_boosting.py": "730ed6c939b77f55285df6a06e23a0ddc5f124c0f9b4256d2fbfc23255537db4",
+    "scripts/run_tabular_classical.py": "9f929c3695888a11d7bb2a5ebdf383f9de03920d2dfdade4c2ae504d5e9ff214",
+    "scripts/summarize_tabular.py": "422e973822e97e928e2128f604dabe84fa3675e57fdcb86305a75473c55b7157",
+    "scripts/tabular_data.py": "339ead1c818e05868d889a8d397a4eac522a3d949a6ea31a08f8b455f45b87a6"
+  },
+  "study_status": "exploratory_supplement_after_prior_test_results_were_viewed",
+  "validation_labels_used_for_fitting_or_selection": 0
+}

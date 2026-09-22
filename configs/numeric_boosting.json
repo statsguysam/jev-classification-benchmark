@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "study_status": "exploratory_supplement_after_prior_test_results_were_viewed",
+  "datasets": ["breast_cancer", "wine"],
+  "seed": 42,
+  "train_per_class": [4, null],
+  "bootstrap_samples": 2000,
+  "selection": "One fixed configuration per algorithm, saved before supplementary execution; no tuning or early stopping; validation labels excluded.",
+  "preprocessing": "Native numerical columns in frozen schema order; training-only median imputation; all-missing training columns become zero; no scaling.",
+  "comparison": "4/class matches the existing Jev demonstration IDs; full training is a separately labeled unequal-data reference. Neither track isolates an LLM+Jev composition effect.",
+  "parameter_rationale": "100 trees, learning rate 0.05, depth 3 and L2 regularization 1 are modest fixed choices. Small leaf constraints permit learning with only 8 or 12 labels. The same configuration is used in both training-budget tracks and both datasets.",
+  "versions": {"xgboost": "3.4.1", "lightgbm": "4.6.0"},
+  "documentation": {
+    "xgboost": "https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBClassifier",
+    "xgboost_parameters": "https://xgboost.readthedocs.io/en/stable/parameter.html",
+    "lightgbm": "https://lightgbm.readthedocs.io/en/v4.6.0/pythonapi/lightgbm.LGBMClassifier.html",
+    "verified_on": "2026-09-22"
+  },
+  "models": {
+    "xgboost": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "min_child_weight": 0.1,
+      "reg_lambda": 1.0,
+      "reg_alpha": 0.0,
+      "subsample": 1.0,
+      "colsample_bytree": 1.0,
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_jobs": 1,
+      "verbosity": 0
+    },
+    "lightgbm": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "num_leaves": 8,
+      "learning_rate": 0.05,
+      "min_child_samples": 2,
+      "min_child_weight": 0.001,
+      "min_data_in_bin": 1,
+      "reg_lambda": 1.0,
+      "reg_alpha": 0.0,
+      "subsample": 1.0,
+      "colsample_bytree": 1.0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "n_jobs": 1,
+      "verbosity": -1
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 A static metrics dashboard for the measured Jev classification study. It reads the sanitized `dist/data.json` snapshot and makes no model API calls.
 
-**[Open the hosted dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)**. The site is private to the owning account. Deployment provenance is recorded in [DEPLOYMENT.json](DEPLOYMENT.json); its four deployed static files are identical to this directory's `dist` files.
+**[Open the hosted dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)**. The site is private to the owning account. Deployment provenance and the exact hosted data hash are recorded in [DEPLOYMENT.json](DEPLOYMENT.json). This is the historical broad-study dashboard. The later [numerical-only decision experiment](../results/numeric_decisions/FINDINGS.md) is reported separately; rebuilding this historical snapshot preserves its measurements but records the current builder hash.
 
 The dashboard includes data type, task, dataset, family, model, method, label-budget, seed, probability-coverage and replication filters; per-dataset charts; a Jev-focused view; run search; confidence intervals; per-class metrics and confusion matrices; probability quality and execution context; whole-study cost accounting; filtered CSV and SVG exports. Filters are preserved in the page URL.
 

@@ -1,0 +1,10 @@
+{
+  "summary_sha256": "881dfb668ea8fca161de42fcba8ca8f0635a0d314507afc542567be11c471e76",
+  "plot_script_sha256": "d5059bf01183b7cfa6b0073f68512c815d9f1be6b1fb913eb9454ce218883a72",
+  "figures": [
+    "numeric-comparison.png",
+    "numeric-comparison.svg",
+    "review-corrections.png",
+    "review-corrections.svg"
+  ]
+}

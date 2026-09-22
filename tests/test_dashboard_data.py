@@ -19,7 +19,7 @@ def asset():
 
 
 def sample_raw(dataset="sst2", model="logistic_regression", method="classical"):
-    for p in sorted((ROOT / "results").rglob("run.json")):
+    for p in dashboard.study_run_paths(ROOT):
         record = json.loads(p.read_text())
         if (record["dataset"], record["config"]["model"], record["method"]) == (dataset, model, method):
             return p, record
@@ -27,7 +27,7 @@ def sample_raw(dataset="sst2", model="logistic_regression", method="classical"):
 
 
 def test_every_measured_execution_retained_and_totals(asset):
-    paths = {p.relative_to(ROOT).as_posix() for p in (ROOT / "results").rglob("run.json")}
+    paths = {p.relative_to(ROOT).as_posix() for p in dashboard.study_run_paths(ROOT)}
     assert {r["id"] for r in asset["runs"]} == paths
     assert len(asset["runs"]) == len(paths) == 318
     assert asset["summary"]["prediction_records"] == 59464
@@ -35,6 +35,16 @@ def test_every_measured_execution_retained_and_totals(asset):
     assert asset["summary"]["by_study"] == {"tabular": 66, "text": 252}
     assert asset["summary"]["canonical_configurations"] == 290
     assert len({r["run_id"] for r in asset["runs"]}) < len(paths)  # run_id is not a UI key
+
+
+def test_corrected_numeric_study_is_not_silently_added_to_historical_dashboard(tmp_path):
+    historical = tmp_path / "results/tabular/condition/run.json"
+    historical.parent.mkdir(parents=True)
+    historical.write_text("{}")
+    corrected = tmp_path / "results/numeric_decisions/review/condition/run.json"
+    corrected.parent.mkdir(parents=True)
+    corrected.write_text("{}")
+    assert dashboard.study_run_paths(tmp_path) == [historical]
 
 
 def test_repetitions_preserve_evidence_and_have_one_score_independent_canonical(asset):

@@ -2,7 +2,25 @@
 
 A reproducible comparison of Jev, open-weight language models, hosted frontier models, LoRA adaptation, and classical machine learning on public **text and numerical/mixed-feature tabular classification** datasets.
 
+## Current question: bounded decisions on numerical data
+
+The focused study asks: **how does Jev perform against XGBoost and LightGBM on numerical tabular classification, and does adding Jev as a reviewer improve an LLM's proposed class?** Start with the [conclusions and figures](results/numeric_decisions/INTERPRETATION.md), [full numeric-only findings](results/numeric_decisions/FINDINGS.md), [corrected experimental protocol](docs/NUMERIC_DECISIONS_PROTOCOL.md), and [machine-readable comparisons](results/numeric_decisions/COMPARISON.json).
+
+The earlier work below compared separate models across text and tabular tasks. It did **not** measure an LLM → Jev pipeline. The numerical supplement excludes text and Titanic, adds actual XGBoost/LightGBM runs, and evaluates cached Qwen3 4B and GPT-6 Astra class proposals followed by Jev review. Training labels and held-out rows match exactly; full-training ML baselines are reported separately. This is an exploratory two-dataset pilot, not a general claim that bounded answers are correct or that Jev improves every LLM.
+
+```bash
+python -m pip install -e '.[dev,numeric]'
+python scripts/tabular_data.py --datasets breast_cancer wine --output data/tabular-full
+python scripts/run_numeric_boosting.py
+python scripts/run_numeric_jev_review.py --dry-run
+python scripts/summarize_numeric_decisions.py
+```
+
+The review runner requires the existing frozen data and source predictions. Actual Jev calls require `--execute`, the existing credential mechanism, and the one cumulative-budget ledger. Never initialize a replacement ledger when resuming.
+
 ## Interactive metrics dashboard
+
+This dashboard is a historical view of the earlier broad study; use the focused report above for the corrected numerical experiment.
 
 **[Open the private dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)** — sign in with the owning account. Its audience is separate from the private GitHub repository and has not been made public.
 

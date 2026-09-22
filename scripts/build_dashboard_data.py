@@ -48,6 +48,14 @@ PROBABILITY_METRICS = (
 )
 METADATA_KEYS = ("probability_kind", "resolved_model", "resolved_revision", "device", "dtype", "scoring")
 SOURCE_PRIORITY = {"pilot": 0, "matched": 1, "colab": 2}
+# This dashboard is the historical broad-study snapshot. The corrected numerical
+# experiment has a separate protocol/report and must not silently enter its
+# fixed 318-execution inventory or its earlier cost accounting.
+STUDY_DIRECTORIES = ("pilot", "matched", "colab", "hosted", "jev", "tabular")
+
+
+def study_run_paths(root: Path):
+    return sorted(path for name in STUDY_DIRECTORIES for path in (root / "results" / name).rglob("run.json"))
 
 
 def read_json(path: Path):
@@ -352,7 +360,7 @@ def build(root: Path) -> dict:
     audited = read_json(audit_path)
     audit_by_path = {row["source_path"]: row for row in audited["runs"] if row["status"] == "complete"}
     rows, datasets = [], {}
-    for path in sorted((root / "results").rglob("run.json")):
+    for path in study_run_paths(root):
         record = read_json(path)
         if record.get("status") != "complete":
             raise ValueError("Unmeasured execution encountered; do not present as a measured result")

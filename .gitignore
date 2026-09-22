@@ -16,3 +16,4 @@ artifacts/
 *.pt
 *.pth
 *.log
+results/numeric_decisions/review-execution.lock
