@@ -19,6 +19,12 @@ jobs:
           HF_HUB_OFFLINE: '1'
           TRANSFORMERS_OFFLINE: '1'
         run: python -m pytest -q -rs
+      - name: Validate dashboard source and measured data snapshot
+        run: |
+          node --check dashboard/dist/app.js
+          node dashboard/tests/dashboard.smoke.cjs
+          python scripts/build_dashboard_data.py --output /tmp/jev-dashboard-data.json
+          cmp /tmp/jev-dashboard-data.json dashboard/dist/data.json
       - name: Validate unexecuted notebook and source bundle
         run: |
           python - <<'PY'

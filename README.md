@@ -2,6 +2,12 @@
 
 A reproducible comparison of Jev, open-weight language models, hosted frontier models, LoRA adaptation, and classical machine learning on public **text and numerical/mixed-feature tabular classification** datasets.
 
+## Interactive metrics dashboard
+
+The [dashboard source and instructions](dashboard/README.md) provide an interactive view of all **318 executions / 290 distinct conditions** across eight datasets. Filter text, numeric or mixed tabular data; binary or multiclass tasks; Jev, open LLMs, hosted LLMs or classical models; methods, label budgets and selection seeds. Explore per-dataset metrics with confidence intervals, the Jev zero/few-shot view, individual runs, confusion matrices and cost coverage. Export filtered CSV data or a labeled SVG chart.
+
+Serve locally with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist`, then open `http://127.0.0.1:8766/`. The dashboard uses saved measurements and makes no model API calls. It hides repeated classical executions by default, retains all failures, and marks missing metrics as unavailable. Rebuild its sanitized snapshot with `python scripts/build_dashboard_data.py --output dashboard/dist/data.json`.
+
 ## Tabular extension
 
 **Completed:** all 66 conditions, 9,064 recorded predictions and 48 paired contrasts are audited. Start with the [tabular findings](results/TABULAR_FINDINGS.md), [full metrics and confidence intervals](results/TABULAR_COMPARISON.md), [machine-readable results](results/TABULAR_COMPARISON.json), and [cost reconciliation](results/TABULAR_API_COST_SUMMARY.md). The [tabular release](https://github.com/statsguysam/jev-classification-benchmark/releases/tag/v0.3.0-tabular) includes all six trained adapters, the prepared source/data bundle, measured results, notebook and transfer helper.
