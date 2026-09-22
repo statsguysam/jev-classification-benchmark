@@ -4,6 +4,8 @@ A reproducible comparison of Jev, open-weight language models, hosted frontier m
 
 ## Interactive metrics dashboard
 
+**[Open the private dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)** — sign in with the owning account. Its audience is separate from the private GitHub repository and has not been made public.
+
 The [dashboard source and instructions](dashboard/README.md) provide an interactive view of all **318 executions / 290 distinct conditions** across eight datasets. Filter text, numeric or mixed tabular data; binary or multiclass tasks; Jev, open LLMs, hosted LLMs or classical models; methods, label budgets and selection seeds. Explore per-dataset metrics with confidence intervals, the Jev zero/few-shot view, individual runs, confusion matrices and cost coverage. Export filtered CSV data or a labeled SVG chart.
 
 Serve locally with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist`, then open `http://127.0.0.1:8766/`. The dashboard uses saved measurements and makes no model API calls. It hides repeated classical executions by default, retains all failures, and marks missing metrics as unavailable. Rebuild its sanitized snapshot with `python scripts/build_dashboard_data.py --output dashboard/dist/data.json`.
