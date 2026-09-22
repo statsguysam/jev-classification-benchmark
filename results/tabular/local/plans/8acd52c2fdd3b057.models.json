@@ -1,0 +1,33 @@
+{
+  "adapter_breast_cancer": {
+    "adapter_path": "/Users/salimshaikh/Documents/ChatGPT/Applications/jev-classification-benchmark/models/tabular/Qwen2.5-0.5B-Instruct/breast_cancer-k4-s42-lora",
+    "device": "mps",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "adapter_titanic": {
+    "adapter_path": "/Users/salimshaikh/Documents/ChatGPT/Applications/jev-classification-benchmark/models/tabular/Qwen2.5-0.5B-Instruct/titanic-k4-s42-lora",
+    "device": "mps",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "adapter_wine": {
+    "adapter_path": "/Users/salimshaikh/Documents/ChatGPT/Applications/jev-classification-benchmark/models/tabular/Qwen2.5-0.5B-Instruct/wine-k4-s42-lora",
+    "device": "mps",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "base": {
+    "device": "mps",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  }
+}

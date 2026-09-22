@@ -1,0 +1,33 @@
+{
+  "adapter_breast_cancer": {
+    "adapter_path": "/content/jev-tabular-80pywlw7/jev-tabular-benchmark/models/tabular/Qwen3-4B-Instruct-2507/breast_cancer-k4-s42-qlora",
+    "device": "cuda",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "provider": "hf",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "adapter_titanic": {
+    "adapter_path": "/content/jev-tabular-80pywlw7/jev-tabular-benchmark/models/tabular/Qwen3-4B-Instruct-2507/titanic-k4-s42-qlora",
+    "device": "cuda",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "provider": "hf",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "adapter_wine": {
+    "adapter_path": "/content/jev-tabular-80pywlw7/jev-tabular-benchmark/models/tabular/Qwen3-4B-Instruct-2507/wine-k4-s42-qlora",
+    "device": "cuda",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "provider": "hf",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "base": {
+    "device": "cuda",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "provider": "hf",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  }
+}

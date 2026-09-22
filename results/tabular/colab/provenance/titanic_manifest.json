@@ -1,0 +1,284 @@
+{
+  "files_sha256": {
+    "test.jsonl": "0f6fc02fae4ec071f8aab96468fddbb6b6633bd01f74a9705f9437ab33e5b0c7",
+    "train.jsonl": "7cb55b1e1035dfb9a57d546472e49a85a41e01bf79f5be99e37c3faec71eb36e",
+    "validation.jsonl": "c7db9822de88c1a576ce33984d5845c141cb605410a0a7e4e4854a56691ee91f"
+  },
+  "labels": [
+    "did not survive",
+    "survived"
+  ],
+  "limits": {
+    "test": null,
+    "train": null,
+    "validation": null
+  },
+  "name": "titanic",
+  "prepared_content_sha256": "9e3635e3618381de1f2a656d81fdef95aa68827aa753b5801f48d5421a9c7adf",
+  "schema_version": 1,
+  "seed": 42,
+  "source": {
+    "attribution": "Data obtained from https://hbiostat.org/data courtesy of the Vanderbilt University Department of Biostatistics.",
+    "dictionary": "https://hbiostat.org/data/repo/ctitanic3",
+    "excluded_columns": [
+      "survived",
+      "name",
+      "ticket",
+      "cabin",
+      "boat",
+      "body",
+      "home.dest"
+    ],
+    "features": [
+      {
+        "description": "Passenger ticket class",
+        "kind": "categorical",
+        "name": "pclass",
+        "source_name": "pclass",
+        "values": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "description": "Sex as recorded in source",
+        "kind": "categorical",
+        "name": "sex",
+        "source_name": "sex",
+        "values": [
+          "female",
+          "male"
+        ]
+      },
+      {
+        "description": "Passenger age",
+        "kind": "numeric",
+        "name": "age_years",
+        "source_name": "age",
+        "unit": "years"
+      },
+      {
+        "description": "Siblings and spouses aboard",
+        "kind": "numeric",
+        "name": "sibsp",
+        "source_name": "sibsp",
+        "unit": "count"
+      },
+      {
+        "description": "Parents and children aboard",
+        "kind": "numeric",
+        "name": "parch",
+        "source_name": "parch",
+        "unit": "count"
+      },
+      {
+        "description": "Passenger fare",
+        "kind": "numeric",
+        "name": "fare_gbp",
+        "source_name": "fare",
+        "unit": "British pounds"
+      },
+      {
+        "description": "Embarkation port",
+        "kind": "categorical",
+        "name": "embarked",
+        "source_name": "embarked",
+        "values": [
+          "Cherbourg",
+          "Queenstown",
+          "Southampton"
+        ]
+      }
+    ],
+    "filename": "titanic3.csv",
+    "homepage": "https://hbiostat.org/data/",
+    "labels": [
+      "did not survive",
+      "survived"
+    ],
+    "license": "Vanderbilt grants permission to use with source attribution; see homepage.",
+    "observed_sha256": "db6df9666818c69a753cd85d743e01502c8518b00579b6aada0d4fc5a66ccb9d",
+    "rows": 1309,
+    "selected_records_sha256": "fb08ce466b8bf1608c6f8e3b6d613bd919ff98420806a41450b4955ce1cfe705",
+    "sha256": "db6df9666818c69a753cd85d743e01502c8518b00579b6aada0d4fc5a66ccb9d",
+    "sklearn_version": "1.9.1",
+    "source": "vanderbilt_csv",
+    "target_column": "survived",
+    "task_description": "Titanic passenger survival. pclass: 1=first, 2=second, 3=third class. age_years is age; fare_gbp is fare in British pounds; sibsp counts siblings/spouses and parch counts parents/children aboard. Missing=NA.",
+    "url": "https://hbiostat.org/data/repo/titanic3.csv"
+  },
+  "splits": {
+    "test": {
+      "class_counts": {
+        "0": 162,
+        "1": 100
+      },
+      "conflicting_label_text_groups": 6,
+      "duplicate_text_rows": 44,
+      "row_ids_sha256": "6ebe309254ae3213572f0edf6bb254930031ab94173e861680b7290b3713bc5f",
+      "rows": 262
+    },
+    "train": {
+      "class_counts": {
+        "0": 485,
+        "1": 300
+      },
+      "conflicting_label_text_groups": 22,
+      "duplicate_text_rows": 141,
+      "row_ids_sha256": "3241389afee2f71ce829bb18f069892c870abfe6fd08358617fad602d74e540b",
+      "rows": 785
+    },
+    "validation": {
+      "class_counts": {
+        "0": 162,
+        "1": 100
+      },
+      "conflicting_label_text_groups": 6,
+      "duplicate_text_rows": 44,
+      "row_ids_sha256": "7eff954d5b3e4590683bdc25dfd7e7516f0e2f5964deca44f90c5daf685ab949",
+      "rows": 262
+    }
+  },
+  "tabular": {
+    "config_sha256": "b498e446964b0a4d7306f03187f77e560b772fbb8e20c906f5d3c56d9b9a73af",
+    "duplicate_policy": "Retain all natural duplicates and conflicting-label groups in one split; no exact-feature overlap across splits",
+    "excluded_test_row_ids": [],
+    "features": [
+      {
+        "description": "Passenger ticket class",
+        "kind": "categorical",
+        "name": "pclass",
+        "source_name": "pclass",
+        "values": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "description": "Sex as recorded in source",
+        "kind": "categorical",
+        "name": "sex",
+        "source_name": "sex",
+        "values": [
+          "female",
+          "male"
+        ]
+      },
+      {
+        "description": "Passenger age",
+        "kind": "numeric",
+        "name": "age_years",
+        "source_name": "age",
+        "unit": "years"
+      },
+      {
+        "description": "Siblings and spouses aboard",
+        "kind": "numeric",
+        "name": "sibsp",
+        "source_name": "sibsp",
+        "unit": "count"
+      },
+      {
+        "description": "Parents and children aboard",
+        "kind": "numeric",
+        "name": "parch",
+        "source_name": "parch",
+        "unit": "count"
+      },
+      {
+        "description": "Passenger fare",
+        "kind": "numeric",
+        "name": "fare_gbp",
+        "source_name": "fare",
+        "unit": "British pounds"
+      },
+      {
+        "description": "Embarkation port",
+        "kind": "categorical",
+        "name": "embarked",
+        "source_name": "embarked",
+        "values": [
+          "Cherbourg",
+          "Queenstown",
+          "Southampton"
+        ]
+      }
+    ],
+    "full_splits_before_test_subset": {
+      "test": {
+        "class_counts": {
+          "0": 162,
+          "1": 100
+        },
+        "conflicting_label_text_groups": 6,
+        "duplicate_text_rows": 44,
+        "row_ids_sha256": "6ebe309254ae3213572f0edf6bb254930031ab94173e861680b7290b3713bc5f",
+        "rows": 262
+      },
+      "train": {
+        "class_counts": {
+          "0": 485,
+          "1": 300
+        },
+        "conflicting_label_text_groups": 22,
+        "duplicate_text_rows": 141,
+        "row_ids_sha256": "3241389afee2f71ce829bb18f069892c870abfe6fd08358617fad602d74e540b",
+        "rows": 785
+      },
+      "validation": {
+        "class_counts": {
+          "0": 162,
+          "1": 100
+        },
+        "conflicting_label_text_groups": 6,
+        "duplicate_text_rows": 44,
+        "row_ids_sha256": "7eff954d5b3e4590683bdc25dfd7e7516f0e2f5964deca44f90c5daf685ab949",
+        "rows": 262
+      }
+    },
+    "group_definition": "SHA256 of normalized serialized features, excluding target and row ID",
+    "leakage_limitations": "Exact feature grouping does not prevent related-family similarity or pretraining memorization of these public datasets. Wine cultivar IDs are arbitrary; zero-shot interpretation is limited.",
+    "max_serialized_characters": 307,
+    "native_files_sha256": {
+      "native/test.jsonl": "db1878f83741ce8675148fdcd50f89e964ed0f711fd92470aff495d488baeb7e",
+      "native/train.jsonl": "843b94e5eb4c0643783f010d715df0feab011f84ad717e33e56f220100e5b996",
+      "native/validation.jsonl": "0b7fabe4f8e78e6756e1905174f54d77e1a7370cf6625e1ff6234c01ab64b2c4"
+    },
+    "native_records_sha256": {
+      "test": "48c04f78a90c530602807105a00dcbd8624fd1356a086f465b814b7e172e8403",
+      "train": "6e0ca9b70bc9f5af25ef156fca7a70ef5878945154e81a7168f786c0dc05ace3",
+      "validation": "427dec093b6abf15275a8875ae4e4a1f5d2955378e519fce9d404982317dac1d"
+    },
+    "nominal_split_fractions": {
+      "test": 0.2,
+      "train": 0.6,
+      "validation": 0.2
+    },
+    "numeric_roundtrip_exact": true,
+    "preparation_implementation_sha256": "339ead1c818e05868d889a8d397a4eac522a3d949a6ea31a08f8b455f45b87a6",
+    "schema_version": 1,
+    "serialization": {
+      "categorical_format": "JSON-quoted UTF-8 strings",
+      "feature_order": "declared features list",
+      "fitted_preprocessing": "none",
+      "missing_value": "NA",
+      "number_format": ".12g (12 significant decimal digits; no data-dependent rounding)",
+      "prefix": "fixed task description followed by newline",
+      "separator": "; ",
+      "target_or_row_id_in_features": false,
+      "text_truncation": "none",
+      "version": "name-value-v1"
+    },
+    "source_rows": 1309,
+    "split_method": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed): fold0=test; fold1=validation; remaining folds=train",
+    "task_description": "Titanic passenger survival. pclass: 1=first, 2=second, 3=third class. age_years is age; fare_gbp is fare in British pounds; sibsp counts siblings/spouses and parch counts parents/children aboard. Missing=NA.",
+    "test_subset_policy": "Frozen core deterministic proportional stratified subset; excluded rows remain held out and are never reassigned"
+  },
+  "text_policy": {
+    "applies_to": "all serialized model arms",
+    "kind": "none",
+    "max_chars": null
+  }
+}

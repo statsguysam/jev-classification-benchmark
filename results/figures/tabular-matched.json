@@ -1,0 +1,1633 @@
+{
+  "analysis_sha256": "422e973822e97e928e2128f604dabe84fa3675e57fdcb86305a75473c55b7157",
+  "bootstrap_samples": 2000,
+  "chart": "tabular-matched",
+  "ci_interpretation": "95% unstratified group percentile bootstrap; fixed split, prompt, training selection and fitted model",
+  "complete_conditions": 51,
+  "datasets": {
+    "breast_cancer": {
+      "labels": [
+        "malignant",
+        "benign"
+      ],
+      "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+      "max_serialized_characters": 929,
+      "native_files_sha256": {
+        "native/test.jsonl": "5f6204a3870284b15e8150c183f515b3951fa1d7bcbfdf3122633838c865eca4",
+        "native/train.jsonl": "115933257762ef76c895341976ad1b05aba7db1cffeb91074bb2d3951d824bab",
+        "native/validation.jsonl": "5b7a0fccda2fc49036cecdda138ba89bbb321e38f38ddea837494d213974ef81"
+      },
+      "prepared_content_sha256": "4cdf9773cfbddaddafcb04bb99c691b93f0494aeb44d728076bcfebac34b8f27",
+      "source_sha256": "fed3eb72d0575ef6192293f5093c6e801b1476b577d0386bf4455504522172ed",
+      "split_files_sha256": {
+        "test.jsonl": "beff2bc4df24f3ae504b9cb2a1b52ed09e508c0ea44a839089a4600dc3efd24a",
+        "train.jsonl": "814439c8823cf01e5e09411582698f065df9a7c68c9f2ac894167751b83923e0",
+        "validation.jsonl": "b9d66260490d7c26f50af14f429e4131f0c572d7967e4e8609e283fa1a887e37"
+      },
+      "splits": {
+        "test": {
+          "class_counts": {
+            "0": 43,
+            "1": 71
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "1e3e49c64c0f3fd516ff557246f31770eccb50bcfdfdbe9449f76af174407ddf",
+          "rows": 114
+        },
+        "train": {
+          "class_counts": {
+            "0": 127,
+            "1": 214
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "9a65761e05db15fe041e1383f9c0aa41e9aa8be668230d4d5fb2d5e887f39cf3",
+          "rows": 341
+        },
+        "validation": {
+          "class_counts": {
+            "0": 42,
+            "1": 72
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "361c5a3b05c54dc533f7557b7ca2373550d6ef47abfaa99356881df0a2324b95",
+          "rows": 114
+        }
+      },
+      "test_text_clusters": 114
+    },
+    "titanic": {
+      "labels": [
+        "did not survive",
+        "survived"
+      ],
+      "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+      "max_serialized_characters": 307,
+      "native_files_sha256": {
+        "native/test.jsonl": "db1878f83741ce8675148fdcd50f89e964ed0f711fd92470aff495d488baeb7e",
+        "native/train.jsonl": "843b94e5eb4c0643783f010d715df0feab011f84ad717e33e56f220100e5b996",
+        "native/validation.jsonl": "0b7fabe4f8e78e6756e1905174f54d77e1a7370cf6625e1ff6234c01ab64b2c4"
+      },
+      "prepared_content_sha256": "9e3635e3618381de1f2a656d81fdef95aa68827aa753b5801f48d5421a9c7adf",
+      "source_sha256": "db6df9666818c69a753cd85d743e01502c8518b00579b6aada0d4fc5a66ccb9d",
+      "split_files_sha256": {
+        "test.jsonl": "0f6fc02fae4ec071f8aab96468fddbb6b6633bd01f74a9705f9437ab33e5b0c7",
+        "train.jsonl": "7cb55b1e1035dfb9a57d546472e49a85a41e01bf79f5be99e37c3faec71eb36e",
+        "validation.jsonl": "c7db9822de88c1a576ce33984d5845c141cb605410a0a7e4e4854a56691ee91f"
+      },
+      "splits": {
+        "test": {
+          "class_counts": {
+            "0": 162,
+            "1": 100
+          },
+          "conflicting_label_text_groups": 6,
+          "duplicate_text_rows": 44,
+          "row_ids_sha256": "6ebe309254ae3213572f0edf6bb254930031ab94173e861680b7290b3713bc5f",
+          "rows": 262
+        },
+        "train": {
+          "class_counts": {
+            "0": 485,
+            "1": 300
+          },
+          "conflicting_label_text_groups": 22,
+          "duplicate_text_rows": 141,
+          "row_ids_sha256": "3241389afee2f71ce829bb18f069892c870abfe6fd08358617fad602d74e540b",
+          "rows": 785
+        },
+        "validation": {
+          "class_counts": {
+            "0": 162,
+            "1": 100
+          },
+          "conflicting_label_text_groups": 6,
+          "duplicate_text_rows": 44,
+          "row_ids_sha256": "7eff954d5b3e4590683bdc25dfd7e7516f0e2f5964deca44f90c5daf685ab949",
+          "rows": 262
+        }
+      },
+      "test_text_clusters": 218
+    },
+    "wine": {
+      "labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+      "max_serialized_characters": 444,
+      "native_files_sha256": {
+        "native/test.jsonl": "d30c289939c5bc534d28f808240b05b036d71dd82ec91a94b8582410212ac982",
+        "native/train.jsonl": "a0e33ff566c5eda8b68eeaaaf9024d4501f24e428525a85bea3021d0418a50cf",
+        "native/validation.jsonl": "276260eee973c0e0ee77fc478f2d94285c42a3a06b8c5d2f0849df98b1f1f44c"
+      },
+      "prepared_content_sha256": "18c72ee80d75f0b47ca996abc176b6b9b094236719f03fcd6111a549e7e14cd7",
+      "source_sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+      "split_files_sha256": {
+        "test.jsonl": "012f2cb463a98820b96b36b8fb837a1dbd56bceb5e535efcc92159014bf1180c",
+        "train.jsonl": "ccf3ec82d09adf391557fe10a0fc05df932b7ff095b2dc01d2788a95739a8206",
+        "validation.jsonl": "652ab95628a68c9a16e6385b4ab5abe6c2233fb546ffd12a84669fc5126c1ee5"
+      },
+      "splits": {
+        "test": {
+          "class_counts": {
+            "0": 12,
+            "1": 14,
+            "2": 10
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "56224b682cb71d7b5307e7641f122250bf595277b66a4c12c749f497706c2f36",
+          "rows": 36
+        },
+        "train": {
+          "class_counts": {
+            "0": 35,
+            "1": 43,
+            "2": 28
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "c008b8ba3eee815dfb1608555767f69aef66d8b1c4302610a40e7d3a3f45da22",
+          "rows": 106
+        },
+        "validation": {
+          "class_counts": {
+            "0": 12,
+            "1": 14,
+            "2": 10
+          },
+          "conflicting_label_text_groups": 0,
+          "duplicate_text_rows": 0,
+          "row_ids_sha256": "2bf1a5cfcba26fafa20acab57e10718b48c405d7aa115b69d844f8666af6899d",
+          "rows": 36
+        }
+      },
+      "test_text_clusters": 36
+    }
+  },
+  "expected_conditions": 51,
+  "metric": "macro_f1",
+  "order": [
+    {
+      "budget": 0,
+      "group": "typesafe/jev-1.13",
+      "label": "Jev 1.13 \u00b7 zero-shot",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13"
+    },
+    {
+      "budget": 4,
+      "group": "typesafe/jev-1.13",
+      "label": "Jev 1.13 \u00b7 few-shot",
+      "method": "few_shot",
+      "model": "typesafe/jev-1.13"
+    },
+    {
+      "budget": 0,
+      "group": "Qwen/Qwen2.5-0.5B-Instruct",
+      "label": "Qwen2.5 0.5B \u00b7 zero-shot",
+      "method": "zero_shot",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "budget": 4,
+      "group": "Qwen/Qwen2.5-0.5B-Instruct",
+      "label": "Qwen2.5 0.5B \u00b7 few-shot",
+      "method": "few_shot",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "budget": 4,
+      "group": "Qwen/Qwen2.5-0.5B-Instruct",
+      "label": "Qwen2.5 0.5B \u00b7 LoRA",
+      "method": "lora",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "budget": 0,
+      "group": "Qwen/Qwen3-4B-Instruct-2507",
+      "label": "Qwen3 4B \u00b7 zero-shot",
+      "method": "zero_shot",
+      "model": "Qwen/Qwen3-4B-Instruct-2507"
+    },
+    {
+      "budget": 4,
+      "group": "Qwen/Qwen3-4B-Instruct-2507",
+      "label": "Qwen3 4B \u00b7 few-shot",
+      "method": "few_shot",
+      "model": "Qwen/Qwen3-4B-Instruct-2507"
+    },
+    {
+      "budget": 4,
+      "group": "Qwen/Qwen3-4B-Instruct-2507",
+      "label": "Qwen3 4B \u00b7 QLoRA",
+      "method": "lora",
+      "model": "Qwen/Qwen3-4B-Instruct-2507"
+    },
+    {
+      "budget": 0,
+      "group": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna \u00b7 zero-shot",
+      "method": "zero_shot",
+      "model": "gpt-5.6-luna"
+    },
+    {
+      "budget": 4,
+      "group": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna \u00b7 few-shot",
+      "method": "few_shot",
+      "model": "gpt-5.6-luna"
+    },
+    {
+      "budget": 0,
+      "group": "gpt-6-astra",
+      "label": "GPT-6 Astra \u00b7 zero-shot",
+      "method": "zero_shot",
+      "model": "gpt-6-astra"
+    },
+    {
+      "budget": 4,
+      "group": "gpt-6-astra",
+      "label": "GPT-6 Astra \u00b7 few-shot",
+      "method": "few_shot",
+      "model": "gpt-6-astra"
+    },
+    {
+      "budget": 4,
+      "group": "native classical",
+      "label": "Majority \u00b7 4/class",
+      "method": "classical_tabular",
+      "model": "majority"
+    },
+    {
+      "budget": 4,
+      "group": "native classical",
+      "label": "Logistic regression \u00b7 4/class",
+      "method": "classical_tabular",
+      "model": "logistic_regression"
+    },
+    {
+      "budget": 4,
+      "group": "native classical",
+      "label": "RBF SVM \u00b7 4/class",
+      "method": "classical_tabular",
+      "model": "rbf_svc"
+    },
+    {
+      "budget": 4,
+      "group": "native classical",
+      "label": "Random forest \u00b7 4/class",
+      "method": "classical_tabular",
+      "model": "random_forest"
+    },
+    {
+      "budget": 4,
+      "group": "native classical",
+      "label": "Hist. gradient boosting \u00b7 4/class",
+      "method": "classical_tabular",
+      "model": "hist_gradient_boosting"
+    }
+  ],
+  "panels": {
+    "breast_cancer": [
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "52ffbfc87f9e1f7598088b7c37f251d6260649c4fc8bc2d3cc4d707d8d9aac67",
+          "run.json": "764a97a6ebc45670396979ff0a06f73faeb053794069d9fdcb939284bee9520b",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.7725502602079117,
+          0.9114618874069478
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Jev 1.13",
+        "macro_f1": 0.8448950829940495,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "typesafe/jev-1.13",
+        "n_failures": 1,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__jev-1.13__e30c52b19b9e",
+        "source_path": "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "36b92cc4799c94d58dfbd838b9cb79bacfb7e8adbec0b46829541bb3313e9493",
+          "run.json": "e6a83786bf04da9cc41af3b80d3c751f2f67bc27f087ca766d372f09b00b0e34",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.8776547104244491,
+          0.9725723853625902
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Jev 1.13",
+        "macro_f1": 0.9286656770575623,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "typesafe/jev-1.13",
+        "n_failures": 1,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__jev-1.13__3d1cba817d2a",
+        "source_path": "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "14cf2375326d7b38219c2399c533b591056256e4cf5c48fd730f4ee662acf665",
+          "run.json": "30e7e44ae8a4b63dba40c54f2080d76637cfacbbf5daca54a1afae6237d4b9a0",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.22448979591836735,
+          0.31736526946107785
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.27388535031847133,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643",
+        "source_path": "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "30395487ab9517a445331ac9c206f7a4f8d21c445aa858a08dd79cd9db182f2c",
+          "run.json": "816232cb92bc7ebee1f451ed8d626a117d66f5bb2eb0ce54cbb59f0e625bcc59",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.3448275862068966,
+          0.41237113402061853
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.3804347826086957,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6",
+        "source_path": "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "f1c9be5b434a1b877083ffc8d73b764c6b458c75118f3571f9238b99e7faff47",
+          "run.json": "6472b1458514a7f5da809ae5722ed324773a8d488a7800477bcb98561606c929",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.3485714285714286,
+          0.4153846153846154
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.3837837837837838,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "lora",
+        "method_label": "LoRA 4/class",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__cc629425dc09",
+        "source_path": "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__cc629425dc09/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "111f04f33a536dfbbe49b71ea3bcc12979ca2231a94ea0970234eea8f772b7ed",
+          "run.json": "9441d6b4366fbb7d10e695d5ce5a7ce065c15d8a208519700897e686dcd4a1ab",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.3965447973519906,
+          0.5642676390536674
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.4792358803986711,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+        "source_path": "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "e5c1b86c06a40de1724e263df2849e46ff24c8957df163d1424b4008a1c58917",
+          "run.json": "a5d870f25fb6c13fd66bd686e77b5ca60cf5c7f1c43991b21297a325eea2146e",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.7884317970924838,
+          0.9182925054571912
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.858076563958917,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3",
+        "source_path": "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "7286b9f894da6525ec543b4c615b88dcdb7bcea54ef0664d2f51f43268ff60fe",
+          "run.json": "dd24c86333e71fa3c072b09b074e3313c00981fa02ea206efa7cc8f9bbaf2664",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.22448979591836735,
+          0.31736526946107785
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.27388535031847133,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "lora",
+        "method_label": "QLoRA 4/class",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__3bd9e18dc27d",
+        "source_path": "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__3bd9e18dc27d/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "6ce8f56cd634cb9657f0fa40d741f389d86a4dbbbbfc7e29a45e071fb4b27f52",
+          "run.json": "559aa6e9229c304cc11cdf13993588c396b181409e30b2de8b20df5ed7339f50",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.6741822800889171,
+          0.8243492024486326
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "GPT-5.6 Luna",
+        "macro_f1": 0.7543103448275862,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "gpt-5.6-luna",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__gpt-5.6-luna__b8612044e1e5",
+        "source_path": "results/tabular/hosted/breast_cancer__gpt-5.6-luna__b8612044e1e5/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "4d2af7785ed8971d2615ea61a9ce65b79c5a02f2ef00d573bf3852b5121eac3b",
+          "run.json": "01107fcc70c87781c76638d647919aaceff247cdba8c570765ac9167a244556c",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.8492063492063492,
+          0.9558652729384436
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "GPT-5.6 Luna",
+        "macro_f1": 0.9088874680306905,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "gpt-5.6-luna",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__gpt-5.6-luna__6874301c84d2",
+        "source_path": "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "2923aaf59fe68f0b1827db265e4580e018174a830d132b0a5cd60efd7e1d08ad",
+          "run.json": "b65c1ffb1f8ff8472acc4ede9b1202d6426fb0f99783e491f683247032390a9e",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.9693190993092311,
+          1.0
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "GPT-6 Astra",
+        "macro_f1": 0.99062114356232,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "gpt-6-astra",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__gpt-6-astra__c2361622445b",
+        "source_path": "results/tabular/hosted/breast_cancer__gpt-6-astra__c2361622445b/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "872826ba524654e0e4bdabccca79dc69e9403e884bf5ac9a29407d600705b177",
+          "run.json": "bb1c82612d9c4787d057d78be96ea225ebe592738ee8090a27b08d08963a1176",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.950976176141739,
+          1.0
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "GPT-6 Astra",
+        "macro_f1": 0.9811507936507937,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "gpt-6-astra",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__gpt-6-astra__6be368014170",
+        "source_path": "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "a928d688aebb14c8fd4d01d500425c3ee7bd577958a3b65a1bfe540b95cb781a",
+          "run.json": "0917746643bc0ecdfe628be1d3a0cf412be9af40755f47b293c34529282a3741",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.22448979591836735,
+          0.31736526946107785
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Majority",
+        "macro_f1": 0.27388535031847133,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "majority",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__native_majority__601690bd324b",
+        "source_path": "results/tabular/classical/breast_cancer__native_majority__601690bd324b/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "4f9b580753dd1c91ed133166d02befb303c6f97402de33a0458d7f9977b2680e",
+          "run.json": "96978621f7d8853686745d254734813f606fe80569feb1a1c441bf8109678fc4",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.8934669951575906,
+          0.9816425120772947
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Logistic regression",
+        "macro_f1": 0.9434523809523809,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "logistic_regression",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__native_logistic_regression__55222f2fa251",
+        "source_path": "results/tabular/classical/breast_cancer__native_logistic_regression__55222f2fa251/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "0ba596641e868e75083084774b873d9fe04e4108674835087476ab8361258daa",
+          "run.json": "31ec093e6e012b3f69a172b39ddeda8220dd71e5d65664f65b1745649ab6dc89",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.8819514513676397,
+          0.9799997344405239
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "RBF SVM",
+        "macro_f1": 0.9349474199070678,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "rbf_svc",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__native_rbf_svc__a26c1965de9e",
+        "source_path": "results/tabular/classical/breast_cancer__native_rbf_svc__a26c1965de9e/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "33ea74e093f31c3695de1a5db5f69569a9d978d240d84f36fa8eda4655606b47",
+          "run.json": "8e84a741bbc14f40f341536760bebdaf173e8b506c55a2fd5b5aa556b29f5dbc",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.9074470740936104,
+          0.9903151813779628
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Random forest",
+        "macro_f1": 0.9521289997480473,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "random_forest",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__native_random_forest__a42a202bf624",
+        "source_path": "results/tabular/classical/breast_cancer__native_random_forest__a42a202bf624/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "4f06134124568367413af724e82f63f985f20d2adae1ff329ca0dae018f16612",
+          "run.json": "f9141cb16e6d0fa8d75ae71ece260e645f920aa4df4dde5c3eead7931e988de9",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "ci95": [
+          0.857905982905983,
+          0.962667862353827
+        ],
+        "dataset": "breast_cancer",
+        "display_model": "Hist. gradient boosting",
+        "macro_f1": 0.9147486497714998,
+        "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "hist_gradient_boosting",
+        "n_failures": 0,
+        "n_groups": 114,
+        "n_test": 114,
+        "run_id": "breast_cancer__native_hist_gradient_boosting__3380de7bd318",
+        "source_path": "results/tabular/classical/breast_cancer__native_hist_gradient_boosting__3380de7bd318/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      }
+    ],
+    "titanic": [
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "5adc1a8142fb3bd3de7acf5530a2d213bd00971cb8598216668c48044491d5e3",
+          "run.json": "43b7351771a38ba67cdb43abe20a3bfe0acc37e9a15ae06c7ce8b930e50f272a",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.7061020765842208,
+          0.8195755187739718
+        ],
+        "dataset": "titanic",
+        "display_model": "Jev 1.13",
+        "macro_f1": 0.764346105414643,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "typesafe/jev-1.13",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__jev-1.13__0a3eba74ea4b",
+        "source_path": "results/tabular/hosted/titanic__jev-1.13__0a3eba74ea4b/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "eb49086b5596cafa066befcb943a34c8781610d4f99e623b374db04cb2ec2b9b",
+          "run.json": "4214a14c0ed2fb4b4ef3bc16cfccb90d20b37594ffa7e6b2a7c3e030a675f52c",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.6792555319437215,
+          0.7881228018119707
+        ],
+        "dataset": "titanic",
+        "display_model": "Jev 1.13",
+        "macro_f1": 0.7358283888635326,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "typesafe/jev-1.13",
+        "n_failures": 1,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__jev-1.13__ca2172a48634",
+        "source_path": "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "34225287b4bfcebbc39bb38ebf10040c875f8e79bc65672dcead0b669836a71a",
+          "run.json": "d715686547666a7ec8690d78b403051f4230b1f4297b7639e3c2c77185f88e7f",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.3523035230352303,
+          0.40857903690072817
+        ],
+        "dataset": "titanic",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.38207547169811323,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__Qwen2.5-0.5B-Instruct__df1e72182230",
+        "source_path": "results/tabular/local/titanic__Qwen2.5-0.5B-Instruct__df1e72182230/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "35037d075ceae29a22ee343e9dcb551fb2883fdceabd6dc3383f9b7daae91010",
+          "run.json": "6075a24ee9e5f6a0b849b33167a77485eed4d8d0fb3b57eacf84187f683bc9ea",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.34864798876309167,
+          0.4216455245346519
+        ],
+        "dataset": "titanic",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.38503204838855287,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__Qwen2.5-0.5B-Instruct__e4a9d0e76a35",
+        "source_path": "results/tabular/local/titanic__Qwen2.5-0.5B-Instruct__e4a9d0e76a35/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "b15b7a483ad1a505b9b2fa6cb576535aa1af001e80a172d30542a4b91cbcf978",
+          "run.json": "22882e32f5fa4e46c38a952614ca6c6b5b7f3ce431a4cc6622c313440cc7ec87",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.3523035230352303,
+          0.40857903690072817
+        ],
+        "dataset": "titanic",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.38207547169811323,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "lora",
+        "method_label": "LoRA 4/class",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__Qwen2.5-0.5B-Instruct__aef5dfcf4960",
+        "source_path": "results/tabular/local/titanic__Qwen2.5-0.5B-Instruct__aef5dfcf4960/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "7a2da5d4f0631d8c334629d073e07202fdf8417a9aa251aa3e3be74ab750aac4",
+          "run.json": "0f6d853204bb6abfa86c2282adc016d22c1ec98d13c0f4cc6a5fa6c4ef7fd3b5",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.56931559011763,
+          0.7168796125599598
+        ],
+        "dataset": "titanic",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.6449916223501129,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__Qwen3-4B-Instruct-2507__bc3feaefd6e3",
+        "source_path": "results/tabular/colab/titanic__Qwen3-4B-Instruct-2507__bc3feaefd6e3/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "11228261bd8c6b668e08033e2bac9c0f775abdc9d89402f18fa1aa76259a2eff",
+          "run.json": "56846f76963bfd5cdc973880963a404926b1117b86d3fdce65e533fa567850cb",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.4393190219388765,
+          0.6135807360014329
+        ],
+        "dataset": "titanic",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.5307231144992969,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__Qwen3-4B-Instruct-2507__1d84babc1c9c",
+        "source_path": "results/tabular/colab/titanic__Qwen3-4B-Instruct-2507__1d84babc1c9c/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "f2c55980196d140f21e86270980bfccfc1adb9684467d6eb6620a11c9149029a",
+          "run.json": "05dcf7e446c02a87882a926d124258ea36d7eb2d5b65d2d58788000728980b8f",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.5544963110659434,
+          0.7083780327647741
+        ],
+        "dataset": "titanic",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.6335664335664335,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "lora",
+        "method_label": "QLoRA 4/class",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__Qwen3-4B-Instruct-2507__47dd7e7dd3cc",
+        "source_path": "results/tabular/colab/titanic__Qwen3-4B-Instruct-2507__47dd7e7dd3cc/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "55b3f2fba3d8640131c04d4dc2a10f0908b539cbed6c56f5316734d5a6acc25a",
+          "run.json": "ba1a2889190c12eb802d3402215733520bc3e5648d73e12db6e13b73bacf97a4",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.6936220201802693,
+          0.8115806600187656
+        ],
+        "dataset": "titanic",
+        "display_model": "GPT-5.6 Luna",
+        "macro_f1": 0.7556082269286643,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "gpt-5.6-luna",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__gpt-5.6-luna__b5122ec4e50d",
+        "source_path": "results/tabular/hosted/titanic__gpt-5.6-luna__b5122ec4e50d/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "6f6efa2e028cd62c1cda4855c81843157b607e42535fda4044fdca8dc6873b5d",
+          "run.json": "24c8f6ef38b232cf9e90133417a9bb5167a0d0cd61a986bf3bcdc542456dafc8",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.7405331706859171,
+          0.8472398558875871
+        ],
+        "dataset": "titanic",
+        "display_model": "GPT-5.6 Luna",
+        "macro_f1": 0.7962836604833463,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "gpt-5.6-luna",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__gpt-5.6-luna__5241c331369c",
+        "source_path": "results/tabular/hosted/titanic__gpt-5.6-luna__5241c331369c/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "1a387150fabb1185edc8e557afb8f40411b91807ee2eb32d4b25f46aa183af2e",
+          "run.json": "3ba3ba41d8ccb9ba3b8b49feb78f5da45de3bac293c8ac9d415ea1d2c9cfa701",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.7562070045971567,
+          0.8627542721367694
+        ],
+        "dataset": "titanic",
+        "display_model": "GPT-6 Astra",
+        "macro_f1": 0.8137882018479032,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "gpt-6-astra",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__gpt-6-astra__3dcf7666b968",
+        "source_path": "results/tabular/hosted/titanic__gpt-6-astra__3dcf7666b968/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "4c6e72281d815677eac24e664f25b8d20cdd41bd51d731773411a2486e72d2f2",
+          "run.json": "c461f79284cf154af93ea4f68d91220115fcff5573e831cd62401b93271b54d6",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.7966201042264508,
+          0.8917910376939882
+        ],
+        "dataset": "titanic",
+        "display_model": "GPT-6 Astra",
+        "macro_f1": 0.8461733762833431,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "gpt-6-astra",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__gpt-6-astra__6422a6aaa735",
+        "source_path": "results/tabular/hosted/titanic__gpt-6-astra__6422a6aaa735/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "b83a10a37b27b80132efc8fce8eb282d8c0de13f84c6789eae9bc976b066aeb3",
+          "run.json": "1c5db66fc81ee12f48a1d46f2686e6f9f481a9a333b38159cee069c101e8ee1c",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.3523035230352303,
+          0.40857903690072817
+        ],
+        "dataset": "titanic",
+        "display_model": "Majority",
+        "macro_f1": 0.38207547169811323,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "majority",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__native_majority__05aea2d028ea",
+        "source_path": "results/tabular/classical/titanic__native_majority__05aea2d028ea/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "f279b89ab6f986bbed077c6980b12f3f0969c4962ccc55b45a73ce549ef9d383",
+          "run.json": "30490eec6ec27acd7f33d8ef0394c2f832f2604a56d9413c87b7719f4331fac4",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.5492653689584986,
+          0.6839317471423212
+        ],
+        "dataset": "titanic",
+        "display_model": "Logistic regression",
+        "macro_f1": 0.6184544834851584,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "logistic_regression",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__native_logistic_regression__93afc6c9bc34",
+        "source_path": "results/tabular/classical/titanic__native_logistic_regression__93afc6c9bc34/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "6fc4532cc1cd734d5f8cd8cb5dd66d4cd851294cb7ae78233f952b457520020a",
+          "run.json": "aaec4003098c31f553b88319681636dff596a45c99b43012db94ea9beb1ca50b",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.574890760713866,
+          0.7080113885962375
+        ],
+        "dataset": "titanic",
+        "display_model": "RBF SVM",
+        "macro_f1": 0.6440217391304348,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "rbf_svc",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__native_rbf_svc__b05e1156e319",
+        "source_path": "results/tabular/classical/titanic__native_rbf_svc__b05e1156e319/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "a2c8610ae28044f2d84f2db3abc9a0bae71bf7b97d1b603b0b2b070bc06640a9",
+          "run.json": "74c6332ad04dba36f4577bb7f6741a1176961dce5be20b5b212dc0bd62ee2b7b",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.4897175133825989,
+          0.6651594435999649
+        ],
+        "dataset": "titanic",
+        "display_model": "Random forest",
+        "macro_f1": 0.5765998707175177,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "random_forest",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__native_random_forest__1e813c4a1d10",
+        "source_path": "results/tabular/classical/titanic__native_random_forest__1e813c4a1d10/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "745434b7ce30166b79c9f9b19d48034fdb35caec53af7adbadd270c259af2cca",
+          "run.json": "cf0fa5f207b8da00c1da0db7c403bcd998748f07962ecaa48e2f22a9ef87463f",
+          "test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+        },
+        "ci95": [
+          0.4657292997287701,
+          0.6122060174307196
+        ],
+        "dataset": "titanic",
+        "display_model": "Hist. gradient boosting",
+        "macro_f1": 0.5424632352941177,
+        "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "hist_gradient_boosting",
+        "n_failures": 0,
+        "n_groups": 218,
+        "n_test": 262,
+        "run_id": "titanic__native_hist_gradient_boosting__c0a4aad9177f",
+        "source_path": "results/tabular/classical/titanic__native_hist_gradient_boosting__c0a4aad9177f/run.json",
+        "status": "complete",
+        "train_labels": 8,
+        "train_per_class": 4
+      }
+    ],
+    "wine": [
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "726c44aad812b72e49964fea6764959bad8fca1e64bf232fccf1f32d998ba8d9",
+          "run.json": "834b5842735f7f2f19c619fe25e00e7336c17bdd1e922fe0a4d39014f82652fc",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.10852713178294575,
+          0.2222222222222222
+        ],
+        "dataset": "wine",
+        "display_model": "Jev 1.13",
+        "macro_f1": 0.16666666666666666,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "typesafe/jev-1.13",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__jev-1.13__7daebee622e6",
+        "source_path": "results/tabular/hosted/wine__jev-1.13__7daebee622e6/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "8fa3f7e7ee5153a6c9d6d49f41735b6f7614ca7d95603fe4a4f286116322c313",
+          "run.json": "3ddcbe247b12c6103c244ab2dd27373fcb6504f5f4d26a7a25a000935ff48311",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.8076845555918781,
+          1.0
+        ],
+        "dataset": "wine",
+        "display_model": "Jev 1.13",
+        "macro_f1": 0.9163636363636364,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "typesafe/jev-1.13",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__jev-1.13__33047fa693a8",
+        "source_path": "results/tabular/hosted/wine__jev-1.13__33047fa693a8/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "0cbedbab9e6bafd1e9867997b4c579e4b8990bfdd0b57f6986d488e8b112b5e2",
+          "run.json": "ecfbca8e70a474d541688b9ab960639592ebc461986dacfa9c48c6a8b2318dc2",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.10852713178294575,
+          0.2222222222222222
+        ],
+        "dataset": "wine",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.16666666666666666,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8",
+        "source_path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "59f736d542c53a94980b51ebe93e69bcd3a6680121da366b299cbce3c1a0ae38",
+          "run.json": "12d0532066452c7b2ec41c17acba0cbb3e034d08d043d0f5751e6d8146b35852",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.10852713178294575,
+          0.2222222222222222
+        ],
+        "dataset": "wine",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.16666666666666666,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+        "source_path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "3f4cb72f3dea80ea7ec0f8613ced6061934aacfef3b5cdc7311b289449941efa",
+          "run.json": "7c6b13b517d1d76adfb4bca7d61a5e28b8352464a85613b98aa32b1881f36bae",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.10852713178294575,
+          0.2222222222222222
+        ],
+        "dataset": "wine",
+        "display_model": "Qwen2.5 0.5B",
+        "macro_f1": 0.16666666666666666,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "lora",
+        "method_label": "LoRA 4/class",
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__Qwen2.5-0.5B-Instruct__4091defc6e25",
+        "source_path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__4091defc6e25/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "31bc44ecf4883a33688cbaf11b64a13967d47a105835a5adb8294662d49115c7",
+          "run.json": "b1c0d456a3abe5d53a8a4767541f56b83ee15c81e442b2233e81e0df8e5af96a",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.12121212121212122,
+          0.2380952380952381
+        ],
+        "dataset": "wine",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.18666666666666668,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__Qwen3-4B-Instruct-2507__c923604a4ba1",
+        "source_path": "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__c923604a4ba1/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "b9b11638881c31a9853035c1803a4daf61cbf82f83c136ba57494463f16607d4",
+          "run.json": "91378022c1e86e476bd4f3b59a301d411d804d50bed3ca8ccc7ba744c25bfb43",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.6654455391351943,
+          0.9193165024630542
+        ],
+        "dataset": "wine",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.8087912087912087,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0",
+        "source_path": "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "67cee297b948ec81fcf13f13dc6121ab78b7c77e20b993429da5445af75c456e",
+          "run.json": "b53143f2152a8b036b02176e72e4fef81c5c108f0edc1e747789965a541b136b",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.08130081300813008,
+          0.19607843137254902
+        ],
+        "dataset": "wine",
+        "display_model": "Qwen3 4B",
+        "macro_f1": 0.14492753623188406,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "lora",
+        "method_label": "QLoRA 4/class",
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__Qwen3-4B-Instruct-2507__55b0160bc45a",
+        "source_path": "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__55b0160bc45a/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "f65e87ad7b9c0ae4b47619d1d22dcc3309d826f570a18a33141a19e153ca5109",
+          "run.json": "5e7188897561f3705abd87e84230a3dfe80502367a9846a2a56ab854cfa6c852",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.20913438546150168,
+          0.45833745059288533
+        ],
+        "dataset": "wine",
+        "display_model": "GPT-5.6 Luna",
+        "macro_f1": 0.34511784511784516,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "gpt-5.6-luna",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__gpt-5.6-luna__e3ff7ad8c4ad",
+        "source_path": "results/tabular/hosted/wine__gpt-5.6-luna__e3ff7ad8c4ad/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "0248839e865f9fcd1f2f0e032f9f934450f9cff02371d6f68f06657101bbf9d6",
+          "run.json": "b5469912783e844ff9c7d48ba6b679d09e82ffd2e5499d18f26c72572687738d",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.7762187088274044,
+          0.9731615673644658
+        ],
+        "dataset": "wine",
+        "display_model": "GPT-5.6 Luna",
+        "macro_f1": 0.888888888888889,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "gpt-5.6-luna",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__gpt-5.6-luna__bf0ee5396886",
+        "source_path": "results/tabular/hosted/wine__gpt-5.6-luna__bf0ee5396886/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "c27d4c883920ed3b763786fbc88ba4bcbaf08ea84040e576ca1d1f3311340be0",
+          "run.json": "fb9a2322140095f404184003409537acb2fed918166e456e9b0772885fc46f92",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "dataset": "wine",
+        "display_model": "GPT-6 Astra",
+        "macro_f1": 1.0,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "zero_shot",
+        "method_label": "zero-shot",
+        "model": "gpt-6-astra",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__gpt-6-astra__bb75b85e6193",
+        "source_path": "results/tabular/hosted/wine__gpt-6-astra__bb75b85e6193/run.json",
+        "status": "complete",
+        "train_labels": 0,
+        "train_per_class": 0
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "dbe5ff17012aec89bf5588be1493217451e25607eb725b6a422fedda986156ab",
+          "run.json": "c3162e3b5defb51b2d0fe24d9d05a5e131c67f2ff7ce1f0dfa02077256999622",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.9523809523809524,
+          1.0
+        ],
+        "dataset": "wine",
+        "display_model": "GPT-6 Astra",
+        "macro_f1": 0.9876543209876543,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "few_shot",
+        "method_label": "few-shot 4/class",
+        "model": "gpt-6-astra",
+        "n_failures": 1,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__gpt-6-astra__d5c2863bd80f",
+        "source_path": "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "f999d669b7d9ba46760c13222c640621ff5974b1cc68380193c23a0e0950bb13",
+          "run.json": "844f3737932ee6eeae102a8a54d95f409a705d409c8383c4faf7b39021dd5877",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.10852713178294575,
+          0.2222222222222222
+        ],
+        "dataset": "wine",
+        "display_model": "Majority",
+        "macro_f1": 0.16666666666666666,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "majority",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__native_majority__becfabe82b76",
+        "source_path": "results/tabular/classical/wine__native_majority__becfabe82b76/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "cd864ff667e944e5fc920592a30db24fb3903b2c1c2f0fa65589de646b5451c0",
+          "run.json": "3a59bf74ba3f8650fbc34fb24f3d41f65d09e1ce13d99af62214b07dedd5423a",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.9102956667029893,
+          1.0
+        ],
+        "dataset": "wine",
+        "display_model": "Logistic regression",
+        "macro_f1": 0.9740129935032483,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "logistic_regression",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__native_logistic_regression__c517f9ce4b63",
+        "source_path": "results/tabular/classical/wine__native_logistic_regression__c517f9ce4b63/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "664202f2375435fd2fbd9b36f3d495ed230c9206943ed5e08e1ceca78ea2c345",
+          "run.json": "640eda7081b63eb34d9b456854a00fa2a5681e8dbf10a9a8ff810503fc7bae03",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "dataset": "wine",
+        "display_model": "RBF SVM",
+        "macro_f1": 1.0,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "rbf_svc",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__native_rbf_svc__2de4260ee5e8",
+        "source_path": "results/tabular/classical/wine__native_rbf_svc__2de4260ee5e8/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "c130396cf7fc601827cac0388c7bd53cb038aec6056b71c7a16a189eb5b3bda1",
+          "run.json": "537c1d9ccf74bd47dc07e54e9c15a98dc9948ad2e4d57239d76b7424cc223904",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.8611111111111112,
+          1.0
+        ],
+        "dataset": "wine",
+        "display_model": "Random forest",
+        "macro_f1": 0.9474747474747475,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "random_forest",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__native_random_forest__b446bd3c19ff",
+        "source_path": "results/tabular/classical/wine__native_random_forest__b446bd3c19ff/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      },
+      {
+        "artifact_sha256": {
+          "predictions.jsonl": "69e0259891f6865c4083d799cffbbc381dc536ff4c20c26a7105398887e91bfe",
+          "run.json": "342db9cfd6aa1e12052ccec6c0920d8fc4b5ddffd6075889cce7b04d7ce256d1",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "ci95": [
+          0.5728955912064718,
+          0.8835797470179619
+        ],
+        "dataset": "wine",
+        "display_model": "Hist. gradient boosting",
+        "macro_f1": 0.7422003284072249,
+        "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+        "method": "classical_tabular",
+        "method_label": "4/class",
+        "model": "hist_gradient_boosting",
+        "n_failures": 0,
+        "n_groups": 36,
+        "n_test": 36,
+        "run_id": "wine__native_hist_gradient_boosting__2313f9e6d88a",
+        "source_path": "results/tabular/classical/wine__native_hist_gradient_boosting__2313f9e6d88a/run.json",
+        "status": "complete",
+        "train_labels": 12,
+        "train_per_class": 4
+      }
+    ]
+  },
+  "plot_script_sha256": "bc716a2c5922eb434294b74f66bdbecb149f541479c9e71b4f19f5a0abb0a5af",
+  "seed": 42,
+  "summary_file": "TABULAR_COMPARISON.json",
+  "summary_sha256": "7e3df4dc6a04aa0a88068e9639e3d04d95f86bcae38d3086ad12d23b4f11a7e2"
+}

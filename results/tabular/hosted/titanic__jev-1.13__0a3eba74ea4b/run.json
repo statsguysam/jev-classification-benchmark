@@ -1,0 +1,566 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-22T12:39:11.611063+00:00",
+  "config": {
+    "api_key_env": "OPENROUTER_API_KEY",
+    "base_url": "https://openrouter.ai/api/v1",
+    "budget_guard": {
+      "aggregate_authorized_usd": "20.00",
+      "dataset": "titanic",
+      "endpoint": "https://openrouter.ai/api/v1/systemone",
+      "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+      "ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "model_key": "jev_openrouter",
+      "native_protocol": "frozen_JevClassifier_Choice",
+      "price_source": "https://openrouter.ai/typesafe/jev-1.13",
+      "price_verified_on": "2026-09-22",
+      "prior_charged_or_reserved_usd": "5.293007000",
+      "prior_ledgers": {
+        "jev-budget.jsonl": {
+          "cap": "2.50",
+          "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+          "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+        },
+        "openai-budget.jsonl": {
+          "cap": "7.50",
+          "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+          "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+        }
+      },
+      "reserve_checks_included_in_latency": true,
+      "response_model_allowlist": [
+        "typesafe/jev-1.13",
+        "typesafe/jev-1.13-20260917"
+      ],
+      "route": "OpenRouter",
+      "seed": 42,
+      "shots_per_class": 0,
+      "stage_cap_usd": "14.70",
+      "tabular_wrapper_sha256": "53936be5c051b80cbee74943ec6544f29bc28044d99f5fd20226560f7163b230",
+      "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+    },
+    "model": "typesafe/jev-1.13",
+    "provider": "jev",
+    "shots_per_class": 0,
+    "timeout": 120
+  },
+  "dataset": "titanic",
+  "dataset_manifest": {
+    "files_sha256": {
+      "test.jsonl": "0f6fc02fae4ec071f8aab96468fddbb6b6633bd01f74a9705f9437ab33e5b0c7",
+      "train.jsonl": "7cb55b1e1035dfb9a57d546472e49a85a41e01bf79f5be99e37c3faec71eb36e",
+      "validation.jsonl": "c7db9822de88c1a576ce33984d5845c141cb605410a0a7e4e4854a56691ee91f"
+    },
+    "labels": [
+      "did not survive",
+      "survived"
+    ],
+    "limits": {
+      "test": null,
+      "train": null,
+      "validation": null
+    },
+    "name": "titanic",
+    "prepared_content_sha256": "9e3635e3618381de1f2a656d81fdef95aa68827aa753b5801f48d5421a9c7adf",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "attribution": "Data obtained from https://hbiostat.org/data courtesy of the Vanderbilt University Department of Biostatistics.",
+      "dictionary": "https://hbiostat.org/data/repo/ctitanic3",
+      "excluded_columns": [
+        "survived",
+        "name",
+        "ticket",
+        "cabin",
+        "boat",
+        "body",
+        "home.dest"
+      ],
+      "features": [
+        {
+          "description": "Passenger ticket class",
+          "kind": "categorical",
+          "name": "pclass",
+          "source_name": "pclass",
+          "values": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "description": "Sex as recorded in source",
+          "kind": "categorical",
+          "name": "sex",
+          "source_name": "sex",
+          "values": [
+            "female",
+            "male"
+          ]
+        },
+        {
+          "description": "Passenger age",
+          "kind": "numeric",
+          "name": "age_years",
+          "source_name": "age",
+          "unit": "years"
+        },
+        {
+          "description": "Siblings and spouses aboard",
+          "kind": "numeric",
+          "name": "sibsp",
+          "source_name": "sibsp",
+          "unit": "count"
+        },
+        {
+          "description": "Parents and children aboard",
+          "kind": "numeric",
+          "name": "parch",
+          "source_name": "parch",
+          "unit": "count"
+        },
+        {
+          "description": "Passenger fare",
+          "kind": "numeric",
+          "name": "fare_gbp",
+          "source_name": "fare",
+          "unit": "British pounds"
+        },
+        {
+          "description": "Embarkation port",
+          "kind": "categorical",
+          "name": "embarked",
+          "source_name": "embarked",
+          "values": [
+            "Cherbourg",
+            "Queenstown",
+            "Southampton"
+          ]
+        }
+      ],
+      "filename": "titanic3.csv",
+      "homepage": "https://hbiostat.org/data/",
+      "labels": [
+        "did not survive",
+        "survived"
+      ],
+      "license": "Vanderbilt grants permission to use with source attribution; see homepage.",
+      "observed_sha256": "db6df9666818c69a753cd85d743e01502c8518b00579b6aada0d4fc5a66ccb9d",
+      "rows": 1309,
+      "selected_records_sha256": "fb08ce466b8bf1608c6f8e3b6d613bd919ff98420806a41450b4955ce1cfe705",
+      "sha256": "db6df9666818c69a753cd85d743e01502c8518b00579b6aada0d4fc5a66ccb9d",
+      "sklearn_version": "1.9.1",
+      "source": "vanderbilt_csv",
+      "target_column": "survived",
+      "task_description": "Titanic passenger survival. pclass: 1=first, 2=second, 3=third class. age_years is age; fare_gbp is fare in British pounds; sibsp counts siblings/spouses and parch counts parents/children aboard. Missing=NA.",
+      "url": "https://hbiostat.org/data/repo/titanic3.csv"
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 162,
+          "1": 100
+        },
+        "conflicting_label_text_groups": 6,
+        "duplicate_text_rows": 44,
+        "row_ids_sha256": "6ebe309254ae3213572f0edf6bb254930031ab94173e861680b7290b3713bc5f",
+        "rows": 262
+      },
+      "train": {
+        "class_counts": {
+          "0": 485,
+          "1": 300
+        },
+        "conflicting_label_text_groups": 22,
+        "duplicate_text_rows": 141,
+        "row_ids_sha256": "3241389afee2f71ce829bb18f069892c870abfe6fd08358617fad602d74e540b",
+        "rows": 785
+      },
+      "validation": {
+        "class_counts": {
+          "0": 162,
+          "1": 100
+        },
+        "conflicting_label_text_groups": 6,
+        "duplicate_text_rows": 44,
+        "row_ids_sha256": "7eff954d5b3e4590683bdc25dfd7e7516f0e2f5964deca44f90c5daf685ab949",
+        "rows": 262
+      }
+    },
+    "tabular": {
+      "config_sha256": "b498e446964b0a4d7306f03187f77e560b772fbb8e20c906f5d3c56d9b9a73af",
+      "duplicate_policy": "Retain all natural duplicates and conflicting-label groups in one split; no exact-feature overlap across splits",
+      "excluded_test_row_ids": [],
+      "features": [
+        {
+          "description": "Passenger ticket class",
+          "kind": "categorical",
+          "name": "pclass",
+          "source_name": "pclass",
+          "values": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "description": "Sex as recorded in source",
+          "kind": "categorical",
+          "name": "sex",
+          "source_name": "sex",
+          "values": [
+            "female",
+            "male"
+          ]
+        },
+        {
+          "description": "Passenger age",
+          "kind": "numeric",
+          "name": "age_years",
+          "source_name": "age",
+          "unit": "years"
+        },
+        {
+          "description": "Siblings and spouses aboard",
+          "kind": "numeric",
+          "name": "sibsp",
+          "source_name": "sibsp",
+          "unit": "count"
+        },
+        {
+          "description": "Parents and children aboard",
+          "kind": "numeric",
+          "name": "parch",
+          "source_name": "parch",
+          "unit": "count"
+        },
+        {
+          "description": "Passenger fare",
+          "kind": "numeric",
+          "name": "fare_gbp",
+          "source_name": "fare",
+          "unit": "British pounds"
+        },
+        {
+          "description": "Embarkation port",
+          "kind": "categorical",
+          "name": "embarked",
+          "source_name": "embarked",
+          "values": [
+            "Cherbourg",
+            "Queenstown",
+            "Southampton"
+          ]
+        }
+      ],
+      "full_splits_before_test_subset": {
+        "test": {
+          "class_counts": {
+            "0": 162,
+            "1": 100
+          },
+          "conflicting_label_text_groups": 6,
+          "duplicate_text_rows": 44,
+          "row_ids_sha256": "6ebe309254ae3213572f0edf6bb254930031ab94173e861680b7290b3713bc5f",
+          "rows": 262
+        },
+        "train": {
+          "class_counts": {
+            "0": 485,
+            "1": 300
+          },
+          "conflicting_label_text_groups": 22,
+          "duplicate_text_rows": 141,
+          "row_ids_sha256": "3241389afee2f71ce829bb18f069892c870abfe6fd08358617fad602d74e540b",
+          "rows": 785
+        },
+        "validation": {
+          "class_counts": {
+            "0": 162,
+            "1": 100
+          },
+          "conflicting_label_text_groups": 6,
+          "duplicate_text_rows": 44,
+          "row_ids_sha256": "7eff954d5b3e4590683bdc25dfd7e7516f0e2f5964deca44f90c5daf685ab949",
+          "rows": 262
+        }
+      },
+      "group_definition": "SHA256 of normalized serialized features, excluding target and row ID",
+      "leakage_limitations": "Exact feature grouping does not prevent related-family similarity or pretraining memorization of these public datasets. Wine cultivar IDs are arbitrary; zero-shot interpretation is limited.",
+      "max_serialized_characters": 307,
+      "native_files_sha256": {
+        "native/test.jsonl": "db1878f83741ce8675148fdcd50f89e964ed0f711fd92470aff495d488baeb7e",
+        "native/train.jsonl": "843b94e5eb4c0643783f010d715df0feab011f84ad717e33e56f220100e5b996",
+        "native/validation.jsonl": "0b7fabe4f8e78e6756e1905174f54d77e1a7370cf6625e1ff6234c01ab64b2c4"
+      },
+      "native_records_sha256": {
+        "test": "48c04f78a90c530602807105a00dcbd8624fd1356a086f465b814b7e172e8403",
+        "train": "6e0ca9b70bc9f5af25ef156fca7a70ef5878945154e81a7168f786c0dc05ace3",
+        "validation": "427dec093b6abf15275a8875ae4e4a1f5d2955378e519fce9d404982317dac1d"
+      },
+      "nominal_split_fractions": {
+        "test": 0.2,
+        "train": 0.6,
+        "validation": 0.2
+      },
+      "numeric_roundtrip_exact": true,
+      "preparation_implementation_sha256": "339ead1c818e05868d889a8d397a4eac522a3d949a6ea31a08f8b455f45b87a6",
+      "schema_version": 1,
+      "serialization": {
+        "categorical_format": "JSON-quoted UTF-8 strings",
+        "feature_order": "declared features list",
+        "fitted_preprocessing": "none",
+        "missing_value": "NA",
+        "number_format": ".12g (12 significant decimal digits; no data-dependent rounding)",
+        "prefix": "fixed task description followed by newline",
+        "separator": "; ",
+        "target_or_row_id_in_features": false,
+        "text_truncation": "none",
+        "version": "name-value-v1"
+      },
+      "source_rows": 1309,
+      "split_method": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed): fold0=test; fold1=validation; remaining folds=train",
+      "task_description": "Titanic passenger survival. pclass: 1=first, 2=second, 3=third class. age_years is age; fare_gbp is fare in British pounds; sibsp counts siblings/spouses and parch counts parents/children aboard. Missing=NA.",
+      "test_subset_policy": "Frozen core deterministic proportional stratified subset; excluded rows remain held out and are never reassigned"
+    },
+    "text_policy": {
+      "applies_to": "all serialized model arms",
+      "kind": "none",
+      "max_chars": null
+    }
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "execution": {
+    "automatic_retries": 0,
+    "concurrency": 1,
+    "max_new_requests": 500,
+    "paid_authorized": true
+  },
+  "execution_sessions": [
+    {
+      "cached_rows": 0,
+      "environment": {
+        "packages": {
+          "accelerate": "1.15.0",
+          "huggingface-hub": "0.36.2",
+          "numpy": "2.5.3",
+          "peft": "0.21.0",
+          "pyarrow": "23.0.1",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "torch": "2.14.0",
+          "transformers": "4.57.6"
+        },
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "python": "3.12.4",
+        "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+      },
+      "new_rows_requested": 262,
+      "started_at": "2026-09-22T12:30:41.965487+00:00"
+    }
+  ],
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "did not survive",
+    "survived"
+  ],
+  "manifest_sha256": "ae261664feb1ca83d5bc25b6fe11697a293026c137070369b8afd95cf1c63966",
+  "method": "zero_shot",
+  "metrics": {
+    "accuracy": 0.7709923664122137,
+    "average_precision": 0.7667704487756525,
+    "balanced_accuracy": 0.7746296296296297,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.7213740458015268,
+            0.8168893129770992
+          ],
+          "estimate": 0.7709923664122137
+        },
+        "macro_f1": {
+          "ci95": [
+            0.7129047268797191,
+            0.8124638673994282
+          ],
+          "estimate": 0.764346105414643
+        }
+      },
+      "samples": 1000,
+      "seed": 42
+    },
+    "brier_sum": 0.3234595419847328,
+    "chosen_label_argmax_disagreement_rows": 1,
+    "confusion_matrix": [
+      [
+        123,
+        39,
+        0
+      ],
+      [
+        21,
+        79,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.06687022900763352,
+    "failure_rate": 0.0,
+    "input_tokens": 127721,
+    "input_tokens_coverage": 1.0,
+    "input_tokens_known_total": 127721,
+    "latency_p50_s": 1.3796156669850461,
+    "latency_p95_s": 4.155652185081269,
+    "log_loss": 0.5097403237238614,
+    "macro_f1": 0.764346105414643,
+    "n_classes": 2,
+    "n_failures": 0,
+    "n_probability_rows": 262,
+    "n_test": 262,
+    "output_tokens": 8122,
+    "output_tokens_coverage": 1.0,
+    "output_tokens_known_total": 8122,
+    "per_class": [
+      {
+        "f1": 0.803921568627451,
+        "label": 0,
+        "precision": 0.8541666666666666,
+        "recall": 0.7592592592592593,
+        "support": 162
+      },
+      {
+        "f1": 0.7247706422018348,
+        "label": 1,
+        "precision": 0.6694915254237288,
+        "recall": 0.79,
+        "support": 100
+      }
+    ],
+    "prediction_time_s": 474.4592610823456,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 0,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 5,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 6,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.5,
+        "bin": 7,
+        "count": 6,
+        "mean_confidence": 0.5133333333333333
+      },
+      {
+        "accuracy": 0.42857142857142855,
+        "bin": 8,
+        "count": 14,
+        "mean_confidence": 0.5685714285714285
+      },
+      {
+        "accuracy": 0.5263157894736842,
+        "bin": 9,
+        "count": 19,
+        "mean_confidence": 0.6294736842105264
+      },
+      {
+        "accuracy": 0.75,
+        "bin": 10,
+        "count": 8,
+        "mean_confidence": 0.7175
+      },
+      {
+        "accuracy": 0.76,
+        "bin": 11,
+        "count": 25,
+        "mean_confidence": 0.7688000000000001
+      },
+      {
+        "accuracy": 0.7586206896551724,
+        "bin": 12,
+        "count": 58,
+        "mean_confidence": 0.8358620689655172
+      },
+      {
+        "accuracy": 0.84,
+        "bin": 13,
+        "count": 50,
+        "mean_confidence": 0.9002
+      },
+      {
+        "accuracy": 0.8902439024390244,
+        "bin": 14,
+        "count": 82,
+        "mean_confidence": 0.9579268292682924
+      }
+    ],
+    "roc_auc": 0.8326234567901235,
+    "valid_response_accuracy": 0.7709923664122137,
+    "zero_true_class_probability_rows": 0
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "titanic__jev-1.13__0a3eba74ea4b",
+  "seed": 42,
+  "started_at": "2026-09-22T12:30:41.910549+00:00",
+  "status": "complete",
+  "test_ids_sha256": "63e6a25e7646ae3ecb169d66d37f0f6b04a37d088bd9505a6fbfb3a9d6415782",
+  "training_example_ids": []
+}

@@ -1,4 +1,4 @@
-"""Package pinned Qwen pilot LoRA adapters, never pretrained base weights."""
+"""Package pinned Qwen classification LoRA adapters, never pretrained base weights."""
 from __future__ import annotations
 
 import argparse
@@ -15,6 +15,7 @@ SUPPORTED = {
     "Qwen/Qwen2.5-0.5B-Instruct": "7ae557604adf67be50417f59c2c2f167def9a775",
     "Qwen/Qwen3-4B-Instruct-2507": "cdbee75f17c01a7cc42f958dc650907174af0554",
 }
+SUPPORTED_DATASETS = {"sst2", "trec", "titanic", "breast_cancer", "wine"}
 LICENSE_SHA256 = "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
 # Verified against complete HF file listings at these immutable revisions on
 # 2026-09-22. Neither distributes a separate NOTICE/NOTICE.txt file.
@@ -135,8 +136,8 @@ def package(adapters, output, *, upstream_root=Path("artifacts/upstream"), base_
         model, revision = metadata.get("model_id"), metadata.get("resolved_revision")
         if model not in SUPPORTED or revision != SUPPORTED[model]:
             raise ValueError("Adapter base model/revision is not allowlisted")
-        if metadata.get("dataset") not in {"sst2", "trec"} or metadata.get("test_accessed") is not False:
-            raise ValueError("Only training-only SST-2/TREC pilot adapters may be packaged")
+        if metadata.get("dataset") not in SUPPORTED_DATASETS or metadata.get("test_accessed") is not False:
+            raise ValueError("Only allowlisted text/tabular training-only adapters may be packaged")
         rank = metadata.get("r")
         if type(rank) is not int or not 1 <= rank <= 64 or config.get("r") != rank:
             raise ValueError("Adapter rank is missing, mismatched or outside pilot bounds")
@@ -161,9 +162,9 @@ def package(adapters, output, *, upstream_root=Path("artifacts/upstream"), base_
         notice = (f"Downstream benchmark adapter for {model}\nBase revision: {revision}\n"
                   f"Training dataset: {metadata['dataset']}\n"
                   "The LoRA weights are newly trained downstream modifications; this is not an official Qwen release.\n"
-                  "The PEFT configuration, training provenance and saved tokenizer files are exported by this benchmark.\n"
+                  "The PEFT configuration, training provenance and saved tokenizer files (when present) are exported by this benchmark.\n"
                   "All upstream copyright/license notices are retained under upstream/.\n"
-                  "Pretrained base weights and raw dataset texts are not included.\n")
+                  "Pretrained base weights and raw dataset records are not included.\n")
         payloads[f"{folder.name}/DOWNSTREAM_NOTICE.txt"] = notice.encode()
         file_hashes["DOWNSTREAM_NOTICE.txt"] = digest(notice.encode())
         if model not in upstream:
@@ -176,7 +177,7 @@ def package(adapters, output, *, upstream_root=Path("artifacts/upstream"), base_
             "prompt_sha256": metadata["prompt_sha256"], "training_s": metadata.get("training_s"),
             "training_provenance": f"{folder.name}/jevbench_training.json", "weights": weights,
             "files_sha256": file_hashes}
-    payloads["NOTICE.txt"] = ("Downstream Qwen text-classification LoRA adapters\n"
+    payloads["NOTICE.txt"] = ("Downstream Qwen classification LoRA adapters for text and serialized tabular tasks\n"
         "These are modified benchmark artifacts, not official Qwen releases.\n"
         "Applicable pinned upstream Apache-2.0 licenses, copyright statements and provenance are under upstream/.\n"
         "Separate upstream NOTICE files are included when present at an allowlisted revision.\n"

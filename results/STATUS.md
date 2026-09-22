@@ -1,6 +1,23 @@
 # Measured execution status
 
-Snapshot: 22 September 2026. **252 completed executions, 50,400 recorded predictions, five recorded Jev failures.** These predictions reuse the same 200 held-out rows per dataset; the count is not 50,400 distinct test examples. Jev’s four zero/few-shot runs are now measured through OpenRouter.
+Snapshot: 22 September 2026. **318 completed execution records and 59,464 recorded predictions** across the text pilot and tabular extension. Predictions reuse held-out examples across methods; these are not distinct test subjects. Nine inference/protocol failures remain in the scores: five from the text pilot and four from tabular evaluation.
+
+## Completed tabular extension
+
+**66/66 conditions, 9,064 predictions and 48/48 paired contrasts** are complete and audited on Titanic3 (binary, 262 test rows), Breast Cancer Wisconsin Diagnostic (binary, 114) and Wine (three classes, 36). Every serialized LLM arm and native classical arm uses the same held-out IDs. Four-per-class prompting, adapters and matched classical fitting share eight/eight/twelve training labels. Full-training classical references use additional labels and are separate.
+
+| Component | Completed execution | Evidence |
+|---|---|---|
+| Native classical | 30 runs: three datasets × five estimators × matched/full labels; 4,120 predictions | [Audited comparison](TABULAR_COMPARISON.md) |
+| Qwen2.5-0.5B, local MPS | Nine zero/few/LoRA runs; three adapters; 1,236 predictions | [Local records](tabular/local) |
+| Qwen3-4B, Colab T4 | Nine zero/few/QLoRA runs; three adapters; 1,236 predictions | [Verified import](tabular/COLAB_IMPORT.json) |
+| Jev 1.13, OpenAI Luna and Astra | 18 zero/few runs; 2,472 requests/predictions; three Jev and one Astra transport failures | [Cost reconciliation](TABULAR_API_COST_SUMMARY.md) |
+
+[Tabular findings](TABULAR_FINDINGS.md) explain the main results and limits. The [v0.3.0-tabular release](https://github.com/statsguysam/jev-classification-benchmark/releases/tag/v0.3.0-tabular) supplies six adapters, prepared source/data, measured results and the Colab notebook/helper. Final conservative accounting is **US$18.522115700 including both studies**, within the approved US$20. Full local verification: **300 tests passed, one skipped**. Model and dataset provenance, failures and unsuccessful adaptation outcomes are preserved.
+
+## Historical text pilot
+
+**252 completed executions, 50,400 recorded predictions, five recorded Jev failures.** These predictions reuse the same 200 held-out rows per dataset; the count is not 50,400 distinct test examples. Jev’s four zero/few-shot runs are measured through OpenRouter. The following tables and US$10 accounting describe this earlier text scope.
 
 | Component | Completed execution | Evidence |
 |---|---|---|

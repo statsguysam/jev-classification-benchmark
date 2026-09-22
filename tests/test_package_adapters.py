@@ -89,3 +89,33 @@ def test_symlink_and_credential_fields_fail_closed(tmp_path, monkeypatch):
     (folder/"jevbench_training.json").write_text(json.dumps(metadata))
     with pytest.raises(ValueError, match="Sensitive field"):
         packager.package([folder], tmp_path/"release.zip", upstream_root=tmp_path/"upstream")
+
+
+@pytest.mark.parametrize("dataset,training_rows", [("titanic", 8), ("breast_cancer", 8), ("wine", 12)])
+def test_training_only_tabular_adapters_keep_licenses_and_dataset_provenance(tmp_path, monkeypatch, dataset, training_rows):
+    folder = adapter(tmp_path, monkeypatch, name=dataset)
+    metadata = json.loads((folder/"jevbench_training.json").read_text())
+    metadata.update(dataset=dataset, training_rows=training_rows)
+    (folder/"jevbench_training.json").write_text(json.dumps(metadata))
+    output = packager.package([folder], tmp_path/"release.zip", upstream_root=tmp_path/"upstream")
+    with zipfile.ZipFile(output) as archive:
+        manifest = json.loads(archive.read("MANIFEST.json"))
+        assert manifest["adapters"][dataset]["dataset"] == dataset
+        assert manifest["adapters"][dataset]["training_rows"] == training_rows
+        assert "upstream/Qwen3-4B-Instruct-2507/LICENSE" in archive.namelist()
+        assert "serialized tabular" in archive.read("NOTICE.txt").decode()
+        for name, expected in manifest["files_sha256"].items():
+            assert hashlib.sha256(archive.read(name)).hexdigest() == expected
+
+
+@pytest.mark.parametrize("dataset,test_accessed", [("unknown", False), ("titanic", True),
+    ("breast_cancer", None), ("wine", "false"), ("wine", 0)])
+def test_unknown_or_not_explicitly_training_only_adapters_refused(tmp_path, monkeypatch, dataset, test_accessed):
+    folder = adapter(tmp_path, monkeypatch)
+    metadata = json.loads((folder/"jevbench_training.json").read_text())
+    metadata.update(dataset=dataset, test_accessed=test_accessed)
+    (folder/"jevbench_training.json").write_text(json.dumps(metadata))
+    output = tmp_path/"release.zip"
+    with pytest.raises(ValueError, match="allowlisted text/tabular training-only"):
+        packager.package([folder], output, upstream_root=tmp_path/"upstream")
+    assert not output.exists()
