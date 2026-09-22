@@ -1,9 +1,11 @@
 # Release adapter packages
 
-Adapter ZIPs contain trained LoRA weights, the PEFT configuration, saved tokenizer,
+Adapter ZIPs contain trained LoRA weights, the PEFT configuration, optional saved tokenizer files,
 training provenance, per-file SHA-256 hashes, upstream license provenance and
 downstream modification notices. Pretrained base weights and raw datasets are
-excluded. These are benchmark adaptations, not official Qwen releases.
+excluded. These are benchmark adaptations, not official Qwen releases. Evaluation
+reloads the tokenizer from the pinned base snapshot; the tabular 4B packages
+contain only adapter weights, configuration and training provenance, plus release notices.
 
 The packager supports only these immutable Apache-2.0 base snapshots:
 
@@ -67,3 +69,40 @@ Recognizable credential fields and key patterns in metadata are rejected; review
 manually edited prose before publication. No automated scanner can establish the
 absence of every possible secret. The manifest hashes all payload files except
 the manifest itself, and publication of the ZIP is a separate step.
+
+## Tabular adapters
+
+The tabular extension has six adaptations: Titanic, Breast Cancer and Wine for
+both base models. They use four training examples per class, three fixed epochs,
+and the identical serialized features documented in [TABULAR_PROTOCOL.md](TABULAR_PROTOCOL.md).
+The 0.5B model uses ordinary LoRA on MPS; the 4B model uses QLoRA training on a
+Colab T4 and normal base precision for evaluation. No validation labels select
+these checkpoints.
+
+The `qwen-tabular-adapters.zip` release asset uses distinct `*-lora` and `*-qlora`
+folder names. Verify its SHA-256 and internal `MANIFEST.json`, then extract it
+under `models/tabular-release/`. [tabular_adapters.json](../configs/tabular_adapters.json)
+maps all six checkpoints to their immutable base revisions. For example:
+
+```bash
+python scripts/tabular_data.py --output data/tabular-full
+python -m jevbench.cli model --config configs/tabular_adapters.json \
+  --model-key qwen_main_titanic_qlora --data data/tabular-full/titanic \
+  --output results/reproduced-tabular --shots 0 --seed 42 --max-requests 262
+```
+
+The tabular source/data bundle already contains the exact prepared splits used
+for the release. Consuming those verified splits avoids preparation-version
+differences; regenerate them with the recorded scikit-learn version if needed.
+The clean [tabular notebook](../notebooks/colab_tabular_benchmark.ipynb) documents
+training and result export. Its transfer helper preserves original Colab paths
+inside provenance rather than rewriting run identities during import.
+
+Package newly trained tabular adapters with the same license-aware packager:
+
+```bash
+python scripts/package_adapters.py \
+  models/tabular/Qwen2.5-0.5B-Instruct/{titanic,breast_cancer,wine}-k4-s42-lora \
+  models/tabular/Qwen3-4B-Instruct-2507/{titanic,breast_cancer,wine}-k4-s42-qlora \
+  --upstream-root artifacts/upstream --output artifacts/qwen-tabular-adapters.zip
+```

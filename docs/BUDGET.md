@@ -1,6 +1,35 @@
 # Hosted API budget and resumption
 
-The approved total is **US$10**, allocated **US$7.50 to OpenAI** and **US$2.50 to Jev**. OpenAI execution reconciles to US$3.142607 in conservative settlements and US$2.568174 in reported-token standard-rate estimates. Jev uses a separate OpenRouter ledger and retains its entire per-request reservations. See [OpenAI accounting](../results/API_COSTS.md) and [Jev/combined accounting](../results/JEV_COSTS.md) for measured totals and cost coverage. Neither ledger is a provider invoice or an account-wide spend cap; the two allocation ceilings remain separate.
+The approved cumulative total is now **US$20**: the original US$10 ceiling plus an additional US$10 authorized for the tabular extension. The completed text study conservatively used **US$5.293007**. Its two ledgers are frozen. The new tabular stage has one shared **US$14.70** ledger, so the prior retained amount plus the entire new allocation is **US$19.993007**. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
+
+## Current tabular stage
+
+All three hosted providers share `results/tabular/api-budget.jsonl` and its `.lock` file. The driver checks SHA-256 identities of both old ledgers and their lock files before every reservation. Do not resume the old text workers while running this stage: changing an old ledger makes the new driver stop. Do not delete, reset, duplicate or independently replace any budget ledger.
+
+The fixed matrix covers Jev, Luna and Astra at zero and four examples per class on all prepared test rows: Titanic 262, Breast Cancer 114, Wine 36. This is **18 runs and 2,472 requests**. It retains the earlier model settings and prices. Successful OpenAI usage can settle reservations conservatively; Jev, failed requests and unknown usage retain their full reservations. All providers share the same POSIX-locked reservation ceiling.
+
+Dry-run planning sends no paid requests:
+
+```bash
+python scripts/run_tabular_hosted.py \
+  --data data/tabular-full/titanic data/tabular-full/breast_cancer data/tabular-full/wine
+```
+
+The ledger has already been initialized. To resume **after all previous tabular workers have stopped**, keep every recorded file and run:
+
+```bash
+python scripts/run_tabular_hosted.py \
+  --data data/tabular-full/titanic data/tabular-full/breast_cancer data/tabular-full/wine \
+  --workers 3 --execute --prompt-api-key
+```
+
+This launches one isolated process per dataset. It asks for `OPENAI_API_KEY` and `OPENROUTER_API_KEY` through hidden terminal prompts, then keeps them in memory. Each process uses the same ledger; changing dataset, prompt, driver or model provenance is not a resume. Errors are recorded, not retried automatically. Do not add `--init-ledger` to a resume command. A fresh reservation can be larger than its later settlement, so execution may stop before the ceiling is fully spent.
+
+Run `python scripts/summarize_tabular_costs.py` to reconcile the tabular ledger and retain the distinction between reported usage, estimates, unknown costs and conservative reservations. See the [tabular protocol](TABULAR_PROTOCOL.md) for dataset and label-budget details.
+
+## Historical text-stage allocation
+
+The original approved total was **US$10**, allocated **US$7.50 to OpenAI** and **US$2.50 to Jev**. OpenAI execution reconciles to US$3.142607 in conservative settlements and US$2.568174 in reported-token standard-rate estimates. Jev retained US$2.1504 in reservations. See [OpenAI accounting](../results/API_COSTS.md) and [Jev/combined accounting](../results/JEV_COSTS.md) for measured totals and cost coverage. The commands below document that completed stage; its unused allocations are not additional current spending authority.
 
 | Allocation | Ledger | Scope as of 22 September 2026 |
 |---|---|---|

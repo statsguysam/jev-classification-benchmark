@@ -1,0 +1,58 @@
+{
+  "titanic": {
+    "source": "vanderbilt_csv",
+    "url": "https://hbiostat.org/data/repo/titanic3.csv",
+    "filename": "titanic3.csv",
+    "sha256": "db6df9666818c69a753cd85d743e01502c8518b00579b6aada0d4fc5a66ccb9d",
+    "rows": 1309,
+    "labels": ["did not survive", "survived"],
+    "target_column": "survived",
+    "homepage": "https://hbiostat.org/data/",
+    "dictionary": "https://hbiostat.org/data/repo/ctitanic3",
+    "attribution": "Data obtained from https://hbiostat.org/data courtesy of the Vanderbilt University Department of Biostatistics.",
+    "license": "Vanderbilt grants permission to use with source attribution; see homepage.",
+    "task_description": "Titanic passenger survival. pclass: 1=first, 2=second, 3=third class. age_years is age; fare_gbp is fare in British pounds; sibsp counts siblings/spouses and parch counts parents/children aboard. Missing=NA.",
+    "excluded_columns": ["survived", "name", "ticket", "cabin", "boat", "body", "home.dest"],
+    "features": [
+      {"name": "pclass", "source_name": "pclass", "kind": "categorical", "description": "Passenger ticket class", "values": ["1", "2", "3"]},
+      {"name": "sex", "source_name": "sex", "kind": "categorical", "description": "Sex as recorded in source", "values": ["female", "male"]},
+      {"name": "age_years", "source_name": "age", "kind": "numeric", "unit": "years", "description": "Passenger age"},
+      {"name": "sibsp", "source_name": "sibsp", "kind": "numeric", "unit": "count", "description": "Siblings and spouses aboard"},
+      {"name": "parch", "source_name": "parch", "kind": "numeric", "unit": "count", "description": "Parents and children aboard"},
+      {"name": "fare_gbp", "source_name": "fare", "kind": "numeric", "unit": "British pounds", "description": "Passenger fare"},
+      {"name": "embarked", "source_name": "embarked", "kind": "categorical", "description": "Embarkation port", "values": ["Cherbourg", "Queenstown", "Southampton"]}
+    ]
+  },
+  "breast_cancer": {
+    "source": "sklearn_bundled",
+    "loader": "load_breast_cancer",
+    "filename": "breast_cancer.csv",
+    "sha256": "fed3eb72d0575ef6192293f5093c6e801b1476b577d0386bf4455504522172ed",
+    "rows": 569,
+    "labels": ["malignant", "benign"],
+    "target_column": "diagnosis",
+    "homepage": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+    "dictionary": "https://scikit-learn.org/stable/datasets/toy_dataset.html#breast-cancer-wisconsin-diagnostic-dataset",
+    "attribution": "Wolberg, W., Mangasarian, O., Street, N., and Street, W. (1993). Breast Cancer Wisconsin (Diagnostic). UCI Machine Learning Repository. DOI:10.24432/C5DW2B. Scikit-learn bundled copy.",
+    "license": "CC-BY-4.0 per UCI source.",
+    "task_description": "Breast mass diagnosis from cell-nucleus measurements. mean=feature mean; error=standard error; worst=mean of three largest values. Original source scales; no scaling or imputation. Missing=NA.",
+    "excluded_columns": ["diagnosis", "ID"],
+    "feature_names": ["mean radius", "mean texture", "mean perimeter", "mean area", "mean smoothness", "mean compactness", "mean concavity", "mean concave points", "mean symmetry", "mean fractal dimension", "radius error", "texture error", "perimeter error", "area error", "smoothness error", "compactness error", "concavity error", "concave points error", "symmetry error", "fractal dimension error", "worst radius", "worst texture", "worst perimeter", "worst area", "worst smoothness", "worst compactness", "worst concavity", "worst concave points", "worst symmetry", "worst fractal dimension"]
+  },
+  "wine": {
+    "source": "sklearn_bundled",
+    "loader": "load_wine",
+    "filename": "wine_data.csv",
+    "sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+    "rows": 178,
+    "labels": ["cultivar 1", "cultivar 2", "cultivar 3"],
+    "target_column": "cultivar",
+    "homepage": "https://archive.ics.uci.edu/dataset/109/wine",
+    "dictionary": "https://scikit-learn.org/stable/datasets/toy_dataset.html#wine-recognition-dataset",
+    "attribution": "Aeberhard, S. and Forina, M. (1992). Wine. UCI Machine Learning Repository. DOI:10.24432/C5PC7J. Scikit-learn target 0/1/2 maps to original cultivar 1/2/3.",
+    "license": "CC-BY-4.0 per UCI source.",
+    "task_description": "Wine cultivar classification from 13 chemical measurements. Three anonymous cultivars follow the original source class order 1, 2, 3. Original source scales; no scaling or imputation. Missing=NA.",
+    "excluded_columns": ["class", "cultivar"],
+    "feature_names": ["alcohol", "malic_acid", "ash", "alcalinity_of_ash", "magnesium", "total_phenols", "flavanoids", "nonflavanoid_phenols", "proanthocyanins", "color_intensity", "hue", "od280/od315_of_diluted_wines", "proline"]
+  }
+}

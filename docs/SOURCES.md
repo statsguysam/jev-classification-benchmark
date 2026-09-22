@@ -51,6 +51,18 @@ The open-model recommendation prioritizes a manageable QLoRA run and diversity. 
 
 Repository publication should distribute download/parsing instructions, pinned source identifiers, hashes, labels/predictions, and aggregate metrics. The code's license does not relicense upstream datasets. Raw corpora and request bodies containing those texts stay untracked by default. This audit records what the retrieved pages say; it does not resolve unspecified licenses or confer new rights.
 
+### Tabular extension
+
+The [tabular protocol](TABULAR_PROTOCOL.md) records exact source byte hashes, feature units, exclusions, serialization and split construction. It uses Vanderbilt's 1,309-row Titanic3 dataset and the scikit-learn bundled numerical datasets. The prepared feature projections, targets and hashes are included in the separate tabular Colab release bundle with attribution; the original Titanic personal-description columns are excluded.
+
+| Dataset | Primary sources | Attribution and redistribution |
+|---|---|---|
+| Titanic3 | [Vanderbilt Biostatistics data collection](https://hbiostat.org/data/), [Titanic3 dictionary](https://hbiostat.org/data/repo/ctitanic3) | Data obtained from https://hbiostat.org/data courtesy of the Vanderbilt University Department of Biostatistics; use permitted with attribution. |
+| Breast Cancer Wisconsin Diagnostic | [UCI dataset](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic), [DOI 10.24432/C5DW2B](https://doi.org/10.24432/C5DW2B) | Wolberg, Mangasarian, Street and Street (1993), CC BY 4.0. Feature names are serialized without changing the measured values; records are partitioned into benchmark splits. |
+| Wine | [UCI dataset](https://archive.ics.uci.edu/dataset/109/wine), [DOI 10.24432/C5PC7J](https://doi.org/10.24432/C5PC7J) | Aeberhard and Forina (1992), CC BY 4.0. Feature names are serialized without changing the measured values; records are partitioned into benchmark splits. |
+
+The native baselines use scikit-learn's [mixed-column preprocessing](https://scikit-learn.org/stable/modules/compose.html#columntransformer-for-heterogeneous-data) and [StratifiedGroupKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedGroupKFold.html). All fitted preprocessing is trained on the declared training rows. The report's whole-group bootstrap is an explicitly implemented project analysis, with regression tests and its assumptions stated in the protocol.
+
 ## Methods
 
 | Primary source | Use in this project |

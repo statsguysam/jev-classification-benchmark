@@ -1,0 +1,50 @@
+{
+  "qwen_small_titanic_lora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_path": "models/tabular-release/titanic-k4-s42-lora"
+  },
+  "qwen_small_breast_cancer_lora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_path": "models/tabular-release/breast_cancer-k4-s42-lora"
+  },
+  "qwen_small_wine_lora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_path": "models/tabular-release/wine-k4-s42-lora"
+  },
+  "qwen_main_titanic_qlora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "adapter_path": "models/tabular-release/titanic-k4-s42-qlora"
+  },
+  "qwen_main_breast_cancer_qlora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "adapter_path": "models/tabular-release/breast_cancer-k4-s42-qlora"
+  },
+  "qwen_main_wine_qlora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "adapter_path": "models/tabular-release/wine-k4-s42-qlora"
+  }
+}

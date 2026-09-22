@@ -25,15 +25,20 @@ OPTIONAL_FILES = (
     "scripts/audit_colab_import.py", "scripts/summarize_jev_pilot.py", "scripts/summarize_jev_costs.py",
     "scripts/summarize_hosted.py", "scripts/summarize_colab.py",
     "scripts/plot_neural_pilot.py", "scripts/plot_results.py", "scripts/plot_calibration.py",
+    "configs/tabular_datasets.json", "configs/tabular_hosted.json", "configs/tabular_adapters.json", "docs/TABULAR_PROTOCOL.md",
+    "scripts/tabular_data.py", "scripts/run_tabular_classical.py", "scripts/run_tabular_local.py",
+    "scripts/run_tabular_hosted.py", "scripts/export_tabular_colab.py", "scripts/tabular_colab_artifacts.py",
+    "scripts/summarize_tabular.py", "scripts/summarize_tabular_costs.py", "scripts/plot_tabular.py",
+    "notebooks/colab_tabular_benchmark.ipynb",
 )
 
 
-def clean_notebook(content: bytes) -> bytes:
+def clean_notebook(content: bytes, name: str = "colab_benchmark.ipynb") -> bytes:
     notebook = json.loads(content)
     notebook["metadata"] = {
         "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
         "language_info": {"name": "python"},
-        "colab": {"name": "colab_benchmark.ipynb"},
+        "colab": {"name": name},
     }
     for index, cell in enumerate(notebook["cells"]):
         cell["metadata"] = {}
@@ -61,7 +66,7 @@ def export(root: Path = ROOT) -> Path:
             raise ValueError(f"Refusing source outside repository: {path.name}")
         content = path.read_bytes()
         relative = path.relative_to(root).as_posix()
-        payloads[relative] = clean_notebook(content) if path.suffix == ".ipynb" else content
+        payloads[relative] = clean_notebook(content, path.name) if path.suffix == ".ipynb" else content
     payloads["bundle_manifest.json"] = (json.dumps({
         "schema_version": 1,
         "files_sha256": {name: hashlib.sha256(data).hexdigest() for name, data in sorted(payloads.items())},
