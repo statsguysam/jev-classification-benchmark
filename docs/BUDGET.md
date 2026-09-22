@@ -1,6 +1,61 @@
 # Hosted API budget and resumption
 
-The approved cumulative total is now **US$25**: the original US$10 ceiling, US$10 for the tabular extension, and US$5 for the expanded numerical zero/few-shot review experiment. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
+The approved cumulative total is **US$25**: the original US$10 ceiling, US$10 for the tabular extension, and US$5 for the expanded numerical zero/few-shot review experiment. The new text pipeline extension uses remaining headroom inside this ceiling and preserves the full unfinished numerical allowance; it adds no spending authorization. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
+
+## Text pipeline extension allocation
+
+**No text-review calls have started.** Twenty-four planned source → Jev conditions on SST-2/TREC require at most **4,800 new review requests**. Existing Qwen/Luna/Astra and direct-Jev predictions are reused; SmolLM2/Granite use local or Colab public weights. Reusing paid source predictions creates no new source-model charge in this stage, but it does not make the cost of running a fresh two-stage pipeline zero.
+
+The new `results/text_extension/review-budget.jsonl` has a **US$1.60 allocation**, separate from all previous ledgers. Its envelope protects the entire 1,500-request numerical expansion, including currently unfinished rows:
+
+| Protected amount | USD |
+|---|---:|
+| Fixed conservative amount before the numerical expansion | 19.325827700 |
+| Full numerical expansion allowance: 1,500 × 0.002688 | 4.032000000 |
+| New text-review allocation | 1.600000000 |
+| Maximum combined conservative accounting | **24.957827700** |
+| Existing cumulative authorization | **25.000000000** |
+
+Earlier text, tabular and initial numerical ledgers remain frozen. The numerical expansion ledger retains its original reservation policy and remaining allowance. The new wrapper verifies those identities and the combined envelope before reservations; it does not release, rewrite or reprice previous events.
+
+### New-call settlement policy
+
+Each new text-review HTTP request first reserves the unchanged **US$0.002688**. Only a successful new response with verified TypeSafe/Jev identity, request ID, complete valid input/output usage, known nonnegative reported cost and no reservation-assumption overrun may settle once. Its retained charge is:
+
+```text
+min(original reservation,
+    round upward to the next 0.000000001 USD(
+        1.25 × max(reported cost, input tokens × 0.042 / 1,000,000)))
+```
+
+The 1.25 multiplier applies to the larger of reported cost and uncached input-token cost; it is not a 0.125 multiplier. Output tokens are free under the frozen route declaration. Any released difference becomes available only within this new text ledger. Failed predictions, unknown costs/usage, timeouts and interrupted calls retain the full reservation. Reported charges, usage-derived estimates and conservative charges remain distinct; none is represented as an invoice.
+
+Keeping every planned request at its original reservation would require US$12.9024, exceeding this new allocation. Completion therefore depends on eligible conservative settlements and funded provider credit. **The US$1.60 cap does not guarantee all 4,800 calls will complete.** A failed or unaccounted request is not retried to make a condition complete, and a partial condition has no final accuracy score.
+
+### Planning, first execution and resumption
+
+The [text review wrapper](../scripts/run_text_jev_review.py) defaults to read-only planning: no model calls, credential reads or ledger initialization. `--freeze-sources` explicitly writes immutable source manifests after auditing the saved predictions. It does not make paid calls by itself.
+
+```bash
+python scripts/run_text_jev_review.py \
+  --datasets sst2 trec \
+  --model-keys qwen_small qwen_main luna astra smollm2 granite --shots 0 4
+```
+
+Execution requires complete, frozen selected sources and a fresh authenticated **positive available-credit** check before creating a ledger or sending a model request. Account balance totals are not persisted in public evidence. A configured API-key quota is not proof that the provider account is funded. The dated transport guard still requires the frozen declaration verified on **22 September 2026 UTC**; after that UTC date, route/pricing reverification and a reviewed compatible path are needed. Funding alone does not bypass this guard. Do not edit frozen producers or merely change their date.
+
+Only for a first execution with no existing text ledger, after those prerequisites are satisfied:
+
+```bash
+python scripts/run_text_jev_review.py \
+  --datasets sst2 trec \
+  --model-keys qwen_small qwen_main luna astra smollm2 granite --shots 0 4 \
+  --freeze-sources --execute --init-ledger --prompt-api-key
+```
+
+The hidden terminal prompt reads `OPENROUTER_API_KEY`; do not place credentials in notebook cells, command arguments or committed files. `--stop-after-new-requests 1` can checkpoint one paid request without retrying it on resume. The runner has one execution lock, a 4,800-request cap, duplicate-row checks and global checkpoint/ledger reconciliation. A billing error stops execution; so do three consecutive other errors. A halted checkpoint requires investigation, not deletion or a replacement ledger.
+
+To resume an initialized, non-halted text study after its previous worker has stopped, keep the same configuration, source manifests, ledger and lock, and use the same command **without `--init-ledger`**. Saved rows are retained. Do not change producer, prompt, source or budget identities and call it a resume. Rebuild the [text comparison](../results/text_extension/COMPARISON.json) after audited execution before changing completion or cost claims. See [protocol](TEXT_EXTENSION_PROTOCOL.md) and [reproduction](TEXT_EXTENSION_REPRODUCTION.md).
 
 ## Expanded numerical review stage
 

@@ -1,0 +1,70 @@
+{
+  "classical_features": "Training-only sparse word (1,2) plus char_wb (3,5) TF-IDF; one fixed estimator configuration; no validation fitting",
+  "classical_helper_sha256": "d0a6d452185c5487e32b01160bfcdb4d044ee5d804b969f4fe95517dc81f9a2c",
+  "classical_training_budgets_per_class": [
+    4,
+    null
+  ],
+  "cumulative_authorized_usd": "25.00",
+  "datasets": [
+    "sst2",
+    "trec"
+  ],
+  "expected_comparisons": 72,
+  "expected_conditions": 68,
+  "fixed_prior_usd": "19.325827700",
+  "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+  "intervals": "Unadjusted paired group percentile bootstrap, conditional on fixed split/examples/models",
+  "model_registry": {
+    "astra": {
+      "model": "gpt-6-astra",
+      "provider": "openai"
+    },
+    "granite": {
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "new_local": true,
+      "provider": "hf",
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+    },
+    "luna": {
+      "model": "gpt-5.6-luna",
+      "provider": "openai"
+    },
+    "qwen_main": {
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "provider": "hf",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+    },
+    "qwen_small": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "provider": "hf",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+    },
+    "smollm2": {
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "new_local": true,
+      "provider": "hf",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674"
+    }
+  },
+  "new_review_stage_cap_usd": "1.60",
+  "numeric_study_reserved_allowance_usd": "4.032000000",
+  "review_design": "Original text, exactly matched examples, cached proposed class; no source model identity or generated rationale in reviewer prompt",
+  "review_execution_frozen": true,
+  "review_prompt_version": "cached-label-text-review-v1",
+  "review_runner_sha256": "bdc3d1cac8e52791359023b57abac8833d898af6ff7b0240512e337baa3ba43e",
+  "schema_version": 1,
+  "seed": 42,
+  "shots_per_class": [
+    0,
+    4
+  ],
+  "source_sha256": {
+    "configs/text_classical_extension.json": "da2e9a4dfa6df524dcc7a455f186782a1bf21eeda109bef35b03e979e415aa6d",
+    "configs/text_extension_sources.json": "b3425448e9a4478acf6762bfb37bb7d6df8090ffc49774f671820d11e5bd762d",
+    "scripts/run_text_classical_extension.py": "d0a6d452185c5487e32b01160bfcdb4d044ee5d804b969f4fe95517dc81f9a2c",
+    "scripts/text_extension_sources.py": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290"
+  },
+  "study_status": "exploratory_after_prior_text_results_viewed",
+  "text_source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290"
+}

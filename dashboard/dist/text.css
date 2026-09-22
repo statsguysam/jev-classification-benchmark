@@ -1,0 +1,2 @@
+/* Text view shares the numerical dashboard layout without changing it. */
+.numeric-main .page-heading p{max-width:850px}.top-meta a{white-space:nowrap}@media(max-width:800px){.top-meta>a:first-child{display:inline}.top-meta>a:nth-child(2){display:none}}

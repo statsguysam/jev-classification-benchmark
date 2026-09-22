@@ -18,3 +18,4 @@ artifacts/
 *.log
 results/numeric_decisions/review-execution.lock
 results/numeric_expansion/review-execution.lock
+results/text_extension/review-execution.lock

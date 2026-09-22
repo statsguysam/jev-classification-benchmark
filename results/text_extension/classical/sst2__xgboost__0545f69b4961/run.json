@@ -1,0 +1,755 @@
+{
+  "artifacts_sha256": {
+    "predictions.jsonl": "d7c41343840c7f9107d52cbab09fb8a6263cccc10f73def2d7962b780e278916",
+    "test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764"
+  },
+  "bootstrap_samples": 2000,
+  "comparison_track": "matched demonstration labels",
+  "completed_at": "2026-09-22T19:12:17.628835+00:00",
+  "config": {
+    "experiment_config_sha256": "47be846c020fa999389c8fd42f2a2760aa8079c401226b1a212420b9e47ceb07",
+    "input_representation": "word_char_tfidf",
+    "library_versions": {
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    },
+    "model": "xgboost",
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "device": "cpu",
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 0.1,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "tree_method": "hist",
+      "verbosity": 0
+    },
+    "protocol_sha256": "fc01561e70a71f67e769a4c8eb71bdd8da135f20c903fda9a4892d355f8277d1",
+    "source_sha256": {
+      "scripts/run_text_classical_extension.py": "d0a6d452185c5487e32b01160bfcdb4d044ee5d804b969f4fe95517dc81f9a2c",
+      "scripts/summarize_tabular.py": "422e973822e97e928e2128f604dabe84fa3675e57fdcb86305a75473c55b7157",
+      "src/jevbench/__init__.py": "ba19fd98083ce60c00281ca4dbfc8a1596481da6cfd1d18a138378637f75bfea",
+      "src/jevbench/classical.py": "8c40d49c2f100e09368e16480cc26fcb515f0a76b0e1c4723b2c5799bf84d0bc",
+      "src/jevbench/cli.py": "7d9c274055eae20e89b3dac4c22293a4bfb17247f546d627cce984a7febe7c62",
+      "src/jevbench/data.py": "df1f41643d745a6a075598ea4c071b17770313a7a691189c949297e148035b21",
+      "src/jevbench/lora.py": "e61d35c68fc98cbbd4f59b5421f80ed7133188104439812cf9dfe0792c4a1330",
+      "src/jevbench/metrics.py": "551146253f47dedc9354e6e1b1ed81fdab57c07b0c77b8471a31eb4e2b6528c9",
+      "src/jevbench/prompts.py": "1b687e697edf2065c4d59b171f03cf6d8b5f327d17c992a906dbae03b9a8a875",
+      "src/jevbench/providers.py": "fbeb2156be56246639bd87da309931e0f62928617ab23a4a6b3da60353b1c149",
+      "src/jevbench/report.py": "381c07b459dd06bb1b35be6af14aaea90e43b69f172421fe6d4434ca2f752f7e",
+      "src/jevbench/runner.py": "ac655ec86ee261228efe8c682c880c43ab063853c8f6f40003007a14641b1ff6",
+      "src/jevbench/types.py": "9334c2741d48f1cbda7fd9757ff7651d3b80fe87e61d7a7038452bbc5e770f96"
+    },
+    "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+    "train_per_class": 4
+  },
+  "config_saved_before_first_fit": true,
+  "dataset": "sst2",
+  "dataset_manifest": {
+    "duplicate_policy": {
+      "before_subsampling": true,
+      "heldout_priority": "test then validation then train",
+      "limitation": "Exact normalized text filtering does not detect semantic/phrase overlap or pretraining contamination",
+      "normalization": "Unicode NFKC, casefold, collapse whitespace; no punctuation or HTML changes",
+      "train_rows_removed_for_test_overlap": [],
+      "train_rows_removed_for_validation_overlap": [
+        "sst2:train:2175:c33e8f652cb94f01",
+        "sst2:train:2813:cbfff047ee5c456e",
+        "sst2:train:3915:75ec39f058360795",
+        "sst2:train:4011:4bf818fa5b4fff1c",
+        "sst2:train:4092:56628c496ae5cca9",
+        "sst2:train:5095:a80e69d6deaeeed2",
+        "sst2:train:5620:e477968c0700f0ce",
+        "sst2:train:5934:d8cd1e692eaedab9",
+        "sst2:train:6497:86cebc89282037a8",
+        "sst2:train:6669:3df8c5cde3191ebb",
+        "sst2:train:6982:c2eef0d4c776deb6",
+        "sst2:train:8222:8a1d12c187d35bf3",
+        "sst2:train:9417:27ef2cc2d40cb715",
+        "sst2:train:9906:5428c31643cd072a",
+        "sst2:train:10547:55a0e1128a2a9729",
+        "sst2:train:11011:db2b3ab294cbfb95",
+        "sst2:train:11535:0b381029abc9da4f",
+        "sst2:train:13193:67860bef10b7752e",
+        "sst2:train:13227:68733dc0b7556caa",
+        "sst2:train:14078:32a56844a8c5d7a1",
+        "sst2:train:15026:373bf01477ad8cbe",
+        "sst2:train:15284:0c7ad5c8406e7eba",
+        "sst2:train:17156:527fa860ec8b248c",
+        "sst2:train:17162:9c120c8aa6dba106",
+        "sst2:train:18521:e9b2d01430c70dad",
+        "sst2:train:19209:44904eb481b2567e",
+        "sst2:train:19750:f18f90de363c05c6",
+        "sst2:train:21992:23281b175e5254f5",
+        "sst2:train:23178:4a632047c2ad9188",
+        "sst2:train:23276:bf90341a466b2557",
+        "sst2:train:23736:49d611ecbb7bdf9b",
+        "sst2:train:24023:07b26877be743fb2",
+        "sst2:train:24865:4f05259bf6ffb16b",
+        "sst2:train:25349:78450e26ed05466d",
+        "sst2:train:25553:3a88420150a254a2",
+        "sst2:train:25985:7532da632c8aa07f",
+        "sst2:train:28374:713fd2726c14eddd",
+        "sst2:train:28965:39acff0e959fb0fe",
+        "sst2:train:31136:5cd1580f1180e740",
+        "sst2:train:31764:d762e64dab79085f",
+        "sst2:train:32743:59d2f4297e58049f",
+        "sst2:train:33177:f68b3f93b19bfbac",
+        "sst2:train:35024:39d895f8786b67a3",
+        "sst2:train:36610:9eab7c4fbc011ace",
+        "sst2:train:36986:9cc931e426b66d5c",
+        "sst2:train:38422:7f783d40316f0661",
+        "sst2:train:39191:870bc7f1e16738db",
+        "sst2:train:39375:235c0c8bc664c7aa",
+        "sst2:train:39455:c897a5adaa15493c",
+        "sst2:train:39907:a79c7308d31de48c",
+        "sst2:train:40442:7e770f226fb3c78a",
+        "sst2:train:40619:0b204dc53286f1f6",
+        "sst2:train:44481:776e3f50106f969f",
+        "sst2:train:45161:eda15c675cd0d8cd",
+        "sst2:train:47878:06834eb94c6919dc",
+        "sst2:train:49976:81a421868b7258b4",
+        "sst2:train:50141:aa63f952abeef62a",
+        "sst2:train:52160:3af3407d7bbdb650",
+        "sst2:train:52342:8f9b214e870b3453",
+        "sst2:train:53956:47e55be5681d1262",
+        "sst2:train:54445:4ec312f6140c494e",
+        "sst2:train:56207:5003d41d5278da37",
+        "sst2:train:56970:2e33b22db696263d",
+        "sst2:train:57246:6e0ba6eae4a61da8",
+        "sst2:train:58173:de2c3a08d4003453",
+        "sst2:train:60143:88a8eaa274ace731",
+        "sst2:train:60472:7f18fdbb691ac266",
+        "sst2:train:61011:5ef157b89a484892",
+        "sst2:train:61906:bf5ffd35f650a0bc",
+        "sst2:train:63438:7adb3619e5a917a5",
+        "sst2:train:65494:6c743c18e24b9bd9",
+        "sst2:train:66005:cc8fe0e963a20d83",
+        "sst2:train:67317:12b293eb2dd80ad1"
+      ],
+      "within_split": "retain all natural duplicates, including final test; report counts"
+    },
+    "files_sha256": {
+      "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+      "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+      "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+    },
+    "labels": [
+      "negative",
+      "positive"
+    ],
+    "limits": {
+      "test": 200,
+      "train": 10000,
+      "validation": 1000
+    },
+    "name": "sst2",
+    "post_transform_overlap_removed": {
+      "train": 0,
+      "validation": 0
+    },
+    "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "card": "https://huggingface.co/datasets/stanfordnlp/sst2",
+      "files": {
+        "test": "data/validation-00000-of-00001.parquet",
+        "train": "data/train-00000-of-00001.parquet"
+      },
+      "files_sha256": {
+        "test": "fb00fe008f6828f86ba2beda8415a4cf5da0c884f21c5f238c87131b5aa19529",
+        "train": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09"
+      },
+      "homepage": "https://nlp.stanford.edu/sentiment/",
+      "label_column": "label",
+      "labels": [
+        "negative",
+        "positive"
+      ],
+      "license": "unknown; consult original source before redistribution",
+      "notes": "Official labeled validation is the final held-out test. Internal validation comes only from official training data. Hidden-label official test is unused. SST2 train includes phrases; exact text filtering does not detect related phrases or model pretraining contamination.",
+      "repo_id": "stanfordnlp/sst2",
+      "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+      "source": "huggingface_parquet",
+      "source_splits": {
+        "test": "validation",
+        "train": "train"
+      },
+      "text_column": "sentence",
+      "validation_fraction": 0.1
+    },
+    "source_counts": {
+      "test": 872,
+      "train": 67349
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 98,
+          "1": 102
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+        "rows": 200
+      },
+      "train": {
+        "class_counts": {
+          "0": 4421,
+          "1": 5579
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 9,
+        "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+        "rows": 10000
+      },
+      "validation": {
+        "class_counts": {
+          "0": 442,
+          "1": 558
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+        "rows": 1000
+      }
+    },
+    "text_policy": {
+      "applies_to": "all splits and all model families",
+      "kind": "character_prefix",
+      "max_chars": 2000
+    },
+    "truncated_rows": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    },
+    "validation_fraction": 0.1
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "xgboost": "3.4.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "negative",
+    "positive"
+  ],
+  "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+  "method": "classical_text_extension",
+  "metrics": {
+    "accuracy": 0.445,
+    "average_precision": 0.48293020185417024,
+    "balanced_accuracy": 0.446078431372549,
+    "bootstrap": {
+      "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+      "draws_per_replicate": 200,
+      "group_definition": "identical serialized test text SHA256",
+      "method": "unstratified group percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.375,
+            0.515
+          ],
+          "estimate": 0.445
+        },
+        "macro_f1": {
+          "ci95": [
+            0.3698580830933772,
+            0.5122735859446134
+          ],
+          "estimate": 0.44387384453518375
+        }
+      },
+      "n_groups": 200,
+      "n_rows": 200,
+      "resampled_row_count_range": [
+        200,
+        200
+      ],
+      "samples": 2000,
+      "seed": 42
+    },
+    "brier_sum": 0.6982632402948393,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        49,
+        49,
+        0
+      ],
+      [
+        62,
+        40,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.2513049210194278,
+    "failure_rate": 0.0,
+    "input_tokens": null,
+    "input_tokens_coverage": 0.0,
+    "input_tokens_known_total": 0,
+    "latency_p50_s": 5.286249972414225e-05,
+    "latency_p95_s": 5.286249972414225e-05,
+    "log_loss": 1.0132596889387753,
+    "macro_f1": 0.44387384453518375,
+    "n_classes": 2,
+    "n_failures": 0,
+    "n_probability_rows": 200,
+    "n_test": 200,
+    "output_tokens": null,
+    "output_tokens_coverage": 0.0,
+    "output_tokens_known_total": 0,
+    "per_class": [
+      {
+        "f1": 0.4688995215311005,
+        "label": 0,
+        "precision": 0.44144144144144143,
+        "recall": 0.5,
+        "support": 98
+      },
+      {
+        "f1": 0.418848167539267,
+        "label": 1,
+        "precision": 0.449438202247191,
+        "recall": 0.39215686274509803,
+        "support": 102
+      }
+    ],
+    "prediction_time_s": 0.01057249994482845,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 12,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 5,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 6,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.43434343434343436,
+        "bin": 7,
+        "count": 99,
+        "mean_confidence": 0.5000007152557373
+      },
+      {
+        "accuracy": null,
+        "bin": 8,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.5714285714285714,
+        "bin": 9,
+        "count": 7,
+        "mean_confidence": 0.623305082321167
+      },
+      {
+        "accuracy": null,
+        "bin": 10,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 11,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.5,
+        "bin": 12,
+        "count": 10,
+        "mean_confidence": 0.8648175935501576
+      },
+      {
+        "accuracy": 0.44047619047619047,
+        "bin": 13,
+        "count": 84,
+        "mean_confidence": 0.9136857366883074
+      },
+      {
+        "accuracy": null,
+        "bin": 14,
+        "count": 0,
+        "mean_confidence": null
+      }
+    ],
+    "roc_auc": 0.4461784713885554,
+    "valid_response_accuracy": 0.445,
+    "zero_true_class_probability_rows": 0
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "sst2__xgboost__0545f69b4961",
+  "seed": 42,
+  "started_at": "2026-09-22T19:12:17.541585+00:00",
+  "status": "complete",
+  "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+  "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+  "training": {
+    "all_estimator_parameters": {
+      "base_score": null,
+      "booster": null,
+      "callbacks": null,
+      "colsample_bylevel": null,
+      "colsample_bynode": null,
+      "colsample_bytree": 1.0,
+      "device": "cpu",
+      "early_stopping_rounds": null,
+      "enable_categorical": true,
+      "eval_metric": "logloss",
+      "feature_types": null,
+      "feature_weights": null,
+      "gamma": null,
+      "grow_policy": null,
+      "importance_type": null,
+      "interaction_constraints": null,
+      "learning_rate": 0.05,
+      "max_bin": null,
+      "max_cat_threshold": null,
+      "max_cat_to_onehot": null,
+      "max_delta_step": null,
+      "max_depth": 3,
+      "max_leaves": null,
+      "min_child_weight": 0.1,
+      "missing": "nan",
+      "monotone_constraints": null,
+      "multi_strategy": null,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "num_parallel_tree": null,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "sampling_method": null,
+      "scale_pos_weight": null,
+      "subsample": 1.0,
+      "tree_method": "hist",
+      "validate_parameters": null,
+      "verbosity": 0
+    },
+    "candidate_budget": 1,
+    "early_stopping": false,
+    "feature_fit_s": 0.005819375044666231,
+    "features": {
+      "dense_conversion": false,
+      "fit_split": "selected training rows only",
+      "input_representation": "word_char_tfidf",
+      "matrix_dtype": "float64",
+      "matrix_format": "csr",
+      "matrix_sha256": "28a3d47080eb0a93b8e505969866c0f12e0ab89cf27e4114a0507ddcd567cd48",
+      "matrix_shape": [
+        8,
+        908
+      ],
+      "nonzero_count": 1011,
+      "test_rows_seen_during_fit": 0,
+      "training_records_sha256": "9dddfeadad1b0e80a11330f97ddf188207be49e657b9763beb09e9b89b256e4f",
+      "training_text_sha256": "42aca2518f3d001cc1f04d84a0e5aa9f67215eeae12afe0c23c1f07d0ae3973b",
+      "transformers": {
+        "char": {
+          "feature_count": 784,
+          "idf_sha256": "e4b5ad45ab713f7e207ae9381d5987743b860665b45e600421e2d92e80a5ab81",
+          "parameters": {
+            "analyzer": "char_wb",
+            "binary": false,
+            "decode_error": "strict",
+            "dtype": "numpy.float64",
+            "encoding": "utf-8",
+            "input": "content",
+            "lowercase": true,
+            "max_df": 1.0,
+            "max_features": 80000,
+            "min_df": 1,
+            "ngram_range": [
+              3,
+              5
+            ],
+            "norm": "l2",
+            "preprocessor": null,
+            "smooth_idf": true,
+            "stop_words": null,
+            "strip_accents": null,
+            "sublinear_tf": true,
+            "token_pattern": "(?u)\\b\\w\\w+\\b",
+            "tokenizer": null,
+            "use_idf": true,
+            "vocabulary": null
+          },
+          "vocabulary_sha256": "d7da5e22f74b4807aec34325fc4179e4500f0eb9de2778dd682a75d2833536b7"
+        },
+        "word": {
+          "feature_count": 124,
+          "idf_sha256": "6980e92cdb0f6783366ef73facd1e290cf689af424ed20cb998b378152e9f4d9",
+          "parameters": {
+            "analyzer": "word",
+            "binary": false,
+            "decode_error": "strict",
+            "dtype": "numpy.float64",
+            "encoding": "utf-8",
+            "input": "content",
+            "lowercase": true,
+            "max_df": 1.0,
+            "max_features": 60000,
+            "min_df": 1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "norm": "l2",
+            "preprocessor": null,
+            "smooth_idf": true,
+            "stop_words": null,
+            "strip_accents": null,
+            "sublinear_tf": true,
+            "token_pattern": "(?u)\\b\\w\\w+\\b",
+            "tokenizer": null,
+            "use_idf": true,
+            "vocabulary": null
+          },
+          "vocabulary_sha256": "24b9ab386fc460d1fc4ae6c086cf9df672802722954c27dc7ba8498a8be0e180"
+        }
+      },
+      "validation_rows_seen": 0
+    },
+    "fit_and_selection_s": 0.021463375072926283,
+    "input_representation": "word_char_tfidf",
+    "latency_measurement": "amortized batch transform and predict_proba; not individual hosted request latency",
+    "library_versions": {
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    },
+    "model": "xgboost",
+    "model_fit_s": 0.015644000028260052,
+    "probability_calibration": "none",
+    "probability_kind": "native_uncalibrated",
+    "refit_with_validation": false,
+    "resolved_booster_parameters": {
+      "learner": {
+        "generic_param": {
+          "device": "cpu",
+          "fail_on_invalid_gpu_id": "0",
+          "n_jobs": "1",
+          "nthread": "1",
+          "random_state": "42",
+          "rng_state": "42 3107752595 1895908407 3900362577 3030691166 4081230161 2732361568 1361238961 3961642104 867618704 2837705690 3281374275 3928479052 3691474744 3088217429 1769265762 3769508895 2731227933 2930436685 486258750 1452990090 3321835500 3520974945 2343938241 928051207 2811458012 3391994544 3688461242 1372039449 3706424981 1717012300 1728812672 1688496645 1203107765 1648758310 440890502 1396092674 626042708 3853121610 669844980 2992565612 310741647 3820958101 3474052697 305511342 2053450195 705225224 3836704087 3293527636 1140926340 2738734251 574359520 1493564308 269614846 427919468 2903547603 2957214125 181522756 4137743374 2557886044 3399018834 1348953650 1575066973 3837612427 705360616 4138204617 1604205300 1605197804 590851525 2371419134 2530821810 4183626679 2872056396 3895467791 1156426758 184917518 2502875602 2730245981 3251099593 2228829441 2591075711 3048691618 3030004338 1726207619 993866654 823585707 936803789 3180156728 1191670842 348221088 988038522 3281236861 1153842962 4152167900 98291801 816305276 575746380 1719541597 2584648622 1791391551 3234806234 413529090 219961136 4180088407 1135264652 3923811338 2304598263 762142228 1980420688 1225347938 3657621885 3762382117 1157119598 2556627260 2276905960 3857700293 1903185298 4258743924 2078637161 4160077183 3569294948 2138906140 1346725611 1473959117 2798330104 3785346335 4103334026 3448442764 1142532843 4278036691 3071994514 3474299731 1121195796 1536841934 2132070705 1064908919 2840327803 992870214 2041326888 2906112696 4182466030 1031463950 703166484 854266995 4157971695 4071962029 2600094776 2770410869 3776335751 2599879593 2451043853 2223709058 2098813464 4008111478 2959232195 3072496064 2498909222 4020139729 785990520 958060279 4183949075 2392404465 533774465 4092066952 3967420027 1726137853 2907699474 3158758391 1460845905 1323598137 2446717890 3004885867 3447263769 1378488047 3172418196 652839901 1695052769 226007057 778836071 1216725078 655651335 1850195064 427367795 800074262 2241880422 1713434925 339981078 1730571881 672610244 1952245009 2729177102 3516932475 4032720152 3177283432 411893652 2440235559 3587427933 43170267 39225133 3904203400 1935961247 3843123487 1625453782 1337993374 2095455879 3402219947 634671126 70868861 3072823841 851862432 1828056818 2794213810 1222863684 2164539406 4249334162 1380362252 1512719097 2773165233 4063118969 3041859837 529421431 563872464 2478730478 3168749051 4132953373 3922807735 1124217574 1970058502 1744120743 1906315107 1074758800 1611130652 2878846041 886823888 1175456250 1669874674 2428820171 1044308794 3841962192 138850094 1239727126 1753711876 2194286827 872797664 4276240980 690338888 4087206238 2279169960 1117436170 3344885072 3127829945 315537090 3802787206 4157203318 1637047079 3774106877 3230158646 1855823338 1931415993 667252379 4288528171 1587598285 1096793218 1916566454 101891899 2354644560 3351208292 1467125166 2177732119 4122299478 3904084887 2653591155 4201043109 2867379343 2660555187 3641744616 4126452939 326579197 2697259239 3365236848 3007834487 4118919490 3306741951 2285455175 1956645973 1879691841 891565150 1843460149 2013381028 819311674 123282948 1436558519 1154343666 206804484 1650349242 2142011886 304163699 2608574600 2500624796 2996744833 2344192475 3152512202 165571606 691170269 1806226529 568535825 1243813863 3068953841 3843784723 1540495237 4246006858 1303595780 3288680241 864868851 819595545 3230857496 3574119395 1545404573 2970139338 4292786727 1803072884 1374565738 1736333177 1978645403 3962597126 1068006206 3458125500 168085922 1597587506 2052497512 1323596727 2421372441 1468386547 3574947527 3363915938 860279252 1309097460 3065417722 1490716202 3476091722 1669402145 895071221 1432690175 3353592973 149850974 2789493615 826939483 666980418 755367270 3988951195 21783894 1924727373 1699517788 1152431122 2593798113 3522529522 2797535609 4018366956 2350035889 3010507270 2832621820 627979167 997422629 365587204 2302500352 1720920631 689999548 3713985947 3267499624 1971264680 1981530399 1662926921 1833821660 1422522022 3141447769 2727954526 4172728772 1787436028 1902276939 3145551277 4207627911 2497093521 4111966589 3929089589 2253454030 1069424637 2165048659 2848813944 2435898022 2546206777 3864777677 3107311565 3776562483 1040285049 3171631943 2404677828 2522848682 2930777301 2831905121 1436989598 602730315 664177960 3959954010 3116042160 2881899726 233404945 4058465099 1781994751 485046222 2776777695 432082123 1989128370 86344507 2510576356 2194076764 1742125237 3715839140 895100548 147445686 705462897 2245325113 1052295404 1956014786 2916055958 1829369612 2541711050 1594343058 3708804266 150438233 323857098 294681952 783931535 606075163 2427042904 121207604 3943199031 1196785464 1818211378 1788241109 3138862427 2037307093 2306750301 1644605749 165986111 542190743 486828112 1757411662 894543082 4108143634 1232805238 3801632949 3863166865 713767006 2091486427 3174776264 1157004409 623072544 1667151721 3361539538 696723008 3247069452 682044344 1382136166 1385645682 4219951151 2747881261 2489355869 786564174 2040230554 2967874556 1414286092 2677969656 1393412218 2216095072 935533444 3662643439 3285199608 3103672804 522796956 3952383595 1928659176 3397717710 4278554051 1984736931 3559102926 1878353094 875578217 2398931796 2313634006 1606027661 2790634022 2334166559 1857067101 666458681 1626872683 2155121857 715449823 1865157100 2938814835 4084911240 45488075 3474982924 1750873825 2246019159 125388929 1110287838 652200437 4212247716 2702974687 2963764270 208692058 3170393729 1378248367 752591527 591629541 2253399388 2402291226 3089656189 3202324513 3818308310 2828131601 2690672008 3676629884 1007739430 4072247562 3574795162 518485611 1889402182 3687902739 3410263649 2790674620 779455241 3573984673 3053204735 4089925351 789980683 476440431 3843536868 2400661309 3139919094 1643266656 113318754 428163528 2386492935 3807242009 574560611 3174039857 3774465602 1164640969 455942925 1374407495 2562304709 1024844203 521375136 417432138 1203241821 2900988280 2841030991 2301700751 369508560 2396447808 1891459643 4225682708 3930667846 1518293357 2697063889 3113075061 2411136298 2836361984 4105335811 914081338 2675982621 1816939127 1596754123 1464603632 1598478676 1318403529 4016663081 2106416852 2757323084 2042842122 1175184796 2212339255 1334626864 3994484893 3938045599 2166620630 3036360431 397499085 975931950 1868702836 3530424696 3532548823 2770836469 3537418693 3344319345 3208552526 1771170897 4097379814 3761572528 2794194423 706836738 2953105956 3446096217 220984542 309619699 223913021 3985142640 1757616575 2582763607 4018329835 1393278443 4121569718 2087146446 4282833425 807775617 1396604749 3571181413 90301352 2618014643 2783561793 1329389532 836540831 26719530",
+          "seed": "42",
+          "seed_per_iteration": "0",
+          "validate_parameters": "1"
+        },
+        "gradient_booster": {
+          "dart_train_param": {
+            "normalize_type": "tree",
+            "one_drop": "0",
+            "rate_drop": "0",
+            "sample_type": "uniform",
+            "skip_drop": "0"
+          },
+          "gbtree_model_param": {
+            "num_parallel_tree": "1",
+            "num_trees": "100"
+          },
+          "gbtree_train_param": {
+            "process_type": "default",
+            "tree_method": "hist",
+            "updater": "grow_quantile_histmaker",
+            "updater_seq": "grow_quantile_histmaker"
+          },
+          "name": "gbtree",
+          "specified_updater": false,
+          "tree_train_param": {
+            "alpha": "0",
+            "colsample_bylevel": "1",
+            "colsample_bynode": "1",
+            "colsample_bytree": "1",
+            "eta": "0.0500000007",
+            "gamma": "0",
+            "grow_policy": "depthwise",
+            "interaction_constraints": "",
+            "lambda": "1",
+            "learning_rate": "0.0500000007",
+            "max_bin": "256",
+            "max_cat_threshold": "64",
+            "max_cat_to_onehot": "4",
+            "max_delta_step": "0",
+            "max_depth": "3",
+            "max_leaves": "0",
+            "min_child_weight": "0.100000001",
+            "min_split_loss": "0",
+            "monotone_constraints": "()",
+            "refresh_leaf": "1",
+            "reg_alpha": "0",
+            "reg_lambda": "1",
+            "sampling_method": "uniform",
+            "sparse_threshold": "0.20000000000000001",
+            "subsample": "1"
+          },
+          "updater": [
+            {
+              "hist_train_param": {
+                "debug_synchronize": "0",
+                "max_cached_hist_node": "18446744073709551615"
+              },
+              "name": "grow_quantile_histmaker"
+            }
+          ]
+        },
+        "learner_model_param": {
+          "base_score": "[5E-1]",
+          "boost_from_average": "1",
+          "num_class": "0",
+          "num_feature": "908",
+          "num_target": "1"
+        },
+        "learner_train_param": {
+          "booster": "gbtree",
+          "disable_default_eval_metric": "0",
+          "multi_strategy": "one_output_per_tree",
+          "objective": "binary:logistic"
+        },
+        "metrics": [
+          {
+            "name": "logloss"
+          }
+        ],
+        "objective": {
+          "name": "binary:logistic",
+          "reg_loss_param": {
+            "scale_pos_weight": "1"
+          }
+        }
+      },
+      "version": [
+        3,
+        4,
+        1
+      ]
+    },
+    "runtime_warnings": [],
+    "seed": 42,
+    "selected_parameters": {
+      "colsample_bytree": 1.0,
+      "device": "cpu",
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 0.1,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "tree_method": "hist",
+      "verbosity": 0
+    },
+    "selected_validation_macro_f1": null,
+    "selection_metric": "fixed_before_extension_execution",
+    "sparse_absence_semantics": "XGBoost treats unstored sparse entries as missing; present TF-IDF entries carry their numerical weights",
+    "test_inference_s": 0.01057249994482845,
+    "test_matrix_sha256": "11ef741018475ad8f064a2c861887286bffe6b63ea943f85859f310e703663a1",
+    "test_rows": 200,
+    "test_used_for_selection": false,
+    "train_per_class": 4,
+    "training_class_counts": {
+      "0": 4,
+      "1": 4
+    },
+    "training_row_ids": [
+      "sst2:train:51013:5fbdd2ed34b78690",
+      "sst2:train:30891:2aa5fe07bf6eafcc",
+      "sst2:train:58881:d9056dd7823b6948",
+      "sst2:train:55864:7d1f098ccb5347f4",
+      "sst2:train:16137:8fa5c18cdfd577ce",
+      "sst2:train:47247:b41fa1200b86a3f7",
+      "sst2:train:6462:0610b7c625898267",
+      "sst2:train:905:f71718f2be6a5792"
+    ],
+    "training_row_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+    "training_rows": 8,
+    "validation_rows": 0
+  },
+  "training_example_ids": [
+    "sst2:train:51013:5fbdd2ed34b78690",
+    "sst2:train:30891:2aa5fe07bf6eafcc",
+    "sst2:train:58881:d9056dd7823b6948",
+    "sst2:train:55864:7d1f098ccb5347f4",
+    "sst2:train:16137:8fa5c18cdfd577ce",
+    "sst2:train:47247:b41fa1200b86a3f7",
+    "sst2:train:6462:0610b7c625898267",
+    "sst2:train:905:f71718f2be6a5792"
+  ],
+  "wall_time_s": 0.06500783294904977
+}

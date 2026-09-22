@@ -1,0 +1,197 @@
+{
+  "all_models_share_exact_feature_matrix_per_dataset_budget": true,
+  "audited_at": "2026-09-22T19:14:39.362830+00:00",
+  "bootstrap_metadata_clarification": "The immutable generic group_bootstrap helper returns group_definition=identical serialized test text SHA256; this extension actually supplies normalized text SHA256. Both frozen datasets have 200 unique groups under either definition, yielding the same grouping and interval distribution. Source and run records are preserved; this audit explicitly corrects the descriptive label.",
+  "completed_conditions": 16,
+  "failed_prediction_rows": 0,
+  "frozen_data_and_source_hashes_match": true,
+  "lightgbm_warning_audit": "Each LightGBM fit uses an unnamed CSR matrix. Its sklearn wrapper assigns feature names and warns when predict_proba receives unnamed CSR. Both matrices come from the same fitted vectorizer; exact train/test feature matrix hashes match all other algorithms at the same dataset/budget. No column reordering or feature mismatch occurred. No convergence warnings or invalid probabilities were observed.",
+  "prediction_rows": 3200,
+  "protocol_sha256": "3b74c9b23e794ab5b49e5342bbd33266a9073ed9d8d71d4551926700324252d9",
+  "recomputed_metrics_match": true,
+  "runs": [
+    {
+      "accuracy": 0.445,
+      "macro_f1": 0.44387384453518375,
+      "n_test": 200,
+      "run_id": "sst2__xgboost__0545f69b4961",
+      "run_json_sha256": "43c84ca9e7afb323eab9236a3552f1ab7c9cab3bb531ca22283de04eae3baba4",
+      "runtime_warnings": [],
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.475,
+      "macro_f1": 0.4748818484158936,
+      "n_test": 200,
+      "run_id": "sst2__lightgbm__d34c6efa477d",
+      "run_json_sha256": "8db348bc33650306f6e6cda7cb879c23e367c54d0e9df950d7e44e976f0e1230",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.495,
+      "macro_f1": 0.48256871333794416,
+      "n_test": 200,
+      "run_id": "sst2__logistic_regression__183b97812418",
+      "run_json_sha256": "1843013ad94b3fad739a1ebbc7591dc64a40b8a6a1ca22bba8b511d3e11d71f5",
+      "runtime_warnings": [],
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.53,
+      "macro_f1": 0.5206038351693186,
+      "n_test": 200,
+      "run_id": "sst2__random_forest__a0595eb5fc13",
+      "run_json_sha256": "d46d7e3fcc016a2a0d3ac9478e6927df3b414e28c8380024481b449c13232ea0",
+      "runtime_warnings": [],
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.69,
+      "macro_f1": 0.6796196775527077,
+      "n_test": 200,
+      "run_id": "sst2__xgboost__4de672c0a7ad",
+      "run_json_sha256": "c490728a3057494784cf0d85452c6948dd58f0020b538a534971ab3b99488706",
+      "runtime_warnings": [],
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.675,
+      "macro_f1": 0.666999666999667,
+      "n_test": 200,
+      "run_id": "sst2__lightgbm__200f41ad818d",
+      "run_json_sha256": "8124627367a31f02356099b9162469f64014699e8c4f2c4b5623f3b4414f3ffe",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.79,
+      "macro_f1": 0.7892412685668406,
+      "n_test": 200,
+      "run_id": "sst2__logistic_regression__27fd0d44480c",
+      "run_json_sha256": "25dbfdd9324421725a61a4f25c02fd6ecf71adc1bdde022d9a19372a0e5e50f8",
+      "runtime_warnings": [],
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.76,
+      "macro_f1": 0.7596153846153846,
+      "n_test": 200,
+      "run_id": "sst2__random_forest__2f7570814e2f",
+      "run_json_sha256": "555963d215ab88fd22760a2adbc70e83e55da50022179b9e83e29a4bb5839859",
+      "runtime_warnings": [],
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.35,
+      "macro_f1": 0.25358567430631523,
+      "n_test": 200,
+      "run_id": "trec__xgboost__ba75eb4d936a",
+      "run_json_sha256": "0fbb1e5c53ecfd01767b3044ef78ccc3c621edae9eaf6cbedbb77a18195aca38",
+      "runtime_warnings": [],
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.375,
+      "macro_f1": 0.3269830659536542,
+      "n_test": 200,
+      "run_id": "trec__lightgbm__fc14c8aa249e",
+      "run_json_sha256": "d5138295bd6e399b24ec9e0ecccfa8370e854787986c5edf07d9695284f68881",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.5,
+      "macro_f1": 0.4857191250483934,
+      "n_test": 200,
+      "run_id": "trec__logistic_regression__3e1106289632",
+      "run_json_sha256": "4ea45870a05b617e814f16b12163abf2fea598a8aaf95872bf37fd576c81a6d2",
+      "runtime_warnings": [],
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.49,
+      "macro_f1": 0.42886792448914973,
+      "n_test": 200,
+      "run_id": "trec__random_forest__d6298b0da6c1",
+      "run_json_sha256": "a2c67ec89b863dea56e1d3bb6e2262a753260fa3447e15d8c09469a60ef0470e",
+      "runtime_warnings": [],
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.705,
+      "macro_f1": 0.732353855882288,
+      "n_test": 200,
+      "run_id": "trec__xgboost__8e8084ca9acb",
+      "run_json_sha256": "47be1ebf0fb9c91260378c42d32d9bcfc13f7624d637a88079c961e5639f77e0",
+      "runtime_warnings": [],
+      "training_rows": 4886
+    },
+    {
+      "accuracy": 0.725,
+      "macro_f1": 0.7376440381842961,
+      "n_test": 200,
+      "run_id": "trec__lightgbm__70596227f83e",
+      "run_json_sha256": "808cfe78b3cf97b92db972f432a4a014cd868c0936f3a75683b8af855430259d",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "training_rows": 4886
+    },
+    {
+      "accuracy": 0.865,
+      "macro_f1": 0.8634762762508847,
+      "n_test": 200,
+      "run_id": "trec__logistic_regression__a89910bef513",
+      "run_json_sha256": "b0ffc91500e4697e962dfe8fdb6d5b80f53ff6ea3cee9770a797a0ba75e06d76",
+      "runtime_warnings": [],
+      "training_rows": 4886
+    },
+    {
+      "accuracy": 0.81,
+      "macro_f1": 0.7862161992596776,
+      "n_test": 200,
+      "run_id": "trec__random_forest__733c659c59e6",
+      "run_json_sha256": "7ef3a9172388521ba3f226012ef65b75bef002c8eec6b4b3ffcc61e842648e75",
+      "runtime_warnings": [],
+      "training_rows": 4886
+    }
+  ],
+  "status": "passed",
+  "summary_sha256": "6db64ddb3a3117cb6c47c4c2e1e537ab45e808ac66392cbbe3b287bebe0be38e",
+  "test_groups": {
+    "sst2": {
+      "normalized_text": 200,
+      "raw_text": 200
+    },
+    "trec": {
+      "normalized_text": 200,
+      "raw_text": 200
+    }
+  },
+  "total_hosted_model_calls": 0,
+  "training_examples_match_seed42_demonstrations": true,
+  "validation_labels_used": 0
+}

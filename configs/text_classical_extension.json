@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+  "datasets": ["sst2", "trec"],
+  "seed": 42,
+  "train_per_class": [4, null],
+  "bootstrap_samples": 2000,
+  "selection": "One fixed configuration per algorithm and identical TF-IDF representation, saved before extension execution. No tuning, early stopping, validation labels or held-out fitting.",
+  "comparison": "4/class uses the exact existing demonstration IDs. Full means the entire prepared pilot training split (10000 SST-2 and 4886 TREC), not every original source training example; it is a separately labeled unequal-data reference.",
+  "preprocessing": "Shared existing core word (1,2) and char_wb (3,5) TF-IDF, max 60000 and 80000 features, sublinear TF, float64. Vocabulary and IDF fit selected training rows only; sparse CSR throughout. No SVD, dense conversion, feature selection or text truncation beyond frozen prepared data.",
+  "parameter_rationale": "Fixed C=1 logistic regression and 200-tree random forest match existing native reference choices. Fixed 100-tree depth-3 boosting configurations match the numerical supplement, without validation tuning. This is an exploratory comparison, not an optimized text-classification leaderboard.",
+  "versions": {"numpy": "2.5.3", "scipy": "1.18.1", "scikit-learn": "1.9.1", "xgboost": "3.4.1", "lightgbm": "4.6.0"},
+  "models": {
+    "xgboost": {"n_estimators": 100, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 0.1, "reg_lambda": 1.0, "reg_alpha": 0.0, "subsample": 1.0, "colsample_bytree": 1.0, "tree_method": "hist", "device": "cpu", "n_jobs": 1, "verbosity": 0},
+    "lightgbm": {"n_estimators": 100, "max_depth": 3, "num_leaves": 8, "learning_rate": 0.05, "min_child_samples": 2, "min_child_weight": 0.001, "min_data_in_bin": 1, "reg_lambda": 1.0, "reg_alpha": 0.0, "subsample": 1.0, "colsample_bytree": 1.0, "deterministic": true, "force_col_wise": true, "n_jobs": 1, "verbosity": -1},
+    "logistic_regression": {"C": 1.0, "max_iter": 2000, "solver": "lbfgs"},
+    "random_forest": {"n_estimators": 200, "max_depth": null, "min_samples_leaf": 1, "max_features": "sqrt", "class_weight": null, "n_jobs": 1}
+  }
+}

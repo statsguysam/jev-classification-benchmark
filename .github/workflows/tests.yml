@@ -16,6 +16,10 @@ jobs:
         run: python -m pip install 'torch>=2.4,<3' --index-url https://download.pytorch.org/whl/cpu
       - name: Recreate frozen numeric feature bundles
         run: python scripts/tabular_data.py --datasets breast_cancer wine --output data/tabular-full --seed 42
+      - name: Recreate and verify frozen text pilot bytes
+        run: |
+          jevbench prepare sst2 trec --cache-dir data --output data/pilot --seed 42 --train-limit 10000 --validation-limit 1000 --test-limit 200 --max-text-chars 2000
+          python scripts/restore_text_extension_data.py
       - name: Base tests (neural-only tests skip without optional dependencies)
         env:
           HF_HUB_OFFLINE: '1'
@@ -27,6 +31,10 @@ jobs:
           node dashboard/tests/dashboard.smoke.cjs
           node --check dashboard/dist/numeric.js
           node dashboard/tests/numeric-dashboard.smoke.cjs
+          node --check dashboard/dist/text.js
+          node dashboard/tests/text-dashboard.smoke.cjs
+          python scripts/build_text_extension_dashboard.py --allow-incomplete --output /tmp/jev-text-dashboard-data.json
+          cmp /tmp/jev-text-dashboard-data.json dashboard/dist/text-data.json
           python scripts/build_expanded_numeric_dashboard.py --allow-incomplete --output /tmp/jev-numeric-dashboard-data.json
           cmp /tmp/jev-numeric-dashboard-data.json dashboard/dist/numeric-data.json
           python scripts/build_dashboard_data.py --output /tmp/jev-dashboard-data.json

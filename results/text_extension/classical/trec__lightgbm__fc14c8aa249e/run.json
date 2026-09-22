@@ -1,0 +1,758 @@
+{
+  "artifacts_sha256": {
+    "predictions.jsonl": "fd0175ecb1d4b07afb986255689719bf873872c953bd4d9ea440679a5483aea9",
+    "test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e"
+  },
+  "bootstrap_samples": 2000,
+  "comparison_track": "matched demonstration labels",
+  "completed_at": "2026-09-22T19:12:47.429501+00:00",
+  "config": {
+    "experiment_config_sha256": "47be846c020fa999389c8fd42f2a2760aa8079c401226b1a212420b9e47ceb07",
+    "input_representation": "word_char_tfidf",
+    "library_versions": {
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    },
+    "model": "lightgbm",
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_samples": 2,
+      "min_child_weight": 0.001,
+      "min_data_in_bin": 1,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "num_leaves": 8,
+      "objective": "multiclass",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "verbosity": -1
+    },
+    "protocol_sha256": "fc01561e70a71f67e769a4c8eb71bdd8da135f20c903fda9a4892d355f8277d1",
+    "source_sha256": {
+      "scripts/run_text_classical_extension.py": "d0a6d452185c5487e32b01160bfcdb4d044ee5d804b969f4fe95517dc81f9a2c",
+      "scripts/summarize_tabular.py": "422e973822e97e928e2128f604dabe84fa3675e57fdcb86305a75473c55b7157",
+      "src/jevbench/__init__.py": "ba19fd98083ce60c00281ca4dbfc8a1596481da6cfd1d18a138378637f75bfea",
+      "src/jevbench/classical.py": "8c40d49c2f100e09368e16480cc26fcb515f0a76b0e1c4723b2c5799bf84d0bc",
+      "src/jevbench/cli.py": "7d9c274055eae20e89b3dac4c22293a4bfb17247f546d627cce984a7febe7c62",
+      "src/jevbench/data.py": "df1f41643d745a6a075598ea4c071b17770313a7a691189c949297e148035b21",
+      "src/jevbench/lora.py": "e61d35c68fc98cbbd4f59b5421f80ed7133188104439812cf9dfe0792c4a1330",
+      "src/jevbench/metrics.py": "551146253f47dedc9354e6e1b1ed81fdab57c07b0c77b8471a31eb4e2b6528c9",
+      "src/jevbench/prompts.py": "1b687e697edf2065c4d59b171f03cf6d8b5f327d17c992a906dbae03b9a8a875",
+      "src/jevbench/providers.py": "fbeb2156be56246639bd87da309931e0f62928617ab23a4a6b3da60353b1c149",
+      "src/jevbench/report.py": "381c07b459dd06bb1b35be6af14aaea90e43b69f172421fe6d4434ca2f752f7e",
+      "src/jevbench/runner.py": "ac655ec86ee261228efe8c682c880c43ab063853c8f6f40003007a14641b1ff6",
+      "src/jevbench/types.py": "9334c2741d48f1cbda7fd9757ff7651d3b80fe87e61d7a7038452bbc5e770f96"
+    },
+    "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+    "train_per_class": 4
+  },
+  "config_saved_before_first_fit": true,
+  "dataset": "trec",
+  "dataset_manifest": {
+    "duplicate_policy": {
+      "before_subsampling": true,
+      "heldout_priority": "test then validation then train",
+      "limitation": "Exact normalized text filtering does not detect semantic/phrase overlap or pretraining contamination",
+      "normalization": "Unicode NFKC, casefold, collapse whitespace; no punctuation or HTML changes",
+      "train_rows_removed_for_test_overlap": [
+        "trec:train:557:bb91a1e7bcab3092",
+        "trec:train:590:1775cc59d61c50e6",
+        "trec:train:697:9048b855a88fe25d",
+        "trec:train:1193:7de493d3bf5c3f8d",
+        "trec:train:2260:6e7d656896505632",
+        "trec:train:2344:ba284ce1d1c77222",
+        "trec:train:2582:25bc21427bd77698",
+        "trec:train:3133:c14c6bde920efec7",
+        "trec:train:3520:a4a5c4f6f77bdb75",
+        "trec:train:4876:1612ae58c364bb52",
+        "trec:train:5262:7a3cfef598dd9d5a"
+      ],
+      "train_rows_removed_for_validation_overlap": [
+        "trec:train:369:652c2f52ae461893",
+        "trec:train:464:652c2f52ae461893",
+        "trec:train:504:0808c12119c2adff",
+        "trec:train:727:dec02c2862534f49",
+        "trec:train:1009:def8143be9d2d54d",
+        "trec:train:1378:85134f2eed7c7722",
+        "trec:train:2003:85134f2eed7c7722",
+        "trec:train:2059:218f1c428ca57cd4",
+        "trec:train:4266:b8310680132cac01",
+        "trec:train:4542:b977b108221360e4"
+      ],
+      "within_split": "retain all natural duplicates, including final test; report counts"
+    },
+    "files_sha256": {
+      "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+      "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+      "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+    },
+    "labels": [
+      "abbreviation",
+      "entity",
+      "description or abstract concept",
+      "human being",
+      "location",
+      "numeric value"
+    ],
+    "limits": {
+      "test": 200,
+      "train": 10000,
+      "validation": 1000
+    },
+    "name": "trec",
+    "post_transform_overlap_removed": {
+      "train": 0,
+      "validation": 0
+    },
+    "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "card": "https://huggingface.co/datasets/CogComp/trec",
+      "files": {
+        "test": "default/test/0000.parquet",
+        "train": "default/train/0000.parquet"
+      },
+      "files_sha256": {
+        "test": "6aa889b0289e02760644caa22ac9aa833e79e34fb1f1ced69f745a078550c56e",
+        "train": "5ffb07b1cbd45e47b4dd1dd113dadd19e44eb260721114c6147e0ce6c1e47590"
+      },
+      "homepage": "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
+      "label_column": "coarse_label",
+      "labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "license": "unknown; consult original source before redistribution",
+      "notes": "Six coarse classes in original label order ABBR, ENTY, DESC, HUM, LOC, NUM; 50 fine classes unused. Pinned converted Parquet avoids legacy remote code.",
+      "repo_id": "CogComp/trec",
+      "resolved_from": "refs/convert/parquet",
+      "revision": "65752bf53af25bc935a0dce92fb5b6c930728450",
+      "source": "huggingface_parquet",
+      "source_splits": {
+        "test": "test",
+        "train": "train"
+      },
+      "text_column": "text",
+      "validation_fraction": 0.1
+    },
+    "source_counts": {
+      "test": 500,
+      "train": 5452
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 4,
+          "1": 38,
+          "2": 55,
+          "3": 26,
+          "4": 32,
+          "5": 45
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+        "rows": 200
+      },
+      "train": {
+        "class_counts": {
+          "0": 76,
+          "1": 1124,
+          "2": 1040,
+          "3": 1100,
+          "4": 750,
+          "5": 796
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 59,
+        "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+        "rows": 4886
+      },
+      "validation": {
+        "class_counts": {
+          "0": 8,
+          "1": 125,
+          "2": 116,
+          "3": 122,
+          "4": 84,
+          "5": 90
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 3,
+        "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+        "rows": 545
+      }
+    },
+    "text_policy": {
+      "applies_to": "all splits and all model families",
+      "kind": "character_prefix",
+      "max_chars": 2000
+    },
+    "truncated_rows": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    },
+    "validation_fraction": 0.1
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "xgboost": "3.4.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "abbreviation",
+    "entity",
+    "description or abstract concept",
+    "human being",
+    "location",
+    "numeric value"
+  ],
+  "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+  "method": "classical_text_extension",
+  "metrics": {
+    "accuracy": 0.375,
+    "balanced_accuracy": 0.3855888507204297,
+    "bootstrap": {
+      "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+      "draws_per_replicate": 200,
+      "group_definition": "identical serialized test text SHA256",
+      "method": "unstratified group percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.305,
+            0.445
+          ],
+          "estimate": 0.375
+        },
+        "macro_f1": {
+          "ci95": [
+            0.253602109319229,
+            0.39683493285390187
+          ],
+          "estimate": 0.3269830659536542
+        }
+      },
+      "n_groups": 200,
+      "n_rows": 200,
+      "resampled_row_count_range": [
+        200,
+        200
+      ],
+      "samples": 2000,
+      "seed": 42
+    },
+    "brier_sum": 1.0423542684177811,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        5,
+        25,
+        0,
+        3,
+        3,
+        0
+      ],
+      [
+        6,
+        0,
+        39,
+        1,
+        8,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        5,
+        18,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        21,
+        1,
+        4,
+        4,
+        0
+      ],
+      [
+        2,
+        2,
+        23,
+        9,
+        2,
+        7,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.46748511769912093,
+    "failure_rate": 0.0,
+    "input_tokens": null,
+    "input_tokens_coverage": 0.0,
+    "input_tokens_known_total": 0,
+    "latency_p50_s": 3.153249970637262e-05,
+    "latency_p95_s": 3.153249970637262e-05,
+    "log_loss": 2.301532496379391,
+    "macro_f1": 0.3269830659536542,
+    "n_classes": 6,
+    "n_failures": 0,
+    "n_probability_rows": 200,
+    "n_test": 200,
+    "output_tokens": null,
+    "output_tokens_coverage": 0.0,
+    "output_tokens_known_total": 0,
+    "per_class": [
+      {
+        "f1": 0.25,
+        "label": 0,
+        "precision": 0.16666666666666666,
+        "recall": 0.5,
+        "support": 4
+      },
+      {
+        "f1": 0.20833333333333334,
+        "label": 1,
+        "precision": 0.5,
+        "recall": 0.13157894736842105,
+        "support": 38
+      },
+      {
+        "f1": 0.4588235294117647,
+        "label": 2,
+        "precision": 0.3391304347826087,
+        "recall": 0.7090909090909091,
+        "support": 55
+      },
+      {
+        "f1": 0.6545454545454545,
+        "label": 3,
+        "precision": 0.6206896551724138,
+        "recall": 0.6923076923076923,
+        "support": 26
+      },
+      {
+        "f1": 0.1568627450980392,
+        "label": 4,
+        "precision": 0.21052631578947367,
+        "recall": 0.125,
+        "support": 32
+      },
+      {
+        "f1": 0.23333333333333334,
+        "label": 5,
+        "precision": 0.4666666666666667,
+        "recall": 0.15555555555555556,
+        "support": 45
+      }
+    ],
+    "prediction_time_s": 0.006306499941274524,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 119,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.5,
+        "bin": 2,
+        "count": 2,
+        "mean_confidence": 0.18355550626903652
+      },
+      {
+        "accuracy": 0.25,
+        "bin": 3,
+        "count": 4,
+        "mean_confidence": 0.24302587277266202
+      },
+      {
+        "accuracy": 0.5714285714285714,
+        "bin": 4,
+        "count": 14,
+        "mean_confidence": 0.29700063469189086
+      },
+      {
+        "accuracy": 0.6666666666666666,
+        "bin": 5,
+        "count": 3,
+        "mean_confidence": 0.3666760372223798
+      },
+      {
+        "accuracy": 0.25,
+        "bin": 6,
+        "count": 4,
+        "mean_confidence": 0.4327847323770565
+      },
+      {
+        "accuracy": 0.25,
+        "bin": 7,
+        "count": 4,
+        "mean_confidence": 0.5034926289099338
+      },
+      {
+        "accuracy": 0.4,
+        "bin": 8,
+        "count": 5,
+        "mean_confidence": 0.5783889849525888
+      },
+      {
+        "accuracy": 0.5,
+        "bin": 9,
+        "count": 14,
+        "mean_confidence": 0.6296439972281632
+      },
+      {
+        "accuracy": 0.2857142857142857,
+        "bin": 10,
+        "count": 7,
+        "mean_confidence": 0.7056515528783368
+      },
+      {
+        "accuracy": 0.0,
+        "bin": 11,
+        "count": 5,
+        "mean_confidence": 0.7871713746216135
+      },
+      {
+        "accuracy": 0.14285714285714285,
+        "bin": 12,
+        "count": 14,
+        "mean_confidence": 0.8268316948614046
+      },
+      {
+        "accuracy": 0.07936507936507936,
+        "bin": 13,
+        "count": 63,
+        "mean_confidence": 0.9167832326935651
+      },
+      {
+        "accuracy": 0.7049180327868853,
+        "bin": 14,
+        "count": 61,
+        "mean_confidence": 0.941537698011322
+      }
+    ],
+    "valid_response_accuracy": 0.375,
+    "zero_true_class_probability_rows": 0
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "trec__lightgbm__fc14c8aa249e",
+  "seed": 42,
+  "started_at": "2026-09-22T19:12:47.343309+00:00",
+  "status": "complete",
+  "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+  "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+  "training": {
+    "all_estimator_parameters": {
+      "boosting_type": "gbdt",
+      "class_weight": null,
+      "colsample_bytree": 1.0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "importance_type": "split",
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_samples": 2,
+      "min_child_weight": 0.001,
+      "min_data_in_bin": 1,
+      "min_split_gain": 0.0,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "num_leaves": 8,
+      "objective": "multiclass",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 0,
+      "verbosity": -1
+    },
+    "candidate_budget": 1,
+    "early_stopping": false,
+    "feature_fit_s": 0.0040952080162242055,
+    "features": {
+      "dense_conversion": false,
+      "fit_split": "selected training rows only",
+      "input_representation": "word_char_tfidf",
+      "matrix_dtype": "float64",
+      "matrix_format": "csr",
+      "matrix_sha256": "8d4d037957d3fa4a9f941f846afc31c9c0fc1bb6583acdbc57d4f41998443ebb",
+      "matrix_shape": [
+        24,
+        1608
+      ],
+      "nonzero_count": 2311,
+      "test_rows_seen_during_fit": 0,
+      "training_records_sha256": "693fd0041cb5a8c77a60ac60f11c4074bcaff41caab7b82fa196ad0b63102a59",
+      "training_text_sha256": "28603fb4c5b6256cbbad987f65032db7278c8b07886d674f617fd52eb1a97297",
+      "transformers": {
+        "char": {
+          "feature_count": 1355,
+          "idf_sha256": "b2725035f8e3a795218e05659da111a7f166ad53272dd8f89095bd14d2fd7b65",
+          "parameters": {
+            "analyzer": "char_wb",
+            "binary": false,
+            "decode_error": "strict",
+            "dtype": "numpy.float64",
+            "encoding": "utf-8",
+            "input": "content",
+            "lowercase": true,
+            "max_df": 1.0,
+            "max_features": 80000,
+            "min_df": 1,
+            "ngram_range": [
+              3,
+              5
+            ],
+            "norm": "l2",
+            "preprocessor": null,
+            "smooth_idf": true,
+            "stop_words": null,
+            "strip_accents": null,
+            "sublinear_tf": true,
+            "token_pattern": "(?u)\\b\\w\\w+\\b",
+            "tokenizer": null,
+            "use_idf": true,
+            "vocabulary": null
+          },
+          "vocabulary_sha256": "cc2d044e93b4eb53ec5ec95e67f981549a121f1fdb39c15b9c7f1d2ae2da228a"
+        },
+        "word": {
+          "feature_count": 253,
+          "idf_sha256": "7ec969fcb29caa390ee424bdf173c06f2add8320c20388ad7717a57d5e2dc1d5",
+          "parameters": {
+            "analyzer": "word",
+            "binary": false,
+            "decode_error": "strict",
+            "dtype": "numpy.float64",
+            "encoding": "utf-8",
+            "input": "content",
+            "lowercase": true,
+            "max_df": 1.0,
+            "max_features": 60000,
+            "min_df": 1,
+            "ngram_range": [
+              1,
+              2
+            ],
+            "norm": "l2",
+            "preprocessor": null,
+            "smooth_idf": true,
+            "stop_words": null,
+            "strip_accents": null,
+            "sublinear_tf": true,
+            "token_pattern": "(?u)\\b\\w\\w+\\b",
+            "tokenizer": null,
+            "use_idf": true,
+            "vocabulary": null
+          },
+          "vocabulary_sha256": "51b192e7615b13584a548ee0299f5615a6411055916e1f8ffb35fbfbe41905f1"
+        }
+      },
+      "validation_rows_seen": 0
+    },
+    "fit_and_selection_s": 0.031773374998010695,
+    "input_representation": "word_char_tfidf",
+    "latency_measurement": "amortized batch transform and predict_proba; not individual hosted request latency",
+    "library_versions": {
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    },
+    "model": "lightgbm",
+    "model_fit_s": 0.02767816698178649,
+    "probability_calibration": "none",
+    "probability_kind": "native_uncalibrated",
+    "refit_with_validation": false,
+    "resolved_booster_parameters": {
+      "boosting_type": "gbdt",
+      "colsample_bytree": 1.0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "metric": [
+        "multiclass"
+      ],
+      "min_child_samples": 2,
+      "min_child_weight": 0.001,
+      "min_data_in_bin": 1,
+      "min_split_gain": 0.0,
+      "num_class": 6,
+      "num_iterations": 100,
+      "num_leaves": 8,
+      "num_threads": 1,
+      "objective": "multiclass",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 0,
+      "verbosity": -1
+    },
+    "runtime_warnings": [
+      {
+        "category": "UserWarning",
+        "count": 1,
+        "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+      }
+    ],
+    "seed": 42,
+    "selected_parameters": {
+      "colsample_bytree": 1.0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_samples": 2,
+      "min_child_weight": 0.001,
+      "min_data_in_bin": 1,
+      "n_estimators": 100,
+      "n_jobs": 1,
+      "num_leaves": 8,
+      "objective": "multiclass",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "verbosity": -1
+    },
+    "selected_validation_macro_f1": null,
+    "selection_metric": "fixed_before_extension_execution",
+    "sparse_absence_semantics": "Unstored sparse TF-IDF entries represent zero",
+    "test_inference_s": 0.006306499941274524,
+    "test_matrix_sha256": "9d7ace2e240352b21a56aa2ec8a06cae9a415f6bd8feb6c45ecea941c5576b25",
+    "test_rows": 200,
+    "test_used_for_selection": false,
+    "train_per_class": 4,
+    "training_class_counts": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4,
+      "5": 4
+    },
+    "training_row_ids": [
+      "trec:train:4424:a0a98fa6a12484f0",
+      "trec:train:3761:5578e092675734bb",
+      "trec:train:3965:c8bfd3194a6cd81e",
+      "trec:train:2747:b01a47af03fbd321",
+      "trec:train:1864:53f0705e6ec62bb5",
+      "trec:train:3459:32a25fe82db1746c",
+      "trec:train:1042:1307f29b05360833",
+      "trec:train:3295:e8ae706d3e78c885",
+      "trec:train:1754:21bc6b04431167b1",
+      "trec:train:1903:c528d13abc62df8f",
+      "trec:train:2606:645ce16853489393",
+      "trec:train:2689:0e25ae703b007f7e",
+      "trec:train:4518:03fb88f1b1541628",
+      "trec:train:4418:f2866c2da52b770f",
+      "trec:train:1449:0ea3ad646f9d9039",
+      "trec:train:1716:4535840133884f07",
+      "trec:train:2909:8a330e77ec27462c",
+      "trec:train:3959:737381e1a1d60e8d",
+      "trec:train:3563:ab7c01e5a55ca0c4",
+      "trec:train:1620:790881dce0f25854",
+      "trec:train:307:46ba40ecdfa02b42",
+      "trec:train:30:230bfd8ec984ad4c",
+      "trec:train:2451:1e54fad193707a56",
+      "trec:train:3284:ff587ff60b79601e"
+    ],
+    "training_row_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+    "training_rows": 24,
+    "validation_rows": 0
+  },
+  "training_example_ids": [
+    "trec:train:4424:a0a98fa6a12484f0",
+    "trec:train:3761:5578e092675734bb",
+    "trec:train:3965:c8bfd3194a6cd81e",
+    "trec:train:2747:b01a47af03fbd321",
+    "trec:train:1864:53f0705e6ec62bb5",
+    "trec:train:3459:32a25fe82db1746c",
+    "trec:train:1042:1307f29b05360833",
+    "trec:train:3295:e8ae706d3e78c885",
+    "trec:train:1754:21bc6b04431167b1",
+    "trec:train:1903:c528d13abc62df8f",
+    "trec:train:2606:645ce16853489393",
+    "trec:train:2689:0e25ae703b007f7e",
+    "trec:train:4518:03fb88f1b1541628",
+    "trec:train:4418:f2866c2da52b770f",
+    "trec:train:1449:0ea3ad646f9d9039",
+    "trec:train:1716:4535840133884f07",
+    "trec:train:2909:8a330e77ec27462c",
+    "trec:train:3959:737381e1a1d60e8d",
+    "trec:train:3563:ab7c01e5a55ca0c4",
+    "trec:train:1620:790881dce0f25854",
+    "trec:train:307:46ba40ecdfa02b42",
+    "trec:train:30:230bfd8ec984ad4c",
+    "trec:train:2451:1e54fad193707a56",
+    "trec:train:3284:ff587ff60b79601e"
+  ],
+  "wall_time_s": 0.04815562500152737
+}

@@ -1,0 +1,817 @@
+{
+  "completed_at": "2026-09-22T19:13:28.541892+00:00",
+  "planned_conditions": 16,
+  "protocol_sha256": "fc01561e70a71f67e769a4c8eb71bdd8da135f20c903fda9a4892d355f8277d1",
+  "runs": [
+    {
+      "accuracy": 0.445,
+      "balanced_accuracy": 0.446078431372549,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.375,
+              0.515
+            ],
+            "estimate": 0.445
+          },
+          "macro_f1": {
+            "ci95": [
+              0.3698580830933772,
+              0.5122735859446134
+            ],
+            "estimate": 0.44387384453518375
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.6982632402948393,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "sst2",
+      "log_loss": 1.0132596889387753,
+      "macro_f1": 0.44387384453518375,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__xgboost__0545f69b4961",
+      "run_json_sha256": "43c84ca9e7afb323eab9236a3552f1ab7c9cab3bb531ca22283de04eae3baba4",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.475,
+      "balanced_accuracy": 0.47549019607843135,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.405,
+              0.545
+            ],
+            "estimate": 0.475
+          },
+          "macro_f1": {
+            "ci95": [
+              0.4042702310330154,
+              0.5444487790225953
+            ],
+            "estimate": 0.4748818484158936
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.6401333325745509,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "sst2",
+      "log_loss": 0.8646077492733039,
+      "macro_f1": 0.4748818484158936,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__lightgbm__d34c6efa477d",
+      "run_json_sha256": "8db348bc33650306f6e6cda7cb879c23e367c54d0e9df950d7e44e976f0e1230",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.495,
+      "balanced_accuracy": 0.4982993197278911,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.425,
+              0.565
+            ],
+            "estimate": 0.495
+          },
+          "macro_f1": {
+            "ci95": [
+              0.41381668295534946,
+              0.5501895284159073
+            ],
+            "estimate": 0.48256871333794416
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.4994979703314259,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "sst2",
+      "log_loss": 0.6926373096335677,
+      "macro_f1": 0.48256871333794416,
+      "model": "logistic_regression",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__logistic_regression__183b97812418",
+      "run_json_sha256": "1843013ad94b3fad739a1ebbc7591dc64a40b8a6a1ca22bba8b511d3e11d71f5",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.53,
+      "balanced_accuracy": 0.5330132052821128,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.46,
+              0.6
+            ],
+            "estimate": 0.53
+          },
+          "macro_f1": {
+            "ci95": [
+              0.44890373166220765,
+              0.588591803321292
+            ],
+            "estimate": 0.5206038351693186
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.5052562500000001,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "sst2",
+      "log_loss": 0.6987089715251932,
+      "macro_f1": 0.5206038351693186,
+      "model": "random_forest",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__random_forest__a0595eb5fc13",
+      "run_json_sha256": "d46d7e3fcc016a2a0d3ac9478e6927df3b414e28c8380024481b449c13232ea0",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 8
+    },
+    {
+      "accuracy": 0.69,
+      "balanced_accuracy": 0.6866746698679471,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.625,
+              0.755
+            ],
+            "estimate": 0.69
+          },
+          "macro_f1": {
+            "ci95": [
+              0.6074853596122143,
+              0.7434460591133004
+            ],
+            "estimate": 0.6796196775527077
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.4178806967885944,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "sst2",
+      "log_loss": 0.6076803206901857,
+      "macro_f1": 0.6796196775527077,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__xgboost__4de672c0a7ad",
+      "run_json_sha256": "c490728a3057494784cf0d85452c6948dd58f0020b538a534971ab3b99488706",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.675,
+      "balanced_accuracy": 0.6721688675470188,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.61,
+              0.74
+            ],
+            "estimate": 0.675
+          },
+          "macro_f1": {
+            "ci95": [
+              0.5976493248717908,
+              0.730111946532999
+            ],
+            "estimate": 0.666999666999667
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.4233761600873778,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "sst2",
+      "log_loss": 0.6133932513730904,
+      "macro_f1": 0.666999666999667,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__lightgbm__200f41ad818d",
+      "run_json_sha256": "8124627367a31f02356099b9162469f64014699e8c4f2c4b5623f3b4414f3ffe",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.79,
+      "balanced_accuracy": 0.7891156462585034,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.73,
+              0.845
+            ],
+            "estimate": 0.79
+          },
+          "macro_f1": {
+            "ci95": [
+              0.7295612077067669,
+              0.8435954749222978
+            ],
+            "estimate": 0.7892412685668406
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.2856323112635835,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "sst2",
+      "log_loss": 0.4468884919137766,
+      "macro_f1": 0.7892412685668406,
+      "model": "logistic_regression",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__logistic_regression__27fd0d44480c",
+      "run_json_sha256": "25dbfdd9324421725a61a4f25c02fd6ecf71adc1bdde022d9a19372a0e5e50f8",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.76,
+      "balanced_accuracy": 0.7595038015206083,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.7,
+              0.82
+            ],
+            "estimate": 0.76
+          },
+          "macro_f1": {
+            "ci95": [
+              0.6949908494280335,
+              0.8181818181818181
+            ],
+            "estimate": 0.7596153846153846
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.34494024999999995,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "sst2",
+      "log_loss": 0.5222436403113451,
+      "macro_f1": 0.7596153846153846,
+      "model": "random_forest",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "sst2__random_forest__2f7570814e2f",
+      "run_json_sha256": "555963d215ab88fd22760a2adbc70e83e55da50022179b9e83e29a4bb5839859",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 10000
+    },
+    {
+      "accuracy": 0.35,
+      "balanced_accuracy": 0.34918491596123175,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.285,
+              0.42
+            ],
+            "estimate": 0.35
+          },
+          "macro_f1": {
+            "ci95": [
+              0.17739495298718114,
+              0.3178447467408207
+            ],
+            "estimate": 0.25358567430631523
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 1.048484079847089,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "trec",
+      "log_loss": 2.357701538072285,
+      "macro_f1": 0.25358567430631523,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__xgboost__ba75eb4d936a",
+      "run_json_sha256": "0fbb1e5c53ecfd01767b3044ef78ccc3c621edae9eaf6cbedbb77a18195aca38",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.375,
+      "balanced_accuracy": 0.3855888507204297,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.305,
+              0.445
+            ],
+            "estimate": 0.375
+          },
+          "macro_f1": {
+            "ci95": [
+              0.253602109319229,
+              0.39683493285390187
+            ],
+            "estimate": 0.3269830659536542
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 1.0423542684177811,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "trec",
+      "log_loss": 2.301532496379391,
+      "macro_f1": 0.3269830659536542,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__lightgbm__fc14c8aa249e",
+      "run_json_sha256": "d5138295bd6e399b24ec9e0ecccfa8370e854787986c5edf07d9695284f68881",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.5,
+      "balanced_accuracy": 0.5260531683229052,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.43,
+              0.57
+            ],
+            "estimate": 0.5
+          },
+          "macro_f1": {
+            "ci95": [
+              0.4006117585283539,
+              0.5631814931922632
+            ],
+            "estimate": 0.4857191250483934
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.7389262775552402,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "trec",
+      "log_loss": 1.5452855104340713,
+      "macro_f1": 0.4857191250483934,
+      "model": "logistic_regression",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__logistic_regression__3e1106289632",
+      "run_json_sha256": "4ea45870a05b617e814f16b12163abf2fea598a8aaf95872bf37fd576c81a6d2",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.49,
+      "balanced_accuracy": 0.4852183269946428,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.42,
+              0.56
+            ],
+            "estimate": 0.49
+          },
+          "macro_f1": {
+            "ci95": [
+              0.35472458882839913,
+              0.4971460880814529
+            ],
+            "estimate": 0.42886792448914973
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.6961912499999999,
+      "comparison_track": "matched demonstration labels",
+      "dataset": "trec",
+      "log_loss": 1.412775002333421,
+      "macro_f1": 0.42886792448914973,
+      "model": "random_forest",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__random_forest__d6298b0da6c1",
+      "run_json_sha256": "a2c67ec89b863dea56e1d3bb6e2262a753260fa3447e15d8c09469a60ef0470e",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": 4,
+      "training_rows": 24
+    },
+    {
+      "accuracy": 0.705,
+      "balanced_accuracy": 0.7031334345479082,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.64,
+              0.765
+            ],
+            "estimate": 0.705
+          },
+          "macro_f1": {
+            "ci95": [
+              0.5893070654835361,
+              0.7921117725622754
+            ],
+            "estimate": 0.732353855882288
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.39576781002331757,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "trec",
+      "log_loss": 0.8098938313685053,
+      "macro_f1": 0.732353855882288,
+      "model": "xgboost",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__xgboost__8e8084ca9acb",
+      "run_json_sha256": "47be1ebf0fb9c91260378c42d32d9bcfc13f7624d637a88079c961e5639f77e0",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 4886
+    },
+    {
+      "accuracy": 0.725,
+      "balanced_accuracy": 0.7187706177837757,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.66,
+              0.785
+            ],
+            "estimate": 0.725
+          },
+          "macro_f1": {
+            "ci95": [
+              0.5951875598865356,
+              0.796960608460041
+            ],
+            "estimate": 0.7376440381842961
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.3676953036612302,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "trec",
+      "log_loss": 0.7322446870250582,
+      "macro_f1": 0.7376440381842961,
+      "model": "lightgbm",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__lightgbm__70596227f83e",
+      "run_json_sha256": "808cfe78b3cf97b92db972f432a4a014cd868c0936f3a75683b8af855430259d",
+      "runtime_warnings": [
+        {
+          "category": "UserWarning",
+          "count": 1,
+          "message": "X does not have valid feature names, but LGBMClassifier was fitted with feature names"
+        }
+      ],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 4886
+    },
+    {
+      "accuracy": 0.865,
+      "balanced_accuracy": 0.8442936023528129,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.8198749999999999,
+              0.91
+            ],
+            "estimate": 0.865
+          },
+          "macro_f1": {
+            "ci95": [
+              0.7211558235232061,
+              0.9166229194409464
+            ],
+            "estimate": 0.8634762762508847
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.21860878631904782,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "trec",
+      "log_loss": 0.467940025756542,
+      "macro_f1": 0.8634762762508847,
+      "model": "logistic_regression",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__logistic_regression__a89910bef513",
+      "run_json_sha256": "b0ffc91500e4697e962dfe8fdb6d5b80f53ff6ea3cee9770a797a0ba75e06d76",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 4886
+    },
+    {
+      "accuracy": 0.81,
+      "balanced_accuracy": 0.7578361635927426,
+      "bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.755,
+              0.865
+            ],
+            "estimate": 0.81
+          },
+          "macro_f1": {
+            "ci95": [
+              0.6537044208710937,
+              0.8617075763176898
+            ],
+            "estimate": 0.7862161992596776
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "brier_sum": 0.274323,
+      "comparison_track": "full prepared training reference; more labels than Jev few-shot",
+      "dataset": "trec",
+      "log_loss": 0.5668921648911048,
+      "macro_f1": 0.7862161992596776,
+      "model": "random_forest",
+      "n_failures": 0,
+      "n_test": 200,
+      "probability_coverage": 1.0,
+      "run_id": "trec__random_forest__733c659c59e6",
+      "run_json_sha256": "7ef3a9172388521ba3f226012ef65b75bef002c8eec6b4b3ffcc61e842648e75",
+      "runtime_warnings": [],
+      "status": "complete",
+      "train_per_class": null,
+      "training_rows": 4886
+    }
+  ],
+  "status": "complete",
+  "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed"
+}

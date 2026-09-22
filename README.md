@@ -1,6 +1,6 @@
 # Jev classification benchmark
 
-A reproducible study of **numerical tabular classification**: six language models, Jev as a bounded decision reviewer, Jev alone, and native classical machine learning. Earlier text/tabular and LoRA experiments remain archived below.
+A reproducible study of **numerical tabular classification**: six language models, Jev as a bounded decision reviewer, Jev alone, and native classical machine learning. A separate text extension applies the same source → Jev review pipeline to SST-2 and TREC. Earlier broad text/tabular and LoRA experiments remain archived below.
 
 ## Current question: bounded decisions on numerical data
 
@@ -23,13 +23,30 @@ python scripts/summarize_expanded_numeric.py
 
 The model commands above only plan. For actual public-weight inference, follow the Colab guide; for Jev calls use `--execute` with the existing credential mechanism. The review runner requires frozen data and source predictions, reuses completed conditions, and enforces the expanded **US$25 cumulative ceiling** with one new US$5 ledger anchored to all earlier ledgers. Never initialize a replacement ledger when resuming. See the [budget guide](docs/BUDGET.md).
 
+## Text extension: the same pipeline on SST-2 and TREC
+
+The [text protocol](docs/TEXT_EXTENSION_PROTOCOL.md) extends the bounded-decision comparison to the original **200 SST-2 and 200 TREC test rows**. The same six source models run at zero-shot and four labeled examples per class, alone and followed by Jev. The reviewer receives the original text, the same examples and the cached proposed class ID; it receives no source rationale, confidence vector or hidden test label. Four direct-Jev references and sixteen new XGBoost, LightGBM, logistic-regression and random-forest conditions complete a separate **68-condition matrix**.
+
+**Starting status: 36/68 conditions complete.** Sixteen historical source runs, four direct-Jev references and sixteen new classical runs are audited. Eight SmolLM2/Granite source conditions and all twenty-four reviews remain pending; no text-review calls have started. Read the [audited findings](results/text_extension/FINDINGS.md), [comparison data](results/text_extension/COMPARISON.json) and [reproduction guide](docs/TEXT_EXTENSION_REPRODUCTION.md) for the latest evidence. Pending scores are unavailable, and this status provides no finding about Jev review performance.
+
+Classical models share train-only word/character TF-IDF. Matched training supplies eight SST-2 or twenty-four TREC labels; separate full-training references use 10,000 or 4,886 labels. No validation labels or hyperparameter search are used in this extension. XGBoost treats unstored sparse TF-IDF entries as missing while the other estimators use zero. The fixed tree recipes are not optimized text baselines. The 72 paired/descriptive contrasts have unadjusted 95% grouped-bootstrap intervals, conditional on one split and seed. Familiar public datasets, possible pretraining exposure and different output protocols limit generalization. A bounded class choice does not imply a correct answer.
+
+```bash
+python scripts/run_text_extension_local.py
+python scripts/export_text_extension_colab.py
+python scripts/summarize_text_extension.py --bootstrap-samples 2000
+python scripts/build_text_extension_dashboard.py --allow-incomplete
+```
+
+The local model command only plans. The [clean Colab notebook](notebooks/colab_text_extension.ipynb) verifies an allowlisted source/data ZIP, runs pinned SmolLM2/Granite weights, and exports checksummed results. New Jev reviews require funded provider credit and a separate US$1.60 ledger within the existing US$25 ceiling, preserving the entire unfinished numerical allowance. Historical ledgers are unchanged; see [budget controls](docs/BUDGET.md). No new LoRA training is included.
+
 ## Interactive metrics dashboard
 
 **[Open the numerical dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site)** — private to the owning account. Choose the binary or multiclass dataset, zero/few-shot, source LLM, accuracy/macro-F1, and pipeline-versus-source or pipeline-versus-direct-Jev comparison. Classical references have a separate matched/full training selector. Paired intervals, corrected/harmed decisions and total pipeline failures stay visible. Export the selected paired comparison as CSV.
 
-The landing view contains the corrected **68-condition numerical study**, with **61 complete** and unfinished review scores clearly unavailable. The [historical broad study](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/historical.html) retains the earlier text/mixed-tabular filters and LoRA results. Both views read saved aggregate measurements and make no model calls. See [dashboard instructions](dashboard/README.md).
+The landing view contains the corrected **68-condition numerical study**, with **61 complete** and unfinished review scores clearly unavailable. The separate [text extension view](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/text.html) uses the same pipeline comparison on SST-2/TREC and visibly marks unfinished conditions. The [historical broad study](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/historical.html) retains the earlier text/mixed-tabular filters and LoRA results. All views read saved aggregate measurements and make no model calls. They remain private to the owning account; see [dashboard instructions](dashboard/README.md).
 
-Serve locally with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist`. Rebuild the numerical snapshot with `python scripts/build_expanded_numeric_dashboard.py`; it requires complete evidence and independently reaudits the report. The repository and hosted dashboard remain private.
+Serve locally with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist`. Numerical and text snapshot builders independently reaudit their reports and require complete evidence by default; use their explicit `--allow-incomplete` option for a visibly pending snapshot. The repository and hosted dashboard remain private.
 
 ## Tabular extension
 
@@ -78,7 +95,7 @@ All **1,600 OpenAI and 800 Jev requests** reconcile with their separate durable 
 
 ![Measured pilot comparison](results/figures/combined-pilot.png)
 
-## Study design
+## Historical pilot study design
 
 | Dataset | Task | Classes | Measured families |
 |---|---|---:|---|
@@ -181,7 +198,7 @@ python scripts/run_openrouter_jev.py --config configs/jev_openrouter.json \
   --budget-usd 2.50 --ledger results/jev-budget.jsonl
 ```
 
-See [BUDGET.md](docs/BUDGET.md) for the exact first-execution and resume commands, hidden credential prompt, the separate Jev allocation, official prices and accounting limits. Jev uses `OPENROUTER_API_KEY` and the native Choice route. Keep each ledger **and its `.lock` file**; omit `--init-ledger` when resuming. Successful OpenAI responses with complete usage can settle conservative reservations; Jev retains all reservations. Errors, timeouts and unknown usage always retain their reservations. The ledger is an enforced reservation ceiling under documented pricing assumptions, not a provider invoice or an account-wide spend cap. Do not bypass it with the unbudgeted single-run or matrix commands for this study.
+See [BUDGET.md](docs/BUDGET.md) for the exact first-execution and resume commands, hidden credential prompt, the separate Jev allocation, official prices and accounting limits. Jev uses `OPENROUTER_API_KEY` and the native Choice route. Keep each ledger **and its `.lock` file**; omit `--init-ledger` when resuming. In these historical wrappers, successful OpenAI responses with complete usage can settle conservative reservations while Jev retains all reservations. The separate new text-review wrapper's success-settlement policy does not alter those old ledgers. Errors, timeouts and unknown usage always retain their reservations. The ledger is an enforced reservation ceiling under documented pricing assumptions, not a provider invoice or an account-wide spend cap. Do not bypass it with the unbudgeted single-run or matrix commands for this study.
 
 Hosted runs have no automatic retries and stop after three consecutive errors. Incomplete rows are checkpointed; repeating the identical configuration resumes. Model input/context errors are failures, not reasons to drop inconvenient test examples. A request limit is not a dollar limit.
 

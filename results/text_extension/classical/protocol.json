@@ -1,0 +1,112 @@
+{
+  "config": {
+    "bootstrap_samples": 2000,
+    "comparison": "4/class uses the exact existing demonstration IDs. Full means the entire prepared pilot training split (10000 SST-2 and 4886 TREC), not every original source training example; it is a separately labeled unequal-data reference.",
+    "datasets": [
+      "sst2",
+      "trec"
+    ],
+    "models": {
+      "lightgbm": {
+        "colsample_bytree": 1.0,
+        "deterministic": true,
+        "force_col_wise": true,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_samples": 2,
+        "min_child_weight": 0.001,
+        "min_data_in_bin": 1,
+        "n_estimators": 100,
+        "n_jobs": 1,
+        "num_leaves": 8,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0,
+        "verbosity": -1
+      },
+      "logistic_regression": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "solver": "lbfgs"
+      },
+      "random_forest": {
+        "class_weight": null,
+        "max_depth": null,
+        "max_features": "sqrt",
+        "min_samples_leaf": 1,
+        "n_estimators": 200,
+        "n_jobs": 1
+      },
+      "xgboost": {
+        "colsample_bytree": 1.0,
+        "device": "cpu",
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 0.1,
+        "n_estimators": 100,
+        "n_jobs": 1,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0,
+        "tree_method": "hist",
+        "verbosity": 0
+      }
+    },
+    "parameter_rationale": "Fixed C=1 logistic regression and 200-tree random forest match existing native reference choices. Fixed 100-tree depth-3 boosting configurations match the numerical supplement, without validation tuning. This is an exploratory comparison, not an optimized text-classification leaderboard.",
+    "preprocessing": "Shared existing core word (1,2) and char_wb (3,5) TF-IDF, max 60000 and 80000 features, sublinear TF, float64. Vocabulary and IDF fit selected training rows only; sparse CSR throughout. No SVD, dense conversion, feature selection or text truncation beyond frozen prepared data.",
+    "schema_version": 1,
+    "seed": 42,
+    "selection": "One fixed configuration per algorithm and identical TF-IDF representation, saved before extension execution. No tuning, early stopping, validation labels or held-out fitting.",
+    "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+    "train_per_class": [
+      4,
+      null
+    ],
+    "versions": {
+      "lightgbm": "4.6.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    }
+  },
+  "config_file_sha256": "da2e9a4dfa6df524dcc7a455f186782a1bf21eeda109bef35b03e979e415aa6d",
+  "hosted_model_calls": 0,
+  "prepared_files_sha256": {
+    "sst2": {
+      "manifest.json": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+      "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+      "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+      "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+    },
+    "trec": {
+      "manifest.json": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+      "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+      "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+      "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+    }
+  },
+  "prepared_manifest_sha256": {
+    "sst2": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+    "trec": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a"
+  },
+  "prior_results_already_viewed": true,
+  "saved_before_first_fit_at": "2026-09-22T19:12:17.515312+00:00",
+  "source_sha256": {
+    "scripts/run_text_classical_extension.py": "d0a6d452185c5487e32b01160bfcdb4d044ee5d804b969f4fe95517dc81f9a2c",
+    "scripts/summarize_tabular.py": "422e973822e97e928e2128f604dabe84fa3675e57fdcb86305a75473c55b7157",
+    "src/jevbench/__init__.py": "ba19fd98083ce60c00281ca4dbfc8a1596481da6cfd1d18a138378637f75bfea",
+    "src/jevbench/classical.py": "8c40d49c2f100e09368e16480cc26fcb515f0a76b0e1c4723b2c5799bf84d0bc",
+    "src/jevbench/cli.py": "7d9c274055eae20e89b3dac4c22293a4bfb17247f546d627cce984a7febe7c62",
+    "src/jevbench/data.py": "df1f41643d745a6a075598ea4c071b17770313a7a691189c949297e148035b21",
+    "src/jevbench/lora.py": "e61d35c68fc98cbbd4f59b5421f80ed7133188104439812cf9dfe0792c4a1330",
+    "src/jevbench/metrics.py": "551146253f47dedc9354e6e1b1ed81fdab57c07b0c77b8471a31eb4e2b6528c9",
+    "src/jevbench/prompts.py": "1b687e697edf2065c4d59b171f03cf6d8b5f327d17c992a906dbae03b9a8a875",
+    "src/jevbench/providers.py": "fbeb2156be56246639bd87da309931e0f62928617ab23a4a6b3da60353b1c149",
+    "src/jevbench/report.py": "381c07b459dd06bb1b35be6af14aaea90e43b69f172421fe6d4434ca2f752f7e",
+    "src/jevbench/runner.py": "ac655ec86ee261228efe8c682c880c43ab063853c8f6f40003007a14641b1ff6",
+    "src/jevbench/types.py": "9334c2741d48f1cbda7fd9757ff7651d3b80fe87e61d7a7038452bbc5e770f96"
+  },
+  "study_status": "exploratory_extension_after_prior_text_test_results_were_viewed",
+  "validation_labels_used_for_fitting_or_selection": 0
+}
