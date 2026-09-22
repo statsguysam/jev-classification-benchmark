@@ -63,6 +63,31 @@ it must be disclosed in the comparison.
 Sources: [TypeSafe quickstart](https://docs.typesafe.ai/introduction/quickstart),
 [Choice request and response](https://docs.typesafe.ai/primitives/choice).
 
+### Jev through OpenRouter
+
+An OpenRouter credential is also supported through OpenRouter's documented
+`POST https://openrouter.ai/api/v1/systemone` route. It must be sent to OpenRouter,
+not to the direct TypeSafe host. The benchmark uses the explicit model ID
+`typesafe/jev-1.13`, the same shared prompt and native Choice question, and records
+the returned model ID, provider, request ID and token/cost usage. OpenRouter's
+published example and endpoint catalog identify the served snapshot as
+`typesafe/jev-1.13-20260917`; the actual response remains the evidence for each run.
+
+Use [jev_openrouter.json](../configs/jev_openrouter.json) and
+[run_openrouter_jev.py](../scripts/run_openrouter_jev.py), which read
+`OPENROUTER_API_KEY` from the environment or a hidden terminal prompt. The
+[budget procedure](BUDGET.md) covers the separate allocation and safe resumption.
+
+The routing configuration changes; the classification prompt, selected labels,
+probability validator and frozen inference core do not. Route-specific metadata
+and the wrapper source hash are retained separately. OpenRouter adds network and
+serving overhead, so its end-to-end latency is not a direct TypeSafe latency
+measurement. Hosted Jev weights remain unavailable for LoRA.
+
+Verified on 22 September 2026: [OpenRouter TypeSafe integration](https://openrouter.ai/docs/guides/community/typesafe-sdk),
+[model endpoint metadata](https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints),
+and [Jev model pricing](https://openrouter.ai/typesafe/jev-1.13).
+
 Jev 1.13 documents a 32k-token limit for state plus longest question, and 64k for
 the combined request. Its tokenizer is not available in this harness, so no exact
 local token preflight is claimed; oversized request errors count as failures.

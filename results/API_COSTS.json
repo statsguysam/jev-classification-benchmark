@@ -1,9 +1,10 @@
 {
+  "scope": "OpenAI only; Jev and combined accounting are in JEV_COSTS.json",
   "basis": "Reported token usage at dated standard rates; not a provider invoice. Conservative settlements add a 1.25 input multiplier.",
   "approved_total_usd": "10.00",
   "openai_allocation_usd": "7.50",
   "jev_allocation_usd": "2.50",
-  "jev_spent_usd": "0.00",
+  "jev_reconciliation": "JEV_COSTS.json",
   "ledger": {
     "ledger_id": "8ac5aa0b-40e5-41d9-a9fd-c150d24f8994",
     "budget_usd": "7.500000000",

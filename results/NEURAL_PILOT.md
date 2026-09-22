@@ -1,6 +1,6 @@
 # Open-model pilot: measured results
 
-**6 completed runs and 1,200 recorded predictions** for **Qwen2.5-0.5B-Instruct**, pinned revision `7ae557604adf67be50417f59c2c2f167def9a775`. These are exploratory local-MPS results. This document covers only the small-model arm; see [COMPARISON.md](COMPARISON.md) for imported Colab and hosted measurements. Jev remains unmeasured because API access is unavailable.
+**6 completed runs and 1,200 recorded predictions** for **Qwen2.5-0.5B-Instruct**, pinned revision `7ae557604adf67be50417f59c2c2f167def9a775`. These are exploratory local-MPS results. This document covers only the small-model arm; see [COMPARISON.md](COMPARISON.md) for Colab, OpenAI and Jev measurements; this report does not summarize those arms.
 
 Every row uses the same 200 held-out examples per dataset and the shared 2,000-character input policy. Selection seed is 42. Local inference scores the complete numeric class ID plus EOS and normalizes likelihood over the permitted labels. This is a specific verbalizer/scoring protocol, not a claim about the best achievable performance of this model.
 

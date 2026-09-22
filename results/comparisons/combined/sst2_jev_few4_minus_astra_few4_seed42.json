@@ -1,0 +1,157 @@
+{
+  "content_audit": {
+    "allowed_supplemental_metadata_keys": [
+      "post_transform_overlap_removed_ids",
+      "prepared_path",
+      "splits_before_text_transform"
+    ],
+    "audit_type": "cross_environment_content_and_matched_training_audit",
+    "checks": {
+      "manifest_differences_only_allowlisted_supplemental_metadata": true,
+      "same_dataset": true,
+      "same_full_prepared_content_hash": true,
+      "same_label_map_and_order": true,
+      "same_ordered_test_ids_labels_text_hashes": true,
+      "same_ordered_training_ids": true,
+      "same_prepared_file_hashes": true,
+      "same_training_selection_seed": true,
+      "same_validation_label_use_count": true
+    },
+    "eligible_for_separately_labeled_matched_pairing": true,
+    "forbidden_manifest_difference_paths": [],
+    "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+    "manifest_difference_paths": [],
+    "manifest_differences": [],
+    "manifest_hashes_are_equal": true,
+    "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+    "raw_content_recomputed": true,
+    "recomputed_content_a": {
+      "file_hashes": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_directory": "data/pilot/sst2",
+      "selected_training_class_counts": {
+        "0": 4,
+        "1": 4
+      },
+      "verified": true
+    },
+    "recomputed_content_b": {
+      "file_hashes": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_directory": "data/pilot/sst2",
+      "selected_training_class_counts": {
+        "0": 4,
+        "1": 4
+      },
+      "verified": true
+    },
+    "run_a": {
+      "id": "sst2__jev-1.13__a33c2b36ded6",
+      "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "labels": [
+        "negative",
+        "positive"
+      ],
+      "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+      "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+      "path": "results/jev/sst2__jev-1.13__a33c2b36ded6",
+      "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_files_sha256": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+      "python": "3.12.4",
+      "test_rows": 200,
+      "training_rows": 8,
+      "training_selection_seed": 42,
+      "validation_rows_used": 0
+    },
+    "run_b": {
+      "id": "sst2__gpt-6-astra__e77320ccd3cf",
+      "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "labels": [
+        "negative",
+        "positive"
+      ],
+      "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+      "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+      "path": "results/hosted/sst2__gpt-6-astra__e77320ccd3cf",
+      "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_files_sha256": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+      "python": "3.12.4",
+      "test_rows": 200,
+      "training_rows": 8,
+      "training_selection_seed": 42,
+      "validation_rows_used": 0
+    },
+    "schema_version": 1
+  },
+  "contrast": "sst2_jev_few4_minus_astra_few4_seed42",
+  "cross_protocol_or_model_comparison": true,
+  "dataset": "sst2",
+  "delta_direction": "run_a minus run_b",
+  "equal_training_ids_and_seed": true,
+  "interpretation": "Exploratory paired test-item contrast, conditional on one selection seed and fixed model/prompt/training runs. Unadjusted 95% percentile intervals do not include training-seed, prompt-choice, or model-selection uncertainty; this report's fixed contrast list was not prospectively registered.",
+  "method": "paired stratified percentile bootstrap",
+  "metrics": {
+    "accuracy": {
+      "ci95": [
+        -0.030000000000000027,
+        0.010000000000000009
+      ],
+      "estimate": -0.010000000000000009
+    },
+    "macro_f1": {
+      "ci95": [
+        -0.030027767579742903,
+        0.00999799979997995
+      ],
+      "estimate": -0.010000250006250155
+    }
+  },
+  "multiple_comparisons_adjustment": "none",
+  "n_test": 200,
+  "prediction_evidence_a": {
+    "prediction_order_matches_test_order": true,
+    "predictions_sha256": "9dd69182d8be9d1ad817acf23e700e425a78645593940bdaae3980580ba31523",
+    "recomputed_metrics": {
+      "accuracy": 0.965,
+      "macro_f1": 0.9649991249781245,
+      "n_failures": 0
+    }
+  },
+  "prediction_evidence_b": {
+    "prediction_order_matches_test_order": true,
+    "predictions_sha256": "e2d7d4ba0f39220fe2fdf6ab107bf5364aafae961b3440386d247c674d55357d",
+    "recomputed_metrics": {
+      "accuracy": 0.975,
+      "macro_f1": 0.9749993749843746,
+      "n_failures": 0
+    }
+  },
+  "protocol_note": "Descriptive comparison across model/scoring families; it does not isolate a method effect.",
+  "run_a": "sst2__jev-1.13__a33c2b36ded6",
+  "run_b": "sst2__gpt-6-astra__e77320ccd3cf",
+  "samples": 2000,
+  "seed": 42,
+  "strict_compare_runs_manifest_requirement_satisfied": true,
+  "strict_compare_runs_note": "Original exact-manifest requirement is satisfied.",
+  "training_rows_per_run": 8
+}

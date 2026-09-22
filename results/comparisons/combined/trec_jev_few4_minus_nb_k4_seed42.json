@@ -1,0 +1,173 @@
+{
+  "content_audit": {
+    "allowed_supplemental_metadata_keys": [
+      "post_transform_overlap_removed_ids",
+      "prepared_path",
+      "splits_before_text_transform"
+    ],
+    "audit_type": "cross_environment_content_and_matched_training_audit",
+    "checks": {
+      "manifest_differences_only_allowlisted_supplemental_metadata": true,
+      "same_dataset": true,
+      "same_full_prepared_content_hash": true,
+      "same_label_map_and_order": true,
+      "same_ordered_test_ids_labels_text_hashes": true,
+      "same_ordered_training_ids": true,
+      "same_prepared_file_hashes": true,
+      "same_training_selection_seed": true,
+      "same_validation_label_use_count": true
+    },
+    "eligible_for_separately_labeled_matched_pairing": true,
+    "forbidden_manifest_difference_paths": [],
+    "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+    "manifest_difference_paths": [],
+    "manifest_differences": [],
+    "manifest_hashes_are_equal": true,
+    "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+    "raw_content_recomputed": true,
+    "recomputed_content_a": {
+      "file_hashes": {
+        "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+        "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+        "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+      },
+      "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+      "prepared_directory": "data/pilot/trec",
+      "selected_training_class_counts": {
+        "0": 4,
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 4
+      },
+      "verified": true
+    },
+    "recomputed_content_b": {
+      "file_hashes": {
+        "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+        "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+        "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+      },
+      "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+      "prepared_directory": "data/pilot/trec",
+      "selected_training_class_counts": {
+        "0": 4,
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 4
+      },
+      "verified": true
+    },
+    "run_a": {
+      "id": "trec__jev-1.13__bc52fb6a4b0f",
+      "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+      "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+      "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+      "path": "results/jev/trec__jev-1.13__bc52fb6a4b0f",
+      "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+      "prepared_files_sha256": {
+        "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+        "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+        "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+      },
+      "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+      "python": "3.12.4",
+      "test_rows": 200,
+      "training_rows": 24,
+      "training_selection_seed": 42,
+      "validation_rows_used": 0
+    },
+    "run_b": {
+      "id": "trec__multinomial_nb__db3012a1e2fb",
+      "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+      "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+      "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+      "path": "results/pilot/trec__multinomial_nb__db3012a1e2fb",
+      "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+      "prepared_files_sha256": {
+        "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+        "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+        "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+      },
+      "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+      "python": "3.12.4",
+      "test_rows": 200,
+      "training_rows": 24,
+      "training_selection_seed": 42,
+      "validation_rows_used": 0
+    },
+    "schema_version": 1
+  },
+  "contrast": "trec_jev_few4_minus_nb_k4_seed42",
+  "cross_protocol_or_model_comparison": true,
+  "dataset": "trec",
+  "delta_direction": "run_a minus run_b",
+  "equal_training_ids_and_seed": true,
+  "interpretation": "Exploratory paired test-item contrast, conditional on one selection seed and fixed model/prompt/training runs. Unadjusted 95% percentile intervals do not include training-seed, prompt-choice, or model-selection uncertainty; this report's fixed contrast list was not prospectively registered.",
+  "method": "paired stratified percentile bootstrap",
+  "metrics": {
+    "accuracy": {
+      "ci95": [
+        0.2799999999999999,
+        0.43
+      ],
+      "estimate": 0.355
+    },
+    "macro_f1": {
+      "ci95": [
+        0.31399497878436966,
+        0.4686495015992702
+      ],
+      "estimate": 0.3883798908488784
+    }
+  },
+  "multiple_comparisons_adjustment": "none",
+  "n_test": 200,
+  "prediction_evidence_a": {
+    "prediction_order_matches_test_order": true,
+    "predictions_sha256": "3ec3d8ac36fb296de9bd0bd6b20b6c220d2e57b9babab360c1a2437aa4fb2948",
+    "recomputed_metrics": {
+      "accuracy": 0.855,
+      "macro_f1": 0.8740348500895799,
+      "n_failures": 0
+    }
+  },
+  "prediction_evidence_b": {
+    "prediction_order_matches_test_order": true,
+    "predictions_sha256": "0ed29f8e553f3917022569479a3c70157c6877112f2322c0e92e5e25ffd1b15a",
+    "recomputed_metrics": {
+      "accuracy": 0.5,
+      "macro_f1": 0.4856549592407015,
+      "n_failures": 0
+    }
+  },
+  "protocol_note": "Descriptive comparison across model/scoring families; it does not isolate a method effect.",
+  "run_a": "trec__jev-1.13__bc52fb6a4b0f",
+  "run_b": "trec__multinomial_nb__db3012a1e2fb",
+  "samples": 2000,
+  "seed": 42,
+  "strict_compare_runs_manifest_requirement_satisfied": true,
+  "strict_compare_runs_note": "Original exact-manifest requirement is satisfied.",
+  "training_rows_per_run": 24
+}

@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASETS = ('sst2', 'trec')
 MODEL_ORDER = (
     'multinomial_nb', 'Qwen/Qwen2.5-0.5B-Instruct',
-    'Qwen/Qwen3-4B-Instruct-2507', 'gpt-5.6-luna', 'gpt-6-astra', 'jev-1.13.0',
+    'Qwen/Qwen3-4B-Instruct-2507', 'gpt-5.6-luna', 'gpt-6-astra', 'typesafe/jev-1.13',
 )
 DISPLAY = {
     'multinomial_nb': 'TF-IDF + Multinomial NB',
@@ -25,12 +25,13 @@ DISPLAY = {
     'logistic_regression': 'TF-IDF + logistic regression',
     'Qwen/Qwen2.5-0.5B-Instruct': 'Qwen2.5 0.5B',
     'Qwen/Qwen3-4B-Instruct-2507': 'Qwen3 4B',
-    'gpt-5.6-luna': 'GPT-5.6 Luna', 'gpt-6-astra': 'GPT-6 Astra', 'jev-1.13.0': 'Jev 1.13',
+    'gpt-5.6-luna': 'GPT-5.6 Luna', 'gpt-6-astra': 'GPT-6 Astra', 'typesafe/jev-1.13': 'Jev 1.13 (OpenRouter)',
 }
 METHOD_ORDER = {'classical': 0, 'zero_shot': 1, 'few_shot': 2, 'lora': 3}
 SCORE_FIELDS = ('accuracy', 'accuracy_ci_low', 'accuracy_ci_high', 'macro_f1',
                 'macro_f1_ci_low', 'macro_f1_ci_high', 'bootstrap_samples',
-                'n_test', 'n_failures', 'failure_rate', 'latency_p50_s', 'latency_p95_s')
+                'n_test', 'n_failures', 'failure_rate', 'latency_p50_s', 'latency_p95_s',
+                'probability_coverage', 'n_probability_rows', 'log_loss', 'brier_sum', 'ece_15_equal_width')
 
 
 def read_json(path):
@@ -68,7 +69,7 @@ def row_from_run(path, record, root, track='matched/reference', selection='confi
                status='complete' if complete else f"pending ({record.get('status', 'unknown')})",
                seed=record['seed'], labels_per_class='full prepared' if budget is None else budget,
                train_labels=train_count, dev_labels=training.get('validation_rows', 0),
-               label_count_basis='recorded', output_protocol=protocol, latency_basis=timing,
+               label_count_basis='recorded', provider=provider, output_protocol=protocol, latency_basis=timing,
                run_id=record['run_id'], source_path=path.relative_to(root).as_posix(),
                manifest_sha256=record['manifest_sha256'], test_ids_sha256=record.get('test_ids_sha256', ''),
                selection=selection, selected_validation_macro_f1=training.get('selected_validation_macro_f1'),
@@ -92,10 +93,12 @@ def row_from_run(path, record, root, track='matched/reference', selection='confi
         row['resolved_models'] = ';'.join(sorted({p.get('metadata', {}).get('resolved_model') for p in predictions if p.get('metadata', {}).get('resolved_model')}))
         row['resolved_revisions'] = ';'.join(sorted({p.get('metadata', {}).get('resolved_revision') for p in predictions if p.get('metadata', {}).get('resolved_revision')}))
         row['scoring_details'] = ';'.join(sorted({p.get('metadata', {}).get('scoring') for p in predictions if p.get('metadata', {}).get('scoring')}))
+        row['probability_kind'] = ';'.join(sorted({p.get('metadata', {}).get('probability_kind') for p in predictions if p.get('metadata', {}).get('probability_kind')}))
         for field in ('input_tokens', 'output_tokens', 'input_tokens_coverage', 'output_tokens_coverage',
                       'input_tokens_known_total', 'output_tokens_known_total'):
             row[field] = metrics.get(field)
-        for field in ('accuracy', 'macro_f1', 'n_test', 'n_failures', 'failure_rate', 'latency_p50_s', 'latency_p95_s'):
+        for field in ('accuracy', 'macro_f1', 'n_test', 'n_failures', 'failure_rate', 'latency_p50_s', 'latency_p95_s',
+                      'probability_coverage', 'n_probability_rows', 'log_loss', 'brier_sum', 'ece_15_equal_width'):
             row[field] = metrics.get(field)
         row['bootstrap_samples'] = metrics.get('bootstrap', {}).get('samples')
         for metric, prefix in (('accuracy', 'accuracy'), ('macro_f1', 'macro_f1')):
@@ -113,7 +116,7 @@ def sort_key(row):
 
 def collect(root):
     rows, records, full_candidates = [], [], []
-    for folder in ('pilot', 'colab', 'hosted'):
+    for folder in ('pilot', 'colab', 'hosted', 'jev'):
         for path in sorted((root / 'results' / folder).glob('*/run.json')):
             record = read_json(path)
             if record.get('dataset') not in DATASETS or record.get('seed') != 42:
@@ -162,7 +165,7 @@ def collect(root):
             for method in methods:
                 if (dataset, model, method) in keys:
                     continue
-                status = 'unmeasured (API access unavailable)' if model == 'jev-1.13.0' else 'pending (no imported run artifact)'
+                status = 'pending (no imported run artifact)'
                 label = {'classical': 'classical 4/class', 'zero_shot': 'zero-shot', 'few_shot': 'few-shot 4/class', 'lora': 'QLoRA 4/class' if model.endswith('4B-Instruct-2507') else 'LoRA 4/class'}[method]
                 rows.append(dict(dataset=dataset, model=model, display_model=DISPLAY[model], method=method,
                                  method_label=label, track='matched/reference', status=status, seed=42,
@@ -213,7 +216,7 @@ def summarize(root, output):
     lines = ['# Combined SST-2 / TREC pilot', '',
              f'**{len(complete)} completed model/reference rows** are summarized below. {len(pending)} planned or unfinished rows have no score. Only completed imported run artifacts supply numbers; UI observations and partial predictions are not scored.', '',
              'This is a **200-test-row, one-selection-seed (42) pilot per dataset**, using the shared 2,000-character prefix. Zero-shot uses no new task examples. Four-per-class prompting, adaptation and the fixed Naive Bayes reference use eight labeled examples for SST-2 or 24 for TREC, with no development labels. Pretraining data/compute are not matched.', '',
-             'The 0.5B adapter uses ordinary LoRA; the 4B adapter uses QLoRA when its recorded metadata confirms four-bit training. Both use normal configured precision for inference. Hosted LoRA is unavailable. Jev is unmeasured while API access is unavailable; it is never assigned a zero score.', '',
+             'The 0.5B adapter uses ordinary LoRA; the 4B adapter uses QLoRA when its recorded metadata confirms four-bit training. Both use normal configured precision for inference. Hosted LoRA, including Jev LoRA, is unavailable. Jev runs use the exact requested OpenRouter model `typesafe/jev-1.13` with native Choice probabilities; absent or incomplete runs remain pending and are never assigned a zero score.', '',
              '## Completed runs by exact manifest group', '',
              'Different complete manifest hashes are kept in separate groups. Membership alone is not proof that two environments prepared equivalent data. Cross-environment equivalence requires the separately linked audit of ordered IDs, labels, text/content hashes and training provenance; this summarizer does not infer paired contrasts across hashes.', '']
     for dataset in DATASETS:

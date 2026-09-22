@@ -26,6 +26,7 @@ MODELS = (
     ('Qwen/Qwen3-4B-Instruct-2507', 'Qwen3 4B', '#3565B4'),
     ('gpt-5.6-luna', 'GPT-5.6 Luna', '#8A58A6'),
     ('gpt-6-astra', 'GPT-6 Astra', '#C36A24'),
+    ('typesafe/jev-1.13', 'Jev 1.13', '#187B52'),
 )
 METHODS = ('zero_shot', 'few_shot', 'lora')
 MARKERS = {'zero_shot': 'o', 'few_shot': 's', 'lora': '^'}
@@ -81,11 +82,18 @@ def main():
     panels, proofs = panel_data(root)
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11, 'svg.fonttype': 'none',
                          'svg.hashsalt': 'jevbench-combined-pilot-v1', 'savefig.facecolor': 'white'})
-    fig, axes = plt.subplots(1, 2, figsize=(14.8, 9.8), sharey=True)
-    fig.subplots_adjust(left=.265, right=.94, bottom=.265, top=.775, wspace=.25)
+    fig, axes = plt.subplots(1, 2, figsize=(14.8, 10.8), sharey=True)
+    fig.subplots_adjust(left=.265, right=.94, bottom=.285, top=.795, wspace=.25)
     fig.text(.055, .95, 'SST-2 and TREC: measured classification pilot', fontsize=22, fontweight='bold', color='#182333')
-    fig.text(.055, .91, 'Four models · fixed model/method order, not a ranking · 200 held-out examples per task · seed 42', fontsize=11.7, color='#475569')
-    positions = [11.2, 10.2, 9.2, 7.7, 6.7, 5.7, 4.2, 3.2, 1.7, .7]
+    fig.text(.055, .91, 'Five models · fixed model/method order, not a ranking · 200 held-out examples per task · seed 42', fontsize=11.7, color='#475569')
+    positions, bands = [], []
+    cursor = len(panels['sst2']['rows']) + .5*(len(MODELS)-1) - .3
+    for model, _, color in MODELS:
+        count = sum(row['model'] == model for row in panels['sst2']['rows'])
+        group_positions = [cursor-index for index in range(count)]
+        positions.extend(group_positions)
+        bands.append((min(group_positions)-.5, max(group_positions)+.5, color))
+        cursor -= count+.5
     labels = [f"{row['display_model']} · {row['method_label']}" for row in panels['sst2']['rows']]
     for ax, dataset, title, budget in zip(axes, ('sst2', 'trec'), ('SST-2 · sentiment', 'TREC · question type'), (8, 24)):
         panel = panels[dataset]
@@ -93,8 +101,8 @@ def main():
         ax.text(0, 1.035, f'{budget} new labels per adapted/few-shot arm; zero-shot uses 0', transform=ax.transAxes, fontsize=10.2, color='#475569')
         reference = panel['reference']['macro_f1']
         ax.axvline(reference, color='#334155', linestyle=(0, (4, 4)), linewidth=1.4, alpha=.7, zorder=1)
-        ax.text(reference + .012, 12.03, f'NB: {reference:.3f}', fontsize=9.7, color='#334155', va='center')
-        for low, high, color in ((8.7, 11.7, MODELS[0][2]), (5.2, 8.2, MODELS[1][2]), (2.7, 4.7, MODELS[2][2]), (.2, 2.2, MODELS[3][2])):
+        ax.text(reference + .012, positions[0]+.83, f'NB: {reference:.3f}', fontsize=9.7, color='#334155', va='center')
+        for low, high, color in bands:
             ax.axhspan(low, high, color=color, alpha=.04, zorder=0)
         for position, row in zip(positions, panel['rows']):
             if row['status'] != 'complete':
@@ -108,7 +116,7 @@ def main():
             ax.scatter([value], [position], marker=MARKERS[row['method']], s=76, color=color, edgecolors='white', linewidths=1, zorder=3)
             ax.text(1.045, position, f'{value:.3f}', transform=ax.get_yaxis_transform(), fontsize=10.7, color=color, va='center', fontweight='bold')
         ax.set_yticks(positions, labels)
-        ax.set_ylim(-.05, 12.35)
+        ax.set_ylim(-.05, positions[0]+1.15)
         ax.set_xlim(0, 1)
         ax.set_xticks([0, .2, .4, .6, .8, 1])
         ax.set_xlabel('Macro-F1', labelpad=10)
@@ -123,11 +131,12 @@ def main():
     fig.legend(handles=handles, loc='lower left', bbox_to_anchor=(.053, .182), ncol=4, frameon=False, fontsize=10.7, columnspacing=1.8)
     notes = [
         'Intervals: recorded 95% stratified test-item bootstrap, 1,000 resamples; conditional on this split, seed and prompt.',
-        'Qwen2.5 0.5B uses LoRA; Qwen3 4B uses QLoRA. Hosted models generate labels; local models rank numeric ID + EOS.',
+        'Qwen2.5 0.5B uses LoRA; Qwen3 4B uses QLoRA. Local models rank numeric ID + EOS; OpenAI generates labels.',
+        'Jev uses native Choice via OpenRouter (typesafe/jev-1.13); it has no LoRA arm. Incomplete conditions have no dot.',
         'The dashed NB reference is fixed by configuration; its interval is in the report. Extra-label full-prepared baselines are omitted.',
-        'Cross-environment data/training alignment is audited separately; original differing manifest hashes are retained. Jev is unmeasured.',
+        'Cross-environment data/training alignment is audited separately; original differing manifest hashes are retained.',
     ]
-    for y, text in zip((.153, .121, .089, .057), notes):
+    for y, text in zip((.155, .126, .097, .068, .039), notes):
         fig.text(.055, y, text, fontsize=10.3, color='#475569')
     stem.parent.mkdir(parents=True, exist_ok=True)
     evidence = {'figure': 'combined-pilot', 'ordering': 'fixed model/method order, not ranked',

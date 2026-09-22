@@ -1,8 +1,8 @@
-# Hosted API cost accounting
+# OpenAI-only API cost accounting
 
-All 1,600 request reservations reconcile one-to-one with completed prediction records and settlements. The conservative ledger total is **US$3.142607**, within the US$7.50 OpenAI allocation. The reported-token estimate at uncached standard rates is **US$2.568174**. These are accounting estimates, not a provider invoice.
+All 1,600 OpenAI request reservations reconcile one-to-one with completed prediction records and settlements. The conservative ledger total is **US$3.142607**, within the US$7.50 OpenAI allocation. The reported-token estimate at uncached standard rates is **US$2.568174**. These are accounting estimates, not a provider invoice.
 
-**US$2.50 remains reserved and unspent for Jev**, whose API access is unavailable. The approved combined ceiling is US$10. No paid Colab upgrade was purchased for this experiment; account-level compute charges, if any, are not inferred from API tokens.
+This report covers **OpenAI only**. The separately allocated US$2.50 Jev arm and combined totals are reconciled in [JEV_COSTS.md](JEV_COSTS.md). The approved combined ceiling is US$10. Colab compute and unrelated account charges are outside these API calculations.
 
 | Dataset | Model | Method | Requests | Input tokens | Output tokens, including reasoning | Standard-rate estimate USD | Conservative ledger USD |
 |---|---|---|---:|---:|---:|---:|---:|

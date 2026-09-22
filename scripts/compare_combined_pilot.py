@@ -24,7 +24,33 @@ MODELS = {
     "qwen4b": ("colab", "Qwen/Qwen3-4B-Instruct-2507"),
     "luna": ("hosted", "gpt-5.6-luna"),
     "astra": ("hosted", "gpt-6-astra"),
+    "jev": ("jev", "typesafe/jev-1.13"),
 }
+JEV_BASE_URL = "https://openrouter.ai/api/v1"
+JEV_ENDPOINT = JEV_BASE_URL + "/systemone"
+JEV_RESOLVED_MODELS = {"typesafe/jev-1.13", "typesafe/jev-1.13-20260917"}
+
+
+def validate_jev_route(record: dict, predictions: list[dict] | None = None):
+    """Bind this fixed Jev report to the saved, guarded OpenRouter route."""
+    config = record["config"]
+    require(config.get("provider") == "jev" and config.get("model") == MODELS["jev"][1], "Unexpected Jev provider/model for the fixed OpenRouter pilot")
+    require(config.get("base_url") == JEV_BASE_URL, "Jev report requires the official OpenRouter base URL")
+    guard = config.get("budget_guard", {})
+    require(guard.get("route") == "OpenRouter" and guard.get("endpoint") == JEV_ENDPOINT, "Jev report requires recorded OpenRouter route/endpoint provenance")
+    require(guard.get("native_protocol") == "frozen_JevClassifier_Choice", "Jev report requires frozen native Choice protocol provenance")
+    require(set(guard.get("response_model_allowlist", [])) == JEV_RESOLVED_MODELS, "Unexpected Jev response model allowlist")
+    wrapper_hash = hashlib.sha256(Path(__file__).with_name("run_openrouter_jev.py").read_bytes()).hexdigest()
+    require(guard.get("wrapper_sha256") == wrapper_hash, "Jev wrapper SHA does not match the frozen local wrapper")
+    require(guard.get("dataset") == record.get("dataset") and guard.get("seed") == record.get("seed") and guard.get("shots_per_class") == config.get("shots_per_class"), "Jev route provenance disagrees with the recorded dataset/seed/shot budget")
+    for prediction in predictions or []:
+        if prediction.get("error") is not None:
+            continue
+        metadata = prediction.get("metadata", {})
+        route = metadata.get("openrouter", {})
+        require(metadata.get("resolved_model") in JEV_RESOLVED_MODELS, "Successful Jev row resolved to an unverified model")
+        require(metadata.get("requested_model") == MODELS["jev"][1], "Successful Jev row requested an unexpected model")
+        require(route.get("provider") == "TypeSafe" and route.get("endpoint") == JEV_ENDPOINT, "Successful Jev row lacks the required TypeSafe/OpenRouter endpoint provenance")
 
 
 def completed_candidate(results: Path, dataset: str, model: str, method: str, seed: int) -> tuple[Path | None, str]:
@@ -41,6 +67,8 @@ def completed_candidate(results: Path, dataset: str, model: str, method: str, se
             continue
         if method == "lora" and record.get("adapter_training", {}).get("train_per_class") != 4:
             continue
+        if model == "jev":
+            validate_jev_route(record)
         (candidates if record.get("status") == "complete" else incomplete).append(path.parent)
     require(len(candidates) <= 1, f"Ambiguous completed runs for {dataset}/{model}/{method}/seed{seed}: {candidates}")
     if candidates:
@@ -56,13 +84,17 @@ def contrast_specs():
         nb = "nb_colab" if model == "qwen4b" else "nb_pilot"
         specs.append((f"{model}_few4_minus_nb_k4", model, "few_shot", nb, "classical", True))
     specs += [("astra_few4_minus_luna_few4", "astra", "few_shot", "luna", "few_shot", True),
-              ("qwen4b_few4_minus_astra_few4", "qwen4b", "few_shot", "astra", "few_shot", True)]
+              ("qwen4b_few4_minus_astra_few4", "qwen4b", "few_shot", "astra", "few_shot", True),
+              ("jev_few4_minus_astra_few4", "jev", "few_shot", "astra", "few_shot", True),
+              ("jev_few4_minus_qwen4b_few4", "jev", "few_shot", "qwen4b", "few_shot", True)]
     return specs
 
 
 def read_predictions(directory: Path, record: dict, test: dict) -> tuple[list[int], dict]:
     raw = (directory / "predictions.jsonl").read_bytes()
     rows = [json.loads(line) for line in raw.splitlines() if line.strip()]
+    if record["config"].get("provider") in ("jev", "typesafe"):
+        validate_jev_route(record, rows)
     by_id = {row["row_id"]: row for row in rows}
     expected = [row["id"] for row in test["rows"]]
     require(len(by_id) == len(rows) and set(by_id) == set(expected), "Prediction IDs must exactly match held-out IDs with no duplicates")
@@ -114,7 +146,7 @@ def main(argv=None):
     parser.add_argument("--bootstrap-seed", type=int, default=42)
     args = parser.parse_args(argv)
     require(args.bootstrap >= 100, "At least 100 bootstrap samples required")
-    protected = [args.data_root, *(args.results_root / source for source in ("pilot", "colab", "hosted"))]
+    protected = [args.data_root, *(args.results_root / source for source in ("pilot", "colab", "hosted", "jev"))]
     require(not any(args.output.resolve().is_relative_to(path.resolve()) for path in protected), "Output must not be inside original run or prepared-data directories")
     args.output.mkdir(parents=True, exist_ok=True)
     index = []

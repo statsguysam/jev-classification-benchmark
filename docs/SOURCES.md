@@ -37,7 +37,7 @@ These are usable candidate identifiers documented on the access date, not proof 
 
 [Anthropic versioning](https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions) explicitly says newer dateless model IDs refer to pinned snapshots, while serving infrastructure may still change behavior. Google's catalog distinguishes stable, preview, and moving `latest` names; “usually unchanged” is not an absolute infrastructure guarantee. For every provider record request date, requested ID, returned ID, API version, endpoint, reasoning/sampling options, and account-specific capability checks. Do not manufacture date-stamped IDs.
 
-The open-model recommendation prioritizes a manageable QLoRA run and diversity. It does not claim these are the newest or highest-scoring open models available in September 2026. Hosted API budgets are not yet authorized by this protocol.
+The open-model recommendation prioritizes a manageable QLoRA run and diversity. It does not claim these are the newest or highest-scoring open models available in September 2026. Execution authorization and allocations are recorded in [BUDGET.md](BUDGET.md); this source inventory does not authorize additional spending.
 
 ## Datasets
 
@@ -62,6 +62,12 @@ Repository publication should distribute download/parsing instructions, pinned s
 | [Hu et al., LoRA](https://arxiv.org/abs/2106.09685) | Frozen base weights plus trainable low-rank adaptation. |
 | [Dettmers et al., QLoRA](https://arxiv.org/abs/2305.14314) | Quantized base-model adaptation and its compute/memory considerations. |
 | [Hugging Face PEFT quantization guide](https://huggingface.co/docs/peft/main/en/developer_guides/quantization) | Practical quantized adapter training; record the installed library version instead of treating mutable `main` documentation as an environment lock. |
-| [Dror et al., The Hitchhiker's Guide to Testing Statistical Significance in NLP, ACL 2018](https://aclanthology.org/P18-1128/) | Paired evaluation and appropriate significance-test selection. The exact stratified bootstrap and multiple-comparison choices are preregistered project decisions. |
+| [Dror et al., The Hitchhiker's Guide to Testing Statistical Significance in NLP, ACL 2018](https://aclanthology.org/P18-1128/) | Paired evaluation and appropriate significance-test selection. The exact stratified bootstrap and multiple-comparison choices are documented project decisions. Reported contrasts are exploratory and were not prospectively registered. |
 
 No source above supplies the benchmark's eventual results. Unrun model/dataset cells must remain explicitly unrun.
+
+## Jev access through OpenRouter
+
+Verified on 22 September 2026. [OpenRouter's official TypeSafe integration](https://openrouter.ai/docs/guides/community/typesafe-sdk) documents the stable `/api/v1/systemone` endpoint and native TypeSafe request/response shapes, including OpenRouter's returned provider, request ID and `usage.cost`. The [live endpoint catalog](https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints) lists `typesafe/jev-1.13`, TypeSafe as provider, a 32,000-token context and $0.042/M input / free output pricing. The response's served snapshot is recorded per prediction; an alias or provider label alone is not an immutable identity guarantee. A public [metadata snapshot](../results/JEV_MODEL_SNAPSHOT.json) preserves the retrieved catalog and retrieval hash.
+
+OpenRouter credentials authenticate to OpenRouter only. Route-level latency and reported charges must be described as OpenRouter-routed Jev measurements, separately from direct TypeSafe serving.

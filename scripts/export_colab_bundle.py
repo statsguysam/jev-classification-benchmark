@@ -15,13 +15,14 @@ FIXED_FILES = (
     "configs/datasets.json", "configs/experiment.json", "configs/models.json", "configs/hosted_budget.json", "configs/colab_adapters.json",
     "docs/PROTOCOL.md", "docs/SOURCES.md", "docs/MODEL_ACCESS.md", "docs/BUDGET.md", "docs/ADAPTERS.md",
     "scripts/export_colab_bundle.py", "scripts/run_classical_matrix.py", "scripts/run_model_matrix.py",
-    "scripts/run_budgeted_hosted.py", "scripts/package_adapters.py",
+    "scripts/run_budgeted_hosted.py", "scripts/run_openrouter_jev.py", "scripts/package_adapters.py",
+    "configs/jev_openrouter.json",
     "notebooks/colab_benchmark.ipynb",
 )
 OPTIONAL_FILES = (
     "scripts/audit_cross_environment.py", "scripts/summarize_neural_pilot.py", "scripts/summarize_api_costs.py",
     "scripts/compare_combined_pilot.py", "scripts/summarize_combined_pilot.py", "scripts/plot_combined_pilot.py",
-    "scripts/audit_colab_import.py",
+    "scripts/audit_colab_import.py", "scripts/summarize_jev_pilot.py", "scripts/summarize_jev_costs.py",
     "scripts/summarize_hosted.py", "scripts/summarize_colab.py",
     "scripts/plot_neural_pilot.py", "scripts/plot_results.py", "scripts/plot_calibration.py",
 )

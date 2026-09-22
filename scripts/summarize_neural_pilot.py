@@ -53,7 +53,7 @@ def main():
     revision = next(iter(revisions))
     lines = [
         '# Open-model pilot: measured results', '',
-        f'**{len(neural)} completed runs and {total_predictions:,} recorded predictions** for **Qwen2.5-0.5B-Instruct**, pinned revision `{revision}`. These are exploratory local-MPS results. This document covers only the small-model arm; see [COMPARISON.md](COMPARISON.md) for imported Colab and hosted measurements. Jev remains unmeasured because API access is unavailable.', '',
+        f'**{len(neural)} completed runs and {total_predictions:,} recorded predictions** for **Qwen2.5-0.5B-Instruct**, pinned revision `{revision}`. These are exploratory local-MPS results. This document covers only the small-model arm; see [COMPARISON.md](COMPARISON.md) for Colab, OpenAI and Jev measurements; this report does not summarize those arms.', '',
         'Every row uses the same 200 held-out examples per dataset and the shared 2,000-character input policy. Selection seed is 42. Local inference scores the complete numeric class ID plus EOS and normalizes likelihood over the permitted labels. This is a specific verbalizer/scoring protocol, not a claim about the best achievable performance of this model.', '',
         'Few-shot and LoRA both use exactly four training examples per class: eight for SST-2 and 24 for TREC. Matched classical references use those same examples, with no development labels. LoRA uses a fixed three epochs, rank 8, alpha 16, learning rate 0.0002 and response-only supervision. Both adapters use their final checkpoint; no test-guided retuning or checkpoint selection was performed.', '',
         '| Dataset | Method | New training labels | Accuracy | Macro F1 | 95% macro-F1 CI | NLL | Brier sum | ECE |',

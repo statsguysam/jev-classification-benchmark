@@ -2,13 +2,13 @@
 
 A reproducible comparison of Jev, open-weight language models, hosted frontier models, LoRA adaptation, and classical machine learning on public text-classification datasets.
 
-**Completed pilot:** 248 run records and 49,600 recorded predictions, with zero inference errors. Classical ML covers five datasets and 200 distinct model/budget/seed configurations. The neural/hosted comparison covers **SST-2 (binary) and TREC (six classes)**, with 200 held-out examples each: Qwen2.5-0.5B and Qwen3-4B at zero-shot, four examples per class and LoRA/QLoRA; OpenAI Luna and Astra at zero/few-shot. **Jev remains unmeasured because API access is unavailable.**
+**Completed pilot:** 252 run records and 50,400 recorded predictions, with five Jev inference/protocol failures retained in the scores. Classical ML covers five datasets and 200 distinct model/budget/seed configurations. The neural/hosted comparison covers **SST-2 (binary) and TREC (six classes)**, with 200 held-out examples each: Qwen2.5-0.5B and Qwen3-4B at zero-shot, four examples per class and LoRA/QLoRA; OpenAI Luna, Astra and **Jev 1.13 through OpenRouter** at zero/few-shot.
 
-Start with the [combined comparison](results/COMPARISON.md), [execution status](results/STATUS.md), [paired contrasts](results/comparisons/combined/index.md), and [classical seed analysis](results/MATCHED_ANALYSIS.md). Download the source bundle and four trained adapters from the [pilot release](https://github.com/statsguysam/jev-classification-benchmark/releases/tag/v0.1.0-pilot); [adapter reproduction instructions](docs/ADAPTERS.md) include pinned base revisions.
+Start with the [combined comparison](results/COMPARISON.md), [execution status](results/STATUS.md), [paired contrasts](results/comparisons/combined/index.md), [Jev probabilities and failure analysis](results/JEV_PILOT.md), and [classical seed analysis](results/MATCHED_ANALYSIS.md). Download the source bundle and four trained adapters from the [pilot release](https://github.com/statsguysam/jev-classification-benchmark/releases/tag/v0.2.0-pilot); [adapter reproduction instructions](docs/ADAPTERS.md) include pinned base revisions.
 
-Astra few-shot accuracy was 97.5% on SST-2 and 97% on TREC. Qwen3-4B few-shot was 95.5% and 83%; its fixed QLoRA recipe reached 93.5% and 80%. The smaller Qwen model's unfavorable TREC results are also retained. These are conditional, one-seed pilot measurements using different local/hosted output protocols, not a general model ranking. [Colab auditing](results/COLAB_AUDIT.md) verifies the same prepared content and training labels despite supplemental manifest metadata differences; original artifacts remain unchanged.
+Jev zero-shot accuracy was 93.5% on SST-2 and 33.5% on TREC; four-per-class prompting reached 96.5% and 85.5%. Astra few-shot accuracy was 97.5% and 97%. Qwen3-4B few-shot was 95.5% and 83%; its fixed QLoRA recipe reached 93.5% and 80%. The smaller Qwen model's unfavorable TREC results are also retained. These are conditional, one-seed pilot measurements using different local/hosted output protocols, not a general model ranking. Paired intervals do not separate Jev from Qwen3-4B few-shot here; Astra’s TREC advantage over Jev is clearer, while their SST-2 difference remains uncertain. [Colab auditing](results/COLAB_AUDIT.md) verifies the same prepared content and training labels despite supplemental manifest metadata differences; original artifacts remain unchanged.
 
-All **1,600 OpenAI requests** reconcile with the durable ledger. The reported-token estimate is **US$2.568174** and the conservative ledger total is **US$3.142607**, below the US$7.50 OpenAI allocation. These are estimates, not an invoice. **US$2.50 remains reserved and unspent for Jev**, within the approved US$10 total. See [cost accounting](results/API_COSTS.md) and the [budget/resumption procedure](docs/BUDGET.md).
+All **1,600 OpenAI and 800 Jev requests** reconcile with their separate durable ledgers. OpenAI’s reported-token estimate is **US$2.568174**; Jev’s known API-reported cost is **US$0.021164 for 797/800 calls**, with three timeout costs unknown. Combined conservative settlements/reservations total **US$5.293007**, within the approved US$10. These are accounting figures, not an invoice. See [combined cost accounting](results/JEV_COSTS.md) and the [budget/resumption procedure](docs/BUDGET.md).
 
 ![Measured pilot comparison](results/figures/combined-pilot.png)
 
@@ -16,10 +16,10 @@ All **1,600 OpenAI requests** reconcile with the durable ledger. The reported-to
 
 | Dataset | Task | Classes | Measured families |
 |---|---|---:|---|
-| SST-2 | Movie-review sentiment | 2 | Classical, open LLMs, OpenAI |
+| SST-2 | Movie-review sentiment | 2 | Classical, open LLMs, OpenAI, Jev |
 | IMDb | Movie-review sentiment | 2 | Classical |
 | AG News | News topic | 4 | Classical |
-| TREC | Question type | 6 | Classical, open LLMs, OpenAI |
+| TREC | Question type | 6 | Classical, open LLMs, OpenAI, Jev |
 | Banking77 | Banking intent | 77 | Classical |
 
 SST-2's labeled validation set is reserved as final test; its published test labels are hidden. Development data comes only from training data. Every method uses the same frozen held-out IDs, label mapping and text preprocessing. Dataset snapshots and prepared splits are hashed. Exact cross-split text overlaps are removed from the training/development side, preserving test rows.
@@ -106,7 +106,16 @@ python scripts/run_budgeted_hosted.py --config configs/hosted_budget.json \
   --budget-usd 7.50 --ledger results/openai-budget.jsonl
 ```
 
-See [BUDGET.md](docs/BUDGET.md) for the exact first-execution and resume commands, hidden credential prompt, the separate Jev allocation, official prices and accounting limits. Keep the ledger **and its `.lock` file**; omit `--init-ledger` when resuming. Successful OpenAI responses with complete usage can settle conservative reservations; errors, timeouts and unknown usage retain them. The ledger is an enforced reservation ceiling under documented pricing assumptions, not a provider invoice or an account-wide spend cap. Do not bypass it with the unbudgeted single-run or matrix commands for this study.
+For the measured Jev route, this is also a dry run:
+
+```bash
+python scripts/run_openrouter_jev.py --config configs/jev_openrouter.json \
+  --data data/pilot/sst2 data/pilot/trec --shots 0 4 --seed 42 \
+  --output results/jev --max-requests 200 \
+  --budget-usd 2.50 --ledger results/jev-budget.jsonl
+```
+
+See [BUDGET.md](docs/BUDGET.md) for the exact first-execution and resume commands, hidden credential prompt, the separate Jev allocation, official prices and accounting limits. Jev uses `OPENROUTER_API_KEY` and the native Choice route. Keep each ledger **and its `.lock` file**; omit `--init-ledger` when resuming. Successful OpenAI responses with complete usage can settle conservative reservations; Jev retains all reservations. Errors, timeouts and unknown usage always retain their reservations. The ledger is an enforced reservation ceiling under documented pricing assumptions, not a provider invoice or an account-wide spend cap. Do not bypass it with the unbudgeted single-run or matrix commands for this study.
 
 Hosted runs have no automatic retries and stop after three consecutive errors. Incomplete rows are checkpointed; repeating the identical configuration resumes. Model input/context errors are failures, not reasons to drop inconvenient test examples. A request limit is not a dollar limit.
 
@@ -148,7 +157,7 @@ jevbench report --results results/pilot --output results/REPORT.md
 jevbench compare results/pilot/RUN_A results/pilot/RUN_B --samples 2000
 ```
 
-The report and its underlying run JSON include accuracy, macro-F1, balanced accuracy, per-class metrics, failure rate, bootstrap intervals, timing and token coverage. NLL, multiclass Brier, ROC-AUC and ECE require a valid class distribution: native Jev/classical probabilities or the local model's normalized restricted-label likelihoods. Their semantics differ. Self-reported LLM confidence is never substituted. Per-class details and reliability-bin counts are in each run JSON.
+The report and its underlying run JSON include accuracy, macro-F1, balanced accuracy, per-class metrics, failure rate, bootstrap intervals, timing and token coverage. Failed predictions count as incorrect; three Jev timeouts and two rejected response distributions/choices are retained. NLL, multiclass Brier, ROC-AUC and ECE require a valid class distribution: native Jev/classical probabilities or the local model's normalized restricted-label likelihoods. Their semantics differ. Self-reported LLM confidence is never substituted. Per-class details and reliability-bin counts are in each run JSON.
 
 Paired bootstrap compares exactly aligned test examples. Unequal training budgets/seeds require `--allow-unequal-training` and remain descriptive. Probability methods differ across native Jev, classical classifiers and restricted-label LLM likelihoods. Hosted request latency and classical amortized batch latency are recorded separately; neither establishes equal-hardware throughput.
 

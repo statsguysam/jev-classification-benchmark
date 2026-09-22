@@ -145,6 +145,30 @@
       "status": "complete"
     },
     {
+      "contrast": "sst2_jev_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_jev_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.35,
+            0.5
+          ],
+          "estimate": 0.42499999999999993
+        },
+        "macro_f1": {
+          "ci95": [
+            0.3511745644841584,
+            0.5051181415045704
+          ],
+          "estimate": 0.4261520071836382
+        }
+      },
+      "status": "complete"
+    },
+    {
       "contrast": "sst2_astra_few4_minus_luna_few4_seed42",
       "cross_protocol_or_model_comparison": true,
       "dataset": "sst2",
@@ -188,6 +212,54 @@
             0.010003000300029985
           ],
           "estimate": -0.02000050001250031
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_jev_few4_minus_astra_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_jev_few4_minus_astra_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.030000000000000027,
+            0.010000000000000009
+          ],
+          "estimate": -0.010000000000000009
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.030027767579742903,
+            0.00999799979997995
+          ],
+          "estimate": -0.010000250006250155
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_jev_few4_minus_qwen4b_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_jev_few4_minus_qwen4b_few4_seed42.json",
+      "manifest_hashes_are_equal": false,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.020000000000000018,
+            0.040000000000000036
+          ],
+          "estimate": 0.010000000000000009
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.020009502263012235,
+            0.04002501090445176
+          ],
+          "estimate": 0.010000250006250155
         }
       },
       "status": "complete"
@@ -337,6 +409,30 @@
       "status": "complete"
     },
     {
+      "contrast": "trec_jev_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_jev_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.2799999999999999,
+            0.43
+          ],
+          "estimate": 0.355
+        },
+        "macro_f1": {
+          "ci95": [
+            0.31399497878436966,
+            0.4686495015992702
+          ],
+          "estimate": 0.3883798908488784
+        }
+      },
+      "status": "complete"
+    },
+    {
       "contrast": "trec_astra_few4_minus_luna_few4_seed42",
       "cross_protocol_or_model_comparison": true,
       "dataset": "trec",
@@ -380,6 +476,54 @@
             -0.047961186977642185
           ],
           "estimate": -0.10481219450339485
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_jev_few4_minus_astra_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_jev_few4_minus_astra_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.16000000000000003,
+            -0.06999999999999995
+          ],
+          "estimate": -0.11499999999999999
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.1173743025859593,
+            -0.0493379949796383
+          ],
+          "estimate": -0.08255224279888274
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_jev_few4_minus_qwen4b_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_jev_few4_minus_qwen4b_few4_seed42.json",
+      "manifest_hashes_are_equal": false,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.030000000000000027,
+            0.07500000000000007
+          ],
+          "estimate": 0.025000000000000022
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.033539373993105,
+            0.07504195980087641
+          ],
+          "estimate": 0.022259951704512115
         }
       },
       "status": "complete"

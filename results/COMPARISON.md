@@ -1,10 +1,10 @@
 # Combined SST-2 / TREC pilot
 
-**24 completed model/reference rows** are summarized below. 4 planned or unfinished rows have no score. Only completed imported run artifacts supply numbers; UI observations and partial predictions are not scored.
+**28 completed model/reference rows** are summarized below. 0 planned or unfinished rows have no score. Only completed imported run artifacts supply numbers; UI observations and partial predictions are not scored.
 
 This is a **200-test-row, one-selection-seed (42) pilot per dataset**, using the shared 2,000-character prefix. Zero-shot uses no new task examples. Four-per-class prompting, adaptation and the fixed Naive Bayes reference use eight labeled examples for SST-2 or 24 for TREC, with no development labels. Pretraining data/compute are not matched.
 
-The 0.5B adapter uses ordinary LoRA; the 4B adapter uses QLoRA when its recorded metadata confirms four-bit training. Both use normal configured precision for inference. Hosted LoRA is unavailable. Jev is unmeasured while API access is unavailable; it is never assigned a zero score.
+The 0.5B adapter uses ordinary LoRA; the 4B adapter uses QLoRA when its recorded metadata confirms four-bit training. Both use normal configured precision for inference. Hosted LoRA, including Jev LoRA, is unavailable. Jev runs use the exact requested OpenRouter model `typesafe/jev-1.13` with native Choice probabilities; absent or incomplete runs remain pending and are never assigned a zero score.
 
 ## Completed runs by exact manifest group
 
@@ -22,6 +22,8 @@ Different complete manifest hashes are kept in separate groups. Membership alone
 | GPT-5.6 Luna | few-shot 4/class | 8 / 0 | 0.9550 [0.9250, 0.9800] | 0.9550 [0.9248, 0.9800] | 0 | [run](hosted/sst2__gpt-5.6-luna__af6e2721cfa0/run.json) |
 | GPT-6 Astra | zero-shot | 0 / 0 | 0.9700 [0.9450, 0.9900] | 0.9700 [0.9450, 0.9900] | 0 | [run](hosted/sst2__gpt-6-astra__9279b61f6e7a/run.json) |
 | GPT-6 Astra | few-shot 4/class | 8 / 0 | 0.9750 [0.9500, 0.9950] | 0.9750 [0.9500, 0.9950] | 0 | [run](hosted/sst2__gpt-6-astra__e77320ccd3cf/run.json) |
+| Jev 1.13 (OpenRouter) | zero-shot | 0 / 0 | 0.9350 [0.9000, 0.9650] | 0.9395 [0.9040, 0.9698] | 2 | [run](jev/sst2__jev-1.13__9d5a851767fc/run.json) |
+| Jev 1.13 (OpenRouter) | few-shot 4/class | 8 / 0 | 0.9650 [0.9350, 0.9900] | 0.9650 [0.9350, 0.9900] | 0 | [run](jev/sst2__jev-1.13__a33c2b36ded6/run.json) |
 
 ### SST2 · sst2-M2
 
@@ -53,15 +55,14 @@ Different complete manifest hashes are kept in separate groups. Membership alone
 | GPT-5.6 Luna | few-shot 4/class | 24 / 0 | 0.8500 [0.8049, 0.8950] | 0.8479 [0.7933, 0.9013] | 0 | [run](hosted/trec__gpt-5.6-luna__a183fc22ddc8/run.json) |
 | GPT-6 Astra | zero-shot | 0 / 0 | 0.9700 [0.9450, 0.9900] | 0.9580 [0.9173, 0.9915] | 0 | [run](hosted/trec__gpt-6-astra__4788a3f7e01d/run.json) |
 | GPT-6 Astra | few-shot 4/class | 24 / 0 | 0.9700 [0.9450, 0.9900] | 0.9566 [0.9167, 0.9908] | 0 | [run](hosted/trec__gpt-6-astra__f4c124cbaa8e/run.json) |
+| Jev 1.13 (OpenRouter) | zero-shot | 0 / 0 | 0.3350 [0.2900, 0.3850] | 0.3622 [0.3065, 0.4174] | 3 | [run](jev/trec__jev-1.13__ce2f8d23bf30/run.json) |
+| Jev 1.13 (OpenRouter) | few-shot 4/class | 24 / 0 | 0.8550 [0.8100, 0.9000] | 0.8740 [0.8288, 0.9191] | 0 | [run](jev/trec__jev-1.13__bc52fb6a4b0f/run.json) |
 
 ## Pending and unavailable conditions
 
 | Dataset | Model | Method | State | Existing artifact |
 |---|---|---|---|---|
-| sst2 | Jev 1.13 | zero-shot | unmeasured (API access unavailable) | — |
-| sst2 | Jev 1.13 | few-shot 4/class | unmeasured (API access unavailable) | — |
-| trec | Jev 1.13 | zero-shot | unmeasured (API access unavailable) | — |
-| trec | Jev 1.13 | few-shot 4/class | unmeasured (API access unavailable) | — |
+| — | — | — | No pending conditions in this inventory | — |
 
 ## Larger supervised reference: extra training and development labels
 
@@ -92,6 +93,8 @@ Seconds below use each run's own timing convention. Hosted end-to-end requests, 
 | sst2 | GPT-5.6 Luna / few-shot 4/class | generated label | hosted end-to-end request | 0.996753 | 1.693659 |
 | sst2 | GPT-6 Astra / zero-shot | generated label | hosted end-to-end request | 1.717712 | 3.041394 |
 | sst2 | GPT-6 Astra / few-shot 4/class | generated label | hosted end-to-end request | 1.688494 | 2.855524 |
+| sst2 | Jev 1.13 (OpenRouter) / zero-shot | native Choice | hosted end-to-end request | 0.613026 | 0.827266 |
+| sst2 | Jev 1.13 (OpenRouter) / few-shot 4/class | native Choice | hosted end-to-end request | 0.614601 | 0.750080 |
 | sst2 | TF-IDF + linear SVM / full prepared | classical native | amortized batch per row | 0.000078 | 0.000078 |
 | trec | TF-IDF + Multinomial NB / classical 4/class | classical native | amortized batch per row | 0.000061 | 0.000061 |
 | trec | TF-IDF + Multinomial NB / classical 4/class | classical native | amortized batch per row | 0.000200 | 0.000200 |
@@ -105,6 +108,8 @@ Seconds below use each run's own timing convention. Hosted end-to-end requests, 
 | trec | GPT-5.6 Luna / few-shot 4/class | generated label | hosted end-to-end request | 0.997648 | 1.545682 |
 | trec | GPT-6 Astra / zero-shot | generated label | hosted end-to-end request | 1.703971 | 3.552805 |
 | trec | GPT-6 Astra / few-shot 4/class | generated label | hosted end-to-end request | 1.663998 | 2.997414 |
+| trec | Jev 1.13 (OpenRouter) / zero-shot | native Choice | hosted end-to-end request | 0.599320 | 0.741663 |
+| trec | Jev 1.13 (OpenRouter) / few-shot 4/class | native Choice | hosted end-to-end request | 0.601250 | 0.765208 |
 | trec | TF-IDF + linear SVM / full prepared | classical native | amortized batch per row | 0.000200 | 0.000200 |
 
 ## Provenance and separate audit evidence
