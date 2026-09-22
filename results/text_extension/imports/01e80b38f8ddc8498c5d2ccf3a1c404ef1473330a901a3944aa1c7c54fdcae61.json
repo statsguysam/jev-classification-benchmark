@@ -1,0 +1,93 @@
+{
+  "archive_sha256": "01e80b38f8ddc8498c5d2ccf3a1c404ef1473330a901a3944aa1c7c54fdcae61",
+  "conditions": [
+    {
+      "dataset": "sst2",
+      "model_key": "smollm2",
+      "n_predictions": 200,
+      "run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "smollm2",
+      "n_predictions": 200,
+      "run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "granite",
+      "n_predictions": 200,
+      "run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "granite",
+      "n_predictions": 200,
+      "run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "trec",
+      "model_key": "smollm2",
+      "n_predictions": 200,
+      "run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "trec",
+      "model_key": "smollm2",
+      "n_predictions": 200,
+      "run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "trec",
+      "model_key": "granite",
+      "n_predictions": 200,
+      "run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "trec",
+      "model_key": "granite",
+      "n_predictions": 200,
+      "run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
+      "shots_per_class": 4
+    }
+  ],
+  "files_sha256": {
+    "plans/colab-runtime-preflight.json": "5a4de0c1182a9b0f98384f4e370cb431e58cf6837fcb1bb4856e14ac565e6ece",
+    "plans/granite-cuda-preflight.json": "a1fbc430f0fd995651c33189bb8f60435307de7717a2a23a85dd65d2331360b7",
+    "plans/smollm2-cuda-preflight.json": "45bc4428b54aa860f91b72bf4e2916b2e8014ab8f95739a75ff0686a084f8db3",
+    "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/predictions.jsonl": "4a4571e171425591fe42da69e1a26b3547568fe11359099a1dde956d80b27183",
+    "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/run.json": "29927dbe4b5a83f708ced0199b9b09a32a364c59c39f905d6b636bf40993733a",
+    "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "sst2__SmolLM2-1.7B-Instruct__784f110db5d4/predictions.jsonl": "bfc62553f0ce2e19433e00d4c903ad42da308a239256b8293562d3b35b14c1c5",
+    "sst2__SmolLM2-1.7B-Instruct__784f110db5d4/run.json": "e370f453fdaffe06252f305cbdda30c4e1459e4ae5ebb4ac93955c9d0587c2bc",
+    "sst2__SmolLM2-1.7B-Instruct__784f110db5d4/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "sst2__granite-3.3-2b-instruct__267442d7a2e7/predictions.jsonl": "c9b75a86558f0d1195c3a9add90544cee7af63fae0e46fe5f330955ada6fbac0",
+    "sst2__granite-3.3-2b-instruct__267442d7a2e7/run.json": "3328f14ba4f189c49c0418b910d6b928301f8ed7452fab43b9f7058dbe8fea4c",
+    "sst2__granite-3.3-2b-instruct__267442d7a2e7/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "sst2__granite-3.3-2b-instruct__70bbadf64a9a/predictions.jsonl": "1e82d65ce78bfe62cee5e7ddf44c1beaaef1bb6a35b6215cdb8b7c240214155a",
+    "sst2__granite-3.3-2b-instruct__70bbadf64a9a/run.json": "63a266166f1877265dcd0dd04e1dccd8c49718e3ac67c52721ba95015db8067c",
+    "sst2__granite-3.3-2b-instruct__70bbadf64a9a/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "trec__SmolLM2-1.7B-Instruct__2801fb02a432/predictions.jsonl": "718191482013f937dac94dd5b9baaf026b85268ae5ace1b1bdb3b9f5fa590981",
+    "trec__SmolLM2-1.7B-Instruct__2801fb02a432/run.json": "20b381da20457614430cf9197d65ec8a8e0caa4912b4f93f25acd21b3e091597",
+    "trec__SmolLM2-1.7B-Instruct__2801fb02a432/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "trec__SmolLM2-1.7B-Instruct__727fc703c17b/predictions.jsonl": "01fe373621527a19bea1d83a948b5cf53bf9a9b737c11b26507cdc0e3ec14c2e",
+    "trec__SmolLM2-1.7B-Instruct__727fc703c17b/run.json": "d5977ff6a0b4054d7cdd7912a29db6911c70949a568b99c577d6fcbaa0654988",
+    "trec__SmolLM2-1.7B-Instruct__727fc703c17b/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "trec__granite-3.3-2b-instruct__0799ef2872ba/predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+    "trec__granite-3.3-2b-instruct__0799ef2872ba/run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+    "trec__granite-3.3-2b-instruct__0799ef2872ba/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "trec__granite-3.3-2b-instruct__1f5a5e8bda67/predictions.jsonl": "0c9ccb392667f606b0f01a4a14f318366157a34ada34a736b696dfb98ac21dd4",
+    "trec__granite-3.3-2b-instruct__1f5a5e8bda67/run.json": "d1e9b04f116bfc0124a764360a4c1a6ef7ad0755f6e13562d54f55eddec5f3fe",
+    "trec__granite-3.3-2b-instruct__1f5a5e8bda67/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+  },
+  "result_manifest_sha256": "f4583b2eff24f0835739957f2f1ade1565f86f436e8035debc15243c92371a8d",
+  "schema_version": 1,
+  "status": "imported"
+}

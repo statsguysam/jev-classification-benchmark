@@ -63,6 +63,8 @@ python scripts/import_text_extension_colab.py /path/to/jev-text-extension-result
   --expected-sha256 REPLACE_WITH_PRINTED_ARCHIVE_SHA256 --execute
 ```
 
+The completed eight-condition result archive has SHA256 `01e80b38f8ddc8498c5d2ccf3a1c404ef1473330a901a3944aa1c7c54fdcae61`. Its [import receipt](../results/text_extension/imports/01e80b38f8ddc8498c5d2ccf3a1c404ef1473330a901a3944aa1c7c54fdcae61.json) records all 28 member hashes and 1,600 imported predictions. The recorded runtime used a Tesla T4, float16, PyTorch 2.11.0+cu128, Transformers 4.57.6 and Hugging Face Hub 0.36.2. No hosted requests or adapter training were used.
+
 Omit `--execute` for verification only. The importer checks the embedded result manifest, source/data pins, complete condition inventory, every file hash and the raw predictions; it refuses to replace differing evidence. Results go to `results/text_extension/local` with an import receipt. To transfer one fully completed model first, export with `python scripts/export_text_extension_colab.py --results --model-keys smollm2` (or `granite`) and use the matching importer flag. Partial conditions are never exported as complete.
 
 ## Classical references
@@ -76,7 +78,7 @@ This fixed runner executes or audits/reuses all sixteen conditions. Its train-on
 
 ## Jev review and aggregate reports
 
-All twenty-four review conditions are pending in the starting snapshot. Funded provider credit, complete audited sources, a frozen source manifest and current transport verification are required before paid execution. The [budget guide](BUDGET.md) documents the separate US$1.60 ledger, the existing US$25 cumulative ceiling, first initialization, conservative success settlement and resume rules. Historical source calls are reused, not charged again by this stage. Their recorded costs are not zero-cost estimates for running the complete pipeline afresh.
+All twenty-four review conditions are pending in the current 44/68 snapshot; all source predictions and classical references are complete. Funded provider credit, complete audited sources, a frozen source manifest and current transport verification are required before paid execution. The [budget guide](BUDGET.md) documents the separate US$1.60 ledger, the existing US$25 cumulative ceiling, first initialization, conservative success settlement and resume rules. Historical source calls are reused, not charged again by this stage. Their recorded costs are not zero-cost estimates for running the complete pipeline afresh.
 
 Rebuild reports and a visibly incomplete aggregate asset with:
 

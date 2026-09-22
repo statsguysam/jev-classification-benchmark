@@ -162,7 +162,7 @@ async function verifyView(h, data, state) {
   assert.match(chart, new RegExp(`x1="${205+480*direct[m]}" x2="${205+480*direct[m]}"[^>]*stroke-dasharray="4 4"`));
   const ups = expected.filter(p => p.comparison[`${m}_delta`] > 0).length;
   const downs = expected.filter(p => p.comparison[`${m}_delta`] < 0).length;
-  assert.equal(h.elements.get('changes').textContent, `${ups} ↑ / ${downs} ↓`);
+  assert.equal(h.elements.get('changes').textContent, expected.some(p=>p.comparison[`${m}_delta`]!=null) ? `${ups} ↑ / ${downs} ↓` : 'Pending');
   assert.equal(h.elements.get('changes-note').textContent, `${expected.filter(p=>p.comparison[`${m}_delta`]!=null).length}/${expected.length} comparisons complete; ties omitted`);
   assert.ok(h.elements.get('status').textContent.startsWith(`${data.completion.complete_runs}/68 conditions complete`));
   assert.equal(h.elements.get('status').textContent.includes('awaits API credits'), ['blocked_no_credit','halted','blocked_billing','billing_paused'].includes(data.costs.status));
@@ -202,7 +202,7 @@ async function nullChecks(fixture) {
     const row = (await exported(h))[0];
     assert.equal(row.delta_pp,''); assert.equal(row.delta_ci95_low_pp,''); assert.equal(row.delta_ci95_high_pp,'');
     assert.equal(which === 'review' ? row.review_score : row.reference_score,'');
-    assert.equal(h.elements.get('changes').textContent,'0 ↑ / 0 ↓');
+    assert.equal(h.elements.get('changes').textContent,'Pending');
   }
   const data = structuredClone(fixture), item = expectedPairs(data,baseState)[0];
   item.base.accuracy = 0; item.review.accuracy = 0; item.comparison.accuracy_delta = 0;

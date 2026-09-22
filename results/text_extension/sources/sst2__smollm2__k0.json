@@ -1,0 +1,170 @@
+{
+  "content_audit": {
+    "allowed_supplemental_metadata_keys": [
+      "post_transform_overlap_removed_ids",
+      "prepared_path",
+      "splits_before_text_transform"
+    ],
+    "audit_type": "cross_environment_content_and_matched_training_audit",
+    "checks": {
+      "manifest_differences_only_allowlisted_supplemental_metadata": true,
+      "same_dataset": true,
+      "same_full_prepared_content_hash": true,
+      "same_label_map_and_order": true,
+      "same_ordered_test_ids_labels_text_hashes": true,
+      "same_ordered_training_ids": true,
+      "same_prepared_file_hashes": true,
+      "same_training_selection_seed": true,
+      "same_validation_label_use_count": true
+    },
+    "eligible_for_separately_labeled_matched_pairing": true,
+    "forbidden_manifest_difference_paths": [],
+    "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+    "manifest_difference_paths": [],
+    "manifest_differences": [],
+    "manifest_hashes_are_equal": true,
+    "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+    "raw_content_recomputed": true,
+    "recomputed_content_a": {
+      "file_hashes": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_directory": "data/pilot/sst2",
+      "selected_training_class_counts": {},
+      "verified": true
+    },
+    "recomputed_content_b": {
+      "file_hashes": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_directory": "data/pilot/sst2",
+      "selected_training_class_counts": {},
+      "verified": true
+    },
+    "run_a": {
+      "id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+      "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "labels": [
+        "negative",
+        "positive"
+      ],
+      "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+      "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+      "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_files_sha256": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+      "python": "3.13.15",
+      "test_rows": 200,
+      "training_rows": 0,
+      "training_selection_seed": 42,
+      "validation_rows_used": 0
+    },
+    "run_b": {
+      "id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+      "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "labels": [
+        "negative",
+        "positive"
+      ],
+      "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+      "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+      "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+      "prepared_files_sha256": {
+        "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+        "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+        "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+      },
+      "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+      "python": "3.12.4",
+      "test_rows": 200,
+      "training_rows": 0,
+      "training_selection_seed": 42,
+      "validation_rows_used": 0
+    },
+    "schema_version": 1
+  },
+  "dataset": "sst2",
+  "dataset_manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "model_key": "smollm2",
+  "original_source_manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+  "registry_sha256": "b3425448e9a4478acf6762bfb37bb7d6df8090ffc49774f671820d11e5bd762d",
+  "schema_version": 1,
+  "shots_per_class": 0,
+  "source": {
+    "hashes": {
+      "predictions.jsonl": "bfc62553f0ce2e19433e00d4c903ad42da308a239256b8293562d3b35b14c1c5",
+      "run.json": "e370f453fdaffe06252f305cbdda30c4e1459e4ae5ebb4ac93955c9d0587c2bc",
+      "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+    },
+    "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+    "provider": "hf"
+  },
+  "source_config_sha256": "13b6b23f942e07d8bf1bafc8bbb88644787c8c894ff0f83d017f67ba126f62f9",
+  "source_model_config": {
+    "device": "cuda",
+    "dtype": "float16",
+    "max_context_tokens": 8192,
+    "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "provider": "hf",
+    "renderer": {
+      "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+      "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+      "model_key": "smollm2",
+      "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+      "system_message": "You are a helpful assistant.",
+      "thinking": false,
+      "tokenizer_files_sha256": {
+        "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+        "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+        "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+        "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+        "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+      },
+      "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+      "version": "fixed-system-no-thinking-v1"
+    },
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "shots_per_class": 0,
+    "text_extension": {
+      "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset_pins": {
+        "sst2": {
+          "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "n_classes": 2,
+          "n_test": 200
+        },
+        "trec": {
+          "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "n_classes": 6,
+          "n_test": 200
+        }
+      },
+      "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+      "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+      "version": "frozen-text-source-v1",
+      "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+    }
+  },
+  "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+  "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+  "training_example_ids": []
+}

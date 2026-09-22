@@ -2,7 +2,7 @@
 
 This extension asks whether Jev changes the accuracy of a language model's proposed class on **text classification**, using the same source → Jev review design as the [numerical study](EXPANDED_NUMERIC_PROTOCOL.md). Numerical tabular classification remains the primary study. The original text/LoRA pilot and its artifacts remain unchanged; the new extension adds no adapter training.
 
-**Recorded starting status: 36/68 conditions complete.** Sixteen historical source runs, four historical direct-Jev runs and sixteen new classical conditions are available. Eight new SmolLM2/Granite conditions and all twenty-four Jev reviews are pending. No text-review calls have started. Completion claims must follow the audited [comparison](../results/text_extension/COMPARISON.json) and [findings](../results/text_extension/FINDINGS.md), not this starting inventory. Pending conditions have no scores; partial checkpoints are never evaluated as completed tests.
+**Current status: 44/68 conditions complete.** All twenty-four source runs, four historical direct-Jev runs and sixteen classical conditions are audited. The eight new SmolLM2/Granite conditions completed on a Colab T4 with 1,600 predictions. All twenty-four Jev reviews remain pending because the provider account has no available credit; no text-review calls have started. Completion claims must follow the audited [comparison](../results/text_extension/COMPARISON.json) and [findings](../results/text_extension/FINDINGS.md). Pending conditions have no scores; partial checkpoints are never evaluated as completed tests.
 
 ## Fixed data and label budgets
 

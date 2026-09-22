@@ -1,6 +1,6 @@
 # Text classification and Jev review
 
-**36/68 conditions are complete and audited.** LLM alone: 16/24; LLM → Jev: 0/24; Jev alone: 4/4; classical references: 16/16.
+**44/68 conditions are complete and audited.** LLM alone: 24/24; LLM → Jev: 0/24; Jev alone: 4/4; classical references: 16/16.
 
 SST-2 has two sentiment classes; TREC has six question categories. Each uses the same frozen 200 held-out rows across every arm. Zero-shot supplies no labels; few-shot supplies exactly four examples per class (8 SST-2 and 24 TREC labels), with identical ordered examples at the source and reviewer stages.
 
@@ -18,8 +18,8 @@ Jev alone: **93.5% accuracy** on 200 rows.
 |---|---:|---:|---:|---|---|
 | Qwen2.5 0.5B | 50.0% | pending | — | pending | pending |
 | Qwen3 4B | 91.5% | pending | — | pending | pending |
-| SmolLM2 1.7B | pending | pending | — | pending | pending |
-| Granite 3.3 2B | pending | pending | — | pending | pending |
+| SmolLM2 1.7B | 49.0% | pending | — | pending | pending |
+| Granite 3.3 2B | 80.0% | pending | — | pending | pending |
 | GPT-5.6 Luna | 92.5% | pending | — | pending | pending |
 | GPT-6 Astra | 97.0% | pending | — | pending | pending |
 
@@ -31,8 +31,8 @@ Jev alone: **96.5% accuracy** on 200 rows.
 |---|---:|---:|---:|---|---|
 | Qwen2.5 0.5B | 85.0% | pending | — | pending | pending |
 | Qwen3 4B | 95.5% | pending | — | pending | pending |
-| SmolLM2 1.7B | pending | pending | — | pending | pending |
-| Granite 3.3 2B | pending | pending | — | pending | pending |
+| SmolLM2 1.7B | 70.0% | pending | — | pending | pending |
+| Granite 3.3 2B | 94.0% | pending | — | pending | pending |
 | GPT-5.6 Luna | 95.5% | pending | — | pending | pending |
 | GPT-6 Astra | 97.5% | pending | — | pending | pending |
 
@@ -44,8 +44,8 @@ Jev alone: **33.5% accuracy** on 200 rows.
 |---|---:|---:|---:|---|---|
 | Qwen2.5 0.5B | 15.5% | pending | — | pending | pending |
 | Qwen3 4B | 52.5% | pending | — | pending | pending |
-| SmolLM2 1.7B | pending | pending | — | pending | pending |
-| Granite 3.3 2B | pending | pending | — | pending | pending |
+| SmolLM2 1.7B | 2.0% | pending | — | pending | pending |
+| Granite 3.3 2B | 46.0% | pending | — | pending | pending |
 | GPT-5.6 Luna | 52.5% | pending | — | pending | pending |
 | GPT-6 Astra | 97.0% | pending | — | pending | pending |
 
@@ -57,8 +57,8 @@ Jev alone: **85.5% accuracy** on 200 rows.
 |---|---:|---:|---:|---|---|
 | Qwen2.5 0.5B | 17.5% | pending | — | pending | pending |
 | Qwen3 4B | 83.0% | pending | — | pending | pending |
-| SmolLM2 1.7B | pending | pending | — | pending | pending |
-| Granite 3.3 2B | pending | pending | — | pending | pending |
+| SmolLM2 1.7B | 27.5% | pending | — | pending | pending |
+| Granite 3.3 2B | 63.5% | pending | — | pending | pending |
 | GPT-5.6 Luna | 85.0% | pending | — | pending | pending |
 | GPT-6 Astra | 97.0% | pending | — | pending | pending |
 

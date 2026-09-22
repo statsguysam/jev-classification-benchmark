@@ -47,6 +47,7 @@ LIMITATIONS = [
     "Original Qwen/OpenAI rendering differs from the fixed-system SmolLM2/Granite wrapper; model differences are not a controlled same-prompt architecture ablation.",
     "Paired normalized-text group-bootstrap intervals condition on this split, examples and fitted models. Multiple comparisons are unadjusted; crossing zero does not establish equivalence.",
     "Restricted-label likelihoods, native Choice and classical probability scores have different meanings and are not guaranteed calibrated.",
+    "Observed scoring limitation: SmolLM2 assigns one constant class to every TREC row in each shot setting (class 0 at zero-shot, class 2 at four/class). Its accuracy rise from 2% to 27.5% reflects a changed constant label, not row-sensitive classification. Zero-shot SST-2 also has constant class-0 predictions. These observations apply to the tested label-plus-EOS likelihood recipe.",
     "Cached proposals save new source calls in this experiment; a deployed pipeline incurs both source and reviewer expense. Local compute is unpriced and mixed hardware prevents a controlled latency ranking.",
     "This extension adds no LoRA training. Public benchmark performance does not establish deployment readiness.",
 ]

@@ -242,7 +242,7 @@
     {
       "a": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
       "a_display": "SmolLM2 1.7B → Jev",
-      "b": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "b": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
       "b_display": "SmolLM2 1.7B",
       "dataset": "sst2",
       "equal_new_label_budget": true,
@@ -272,7 +272,7 @@
     {
       "a": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
       "a_display": "SmolLM2 1.7B → Jev",
-      "b": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "b": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
       "b_display": "SmolLM2 1.7B",
       "dataset": "sst2",
       "equal_new_label_budget": true,
@@ -300,16 +300,45 @@
       "transitions": null
     },
     {
-      "a": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "a": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
       "a_display": "SmolLM2 1.7B",
-      "b": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "b": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
       "b_display": "SmolLM2 1.7B",
       "dataset": "sst2",
       "equal_new_label_budget": false,
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "kind": "few_minus_zero_descriptive",
-      "paired_bootstrap": null,
-      "status": "pending",
+      "paired_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.08999999999999997,
+              0.33
+            ],
+            "estimate": 0.20999999999999996
+          },
+          "macro_f1": {
+            "ci95": [
+              0.2578849348608472,
+              0.4238577335629941
+            ],
+            "estimate": 0.3414706099269858
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "status": "complete",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
       "transitions": null
@@ -332,7 +361,7 @@
     {
       "a": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::review::0",
       "a_display": "Granite 3.3 2B → Jev",
-      "b": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "b": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
       "b_display": "Granite 3.3 2B",
       "dataset": "sst2",
       "equal_new_label_budget": true,
@@ -362,7 +391,7 @@
     {
       "a": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::review::4",
       "a_display": "Granite 3.3 2B → Jev",
-      "b": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "b": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
       "b_display": "Granite 3.3 2B",
       "dataset": "sst2",
       "equal_new_label_budget": true,
@@ -390,16 +419,45 @@
       "transitions": null
     },
     {
-      "a": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "a": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
       "a_display": "Granite 3.3 2B",
-      "b": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "b": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
       "b_display": "Granite 3.3 2B",
       "dataset": "sst2",
       "equal_new_label_budget": false,
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "kind": "few_minus_zero_descriptive",
-      "paired_bootstrap": null,
-      "status": "pending",
+      "paired_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.09000000000000008,
+              0.19000000000000006
+            ],
+            "estimate": 0.1399999999999999
+          },
+          "macro_f1": {
+            "ci95": [
+              0.09549250794232067,
+              0.20046745486918374
+            ],
+            "estimate": 0.14589796453714943
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "status": "complete",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
       "transitions": null
@@ -898,7 +956,7 @@
     {
       "a": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
       "a_display": "SmolLM2 1.7B → Jev",
-      "b": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "b": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
       "b_display": "SmolLM2 1.7B",
       "dataset": "trec",
       "equal_new_label_budget": true,
@@ -928,7 +986,7 @@
     {
       "a": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
       "a_display": "SmolLM2 1.7B → Jev",
-      "b": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "b": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
       "b_display": "SmolLM2 1.7B",
       "dataset": "trec",
       "equal_new_label_budget": true,
@@ -956,16 +1014,45 @@
       "transitions": null
     },
     {
-      "a": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "a": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
       "a_display": "SmolLM2 1.7B",
-      "b": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "b": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
       "b_display": "SmolLM2 1.7B",
       "dataset": "trec",
       "equal_new_label_budget": false,
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "kind": "few_minus_zero_descriptive",
-      "paired_bootstrap": null,
-      "status": "pending",
+      "paired_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.19,
+              0.32499999999999996
+            ],
+            "estimate": 0.255
+          },
+          "macro_f1": {
+            "ci95": [
+              0.050629447181171315,
+              0.07940643688428993
+            ],
+            "estimate": 0.06535947712418301
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "status": "complete",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
       "transitions": null
@@ -988,7 +1075,7 @@
     {
       "a": "pending::trec::ibm-granite/granite-3.3-2b-instruct::review::0",
       "a_display": "Granite 3.3 2B → Jev",
-      "b": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "b": "trec__granite-3.3-2b-instruct__0799ef2872ba",
       "b_display": "Granite 3.3 2B",
       "dataset": "trec",
       "equal_new_label_budget": true,
@@ -1018,7 +1105,7 @@
     {
       "a": "pending::trec::ibm-granite/granite-3.3-2b-instruct::review::4",
       "a_display": "Granite 3.3 2B → Jev",
-      "b": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "b": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
       "b_display": "Granite 3.3 2B",
       "dataset": "trec",
       "equal_new_label_budget": true,
@@ -1046,16 +1133,45 @@
       "transitions": null
     },
     {
-      "a": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "a": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
       "a_display": "Granite 3.3 2B",
-      "b": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "b": "trec__granite-3.3-2b-instruct__0799ef2872ba",
       "b_display": "Granite 3.3 2B",
       "dataset": "trec",
       "equal_new_label_budget": false,
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "kind": "few_minus_zero_descriptive",
-      "paired_bootstrap": null,
-      "status": "pending",
+      "paired_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.10999999999999993,
+              0.24000000000000005
+            ],
+            "estimate": 0.175
+          },
+          "macro_f1": {
+            "ci95": [
+              0.10317413129351263,
+              0.2882338569609411
+            ],
+            "estimate": 0.19193569929962784
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "status": "complete",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
       "transitions": null
@@ -1314,15 +1430,15 @@
       "transitions": null
     }
   ],
-  "complete_base_runs": 16,
+  "complete_base_runs": 24,
   "complete_classical_runs": 16,
-  "complete_comparisons": 8,
+  "complete_comparisons": 12,
   "complete_direct_jev_runs": 4,
-  "complete_new_local_runs": 0,
+  "complete_new_local_runs": 8,
   "complete_new_review_runs": 0,
   "complete_reused_review_runs": 0,
   "complete_review_runs": 0,
-  "complete_runs": 36,
+  "complete_runs": 44,
   "costs": {
     "complete_checkpoint_conditions": 0,
     "complete_summary_conditions": 0,
@@ -3085,30 +3201,354 @@
       "train_per_class": 4
     },
     {
-      "accuracy": null,
+      "accuracy": 0.49,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "bfc62553f0ce2e19433e00d4c903ad42da308a239256b8293562d3b35b14c1c5",
+        "run.json": "e370f453fdaffe06252f305cbdda30c4e1459e4ae5ebb4ac93955c9d0587c2bc",
+        "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+      },
+      "average_precision": 0.789362706612174,
+      "balanced_accuracy": 0.5,
+      "brier_sum": 0.7409483333092786,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 0,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          98,
+          0,
+          0
+        ],
+        [
+          102,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "sst2",
       "display_model": "SmolLM2 1.7B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.36497356702202155,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.42,
+              0.56
+            ],
+            "estimate": 0.49
+          },
+          "macro_f1": {
+            "ci95": [
+              0.29577464788732394,
+              0.358974358974359
+            ],
+            "estimate": 0.3288590604026846
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 20204,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 20204,
+      "latency_p50_s": 0.05596522000001869,
+      "latency_p95_s": 0.07743212240000616,
+      "log_loss": 1.0151151527924114,
+      "macro_f1": 0.3288590604026846,
+      "measurement_origin": "new_local_text_extension",
       "method": "zero_shot",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 2,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.6577181208053692,
+          "label": 0,
+          "precision": 0.49,
+          "recall": 1.0,
+          "support": 98
+        },
+        {
+          "f1": 0.0,
+          "label": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 102
+        }
+      ],
+      "prediction_time_s": 12.449755537000215,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 46,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 7,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 8,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 9,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 10,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.2,
+          "bin": 11,
+          "count": 5,
+          "mean_confidence": 0.7804842852988995
+        },
+        {
+          "accuracy": 0.3384615384615385,
+          "bin": 12,
+          "count": 130,
+          "mean_confidence": 0.8433403827153633
+        },
+        {
+          "accuracy": 0.8153846153846154,
+          "bin": 13,
+          "count": 65,
+          "mean_confidence": 0.8839698803832707
+        },
+        {
+          "accuracy": null,
+          "bin": 14,
+          "count": 0,
+          "mean_confidence": null
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "roc_auc": 0.7976190476190477,
+      "run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 0
+      "source_path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 0,
+      "train_per_class": 0,
+      "valid_response_accuracy": 0.49,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -3132,36 +3572,366 @@
       "run_id": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "source_run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 0
     },
     {
-      "accuracy": null,
+      "accuracy": 0.7,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "4a4571e171425591fe42da69e1a26b3547568fe11359099a1dde956d80b27183",
+        "run.json": "29927dbe4b5a83f708ced0199b9b09a32a364c59c39f905d6b636bf40993733a",
+        "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+      },
+      "average_precision": 0.9734295055966509,
+      "balanced_accuracy": 0.6942777110844338,
+      "brier_sum": 0.3225875048876493,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 4,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          40,
+          58,
+          0
+        ],
+        [
+          2,
+          100,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "sst2",
       "display_model": "SmolLM2 1.7B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.12206948656059381,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.635,
+              0.7601249999999993
+            ],
+            "estimate": 0.7
+          },
+          "macro_f1": {
+            "ci95": [
+              0.5989265994646195,
+              0.734725768856808
+            ],
+            "estimate": 0.6703296703296704
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 66604,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 66604,
+      "latency_p50_s": 0.13090317550000918,
+      "latency_p95_s": 0.1344843986500507,
+      "log_loss": 0.47721439873759686,
+      "macro_f1": 0.6703296703296704,
+      "measurement_origin": "new_local_text_extension",
       "method": "few_shot",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 2,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.5714285714285714,
+          "label": 0,
+          "precision": 0.9523809523809523,
+          "recall": 0.40816326530612246,
+          "support": 98
+        },
+        {
+          "f1": 0.7692307692307693,
+          "label": 1,
+          "precision": 0.6329113924050633,
+          "recall": 0.9803921568627451,
+          "support": 102
+        }
+      ],
+      "prediction_time_s": 26.183249585999874,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 37,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.2,
+          "bin": 7,
+          "count": 10,
+          "mean_confidence": 0.5099538012046679
+        },
+        {
+          "accuracy": 0.36666666666666664,
+          "bin": 8,
+          "count": 30,
+          "mean_confidence": 0.5653302496824071
+        },
+        {
+          "accuracy": 0.56,
+          "bin": 9,
+          "count": 25,
+          "mean_confidence": 0.6319165075188906
+        },
+        {
+          "accuracy": 0.47368421052631576,
+          "bin": 10,
+          "count": 19,
+          "mean_confidence": 0.6954554259993779
+        },
+        {
+          "accuracy": 0.6521739130434783,
+          "bin": 11,
+          "count": 23,
+          "mean_confidence": 0.7642351891090778
+        },
+        {
+          "accuracy": 0.9166666666666666,
+          "bin": 12,
+          "count": 36,
+          "mean_confidence": 0.8384886346578155
+        },
+        {
+          "accuracy": 0.9787234042553191,
+          "bin": 13,
+          "count": 47,
+          "mean_confidence": 0.9047714806734396
+        },
+        {
+          "accuracy": 1.0,
+          "bin": 14,
+          "count": 10,
+          "mean_confidence": 0.9524672882536344
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "roc_auc": 0.9689875950380152,
+      "run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 4
+      "source_path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 8,
+      "train_per_class": 4,
+      "valid_response_accuracy": 0.7,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -3185,36 +3955,361 @@
       "run_id": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::sst2::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "source_run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 4
     },
     {
-      "accuracy": null,
+      "accuracy": 0.8,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "1e82d65ce78bfe62cee5e7ddf44c1beaaef1bb6a35b6215cdb8b7c240214155a",
+        "run.json": "63a266166f1877265dcd0dd04e1dccd8c49718e3ac67c52721ba95015db8067c",
+        "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+      },
+      "average_precision": 0.935000764118143,
+      "balanced_accuracy": 0.8037214885954382,
+      "brier_sum": 0.37297011726451046,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 0,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          97,
+          1,
+          0
+        ],
+        [
+          39,
+          63,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/text_extension/local/sst2__granite-3.3-2b-instruct__70bbadf64a9a",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "sst2",
       "display_model": "Granite 3.3 2B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.18924945481046843,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.74,
+              0.855
+            ],
+            "estimate": 0.8
+          },
+          "macro_f1": {
+            "ci95": [
+              0.731447250987129,
+              0.8504190844616377
+            ],
+            "estimate": 0.7940479868190712
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 20748,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 20748,
+      "latency_p50_s": 0.11281512550010575,
+      "latency_p95_s": 0.1587069751998342,
+      "log_loss": 1.1987583832086957,
+      "macro_f1": 0.7940479868190712,
+      "measurement_origin": "new_local_text_extension",
       "method": "zero_shot",
       "model": "ibm-granite/granite-3.3-2b-instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 2,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.8290598290598291,
+          "label": 0,
+          "precision": 0.7132352941176471,
+          "recall": 0.9897959183673469,
+          "support": 98
+        },
+        {
+          "f1": 0.7590361445783133,
+          "label": 1,
+          "precision": 0.984375,
+          "recall": 0.6176470588235294,
+          "support": 102
+        }
+      ],
+      "prediction_time_s": 24.06279856300125,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 61,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 1.0,
+          "bin": 7,
+          "count": 1,
+          "mean_confidence": 0.523786635833639
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 8,
+          "count": 1,
+          "mean_confidence": 0.571141477798441
+        },
+        {
+          "accuracy": 0.5,
+          "bin": 9,
+          "count": 4,
+          "mean_confidence": 0.6229479680264512
+        },
+        {
+          "accuracy": 1.0,
+          "bin": 10,
+          "count": 2,
+          "mean_confidence": 0.7090235614397579
+        },
+        {
+          "accuracy": 1.0,
+          "bin": 11,
+          "count": 3,
+          "mean_confidence": 0.7419227139496934
+        },
+        {
+          "accuracy": 0.2,
+          "bin": 12,
+          "count": 5,
+          "mean_confidence": 0.8470128274116087
+        },
+        {
+          "accuracy": 0.625,
+          "bin": 13,
+          "count": 8,
+          "mean_confidence": 0.8892980881539563
+        },
+        {
+          "accuracy": 0.8295454545454546,
+          "bin": 14,
+          "count": 176,
+          "mean_confidence": 0.9977563106276249
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "roc_auc": 0.9078631452581033,
+      "run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 0
+      "source_path": "results/text_extension/local/sst2__granite-3.3-2b-instruct__70bbadf64a9a/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 0,
+      "train_per_class": 0,
+      "valid_response_accuracy": 0.8,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -3238,36 +4333,367 @@
       "run_id": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::review::0",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "source_run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 0
     },
     {
-      "accuracy": null,
+      "accuracy": 0.94,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "c9b75a86558f0d1195c3a9add90544cee7af63fae0e46fe5f330955ada6fbac0",
+        "run.json": "3328f14ba4f189c49c0418b910d6b928301f8ed7452fab43b9f7058dbe8fea4c",
+        "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+      },
+      "average_precision": 0.9873090611160064,
+      "balanced_accuracy": 0.9409763905562225,
+      "brier_sum": 0.11995320203320484,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 4,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          97,
+          1,
+          0
+        ],
+        [
+          11,
+          91,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/text_extension/local/sst2__granite-3.3-2b-instruct__267442d7a2e7",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "sst2",
       "display_model": "Granite 3.3 2B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.06035190630401413,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.905,
+              0.97
+            ],
+            "estimate": 0.94
+          },
+          "macro_f1": {
+            "ci95": [
+              0.9048072346501665,
+              0.9699879951980792
+            ],
+            "estimate": 0.9399459513562206
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 70548,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 70548,
+      "latency_p50_s": 0.31354097500002354,
+      "latency_p95_s": 0.32955688090005425,
+      "log_loss": 0.37681964368710036,
+      "macro_f1": 0.9399459513562206,
+      "measurement_origin": "new_local_text_extension",
       "method": "few_shot",
       "model": "ibm-granite/granite-3.3-2b-instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 2,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.941747572815534,
+          "label": 0,
+          "precision": 0.8981481481481481,
+          "recall": 0.9897959183673469,
+          "support": 98
+        },
+        {
+          "f1": 0.9381443298969072,
+          "label": 1,
+          "precision": 0.9891304347826086,
+          "recall": 0.8921568627450981,
+          "support": 102
+        }
+      ],
+      "prediction_time_s": 63.03337931299893,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 71,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 7,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 1.0,
+          "bin": 8,
+          "count": 1,
+          "mean_confidence": 0.5584138746963891
+        },
+        {
+          "accuracy": null,
+          "bin": 9,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 10,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 11,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 12,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 13,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.9396984924623115,
+          "bin": 14,
+          "count": 199,
+          "mean_confidence": 0.9981346489221066
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "roc_auc": 0.9827931172468988,
+      "run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 4
+      "source_path": "results/text_extension/local/sst2__granite-3.3-2b-instruct__267442d7a2e7/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 8,
+      "train_per_class": 4,
+      "valid_response_accuracy": 0.94,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -3291,7 +4717,7 @@
       "run_id": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::review::4",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::sst2::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "source_run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 4
@@ -50333,30 +51759,436 @@
       "train_per_class": 4
     },
     {
-      "accuracy": null,
+      "accuracy": 0.02,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "718191482013f937dac94dd5b9baaf026b85268ae5ace1b1bdb3b9f5fa590981",
+        "run.json": "20b381da20457614430cf9197d65ec8a8e0caa4912b4f93f25acd21b3e091597",
+        "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "balanced_accuracy": 0.16666666666666666,
+      "brier_sum": 0.9719181918541934,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 0,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          38,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          55,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          26,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          45,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "trec",
       "display_model": "SmolLM2 1.7B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.3454647568257185,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.005,
+              0.04
+            ],
+            "estimate": 0.02
+          },
+          "macro_f1": {
+            "ci95": [
+              0.001658374792703151,
+              0.012820512820512822
+            ],
+            "estimate": 0.006535947712418301
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 23449,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 23449,
+      "latency_p50_s": 0.17571849849997534,
+      "latency_p95_s": 0.21743796074999291,
+      "log_loss": 2.292342380457265,
+      "macro_f1": 0.006535947712418301,
+      "measurement_origin": "new_local_text_extension",
       "method": "zero_shot",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 6,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.0392156862745098,
+          "label": 0,
+          "precision": 0.02,
+          "recall": 1.0,
+          "support": 4
+        },
+        {
+          "f1": 0.0,
+          "label": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 38
+        },
+        {
+          "f1": 0.0,
+          "label": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 55
+        },
+        {
+          "f1": 0.0,
+          "label": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 26
+        },
+        {
+          "f1": 0.0,
+          "label": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 32
+        },
+        {
+          "f1": 0.0,
+          "label": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 45
+        }
+      ],
+      "prediction_time_s": 36.4172597609994,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 66,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 3,
+          "count": 7,
+          "mean_confidence": 0.24415718664269415
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 4,
+          "count": 57,
+          "mean_confidence": 0.3123484368421063
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 5,
+          "count": 81,
+          "mean_confidence": 0.3632821196755829
+        },
+        {
+          "accuracy": 0.044444444444444446,
+          "bin": 6,
+          "count": 45,
+          "mean_confidence": 0.43090819805290675
+        },
+        {
+          "accuracy": 0.2,
+          "bin": 7,
+          "count": 10,
+          "mean_confidence": 0.47632695525417573
+        },
+        {
+          "accuracy": null,
+          "bin": 8,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 9,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 10,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 11,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 12,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 13,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 14,
+          "count": 0,
+          "mean_confidence": null
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 0
+      "source_path": "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 0,
+      "train_per_class": 0,
+      "valid_response_accuracy": 0.02,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -50380,36 +52212,456 @@
       "run_id": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::0",
+      "source_run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 0
     },
     {
-      "accuracy": null,
+      "accuracy": 0.275,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "01fe373621527a19bea1d83a948b5cf53bf9a9b737c11b26507cdc0e3ec14c2e",
+        "run.json": "d5977ff6a0b4054d7cdd7912a29db6911c70949a568b99c577d6fcbaa0654988",
+        "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "balanced_accuracy": 0.16666666666666666,
+      "brier_sum": 0.837653172437668,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 4,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          38,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          55,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          26,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          45,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "trec",
       "display_model": "SmolLM2 1.7B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.18711361749688682,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.215,
+              0.34
+            ],
+            "estimate": 0.275
+          },
+          "macro_f1": {
+            "ci95": [
+              0.05898491083676269,
+              0.0845771144278607
+            ],
+            "estimate": 0.07189542483660132
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 153249,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 153249,
+      "latency_p50_s": 0.9316241150000337,
+      "latency_p95_s": 0.9887258930500366,
+      "log_loss": 1.7982530131616796,
+      "macro_f1": 0.07189542483660132,
+      "measurement_origin": "new_local_text_extension",
       "method": "few_shot",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 6,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.0,
+          "label": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 4
+        },
+        {
+          "f1": 0.0,
+          "label": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 38
+        },
+        {
+          "f1": 0.43137254901960786,
+          "label": 2,
+          "precision": 0.275,
+          "recall": 1.0,
+          "support": 55
+        },
+        {
+          "f1": 0.0,
+          "label": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 26
+        },
+        {
+          "f1": 0.0,
+          "label": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 32
+        },
+        {
+          "f1": 0.0,
+          "label": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 45
+        }
+      ],
+      "prediction_time_s": 188.14818866500036,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 69,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 5,
+          "count": 19,
+          "mean_confidence": 0.3818760210791309
+        },
+        {
+          "accuracy": 0.14285714285714285,
+          "bin": 6,
+          "count": 84,
+          "mean_confidence": 0.4362924537578278
+        },
+        {
+          "accuracy": 0.47126436781609193,
+          "bin": 7,
+          "count": 87,
+          "mean_confidence": 0.4943710030291743
+        },
+        {
+          "accuracy": 0.2,
+          "bin": 8,
+          "count": 10,
+          "mean_confidence": 0.5508235719678172
+        },
+        {
+          "accuracy": null,
+          "bin": 9,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 10,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 11,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 12,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 13,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 14,
+          "count": 0,
+          "mean_confidence": null
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 4
+      "source_path": "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 24,
+      "train_per_class": 4,
+      "valid_response_accuracy": 0.275,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -50433,36 +52685,443 @@
       "run_id": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::trec::HuggingFaceTB/SmolLM2-1.7B-Instruct::base::4",
+      "source_run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 4
     },
     {
-      "accuracy": null,
+      "accuracy": 0.46,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+        "run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+        "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "balanced_accuracy": 0.50247668997669,
+      "brier_sum": 0.9525089039646717,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 0,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          25,
+          5,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          50,
+          4,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          7,
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          11,
+          1,
+          20,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          30,
+          8,
+          7,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "trec",
       "display_model": "Granite 3.3 2B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.42725451184672114,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.39,
+              0.53
+            ],
+            "estimate": 0.46
+          },
+          "macro_f1": {
+            "ci95": [
+              0.29540087908187285,
+              0.4680534363148185
+            ],
+            "estimate": 0.40576018229649513
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 23397,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 23397,
+      "latency_p50_s": 0.3375038634999328,
+      "latency_p95_s": 0.44431939675018833,
+      "log_loss": 3.781950948242433,
+      "macro_f1": 0.40576018229649513,
+      "measurement_origin": "new_local_text_extension",
       "method": "zero_shot",
       "model": "ibm-granite/granite-3.3-2b-instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 6,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.6666666666666666,
+          "label": 0,
+          "precision": 0.6,
+          "recall": 0.75,
+          "support": 4
+        },
+        {
+          "f1": 0.0,
+          "label": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 38
+        },
+        {
+          "f1": 0.5586592178770949,
+          "label": 2,
+          "precision": 0.4032258064516129,
+          "recall": 0.9090909090909091,
+          "support": 55
+        },
+        {
+          "f1": 0.6031746031746031,
+          "label": 3,
+          "precision": 0.5135135135135135,
+          "recall": 0.7307692307692307,
+          "support": 26
+        },
+        {
+          "f1": 0.6060606060606061,
+          "label": 4,
+          "precision": 0.5882352941176471,
+          "recall": 0.625,
+          "support": 32
+        },
+        {
+          "f1": 0.0,
+          "label": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 45
+        }
+      ],
+      "prediction_time_s": 70.84473298200055,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 67,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 5,
+          "count": 1,
+          "mean_confidence": 0.3467173852300302
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 6,
+          "count": 3,
+          "mean_confidence": 0.4173608755794908
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 7,
+          "count": 7,
+          "mean_confidence": 0.5082558447379952
+        },
+        {
+          "accuracy": 0.5454545454545454,
+          "bin": 8,
+          "count": 11,
+          "mean_confidence": 0.5674547526125416
+        },
+        {
+          "accuracy": 0.125,
+          "bin": 9,
+          "count": 8,
+          "mean_confidence": 0.6409871402835785
+        },
+        {
+          "accuracy": 0.2857142857142857,
+          "bin": 10,
+          "count": 7,
+          "mean_confidence": 0.6975166058417159
+        },
+        {
+          "accuracy": 0.8333333333333334,
+          "bin": 11,
+          "count": 6,
+          "mean_confidence": 0.761962628906483
+        },
+        {
+          "accuracy": 0.36363636363636365,
+          "bin": 12,
+          "count": 11,
+          "mean_confidence": 0.8334180074850143
+        },
+        {
+          "accuracy": 0.44,
+          "bin": 13,
+          "count": 25,
+          "mean_confidence": 0.8999931448722157
+        },
+        {
+          "accuracy": 0.5206611570247934,
+          "bin": 14,
+          "count": 121,
+          "mean_confidence": 0.9830259906744588
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 0
+      "source_path": "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 0,
+      "train_per_class": 0,
+      "valid_response_accuracy": 0.46,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -50486,36 +53145,457 @@
       "run_id": "pending::trec::ibm-granite/granite-3.3-2b-instruct::review::0",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::0",
+      "source_run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 0
     },
     {
-      "accuracy": null,
+      "accuracy": 0.635,
       "arm": "base",
-      "balanced_accuracy": null,
-      "brier_sum": null,
+      "artifact_sha256": {
+        "predictions.jsonl": "0c9ccb392667f606b0f01a4a14f318366157a34ada34a736b696dfb98ac21dd4",
+        "run.json": "d1e9b04f116bfc0124a764360a4c1a6ef7ad0755f6e13562d54f55eddec5f3fe",
+        "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "balanced_accuracy": 0.702756734006734,
+      "brier_sum": 0.5824585276652702,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 4,
+        "text_extension": {
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "dataset_pins": {
+            "sst2": {
+              "manifest_file_sha256": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+              "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+              "n_classes": 2,
+              "n_test": 200
+            },
+            "trec": {
+              "manifest_file_sha256": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+              "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+              "n_classes": 6,
+              "n_test": 200
+            }
+          },
+          "numeric_helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "version": "frozen-text-source-v1",
+          "wrapper_sha256": "d3f6c06f6138da02a38e49ab220ed3a184c047b3b4a4729eb01908e513334526"
+        }
+      },
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          18,
+          11,
+          5,
+          4,
+          0
+        ],
+        [
+          3,
+          1,
+          43,
+          6,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          26,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          26,
+          5,
+          0
+        ],
+        [
+          0,
+          1,
+          11,
+          4,
+          1,
+          28,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        "failure"
+      ],
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [],
+        "manifest_differences": [],
+        "manifest_hashes_are_equal": true,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
       "dataset": "trec",
       "display_model": "Granite 3.3 2B",
-      "failure_rate": null,
-      "group_bootstrap": null,
-      "log_loss": null,
-      "macro_f1": null,
+      "ece_15_equal_width": 0.22532631464930405,
+      "failure_rate": 0.0,
+      "group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "Unicode NFKC, casefold, whitespace-collapsed text SHA256",
+        "method": "unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.57,
+              0.7
+            ],
+            "estimate": 0.635
+          },
+          "macro_f1": {
+            "ci95": [
+              0.5058676959005989,
+              0.6564421194345839
+            ],
+            "estimate": 0.597695881596123
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "input_tokens": 155997,
+      "input_tokens_coverage": 1.0,
+      "input_tokens_known_total": 155997,
+      "latency_p50_s": 2.7122187685000654,
+      "latency_p95_s": 2.7324955859499256,
+      "log_loss": 1.4344304358372386,
+      "macro_f1": 0.597695881596123,
+      "measurement_origin": "new_local_text_extension",
       "method": "few_shot",
       "model": "ibm-granite/granite-3.3-2b-instruct",
-      "n_classes": null,
-      "n_failures": null,
-      "n_test": null,
-      "probability_coverage": null,
-      "probability_kind": null,
+      "n_classes": 6,
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "original_source_manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+      "output_tokens": 0,
+      "output_tokens_coverage": 1.0,
+      "output_tokens_known_total": 0,
+      "per_class": [
+        {
+          "f1": 0.7272727272727273,
+          "label": 0,
+          "precision": 0.5714285714285714,
+          "recall": 1.0,
+          "support": 4
+        },
+        {
+          "f1": 0.0,
+          "label": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 38
+        },
+        {
+          "f1": 0.671875,
+          "label": 2,
+          "precision": 0.589041095890411,
+          "recall": 0.7818181818181819,
+          "support": 55
+        },
+        {
+          "f1": 0.7123287671232876,
+          "label": 3,
+          "precision": 0.5531914893617021,
+          "recall": 1.0,
+          "support": 26
+        },
+        {
+          "f1": 0.8,
+          "label": 4,
+          "precision": 0.7878787878787878,
+          "recall": 0.8125,
+          "support": 32
+        },
+        {
+          "f1": 0.6746987951807228,
+          "label": 5,
+          "precision": 0.7368421052631579,
+          "recall": 0.6222222222222222,
+          "support": 45
+        }
+      ],
+      "prediction_time_s": 541.944523854999,
+      "probability_coverage": 1.0,
+      "probability_renormalized_rows": 71,
+      "reliability_bins": [
+        {
+          "accuracy": null,
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": null,
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null
+        },
+        {
+          "accuracy": 0.0,
+          "bin": 4,
+          "count": 1,
+          "mean_confidence": 0.33086144383024996
+        },
+        {
+          "accuracy": 0.25,
+          "bin": 5,
+          "count": 4,
+          "mean_confidence": 0.3735728161903498
+        },
+        {
+          "accuracy": 0.25,
+          "bin": 6,
+          "count": 4,
+          "mean_confidence": 0.4461686354123531
+        },
+        {
+          "accuracy": 0.25,
+          "bin": 7,
+          "count": 8,
+          "mean_confidence": 0.4906615893877969
+        },
+        {
+          "accuracy": 0.7142857142857143,
+          "bin": 8,
+          "count": 7,
+          "mean_confidence": 0.5626053217850918
+        },
+        {
+          "accuracy": 0.42857142857142855,
+          "bin": 9,
+          "count": 14,
+          "mean_confidence": 0.6380335491907209
+        },
+        {
+          "accuracy": 0.5,
+          "bin": 10,
+          "count": 12,
+          "mean_confidence": 0.6943721032218306
+        },
+        {
+          "accuracy": 0.5833333333333334,
+          "bin": 11,
+          "count": 12,
+          "mean_confidence": 0.769296723994087
+        },
+        {
+          "accuracy": 0.5833333333333334,
+          "bin": 12,
+          "count": 12,
+          "mean_confidence": 0.8440848893322287
+        },
+        {
+          "accuracy": 0.5217391304347826,
+          "bin": 13,
+          "count": 23,
+          "mean_confidence": 0.9024648784862258
+        },
+        {
+          "accuracy": 0.7766990291262136,
+          "bin": 14,
+          "count": 103,
+          "mean_confidence": 0.9814191623745823
+        }
+      ],
       "review_transitions": null,
-      "run_id": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
       "seed": 42,
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "train_labels": null,
-      "train_per_class": 4
+      "source_path": "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/run.json",
+      "source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "status": "complete",
+      "train_labels": 24,
+      "train_per_class": 4,
+      "valid_response_accuracy": 0.635,
+      "zero_true_class_probability_rows": 0
     },
     {
       "accuracy": null,
@@ -50539,7 +53619,7 @@
       "run_id": "pending::trec::ibm-granite/granite-3.3-2b-instruct::review::4",
       "seed": 42,
       "source_path": null,
-      "source_run_id": "pending::trec::ibm-granite/granite-3.3-2b-instruct::base::4",
+      "source_run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
       "status": "pending: no complete audited artifact",
       "train_labels": null,
       "train_per_class": 4
