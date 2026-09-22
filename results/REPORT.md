@@ -41,6 +41,9 @@ Compare rows only when test-manifest hashes, label budgets, preprocessing, and p
 | sst2 | majority | classical / classical native | 4 | 8 / 0 | 42 | 200 | 0.4900 | 0.3289 | [0.3289, 0.3289] | 0 | 100% |
 | sst2 | multinomial_nb | classical / classical native | full prepared train | 10000 / 1000 | 42 | 200 | 0.8450 | 0.8443 | [0.7886, 0.8896] | 0 | 100% |
 | sst2 | multinomial_nb | classical / classical native | 4 | 8 / 0 | 42 | 200 | 0.5400 | 0.5388 | [0.4674, 0.6021] | 0 | 100% |
+| trec | Qwen/Qwen2.5-0.5B-Instruct | lora / closed-label likelihood | 4 | 24 / 0 | 42 | 200 | 0.0400 | 0.0445 | [0.0158, 0.0799] | 0 | 100% |
+| trec | Qwen/Qwen2.5-0.5B-Instruct | few_shot / closed-label likelihood | 4 | 24 / 0 | 42 | 200 | 0.1750 | 0.0881 | [0.0638, 0.1153] | 0 | 100% |
+| trec | Qwen/Qwen2.5-0.5B-Instruct | zero_shot / closed-label likelihood | 0 | 0 / 0 | 42 | 200 | 0.1550 | 0.0817 | [0.0677, 0.0954] | 0 | 100% |
 | trec | linear_svc | classical / classical native | full prepared train | 4886 / 545 | 42 | 200 | 0.9000 | 0.8980 | [0.8177, 0.9462] | 0 | 0% |
 | trec | linear_svc | classical / classical native | 4 | 24 / 0 | 42 | 200 | 0.4950 | 0.4757 | [0.4061, 0.5403] | 0 | 0% |
 | trec | logistic_regression | classical / classical native | 4 | 24 / 0 | 42 | 200 | 0.5000 | 0.4857 | [0.4173, 0.5552] | 0 | 100% |
@@ -54,4 +57,4 @@ Probability metrics are computed only where actual class probabilities are avail
 
 Classical prediction timings are amortized batch timings; hosted latency measures sequential end-to-end requests. They are not direct serving-speed comparisons.
 
-Incomplete runs: 1.
+Incomplete runs: 0.

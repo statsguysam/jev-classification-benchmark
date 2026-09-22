@@ -1,0 +1,2951 @@
+{
+  "audit_type": "full_colab_import_content_and_classical_replication_audit",
+  "classical_replications_verified": 8,
+  "current_local_core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "interpretation": "All 14 imported runs preserve identical prepared content, ordered held-out IDs/labels/text, selected training IDs and seed relative to their local counterparts. Unequal original manifest hashes remain unequal; the only differences are supplemental audit fields. Neural comparisons here establish data/training identity only, not equal models, protocols, probabilities, or predictions. Eight classical runs have exactly identical predicted class labels and label-based scores across environments.",
+  "neural_identity_only_checks": 6,
+  "original_artifact_file_hashes": {
+    "data/pilot/sst2/manifest.json": "9586c538f8e3a5d51720dd9f0923848b0dec2019e47c13986e67acc599ca0d1f",
+    "data/pilot/sst2/test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+    "data/pilot/sst2/train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+    "data/pilot/sst2/validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a",
+    "data/pilot/trec/manifest.json": "88322777fa680f97845d10570dfe7814fe0b6cc1c56741caa936e29c0d550a2b",
+    "data/pilot/trec/test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+    "data/pilot/trec/train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+    "data/pilot/trec/validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/predictions.jsonl": "19c651cc59b1530d7b001f9ab31897e6e7c533fcf06c1c2aeec8b5abc13a5a0a",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/run.json": "849a5d8d1d8e1761c3859b9399e986dad474d8e22cf665e4c9781efdbd751eb5",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__22d330c63925/predictions.jsonl": "902f418c366b55aa19c397cea5eab0b82e2c435097f8605d46766915e4656862",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__22d330c63925/run.json": "e2657ec451f284953f8750ab793a13e180c082295544f9a3df82dd506be7ba02",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__22d330c63925/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/predictions.jsonl": "d1ee99e24e4d2850f5c83e8afe6b22b341b46f8d8ed57c8323c4c38d611b2f06",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/run.json": "52356557a98032673cf65b2576d8e97834cbade77e02370745128d5320e5d085",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/sst2__linear_svc__d849105442ba/predictions.jsonl": "679f146e6b5a124cb1b5b11f3e5cb06dfc569e9637b2b895f5b49d041b57b60c",
+    "results/colab/sst2__linear_svc__d849105442ba/run.json": "e205923366ce05fa0bc8e6898f3363204ec30df367f2735aa5ccd2c2bd1c95ea",
+    "results/colab/sst2__linear_svc__d849105442ba/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/sst2__logistic_regression__a2b87ec12b18/predictions.jsonl": "6f49bfa77d89e347ad98a68babbceca47fbe0eb8d462669e0fb7a775420b6bbf",
+    "results/colab/sst2__logistic_regression__a2b87ec12b18/run.json": "e5c9d6b1f4dca00ea6391b21c1607a9c9cf47111608748737d5732af731c4c93",
+    "results/colab/sst2__logistic_regression__a2b87ec12b18/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/sst2__majority__14e58b6b44f9/predictions.jsonl": "29019270aafa8cffe0ab7bf4a84abdcedd0e0bb11fb948ad82c517aac5fc68eb",
+    "results/colab/sst2__majority__14e58b6b44f9/run.json": "2a94d19f718c1c4d354b12bef2cf1263ebbf4c93dda1ff52cf72068f0ab3985a",
+    "results/colab/sst2__majority__14e58b6b44f9/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/sst2__multinomial_nb__a0cf6a1ac8df/predictions.jsonl": "ef4ecdada2e81505db1808fe84c196c69595d82dd04f1066429eb294648f12b8",
+    "results/colab/sst2__multinomial_nb__a0cf6a1ac8df/run.json": "f9098a206396fb02b2fd1b3fc3fd2a16a431dd02d6d66177f68478b7be1d5ec6",
+    "results/colab/sst2__multinomial_nb__a0cf6a1ac8df/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/predictions.jsonl": "6518fe6e0c6d1e45474ff9d065963cd23e2e5487ca75ffa4bac95342f1699979",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/run.json": "ab7dfac815f7b4473b6ee9ef23712c3857bc2afaed20cf9c258f15ff63a8596a",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__70bf91598825/predictions.jsonl": "d773cb88b7f0a9e00217f7ac488e195f2156627fe0e0779dd203ed5a8611a4dc",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__70bf91598825/run.json": "5d0c229f22d174e638f229089f52745252ce93bb33ba973691aaff06227b9443",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__70bf91598825/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f/predictions.jsonl": "075d2c324b92542fe85089be9f310e979568d0574887bfcc59e6c0ef971adf80",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f/run.json": "7c1a7106a7dd43fa0856a8cefdb2986a0590052d9391ca84586966869e4d0362",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/colab/trec__linear_svc__a0eff755888f/predictions.jsonl": "0b7300856de669ed85087d3fe48594c1fca15a4c96872fe6fbeb81c025c219af",
+    "results/colab/trec__linear_svc__a0eff755888f/run.json": "d93a0885df1ade1fb1ec1b768946921bed13ab42acbdb27bcbd25ab2bc8f9fcc",
+    "results/colab/trec__linear_svc__a0eff755888f/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/colab/trec__logistic_regression__061883d7eb3d/predictions.jsonl": "68917f41c55266cea3fe5de4bcfd093ec7dc3e9905d155b95f29f5943a59f0c6",
+    "results/colab/trec__logistic_regression__061883d7eb3d/run.json": "c248edc8abdf9f4d7f2ba8b96b03f65989df12e4fe2e0aa0098a9dd419e5532c",
+    "results/colab/trec__logistic_regression__061883d7eb3d/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/colab/trec__majority__4effad8e22e5/predictions.jsonl": "12eb39d870d4d175cfa09998b925fc0f219d82698e8f90a57ad3ad854339ed30",
+    "results/colab/trec__majority__4effad8e22e5/run.json": "fd815307843091c034ee7046f768ef351533760517795dc9a588de5974d37049",
+    "results/colab/trec__majority__4effad8e22e5/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/colab/trec__multinomial_nb__9794e79f5e77/predictions.jsonl": "8fe07568c89385c340f2489284f50e20c548ec9e2e087aad7cb60c675a1d8927",
+    "results/colab/trec__multinomial_nb__9794e79f5e77/run.json": "096b1870d270d599abe326be29ec412d8e9a38a165e45026e311cd2f0425f440",
+    "results/colab/trec__multinomial_nb__9794e79f5e77/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2/predictions.jsonl": "191a23615b5370aef5804bb5694ad199dfcb82a624491a4f5cbdb0d132f0d499",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2/run.json": "0fe6b04f0b1e2cd201a7fe1985e6b770612997557289efde8efefac9f57ac6d7",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc/predictions.jsonl": "0b9f163f2dc76c50e4acfb97024ee02a863984a0ec05330765063a899a8f174c",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc/run.json": "68b405e72b4d46d7f4c435557ab5367e9be198f99d2d7b217b816e7c3a2fd390",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__c29d9f2be13f/predictions.jsonl": "7e0400fcfb9d3214a0f5fa1da7ed3b9185d7bb9442e66ab8aaad0e440f8da39c",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__c29d9f2be13f/run.json": "bb1eeff01c983cf7628cbd8e7c61fc5399b6560b718ce22b86f5031a08488195",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__c29d9f2be13f/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__linear_svc__3e7e9ec774d5/predictions.jsonl": "b4ad0308f775fd16c82bb107e3386752b87d1a8fb1d63c3ca9dad379e4077cec",
+    "results/pilot/sst2__linear_svc__3e7e9ec774d5/run.json": "5a10d96543d25f0446d257e05ed26d9532d6d2f3adfc81337e21be1d02dd477f",
+    "results/pilot/sst2__linear_svc__3e7e9ec774d5/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__logistic_regression__81d2ff14c2be/predictions.jsonl": "6a236328fc4fab7769d9a1193140bfb2557092375639eded2f25053a20531e6a",
+    "results/pilot/sst2__logistic_regression__81d2ff14c2be/run.json": "e9f9eee8010ccd29587a9a56e46b5d8c48f547a61cb94ba28867e4c853ec3a42",
+    "results/pilot/sst2__logistic_regression__81d2ff14c2be/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__majority__face6e86e516/predictions.jsonl": "94bce37f95e84bb26f4325a028112f24591eee48c1cc46fc9e05dee61891ac7c",
+    "results/pilot/sst2__majority__face6e86e516/run.json": "6e615f32e052362a554271b0a1104e4ae63f04c7f132b57cd8bc1d5e713e537b",
+    "results/pilot/sst2__majority__face6e86e516/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__multinomial_nb__a094038879f9/predictions.jsonl": "1250a477e9c33097b0b715d6973129400e2ed03769ac216d77d71c171aa46f4d",
+    "results/pilot/sst2__multinomial_nb__a094038879f9/run.json": "7e8642bcb662b57d9ea4af7a189f2c096ae682795fc92f1b2acc154acca2d5d4",
+    "results/pilot/sst2__multinomial_nb__a094038879f9/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e/predictions.jsonl": "a9e398334a94f2d40761c9c98455cc30b9a71f25822a56c0f3763a240bd383a4",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e/run.json": "9fdfd6bde4b3560e06ca893128c4ff5b30a956be06be9a610aa3a17f7b6083a1",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60/predictions.jsonl": "3225e963f23ccae334d86867750ab8d611ff2a19a5227eb3c30cfac30071e161",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60/run.json": "f180a4e6fd04827e0eef7c188b49ba7c530ebcdc9878cd87d8e4d7fd6cc45e26",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/predictions.jsonl": "aec8ab0d1329a97a6f06739a0abae6fd92951c332636c63fdaa35314664cbade",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/run.json": "f3c622c1a48d6b540afae94693b84c841824fd7a23469d2877bcab8791bf86f9",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__linear_svc__d2b4ae115ac0/predictions.jsonl": "f4f8eb4418001a21d6553b8d5db1a6e856e39069e508810637168a1e275d220f",
+    "results/pilot/trec__linear_svc__d2b4ae115ac0/run.json": "72f9eea11b50c0c9459f984017537a6792302e1dabce95789ce2f8bd91da205d",
+    "results/pilot/trec__linear_svc__d2b4ae115ac0/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__logistic_regression__8bc76aab4183/predictions.jsonl": "3af2a0505500c592244efb9d57f4baed7c3bd75a4bf9c183a712b578b63f78f9",
+    "results/pilot/trec__logistic_regression__8bc76aab4183/run.json": "c4b89bb303652d61ec3e8fb3db3c5ec1d7844eb38487b59cad0403ae92a46c0f",
+    "results/pilot/trec__logistic_regression__8bc76aab4183/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__majority__d3cfb0a0827d/predictions.jsonl": "16dd71f3c2377fd612cb8debfaed37239f8548eff1475d5ddc1894a764e207e9",
+    "results/pilot/trec__majority__d3cfb0a0827d/run.json": "ee375a37c10168b7436705729f42bafbde8b3b37dcfadba89c09f019c146958b",
+    "results/pilot/trec__majority__d3cfb0a0827d/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__multinomial_nb__db3012a1e2fb/predictions.jsonl": "0ed29f8e553f3917022569479a3c70157c6877112f2322c0e92e5e25ffd1b15a",
+    "results/pilot/trec__multinomial_nb__db3012a1e2fb/run.json": "d3e56c2babd888439bd5366b453696918412fdfb88299da6b903eb577ea80f5c",
+    "results/pilot/trec__multinomial_nb__db3012a1e2fb/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+  },
+  "original_artifacts_modified": false,
+  "passed": true,
+  "runs": [
+    {
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "19c651cc59b1530d7b001f9ab31897e6e7c533fcf06c1c2aeec8b5abc13a5a0a",
+        "recomputed_metrics": {
+          "accuracy": 0.915,
+          "macro_f1": 0.9147420948368815,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": true,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "191a23615b5370aef5804bb5694ad199dfcb82a624491a4f5cbdb0d132f0d499",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.3503118503118503,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+      "method": "zero_shot"
+    },
+    {
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "902f418c366b55aa19c397cea5eab0b82e2c435097f8605d46766915e4656862",
+        "recomputed_metrics": {
+          "accuracy": 0.935,
+          "macro_f1": 0.934998374959374,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__Qwen3-4B-Instruct-2507__22d330c63925",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__Qwen3-4B-Instruct-2507__22d330c63925",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/colab/sst2__Qwen3-4B-Instruct-2507__22d330c63925",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__c29d9f2be13f",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__c29d9f2be13f",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": true,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "7e0400fcfb9d3214a0f5fa1da7ed3b9185d7bb9442e66ab8aaad0e440f8da39c",
+        "recomputed_metrics": {
+          "accuracy": 0.895,
+          "macro_f1": 0.8944060339409177,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__Qwen2.5-0.5B-Instruct__c29d9f2be13f",
+      "method": "lora"
+    },
+    {
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "d1ee99e24e4d2850f5c83e8afe6b22b341b46f8d8ed57c8323c4c38d611b2f06",
+        "recomputed_metrics": {
+          "accuracy": 0.955,
+          "macro_f1": 0.9549988749718743,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__Qwen3-4B-Instruct-2507__5823bb43da99",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__Qwen3-4B-Instruct-2507__5823bb43da99",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": true,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "0b9f163f2dc76c50e4acfb97024ee02a863984a0ec05330765063a899a8f174c",
+        "recomputed_metrics": {
+          "accuracy": 0.85,
+          "macro_f1": 0.8499399759903962,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+      "method": "few_shot"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "679f146e6b5a124cb1b5b11f3e5cb06dfc569e9637b2b895f5b49d041b57b60c",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.48686371100164205,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__linear_svc__d849105442ba",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__linear_svc__d849105442ba",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/colab/sst2__linear_svc__d849105442ba",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__linear_svc__3e7e9ec774d5",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__linear_svc__3e7e9ec774d5",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "b4ad0308f775fd16c82bb107e3386752b87d1a8fb1d63c3ca9dad379e4077cec",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.48686371100164205,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__linear_svc__3e7e9ec774d5",
+      "method": "classical"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "6f49bfa77d89e347ad98a68babbceca47fbe0eb8d462669e0fb7a775420b6bbf",
+        "recomputed_metrics": {
+          "accuracy": 0.495,
+          "macro_f1": 0.48256871333794416,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__logistic_regression__a2b87ec12b18",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__logistic_regression__a2b87ec12b18",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/colab/sst2__logistic_regression__a2b87ec12b18",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__logistic_regression__81d2ff14c2be",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__logistic_regression__81d2ff14c2be",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "6a236328fc4fab7769d9a1193140bfb2557092375639eded2f25053a20531e6a",
+        "recomputed_metrics": {
+          "accuracy": 0.495,
+          "macro_f1": 0.48256871333794416,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__logistic_regression__81d2ff14c2be",
+      "method": "classical"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "29019270aafa8cffe0ab7bf4a84abdcedd0e0bb11fb948ad82c517aac5fc68eb",
+        "recomputed_metrics": {
+          "accuracy": 0.49,
+          "macro_f1": 0.3288590604026846,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__majority__14e58b6b44f9",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__majority__14e58b6b44f9",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/colab/sst2__majority__14e58b6b44f9",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__majority__face6e86e516",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__majority__face6e86e516",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "94bce37f95e84bb26f4325a028112f24591eee48c1cc46fc9e05dee61891ac7c",
+        "recomputed_metrics": {
+          "accuracy": 0.49,
+          "macro_f1": 0.3288590604026846,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__majority__face6e86e516",
+      "method": "classical"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "ef4ecdada2e81505db1808fe84c196c69595d82dd04f1066429eb294648f12b8",
+        "recomputed_metrics": {
+          "accuracy": 0.54,
+          "macro_f1": 0.5388471177944862,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "sst2__multinomial_nb__a0cf6a1ac8df",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 98,
+                  "1": 102
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "1197ee770e1e3c8833b45991405ecba1c53c8d289cd1e87fe7279664835ecbae",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 4421,
+                  "1": 5579
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 9,
+                "row_ids_sha256": "6514dd0bc0eb3bbe6e4c65d4785dbbe030165bc7cd09aa5a56f4c5fbfe544474",
+                "rows": 10000
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 442,
+                  "1": 558
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "a209511e6d418b4b3f269b618df5db100991358ef1667e166547202ea72da374",
+                "rows": 1000
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "full_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_directory": "data/pilot/sst2",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "sst2__multinomial_nb__a0cf6a1ac8df",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "c608dce4ff40a3a5022e447c05bdf92a922f4cb102adb4c3130876f4b69be86f",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/colab/sst2__multinomial_nb__a0cf6a1ac8df",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "sst2__multinomial_nb__a094038879f9",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "negative",
+            "positive"
+          ],
+          "manifest_sha256": "8c12945f6b673f72452096793b4777a94f2455ea55c51f4dc8c9dba9bb8a8201",
+          "ordered_test_ids_labels_text_hashes_sha256": "7d924eb9e232fc684ba72d1f1c866a2a7f3b5ac69c8ccbdf8aa4f07833729b30",
+          "ordered_training_ids_sha256": "f0935dbde12b716ee5e834119f5df4346b3a8213907a00422e990068d230fa38",
+          "path": "results/pilot/sst2__multinomial_nb__a094038879f9",
+          "prepared_content_sha256": "455b121f96a1a84d102bdbf3ede188a8baf96fdc8a167f20275a3d67f533d238",
+          "prepared_files_sha256": {
+            "test.jsonl": "d151c6774e00b3bb1d1e3e4e3ddfbeedcbe26c8872868e452c8dfca3b5a6a5ec",
+            "train.jsonl": "255a95d8b2e53358ee6bdb911a633e9f07cffbc8e3accd34d7019458ccddcbf9",
+            "validation.jsonl": "8657994f6e24e48dec8ccb02971563bc6bc17e66233fe019fbfab4fa8d3d483a"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 8,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "sst2",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "1250a477e9c33097b0b715d6973129400e2ed03769ac216d77d71c171aa46f4d",
+        "recomputed_metrics": {
+          "accuracy": 0.54,
+          "macro_f1": 0.5388471177944862,
+          "n_failures": 0
+        }
+      },
+      "local_run": "sst2__multinomial_nb__a094038879f9",
+      "method": "classical"
+    },
+    {
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "6518fe6e0c6d1e45474ff9d065963cd23e2e5487ca75ffa4bac95342f1699979",
+        "recomputed_metrics": {
+          "accuracy": 0.525,
+          "macro_f1": 0.48204663657354924,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {},
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 0,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": true,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "aec8ab0d1329a97a6f06739a0abae6fd92951c332636c63fdaa35314664cbade",
+        "recomputed_metrics": {
+          "accuracy": 0.155,
+          "macro_f1": 0.08169000998768959,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+      "method": "zero_shot"
+    },
+    {
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "d773cb88b7f0a9e00217f7ac488e195f2156627fe0e0779dd203ed5a8611a4dc",
+        "recomputed_metrics": {
+          "accuracy": 0.8,
+          "macro_f1": 0.7509501002290576,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__Qwen3-4B-Instruct-2507__70bf91598825",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__Qwen3-4B-Instruct-2507__70bf91598825",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/colab/trec__Qwen3-4B-Instruct-2507__70bf91598825",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": true,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "a9e398334a94f2d40761c9c98455cc30b9a71f25822a56c0f3763a240bd383a4",
+        "recomputed_metrics": {
+          "accuracy": 0.04,
+          "macro_f1": 0.044526143790849675,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e",
+      "method": "lora"
+    },
+    {
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "075d2c324b92542fe85089be9f310e979568d0574887bfcc59e6c0ef971adf80",
+        "recomputed_metrics": {
+          "accuracy": 0.83,
+          "macro_f1": 0.8517748983850678,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": true,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "3225e963f23ccae334d86867750ab8d611ff2a19a5227eb3c30cfac30071e161",
+        "recomputed_metrics": {
+          "accuracy": 0.175,
+          "macro_f1": 0.08807352128247652,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+      "method": "few_shot"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "0b7300856de669ed85087d3fe48594c1fca15a4c96872fe6fbeb81c025c219af",
+        "recomputed_metrics": {
+          "accuracy": 0.495,
+          "macro_f1": 0.4757489786350546,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__linear_svc__a0eff755888f",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__linear_svc__a0eff755888f",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/colab/trec__linear_svc__a0eff755888f",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__linear_svc__d2b4ae115ac0",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__linear_svc__d2b4ae115ac0",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "f4f8eb4418001a21d6553b8d5db1a6e856e39069e508810637168a1e275d220f",
+        "recomputed_metrics": {
+          "accuracy": 0.495,
+          "macro_f1": 0.4757489786350546,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__linear_svc__d2b4ae115ac0",
+      "method": "classical"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "68917f41c55266cea3fe5de4bcfd093ec7dc3e9905d155b95f29f5943a59f0c6",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.4857191250483934,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__logistic_regression__061883d7eb3d",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__logistic_regression__061883d7eb3d",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/colab/trec__logistic_regression__061883d7eb3d",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__logistic_regression__8bc76aab4183",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__logistic_regression__8bc76aab4183",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "3af2a0505500c592244efb9d57f4baed7c3bd75a4bf9c183a712b578b63f78f9",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.4857191250483934,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__logistic_regression__8bc76aab4183",
+      "method": "classical"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "12eb39d870d4d175cfa09998b925fc0f219d82698e8f90a57ad3ad854339ed30",
+        "recomputed_metrics": {
+          "accuracy": 0.02,
+          "macro_f1": 0.006535947712418301,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__majority__4effad8e22e5",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__majority__4effad8e22e5",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/colab/trec__majority__4effad8e22e5",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__majority__d3cfb0a0827d",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__majority__d3cfb0a0827d",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "16dd71f3c2377fd612cb8debfaed37239f8548eff1475d5ddc1894a764e207e9",
+        "recomputed_metrics": {
+          "accuracy": 0.02,
+          "macro_f1": 0.006535947712418301,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__majority__d3cfb0a0827d",
+      "method": "classical"
+    },
+    {
+      "classical_replication": {
+        "all_ordered_predicted_labels_identical": true,
+        "config_exactly_equal": true,
+        "label_metrics_exactly_equal": true,
+        "metrics_checked": [
+          "accuracy",
+          "macro_f1",
+          "balanced_accuracy",
+          "failure_rate",
+          "n_failures",
+          "confusion_matrix",
+          "per_class",
+          "valid_response_accuracy"
+        ]
+      },
+      "colab_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "8fe07568c89385c340f2489284f50e20c548ec9e2e087aad7cb60c675a1d8927",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.4856549592407015,
+          "n_failures": 0
+        }
+      },
+      "colab_run": "trec__multinomial_nb__9794e79f5e77",
+      "content_audit": {
+        "allowed_supplemental_metadata_keys": [
+          "post_transform_overlap_removed_ids",
+          "prepared_path",
+          "splits_before_text_transform"
+        ],
+        "audit_type": "cross_environment_content_and_matched_training_audit",
+        "checks": {
+          "manifest_differences_only_allowlisted_supplemental_metadata": true,
+          "same_dataset": true,
+          "same_full_prepared_content_hash": true,
+          "same_label_map_and_order": true,
+          "same_ordered_test_ids_labels_text_hashes": true,
+          "same_ordered_training_ids": true,
+          "same_prepared_file_hashes": true,
+          "same_training_selection_seed": true,
+          "same_validation_label_use_count": true
+        },
+        "eligible_for_separately_labeled_matched_pairing": true,
+        "forbidden_manifest_difference_paths": [],
+        "interpretation": "Content/training compatibility is separate from manifest identity. Original hashes remain unchanged. This audit does not bypass compare_runs, establish equivalent models/output protocols, authenticate producer artifacts, or prove GPU numerical reproducibility.",
+        "manifest_difference_paths": [
+          "post_transform_overlap_removed_ids",
+          "splits_before_text_transform"
+        ],
+        "manifest_differences": [
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "post_transform_overlap_removed_ids",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "train": [],
+              "validation": []
+            }
+          },
+          {
+            "allowlisted_supplemental_metadata": true,
+            "path": "splits_before_text_transform",
+            "present_a": true,
+            "present_b": false,
+            "value_a": {
+              "test": {
+                "class_counts": {
+                  "0": 4,
+                  "1": 38,
+                  "2": 55,
+                  "3": 26,
+                  "4": 32,
+                  "5": 45
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 0,
+                "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+                "rows": 200
+              },
+              "train": {
+                "class_counts": {
+                  "0": 76,
+                  "1": 1124,
+                  "2": 1040,
+                  "3": 1100,
+                  "4": 750,
+                  "5": 796
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 59,
+                "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+                "rows": 4886
+              },
+              "validation": {
+                "class_counts": {
+                  "0": 8,
+                  "1": 125,
+                  "2": 116,
+                  "3": 122,
+                  "4": 84,
+                  "5": 90
+                },
+                "conflicting_label_text_groups": 0,
+                "duplicate_text_rows": 3,
+                "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+                "rows": 545
+              }
+            }
+          }
+        ],
+        "manifest_hashes_are_equal": false,
+        "python_version_note": "Compatibility is based on realized row order/content and training IDs, never inferred from equal seed values across Python versions.",
+        "raw_content_recomputed": true,
+        "recomputed_content_a": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "recomputed_content_b": {
+          "file_hashes": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "full_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_directory": "data/pilot/trec",
+          "selected_training_class_counts": {
+            "0": 4,
+            "1": 4,
+            "2": 4,
+            "3": 4,
+            "4": 4,
+            "5": 4
+          },
+          "verified": true
+        },
+        "run_a": {
+          "id": "trec__multinomial_nb__9794e79f5e77",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "82ffabbb8da285a63645b2d21dc15f8cbba5d150c2d30117a286f937f3e185fe",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/colab/trec__multinomial_nb__9794e79f5e77",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.13.15",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "run_b": {
+          "id": "trec__multinomial_nb__db3012a1e2fb",
+          "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "labels": [
+            "abbreviation",
+            "entity",
+            "description or abstract concept",
+            "human being",
+            "location",
+            "numeric value"
+          ],
+          "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+          "ordered_test_ids_labels_text_hashes_sha256": "dc5d9472d7a3cfbf213a3e95f488a63873b57171058527112246668076c61f36",
+          "ordered_training_ids_sha256": "b8526fca14510853b15272d6b622c6556914636435f2bd2d71c35dd1de99237c",
+          "path": "results/pilot/trec__multinomial_nb__db3012a1e2fb",
+          "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+          "prepared_files_sha256": {
+            "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+            "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+            "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+          },
+          "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+          "python": "3.12.4",
+          "test_rows": 200,
+          "training_rows": 24,
+          "training_selection_seed": 42,
+          "validation_rows_used": 0
+        },
+        "schema_version": 1
+      },
+      "core_source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+      "dataset": "trec",
+      "identity_only_for_different_neural_models": false,
+      "local_prediction_evidence": {
+        "prediction_order_matches_test_order": true,
+        "predictions_sha256": "0ed29f8e553f3917022569479a3c70157c6877112f2322c0e92e5e25ffd1b15a",
+        "recomputed_metrics": {
+          "accuracy": 0.5,
+          "macro_f1": 0.4856549592407015,
+          "n_failures": 0
+        }
+      },
+      "local_run": "trec__multinomial_nb__db3012a1e2fb",
+      "method": "classical"
+    }
+  ],
+  "runs_verified": 14,
+  "schema_version": 1
+}

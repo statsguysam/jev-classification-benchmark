@@ -1,0 +1,21 @@
+{
+  "jev": {
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "api_key_env": "TYPESAFE_API_KEY"
+  },
+  "openai_economical": {
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "api_key_env": "OPENAI_API_KEY",
+    "max_output_tokens": 256,
+    "reasoning_effort": "none"
+  },
+  "openai_frontier": {
+    "provider": "openai",
+    "model": "gpt-6-astra",
+    "api_key_env": "OPENAI_API_KEY",
+    "max_output_tokens": 1024,
+    "reasoning_effort": "low"
+  }
+}

@@ -160,6 +160,18 @@ GPU type, availability, and session duration are not guaranteed. Check memory wi
 a smoke run before choosing the full matrix. Ordinary LoRA on the 0.5B baseline
 can be used to verify the pipeline locally.
 
+**Colab adapter-loading conflict:** a fresh Colab runtime can include an optional
+`torchao` version incompatible with PEFT. In the recorded T4 session, PEFT 0.20
+rejected preinstalled torchao 0.10 while loading a completed adapter because it
+required torchao 0.16 or newer. This benchmark uses bitsandbytes for QLoRA and
+does not require torchao. The Colab notebook therefore runs
+`%pip uninstall -y torchao` after installing its dependencies and before capturing
+package/GPU metadata. This is a Colab environment repair, not a change to the
+training recipe. If the conflict occurs after training, preserve the completed
+adapter and retry evaluation in a fresh subprocess; do not retrain or select a
+different checkpoint. Refresh `colab_environment.json` after remediation so the
+export records torchao's absence and the actual evaluation environment.
+
 The output directory must be empty. Saved adapters include
 `jevbench_training.json` with base revision, labels, exact training row IDs,
 prompt hash, optimizer settings, seed, package versions, device, training duration,

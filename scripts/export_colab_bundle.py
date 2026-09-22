@@ -12,10 +12,18 @@ ROOT = Path(__file__).resolve().parents[1]
 BUNDLE_ROOT = "jev-classification-benchmark"
 FIXED_FILES = (
     "pyproject.toml", "README.md", ".gitignore",
-    "configs/datasets.json", "configs/experiment.json", "configs/models.json",
-    "docs/PROTOCOL.md", "docs/SOURCES.md", "docs/MODEL_ACCESS.md",
+    "configs/datasets.json", "configs/experiment.json", "configs/models.json", "configs/hosted_budget.json", "configs/colab_adapters.json",
+    "docs/PROTOCOL.md", "docs/SOURCES.md", "docs/MODEL_ACCESS.md", "docs/BUDGET.md", "docs/ADAPTERS.md",
     "scripts/export_colab_bundle.py", "scripts/run_classical_matrix.py", "scripts/run_model_matrix.py",
+    "scripts/run_budgeted_hosted.py", "scripts/package_adapters.py",
     "notebooks/colab_benchmark.ipynb",
+)
+OPTIONAL_FILES = (
+    "scripts/audit_cross_environment.py", "scripts/summarize_neural_pilot.py", "scripts/summarize_api_costs.py",
+    "scripts/compare_combined_pilot.py", "scripts/summarize_combined_pilot.py", "scripts/plot_combined_pilot.py",
+    "scripts/audit_colab_import.py",
+    "scripts/summarize_hosted.py", "scripts/summarize_colab.py",
+    "scripts/plot_neural_pilot.py", "scripts/plot_results.py", "scripts/plot_calibration.py",
 )
 
 
@@ -40,6 +48,7 @@ def export(root: Path = ROOT) -> Path:
     destination = root / "artifacts" / f"{BUNDLE_ROOT}-colab.zip"
     destination.parent.mkdir(exist_ok=True)
     paths = [root / name for name in FIXED_FILES]
+    paths.extend(root / name for name in OPTIONAL_FILES if (root / name).is_file())
     for folder in ("src", "tests"):
         paths.extend((root / folder).rglob("*.py"))
     for name in ("LICENSE", "requirements-macos.lock.txt"):

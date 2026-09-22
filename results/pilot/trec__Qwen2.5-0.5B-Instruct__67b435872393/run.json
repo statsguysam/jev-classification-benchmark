@@ -1,0 +1,477 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-22T10:06:45.059086+00:00",
+  "config": {
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "provider": "hf",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "shots_per_class": 0
+  },
+  "dataset": "trec",
+  "dataset_manifest": {
+    "duplicate_policy": {
+      "before_subsampling": true,
+      "heldout_priority": "test then validation then train",
+      "limitation": "Exact normalized text filtering does not detect semantic/phrase overlap or pretraining contamination",
+      "normalization": "Unicode NFKC, casefold, collapse whitespace; no punctuation or HTML changes",
+      "train_rows_removed_for_test_overlap": [
+        "trec:train:557:bb91a1e7bcab3092",
+        "trec:train:590:1775cc59d61c50e6",
+        "trec:train:697:9048b855a88fe25d",
+        "trec:train:1193:7de493d3bf5c3f8d",
+        "trec:train:2260:6e7d656896505632",
+        "trec:train:2344:ba284ce1d1c77222",
+        "trec:train:2582:25bc21427bd77698",
+        "trec:train:3133:c14c6bde920efec7",
+        "trec:train:3520:a4a5c4f6f77bdb75",
+        "trec:train:4876:1612ae58c364bb52",
+        "trec:train:5262:7a3cfef598dd9d5a"
+      ],
+      "train_rows_removed_for_validation_overlap": [
+        "trec:train:369:652c2f52ae461893",
+        "trec:train:464:652c2f52ae461893",
+        "trec:train:504:0808c12119c2adff",
+        "trec:train:727:dec02c2862534f49",
+        "trec:train:1009:def8143be9d2d54d",
+        "trec:train:1378:85134f2eed7c7722",
+        "trec:train:2003:85134f2eed7c7722",
+        "trec:train:2059:218f1c428ca57cd4",
+        "trec:train:4266:b8310680132cac01",
+        "trec:train:4542:b977b108221360e4"
+      ],
+      "within_split": "retain all natural duplicates, including final test; report counts"
+    },
+    "files_sha256": {
+      "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+      "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+      "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+    },
+    "labels": [
+      "abbreviation",
+      "entity",
+      "description or abstract concept",
+      "human being",
+      "location",
+      "numeric value"
+    ],
+    "limits": {
+      "test": 200,
+      "train": 10000,
+      "validation": 1000
+    },
+    "name": "trec",
+    "post_transform_overlap_removed": {
+      "train": 0,
+      "validation": 0
+    },
+    "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "card": "https://huggingface.co/datasets/CogComp/trec",
+      "files": {
+        "test": "default/test/0000.parquet",
+        "train": "default/train/0000.parquet"
+      },
+      "files_sha256": {
+        "test": "6aa889b0289e02760644caa22ac9aa833e79e34fb1f1ced69f745a078550c56e",
+        "train": "5ffb07b1cbd45e47b4dd1dd113dadd19e44eb260721114c6147e0ce6c1e47590"
+      },
+      "homepage": "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
+      "label_column": "coarse_label",
+      "labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "license": "unknown; consult original source before redistribution",
+      "notes": "Six coarse classes in original label order ABBR, ENTY, DESC, HUM, LOC, NUM; 50 fine classes unused. Pinned converted Parquet avoids legacy remote code.",
+      "repo_id": "CogComp/trec",
+      "resolved_from": "refs/convert/parquet",
+      "revision": "65752bf53af25bc935a0dce92fb5b6c930728450",
+      "source": "huggingface_parquet",
+      "source_splits": {
+        "test": "test",
+        "train": "train"
+      },
+      "text_column": "text",
+      "validation_fraction": 0.1
+    },
+    "source_counts": {
+      "test": 500,
+      "train": 5452
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 4,
+          "1": 38,
+          "2": 55,
+          "3": 26,
+          "4": 32,
+          "5": 45
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+        "rows": 200
+      },
+      "train": {
+        "class_counts": {
+          "0": 76,
+          "1": 1124,
+          "2": 1040,
+          "3": 1100,
+          "4": 750,
+          "5": 796
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 59,
+        "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+        "rows": 4886
+      },
+      "validation": {
+        "class_counts": {
+          "0": 8,
+          "1": 125,
+          "2": 116,
+          "3": 122,
+          "4": 84,
+          "5": 90
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 3,
+        "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+        "rows": 545
+      }
+    },
+    "text_policy": {
+      "applies_to": "all splits and all model families",
+      "kind": "character_prefix",
+      "max_chars": 2000
+    },
+    "truncated_rows": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    },
+    "validation_fraction": 0.1
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "execution": {
+    "automatic_retries": 0,
+    "concurrency": 1,
+    "max_new_requests": 1000,
+    "paid_authorized": false
+  },
+  "execution_sessions": [
+    {
+      "cached_rows": 0,
+      "environment": {
+        "packages": {
+          "accelerate": "1.15.0",
+          "huggingface-hub": "0.36.2",
+          "numpy": "2.5.3",
+          "peft": "0.21.0",
+          "pyarrow": "23.0.1",
+          "scikit-learn": "1.9.1",
+          "scipy": "1.18.1",
+          "torch": "2.14.0",
+          "transformers": "4.57.6"
+        },
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "python": "3.12.4",
+        "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+      },
+      "new_rows_requested": 200,
+      "started_at": "2026-09-22T10:01:57.767700+00:00"
+    }
+  ],
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "abbreviation",
+    "entity",
+    "description or abstract concept",
+    "human being",
+    "location",
+    "numeric value"
+  ],
+  "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+  "method": "zero_shot",
+  "metrics": {
+    "accuracy": 0.155,
+    "balanced_accuracy": 0.17324561403508773,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.125,
+            0.18
+          ],
+          "estimate": 0.155
+        },
+        "macro_f1": {
+          "ci95": [
+            0.06766218591528878,
+            0.09539380588618193
+          ],
+          "estimate": 0.08169000998768959
+        }
+      },
+      "samples": 1000,
+      "seed": 42
+    },
+    "brier_sum": 1.089858959308101,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        30,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        43,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        22,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        38,
+        6,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.337506305303091,
+    "failure_rate": 0.0,
+    "input_tokens": 24054,
+    "input_tokens_coverage": 1.0,
+    "input_tokens_known_total": 24054,
+    "latency_p50_s": 1.364238000009209,
+    "latency_p95_s": 1.650556845468236,
+    "log_loss": 2.729555585556604,
+    "macro_f1": 0.08169000998768959,
+    "n_classes": 6,
+    "n_failures": 0,
+    "n_probability_rows": 200,
+    "n_test": 200,
+    "output_tokens": 0,
+    "output_tokens_coverage": 1.0,
+    "output_tokens_known_total": 0,
+    "per_class": [
+      {
+        "f1": 0.017699115044247787,
+        "label": 0,
+        "precision": 0.009174311926605505,
+        "recall": 0.25,
+        "support": 4
+      },
+      {
+        "f1": 0.47244094488188976,
+        "label": 1,
+        "precision": 0.33707865168539325,
+        "recall": 0.7894736842105263,
+        "support": 38
+      },
+      {
+        "f1": 0.0,
+        "label": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 55
+      },
+      {
+        "f1": 0.0,
+        "label": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 26
+      },
+      {
+        "f1": 0.0,
+        "label": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 32
+      },
+      {
+        "f1": 0.0,
+        "label": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 45
+      }
+    ],
+    "prediction_time_s": 279.808499214123,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 64,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.0,
+        "bin": 4,
+        "count": 4,
+        "mean_confidence": 0.31976849833427845
+      },
+      {
+        "accuracy": 0.23529411764705882,
+        "bin": 5,
+        "count": 34,
+        "mean_confidence": 0.3747268315366011
+      },
+      {
+        "accuracy": 0.14814814814814814,
+        "bin": 6,
+        "count": 54,
+        "mean_confidence": 0.4340131538481145
+      },
+      {
+        "accuracy": 0.175,
+        "bin": 7,
+        "count": 40,
+        "mean_confidence": 0.4971767820613315
+      },
+      {
+        "accuracy": 0.1875,
+        "bin": 8,
+        "count": 32,
+        "mean_confidence": 0.5640433537962376
+      },
+      {
+        "accuracy": 0.06666666666666667,
+        "bin": 9,
+        "count": 30,
+        "mean_confidence": 0.6314081661747097
+      },
+      {
+        "accuracy": 0.0,
+        "bin": 10,
+        "count": 6,
+        "mean_confidence": 0.6943434830107167
+      },
+      {
+        "accuracy": null,
+        "bin": 11,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 12,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 13,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 14,
+        "count": 0,
+        "mean_confidence": null
+      }
+    ],
+    "valid_response_accuracy": 0.155,
+    "zero_true_class_probability_rows": 0
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+  "seed": 42,
+  "started_at": "2026-09-22T10:01:57.762077+00:00",
+  "status": "complete",
+  "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+  "training_example_ids": []
+}

@@ -1,0 +1,88 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "requested_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "resolved_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "dataset": "trec",
+  "labels": [
+    "abbreviation",
+    "entity",
+    "description or abstract concept",
+    "human being",
+    "location",
+    "numeric value"
+  ],
+  "seed": 42,
+  "train_per_class": 4,
+  "training_rows": 24,
+  "training_row_ids": [
+    "trec:train:4424:a0a98fa6a12484f0",
+    "trec:train:3761:5578e092675734bb",
+    "trec:train:3965:c8bfd3194a6cd81e",
+    "trec:train:2747:b01a47af03fbd321",
+    "trec:train:1864:53f0705e6ec62bb5",
+    "trec:train:3459:32a25fe82db1746c",
+    "trec:train:1042:1307f29b05360833",
+    "trec:train:3295:e8ae706d3e78c885",
+    "trec:train:1754:21bc6b04431167b1",
+    "trec:train:1903:c528d13abc62df8f",
+    "trec:train:2606:645ce16853489393",
+    "trec:train:2689:0e25ae703b007f7e",
+    "trec:train:4518:03fb88f1b1541628",
+    "trec:train:4418:f2866c2da52b770f",
+    "trec:train:1449:0ea3ad646f9d9039",
+    "trec:train:1716:4535840133884f07",
+    "trec:train:2909:8a330e77ec27462c",
+    "trec:train:3959:737381e1a1d60e8d",
+    "trec:train:3563:ab7c01e5a55ca0c4",
+    "trec:train:1620:790881dce0f25854",
+    "trec:train:307:46ba40ecdfa02b42",
+    "trec:train:30:230bfd8ec984ad4c",
+    "trec:train:2451:1e54fad193707a56",
+    "trec:train:3284:ff587ff60b79601e"
+  ],
+  "validation_rows": 0,
+  "test_accessed": false,
+  "selection": "fixed_final_checkpoint",
+  "supervision": "numeric_class_id_plus_eos_response_only",
+  "epochs": 3,
+  "optimizer_steps": 9,
+  "attempted_optimizer_steps": 9,
+  "skipped_optimizer_steps": 0,
+  "max_steps": null,
+  "learning_rate": 0.0002,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "r": 8,
+  "lora_alpha": 16,
+  "target_modules": "all-linear",
+  "max_length": 2048,
+  "load_in_4bit": false,
+  "dtype": "float32",
+  "device": "mps",
+  "gradient_checkpointing": true,
+  "cuda_autocast": false,
+  "gradient_scaling": false,
+  "training_s": 22.483185457997024,
+  "training_history": [
+    {
+      "epoch": 1,
+      "mean_batch_loss": 1.4727300591766834
+    },
+    {
+      "epoch": 2,
+      "mean_batch_loss": 1.0119322550793488
+    },
+    {
+      "epoch": 3,
+      "mean_batch_loss": 0.9453107131024202
+    }
+  ],
+  "validation_loss": null,
+  "prompt_sha256": "8cd501fb901bc15475fafc72f6d43e2f063a36fc8511326c3fe6693c48f39d2c",
+  "trainable_parameters": 4399104,
+  "versions": {
+    "torch": "2.14.0",
+    "transformers": "4.57.6",
+    "peft": "0.21.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "equal_training_ids_and_seed": true,
+  "interpretation": "Paired test-item contrast; check output protocols and validation-label use before causal claims",
+  "method": "paired stratified percentile bootstrap",
+  "metrics": {
+    "accuracy": {
+      "ci95": [
+        -0.175,
+        -0.09999999999999999
+      ],
+      "estimate": -0.13499999999999998
+    },
+    "macro_f1": {
+      "ci95": [
+        -0.08040987632009096,
+        -0.009547381769039229
+      ],
+      "estimate": -0.04354737749162684
+    }
+  },
+  "run_a": "trec__Qwen2.5-0.5B-Instruct__23d9b42b5b4e",
+  "run_b": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+  "samples": 2000,
+  "seed": 42
+}

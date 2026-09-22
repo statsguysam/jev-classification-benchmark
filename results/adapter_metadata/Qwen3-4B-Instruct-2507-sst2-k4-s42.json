@@ -1,0 +1,68 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "requested_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "resolved_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "dataset": "sst2",
+  "labels": [
+    "negative",
+    "positive"
+  ],
+  "seed": 42,
+  "train_per_class": 4,
+  "training_rows": 8,
+  "training_row_ids": [
+    "sst2:train:51013:5fbdd2ed34b78690",
+    "sst2:train:30891:2aa5fe07bf6eafcc",
+    "sst2:train:58881:d9056dd7823b6948",
+    "sst2:train:55864:7d1f098ccb5347f4",
+    "sst2:train:16137:8fa5c18cdfd577ce",
+    "sst2:train:47247:b41fa1200b86a3f7",
+    "sst2:train:6462:0610b7c625898267",
+    "sst2:train:905:f71718f2be6a5792"
+  ],
+  "validation_rows": 0,
+  "test_accessed": false,
+  "selection": "fixed_final_checkpoint",
+  "supervision": "numeric_class_id_plus_eos_response_only",
+  "epochs": 3,
+  "optimizer_steps": 3,
+  "attempted_optimizer_steps": 3,
+  "skipped_optimizer_steps": 0,
+  "max_steps": null,
+  "learning_rate": 0.0002,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "r": 8,
+  "lora_alpha": 16,
+  "target_modules": "all-linear",
+  "max_length": 2048,
+  "load_in_4bit": true,
+  "dtype": "bfloat16",
+  "device": "cuda",
+  "gradient_checkpointing": true,
+  "cuda_autocast": true,
+  "gradient_scaling": false,
+  "training_s": 47.31492798199997,
+  "training_history": [
+    {
+      "epoch": 1,
+      "mean_batch_loss": 8.165730520204306e-06
+    },
+    {
+      "epoch": 2,
+      "mean_batch_loss": 1.0430799513017064e-06
+    },
+    {
+      "epoch": 3,
+      "mean_batch_loss": 0.13293423502758817
+    }
+  ],
+  "validation_loss": null,
+  "prompt_sha256": "b57a9bc0202dc20d84db18dc86860c2ee37d566a4bd3547246e3abfd7e3d860c",
+  "trainable_parameters": 16515072,
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "peft": "0.20.0"
+  }
+}

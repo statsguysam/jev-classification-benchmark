@@ -1,0 +1,389 @@
+{
+  "contrasts": [
+    {
+      "contrast": "sst2_qwen05_lora_minus_few4_seed42",
+      "cross_protocol_or_model_comparison": false,
+      "dataset": "sst2",
+      "file": "sst2_qwen05_lora_minus_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.0,
+            0.09000000000000008
+          ],
+          "estimate": 0.04500000000000004
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.000720641971168079,
+            0.09000361119119812
+          ],
+          "estimate": 0.0444660579505215
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_qwen4b_lora_minus_few4_seed42",
+      "cross_protocol_or_model_comparison": false,
+      "dataset": "sst2",
+      "file": "sst2_qwen4b_lora_minus_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.039999999999999925,
+            -0.0050000000000000044
+          ],
+          "estimate": -0.019999999999999907
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.04007922297633364,
+            -0.0049941208760766465
+          ],
+          "estimate": -0.02000050001250031
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_qwen05_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_qwen05_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.2250000000000001,
+            0.39512499999999934
+          ],
+          "estimate": 0.30999999999999994
+        },
+        "macro_f1": {
+          "ci95": [
+            0.22591670625944685,
+            0.39999537159292425
+          ],
+          "estimate": 0.3110928581959099
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_qwen4b_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_qwen4b_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.345,
+            0.48999999999999994
+          ],
+          "estimate": 0.4149999999999999
+        },
+        "macro_f1": {
+          "ci95": [
+            0.3456692299218538,
+            0.49032850636037384
+          ],
+          "estimate": 0.41615175717738806
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_luna_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_luna_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.3400000000000001,
+            0.49
+          ],
+          "estimate": 0.4149999999999999
+        },
+        "macro_f1": {
+          "ci95": [
+            0.34115822329380635,
+            0.4916280802051918
+          ],
+          "estimate": 0.41614275492687614
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_astra_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_astra_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.365,
+            0.51
+          ],
+          "estimate": 0.43499999999999994
+        },
+        "macro_f1": {
+          "ci95": [
+            0.3650863568602656,
+            0.5101233312354101
+          ],
+          "estimate": 0.43615225718988837
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_astra_few4_minus_luna_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_astra_few4_minus_luna_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.0,
+            0.04499999999999993
+          ],
+          "estimate": 0.020000000000000018
+        },
+        "macro_f1": {
+          "ci95": [
+            0.0,
+            0.045095890673597386
+          ],
+          "estimate": 0.020009502263012235
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "sst2_qwen4b_few4_minus_astra_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "sst2",
+      "file": "sst2_qwen4b_few4_minus_astra_few4_seed42.json",
+      "manifest_hashes_are_equal": false,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.05499999999999994,
+            0.010000000000000009
+          ],
+          "estimate": -0.020000000000000018
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.05498420297561541,
+            0.010003000300029985
+          ],
+          "estimate": -0.02000050001250031
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_qwen05_lora_minus_few4_seed42",
+      "cross_protocol_or_model_comparison": false,
+      "dataset": "trec",
+      "file": "trec_qwen05_lora_minus_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.175,
+            -0.09999999999999999
+          ],
+          "estimate": -0.13499999999999998
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.08040987632009096,
+            -0.009547381769039229
+          ],
+          "estimate": -0.04354737749162684
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_qwen4b_lora_minus_few4_seed42",
+      "cross_protocol_or_model_comparison": false,
+      "dataset": "trec",
+      "file": "trec_qwen4b_lora_minus_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.07999999999999996,
+            0.015000000000000013
+          ],
+          "estimate": -0.029999999999999916
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.17932243107936427,
+            -0.031708809615954604
+          ],
+          "estimate": -0.1008247981560102
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_qwen05_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_qwen05_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.4049999999999999,
+            -0.24487500000000065
+          ],
+          "estimate": -0.325
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.4699111845344392,
+            -0.32017133818369214
+          ],
+          "estimate": -0.397581437958225
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_qwen4b_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_qwen4b_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.255,
+            0.4
+          ],
+          "estimate": 0.32999999999999996
+        },
+        "macro_f1": {
+          "ci95": [
+            0.2966944691751694,
+            0.43597882515262565
+          ],
+          "estimate": 0.3661199391443663
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_luna_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_luna_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.2799999999999999,
+            0.42
+          ],
+          "estimate": 0.35
+        },
+        "macro_f1": {
+          "ci95": [
+            0.28809678151284823,
+            0.4418656538718661
+          ],
+          "estimate": 0.3621954937009512
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_astra_few4_minus_nb_k4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_astra_few4_minus_nb_k4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.3999999999999999,
+            0.54
+          ],
+          "estimate": 0.47
+        },
+        "macro_f1": {
+          "ci95": [
+            0.39818019519144426,
+            0.5474391541683871
+          ],
+          "estimate": 0.47093213364776115
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_astra_few4_minus_luna_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_astra_few4_minus_luna_few4_seed42.json",
+      "manifest_hashes_are_equal": true,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.07999999999999996,
+            0.16000000000000003
+          ],
+          "estimate": 0.12
+        },
+        "macro_f1": {
+          "ci95": [
+            0.07031063653738609,
+            0.147954207798051
+          ],
+          "estimate": 0.10873663994680993
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "contrast": "trec_qwen4b_few4_minus_astra_few4_seed42",
+      "cross_protocol_or_model_comparison": true,
+      "dataset": "trec",
+      "file": "trec_qwen4b_few4_minus_astra_few4_seed42.json",
+      "manifest_hashes_are_equal": false,
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            -0.18999999999999995,
+            -0.08999999999999997
+          ],
+          "estimate": -0.14
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.15999918348952047,
+            -0.047961186977642185
+          ],
+          "estimate": -0.10481219450339485
+        }
+      },
+      "status": "complete"
+    }
+  ],
+  "schema_version": 1
+}

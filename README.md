@@ -2,17 +2,25 @@
 
 A reproducible comparison of Jev, open-weight language models, hosted frontier models, LoRA adaptation, and classical machine learning on public text-classification datasets.
 
-**Status:** runnable benchmark with measured local pilot results; the full Jev/frontier matrix requires API credentials and a spending limit. The repository never substitutes invented scores for missing experiments. See [recorded results](results/REPORT.md), the [experimental protocol](docs/PROTOCOL.md), and [primary sources](docs/SOURCES.md).
+**Completed pilot:** 248 run records and 49,600 recorded predictions, with zero inference errors. Classical ML covers five datasets and 200 distinct model/budget/seed configurations. The neural/hosted comparison covers **SST-2 (binary) and TREC (six classes)**, with 200 held-out examples each: Qwen2.5-0.5B and Qwen3-4B at zero-shot, four examples per class and LoRA/QLoRA; OpenAI Luna and Astra at zero/few-shot. **Jev remains unmeasured because API access is unavailable.**
+
+Start with the [combined comparison](results/COMPARISON.md), [execution status](results/STATUS.md), [paired contrasts](results/comparisons/combined/index.md), and [classical seed analysis](results/MATCHED_ANALYSIS.md). Download the source bundle and four trained adapters from the [pilot release](https://github.com/statsguysam/jev-classification-benchmark/releases/tag/v0.1.0-pilot); [adapter reproduction instructions](docs/ADAPTERS.md) include pinned base revisions.
+
+Astra few-shot accuracy was 97.5% on SST-2 and 97% on TREC. Qwen3-4B few-shot was 95.5% and 83%; its fixed QLoRA recipe reached 93.5% and 80%. The smaller Qwen model's unfavorable TREC results are also retained. These are conditional, one-seed pilot measurements using different local/hosted output protocols, not a general model ranking. [Colab auditing](results/COLAB_AUDIT.md) verifies the same prepared content and training labels despite supplemental manifest metadata differences; original artifacts remain unchanged.
+
+All **1,600 OpenAI requests** reconcile with the durable ledger. The reported-token estimate is **US$2.568174** and the conservative ledger total is **US$3.142607**, below the US$7.50 OpenAI allocation. These are estimates, not an invoice. **US$2.50 remains reserved and unspent for Jev**, within the approved US$10 total. See [cost accounting](results/API_COSTS.md) and the [budget/resumption procedure](docs/BUDGET.md).
+
+![Measured pilot comparison](results/figures/combined-pilot.png)
 
 ## Study design
 
-| Dataset | Task | Classes |
-|---|---|---:|
-| SST-2 | Movie-review sentiment | 2 |
-| IMDb | Movie-review sentiment | 2 |
-| AG News | News topic | 4 |
-| TREC | Question type | 6 |
-| Banking77 | Banking intent | 77 |
+| Dataset | Task | Classes | Measured families |
+|---|---|---:|---|
+| SST-2 | Movie-review sentiment | 2 | Classical, open LLMs, OpenAI |
+| IMDb | Movie-review sentiment | 2 | Classical |
+| AG News | News topic | 4 | Classical |
+| TREC | Question type | 6 | Classical, open LLMs, OpenAI |
+| Banking77 | Banking intent | 77 | Classical |
 
 SST-2's labeled validation set is reserved as final test; its published test labels are hidden. Development data comes only from training data. Every method uses the same frozen held-out IDs, label mapping and text preprocessing. Dataset snapshots and prepared splits are hashed. Exact cross-split text overlaps are removed from the training/development side, preserving test rows.
 
@@ -68,10 +76,12 @@ The baselines are majority class, word+character TF-IDF with logistic regression
 python scripts/run_classical_matrix.py --data-root data/pilot \
   --output results/pilot --budgets 4 --seeds 42 --include-full
 
-# Planned larger matched-label study:
+# Executed matched-label study (180 runs):
 python scripts/run_classical_matrix.py --data-root data/pilot \
   --output results/matched --budgets 1 4 8 --seeds 13 42 87
 ```
+
+The 40-run pilot and 180-run matched study overlap in 20 seed-42, four-per-class configurations. Their class predictions reproduce exactly: 220 executions represent 200 distinct configurations, not 220 independent experimental conditions.
 
 ## Run zero-shot and few-shot models
 
@@ -84,13 +94,21 @@ jevbench model --data data/pilot/sst2 --config configs/models.json \
 jevbench model --data data/pilot/sst2 --config configs/models.json \
   --model-key qwen_small --shots 4 --output results/pilot --max-requests 200
 
-# Hosted requests are opt-in and may incur charges:
-jevbench model --data data/pilot/sst2 --config configs/models.json \
-  --model-key jev --shots 4 --output results/hosted \
-  --allow-paid --max-requests 200
 ```
 
-Hosted runs have no automatic retries and stop after three consecutive errors. `--max-requests` limits the number of new test requests in that invocation, **not dollars**. Check provider pricing and authorize a total budget before executing a matrix. Incomplete rows are checkpointed; repeating the identical command resumes. Model input/context errors are failures, not reasons to drop inconvenient test examples.
+Hosted experiments use the budgeted driver. This command is a **dry run**: it sends no requests and does not initialize or change the existing ledger.
+
+```bash
+python scripts/run_budgeted_hosted.py --config configs/hosted_budget.json \
+  --model-keys openai_economical openai_frontier \
+  --data data/pilot/sst2 data/pilot/trec --shots 0 4 --seed 42 \
+  --output results/hosted --max-requests 200 \
+  --budget-usd 7.50 --ledger results/openai-budget.jsonl
+```
+
+See [BUDGET.md](docs/BUDGET.md) for the exact first-execution and resume commands, hidden credential prompt, the separate Jev allocation, official prices and accounting limits. Keep the ledger **and its `.lock` file**; omit `--init-ledger` when resuming. Successful OpenAI responses with complete usage can settle conservative reservations; errors, timeouts and unknown usage retain them. The ledger is an enforced reservation ceiling under documented pricing assumptions, not a provider invoice or an account-wide spend cap. Do not bypass it with the unbudgeted single-run or matrix commands for this study.
+
+Hosted runs have no automatic retries and stop after three consecutive errors. Incomplete rows are checkpointed; repeating the identical configuration resumes. Model input/context errors are failures, not reasons to drop inconvenient test examples. A request limit is not a dollar limit.
 
 Plan a multi-model matrix without sending model requests:
 
@@ -100,7 +118,7 @@ python scripts/run_model_matrix.py --data-root data/pilot \
   --shots 0 4 --seeds 42 --output results/hosted
 ```
 
-With four core datasets and 200 heldout rows each, that explicit configuration plans **32 runs and at most 6,400 test requests**. A saved [hosted plan](results/HOSTED_PLAN.json) is a request inventory, not measured results; hosted experiments remain pending. Zero-shot runs once at seed 42; few-shot runs use each requested seed. The dry-run script does not load model weights or call model APIs. To execute after approving spending, add `--execute --allow-paid --max-total-requests 6400`. This cap counts requests, not dollars, and conservatively includes cached jobs in its upper bound. Use the single-run CLI for dataset-specific adapters. `configs/experiment.json` is a design inventory and is not automatically applied by either driver.
+With four core datasets and 200 heldout rows each, that broader configuration plans **32 runs and at most 6,400 test requests**. The saved [hosted plan](results/HOSTED_PLAN.json) is a design inventory, not measured results or an estimate that all runs fit US$10. Completed OpenAI execution covers SST-2 and TREC with Luna/Astra at zero/four shots per class, seed 42; it does not complete this broader matrix. Zero-shot runs once at seed 42; few-shot runs use each requested seed. The dry-run matrix script does not load model weights or call model APIs. Use the budgeted driver for hosted execution and the single-run CLI for dataset-specific local adapters. `configs/experiment.json` is a design inventory and is not automatically applied by either driver.
 
 ## LoRA and Colab
 
