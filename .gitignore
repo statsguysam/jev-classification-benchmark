@@ -19,3 +19,5 @@ artifacts/
 results/numeric_decisions/review-execution.lock
 results/numeric_expansion/review-execution.lock
 results/text_extension/review-execution.lock
+results/review_controls/prepared_full/requests.jsonl
+results/review_controls/execution/execution.lock

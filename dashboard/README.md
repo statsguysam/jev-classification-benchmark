@@ -41,3 +41,10 @@ node tests/numeric-dashboard.smoke.cjs
 ```
 
 The historical view retains all 318 broad-study executions (290 distinct conditions). Its measurements do not replace the later numerical or text pipeline studies. All views keep unavailable values distinct from zero and retain failures in accuracy. Both extensions use familiar public datasets, one split/seed and fixed inference recipes; pretraining exposure cannot be excluded. Full-training ML uses more labels. No new LoRA training is included in either extension, and there is no pooled cross-domain model ranking.
+
+
+## Value of review
+
+[The review-value view](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/review.html) adds source / direct-Jev / pipeline metrics, corrected and harmed decisions, and every eligible fixed-coverage curve. It shows 17/24 complete numerical review conditions and keeps the 1,714-request matched follow-up visibly pending. Sequence likelihoods are not calibrated confidence; curves are retrospective simulations, not deployment or dollar-saving results.
+
+Rebuild with `python scripts/build_review_value_dashboard.py`; verify with `node dashboard/tests/review-dashboard.smoke.cjs dashboard`. Only explicit aggregate fields are exported. See the [story](../results/review_value/STORY.md), [sharing figure](../results/review_value/figures/selective_review.png), and [draft post](../results/review_value/LINKEDIN_DRAFT.md). The deployment remains private.

@@ -1,0 +1,97 @@
+{
+  "adapters": false,
+  "arms": [
+    "label_only",
+    "label_plus_eos"
+  ],
+  "datasets": {
+    "breast_cancer": {
+      "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
+      "training_example_ids_k4": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ],
+      "validation_ids": [
+        "breast_cancer:source:00238:a91c957cfcd84208",
+        "breast_cancer:source:00489:3accd8e0f56a3806",
+        "breast_cancer:source:00490:8545227eddafff27",
+        "breast_cancer:source:00022:fcc414779fe27bad",
+        "breast_cancer:source:00345:61a2fc5dc0af50cf",
+        "breast_cancer:source:00155:c8aa54d579f14fb1",
+        "breast_cancer:source:00053:6aa4a62fdf120ebb",
+        "breast_cancer:source:00256:430547dee3a7f9a1",
+        "breast_cancer:source:00037:4d97e8f431276b43",
+        "breast_cancer:source:00054:139c248e101c6207",
+        "breast_cancer:source:00280:7d9546c86f376f58",
+        "breast_cancer:source:00172:eedc364e03c66edd",
+        "breast_cancer:source:00535:c1d3296dc9d70784",
+        "breast_cancer:source:00522:b90dca86d4b56c6e",
+        "breast_cancer:source:00191:cc7f18e638f08eb6",
+        "breast_cancer:source:00333:e12361e2e483e95b"
+      ],
+      "validation_per_class": 8
+    },
+    "wine": {
+      "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+      "training_example_ids_k4": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ],
+      "validation_ids": [
+        "wine:source:00008:a32713a34a6fdc47",
+        "wine:source:00149:14dd637fd57987c2",
+        "wine:source:00151:8b13605607502954",
+        "wine:source:00084:b3347660f8cb9dcc",
+        "wine:source:00087:96d6ad5359fe8071",
+        "wine:source:00137:ab38b12b4be5f666",
+        "wine:source:00140:6a7895a7fa461f7a",
+        "wine:source:00045:ffbefad9f8a82560",
+        "wine:source:00055:7b33a81bb5a7bcf0",
+        "wine:source:00107:bef1dbe8ba20cd52",
+        "wine:source:00115:cf90499bc8ad7f43",
+        "wine:source:00043:18695c7d01e69582",
+        "wine:source:00145:c0349b4b10a1f35f",
+        "wine:source:00134:a669ad9c00edc017",
+        "wine:source:00033:eb83858c16686664",
+        "wine:source:00050:9cf7eadab7259ccb",
+        "wine:source:00085:bc6e686c1099f66d",
+        "wine:source:00067:486c2649a404c56e"
+      ],
+      "validation_per_class": 6
+    }
+  },
+  "device": "mps",
+  "downloads": false,
+  "dtype": "float16",
+  "free_generation": false,
+  "hosted_calls": false,
+  "max_context_tokens": 8192,
+  "model_keys": [
+    "smollm2",
+    "granite"
+  ],
+  "sample_role": "exploratory validation diagnostic; no gate or model selection; existing tests are not reevaluated",
+  "schema_version": 1,
+  "seed": 42,
+  "shots_per_class": [
+    0,
+    4
+  ],
+  "study": "numeric-validation-id-versus-id-plus-eos-v1"
+}

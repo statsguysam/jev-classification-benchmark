@@ -228,3 +228,16 @@ Verified against official documentation on **22 September 2026**. USD prices bel
 OpenAI documents 1.25-times input rates for cache writes and higher rates beyond 272k input tokens; the guard accounts for the former and rejects the latter. [Luna pricing](https://developers.openai.com/api/docs/models/gpt-5.6-luna), [Astra pricing](https://developers.openai.com/api/docs/models/gpt-6-astra).
 
 Both drivers require prices verified on the current UTC date. For a later OpenAI execution, review the official source and supply a `--prices-json` declaration with the required fields and explicit verification statement documented in `select_price`. The separate OpenRouter wrapper instead fixes its reviewed date, route, price and response-model allowlist in source. Review the official sources before making a dated replacement; do not merely change the date without rechecking prices. Keep existing ledger history and the same allocation. Updating driver or price provenance can change run identity and must be treated explicitly when reconciling a resumed study.
+
+## Proposal-value controls: sequenced within the same US$25
+
+The frozen follow-up plans **1,650 primary requests plus 64 identical-prompt repeats** across 550 cases. Preparation and saved-results analysis made no model calls. The new [control runner](../scripts/run_review_controls.py) first requires both existing numerical and text matrices to reach 68/68 audited conditions. It then pins every prior ledger and lock file and may allocate only `25.00 − cumulative conservative accounting` to a new control ledger. No earlier reservation is released or changed.
+
+The new control ledger reuses the text stage's verified settlement rule. The full study is not guaranteed to fit: each call needs its complete reservation before dispatch, unknown/failed charges remain reserved, and no automatic retry or source-label fallback is permitted. Outstanding historical work takes priority. Funding the provider account does not raise the authorized ceiling. Planning is read-only and shows no allocation until the earlier matrices are complete:
+
+```bash
+python scripts/restore_review_controls_payload.py
+python scripts/run_review_controls.py
+```
+
+After funding, current route/pricing verification and successful readiness, first execution uses `--execute --init-ledger --prompt-api-key`; resumption omits `--init-ledger`. Both historical execution locks and the new control lock are held during paid execution. A changed earlier ledger, partial append, orphan request, changed producer or request bundle stops the runner before a subsequent request. See the [frozen design](REVIEW_CONTROLS_PROTOCOL.md) and [reproduction guide](REVIEW_VALUE_REPRODUCIBILITY.md).

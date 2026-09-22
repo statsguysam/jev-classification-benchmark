@@ -1,0 +1,5015 @@
+{
+  "audit_script_sha256": "dc870e4d8870623afa717e953e4d326fa62632fc9a9317bb39e43dea642142a6",
+  "cache_inventory": {
+    "models": {
+      "granite": {
+        "cached_snapshots": [
+          {
+            "config_present": true,
+            "location": "workspace_direct",
+            "tokenizer_config_present": true,
+            "weight_bytes": 5067121552,
+            "weight_files": 2,
+            "weights_complete_by_inventory": true
+          }
+        ],
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+      },
+      "qwen_main": {
+        "cached_snapshots": [],
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+      },
+      "qwen_small": {
+        "cached_snapshots": [
+          {
+            "config_present": true,
+            "location": "workspace_hub",
+            "tokenizer_config_present": true,
+            "weight_bytes": 988097824,
+            "weight_files": 1,
+            "weights_complete_by_inventory": true
+          }
+        ],
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+      },
+      "smollm2": {
+        "cached_snapshots": [
+          {
+            "config_present": true,
+            "location": "workspace_direct",
+            "tokenizer_config_present": true,
+            "weight_bytes": 3422777952,
+            "weight_files": 1,
+            "weights_complete_by_inventory": true
+          }
+        ],
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "revision": "31b70e2e869a7173562077fd711b654946d38674"
+      }
+    },
+    "scope": "Only exact pinned snapshot directories; no credential files or environment secrets accessed. Availability is not a cryptographic weight-content audit."
+  },
+  "confidence_gate_selected": false,
+  "constant_conditions_by_domain": {
+    "numeric": 11,
+    "text": 3
+  },
+  "frozen_scoring_source_sha256": "fbeb2156be56246639bd87da309931e0f62928617ab23a4a6b3da60353b1c149",
+  "hardware": {
+    "architecture": "arm64",
+    "cpu_count": 8,
+    "cuda_available": false,
+    "mps_available": true,
+    "mps_built": true,
+    "mps_recommended_memory_bytes": 12713115648,
+    "os": "Darwin",
+    "physical_memory_bytes": 17179869184,
+    "scope": "Current local process visibility only; sandbox permissions can hide MPS. No remote Colab probe or tensor/model allocation.",
+    "torch_version": "2.14.0"
+  },
+  "historical_results_changed": false,
+  "identical_proposal_vectors": [
+    {
+      "dataset": "breast_cancer",
+      "domain": "numeric",
+      "models": [
+        "qwen_small",
+        "smollm2"
+      ],
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "breast_cancer",
+      "domain": "numeric",
+      "models": [
+        "qwen_small",
+        "granite"
+      ],
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "breast_cancer",
+      "domain": "numeric",
+      "models": [
+        "smollm2",
+        "granite"
+      ],
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "wine",
+      "domain": "numeric",
+      "models": [
+        "qwen_small",
+        "smollm2"
+      ],
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "wine",
+      "domain": "numeric",
+      "models": [
+        "qwen_small",
+        "smollm2"
+      ],
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "domain": "numeric",
+      "models": [
+        "qwen_small",
+        "granite"
+      ],
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "domain": "numeric",
+      "models": [
+        "smollm2",
+        "granite"
+      ],
+      "shots_per_class": 4
+    }
+  ],
+  "input_validator_hashes": {
+    "scripts/run_expanded_numeric_review.py": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+    "scripts/text_extension_sources.py": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290"
+  },
+  "n_conditions": 32,
+  "n_failures": 0,
+  "n_predictions": 4400,
+  "no_downloads": true,
+  "no_hosted_calls": true,
+  "no_new_inference": true,
+  "packages": {
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "transformers": "4.57.6"
+  },
+  "runs": [
+    {
+      "accuracy": 0.37719298245614036,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.8400863272944058,
+        "mean": 0.8044420264207885,
+        "median": 0.8109415781410028,
+        "min": 0.7231740381846228,
+        "n": 43,
+        "p25": 0.7961830389834045,
+        "p75": 0.8215308006843796,
+        "std": 0.02649560207021732,
+        "unique_values": 43
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.3137897150343924,
+      "descriptive_error_auroc_negative_pmax": 0.3137897150343924,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.8690868646075915,
+        "mean": 0.8202764448352278,
+        "median": 0.8224872944514633,
+        "min": 0.7027974491347583,
+        "n": 71,
+        "p25": 0.8110589113251796,
+        "p75": 0.8357935688864089,
+        "std": 0.024546483029972695,
+        "unique_values": 71
+      },
+      "macro_f1": 0.27388535031847133,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.8778443893067659,
+        "mean": 0.6891791707794777,
+        "median": 0.6845322510455594,
+        "min": 0.5599371547957155,
+        "n": 114,
+        "p25": 0.6541894614490944,
+        "p75": 0.7083767307267839,
+        "std": 0.052387727267721826,
+        "unique_values": 114
+      },
+      "predicted_class_counts": [
+        114,
+        0
+      ],
+      "predicted_labels_sha256": "432ef85b6dd747f412cfea15dd36f2f853e092958b7fb0d90e90d4cde145fd85",
+      "probability_vectors_sha256": "408249a0c312a235e74ef2fb4a905800f2b62a406c9bae636666821dc363f263",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "14cf2375326d7b38219c2399c533b591056256e4cf5c48fd730f4ee662acf665",
+          "run.json": "30e7e44ae8a4b63dba40c54f2080d76637cfacbbf5daca54a1afae6237d4b9a0",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "51496c3a65c2c7f8db496697e43617e5ceed2fba03c9701343d23c14198b2138",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.8690868646075915,
+        "mean": 0.8143038133280271,
+        "median": 0.817954129672761,
+        "min": 0.7027974491347583,
+        "n": 114,
+        "p25": 0.806672252726859,
+        "p75": 0.8315314438764697,
+        "std": 0.026437785162072777,
+        "unique_values": 114
+      },
+      "top_two_margin": {
+        "max": 0.7381737292151831,
+        "mean": 0.6286076266560542,
+        "median": 0.6359082593455222,
+        "min": 0.4055948982695166,
+        "n": 114,
+        "p25": 0.6133445054537182,
+        "p75": 0.6630628877529394,
+        "std": 0.05287557032414554,
+        "unique_values": 114
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 114
+    },
+    {
+      "accuracy": 0.6140350877192983,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.6825512371889926,
+        "mean": 0.6090151009838437,
+        "median": 0.6150643945722251,
+        "min": 0.5038895716443473,
+        "n": 70,
+        "p25": 0.5812818520068714,
+        "p75": 0.6406144443814527,
+        "std": 0.04591890269958775,
+        "unique_values": 70
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.20551948051948052,
+      "descriptive_error_auroc_negative_pmax": 0.20551948051948052,
+      "domain": "numeric",
+      "dominant_class_fraction": 0.9912280701754386,
+      "incorrect_top_probability": {
+        "max": 0.7122148427208186,
+        "mean": 0.6552021324045448,
+        "median": 0.6583944229336369,
+        "min": 0.5390094501178286,
+        "n": 44,
+        "p25": 0.6370045773801281,
+        "p75": 0.6791584999469666,
+        "std": 0.03157430580909649,
+        "unique_values": 44
+      },
+      "macro_f1": 0.3804347826086957,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9999563471638033,
+        "mean": 0.9463697666163698,
+        "median": 0.9451423032293429,
+        "min": 0.8658429755658776,
+        "n": 114,
+        "p25": 0.9229889720242825,
+        "p75": 0.9702931873659388,
+        "std": 0.03163910266962961,
+        "unique_values": 114
+      },
+      "predicted_class_counts": [
+        1,
+        113
+      ],
+      "predicted_labels_sha256": "7ac7af41cc8181655b79ebd4429de3302be5f154f0750a95929e3e7c0ee1e493",
+      "probability_vectors_sha256": "73ca73e75b38fe3b18a630adbd25c2952645350aace97f9f32c0f227c912936b",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "30395487ab9517a445331ac9c206f7a4f8d21c445aa858a08dd79cd9db182f2c",
+          "run.json": "816232cb92bc7ebee1f451ed8d626a117d66f5bb2eb0ce54cbb59f0e625bcc59",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "0717df2a3aa39103a01d1fea2a4a8333387b82e08b98189c132a13d1d0bbda84",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.7122148427208186,
+        "mean": 0.6268416745146408,
+        "median": 0.6370036574068203,
+        "min": 0.5038895716443473,
+        "n": 114,
+        "p25": 0.6011040900386518,
+        "p75": 0.6618999467831815,
+        "std": 0.04674476875010391,
+        "unique_values": 114
+      },
+      "top_two_margin": {
+        "max": 0.4244296854416372,
+        "mean": 0.2536833490292814,
+        "median": 0.27400731481364055,
+        "min": 0.007779143288694668,
+        "n": 114,
+        "p25": 0.2022081800773036,
+        "p75": 0.3237998935663631,
+        "std": 0.09348953750020782,
+        "unique_values": 114
+      },
+      "training_example_ids": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 114
+    },
+    {
+      "accuracy": 0.6140350877192983,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.999993251945997,
+        "mean": 0.9014595175459268,
+        "median": 0.9488694089352772,
+        "min": 0.5156201241356754,
+        "n": 70,
+        "p25": 0.8289046293595624,
+        "p75": 0.9956620994158248,
+        "std": 0.1237477482335222,
+        "unique_values": 69
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.5285714285714286,
+      "descriptive_error_auroc_negative_pmax": 0.5285714285714286,
+      "domain": "numeric",
+      "dominant_class_fraction": 0.8859649122807017,
+      "incorrect_top_probability": {
+        "max": 0.9999938558217356,
+        "mean": 0.8785896668047464,
+        "median": 0.9252227360227148,
+        "min": 0.523420140777778,
+        "n": 44,
+        "p25": 0.811667356444724,
+        "p75": 0.9964032147550371,
+        "std": 0.15093434227048888,
+        "unique_values": 44
+      },
+      "macro_f1": 0.4792358803986711,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 41,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9992958840857693,
+        "mean": 0.36169318666210837,
+        "median": 0.30068195679779675,
+        "min": 0.00011523430360728909,
+        "n": 114,
+        "p25": 0.0376898956543211,
+        "p75": 0.6727416607323977,
+        "std": 0.34201883110783987,
+        "unique_values": 111
+      },
+      "predicted_class_counts": [
+        13,
+        101
+      ],
+      "predicted_labels_sha256": "192c4b5f2bce1afc729d1bb42af126d233fc7ea16b54c6f152d6a8a0dc4950a6",
+      "probability_vectors_sha256": "54879b0d69ab6902f22689236c31c253d80d28bc3fe0256db38c6d85c01e8f92",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "111f04f33a536dfbbe49b71ea3bcc12979ca2231a94ea0970234eea8f772b7ed",
+          "run.json": "9441d6b4366fbb7d10e695d5ce5a7ce065c15d8a208519700897e686dcd4a1ab",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "ef176498650fce52dab8131420a3bf5afac3191303abb971f8787942460faf7c",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.9999938558217356,
+        "mean": 0.8926325576107341,
+        "median": 0.946596636020322,
+        "min": 0.5156201241356754,
+        "n": 114,
+        "p25": 0.8233196624247214,
+        "p75": 0.9959912434679103,
+        "std": 0.13535036021596225,
+        "unique_values": 111
+      },
+      "top_two_margin": {
+        "max": 0.9999877116434713,
+        "mean": 0.7852651152214685,
+        "median": 0.8931932720406439,
+        "min": 0.03124024827135069,
+        "n": 114,
+        "p25": 0.6466393248494428,
+        "p75": 0.9919824869358207,
+        "std": 0.2707007204319245,
+        "unique_values": 111
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 111
+    },
+    {
+      "accuracy": 0.8596491228070176,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999999986269776,
+        "mean": 0.9920257597234354,
+        "median": 0.999999936865726,
+        "min": 0.724870187023157,
+        "n": 98,
+        "p25": 0.9999986459820683,
+        "p75": 0.9999999922811096,
+        "std": 0.042180389066774814,
+        "unique_values": 92
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.8488520408163266,
+      "descriptive_error_auroc_negative_pmax": 0.8488520408163266,
+      "domain": "numeric",
+      "dominant_class_fraction": 0.5175438596491229,
+      "incorrect_top_probability": {
+        "max": 0.9999999816291644,
+        "mean": 0.9756799484014637,
+        "median": 0.9988677267571582,
+        "min": 0.7981868329476257,
+        "n": 16,
+        "p25": 0.9768707675229982,
+        "p75": 0.9999772739221391,
+        "std": 0.049457636210825315,
+        "unique_values": 16
+      },
+      "macro_f1": 0.858076563958917,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 102,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.8487296671892539,
+        "mean": 0.04148294912643021,
+        "median": 2.566818414823438e-06,
+        "min": 4.24026274458522e-08,
+        "n": 114,
+        "p25": 3.10452200058855e-07,
+        "p75": 0.000501549434585928,
+        "std": 0.14892272369176981,
+        "unique_values": 108
+      },
+      "predicted_class_counts": [
+        59,
+        55
+      ],
+      "predicted_labels_sha256": "04d87fc14c54ccf5c8eec896208f34e4d69314a42008e1b3c7ad47768ae7c55f",
+      "probability_vectors_sha256": "2cee512f1623582f4a73914388f596c001f60b2edb3a99c860ec3aa67c2cb656",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "e5c1b86c06a40de1724e263df2849e46ff24c8957df163d1424b4008a1c58917",
+          "run.json": "a5d870f25fb6c13fd66bd686e77b5ca60cf5c7f1c43991b21297a325eea2146e",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "28ad03c5c4295544706dd7c32da676512d5c0f059706e595d9a9f2608465fdfb",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.9999999986269776,
+        "mean": 0.9897316107659656,
+        "median": 0.9999998958075437,
+        "min": 0.724870187023157,
+        "n": 114,
+        "p25": 0.9999694961553393,
+        "p75": 0.999999988857525,
+        "std": 0.043646511622845295,
+        "unique_values": 108
+      },
+      "top_two_margin": {
+        "max": 0.9999999972539553,
+        "mean": 0.9794632215319314,
+        "median": 0.9999997916150875,
+        "min": 0.44974037404631395,
+        "n": 114,
+        "p25": 0.9999389923106785,
+        "p75": 0.9999999777150498,
+        "std": 0.08729302324569059,
+        "unique_values": 108
+      },
+      "training_example_ids": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 108
+    },
+    {
+      "accuracy": 0.37719298245614036,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.7164509465123428,
+        "mean": 0.6808612566526145,
+        "median": 0.6779629700548453,
+        "min": 0.6669340793240509,
+        "n": 43,
+        "p25": 0.6742642518346186,
+        "p75": 0.6848400907698495,
+        "std": 0.010940496618392906,
+        "unique_values": 43
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.4788732394366197,
+      "descriptive_error_auroc_negative_pmax": 0.4788732394366197,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.7153775526315851,
+        "mean": 0.6795694367460879,
+        "median": 0.6812866557244622,
+        "min": 0.6434706436255125,
+        "n": 71,
+        "p25": 0.6739605113754289,
+        "p75": 0.6864103849303818,
+        "std": 0.011073410015349512,
+        "unique_values": 71
+      },
+      "macro_f1": 0.27388535031847133,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.93976452906874,
+        "mean": 0.9039141173694041,
+        "median": 0.9060599870375114,
+        "min": 0.8602416909839247,
+        "n": 114,
+        "p25": 0.8983763835163217,
+        "p75": 0.9105259831687668,
+        "std": 0.012244677065471218,
+        "unique_values": 114
+      },
+      "predicted_class_counts": [
+        114,
+        0
+      ],
+      "predicted_labels_sha256": "432ef85b6dd747f412cfea15dd36f2f853e092958b7fb0d90e90d4cde145fd85",
+      "probability_vectors_sha256": "27da0f9f13ff2db2755404e314e17b2d6a08a0d26d162719e18165c8c664d3ed",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "3448e9627693beae1db00af2c75aec1d332788726ad1ae5d6a29d0dda2ca5e48",
+          "run.json": "ddbf4cb3a33847c5ab0c569525de21ef9166046aeed76f624be7dfe9bcd53934",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "1ef84d18b08b1dc8eec1a49f1fbea4ebaa3022da9d1ba427726522b6f6e23fd9",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.7164509465123428,
+        "mean": 0.6800567021494269,
+        "median": 0.6784491303933873,
+        "min": 0.6434706436255125,
+        "n": 114,
+        "p25": 0.674249167516174,
+        "p75": 0.6854318774709824,
+        "std": 0.011041231622152517,
+        "unique_values": 114
+      },
+      "top_two_margin": {
+        "max": 0.4329018930246855,
+        "mean": 0.36011340429885386,
+        "median": 0.35689826078677456,
+        "min": 0.2869412872510251,
+        "n": 114,
+        "p25": 0.34849833503234806,
+        "p75": 0.370863754941965,
+        "std": 0.02208246324430504,
+        "unique_values": 114
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 114
+    },
+    {
+      "accuracy": 0.37719298245614036,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.5738775254705522,
+        "mean": 0.5472218692675901,
+        "median": 0.5452214989923216,
+        "min": 0.5256952727900298,
+        "n": 43,
+        "p25": 0.5428318214597859,
+        "p75": 0.5522020905678444,
+        "std": 0.009386373508662477,
+        "unique_values": 43
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.42646577137242053,
+      "descriptive_error_auroc_negative_pmax": 0.42646577137242053,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.6005168653086025,
+        "mean": 0.5506827848183162,
+        "median": 0.5487172868114072,
+        "min": 0.5335813204149152,
+        "n": 71,
+        "p25": 0.5430114483816573,
+        "p75": 0.5548237290469337,
+        "std": 0.012513365935343183,
+        "unique_values": 71
+      },
+      "macro_f1": 0.27388535031847133,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9980940902966623,
+        "mean": 0.9925630489143669,
+        "median": 0.9931482274770389,
+        "min": 0.9706474445665573,
+        "n": 114,
+        "p25": 0.9918657235715955,
+        "p75": 0.9948363486588793,
+        "std": 0.004066084942271858,
+        "unique_values": 114
+      },
+      "predicted_class_counts": [
+        114,
+        0
+      ],
+      "predicted_labels_sha256": "432ef85b6dd747f412cfea15dd36f2f853e092958b7fb0d90e90d4cde145fd85",
+      "probability_vectors_sha256": "6274b387464032f6ae6c7ab4667b19e9740aecf887c7b0d4e2fcfb89be74ea92",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+          "run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "453df600f0e886552fc721a21dfc252369d7d045459880b3598f5a2e8cab52d1",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.6005168653086025,
+        "mean": 0.549377351759709,
+        "median": 0.5486917007464491,
+        "min": 0.5256952727900298,
+        "n": 114,
+        "p25": 0.5422657882133765,
+        "p75": 0.5530454695882185,
+        "std": 0.011557156623706282,
+        "unique_values": 114
+      },
+      "top_two_margin": {
+        "max": 0.20103373061720503,
+        "mean": 0.09875470351941795,
+        "median": 0.09738340149289815,
+        "min": 0.051390545580059566,
+        "n": 114,
+        "p25": 0.08453157642675287,
+        "p75": 0.106090939176437,
+        "std": 0.023114313247412564,
+        "unique_values": 114
+      },
+      "training_example_ids": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 114
+    },
+    {
+      "accuracy": 0.37719298245614036,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.9998598060470699,
+        "mean": 0.9996442062796598,
+        "median": 0.9996548434491996,
+        "min": 0.9992632176921992,
+        "n": 43,
+        "p25": 0.9995804357981412,
+        "p75": 0.9997111942202446,
+        "std": 0.00012202176725990049,
+        "unique_values": 43
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.6072715361939076,
+      "descriptive_error_auroc_negative_pmax": 0.6072715361939076,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.9998340093500772,
+        "mean": 0.9995330237376749,
+        "median": 0.9996117353865221,
+        "min": 0.9984061568834329,
+        "n": 71,
+        "p25": 0.9994368362834302,
+        "p75": 0.9997199574406206,
+        "std": 0.00028426347138277183,
+        "unique_values": 71
+      },
+      "macro_f1": 0.27388535031847133,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 114,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.017109617958768166,
+        "mean": 0.00529568632981022,
+        "median": 0.0048294104698161176,
+        "min": 0.0019967659518429054,
+        "n": 114,
+        "p25": 0.003802333122538748,
+        "p75": 0.005978272228779494,
+        "std": 0.0025669600696193624,
+        "unique_values": 114
+      },
+      "predicted_class_counts": [
+        114,
+        0
+      ],
+      "predicted_labels_sha256": "432ef85b6dd747f412cfea15dd36f2f853e092958b7fb0d90e90d4cde145fd85",
+      "probability_vectors_sha256": "4616b2bf791168771d01f8fba9d913f53876043e865618dc2b74120cd229f7b8",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+          "run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "66abf3d40ac34c3dcc6f79948787ece2cf7766780505297da63f0ace0bbfa0a4",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.9998598060470699,
+        "mean": 0.999574961012283,
+        "median": 0.9996231802871817,
+        "min": 0.9984061568834329,
+        "n": 114,
+        "p25": 0.9995205344070344,
+        "p75": 0.999712038790798,
+        "std": 0.0002425829175196281,
+        "unique_values": 114
+      },
+      "top_two_margin": {
+        "max": 0.9997196120941397,
+        "mean": 0.9991499220245662,
+        "median": 0.9992463605743633,
+        "min": 0.9968123137668659,
+        "n": 114,
+        "p25": 0.9990410688140686,
+        "p75": 0.9994240775815959,
+        "std": 0.00048516583503925527,
+        "unique_values": 114
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 114
+    },
+    {
+      "accuracy": 0.6140350877192983,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "malignant",
+        "benign"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9994388951115624,
+        "mean": 0.8991761942444366,
+        "median": 0.9904333324987362,
+        "min": 0.5350762462667642,
+        "n": 70,
+        "p25": 0.8031660820362314,
+        "p75": 0.9957964245807046,
+        "std": 0.13305436788944047,
+        "unique_values": 70
+      },
+      "dataset": "breast_cancer",
+      "descriptive_error_auroc_negative_margin": 0.7405844155844155,
+      "descriptive_error_auroc_negative_pmax": 0.7405844155844155,
+      "domain": "numeric",
+      "dominant_class_fraction": 0.7631578947368421,
+      "incorrect_top_probability": {
+        "max": 0.9888480065689055,
+        "mean": 0.81252511833381,
+        "median": 0.8454172748318842,
+        "min": 0.5156380476040806,
+        "n": 44,
+        "p25": 0.6808945427499684,
+        "p75": 0.9326143311314725,
+        "std": 0.1416249946687172,
+        "unique_values": 44
+      },
+      "macro_f1": 0.6062794348508633,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 114,
+      "n_test": 114,
+      "n_top_probability_at_least_0_99": 35,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9992942670051651,
+        "mean": 0.4343339031947258,
+        "median": 0.4116958841600753,
+        "min": 0.006868895730557824,
+        "n": 114,
+        "p25": 0.05813798004419953,
+        "p75": 0.7723356788539806,
+        "std": 0.36467751972522355,
+        "unique_values": 114
+      },
+      "predicted_class_counts": [
+        87,
+        27
+      ],
+      "predicted_labels_sha256": "6df39222cd6660b293abf9e1d95bcec3df0288aafbb6ad3abb84e966750e36bf",
+      "probability_vectors_sha256": "c0fbab2ec586b530dfe1fa57b99636f73d4b0a15fb6a93b2c26261875eadbfe4",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "7354e1f8f4004cd8b5d7ce365805ee398bfa157869a3ea2be333e108f0bb14a1",
+          "run.json": "1fae2fc598159e17ba106497df0aac6a9ed34701fcadaa62b904ddba8d8cddc6",
+          "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "010cbdc1a0c0af9c58bfda5b33f8e91eb42d94e7f89eeae1464cb17d5070c6f2",
+      "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
+      "top_probability": {
+        "max": 0.9994388951115624,
+        "mean": 0.8657319193315633,
+        "median": 0.9172441745902778,
+        "min": 0.5156380476040806,
+        "n": 114,
+        "p25": 0.7732184305608196,
+        "p75": 0.9932833948710497,
+        "std": 0.14279900690001598,
+        "unique_values": 114
+      },
+      "top_two_margin": {
+        "max": 0.9988777902231248,
+        "mean": 0.7314638386631266,
+        "median": 0.8344883491805557,
+        "min": 0.031276095208161214,
+        "n": 114,
+        "p25": 0.5464368611216391,
+        "p75": 0.9865667897420993,
+        "std": 0.2855980138000319,
+        "unique_values": 114
+      },
+      "training_example_ids": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ],
+      "true_class_counts": [
+        43,
+        71
+      ],
+      "unique_probability_vectors": 114
+    },
+    {
+      "accuracy": 0.3333333333333333,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.6358607166065489,
+        "mean": 0.5908612360965507,
+        "median": 0.5871388477452173,
+        "min": 0.5690065553522297,
+        "n": 12,
+        "p25": 0.57988990416046,
+        "p75": 0.5938837340969253,
+        "std": 0.017813957667075372,
+        "unique_values": 12
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.25347222222222227,
+      "descriptive_error_auroc_negative_pmax": 0.2569444444444444,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.6641992217851296,
+        "mean": 0.6076128519136693,
+        "median": 0.608995977151513,
+        "min": 0.5771672143417278,
+        "n": 24,
+        "p25": 0.5917322875709986,
+        "p75": 0.6196157010874841,
+        "std": 0.019583484007488855,
+        "unique_values": 24
+      },
+      "macro_f1": 0.16666666666666666,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.7381736647518758,
+        "mean": 0.7193708687823902,
+        "median": 0.7193074431508677,
+        "min": 0.6813073920102934,
+        "n": 36,
+        "p25": 0.7145934067260833,
+        "p75": 0.7284875337573982,
+        "std": 0.011436374175378778,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        36,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "9b06eece0657e71631ce890409d2bca074eced8eb4b8ec248ba5f08928d0e681",
+      "probability_vectors_sha256": "c57cfae17faea882ad7581dd0e44ab7972d1fca2acbc0d066b253e5ac5553292",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "0cbedbab9e6bafd1e9867997b4c579e4b8990bfdd0b57f6986d488e8b112b5e2",
+          "run.json": "ecfbca8e70a474d541688b9ab960639592ebc461986dacfa9c48c6a8b2318dc2",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "ada3193ca62f4a9fe21134011b3323d66755830576985325ca7977bedc5a08f5",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.6641992217851296,
+        "mean": 0.6020289799746298,
+        "median": 0.5955733076355731,
+        "min": 0.5690065553522297,
+        "n": 36,
+        "p25": 0.586515713668526,
+        "p75": 0.6160545875185984,
+        "std": 0.020586731442825475,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.36248965338354816,
+        "mean": 0.23932206433257075,
+        "median": 0.22525079571977108,
+        "min": 0.1755084102437412,
+        "n": 36,
+        "p25": 0.21047607357410855,
+        "p75": 0.267558180302039,
+        "std": 0.04096973104080618,
+        "unique_values": 36
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.3333333333333333,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.6731226154076396,
+        "mean": 0.5783395719528888,
+        "median": 0.5649928903984225,
+        "min": 0.5269132425807808,
+        "n": 12,
+        "p25": 0.5434393875090525,
+        "p75": 0.5976662463668283,
+        "std": 0.04145428879972519,
+        "unique_values": 12
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.15972222222222224,
+      "descriptive_error_auroc_negative_pmax": 0.1527777777777778,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.6937817651269585,
+        "mean": 0.6394278897601432,
+        "median": 0.6419993917048609,
+        "min": 0.5670280054833243,
+        "n": 24,
+        "p25": 0.6176683081144928,
+        "p75": 0.670492390507228,
+        "std": 0.035596907681919754,
+        "unique_values": 24
+      },
+      "macro_f1": 0.16666666666666666,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.8086941237239887,
+        "mean": 0.7298828596951039,
+        "median": 0.7269838804746575,
+        "min": 0.6536167631587222,
+        "n": 36,
+        "p25": 0.6938191205731481,
+        "p75": 0.772164697928233,
+        "std": 0.045138803924882794,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        36,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "9b06eece0657e71631ce890409d2bca074eced8eb4b8ec248ba5f08928d0e681",
+      "probability_vectors_sha256": "4d61853cc9c7eceb40d5589825671ef720de49f49a1291cf163b3da73d6b9ce4",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "59f736d542c53a94980b51ebe93e69bcd3a6680121da366b299cbce3c1a0ae38",
+          "run.json": "12d0532066452c7b2ec41c17acba0cbb3e034d08d043d0f5751e6d8146b35852",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "83ebea0850cd41770978a3895002cfb59daf33a116501fd64fd4af72df4045e1",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.6937817651269585,
+        "mean": 0.619065117157725,
+        "median": 0.6220683041691031,
+        "min": 0.5269132425807808,
+        "n": 36,
+        "p25": 0.5823667215093897,
+        "p75": 0.6589275445453313,
+        "std": 0.0474010997807294,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.42210488116195677,
+        "mean": 0.28523371006410586,
+        "median": 0.29136542078498573,
+        "min": 0.12294118853124109,
+        "n": 36,
+        "p25": 0.21530489099020592,
+        "p75": 0.36194206204409435,
+        "std": 0.08424259081946348,
+        "unique_values": 36
+      },
+      "training_example_ids": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.3888888888888889,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 1,
+      "correct_top_probability": {
+        "max": 0.9965162773404952,
+        "mean": 0.9696263613397356,
+        "median": 0.9837997522296653,
+        "min": 0.8840379592707627,
+        "n": 14,
+        "p25": 0.9615790046553726,
+        "p75": 0.9871783611777574,
+        "std": 0.029914685952069277,
+        "unique_values": 14
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.6525974025974026,
+      "descriptive_error_auroc_negative_pmax": 0.6525974025974026,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.9986324949976261,
+        "mean": 0.9111283111505769,
+        "median": 0.9561704074384674,
+        "min": 0.6370288905147093,
+        "n": 22,
+        "p25": 0.9136516646346549,
+        "p75": 0.9824211242425207,
+        "std": 0.11152312255404699,
+        "unique_values": 22
+      },
+      "macro_f1": 0.18666666666666668,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 6,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.5963168880618774,
+        "mean": 0.17435609958629528,
+        "median": 0.10962660595204751,
+        "min": 0.009456648731645468,
+        "n": 36,
+        "p25": 0.06244481320208304,
+        "p75": 0.20928023464915121,
+        "std": 0.1617626791220258,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        0,
+        36,
+        0
+      ],
+      "predicted_labels_sha256": "4c372dc61d5827cc46b7c57964025f498281d3a37cd59574d438ce38f11b3b15",
+      "probability_vectors_sha256": "c8ceb8ee1c0daafb3e4f36701fa94f8c80390ca9d000ca815423ea735c2a77a6",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "wine__Qwen3-4B-Instruct-2507__c923604a4ba1",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "31bc44ecf4883a33688cbaf11b64a13967d47a105835a5adb8294662d49115c7",
+          "run.json": "b1c0d456a3abe5d53a8a4767541f56b83ee15c81e442b2233e81e0df8e5af96a",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__c923604a4ba1",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "1ee354b16e175797f4478025b8daf337661801fcdc7d72588beda0f2c9ae377e",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.9986324949976261,
+        "mean": 0.9338775528908053,
+        "median": 0.9740300818484364,
+        "min": 0.6370288905147093,
+        "n": 36,
+        "p25": 0.9388542009669052,
+        "p75": 0.9871783311045328,
+        "std": 0.09360506387401994,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.9972654631405004,
+        "mean": 0.8677556541020673,
+        "median": 0.9480608972854168,
+        "min": 0.2740586820984891,
+        "n": 36,
+        "p25": 0.8777090859536008,
+        "p75": 0.9743570478026051,
+        "std": 0.18720993870893954,
+        "unique_values": 36
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.8055555555555556,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999999989742174,
+        "mean": 0.9715143251509534,
+        "median": 0.9999995677661594,
+        "min": 0.6224591893941742,
+        "n": 29,
+        "p25": 0.993511659277962,
+        "p75": 0.9999999764467226,
+        "std": 0.07721983141331969,
+        "unique_values": 29
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.5911330049261083,
+      "descriptive_error_auroc_negative_pmax": 0.58128078817734,
+      "domain": "numeric",
+      "dominant_class_fraction": 0.4444444444444444,
+      "incorrect_top_probability": {
+        "max": 0.9999999969345552,
+        "mean": 0.9509046489982207,
+        "median": 0.9999784405149647,
+        "min": 0.6709078053226244,
+        "n": 7,
+        "p25": 0.9927236766274442,
+        "p75": 0.999999473480256,
+        "std": 0.11441474649990897,
+        "unique_values": 7
+      },
+      "macro_f1": 0.8087912087912087,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 28,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.670949476167359,
+        "mean": 0.07481869104757277,
+        "median": 1.2512461647424515e-05,
+        "min": 2.0673596348667346e-08,
+        "n": 36,
+        "p25": 9.137984160108977e-07,
+        "p75": 0.03796213858777188,
+        "std": 0.16838557126150594,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        9,
+        11,
+        16
+      ],
+      "predicted_labels_sha256": "a0f6b6aa71e4f2091cc608780ffbe09f5b4d14444d7d1a8f371810ba781e0c40",
+      "probability_vectors_sha256": "3981c19571491b9086457f9a343321e21a63a261ec5c3f89f329b34977cb0456",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "b9b11638881c31a9853035c1803a4daf61cbf82f83c136ba57494463f16607d4",
+          "run.json": "91378022c1e86e476bd4f3b59a301d411d804d50bed3ca8ccc7ba744c25bfb43",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "5364752d51cca36772e0b37e4f8cd99b798e049569ad869e438a49596a86bc3f",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.9999999989742174,
+        "mean": 0.9675068881212552,
+        "median": 0.9999990989953715,
+        "min": 0.6224591893941742,
+        "n": 36,
+        "p25": 0.9929893586949694,
+        "p75": 0.9999999436269995,
+        "std": 0.08611272900167365,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.9999999981150018,
+        "mean": 0.9361571083223468,
+        "median": 0.9999983615964858,
+        "min": 0.2449184715876766,
+        "n": 36,
+        "p25": 0.9859787820576431,
+        "p75": 0.9999998898208835,
+        "std": 0.16920075588379982,
+        "unique_values": 36
+      },
+      "training_example_ids": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.3333333333333333,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.5248240626253702,
+        "mean": 0.4758095518421521,
+        "median": 0.47502794745483584,
+        "min": 0.42340830841340593,
+        "n": 12,
+        "p25": 0.4586878996759448,
+        "p75": 0.49614754336671096,
+        "std": 0.029357708739620448,
+        "unique_values": 12
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.7291666666666667,
+      "descriptive_error_auroc_negative_pmax": 0.6944444444444444,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.4949307802632727,
+        "mean": 0.4589259391934439,
+        "median": 0.4604819676517401,
+        "min": 0.4274858326629867,
+        "n": 24,
+        "p25": 0.4532987793571101,
+        "p75": 0.4648140213947413,
+        "std": 0.013904181932705447,
+        "unique_values": 24
+      },
+      "macro_f1": 0.16666666666666666,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9833285326717637,
+        "mean": 0.9621857534868123,
+        "median": 0.9650769262352314,
+        "min": 0.9243528626611832,
+        "n": 36,
+        "p25": 0.9573116485177164,
+        "p75": 0.9693860151134127,
+        "std": 0.01294911313949121,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        36,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "9b06eece0657e71631ce890409d2bca074eced8eb4b8ec248ba5f08928d0e681",
+      "probability_vectors_sha256": "ee8d5d36aa0f618ecd1879d2a5316e3b4db264134d7819ebf0eb47276dc6a8a3",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "a2a79d7c51f5f94ba89792517cd08bfbe8f42f047447a8a19acab36d187c2c86",
+          "run.json": "b9aaebf43a2110f0b164e5043b029dd1e06791bb9f377dbfdb5e59cdc4181f31",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "ac20e42f52931039fab43ac8c27b09f66a87baf297cd7d6bd947fa6ed5647a97",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.5248240626253702,
+        "mean": 0.4645538100763466,
+        "median": 0.46081585478007364,
+        "min": 0.42340830841340593,
+        "n": 36,
+        "p25": 0.45390754244754095,
+        "p75": 0.47353147997852274,
+        "std": 0.021897984663157778,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.25026777161064745,
+        "mean": 0.16633771412324372,
+        "median": 0.16052970825570656,
+        "min": 0.1157870525946863,
+        "n": 36,
+        "p25": 0.15341509210679266,
+        "p75": 0.17393603883831588,
+        "std": 0.027771439243705714,
+        "unique_values": 36
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.3333333333333333,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.5954518448864795,
+        "mean": 0.5733575841290827,
+        "median": 0.5685158609642911,
+        "min": 0.5559046768783339,
+        "n": 12,
+        "p25": 0.5655122991924119,
+        "p75": 0.58008219918434,
+        "std": 0.011345304809684532,
+        "unique_values": 12
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.08680555555555555,
+      "descriptive_error_auroc_negative_pmax": 0.09027777777777778,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.6159287676843481,
+        "mean": 0.599010508721662,
+        "median": 0.6033468282955752,
+        "min": 0.571732589219888,
+        "n": 24,
+        "p25": 0.5863786864441556,
+        "p75": 0.612592625160487,
+        "std": 0.01441095684767262,
+        "unique_values": 24
+      },
+      "macro_f1": 0.16666666666666666,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.905105562597777,
+        "mean": 0.8734792302891662,
+        "median": 0.8733979343666581,
+        "min": 0.8482196991029134,
+        "n": 36,
+        "p25": 0.8566521299023276,
+        "p75": 0.8878366496089656,
+        "std": 0.017413702475804947,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        36,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "9b06eece0657e71631ce890409d2bca074eced8eb4b8ec248ba5f08928d0e681",
+      "probability_vectors_sha256": "1645c69d9834d533235b1e25b9b997eb1fc64d4064f7c3fad03e46fce6d0d9c5",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "92594bfe34cea905411dadde88619088f980e9cb4fe5ff6ac3205e7806719bff",
+          "run.json": "b9c9a31d709d2ad5e4baff909f0d5d632972a7f672ec275158cd2de5ff4b9445",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "96ae085d5e241966b85d3add0c979b3e77000c7292dfc78b54572cb8297d13a9",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.6159287676843481,
+        "mean": 0.5904595338574689,
+        "median": 0.5911710651378417,
+        "min": 0.5559046768783339,
+        "n": 36,
+        "p25": 0.5758428336481459,
+        "p75": 0.6077125393873467,
+        "std": 0.018099560975559453,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.41540427964291127,
+        "mean": 0.3784978576178448,
+        "median": 0.379163739743466,
+        "min": 0.3250834371334247,
+        "n": 36,
+        "p25": 0.35726955160149937,
+        "p75": 0.4025660400786632,
+        "std": 0.027034786361498923,
+        "unique_values": 36
+      },
+      "training_example_ids": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.2777777777777778,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 2,
+      "correct_top_probability": {
+        "max": 0.9872042025672545,
+        "mean": 0.9745029586567144,
+        "median": 0.9755062915465947,
+        "min": 0.9629258332583166,
+        "n": 10,
+        "p25": 0.9694839402899424,
+        "p75": 0.9789698160215037,
+        "std": 0.0067937504665385945,
+        "unique_values": 10
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.2961538461538461,
+      "descriptive_error_auroc_negative_pmax": 0.2846153846153846,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.9888977835017096,
+        "mean": 0.9795932103910654,
+        "median": 0.9805277191617303,
+        "min": 0.9618877153315458,
+        "n": 26,
+        "p25": 0.9751596216709161,
+        "p75": 0.9846922800399156,
+        "std": 0.006768251780519969,
+        "unique_values": 26
+      },
+      "macro_f1": 0.14492753623188406,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.16979572022333564,
+        "mean": 0.10755096375251431,
+        "median": 0.1063930871208967,
+        "min": 0.062199575752078934,
+        "n": 36,
+        "p25": 0.08337699504480435,
+        "p75": 0.12767519654534232,
+        "std": 0.028845321447565905,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        0,
+        0,
+        36
+      ],
+      "predicted_labels_sha256": "45a5fead3111bba6806bf3a64516d38b13edb7fc7eb410ee0d6fcab529ea72d0",
+      "probability_vectors_sha256": "e92959ef66e9a1b7ebd81a1f23856072288a3f699e94f70b88e4fc15a883f222",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+          "run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "3e7ad94159c7f0c88d02f64ecd5789c02d569e85ef0f8909c733107196f8ed57",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.9888977835017096,
+        "mean": 0.9781792515759677,
+        "median": 0.9788017944138425,
+        "min": 0.9618877153315458,
+        "n": 36,
+        "p25": 0.9733443912977391,
+        "p75": 0.984263168448835,
+        "std": 0.007148665482248633,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.9819227633755107,
+        "mean": 0.9644202205323378,
+        "median": 0.965982424406097,
+        "min": 0.9370604418232232,
+        "n": 36,
+        "p25": 0.956245398755567,
+        "p75": 0.9741909950609549,
+        "std": 0.011801144012621669,
+        "unique_values": 36
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.3333333333333333,
+      "candidate_tokens_scored_values": [
+        6
+      ],
+      "class_labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.9991020079405533,
+        "mean": 0.9937605523562878,
+        "median": 0.9977697214511431,
+        "min": 0.9820193807299231,
+        "n": 12,
+        "p25": 0.9893964104887103,
+        "p75": 0.9987978123178174,
+        "std": 0.0067860590438179515,
+        "unique_values": 12
+      },
+      "dataset": "wine",
+      "descriptive_error_auroc_negative_margin": 0.8680555555555556,
+      "descriptive_error_auroc_negative_pmax": 0.8715277777777778,
+      "domain": "numeric",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.9980349108378149,
+        "mean": 0.9582826656964315,
+        "median": 0.9638253819552449,
+        "min": 0.8627352694290481,
+        "n": 24,
+        "p25": 0.9397153381675237,
+        "p75": 0.9942894679214868,
+        "std": 0.036986812531539084,
+        "unique_values": 24
+      },
+      "macro_f1": 0.16666666666666666,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 36,
+      "n_test": 36,
+      "n_top_probability_at_least_0_99": 17,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.4308366332112985,
+        "mean": 0.11767849953220061,
+        "median": 0.08201292731556137,
+        "min": 0.006985928176938592,
+        "n": 36,
+        "p25": 0.01805594407149742,
+        "p75": 0.20824294158585832,
+        "std": 0.1160499455641017,
+        "unique_values": 36
+      },
+      "predicted_class_counts": [
+        36,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "9b06eece0657e71631ce890409d2bca074eced8eb4b8ec248ba5f08928d0e681",
+      "probability_vectors_sha256": "08c2df48870c4a79737ab5cc5ba2319975365fd7fc773836a6e0863a6bed527a",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "04cdf6e5d6f7c1695b7d20aee318634e9b6c5658b51b2f7845f6885b1f91f192",
+          "run.json": "c3f6f198a8842f5554a57d34fb2253549ad14218f9ecedea32ab9409a23d50c2",
+          "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__16efece16c12",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "c10cdcdc171cc8d9e0f6739373143daef482d9812f864eb55778e6bb2ae0859a",
+      "test_ids_sha256": "a6e8b3d01396f5398e2211cfd0ecea47061a9d629a6fc2740c18f5687f8e3df1",
+      "top_probability": {
+        "max": 0.9991020079405533,
+        "mean": 0.9701086279163835,
+        "median": 0.9827661740147366,
+        "min": 0.8627352694290481,
+        "n": 36,
+        "p25": 0.9492660720472195,
+        "p75": 0.997293863979738,
+        "std": 0.034742958492328634,
+        "unique_values": 36
+      },
+      "top_two_margin": {
+        "max": 0.9984050422712227,
+        "mean": 0.9458655161766136,
+        "median": 0.9662654633009127,
+        "min": 0.7564936038555347,
+        "n": 36,
+        "p25": 0.9078373366838406,
+        "p75": 0.9949977426947789,
+        "std": 0.06209640593836828,
+        "unique_values": 36
+      },
+      "training_example_ids": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ],
+      "true_class_counts": [
+        12,
+        14,
+        10
+      ],
+      "unique_probability_vectors": 36
+    },
+    {
+      "accuracy": 0.5,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.8872902048439563,
+        "mean": 0.707185090665748,
+        "median": 0.7140311343359531,
+        "min": 0.5192330753340691,
+        "n": 100,
+        "p25": 0.6621455669845829,
+        "p75": 0.7521630989464241,
+        "std": 0.06909597657096346,
+        "unique_values": 100
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.7351000000000001,
+      "descriptive_error_auroc_negative_pmax": 0.7351000000000001,
+      "domain": "text",
+      "dominant_class_fraction": 0.99,
+      "incorrect_top_probability": {
+        "max": 0.8636368403683677,
+        "mean": 0.6453223465819764,
+        "median": 0.6409249110918127,
+        "min": 0.5128547825651044,
+        "n": 100,
+        "p25": 0.5891137289891071,
+        "p75": 0.6948448433093394,
+        "std": 0.07099038316069142,
+        "unique_values": 100
+      },
+      "macro_f1": 0.3503118503118503,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9995231499217436,
+        "mean": 0.8886625375419578,
+        "median": 0.9102555559128691,
+        "min": 0.5080357980925736,
+        "n": 200,
+        "p25": 0.8385201199293164,
+        "p75": 0.9585980931510124,
+        "std": 0.08827292385726818,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        198,
+        2
+      ],
+      "predicted_labels_sha256": "e99161ae1bc54279b39085a8afabea506f18391c1d31a0e98617fe279f3f6710",
+      "probability_vectors_sha256": "72cc82bdfedd86c736153749bc3e06d4e427ebecfc597b5e96364f07816f52c4",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "191a23615b5370aef5804bb5694ad199dfcb82a624491a4f5cbdb0d132f0d499",
+          "run.json": "0fe6b04f0b1e2cd201a7fe1985e6b770612997557289efde8efefac9f57ac6d7",
+          "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "632ccf9c59d5fc49a1f270c0d0c136f20083f000e0f26058ec6d3a939ab3bc86",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.8872902048439563,
+        "mean": 0.6762537186238621,
+        "median": 0.6744993509650147,
+        "min": 0.5128547825651044,
+        "n": 200,
+        "p25": 0.6192098222235671,
+        "p75": 0.7320368718193258,
+        "std": 0.07657476096072396,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.7745804096879125,
+        "mean": 0.3525074372477243,
+        "median": 0.34899870193002935,
+        "min": 0.025709565130208833,
+        "n": 200,
+        "p25": 0.23841964444713437,
+        "p75": 0.46407374363865145,
+        "std": 0.1531495219214479,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.85,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9811660109975378,
+        "mean": 0.7306436282279257,
+        "median": 0.7233369661992535,
+        "min": 0.5116668769323656,
+        "n": 170,
+        "p25": 0.6415563440391074,
+        "p75": 0.8305838219401138,
+        "std": 0.11852010699127248,
+        "unique_values": 170
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.857843137254902,
+      "descriptive_error_auroc_negative_pmax": 0.857843137254902,
+      "domain": "text",
+      "dominant_class_fraction": 0.51,
+      "incorrect_top_probability": {
+        "max": 0.8354847045606995,
+        "mean": 0.5775104804450677,
+        "median": 0.5467208182060694,
+        "min": 0.5038819576108674,
+        "n": 30,
+        "p25": 0.5166253481980616,
+        "p75": 0.6075808094133213,
+        "std": 0.08785153957823645,
+        "unique_values": 30
+      },
+      "macro_f1": 0.8499399759903962,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.999956517903516,
+        "mean": 0.8114840969544665,
+        "median": 0.8761572679402321,
+        "min": 0.13484271048160915,
+        "n": 200,
+        "p25": 0.6790895168813897,
+        "p75": 0.9713898683713805,
+        "std": 0.19104667101359565,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        98,
+        102
+      ],
+      "predicted_labels_sha256": "309b86125f8868af936aa060569f0b7c0455df984fc7c91c1bd4e8325d17ecb1",
+      "probability_vectors_sha256": "eab2320a4735f8a4cd4a01b8b10bdd9e79b7b23f1b53dc5c4b7baa9502ea89fe",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "0b9f163f2dc76c50e4acfb97024ee02a863984a0ec05330765063a899a8f174c",
+          "run.json": "68b405e72b4d46d7f4c435557ab5367e9be198f99d2d7b217b816e7c3a2fd390",
+          "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "64fd694086a86b9d204bf15eb1b2ac3215d983a9e0ea193c67cd67d6e681b248",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9811660109975378,
+        "mean": 0.707673656060497,
+        "median": 0.7041439815374104,
+        "min": 0.5038819576108674,
+        "n": 200,
+        "p25": 0.5992329396396143,
+        "p75": 0.8204487479235862,
+        "std": 0.12683647688693417,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9623320219950754,
+        "mean": 0.41534731212099407,
+        "median": 0.40828796307482085,
+        "min": 0.007763915221734863,
+        "n": 200,
+        "p25": 0.19846587927922882,
+        "p75": 0.6408974958471726,
+        "std": 0.25367295377386834,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "sst2:train:51013:5fbdd2ed34b78690",
+        "sst2:train:30891:2aa5fe07bf6eafcc",
+        "sst2:train:58881:d9056dd7823b6948",
+        "sst2:train:55864:7d1f098ccb5347f4",
+        "sst2:train:16137:8fa5c18cdfd577ce",
+        "sst2:train:47247:b41fa1200b86a3f7",
+        "sst2:train:6462:0610b7c625898267",
+        "sst2:train:905:f71718f2be6a5792"
+      ],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.915,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999999999947287,
+        "mean": 0.9926919200079516,
+        "median": 0.9999999950555636,
+        "min": 0.5389834872781224,
+        "n": 183,
+        "p25": 0.9999990259471356,
+        "p75": 0.9999999999365004,
+        "std": 0.04872524553549317,
+        "unique_values": 175
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.8306010928961749,
+      "descriptive_error_auroc_negative_pmax": 0.8306010928961749,
+      "domain": "text",
+      "dominant_class_fraction": 0.545,
+      "incorrect_top_probability": {
+        "max": 0.9999999998924562,
+        "mean": 0.9212234732919287,
+        "median": 0.9997901163160648,
+        "min": 0.5389827171279066,
+        "n": 17,
+        "p25": 0.8774766721347097,
+        "p75": 0.9999956431137842,
+        "std": 0.14009952987858384,
+        "unique_values": 17
+      },
+      "macro_f1": 0.9147420948368815,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 185,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9956107574412043,
+        "mean": 0.04095225117117216,
+        "median": 3.2954876987631177e-07,
+        "min": 2.0509277427931824e-10,
+        "n": 200,
+        "p25": 2.7442029060034963e-09,
+        "p75": 6.373680577201237e-05,
+        "std": 0.1687072068230072,
+        "unique_values": 199
+      },
+      "predicted_class_counts": [
+        91,
+        109
+      ],
+      "predicted_labels_sha256": "fc5ce9cf69ea3f8f43a3a3cab0b1ee7fbcb8f6e529d89dbf36cb261567ace7b5",
+      "probability_vectors_sha256": "af9845665750c964cc2714f91c688e1d6025cb3a3dbb4d4a1bca4f7da9bbe92d",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "19c651cc59b1530d7b001f9ab31897e6e7c533fcf06c1c2aeec8b5abc13a5a0a",
+          "run.json": "849a5d8d1d8e1761c3859b9399e986dad474d8e22cf665e4c9781efdbd751eb5",
+          "test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "2e5567571e2e84bf11f6acedff414c7fe1157f85088d4d7ca7e844a34458300f",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9999999999947287,
+        "mean": 0.98661710203709,
+        "median": 0.9999999881331247,
+        "min": 0.5389827171279066,
+        "n": 200,
+        "p25": 0.999996761043773,
+        "p75": 0.9999999999216244,
+        "std": 0.06509969957496038,
+        "unique_values": 192
+      },
+      "top_two_margin": {
+        "max": 0.9999999999894574,
+        "mean": 0.9732342040741796,
+        "median": 0.9999999762662495,
+        "min": 0.07796543425581309,
+        "n": 200,
+        "p25": 0.999993522087546,
+        "p75": 0.9999999998432487,
+        "std": 0.13019939914992076,
+        "unique_values": 194
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 199
+    },
+    {
+      "accuracy": 0.955,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999999999991123,
+        "mean": 0.9976313817215207,
+        "median": 0.9999999999898395,
+        "min": 0.6076629637840675,
+        "n": 191,
+        "p25": 0.9999999999710516,
+        "p75": 0.9999999999949701,
+        "std": 0.02853162083621241,
+        "unique_values": 155
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.817044793484584,
+      "descriptive_error_auroc_negative_pmax": 0.817044793484584,
+      "domain": "text",
+      "dominant_class_fraction": 0.505,
+      "incorrect_top_probability": {
+        "max": 0.9999999999947289,
+        "mean": 0.9847292092750186,
+        "median": 0.9999999982370034,
+        "min": 0.9046505993680478,
+        "n": 9,
+        "p25": 0.9999999847700187,
+        "p75": 0.9999999999294713,
+        "std": 0.03120560604794459,
+        "unique_values": 9
+      },
+      "macro_f1": 0.9549988749718743,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 196,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9662911711156159,
+        "mean": 0.010196614458699493,
+        "median": 4.3518022852150966e-10,
+        "min": 3.682009042046609e-11,
+        "n": 200,
+        "p25": 2.0742346972944865e-10,
+        "p75": 1.2215041913474208e-09,
+        "std": 0.07973559003659346,
+        "unique_values": 198
+      },
+      "predicted_class_counts": [
+        101,
+        99
+      ],
+      "predicted_labels_sha256": "d365713e57e268853aaab2f4682cf5cd63e6db0f7d8846e87227563da679ebf3",
+      "probability_vectors_sha256": "4cc48cd5b38d25e6aa0122799850fa04c1a9354d318041275c809dba5e634fc6",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "sst2__Qwen3-4B-Instruct-2507__5823bb43da99",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "d1ee99e24e4d2850f5c83e8afe6b22b341b46f8d8ed57c8323c4c38d611b2f06",
+          "run.json": "52356557a98032673cf65b2576d8e97834cbade77e02370745128d5320e5d085",
+          "test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "e0d184ceda43df8603c5fb80be8f998971e33c590401186a9e9c6992a2c9b7da",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9999999999991123,
+        "mean": 0.9970507839614282,
+        "median": 0.9999999999884809,
+        "min": 0.6076629637840675,
+        "n": 200,
+        "p25": 0.999999999966285,
+        "p75": 0.9999999999946666,
+        "std": 0.028781858990736656,
+        "unique_values": 163
+      },
+      "top_two_margin": {
+        "max": 0.9999999999982245,
+        "mean": 0.9941015679228563,
+        "median": 0.9999999999769619,
+        "min": 0.215325927568135,
+        "n": 200,
+        "p25": 0.9999999999325698,
+        "p75": 0.9999999999893331,
+        "std": 0.057563717981473306,
+        "unique_values": 171
+      },
+      "training_example_ids": [
+        "sst2:train:51013:5fbdd2ed34b78690",
+        "sst2:train:30891:2aa5fe07bf6eafcc",
+        "sst2:train:58881:d9056dd7823b6948",
+        "sst2:train:55864:7d1f098ccb5347f4",
+        "sst2:train:16137:8fa5c18cdfd577ce",
+        "sst2:train:47247:b41fa1200b86a3f7",
+        "sst2:train:6462:0610b7c625898267",
+        "sst2:train:905:f71718f2be6a5792"
+      ],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 198
+    },
+    {
+      "accuracy": 0.49,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.9120170260809247,
+        "mean": 0.8685761217849796,
+        "median": 0.8694819650411469,
+        "min": 0.7936045738616196,
+        "n": 98,
+        "p25": 0.8530393001669058,
+        "p75": 0.8874946554323228,
+        "std": 0.022697912023447356,
+        "unique_values": 98
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.7976190476190477,
+      "descriptive_error_auroc_negative_pmax": 0.7976190476190477,
+      "domain": "text",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.8874225331898234,
+        "mean": 0.8419044457791796,
+        "median": 0.8441961009516759,
+        "min": 0.7649987180467731,
+        "n": 102,
+        "p25": 0.8307811546133722,
+        "p75": 0.8556421359369843,
+        "std": 0.022955481516363882,
+        "unique_values": 102
+      },
+      "macro_f1": 0.3288590604026846,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.7866282928726684,
+        "mean": 0.5931911787414285,
+        "median": 0.5989818543617573,
+        "min": 0.4297011699224382,
+        "n": 200,
+        "p25": 0.5498490013305208,
+        "p75": 0.6337710832228918,
+        "std": 0.06727377928093219,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        200,
+        0
+      ],
+      "predicted_labels_sha256": "3e273723fa2057ff611c7f5347fb8a232d72b272b95bd4b32beca34c16ef9cf8",
+      "probability_vectors_sha256": "563ce0de4fa5a43c4e1fb2a3fa6268fd22184f0a7332e8363341dc28899c83fd",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "bfc62553f0ce2e19433e00d4c903ad42da308a239256b8293562d3b35b14c1c5",
+          "run.json": "e370f453fdaffe06252f305cbdda30c4e1459e4ae5ebb4ac93955c9d0587c2bc",
+          "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "8af7c6dc2c84541c3fa493d49cccf8269c17a95cbb2875cdc6da4f6942910028",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9120170260809247,
+        "mean": 0.8549735670220215,
+        "median": 0.8542969642226265,
+        "min": 0.7649987180467731,
+        "n": 200,
+        "p25": 0.8402249222523797,
+        "p75": 0.8727495580956419,
+        "std": 0.026437959406124242,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.8240340521618494,
+        "mean": 0.7099471340440431,
+        "median": 0.7085939284452529,
+        "min": 0.5299974360935462,
+        "n": 200,
+        "p25": 0.6804498445047593,
+        "p75": 0.7454991161912837,
+        "std": 0.052875918812248485,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.7,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9703045375810159,
+        "mean": 0.8051794158612302,
+        "median": 0.8426626376437443,
+        "min": 0.5092997851580393,
+        "n": 140,
+        "p25": 0.7183609196957699,
+        "p75": 0.9063523118736417,
+        "std": 0.12242578077245261,
+        "unique_values": 140
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.8472619047619048,
+      "descriptive_error_auroc_negative_pmax": 0.8472619047619048,
+      "domain": "text",
+      "dominant_class_fraction": 0.79,
+      "incorrect_top_probability": {
+        "max": 0.8783437406285985,
+        "mean": 0.6359637622547543,
+        "median": 0.6193354437731012,
+        "min": 0.501394953684738,
+        "n": 60,
+        "p25": 0.5557396513304251,
+        "p75": 0.7050904862764491,
+        "std": 0.09829527137010574,
+        "unique_values": 60
+      },
+      "macro_f1": 0.6703296703296704,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9999943853243252,
+        "mean": 0.7253589393149372,
+        "median": 0.7752577777325613,
+        "min": 0.19286231043838561,
+        "n": 200,
+        "p25": 0.530457199077247,
+        "p75": 0.9530042117384346,
+        "std": 0.23181592424172398,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        42,
+        158
+      ],
+      "predicted_labels_sha256": "9ec80c446e2ae6de61e46841566b51a40f3f0fcffd439ac5a8267dee6bfb3f43",
+      "probability_vectors_sha256": "abb1361bc050f7b01df310f25fb3eca02a6010847b301cdaf42ea85533d6035c",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "4a4571e171425591fe42da69e1a26b3547568fe11359099a1dde956d80b27183",
+          "run.json": "29927dbe4b5a83f708ced0199b9b09a32a364c59c39f905d6b636bf40993733a",
+          "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "eecdb889d0a4bfe1d434f90b2c014a6745727dfffeb4508e44a8a42011111ca7",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9703045375810159,
+        "mean": 0.7544147197792873,
+        "median": 0.7715734164142656,
+        "min": 0.501394953684738,
+        "n": 200,
+        "p25": 0.6269163910293383,
+        "p75": 0.8796172768543347,
+        "std": 0.1392959627192622,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9406090751620317,
+        "mean": 0.5088294395585748,
+        "median": 0.5431468328285312,
+        "min": 0.00278990736947593,
+        "n": 200,
+        "p25": 0.25383278205867665,
+        "p75": 0.7592345537086693,
+        "std": 0.2785919254385244,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "sst2:train:51013:5fbdd2ed34b78690",
+        "sst2:train:30891:2aa5fe07bf6eafcc",
+        "sst2:train:58881:d9056dd7823b6948",
+        "sst2:train:55864:7d1f098ccb5347f4",
+        "sst2:train:16137:8fa5c18cdfd577ce",
+        "sst2:train:47247:b41fa1200b86a3f7",
+        "sst2:train:6462:0610b7c625898267",
+        "sst2:train:905:f71718f2be6a5792"
+      ],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.8,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999992641662775,
+        "mean": 0.9770358811159363,
+        "median": 0.9997102394989708,
+        "min": 0.523786635833639,
+        "n": 160,
+        "p25": 0.9985834766722486,
+        "p75": 0.9999053557325334,
+        "std": 0.07587318908507895,
+        "unique_values": 160
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.676875,
+      "descriptive_error_auroc_negative_pmax": 0.676875,
+      "domain": "text",
+      "dominant_class_fraction": 0.68,
+      "incorrect_top_probability": {
+        "max": 0.9999494902171159,
+        "mean": 0.9464838446167088,
+        "median": 0.9986199663245291,
+        "min": 0.571141477798441,
+        "n": 40,
+        "p25": 0.9605205314746385,
+        "p75": 0.9996590083518835,
+        "std": 0.1070385852326343,
+        "unique_values": 40
+      },
+      "macro_f1": 0.7940479868190712,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 165,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9983668182561769,
+        "mean": 0.1010423731712812,
+        "median": 0.004985907246383507,
+        "min": 1.605354553235313e-05,
+        "n": 200,
+        "p25": 0.0016812203154723871,
+        "p75": 0.024299023130417253,
+        "std": 0.23875824692810038,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        136,
+        64
+      ],
+      "predicted_labels_sha256": "86335eb911800503a655c606755d4773df49d46b5c1c1803e2a0768a9584e658",
+      "probability_vectors_sha256": "a37cd17d241186f3168f825567fd03fc1594087ee37b66a3af2a938a1d8dc1e3",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "1e82d65ce78bfe62cee5e7ddf44c1beaaef1bb6a35b6215cdb8b7c240214155a",
+          "run.json": "63a266166f1877265dcd0dd04e1dccd8c49718e3ac67c52721ba95015db8067c",
+          "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/text_extension/local/sst2__granite-3.3-2b-instruct__70bbadf64a9a",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "23715d8fd9510120cf8254afc10fe983a9eb93ff1d6d0843c72efc6dc6d7f0f0",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9999992641662775,
+        "mean": 0.9709254738160908,
+        "median": 0.9996093681746546,
+        "min": 0.523786635833639,
+        "n": 200,
+        "p25": 0.9976051701595438,
+        "p75": 0.9998842033125304,
+        "std": 0.0839416029913232,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9999985283325549,
+        "mean": 0.9418509476321816,
+        "median": 0.9992187363493092,
+        "min": 0.047573271667278094,
+        "n": 200,
+        "p25": 0.9952103403190875,
+        "p75": 0.9997684066250607,
+        "std": 0.16788320598264642,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.94,
+      "candidate_tokens_scored_values": [
+        4
+      ],
+      "class_labels": [
+        "negative",
+        "positive"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999995991063817,
+        "mean": 0.9962407695819632,
+        "median": 0.9999100688101081,
+        "min": 0.5584138746963891,
+        "n": 188,
+        "p25": 0.999676048113691,
+        "p75": 0.9999856376871827,
+        "std": 0.03276170311275641,
+        "unique_values": 188
+      },
+      "dataset": "sst2",
+      "descriptive_error_auroc_negative_margin": 0.8603723404255319,
+      "descriptive_error_auroc_negative_pmax": 0.8603723404255319,
+      "domain": "text",
+      "dominant_class_fraction": 0.54,
+      "incorrect_top_probability": {
+        "max": 0.999952066487376,
+        "mean": 0.9911620273988772,
+        "median": 0.9981327501646915,
+        "min": 0.9659063683846205,
+        "n": 12,
+        "p25": 0.9909753842037075,
+        "p75": 0.9993660992820117,
+        "std": 0.013075294274589208,
+        "unique_values": 12
+      },
+      "macro_f1": 0.9399459513562206,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 191,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9901320079574623,
+        "mean": 0.018262931343600994,
+        "median": 0.001525120383894346,
+        "min": 9.09746764277879e-06,
+        "n": 200,
+        "p25": 0.00028591629078252663,
+        "p75": 0.005285623877004908,
+        "std": 0.08222182735479096,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        108,
+        92
+      ],
+      "predicted_labels_sha256": "d135c5a2bc79b58262d2b41f25ee4ce76e72430e84e9f94916c853cd7de77a73",
+      "probability_vectors_sha256": "7843190454120d405c6080deca1cbfdd0f30787a642a93594d7a8c0b629d46ed",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "c9b75a86558f0d1195c3a9add90544cee7af63fae0e46fe5f330955ada6fbac0",
+          "run.json": "3328f14ba4f189c49c0418b910d6b928301f8ed7452fab43b9f7058dbe8fea4c",
+          "test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/text_extension/local/sst2__granite-3.3-2b-instruct__267442d7a2e7",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "d7152439f89b6ca921b6a5fe6086a00488d40213a2cab04ec908c313edbfb244",
+      "test_ids_sha256": "0d20d0ef31088eae9a7ecddbe1f61daf17b86b5757b34f868da0378149451f31",
+      "top_probability": {
+        "max": 0.9999995991063817,
+        "mean": 0.9959360450509779,
+        "median": 0.9998960632646836,
+        "min": 0.5584138746963891,
+        "n": 200,
+        "p25": 0.9995827821766483,
+        "p75": 0.9999835007859166,
+        "std": 0.03194748814710583,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9999991982127633,
+        "mean": 0.991872090101956,
+        "median": 0.9997921265293672,
+        "min": 0.11682774939277824,
+        "n": 200,
+        "p25": 0.9991655643532966,
+        "p75": 0.9999670015718332,
+        "std": 0.06389497629421166,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "sst2:train:51013:5fbdd2ed34b78690",
+        "sst2:train:30891:2aa5fe07bf6eafcc",
+        "sst2:train:58881:d9056dd7823b6948",
+        "sst2:train:55864:7d1f098ccb5347f4",
+        "sst2:train:16137:8fa5c18cdfd577ce",
+        "sst2:train:47247:b41fa1200b86a3f7",
+        "sst2:train:6462:0610b7c625898267",
+        "sst2:train:905:f71718f2be6a5792"
+      ],
+      "true_class_counts": [
+        98,
+        102
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.155,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.6508420380123575,
+        "mean": 0.4656676070467904,
+        "median": 0.46618601248873853,
+        "min": 0.3369408916752074,
+        "n": 31,
+        "p25": 0.4004073415557816,
+        "p75": 0.523330158397164,
+        "std": 0.08190949766922064,
+        "unique_values": 31
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.5439969459820576,
+      "descriptive_error_auroc_negative_pmax": 0.41000190876121395,
+      "domain": "text",
+      "dominant_class_fraction": 0.545,
+      "incorrect_top_probability": {
+        "max": 0.7094018932803563,
+        "mean": 0.4974293801311697,
+        "median": 0.4818439598024074,
+        "min": 0.30941116071679364,
+        "n": 169,
+        "p25": 0.4180643147860197,
+        "p75": 0.5713692474497938,
+        "std": 0.09744707885162639,
+        "unique_values": 169
+      },
+      "macro_f1": 0.08169000998768959,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9091321065121785,
+        "mean": 0.7176715479520419,
+        "median": 0.7267839280871345,
+        "min": 0.4685726854814897,
+        "n": 200,
+        "p25": 0.6376433867476556,
+        "p75": 0.7930303888494079,
+        "std": 0.10058831839657505,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        109,
+        89,
+        0,
+        2,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "9afa877088314627083cc545f58dc59e27738647639cfde6c7cffc1f8eaa5352",
+      "probability_vectors_sha256": "a1fce891d3f66552218275f799840127c39da0cfc3ab9e68bd03ebaf3e92b3c2",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "aec8ab0d1329a97a6f06739a0abae6fd92951c332636c63fdaa35314664cbade",
+          "run.json": "f3c622c1a48d6b540afae94693b84c841824fd7a23469d2877bcab8791bf86f9",
+          "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "83fc990e3588eb33aece7ff6e11e36748c4e33416d58d79656ca73d72ed2abc8",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.7094018932803563,
+        "mean": 0.492506305303091,
+        "median": 0.4750759147645701,
+        "min": 0.30941116071679364,
+        "n": 200,
+        "p25": 0.4147291530894206,
+        "p75": 0.5639080505649526,
+        "std": 0.09589636674261427,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.5457307288902883,
+        "mean": 0.21003501279503545,
+        "median": 0.18786013482420644,
+        "min": 0.005036340785855908,
+        "n": 200,
+        "p25": 0.09579479728431466,
+        "p75": 0.31435649922203457,
+        "std": 0.1333778389303051,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.175,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.5580275192476454,
+        "mean": 0.39627900461633997,
+        "median": 0.3839283513956527,
+        "min": 0.3039598765795971,
+        "n": 35,
+        "p25": 0.34041813495131434,
+        "p75": 0.429505775514864,
+        "std": 0.06794375523473732,
+        "unique_values": 35
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.4438095238095239,
+      "descriptive_error_auroc_negative_pmax": 0.45125541125541124,
+      "domain": "text",
+      "dominant_class_fraction": 0.71,
+      "incorrect_top_probability": {
+        "max": 0.6202490852357261,
+        "mean": 0.41143887565992154,
+        "median": 0.39743108540836136,
+        "min": 0.285842762287243,
+        "n": 165,
+        "p25": 0.3445645982665914,
+        "p75": 0.45997531983944673,
+        "std": 0.08019420736146463,
+        "unique_values": 165
+      },
+      "macro_f1": 0.08807352128247652,
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model_key": "qwen_small",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.8593906722328724,
+        "mean": 0.7684284484483683,
+        "median": 0.7757378238469308,
+        "min": 0.6092163053273516,
+        "n": 200,
+        "p25": 0.7502713592484972,
+        "p75": 0.801978921521976,
+        "std": 0.04818052524380598,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        0,
+        142,
+        17,
+        41,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "4278328a62e27702861fae8b540f8aa5d8a4686088c27c688eb845ffa3946a18",
+      "probability_vectors_sha256": "37436aebc13f99be61c6a09cdb5d3e01473d949dd4d152ee8a329d77b2569960",
+      "recorded_devices": [
+        "mps"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "run_id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "3225e963f23ccae334d86867750ab8d611ff2a19a5227eb3c30cfac30071e161",
+          "run.json": "f180a4e6fd04827e0eef7c188b49ba7c530ebcdc9878cd87d8e4d7fd6cc45e26",
+          "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+        },
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "path": "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "95dedb7ac9472e757e39596211f6c2e1724e6587c1e97e73f0c4486e6d2b720a",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.6202490852357261,
+        "mean": 0.40878589822729466,
+        "median": 0.3951916132341208,
+        "min": 0.285842762287243,
+        "n": 200,
+        "p25": 0.34351092991669535,
+        "p75": 0.4577764532126254,
+        "std": 0.07840094975522917,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.4524022684364767,
+        "mean": 0.15242291428759233,
+        "median": 0.13245723103432241,
+        "min": 0.00016975493517162876,
+        "n": 200,
+        "p25": 0.05754798541954197,
+        "p75": 0.22159554384919894,
+        "std": 0.11374214740243566,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "trec:train:4424:a0a98fa6a12484f0",
+        "trec:train:3761:5578e092675734bb",
+        "trec:train:3965:c8bfd3194a6cd81e",
+        "trec:train:2747:b01a47af03fbd321",
+        "trec:train:1864:53f0705e6ec62bb5",
+        "trec:train:3459:32a25fe82db1746c",
+        "trec:train:1042:1307f29b05360833",
+        "trec:train:3295:e8ae706d3e78c885",
+        "trec:train:1754:21bc6b04431167b1",
+        "trec:train:1903:c528d13abc62df8f",
+        "trec:train:2606:645ce16853489393",
+        "trec:train:2689:0e25ae703b007f7e",
+        "trec:train:4518:03fb88f1b1541628",
+        "trec:train:4418:f2866c2da52b770f",
+        "trec:train:1449:0ea3ad646f9d9039",
+        "trec:train:1716:4535840133884f07",
+        "trec:train:2909:8a330e77ec27462c",
+        "trec:train:3959:737381e1a1d60e8d",
+        "trec:train:3563:ab7c01e5a55ca0c4",
+        "trec:train:1620:790881dce0f25854",
+        "trec:train:307:46ba40ecdfa02b42",
+        "trec:train:30:230bfd8ec984ad4c",
+        "trec:train:2451:1e54fad193707a56",
+        "trec:train:3284:ff587ff60b79601e"
+      ],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.525,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.99999999871158,
+        "mean": 0.9862591690582121,
+        "median": 0.9999999602885603,
+        "min": 0.5078041241511034,
+        "n": 105,
+        "p25": 0.9999801990857025,
+        "p75": 0.9999999950753133,
+        "std": 0.06617859069236905,
+        "unique_values": 105
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.6545363408521304,
+      "descriptive_error_auroc_negative_pmax": 0.6563408521303259,
+      "domain": "text",
+      "dominant_class_fraction": 0.63,
+      "incorrect_top_probability": {
+        "max": 0.9999999970222533,
+        "mean": 0.988264593818741,
+        "median": 0.9999967714140551,
+        "min": 0.592665564538882,
+        "n": 95,
+        "p25": 0.9996513038017546,
+        "p75": 0.999999958951505,
+        "std": 0.05401632307841359,
+        "unique_values": 95
+      },
+      "macro_f1": 0.48204663657354924,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 184,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.3868853347880702,
+        "mean": 0.01684162362053512,
+        "median": 5.333355809860652e-06,
+        "min": 1.5828707796244367e-08,
+        "n": 200,
+        "p25": 8.867908678747593e-08,
+        "p75": 0.0004159261749908079,
+        "std": 0.06319129441782033,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        2,
+        1,
+        126,
+        39,
+        26,
+        6
+      ],
+      "predicted_labels_sha256": "549e5d04021c74cd161cac4a96caaff3bb361dd6c95288725c41ecd12cf7c74e",
+      "probability_vectors_sha256": "11595fadc143dc3e4d8052048d0de76074618cda82a2db47221e14e60df79027",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "6518fe6e0c6d1e45474ff9d065963cd23e2e5487ca75ffa4bac95342f1699979",
+          "run.json": "ab7dfac815f7b4473b6ee9ef23712c3857bc2afaed20cf9c258f15ff63a8596a",
+          "test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "70dbc6ebd8cfe6feda77a1558a652718e39c0b21e27e42d026d2591908a225fd",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.99999999871158,
+        "mean": 0.9872117458194632,
+        "median": 0.99999940305679,
+        "min": 0.5078041241511034,
+        "n": 200,
+        "p25": 0.9999316943982539,
+        "p75": 0.9999999921869669,
+        "std": 0.06071435990509159,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9999999976422681,
+        "mean": 0.9745930829687601,
+        "median": 0.9999989319921131,
+        "min": 0.01562296236688604,
+        "n": 200,
+        "p25": 0.9998680687458995,
+        "p75": 0.9999999858870054,
+        "std": 0.12130901052807579,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.83,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.9999999999619926,
+        "mean": 0.998159668958972,
+        "median": 0.9999999923344948,
+        "min": 0.8479462428685839,
+        "n": 166,
+        "p25": 0.9999997430652763,
+        "p75": 0.9999999985486321,
+        "std": 0.013978051860469232,
+        "unique_values": 166
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.7576187101346563,
+      "descriptive_error_auroc_negative_pmax": 0.7592133238837704,
+      "domain": "text",
+      "dominant_class_fraction": 0.315,
+      "incorrect_top_probability": {
+        "max": 0.9999999993680584,
+        "mean": 0.9608961125091542,
+        "median": 0.9999985185317823,
+        "min": 0.5851009242582412,
+        "n": 34,
+        "p25": 0.9979247798680135,
+        "p75": 0.9999999584696885,
+        "std": 0.10138017043029968,
+        "unique_values": 34
+      },
+      "macro_f1": 0.8517748983850678,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "model_key": "qwen_main",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 188,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.38914612824787936,
+        "mean": 0.011673415502770224,
+        "median": 1.956349058277917e-07,
+        "min": 5.49652294660784e-10,
+        "n": 200,
+        "p25": 2.3843312358017716e-08,
+        "p75": 7.3794242164338805e-06,
+        "std": 0.05453420830350975,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        4,
+        25,
+        63,
+        30,
+        42,
+        36
+      ],
+      "predicted_labels_sha256": "f4785f90e52cb6fb88d88cb4a9e7c64632d699044dbda2d1b788ef61464fd4fa",
+      "probability_vectors_sha256": "7ac14723fdaeb105b25053776c0382be575ce0af45d623bf4426f8050455eec9",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "version": "frozen_original_model_template"
+      },
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "run_id": "trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "075d2c324b92542fe85089be9f310e979568d0574887bfcc59e6c0ef971adf80",
+          "run.json": "7c1a7106a7dd43fa0856a8cefdb2986a0590052d9391ca84586966869e4d0362",
+          "test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb"
+        },
+        "model": "Qwen/Qwen3-4B-Instruct-2507",
+        "path": "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "9090fd1ba5b4b8fdda474b33379a6f8867f6f29f1bf3d7e96d6df4c22af93208",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.9999999999619926,
+        "mean": 0.9918248643625032,
+        "median": 0.9999999821706016,
+        "min": 0.5851009242582412,
+        "n": 200,
+        "p25": 0.9999991343763859,
+        "p75": 0.9999999980282925,
+        "std": 0.04588406637461704,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9999999999387349,
+        "mean": 0.9840999397666781,
+        "median": 0.9999999678586904,
+        "min": 0.1702021425973202,
+        "n": 200,
+        "p25": 0.999998340633633,
+        "p75": 0.9999999968978351,
+        "std": 0.0898086274250549,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "trec:train:4424:a0a98fa6a12484f0",
+        "trec:train:3761:5578e092675734bb",
+        "trec:train:3965:c8bfd3194a6cd81e",
+        "trec:train:2747:b01a47af03fbd321",
+        "trec:train:1864:53f0705e6ec62bb5",
+        "trec:train:3459:32a25fe82db1746c",
+        "trec:train:1042:1307f29b05360833",
+        "trec:train:3295:e8ae706d3e78c885",
+        "trec:train:1754:21bc6b04431167b1",
+        "trec:train:1903:c528d13abc62df8f",
+        "trec:train:2606:645ce16853489393",
+        "trec:train:2689:0e25ae703b007f7e",
+        "trec:train:4518:03fb88f1b1541628",
+        "trec:train:4418:f2866c2da52b770f",
+        "trec:train:1449:0ea3ad646f9d9039",
+        "trec:train:1716:4535840133884f07",
+        "trec:train:2909:8a330e77ec27462c",
+        "trec:train:3959:737381e1a1d60e8d",
+        "trec:train:3563:ab7c01e5a55ca0c4",
+        "trec:train:1620:790881dce0f25854",
+        "trec:train:307:46ba40ecdfa02b42",
+        "trec:train:30:230bfd8ec984ad4c",
+        "trec:train:2451:1e54fad193707a56",
+        "trec:train:3284:ff587ff60b79601e"
+      ],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.02,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 0,
+      "correct_top_probability": {
+        "max": 0.47765917137734126,
+        "mean": 0.4573264487326313,
+        "median": 0.46588538435597476,
+        "min": 0.4198758548412342,
+        "n": 4,
+        "p25": 0.4522619753350941,
+        "p75": 0.47094985775351195,
+        "std": 0.022240014168228434,
+        "unique_values": 4
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.903061224489796,
+      "descriptive_error_auroc_negative_pmax": 0.9272959183673469,
+      "domain": "text",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.48693972840297295,
+        "mean": 0.363590028419455,
+        "median": 0.3585748341782218,
+        "min": 0.22635038591506695,
+        "n": 196,
+        "p25": 0.32639863564053523,
+        "p75": 0.40291128745797294,
+        "std": 0.05558511449973256,
+        "unique_values": 196
+      },
+      "macro_f1": 0.006535947712418301,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9326991144094547,
+        "mean": 0.870126785446387,
+        "median": 0.8750017209152751,
+        "min": 0.7846994691880088,
+        "n": 200,
+        "p25": 0.8459189617904848,
+        "p75": 0.8974878158572023,
+        "std": 0.034040712428483166,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        200,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "3e273723fa2057ff611c7f5347fb8a232d72b272b95bd4b32beca34c16ef9cf8",
+      "probability_vectors_sha256": "625a00f07dcb972e4fc737153a7224bf91548e62b9b222266b9b0ce0cb1c7038",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "718191482013f937dac94dd5b9baaf026b85268ae5ace1b1bdb3b9f5fa590981",
+          "run.json": "20b381da20457614430cf9197d65ec8a8e0caa4912b4f93f25acd21b3e091597",
+          "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "fb21af56e403342f1f87f385f558256a72fdcb3959beefd46d4af0c4d198ea3c",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.48693972840297295,
+        "mean": 0.3654647568257184,
+        "median": 0.3589173514593647,
+        "min": 0.22635038591506695,
+        "n": 200,
+        "p25": 0.3267595643460157,
+        "p75": 0.40709430996112445,
+        "std": 0.05665702906735217,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.2999754368546641,
+        "mean": 0.15286458438721084,
+        "median": 0.14304207030734772,
+        "min": 0.004056276625451355,
+        "n": 200,
+        "p25": 0.10814255957528922,
+        "p75": 0.19587278831650753,
+        "std": 0.06100686926621951,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.275,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": true,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": true,
+      "constant_class_id": 2,
+      "correct_top_probability": {
+        "max": 0.5599541114249997,
+        "mean": 0.4878587244017961,
+        "median": 0.4857220611591322,
+        "min": 0.4344159504209349,
+        "n": 55,
+        "p25": 0.4744836673378322,
+        "p75": 0.5066059777370562,
+        "std": 0.027949178532591098,
+        "unique_values": 55
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.7379310344827588,
+      "descriptive_error_auroc_negative_pmax": 0.7401880877742947,
+      "domain": "text",
+      "dominant_class_fraction": 1.0,
+      "incorrect_top_probability": {
+        "max": 0.5831813831947915,
+        "mean": 0.4523482321191626,
+        "median": 0.4500846030383724,
+        "min": 0.3601955341694438,
+        "n": 145,
+        "p25": 0.4175811880685368,
+        "p75": 0.4839751873126586,
+        "std": 0.04669651617362229,
+        "unique_values": 145
+      },
+      "macro_f1": 0.07189542483660132,
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "model_key": "smollm2",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 0,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.9147993741053669,
+        "mean": 0.8389613228590261,
+        "median": 0.8374175002636202,
+        "min": 0.7217778620934799,
+        "n": 200,
+        "p25": 0.8172920534482444,
+        "p75": 0.8657445946009987,
+        "std": 0.0367497777099907,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        0,
+        0,
+        200,
+        0,
+        0,
+        0
+      ],
+      "predicted_labels_sha256": "bd7efcc0ac16bd4f7a22238c6636b487b952270f05c8972d8f8948f30dc92f37",
+      "probability_vectors_sha256": "c33e6166063f1a75366a18e6c5a7e36aa3605949cb43d4867580bec4d841e9b9",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "smollm2",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+          "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        },
+        "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "01fe373621527a19bea1d83a948b5cf53bf9a9b737c11b26507cdc0e3ec14c2e",
+          "run.json": "d5977ff6a0b4054d7cdd7912a29db6911c70949a568b99c577d6fcbaa0654988",
+          "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+        },
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "path": "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "376b4b5dc95544dff8d4776005c4b9882c9f28b54c3586a2c0efa90140f9f772",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.5831813831947915,
+        "mean": 0.4621136174968868,
+        "median": 0.46537594479071376,
+        "min": 0.3601955341694438,
+        "n": 200,
+        "p25": 0.42815192904505894,
+        "p75": 0.4911763659079965,
+        "std": 0.04524531248307574,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.45751208339759003,
+        "mean": 0.30455611547037004,
+        "median": 0.3119447366744348,
+        "min": 0.15624767871443934,
+        "n": 200,
+        "p25": 0.2617313011713067,
+        "p75": 0.34357796768048277,
+        "std": 0.05954800824442047,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "trec:train:4424:a0a98fa6a12484f0",
+        "trec:train:3761:5578e092675734bb",
+        "trec:train:3965:c8bfd3194a6cd81e",
+        "trec:train:2747:b01a47af03fbd321",
+        "trec:train:1864:53f0705e6ec62bb5",
+        "trec:train:3459:32a25fe82db1746c",
+        "trec:train:1042:1307f29b05360833",
+        "trec:train:3295:e8ae706d3e78c885",
+        "trec:train:1754:21bc6b04431167b1",
+        "trec:train:1903:c528d13abc62df8f",
+        "trec:train:2606:645ce16853489393",
+        "trec:train:2689:0e25ae703b007f7e",
+        "trec:train:4518:03fb88f1b1541628",
+        "trec:train:4418:f2866c2da52b770f",
+        "trec:train:1449:0ea3ad646f9d9039",
+        "trec:train:1716:4535840133884f07",
+        "trec:train:2909:8a330e77ec27462c",
+        "trec:train:3959:737381e1a1d60e8d",
+        "trec:train:3563:ab7c01e5a55ca0c4",
+        "trec:train:1620:790881dce0f25854",
+        "trec:train:307:46ba40ecdfa02b42",
+        "trec:train:30:230bfd8ec984ad4c",
+        "trec:train:2451:1e54fad193707a56",
+        "trec:train:3284:ff587ff60b79601e"
+      ],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.46,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.999913352286251,
+        "mean": 0.9215857997155331,
+        "median": 0.9865991248329145,
+        "min": 0.5483821357966104,
+        "n": 92,
+        "p25": 0.8814593258590109,
+        "p75": 0.9969139966322235,
+        "std": 0.1211271509963351,
+        "unique_values": 92
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.6465378421900161,
+      "descriptive_error_auroc_negative_pmax": 0.6459339774557166,
+      "domain": "text",
+      "dominant_class_fraction": 0.62,
+      "incorrect_top_probability": {
+        "max": 0.9999725591158262,
+        "mean": 0.8500792624295648,
+        "median": 0.9389607832872358,
+        "min": 0.3467173852300302,
+        "n": 108,
+        "p25": 0.7101277978498561,
+        "p75": 0.9877664042590711,
+        "std": 0.18063874928177404,
+        "unique_values": 108
+      },
+      "macro_f1": 0.40576018229649513,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 66,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.7701536942244208,
+        "mean": 0.1800331843210609,
+        "median": 0.11207212758608473,
+        "min": 0.00019632465718867926,
+        "n": 200,
+        "p25": 0.02116635242062726,
+        "p75": 0.28898490844448615,
+        "std": 0.18798456539885824,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        5,
+        0,
+        124,
+        37,
+        34,
+        0
+      ],
+      "predicted_labels_sha256": "247208165afe15fa40267da8c387f37a665fc4ee4f7c1482ecee0ef5b719eb6f",
+      "probability_vectors_sha256": "2669bcb70c9447f20822d817634527425d01c19a4f3cf78910247f42f646ae72",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
+      "shots_per_class": 0,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+          "run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+          "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "70e17c1c37e6f6a6e924a62a7fbd57e766c2d5294f78f070f3629d7abf3fb1ee",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.9999725591158262,
+        "mean": 0.8829722695811101,
+        "median": 0.9601832584781005,
+        "min": 0.3467173852300302,
+        "n": 200,
+        "p25": 0.8382296968781429,
+        "p75": 0.9946464865023983,
+        "std": 0.1601234841910707,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9999608561392186,
+        "mean": 0.7940431088368806,
+        "median": 0.9320815938774223,
+        "min": 0.002002957330085875,
+        "n": 200,
+        "p25": 0.714048613435596,
+        "p75": 0.991554628363787,
+        "std": 0.28664581546713214,
+        "unique_values": 200
+      },
+      "training_example_ids": [],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    },
+    {
+      "accuracy": 0.635,
+      "candidate_tokens_scored_values": [
+        12
+      ],
+      "class_labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "confidence_gate": {
+        "constant_label_does_not_imply_constant_confidence": false,
+        "eligibility": "candidate_for_new_validation_only_study",
+        "finite_scores_available": true,
+        "margin_ranking_has_variation": true,
+        "prospective_threshold_validated": false,
+        "threshold_selected_from_test": false,
+        "warning": "Restricted ID+EOS probability is uncalibrated. Test error AUROC is descriptive, not gate selection or evidence of reviewer benefit."
+      },
+      "constant_class": false,
+      "constant_class_id": null,
+      "correct_top_probability": {
+        "max": 0.999858959646965,
+        "mean": 0.8942327507116479,
+        "median": 0.9711925012711163,
+        "min": 0.368534015052977,
+        "n": 127,
+        "p25": 0.8581962011840975,
+        "p75": 0.9941822030905378,
+        "std": 0.14814928396794927,
+        "unique_values": 127
+      },
+      "dataset": "trec",
+      "descriptive_error_auroc_negative_margin": 0.727321756013375,
+      "descriptive_error_auroc_negative_pmax": 0.7238701326717721,
+      "domain": "text",
+      "dominant_class_fraction": 0.365,
+      "incorrect_top_probability": {
+        "max": 0.9973576027951347,
+        "mean": 0.7722490149927784,
+        "median": 0.8367861859959106,
+        "min": 0.33086144383025,
+        "n": 73,
+        "p25": 0.6334599968825443,
+        "p75": 0.950167370454225,
+        "std": 0.19833828831098516,
+        "unique_values": 73
+      },
+      "macro_f1": 0.597695881596123,
+      "model": "ibm-granite/granite-3.3-2b-instruct",
+      "model_key": "granite",
+      "n_failures": 0,
+      "n_probability_rows": 200,
+      "n_test": 200,
+      "n_top_probability_at_least_0_99": 47,
+      "n_top_probability_ties": 0,
+      "n_zero_probability_entries": 0,
+      "normalized_entropy": {
+        "max": 0.888348478841959,
+        "mean": 0.25081780208541976,
+        "median": 0.1599980383310048,
+        "min": 0.0008685191509517117,
+        "n": 200,
+        "p25": 0.0405114756734872,
+        "p75": 0.4285778703543521,
+        "std": 0.2395035158201812,
+        "unique_values": 200
+      },
+      "predicted_class_counts": [
+        7,
+        2,
+        73,
+        47,
+        33,
+        38
+      ],
+      "predicted_labels_sha256": "3c588dcc3d1b25705ed295f2e2d8e5d1518f49aef336519318816c8700c7a3ed",
+      "probability_vectors_sha256": "3d4158d47bbec94ef2fc86bf8b35888ae7bdd6f22ada5d3188a5ee57967d9d96",
+      "recorded_devices": [
+        "cuda"
+      ],
+      "recorded_dtypes": [
+        "float16"
+      ],
+      "renderer": {
+        "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+        "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+        "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+        "model_key": "granite",
+        "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+        "system_message": "You are a helpful assistant.",
+        "thinking": false,
+        "tokenizer_files_sha256": {
+          "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+          "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+          "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+          "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+          "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+          "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+        },
+        "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+        "version": "fixed-system-no-thinking-v1"
+      },
+      "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+      "run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
+      "shots_per_class": 4,
+      "source_artifacts": {
+        "hashes": {
+          "predictions.jsonl": "0c9ccb392667f606b0f01a4a14f318366157a34ada34a736b696dfb98ac21dd4",
+          "run.json": "d1e9b04f116bfc0124a764360a4c1a6ef7ad0755f6e13562d54f55eddec5f3fe",
+          "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+        },
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "path": "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67",
+        "provider": "hf"
+      },
+      "source_manifest_sha256": "b2939690dc3878a5be96b2a8c549eaaba9ff4cbf48fd59f52ace55ffd02aa7d2",
+      "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+      "top_probability": {
+        "max": 0.999858959646965,
+        "mean": 0.8497086871742606,
+        "median": 0.9388980176436165,
+        "min": 0.33086144383025,
+        "n": 200,
+        "p25": 0.7372889870179891,
+        "p75": 0.989018709708749,
+        "std": 0.17816938820832467,
+        "unique_values": 200
+      },
+      "top_two_margin": {
+        "max": 0.9997858156945302,
+        "mean": 0.7566959530848366,
+        "median": 0.8956149267341639,
+        "min": 0.0017887610740516813,
+        "n": 200,
+        "p25": 0.5850628625329897,
+        "p75": 0.9833216396471494,
+        "std": 0.28834082306457964,
+        "unique_values": 200
+      },
+      "training_example_ids": [
+        "trec:train:4424:a0a98fa6a12484f0",
+        "trec:train:3761:5578e092675734bb",
+        "trec:train:3965:c8bfd3194a6cd81e",
+        "trec:train:2747:b01a47af03fbd321",
+        "trec:train:1864:53f0705e6ec62bb5",
+        "trec:train:3459:32a25fe82db1746c",
+        "trec:train:1042:1307f29b05360833",
+        "trec:train:3295:e8ae706d3e78c885",
+        "trec:train:1754:21bc6b04431167b1",
+        "trec:train:1903:c528d13abc62df8f",
+        "trec:train:2606:645ce16853489393",
+        "trec:train:2689:0e25ae703b007f7e",
+        "trec:train:4518:03fb88f1b1541628",
+        "trec:train:4418:f2866c2da52b770f",
+        "trec:train:1449:0ea3ad646f9d9039",
+        "trec:train:1716:4535840133884f07",
+        "trec:train:2909:8a330e77ec27462c",
+        "trec:train:3959:737381e1a1d60e8d",
+        "trec:train:3563:ab7c01e5a55ca0c4",
+        "trec:train:1620:790881dce0f25854",
+        "trec:train:307:46ba40ecdfa02b42",
+        "trec:train:30:230bfd8ec984ad4c",
+        "trec:train:2451:1e54fad193707a56",
+        "trec:train:3284:ff587ff60b79601e"
+      ],
+      "true_class_counts": [
+        4,
+        38,
+        55,
+        26,
+        32,
+        45
+      ],
+      "unique_probability_vectors": 200
+    }
+  ],
+  "schema_version": 1,
+  "scope": "post-hoc descriptive audit of 32 frozen local source conditions; no new inference",
+  "validation": [
+    {
+      "dataset": "breast_cancer",
+      "domain": "numeric",
+      "fixed_four_per_class_demonstration_ids": [
+        "breast_cancer:source:00012:70aebe6dfd338fdd",
+        "breast_cancer:source:00423:446b7f2f44b4deda",
+        "breast_cancer:source:00420:b908936d1566426d",
+        "breast_cancer:source:00556:a8f72a1a1caada64",
+        "breast_cancer:source:00244:57821d18bbbd874b",
+        "breast_cancer:source:00373:b4487d3696aa457a",
+        "breast_cancer:source:00330:6fe4c1eb838cee67",
+        "breast_cancer:source:00493:f64e85a045cb30c5"
+      ],
+      "interpretation": "Diagnostic development data, not guaranteed globally untouched validation; retain independent future test data for confirmation.",
+      "n_remaining_validation_rows_after_diagnostic_sample": 98,
+      "n_test": 114,
+      "n_train": 341,
+      "n_validation": 114,
+      "proposed_diagnostic_sample_ids": [
+        "breast_cancer:source:00238:a91c957cfcd84208",
+        "breast_cancer:source:00489:3accd8e0f56a3806",
+        "breast_cancer:source:00490:8545227eddafff27",
+        "breast_cancer:source:00022:fcc414779fe27bad",
+        "breast_cancer:source:00345:61a2fc5dc0af50cf",
+        "breast_cancer:source:00155:c8aa54d579f14fb1",
+        "breast_cancer:source:00053:6aa4a62fdf120ebb",
+        "breast_cancer:source:00256:430547dee3a7f9a1",
+        "breast_cancer:source:00037:4d97e8f431276b43",
+        "breast_cancer:source:00054:139c248e101c6207",
+        "breast_cancer:source:00280:7d9546c86f376f58",
+        "breast_cancer:source:00172:eedc364e03c66edd",
+        "breast_cancer:source:00535:c1d3296dc9d70784",
+        "breast_cancer:source:00522:b90dca86d4b56c6e",
+        "breast_cancer:source:00191:cc7f18e638f08eb6",
+        "breast_cancer:source:00333:e12361e2e483e95b"
+      ],
+      "proposed_diagnostic_sample_ids_sha256": "8489d1543161ed7dff2c9268f0fd5b193d76ae768a01cb7367f7349c3939c97a",
+      "proposed_diagnostic_sample_per_class": 8,
+      "sample_selection": "unchanged select_examples(validation, labels, per_class, seed=42); demonstrations selected from train only",
+      "split_overlap_ids": 0,
+      "split_overlap_normalized_text": 0,
+      "validation_class_counts": {
+        "0": 42,
+        "1": 72
+      },
+      "validation_content_sha256": "b9930bcdc54af232eaa062168a9e5cf9ab8107a3458415c3b05a04774e8a8666",
+      "validation_ids_sha256": "2c08a423211dcbeeebcaef1addecf7346a446b95eecf7ffc5f6c5dded2f12088",
+      "validation_previously_used_by_some_historical_experiments": false
+    },
+    {
+      "dataset": "wine",
+      "domain": "numeric",
+      "fixed_four_per_class_demonstration_ids": [
+        "wine:source:00009:b2851af2c23f0284",
+        "wine:source:00013:67316b208ee4739e",
+        "wine:source:00059:438cec4c95bd5d30",
+        "wine:source:00017:747b53537b68cf87",
+        "wine:source:00117:f2833f585f3c0599",
+        "wine:source:00159:7717132974a84a71",
+        "wine:source:00155:ea1d0005bf5963e5",
+        "wine:source:00073:47dbd1b1bab9c6af",
+        "wine:source:00150:e255613d024e8c4d",
+        "wine:source:00092:6aef6a094fe9bec9",
+        "wine:source:00154:939e8819c810c335",
+        "wine:source:00030:00682191078f98d3"
+      ],
+      "interpretation": "Diagnostic development data, not guaranteed globally untouched validation; retain independent future test data for confirmation.",
+      "n_remaining_validation_rows_after_diagnostic_sample": 18,
+      "n_test": 36,
+      "n_train": 106,
+      "n_validation": 36,
+      "proposed_diagnostic_sample_ids": [
+        "wine:source:00008:a32713a34a6fdc47",
+        "wine:source:00149:14dd637fd57987c2",
+        "wine:source:00151:8b13605607502954",
+        "wine:source:00084:b3347660f8cb9dcc",
+        "wine:source:00087:96d6ad5359fe8071",
+        "wine:source:00137:ab38b12b4be5f666",
+        "wine:source:00140:6a7895a7fa461f7a",
+        "wine:source:00045:ffbefad9f8a82560",
+        "wine:source:00055:7b33a81bb5a7bcf0",
+        "wine:source:00107:bef1dbe8ba20cd52",
+        "wine:source:00115:cf90499bc8ad7f43",
+        "wine:source:00043:18695c7d01e69582",
+        "wine:source:00145:c0349b4b10a1f35f",
+        "wine:source:00134:a669ad9c00edc017",
+        "wine:source:00033:eb83858c16686664",
+        "wine:source:00050:9cf7eadab7259ccb",
+        "wine:source:00085:bc6e686c1099f66d",
+        "wine:source:00067:486c2649a404c56e"
+      ],
+      "proposed_diagnostic_sample_ids_sha256": "e404489c99def3002862a11cdddb96ce9ac7587b68021c1d9b566496bcbafa3c",
+      "proposed_diagnostic_sample_per_class": 6,
+      "sample_selection": "unchanged select_examples(validation, labels, per_class, seed=42); demonstrations selected from train only",
+      "split_overlap_ids": 0,
+      "split_overlap_normalized_text": 0,
+      "validation_class_counts": {
+        "0": 12,
+        "1": 14,
+        "2": 10
+      },
+      "validation_content_sha256": "e78f67527ac5f3119ae407a9384af539053985a984cd708f88190e32dc9c4d05",
+      "validation_ids_sha256": "c7bab51fdd541d8b53a29ab7d4c80a6a89a5a06702f9864f16148badaaa6152b",
+      "validation_previously_used_by_some_historical_experiments": false
+    },
+    {
+      "dataset": "sst2",
+      "domain": "text",
+      "fixed_four_per_class_demonstration_ids": [
+        "sst2:train:51013:5fbdd2ed34b78690",
+        "sst2:train:30891:2aa5fe07bf6eafcc",
+        "sst2:train:58881:d9056dd7823b6948",
+        "sst2:train:55864:7d1f098ccb5347f4",
+        "sst2:train:16137:8fa5c18cdfd577ce",
+        "sst2:train:47247:b41fa1200b86a3f7",
+        "sst2:train:6462:0610b7c625898267",
+        "sst2:train:905:f71718f2be6a5792"
+      ],
+      "interpretation": "Diagnostic development data, not guaranteed globally untouched validation; retain independent future test data for confirmation.",
+      "n_remaining_validation_rows_after_diagnostic_sample": 984,
+      "n_test": 200,
+      "n_train": 10000,
+      "n_validation": 1000,
+      "proposed_diagnostic_sample_ids": [
+        "sst2:train:4846:6d9ffcab2b0df243",
+        "sst2:train:56969:e758ef1b16bf91df",
+        "sst2:train:41931:4dd06f54cf338aa6",
+        "sst2:train:33183:40311b69b1fe4982",
+        "sst2:train:5602:b36306a44e86f7a0",
+        "sst2:train:40778:103daf52e2ce7e04",
+        "sst2:train:23602:c0634107f81e6b63",
+        "sst2:train:35988:5003d41d5278da37",
+        "sst2:train:31543:46b3a0db8b0680d4",
+        "sst2:train:49137:5ebed090cc247e66",
+        "sst2:train:40330:d477d0c1a6b7e75f",
+        "sst2:train:52943:74abc8a29af7f781",
+        "sst2:train:51783:8c230fe69ca16005",
+        "sst2:train:36209:28f2bbe2154985be",
+        "sst2:train:45778:433b0624c90b5414",
+        "sst2:train:45080:2fc9bd10f8e4148b"
+      ],
+      "proposed_diagnostic_sample_ids_sha256": "e55d518bb962c78e130e4aeef4216e40f4908dec37ba10967e1f454bed2e10cc",
+      "proposed_diagnostic_sample_per_class": 8,
+      "sample_selection": "unchanged select_examples(validation, labels, per_class, seed=42); demonstrations selected from train only",
+      "split_overlap_ids": 0,
+      "split_overlap_normalized_text": 0,
+      "validation_class_counts": {
+        "0": 442,
+        "1": 558
+      },
+      "validation_content_sha256": "2dcaa947b3d6f65185dd9e599b8d7b7bdb0c32a1e6bbac490a51a4dadf0dcf58",
+      "validation_ids_sha256": "1a86ed1613dd69ad769d4965fdff09a4c59bbfbdb45042ab5e4af58fad659cec",
+      "validation_previously_used_by_some_historical_experiments": true
+    },
+    {
+      "dataset": "trec",
+      "domain": "text",
+      "fixed_four_per_class_demonstration_ids": [
+        "trec:train:4424:a0a98fa6a12484f0",
+        "trec:train:3761:5578e092675734bb",
+        "trec:train:3965:c8bfd3194a6cd81e",
+        "trec:train:2747:b01a47af03fbd321",
+        "trec:train:1864:53f0705e6ec62bb5",
+        "trec:train:3459:32a25fe82db1746c",
+        "trec:train:1042:1307f29b05360833",
+        "trec:train:3295:e8ae706d3e78c885",
+        "trec:train:1754:21bc6b04431167b1",
+        "trec:train:1903:c528d13abc62df8f",
+        "trec:train:2606:645ce16853489393",
+        "trec:train:2689:0e25ae703b007f7e",
+        "trec:train:4518:03fb88f1b1541628",
+        "trec:train:4418:f2866c2da52b770f",
+        "trec:train:1449:0ea3ad646f9d9039",
+        "trec:train:1716:4535840133884f07",
+        "trec:train:2909:8a330e77ec27462c",
+        "trec:train:3959:737381e1a1d60e8d",
+        "trec:train:3563:ab7c01e5a55ca0c4",
+        "trec:train:1620:790881dce0f25854",
+        "trec:train:307:46ba40ecdfa02b42",
+        "trec:train:30:230bfd8ec984ad4c",
+        "trec:train:2451:1e54fad193707a56",
+        "trec:train:3284:ff587ff60b79601e"
+      ],
+      "interpretation": "Diagnostic development data, not guaranteed globally untouched validation; retain independent future test data for confirmation.",
+      "n_remaining_validation_rows_after_diagnostic_sample": 521,
+      "n_test": 200,
+      "n_train": 4886,
+      "n_validation": 545,
+      "proposed_diagnostic_sample_ids": [
+        "trec:train:4104:290722a0cdb42169",
+        "trec:train:4988:04f57a7e45070d5b",
+        "trec:train:1398:a5cf12da1b00cfc1",
+        "trec:train:485:63065cb8816bb80f",
+        "trec:train:4857:f371e1d542a4ca59",
+        "trec:train:3249:3b2ee24332817791",
+        "trec:train:1640:480ce52c10059f64",
+        "trec:train:2775:429cd3e6aa696e69",
+        "trec:train:620:656a136a6ee1461f",
+        "trec:train:2403:c313f6145cb736cb",
+        "trec:train:3910:eaa97e1d06d17b9d",
+        "trec:train:4904:e8d79af3c66974ad",
+        "trec:train:3073:b5fc59a91d2ca45a",
+        "trec:train:3198:3916cc77aa25fb83",
+        "trec:train:5058:df9daf08990403dc",
+        "trec:train:4934:249ef90b2afb3360",
+        "trec:train:2737:c5540cf40f33bfcd",
+        "trec:train:3956:8b552f292d38476e",
+        "trec:train:4034:71f4ab84ade10f0c",
+        "trec:train:3843:8a185ed115d0c78c",
+        "trec:train:1915:dd994c56206aac21",
+        "trec:train:3835:9a132b71ff8be03c",
+        "trec:train:4599:b83f128ad3b1365d",
+        "trec:train:2051:88bece74eaefde57"
+      ],
+      "proposed_diagnostic_sample_ids_sha256": "a0bb5564ec980086033455c8651b9415a80d6149f859b1f5f968fd8dcd860e61",
+      "proposed_diagnostic_sample_per_class": 4,
+      "sample_selection": "unchanged select_examples(validation, labels, per_class, seed=42); demonstrations selected from train only",
+      "split_overlap_ids": 0,
+      "split_overlap_normalized_text": 0,
+      "validation_class_counts": {
+        "0": 8,
+        "1": 125,
+        "2": 116,
+        "3": 122,
+        "4": 84,
+        "5": 90
+      },
+      "validation_content_sha256": "5ccf547247b9e5b3e826aaac71f9b4f845a24587035921c956cf716b3332997a",
+      "validation_ids_sha256": "4809b2546ca912684e20c193fde058e1d153e7e25bc8dea6c2683b70a2fdb257",
+      "validation_previously_used_by_some_historical_experiments": true
+    }
+  ]
+}

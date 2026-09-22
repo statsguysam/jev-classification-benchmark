@@ -1,0 +1,9 @@
+{
+  "files_sha256": {
+    "protocol.json": "c1c94d336ad8700c1bb39b306069ca426ac22e392f588d5f967aeb03d2783992",
+    "requests.jsonl": "ae24a2a13a952bddac30f591a5d9b34559a96119c355e73e26e3c5fb5a327d60"
+  },
+  "schema_version": 1,
+  "status": "prepared_unexecuted",
+  "study": "proposal-value-controls-v1"
+}

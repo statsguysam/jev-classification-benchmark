@@ -2,6 +2,12 @@
 
 A reproducible study of **numerical tabular classification**: six language models, Jev as a bounded decision reviewer, Jev alone, and native classical machine learning. A separate text extension applies the same source → Jev review pipeline to SST-2 and TREC. Earlier broad text/tabular and LoRA experiments remain archived below.
 
+## New analysis: does the proposal add value?
+
+The [review-value analysis](results/review_value/FINDINGS.md) separates **correction of a weak source** from **value beyond Jev alone**. Across the 17 complete numerical review conditions, it reports corrected and harmed decisions and all three arms. Four eligible conditions support a fixed-coverage simulation: in both Qwen3 few-shot conditions, reviewing the least-confident half matched full-review accuracy; Qwen2.5's ranking underperformed random selection at intermediate coverage. This is an exploratory observation on cached outcomes, not a validated gate or a measured cost saving.
+
+A [controlled follow-up](docs/REVIEW_CONTROLS_PROTOCOL.md) is frozen: actual/no/shuffled proposals for 550 cases, plus 64 exact-prompt repeats (**1,714 requests planned, none executed**). Existing review matrices remain the first funded priority, and the US$25 ceiling is unchanged. The [source-scoring audit](results/review_value/SOURCE_SCORING_AUDIT.md) also identifies constant-label outputs; a separate validation-only diagnostic compares class-token scoring with class-plus-EOS scoring without changing historical test results. See [reproduction instructions](docs/REVIEW_VALUE_REPRODUCIBILITY.md) and the [interactive review-value view](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/review.html).
+
 ## Current question: bounded decisions on numerical data
 
 The focused study asks: **how does Jev perform against XGBoost and LightGBM on numerical tabular classification, and does adding Jev as a reviewer improve an LLM's proposed class?** Start with the [conclusions](results/numeric_expansion/INTERPRETATION.md), [LinkedIn draft](results/numeric_expansion/LINKEDIN_DRAFT.md), [expanded numeric-only findings](results/numeric_expansion/FINDINGS.md), [experimental protocol](docs/EXPANDED_NUMERIC_PROTOCOL.md), [machine-readable comparisons](results/numeric_expansion/COMPARISON.json), and [Colab reproduction guide](docs/EXPANDED_NUMERIC_REPRODUCTION.md).

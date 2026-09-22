@@ -1,0 +1,2475 @@
+{
+  "schema_version": 1,
+  "complete_review_conditions": 17,
+  "expected_review_conditions": 24,
+  "interpretation": "Fixed-coverage batch simulation on cached outcomes; not a learned threshold or validated deployable gate. No paid calls, confidence calibration, latency or dollar savings claim.",
+  "conditions": [
+    {
+      "dataset": "breast_cancer",
+      "source_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "shots_per_class": 0,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.37719298245614036,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.27388535031847133,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.8508771929824561,
+          "balanced_accuracy": 0.880281690140845,
+          "macro_f1": 0.8494757281553398,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "macro_f1": 0.8448950829940495,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 54,
+        "correct_to_wrong": 0,
+        "both_correct": 43,
+        "both_wrong": 17,
+        "changed_predictions": 54,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 54,
+        "accuracy_delta_pp": 47.36842105263158
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 5,
+        "correct_to_wrong": 4,
+        "both_correct": 92,
+        "both_wrong": 13,
+        "changed_predictions": 9,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 4,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 0.8771929824561403
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "shots_per_class": 4,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.6140350877192983,
+          "balanced_accuracy": 0.49295774647887325,
+          "macro_f1": 0.3804347826086957,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9369472649852604,
+          "macro_f1": 0.9349474199070678,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "macro_f1": 0.9286656770575623,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 41,
+        "correct_to_wrong": 4,
+        "both_correct": 66,
+        "both_wrong": 3,
+        "changed_predictions": 45,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 4,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 37,
+        "accuracy_delta_pp": 32.45614035087719
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 0,
+        "both_correct": 106,
+        "both_wrong": 7,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 0.8771929824561403
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": true,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": [
+        {
+          "requested_review_percent": 0,
+          "selected_rows": 0,
+          "actual_review_fraction": 0.0,
+          "metrics": {
+            "micro_accuracy": 0.6140350877192983,
+            "balanced_accuracy": 0.49295774647887325,
+            "macro_f1": 0.3804347826086957,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 0,
+            "correct_to_wrong": 0,
+            "both_correct": 70,
+            "both_wrong": 44,
+            "changed_predictions": 0,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 0,
+            "accuracy_delta_pp": 0.0
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 0,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.6140350877192983,
+            "balanced_accuracy": 0.49295774647887325,
+            "expected_fixed": 0.0,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 0.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.3804347826086957,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        },
+        {
+          "requested_review_percent": 10,
+          "selected_rows": 11,
+          "actual_review_fraction": 0.09649122807017543,
+          "metrics": {
+            "micro_accuracy": 0.6228070175438597,
+            "balanced_accuracy": 0.5,
+            "macro_f1": 0.3837837837837838,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 1,
+            "correct_to_wrong": 0,
+            "both_correct": 70,
+            "both_wrong": 43,
+            "changed_predictions": 1,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 1,
+            "accuracy_delta_pp": 0.8771929824561403
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 11,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.6453524161280394,
+            "balanced_accuracy": 0.5357988403698404,
+            "expected_fixed": 3.9561403508771926,
+            "expected_harmed": 0.38596491228070173,
+            "expected_net_fixed": 3.570175438596491,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.4669570032238558,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.0003260475183986389,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 25,
+          "selected_rows": 29,
+          "actual_review_fraction": 0.2543859649122807,
+          "metrics": {
+            "micro_accuracy": 0.631578947368421,
+            "balanced_accuracy": 0.5116279069767442,
+            "macro_f1": 0.408596837944664,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 2,
+            "correct_to_wrong": 0,
+            "both_correct": 70,
+            "both_wrong": 42,
+            "changed_predictions": 2,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 2,
+            "accuracy_delta_pp": 1.7543859649122806
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 29,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.6965989535241613,
+            "balanced_accuracy": 0.6059024485550595,
+            "expected_fixed": 10.429824561403509,
+            "expected_harmed": 1.0175438596491229,
+            "expected_net_fixed": 9.412280701754387,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.5836721123870154,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00039181307512525766,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 50,
+          "selected_rows": 57,
+          "actual_review_fraction": 0.5,
+          "metrics": {
+            "micro_accuracy": 0.7017543859649122,
+            "balanced_accuracy": 0.6046511627906976,
+            "macro_f1": 0.576486013986014,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 10,
+            "correct_to_wrong": 0,
+            "both_correct": 70,
+            "both_wrong": 34,
+            "changed_predictions": 10,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 10,
+            "accuracy_delta_pp": 8.771929824561404
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 57,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.7763157894736843,
+            "balanced_accuracy": 0.7149525057320668,
+            "expected_fixed": 20.5,
+            "expected_harmed": 2.0,
+            "expected_net_fixed": 18.5,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.7259193090397648,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.0003580425166480539,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 75,
+          "selected_rows": 86,
+          "actual_review_fraction": 0.7543859649122807,
+          "metrics": {
+            "micro_accuracy": 0.8070175438596491,
+            "balanced_accuracy": 0.7533573534228628,
+            "macro_f1": 0.7694852941176471,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 24,
+            "correct_to_wrong": 2,
+            "both_correct": 68,
+            "both_wrong": 20,
+            "changed_predictions": 26,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 2,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 22,
+            "accuracy_delta_pp": 19.29824561403509
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 86,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8588796552785473,
+            "balanced_accuracy": 0.827897207808253,
+            "expected_fixed": 30.92982456140351,
+            "expected_harmed": 3.017543859649123,
+            "expected_net_fixed": 27.912280701754387,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8413878111513706,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.0002626560121187802,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 100,
+          "selected_rows": 114,
+          "actual_review_fraction": 1.0,
+          "metrics": {
+            "micro_accuracy": 0.9385964912280702,
+            "balanced_accuracy": 0.9369472649852604,
+            "macro_f1": 0.9349474199070678,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 41,
+            "correct_to_wrong": 4,
+            "both_correct": 66,
+            "both_wrong": 3,
+            "changed_predictions": 45,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 4,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 37,
+            "accuracy_delta_pp": 32.45614035087719
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 114,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.9385964912280702,
+            "balanced_accuracy": 0.9369472649852604,
+            "expected_fixed": 41.0,
+            "expected_harmed": 4.0,
+            "expected_net_fixed": 37.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.9349474199070678,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "shots_per_class": 0,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.6140350877192983,
+          "balanced_accuracy": 0.5204716672125778,
+          "macro_f1": 0.4792358803986711,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.911562397641664,
+          "macro_f1": 0.922972972972973,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "macro_f1": 0.8448950829940495,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 38,
+        "correct_to_wrong": 2,
+        "both_correct": 68,
+        "both_wrong": 6,
+        "changed_predictions": 40,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 36,
+        "accuracy_delta_pp": 31.57894736842105
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 17,
+        "correct_to_wrong": 7,
+        "both_correct": 89,
+        "both_wrong": 1,
+        "changed_predictions": 24,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 7,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 10,
+        "accuracy_delta_pp": 8.771929824561404
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": true,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": [
+        {
+          "requested_review_percent": 0,
+          "selected_rows": 0,
+          "actual_review_fraction": 0.0,
+          "metrics": {
+            "micro_accuracy": 0.6140350877192983,
+            "balanced_accuracy": 0.5204716672125778,
+            "macro_f1": 0.4792358803986711,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 0,
+            "correct_to_wrong": 0,
+            "both_correct": 70,
+            "both_wrong": 44,
+            "changed_predictions": 0,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 0,
+            "accuracy_delta_pp": 0.0
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 0,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.6140350877192983,
+            "balanced_accuracy": 0.5204716672125778,
+            "expected_fixed": 0.0,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 0.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.4792358803986711,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        },
+        {
+          "requested_review_percent": 10,
+          "selected_rows": 11,
+          "actual_review_fraction": 0.09649122807017543,
+          "metrics": {
+            "micro_accuracy": 0.6491228070175439,
+            "balanced_accuracy": 0.5486406812970848,
+            "macro_f1": 0.5017482517482518,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 5,
+            "correct_to_wrong": 1,
+            "both_correct": 69,
+            "both_wrong": 39,
+            "changed_predictions": 6,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 1,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 4,
+            "accuracy_delta_pp": 3.508771929824561
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 11,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.6445060018467221,
+            "balanced_accuracy": 0.5582084920785422,
+            "expected_fixed": 3.6666666666666665,
+            "expected_harmed": 0.19298245614035087,
+            "expected_net_fixed": 3.4736842105263155,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.5327350434230909,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00024325227756905504,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 25,
+          "selected_rows": 29,
+          "actual_review_fraction": 0.2543859649122807,
+          "metrics": {
+            "micro_accuracy": 0.6842105263157895,
+            "balanced_accuracy": 0.5859810022928267,
+            "macro_f1": 0.5515734265734266,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 9,
+            "correct_to_wrong": 1,
+            "both_correct": 69,
+            "both_wrong": 35,
+            "changed_predictions": 10,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 1,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 8,
+            "accuracy_delta_pp": 7.017543859649122
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 29,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.6943674976915974,
+            "balanced_accuracy": 0.6199596600410295,
+            "expected_fixed": 9.666666666666668,
+            "expected_harmed": 0.5087719298245614,
+            "expected_net_fixed": 9.157894736842106,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.6129836743434608,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00032035341241227984,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 50,
+          "selected_rows": 57,
+          "actual_review_fraction": 0.5,
+          "metrics": {
+            "micro_accuracy": 0.7631578947368421,
+            "balanced_accuracy": 0.686046511627907,
+            "macro_f1": 0.6913047838732324,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 18,
+            "correct_to_wrong": 1,
+            "both_correct": 69,
+            "both_wrong": 26,
+            "changed_predictions": 19,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 1,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 17,
+            "accuracy_delta_pp": 14.912280701754385
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 57,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.7719298245614035,
+            "balanced_accuracy": 0.7160170324271209,
+            "expected_fixed": 19.0,
+            "expected_harmed": 1.0,
+            "expected_net_fixed": 18.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.7266963879976845,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.0003218906193078994,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 75,
+          "selected_rows": 86,
+          "actual_review_fraction": 0.7543859649122807,
+          "metrics": {
+            "micro_accuracy": 0.8508771929824561,
+            "balanced_accuracy": 0.8023255813953488,
+            "macro_f1": 0.8233524747060432,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 28,
+            "correct_to_wrong": 1,
+            "both_correct": 69,
+            "both_wrong": 16,
+            "changed_predictions": 29,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 1,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 27,
+            "accuracy_delta_pp": 23.68421052631579
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 86,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8522622345337028,
+            "balanced_accuracy": 0.8155050252555727,
+            "expected_fixed": 28.666666666666668,
+            "expected_harmed": 1.5087719298245614,
+            "expected_net_fixed": 27.157894736842106,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8313706784075167,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00024866434426519264,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 100,
+          "selected_rows": 114,
+          "actual_review_fraction": 1.0,
+          "metrics": {
+            "micro_accuracy": 0.9298245614035088,
+            "balanced_accuracy": 0.911562397641664,
+            "macro_f1": 0.922972972972973,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 38,
+            "correct_to_wrong": 2,
+            "both_correct": 68,
+            "both_wrong": 6,
+            "changed_predictions": 40,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 2,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 36,
+            "accuracy_delta_pp": 31.57894736842105
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 114,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.9298245614035088,
+            "balanced_accuracy": 0.911562397641664,
+            "expected_fixed": 38.0,
+            "expected_harmed": 2.0,
+            "expected_net_fixed": 36.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.922972972972973,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "shots_per_class": 4,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.8596491228070176,
+          "balanced_accuracy": 0.8873239436619718,
+          "macro_f1": 0.858076563958917,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9344906649197511,
+          "macro_f1": 0.9265700483091788,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "macro_f1": 0.9286656770575623,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 10,
+        "correct_to_wrong": 2,
+        "both_correct": 96,
+        "both_wrong": 6,
+        "changed_predictions": 12,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 8,
+        "accuracy_delta_pp": 7.017543859649122
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 2,
+        "both_correct": 104,
+        "both_wrong": 6,
+        "changed_predictions": 4,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": true,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": [
+        {
+          "requested_review_percent": 0,
+          "selected_rows": 0,
+          "actual_review_fraction": 0.0,
+          "metrics": {
+            "micro_accuracy": 0.8596491228070176,
+            "balanced_accuracy": 0.8873239436619718,
+            "macro_f1": 0.858076563958917,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 0,
+            "correct_to_wrong": 0,
+            "both_correct": 98,
+            "both_wrong": 16,
+            "changed_predictions": 0,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 0,
+            "accuracy_delta_pp": 0.0
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 0,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8596491228070176,
+            "balanced_accuracy": 0.8873239436619718,
+            "expected_fixed": 0.0,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 0.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.858076563958917,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        },
+        {
+          "requested_review_percent": 10,
+          "selected_rows": 11,
+          "actual_review_fraction": 0.09649122807017543,
+          "metrics": {
+            "micro_accuracy": 0.8947368421052632,
+            "balanced_accuracy": 0.9109073042908614,
+            "macro_f1": 0.8920454545454546,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 5,
+            "correct_to_wrong": 1,
+            "both_correct": 97,
+            "both_wrong": 11,
+            "changed_predictions": 6,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 1,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 4,
+            "accuracy_delta_pp": 3.508771929824561
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 11,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8664204370575562,
+            "balanced_accuracy": 0.8918751185201785,
+            "expected_fixed": 0.9649122807017543,
+            "expected_harmed": 0.19298245614035087,
+            "expected_net_fixed": 0.7719298245614035,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8646993383959279,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 8.820142772317324e-05,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 25,
+          "selected_rows": 29,
+          "actual_review_fraction": 0.2543859649122807,
+          "metrics": {
+            "micro_accuracy": 0.9122807017543859,
+            "balanced_accuracy": 0.9204061578774976,
+            "macro_f1": 0.9088874680306905,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 8,
+            "correct_to_wrong": 2,
+            "both_correct": 96,
+            "both_wrong": 8,
+            "changed_predictions": 10,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 2,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 6,
+            "accuracy_delta_pp": 5.2631578947368425
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 29,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8775007694675285,
+            "balanced_accuracy": 0.8993224955608805,
+            "expected_fixed": 2.5438596491228074,
+            "expected_harmed": 0.5087719298245614,
+            "expected_net_fixed": 2.0350877192982457,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8753799555871221,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00012931055981013073,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 50,
+          "selected_rows": 57,
+          "actual_review_fraction": 0.5,
+          "metrics": {
+            "micro_accuracy": 0.9298245614035088,
+            "balanced_accuracy": 0.9344906649197511,
+            "macro_f1": 0.9265700483091788,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 10,
+            "correct_to_wrong": 2,
+            "both_correct": 96,
+            "both_wrong": 6,
+            "changed_predictions": 12,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 2,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 8,
+            "accuracy_delta_pp": 7.017543859649122
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 57,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8947368421052632,
+            "balanced_accuracy": 0.9109073042908614,
+            "expected_fixed": 5.0,
+            "expected_harmed": 1.0,
+            "expected_net_fixed": 4.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8920134851885254,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.0001501385288554488,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 75,
+          "selected_rows": 86,
+          "actual_review_fraction": 0.7543859649122807,
+          "metrics": {
+            "micro_accuracy": 0.9298245614035088,
+            "balanced_accuracy": 0.9344906649197511,
+            "macro_f1": 0.9265700483091788,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 10,
+            "correct_to_wrong": 2,
+            "both_correct": 96,
+            "both_wrong": 6,
+            "changed_predictions": 12,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 2,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 8,
+            "accuracy_delta_pp": 7.017543859649122
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 86,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.9125884887657741,
+            "balanced_accuracy": 0.9229058561897702,
+            "expected_fixed": 7.543859649122807,
+            "expected_harmed": 1.5087719298245614,
+            "expected_net_fixed": 6.035087719298246,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.9094779267887164,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00013093746585289635,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 100,
+          "selected_rows": 114,
+          "actual_review_fraction": 1.0,
+          "metrics": {
+            "micro_accuracy": 0.9298245614035088,
+            "balanced_accuracy": 0.9344906649197511,
+            "macro_f1": 0.9265700483091788,
+            "n_rows": 114,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 10,
+            "correct_to_wrong": 2,
+            "both_correct": 96,
+            "both_wrong": 6,
+            "changed_predictions": 12,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 2,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 8,
+            "accuracy_delta_pp": 7.017543859649122
+          },
+          "required_inferences": {
+            "source": 114,
+            "review_api_requests": 114,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.9298245614035088,
+            "balanced_accuracy": 0.9344906649197511,
+            "expected_fixed": 10.0,
+            "expected_harmed": 2.0,
+            "expected_net_fixed": 8.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.9265700483091788,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 0,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.37719298245614036,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.27388535031847133,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.868421052631579,
+          "balanced_accuracy": 0.8897805437274812,
+          "macro_f1": 0.8661028893587033,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "macro_f1": 0.8448950829940495,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 57,
+        "correct_to_wrong": 1,
+        "both_correct": 42,
+        "both_wrong": 14,
+        "changed_predictions": 58,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 56,
+        "accuracy_delta_pp": 49.12280701754386
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 7,
+        "correct_to_wrong": 4,
+        "both_correct": 92,
+        "both_wrong": 11,
+        "changed_predictions": 11,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 4,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 3,
+        "accuracy_delta_pp": 2.6315789473684212
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "gpt-5.6-luna",
+      "shots_per_class": 0,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.7543859649122807,
+          "balanced_accuracy": 0.7982312479528333,
+          "macro_f1": 0.7543103448275862,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.8771929824561403,
+          "balanced_accuracy": 0.8922371437929906,
+          "macro_f1": 0.8740530303030303,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "macro_f1": 0.8448950829940495,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 15,
+        "correct_to_wrong": 1,
+        "both_correct": 85,
+        "both_wrong": 13,
+        "changed_predictions": 16,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 14,
+        "accuracy_delta_pp": 12.280701754385966
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 7,
+        "correct_to_wrong": 3,
+        "both_correct": 93,
+        "both_wrong": 11,
+        "changed_predictions": 10,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 3,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 4,
+        "accuracy_delta_pp": 3.508771929824561
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "gpt-5.6-luna",
+      "shots_per_class": 4,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.9122807017543859,
+          "balanced_accuracy": 0.9204061578774976,
+          "macro_f1": 0.9088874680306905,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9210526315789473,
+          "balanced_accuracy": 0.9274484113986243,
+          "macro_f1": 0.9227088402270884,
+          "n_rows": 114,
+          "n_failures": 1
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "macro_f1": 0.9286656770575623,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 2,
+        "both_correct": 102,
+        "both_wrong": 7,
+        "changed_predictions": 5,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 0.8771929824561403
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 3,
+        "both_correct": 103,
+        "both_wrong": 6,
+        "changed_predictions": 5,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -0.8771929824561403
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "gpt-6-astra",
+      "shots_per_class": 0,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.9912280701754386,
+          "balanced_accuracy": 0.9883720930232558,
+          "macro_f1": 0.99062114356232,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.956140350877193,
+          "balanced_accuracy": 0.9464461185718964,
+          "macro_f1": 0.9526381387619444,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "macro_f1": 0.8448950829940495,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 4,
+        "both_correct": 109,
+        "both_wrong": 1,
+        "changed_predictions": 4,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 4,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -4,
+        "accuracy_delta_pp": -3.508771929824561
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 17,
+        "correct_to_wrong": 4,
+        "both_correct": 92,
+        "both_wrong": 1,
+        "changed_predictions": 21,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 4,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 13,
+        "accuracy_delta_pp": 11.403508771929825
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "gpt-6-astra",
+      "shots_per_class": 4,
+      "n_rows": 114,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.9824561403508771,
+          "balanced_accuracy": 0.9767441860465116,
+          "macro_f1": 0.9811507936507937,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9369472649852604,
+          "macro_f1": 0.9383415435139573,
+          "n_rows": 114,
+          "n_failures": 1
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "macro_f1": 0.9286656770575623,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 5,
+        "both_correct": 107,
+        "both_wrong": 2,
+        "changed_predictions": 5,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 4,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": -5,
+        "accuracy_delta_pp": -4.385964912280702
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 0,
+        "both_correct": 106,
+        "both_wrong": 7,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 0.8771929824561403
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "shots_per_class": 0,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 24,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 24,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "shots_per_class": 4,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 21,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 3,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 21,
+        "accuracy_delta_pp": 58.333333333333336
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 33,
+        "both_wrong": 3,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "shots_per_class": 0,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.3888888888888889,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.18666666666666668,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.3611111111111111,
+          "balanced_accuracy": 0.35714285714285715,
+          "macro_f1": 0.2169934640522876,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 12,
+        "correct_to_wrong": 13,
+        "both_correct": 1,
+        "both_wrong": 10,
+        "changed_predictions": 33,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 13,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -2.7777777777777777
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 23,
+        "changed_predictions": 3,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 2.7777777777777777
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "shots_per_class": 4,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.8055555555555556,
+          "balanced_accuracy": 0.8214285714285715,
+          "macro_f1": 0.8087912087912087,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.8888888888888888,
+          "balanced_accuracy": 0.9007936507936508,
+          "macro_f1": 0.890746934225195,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 0,
+        "both_correct": 29,
+        "both_wrong": 4,
+        "changed_predictions": 3,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 3,
+        "accuracy_delta_pp": 8.333333333333334
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 2,
+        "both_correct": 31,
+        "both_wrong": 2,
+        "changed_predictions": 3,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -2.7777777777777777
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": true,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": [
+        {
+          "requested_review_percent": 0,
+          "selected_rows": 0,
+          "actual_review_fraction": 0.0,
+          "metrics": {
+            "micro_accuracy": 0.8055555555555556,
+            "balanced_accuracy": 0.8214285714285715,
+            "macro_f1": 0.8087912087912087,
+            "n_rows": 36,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 0,
+            "correct_to_wrong": 0,
+            "both_correct": 29,
+            "both_wrong": 7,
+            "changed_predictions": 0,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 0,
+            "accuracy_delta_pp": 0.0
+          },
+          "required_inferences": {
+            "source": 36,
+            "review_api_requests": 0,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8055555555555556,
+            "balanced_accuracy": 0.8214285714285715,
+            "expected_fixed": 0.0,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 0.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8087912087912087,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        },
+        {
+          "requested_review_percent": 10,
+          "selected_rows": 4,
+          "actual_review_fraction": 0.1111111111111111,
+          "metrics": {
+            "micro_accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.8492063492063492,
+            "macro_f1": 0.8363636363636363,
+            "n_rows": 36,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 1,
+            "correct_to_wrong": 0,
+            "both_correct": 29,
+            "both_wrong": 6,
+            "changed_predictions": 1,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 1,
+            "accuracy_delta_pp": 2.7777777777777777
+          },
+          "required_inferences": {
+            "source": 36,
+            "review_api_requests": 4,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8148148148148149,
+            "balanced_accuracy": 0.8302469135802469,
+            "expected_fixed": 0.3333333333333333,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 0.3333333333333333,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8178912141481706,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00014287224387313674,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 25,
+          "selected_rows": 9,
+          "actual_review_fraction": 0.25,
+          "metrics": {
+            "micro_accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.8492063492063492,
+            "macro_f1": 0.8363636363636363,
+            "n_rows": 36,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 1,
+            "correct_to_wrong": 0,
+            "both_correct": 29,
+            "both_wrong": 6,
+            "changed_predictions": 1,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 1,
+            "accuracy_delta_pp": 2.7777777777777777
+          },
+          "required_inferences": {
+            "source": 36,
+            "review_api_requests": 9,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8263888888888888,
+            "balanced_accuracy": 0.8412698412698414,
+            "expected_fixed": 0.75,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 0.75,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8289956533321751,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00019583420196716398,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 50,
+          "selected_rows": 18,
+          "actual_review_fraction": 0.5,
+          "metrics": {
+            "micro_accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9007936507936508,
+            "macro_f1": 0.890746934225195,
+            "n_rows": 36,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 3,
+            "correct_to_wrong": 0,
+            "both_correct": 29,
+            "both_wrong": 4,
+            "changed_predictions": 3,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 3,
+            "accuracy_delta_pp": 8.333333333333334
+          },
+          "required_inferences": {
+            "source": 36,
+            "review_api_requests": 18,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8472222222222222,
+            "balanced_accuracy": 0.8611111111111112,
+            "expected_fixed": 1.5,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 1.5,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8495436216923173,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.00022825357260525755,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 75,
+          "selected_rows": 27,
+          "actual_review_fraction": 0.75,
+          "metrics": {
+            "micro_accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9007936507936508,
+            "macro_f1": 0.890746934225195,
+            "n_rows": 36,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 3,
+            "correct_to_wrong": 0,
+            "both_correct": 29,
+            "both_wrong": 4,
+            "changed_predictions": 3,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 3,
+            "accuracy_delta_pp": 8.333333333333334
+          },
+          "required_inferences": {
+            "source": 36,
+            "review_api_requests": 27,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8680555555555556,
+            "balanced_accuracy": 0.8809523809523809,
+            "expected_fixed": 2.25,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 2.25,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.8699164101116276,
+            "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+            "macro_f1_monte_carlo_se": 0.0002004026257798652,
+            "samples": 10000
+          }
+        },
+        {
+          "requested_review_percent": 100,
+          "selected_rows": 36,
+          "actual_review_fraction": 1.0,
+          "metrics": {
+            "micro_accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9007936507936508,
+            "macro_f1": 0.890746934225195,
+            "n_rows": 36,
+            "n_failures": 0
+          },
+          "transitions_from_never_review": {
+            "wrong_to_correct": 3,
+            "correct_to_wrong": 0,
+            "both_correct": 29,
+            "both_wrong": 4,
+            "changed_predictions": 3,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 3,
+            "accuracy_delta_pp": 8.333333333333334
+          },
+          "required_inferences": {
+            "source": 36,
+            "review_api_requests": 36,
+            "direct_jev": 0
+          },
+          "random_matched_rate": {
+            "micro_accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9007936507936508,
+            "expected_fixed": 3.0,
+            "expected_harmed": 0.0,
+            "expected_net_fixed": 3.0,
+            "expected_failures": 0.0,
+            "linear_metrics_method": "exact uniform fixed-size subset expectation",
+            "macro_f1": 0.890746934225195,
+            "macro_f1_method": "exact endpoint",
+            "macro_f1_monte_carlo_se": 0.0,
+            "samples": 0
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "wine",
+      "source_model": "gpt-5.6-luna",
+      "shots_per_class": 0,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.4722222222222222,
+          "balanced_accuracy": 0.42063492063492064,
+          "macro_f1": 0.34511784511784516,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.3888888888888889,
+          "balanced_accuracy": 0.376984126984127,
+          "macro_f1": 0.2758057935536516,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 7,
+        "correct_to_wrong": 10,
+        "both_correct": 7,
+        "both_wrong": 12,
+        "changed_predictions": 25,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 10,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -3,
+        "accuracy_delta_pp": -8.333333333333334
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 1,
+        "both_correct": 11,
+        "both_wrong": 21,
+        "changed_predictions": 5,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 2,
+        "accuracy_delta_pp": 5.555555555555555
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "gpt-5.6-luna",
+      "shots_per_class": 4,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.8888888888888888,
+          "balanced_accuracy": 0.9047619047619048,
+          "macro_f1": 0.888888888888889,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 1,
+        "both_correct": 31,
+        "both_wrong": 2,
+        "changed_predictions": 3,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 2.7777777777777777
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 1,
+        "both_correct": 32,
+        "both_wrong": 2,
+        "changed_predictions": 2,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "gpt-6-astra",
+      "shots_per_class": 0,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.4444444444444444,
+          "balanced_accuracy": 0.42857142857142855,
+          "macro_f1": 0.32996632996632996,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 20,
+        "both_correct": 16,
+        "both_wrong": 0,
+        "changed_predictions": 20,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 20,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -20,
+        "accuracy_delta_pp": -55.55555555555556
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 4,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 20,
+        "changed_predictions": 4,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 4,
+        "accuracy_delta_pp": 11.11111111111111
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "gpt-6-astra",
+      "shots_per_class": 4,
+      "n_rows": 36,
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.9722222222222222,
+          "balanced_accuracy": 0.9761904761904763,
+          "macro_f1": 0.9876543209876543,
+          "n_rows": 36,
+          "n_failures": 1
+        },
+        "always_review": {
+          "micro_accuracy": 0.9444444444444444,
+          "balanced_accuracy": 0.9523809523809524,
+          "macro_f1": 0.9584859584859585,
+          "n_rows": 36,
+          "n_failures": 1
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 1,
+        "both_correct": 34,
+        "both_wrong": 1,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -2.7777777777777777
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 1,
+        "both_correct": 32,
+        "both_wrong": 1,
+        "changed_predictions": 3,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 2.7777777777777777
+      },
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 35,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "curve": null
+    }
+  ],
+  "pending_conditions": [
+    {
+      "dataset": "breast_cancer",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "wine",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 4
+    },
+    {
+      "dataset": "wine",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 0
+    },
+    {
+      "dataset": "wine",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 4
+    }
+  ],
+  "identical_prompts": {
+    "same_label_identical_prompt_rows": 1260,
+    "both_valid_rows": 1255,
+    "valid_output_disagreements": 41,
+    "rows_with_either_review_failure": 5
+  },
+  "controls": {
+    "planned_cases": 550,
+    "planned_primary_requests": 1650,
+    "planned_repeats": 64,
+    "runs": [
+      {
+        "dataset": "breast_cancer",
+        "arm": "actual",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "breast_cancer",
+        "arm": "no_proposal",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "breast_cancer",
+        "arm": "shuffled",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "sst2",
+        "arm": "actual",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "sst2",
+        "arm": "no_proposal",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "sst2",
+        "arm": "shuffled",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "trec",
+        "arm": "actual",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "trec",
+        "arm": "no_proposal",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "trec",
+        "arm": "shuffled",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "wine",
+        "arm": "actual",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "wine",
+        "arm": "no_proposal",
+        "status": "pending",
+        "metrics": null
+      },
+      {
+        "dataset": "wine",
+        "arm": "shuffled",
+        "status": "pending",
+        "metrics": null
+      }
+    ]
+  }
+}
