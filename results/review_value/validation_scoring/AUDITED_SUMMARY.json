@@ -1,0 +1,316 @@
+{
+  "conditions": [
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "n_failures": 0,
+          "n_rows": 16
+        },
+        "label_plus_eos": {
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "n_failures": 0,
+          "n_rows": 16
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          16,
+          0
+        ],
+        "label_plus_eos": [
+          16,
+          0
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "n_failures": 0,
+          "n_rows": 16
+        },
+        "label_plus_eos": {
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "n_failures": 0,
+          "n_rows": 16
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          16,
+          0
+        ],
+        "label_plus_eos": [
+          16,
+          0
+        ]
+      },
+      "shots_per_class": 4
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          18,
+          0,
+          0
+        ],
+        "label_plus_eos": [
+          18,
+          0,
+          0
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          18,
+          0,
+          0
+        ],
+        "label_plus_eos": [
+          18,
+          0,
+          0
+        ]
+      },
+      "shots_per_class": 4
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "n_failures": 0,
+          "n_rows": 16
+        },
+        "label_plus_eos": {
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "n_failures": 0,
+          "n_rows": 16
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          16,
+          0
+        ],
+        "label_plus_eos": [
+          16,
+          0
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.6875,
+          "balanced_accuracy": 0.6875,
+          "macro_f1": 0.6536796536796536,
+          "n_failures": 0,
+          "n_rows": 16
+        },
+        "label_plus_eos": {
+          "accuracy": 0.6875,
+          "balanced_accuracy": 0.6875,
+          "macro_f1": 0.6536796536796536,
+          "n_failures": 0,
+          "n_rows": 16
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          13,
+          3
+        ],
+        "label_plus_eos": [
+          13,
+          3
+        ]
+      },
+      "shots_per_class": 4
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          0,
+          0,
+          18
+        ],
+        "label_plus_eos": [
+          0,
+          0,
+          18
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_failures": 0,
+          "n_rows": 18
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          18,
+          0,
+          0
+        ],
+        "label_plus_eos": [
+          18,
+          0,
+          0
+        ]
+      },
+      "shots_per_class": 4
+    }
+  ],
+  "confidence_gate_fitted": false,
+  "interpretation": "Exploratory balanced validation diagnostic; compare scoring rules within the same selected rows.",
+  "latency_measurement_status": "not_measured",
+  "method_selected": false,
+  "n_contexts": 136,
+  "n_distinct_validation_rows": 34,
+  "n_paired_decisions": 272,
+  "provenance": {
+    "auditor_sha256": "ba3ad9729eb239b01f7b7b6516a0602b1aac2f533c102043781565c350ceb732",
+    "frozen_renderer_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+    "inference_packages": {
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "predictions_sha256": "dea6a72083a504c0c88172e5b4b6341f10fb320d9014529d75e5fb5ba39ebe12",
+    "producer_sha256": "51a5d69a6e5a7eda7ca9f334fd638d9b72443936ef780ba7494d93db7dafdb97",
+    "protocol_sha256": "12f2712810562c3481f90894eb0fe4569a999e619ccf0a59ce4f5eba26182f30",
+    "raw_summary_sha256": "1128e3ce76e602d2b11b4e4e686d21c9c65486cb534f00b70d22977b6954960f"
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "test_results_changed": false
+}

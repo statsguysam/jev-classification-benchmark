@@ -14,6 +14,10 @@ The defensible contribution is an evaluation question: **does a reviewer improve
 
 All accuracy values are within-condition micro accuracy. Breast Cancer has 114 test cases and Wine 36, from one split. Examples are selected from training only. The machine reports also provide balanced accuracy and macro-F1. The existing numerical dashboard reports paired intervals; these repeated model comparisons are not independent replications. Numerical review is currently complete for 17/24 conditions. Incomplete conditions are not scored. Text has source, direct-Jev and classical results, but no completed source-to-Jev reviews.
 
+## Sensitivity to the eligibility rule
+
+The main four-curve analysis excludes sources with constant predicted labels. That is a post-hoc scope choice, not a mathematical reason their scores cannot rank rows. The [sensitivity appendix](../review_value_sensitivity/FINDINGS.md) includes all nine completed local-model conditions with probability vectors, adding all five constant-label conditions and publishing every coverage point. Their maximum scores vary despite constant predicted classes. Among those five added conditions, one is above the matched random accuracy expectation at every intermediate coverage, two are below, one is mixed and one is tied. These are dependent descriptive comparisons, not independent wins and losses or evidence for a universal gate. The original two Qwen3 few-shot half/full equalities are unchanged.
+
 ## The experiment that can strengthen the explanation
 
 The follow-up freezes 550 cases and compares three **otherwise identical** reviewer prompts: the real Qwen3 few-shot proposal, no proposal, and a shuffled proposal. Shuffling preserves the marginal class counts and uses no test labels. Sixty-four exact repeated no-proposal calls assess serving variability separately. Together: 1,714 planned requests, **zero executed** in this snapshot.
@@ -33,7 +37,9 @@ No paid outcomes are assumed. Existing unfinished reviews take priority and all 
 
 The source audit found constant predictions in 11/16 numerical open-model conditions and 3/16 text conditions. Local source scores normalize the joint likelihood of a numeric class ID and an end-of-sequence token. These are not calibrated probabilities of correctness. High score concentration therefore cannot be treated as proof of a confident, capable classifier.
 
-A separate validation-only diagnostic compares class-ID-only and class-ID-plus-EOS scores from the same forward pass for SmolLM2 and Granite. It uses 34 validation cases, two shot settings and two models, and never changes the historical test results. Its final report belongs in `validation_scoring/SUMMARY.json`; incomplete execution is not a finding. Even a difference there would not establish which method generalizes best without a separate evaluation.
+The completed [validation-only diagnostic](validation_scoring/AUDITED_FINDINGS.md) compares class-ID-only and class-ID-plus-EOS scores from the same forward pass per candidate for SmolLM2 and Granite. Removing EOS changed **0 of 136 class decisions** on 34 distinct validation cases reused across two models and two shot settings. Seven of eight conditions remained constant-class. This does not support EOS alone as the explanation for collapse on these selected examples; it does not prove that scoring format, prompts or free generation are interchangeable. Probability vectors can still differ even when the selected class does not.
+
+These validation samples are balanced (16 Breast Cancer, 18 Wine), so their absolute accuracies must not be compared directly with earlier test accuracies under different class prevalence. The 34 labels add a diagnostic development budget. No historical test prediction, scoring method or gate was selected or changed. The audited report excludes unmeasured latency fields; the raw evaluator's zero timing placeholders are preserved and explicitly identified as unmeasured.
 
 ## Position relative to prior work
 

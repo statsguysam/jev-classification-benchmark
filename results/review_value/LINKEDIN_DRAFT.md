@@ -2,13 +2,13 @@ I started with a simple question: does adding Jev improve an LLM's classificatio
 
 The more useful question turned out to be: **does the first LLM add anything?**
 
-I compared LLMs alone, Jev alone, LLM proposals reviewed by Jev, and classical ML on the same held-out rows.
+I compared LLMs alone, Jev alone, LLM proposals reviewed by Jev, and classical ML on the same held-out rows, using fixed prompts and scoring rules.
 
 One result made me rethink the comparison:
 
 On Wine, Qwen2.5 0.5B improved from 33.3% to 91.7% after Jev review, using four examples per class. A huge gain—but all 36 final labels were identical to Jev alone.
 
-That demonstrates a rescue of a weak source. It doesn't demonstrate that we needed two models.
+That demonstrates a rescue of a weak first-stage result. It doesn't demonstrate that we needed two models.
 
 Review could also hurt: a zero-shot frontier-model run went from 36/36 correct to 16/36 after Jev review, with no review API failures.
 

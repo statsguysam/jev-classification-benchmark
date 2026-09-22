@@ -1,0 +1,2763 @@
+{
+  "conditions": [
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.5,
+          "average_precision": 0.5643044455544456,
+          "balanced_accuracy": 0.5,
+          "brier_sum": 0.5542148071526336,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.16710931635901316,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 0.7505623197267876,
+          "macro_f1": 0.3333333333333333,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.6666666666666666,
+              "label": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 1,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 9,
+              "count": 8,
+              "mean_confidence": 0.6614671242914445
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 10,
+              "count": 8,
+              "mean_confidence": 0.6727515084265818
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "roc_auc": 0.546875,
+          "valid_response_accuracy": 0.5,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.5,
+          "average_precision": 0.6727640415140416,
+          "balanced_accuracy": 0.5,
+          "brier_sum": 0.5623305142890076,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.17960870712862712,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 0.7597539727633709,
+          "macro_f1": 0.3333333333333333,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.6666666666666666,
+              "label": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 1,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 9,
+              "count": 1,
+              "mean_confidence": 0.6665679279973938
+            },
+            {
+              "accuracy": 0.5333333333333333,
+              "bin": 10,
+              "count": 15,
+              "mean_confidence": 0.6804780924040427
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "roc_auc": 0.609375,
+          "valid_response_accuracy": 0.5,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          16,
+          0
+        ],
+        "label_plus_eos": [
+          16,
+          0
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.5,
+          "average_precision": 0.4890151515151515,
+          "balanced_accuracy": 0.5,
+          "brier_sum": 0.5027862424768392,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.03605741272974801,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 0.6959286875068178,
+          "macro_f1": 0.3333333333333333,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.6666666666666666,
+              "label": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 1,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 7,
+              "count": 6,
+              "mean_confidence": 0.5266655773991774
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 8,
+              "count": 10,
+              "mean_confidence": 0.5416925139280904
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "roc_auc": 0.4921875,
+          "valid_response_accuracy": 0.5,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.5,
+          "average_precision": 0.47982711732711736,
+          "balanced_accuracy": 0.5,
+          "brier_sum": 0.5045776255991686,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.1046580483773305,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 0.6977309533685314,
+          "macro_f1": 0.3333333333333333,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.6666666666666666,
+              "label": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 1,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 1.0,
+              "bin": 7,
+              "count": 1,
+              "mean_confidence": 0.5292843913830302
+            },
+            {
+              "accuracy": 0.4666666666666667,
+              "bin": 8,
+              "count": 15,
+              "mean_confidence": 0.5469208776946879
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "roc_auc": 0.46875,
+          "valid_response_accuracy": 0.5,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          16,
+          0
+        ],
+        "label_plus_eos": [
+          16,
+          0
+        ]
+      },
+      "shots_per_class": 4
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 0.6682314436504284,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.23618234082641454,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 1.101480407391736,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.5,
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 8,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.21428571428571427,
+              "bin": 6,
+              "count": 14,
+              "mean_confidence": 0.4458807788225704
+            },
+            {
+              "accuracy": 0.75,
+              "bin": 7,
+              "count": 4,
+              "mean_confidence": 0.49776219216013096
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 0.6702711385698055,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.1347849878470249,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 1.1039847515990764,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.5,
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 6,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.25,
+              "bin": 6,
+              "count": 12,
+              "mean_confidence": 0.44933757283884185
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 7,
+              "count": 6,
+              "mean_confidence": 0.494320182136609
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          18,
+          0,
+          0
+        ],
+        "label_plus_eos": [
+          18,
+          0,
+          0
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 0.7786309949509088,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.25037934635203807,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 1.2505512866165995,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.5,
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 5,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.4,
+              "bin": 8,
+              "count": 15,
+              "mean_confidence": 0.5796243280167074
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 9,
+              "count": 3,
+              "mean_confidence": 0.6041544380286915
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 0.7864689384473061,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.2812849230142642,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 1.2612987600121752,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.5,
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 4,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.6,
+              "bin": 8,
+              "count": 10,
+              "mean_confidence": 0.5809012029987646
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 9,
+              "count": 8,
+              "mean_confidence": 0.6090175805305502
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "smollm2",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          18,
+          0,
+          0
+        ],
+        "label_plus_eos": [
+          18,
+          0,
+          0
+        ]
+      },
+      "shots_per_class": 4
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.5,
+          "average_precision": 0.6406565656565657,
+          "balanced_accuracy": 0.5,
+          "brier_sum": 0.99905235389081,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.4995703541584273,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 3.8568750698738605,
+          "macro_f1": 0.3333333333333333,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.6666666666666666,
+              "label": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 9,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 14,
+              "count": 16,
+              "mean_confidence": 0.9995703541584273
+            }
+          ],
+          "roc_auc": 0.625,
+          "valid_response_accuracy": 0.5,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.5,
+          "average_precision": 0.6406565656565657,
+          "balanced_accuracy": 0.5,
+          "brier_sum": 0.9990702968053704,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.4995776387160362,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 3.866347001815484,
+          "macro_f1": 0.3333333333333333,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.6666666666666666,
+              "label": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 5,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.5,
+              "bin": 14,
+              "count": 16,
+              "mean_confidence": 0.9995776387160362
+            }
+          ],
+          "roc_auc": 0.625,
+          "valid_response_accuracy": 0.5,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          16,
+          0
+        ],
+        "label_plus_eos": [
+          16,
+          0
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "breast_cancer",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.6875,
+          "average_precision": 0.9305555555555556,
+          "balanced_accuracy": 0.6875,
+          "brier_sum": 0.4292937174389141,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.28169973787198216,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 0.8413347132247073,
+          "macro_f1": 0.6536796536796536,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.7619047619047619,
+              "label": 0,
+              "precision": 0.6153846153846154,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.5454545454545454,
+              "label": 1,
+              "precision": 1.0,
+              "recall": 0.375,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 5,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 7,
+              "count": 1,
+              "mean_confidence": 0.519521321952093
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 1.0,
+              "bin": 9,
+              "count": 1,
+              "mean_confidence": 0.6076631627277604
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 10,
+              "count": 2,
+              "mean_confidence": 0.7089244035607086
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 1.0,
+              "bin": 12,
+              "count": 2,
+              "mean_confidence": 0.8537403185970416
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.8,
+              "bin": 14,
+              "count": 10,
+              "mean_confidence": 0.9884969476800048
+            }
+          ],
+          "roc_auc": 0.90625,
+          "valid_response_accuracy": 0.6875,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.6875,
+          "average_precision": 0.9305555555555556,
+          "balanced_accuracy": 0.6875,
+          "brier_sum": 0.4293081612461824,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              5,
+              3,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.28170775477586557,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 0.8413981202643654,
+          "macro_f1": 0.6536796536796536,
+          "n_classes": 2,
+          "n_failures": 0,
+          "n_probability_rows": 16,
+          "n_test": 16,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.7619047619047619,
+              "label": 0,
+              "precision": 0.6153846153846154,
+              "recall": 1.0,
+              "support": 8
+            },
+            {
+              "f1": 0.5454545454545454,
+              "label": 1,
+              "precision": 1.0,
+              "recall": 0.375,
+              "support": 8
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 5,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 7,
+              "count": 1,
+              "mean_confidence": 0.5195505729118222
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 1.0,
+              "bin": 9,
+              "count": 1,
+              "mean_confidence": 0.6076490092158509
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 10,
+              "count": 2,
+              "mean_confidence": 0.7089440144847343
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 1.0,
+              "bin": 12,
+              "count": 2,
+              "mean_confidence": 0.8537343196830103
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.8,
+              "bin": 14,
+              "count": 10,
+              "mean_confidence": 0.988500312311443
+            }
+          ],
+          "roc_auc": 0.90625,
+          "valid_response_accuracy": 0.6875,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 16,
+      "predicted_class_counts": {
+        "label_only": [
+          13,
+          3
+        ],
+        "label_plus_eos": [
+          13,
+          3
+        ]
+      },
+      "shots_per_class": 4
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 1.2934747720553095,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.6438500726216552,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 3.1628698029931988,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.0,
+              "label": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.5,
+              "label": 2,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 3,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.3333333333333333,
+              "bin": 14,
+              "count": 18,
+              "mean_confidence": 0.9771834059549884
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 1.2937433944052694,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.6439950644959613,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 3.1699413668868726,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.0,
+              "label": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.5,
+              "label": 2,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 7,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 9,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.3333333333333333,
+              "bin": 14,
+              "count": 18,
+              "mean_confidence": 0.9773283978292946
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          0,
+          0,
+          18
+        ],
+        "label_plus_eos": [
+          0,
+          0,
+          18
+        ]
+      },
+      "shots_per_class": 0
+    },
+    {
+      "class_decisions_changed": 0,
+      "dataset": "wine",
+      "label_only_corrected_joint_errors": 0,
+      "label_only_harmed_joint_correct": 0,
+      "metrics": {
+        "label_only": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 1.18791083299854,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.6110994985356182,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 2.751802362753958,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.5,
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 6,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 9,
+              "count": 1,
+              "mean_confidence": 0.614186979728184
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 13,
+              "count": 3,
+              "mean_confidence": 0.8954037131508136
+            },
+            {
+              "accuracy": 0.42857142857142855,
+              "bin": 14,
+              "count": 14,
+              "mean_confidence": 0.978528061032893
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        },
+        "label_plus_eos": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "brier_sum": 1.1884684409268265,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "confusion_matrix": [
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "ece_15_equal_width": 0.6113402493375343,
+          "failure_rate": 0.0,
+          "input_tokens": null,
+          "input_tokens_coverage": 0.0,
+          "input_tokens_known_total": 0,
+          "latency_p50_s": 0.0,
+          "latency_p95_s": 0.0,
+          "log_loss": 2.760891443428944,
+          "macro_f1": 0.16666666666666666,
+          "n_classes": 3,
+          "n_failures": 0,
+          "n_probability_rows": 18,
+          "n_test": 18,
+          "output_tokens": null,
+          "output_tokens_coverage": 0.0,
+          "output_tokens_known_total": 0,
+          "per_class": [
+            {
+              "f1": 0.5,
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            },
+            {
+              "f1": 0.0,
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 6
+            }
+          ],
+          "prediction_time_s": 0.0,
+          "probability_coverage": 1.0,
+          "probability_renormalized_rows": 3,
+          "reliability_bins": [
+            {
+              "accuracy": null,
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 8,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 9,
+              "count": 1,
+              "mean_confidence": 0.6153399690008059
+            },
+            {
+              "accuracy": null,
+              "bin": 10,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": null,
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null
+            },
+            {
+              "accuracy": 0.0,
+              "bin": 13,
+              "count": 3,
+              "mean_confidence": 0.8959551416409087
+            },
+            {
+              "accuracy": 0.42857142857142855,
+              "bin": 14,
+              "count": 14,
+              "mean_confidence": 0.9786370781537203
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "zero_true_class_probability_rows": 0
+        }
+      },
+      "model_key": "granite",
+      "n_validation": 18,
+      "predicted_class_counts": {
+        "label_only": [
+          18,
+          0,
+          0
+        ],
+        "label_plus_eos": [
+          18,
+          0,
+          0
+        ]
+      },
+      "shots_per_class": 4
+    }
+  ],
+  "confidence_gate_fitted": false,
+  "method_selected": false,
+  "n_contexts": 136,
+  "prediction_sha256": "dea6a72083a504c0c88172e5b4b6341f10fb320d9014529d75e5fb5ba39ebe12",
+  "protocol_sha256": "12f2712810562c3481f90894eb0fe4569a999e619ccf0a59ce4f5eba26182f30",
+  "status": "complete",
+  "test_results_changed": false
+}

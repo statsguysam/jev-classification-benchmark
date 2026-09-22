@@ -54,3 +54,21 @@ python scripts/plot_review_value.py
 ```
 
 The exporter copies explicit aggregate fields only: no prompts, row IDs, source inputs or API credentials. The figure includes every eligible condition, not only the two encouraging curves, and writes its source/data hashes alongside PNG and SVG outputs. Rendering uses the saved audited dashboard snapshot and makes no model calls. The report, figure and LinkedIn draft distinguish measured results, retrospective simulations and unexecuted controls.
+
+## Constant-label sensitivity appendix
+
+Run `python scripts/analyze_review_sensitivity.py` to regenerate the separate nine-condition appendix. It changes only the primary analysis's constant-label exclusion, preserves the same six coverage points and random reference, and verifies the four original curves and every full-review endpoint. It sends no model calls and does not modify the primary dashboard or report. All nine conditions are reported; no winning coverage is selected.
+
+## Completed validation scoring diagnostic
+
+The [audited findings](../results/review_value/validation_scoring/AUDITED_FINDINGS.md) compare ID-only and ID+EOS scoring on 34 distinct balanced validation cases, two models and two shot settings. All 136 contexts completed locally on MPS without APIs or downloads; no class decisions changed. This is a separate diagnostic development sample, not new test performance.
+
+Reaudit the stored results without models, tokenizers or a GPU:
+
+```bash
+python scripts/audit_validation_scoring_ablation.py --output results/review_value/validation_scoring
+```
+
+The auditor verifies the complete ordered predictions, frozen protocol and producer hashes, numerical decomposition, metrics and raw summary before writing separate `AUDITED_SUMMARY.json` and `AUDITED_FINDINGS.md`. Inference package versions remain bound to the original protocol; the auditor can run on a different CPU environment and must still reproduce the saved classification metrics exactly. Numeric latency fields are omitted because they were not measured.
+
+The original inference runner remains an MPS/cache-only frozen diagnostic: `python scripts/run_validation_scoring_ablation.py` shows a read-only plan; `--freeze` creates a new protocol only where absent; `--execute` audits the existing frozen protocol and uses the exact cached snapshots. Preserve the published completed folder. A different device or recipe requires a separately declared experiment, not an overwrite or a replacement test score. The broader text and free-generation ablations mentioned in the earlier source audit were proposals and were not executed here.

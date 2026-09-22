@@ -25,6 +25,13 @@ jobs:
           HF_HUB_OFFLINE: '1'
           TRANSFORMERS_OFFLINE: '1'
         run: python scripts/restore_review_controls_payload.py
+      - name: Reaudit completed validation scoring diagnostic without model loading
+        env:
+          HF_HUB_OFFLINE: '1'
+          TRANSFORMERS_OFFLINE: '1'
+        run: |
+          python scripts/audit_validation_scoring_ablation.py
+          git diff --exit-code -- results/review_value/validation_scoring/AUDITED_SUMMARY.json results/review_value/validation_scoring/AUDITED_FINDINGS.md
       - name: Base tests (neural-only tests skip without optional dependencies)
         env:
           HF_HUB_OFFLINE: '1'

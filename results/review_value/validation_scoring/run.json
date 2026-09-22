@@ -1,0 +1,10 @@
+{
+  "device": "mps",
+  "dtype": "float16",
+  "n_completed": 136,
+  "n_expected": 136,
+  "prediction_sha256": "dea6a72083a504c0c88172e5b4b6341f10fb320d9014529d75e5fb5ba39ebe12",
+  "protocol_sha256": "12f2712810562c3481f90894eb0fe4569a999e619ccf0a59ce4f5eba26182f30",
+  "status": "complete",
+  "torch_version": "2.14.0"
+}
