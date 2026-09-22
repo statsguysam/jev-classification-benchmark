@@ -1,0 +1,70 @@
+{
+  "jev": {
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "api_key_env": "TYPESAFE_API_KEY"
+  },
+  "openai_economical": {
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "api_key_env": "OPENAI_API_KEY",
+    "max_output_tokens": 256
+  },
+  "openai_frontier": {
+    "provider": "openai",
+    "model": "gpt-6-astra",
+    "api_key_env": "OPENAI_API_KEY",
+    "max_output_tokens": 1024
+  },
+  "anthropic": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-5",
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "max_output_tokens": 64
+  },
+  "gemini": {
+    "provider": "gemini",
+    "model": "gemini-3.8-flash",
+    "api_key_env": "GEMINI_API_KEY",
+    "max_output_tokens": 256
+  },
+  "qwen_small": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "qwen_main": {
+    "provider": "hf",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "qwen_lora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "adapter_path": "models/qwen3-4b-sst2-k4-s42",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "local_vllm": {
+    "provider": "openai_compatible",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "api_key_env": null,
+    "local": true,
+    "max_output_tokens": 16,
+    "token_limit_parameter": "max_tokens"
+  },
+  "qwen_small_lora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_path": "models/qwen05-sst2-k4-s42"
+  }
+}

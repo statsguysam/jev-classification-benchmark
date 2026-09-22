@@ -1,0 +1,231 @@
+{
+  "runs": 32,
+  "test_requests_upper_bound": 6400,
+  "request_cap_is_not_a_dollar_limit": true,
+  "jobs": [
+    {
+      "dataset": "sst2",
+      "model_key": "jev",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "jev",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "openai_economical",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "openai_economical",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "anthropic",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "anthropic",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "gemini",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "sst2",
+      "model_key": "gemini",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "jev",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "jev",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "openai_economical",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "openai_economical",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "anthropic",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "anthropic",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "gemini",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "imdb",
+      "model_key": "gemini",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "jev",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "jev",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "openai_economical",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "openai_economical",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "anthropic",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "anthropic",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "gemini",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "ag_news",
+      "model_key": "gemini",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "jev",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "jev",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "openai_economical",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "openai_economical",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "anthropic",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "anthropic",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "gemini",
+      "shots_per_class": 0,
+      "seed": 42,
+      "test_requests": 200
+    },
+    {
+      "dataset": "trec",
+      "model_key": "gemini",
+      "shots_per_class": 4,
+      "seed": 42,
+      "test_requests": 200
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "qwen_small": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "qwen_small_lora": {
+    "provider": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "device": "auto",
+    "max_context_tokens": 8192,
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_path": "models/qwen05-trec-k4-s42"
+  }
+}

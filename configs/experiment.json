@@ -1,0 +1,15 @@
+{
+  "protocol_version": "1.0",
+  "split_seed": 42,
+  "selection_seeds": [13, 42, 87],
+  "core_datasets": ["sst2", "imdb", "ag_news", "trec"],
+  "extended_datasets": ["banking77"],
+  "shots_per_class": [0, 1, 4, 8],
+  "matched_training_per_class": [1, 4, 8],
+  "max_text_chars": 2000,
+  "pilot_test_limit": 200,
+  "publication_test_limit": null,
+  "bootstrap_replicates": 2000,
+  "lora": {"epochs": 3, "rank": 8, "alpha": 16, "learning_rate": 0.0002, "max_length": 2048},
+  "notes": ["This is a preregistered design, not a claim that all runs are complete.", "Matched-label runs do not use validation labels.", "Zero-shot has no demonstration sampling variation: run once per model/dataset unless measuring API nondeterminism.", "High-shot Banking77 may exceed context: record infeasible cells, never silently reduce examples."]
+}

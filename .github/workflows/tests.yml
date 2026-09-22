@@ -1,0 +1,43 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -e '.[dev]' 'nbformat>=5.10,<6'
+      - name: Base tests (neural-only tests skip without optional dependencies)
+        env:
+          HF_HUB_OFFLINE: '1'
+          TRANSFORMERS_OFFLINE: '1'
+        run: python -m pytest -q -rs
+      - name: Validate unexecuted notebook and source bundle
+        run: |
+          python - <<'PY'
+          import json
+          import runpy
+          import zipfile
+          from pathlib import Path
+          import nbformat
+
+          notebook = nbformat.read('notebooks/colab_benchmark.ipynb', as_version=4)
+          nbformat.validate(notebook)
+          assert all(c.get('id') for c in notebook.cells)
+          assert all(not c.get('outputs') and c.get('execution_count') is None for c in notebook.cells)
+          bundle = runpy.run_path('scripts/export_colab_bundle.py')['export']()
+          with zipfile.ZipFile(bundle) as archive:
+              names = archive.namelist()
+              for name in names:
+                  parts = Path(name).parts
+                  assert parts[0] == 'jev-classification-benchmark'
+                  assert not {'data', 'models', 'results', '.git', '.venv'} & set(parts[1:])
+                  assert not any(part.startswith('.env') for part in parts)
+              exported = json.loads(archive.read('jev-classification-benchmark/notebooks/colab_benchmark.ipynb'))
+              nbformat.validate(exported)
+          PY

@@ -1,0 +1,1085 @@
+{
+  "dataset": "banking77",
+  "labels": [
+    "card_arrival",
+    "card_linking",
+    "exchange_rate",
+    "card_payment_wrong_exchange_rate",
+    "extra_charge_on_statement",
+    "pending_cash_withdrawal",
+    "fiat_currency_support",
+    "card_delivery_estimate",
+    "automatic_top_up",
+    "card_not_working",
+    "exchange_via_app",
+    "lost_or_stolen_card",
+    "age_limit",
+    "pin_blocked",
+    "contactless_not_working",
+    "top_up_by_bank_transfer_charge",
+    "pending_top_up",
+    "cancel_transfer",
+    "top_up_limits",
+    "wrong_amount_of_cash_received",
+    "card_payment_fee_charged",
+    "transfer_not_received_by_recipient",
+    "supported_cards_and_currencies",
+    "getting_virtual_card",
+    "card_acceptance",
+    "top_up_reverted",
+    "balance_not_updated_after_cheque_or_cash_deposit",
+    "card_payment_not_recognised",
+    "edit_personal_details",
+    "why_verify_identity",
+    "unable_to_verify_identity",
+    "get_physical_card",
+    "visa_or_mastercard",
+    "topping_up_by_card",
+    "disposable_card_limits",
+    "compromised_card",
+    "atm_support",
+    "direct_debit_payment_not_recognised",
+    "passcode_forgotten",
+    "declined_cash_withdrawal",
+    "pending_card_payment",
+    "lost_or_stolen_phone",
+    "request_refund",
+    "declined_transfer",
+    "Refund_not_showing_up",
+    "declined_card_payment",
+    "pending_transfer",
+    "terminate_account",
+    "card_swallowed",
+    "transaction_charged_twice",
+    "verify_source_of_funds",
+    "transfer_timing",
+    "reverted_card_payment?",
+    "change_pin",
+    "beneficiary_not_allowed",
+    "transfer_fee_charged",
+    "receiving_money",
+    "failed_transfer",
+    "transfer_into_account",
+    "verify_top_up",
+    "getting_spare_card",
+    "top_up_by_cash_or_cheque",
+    "order_physical_card",
+    "virtual_card_not_working",
+    "wrong_exchange_rate_for_cash_withdrawal",
+    "get_disposable_virtual_card",
+    "top_up_failed",
+    "balance_not_updated_after_bank_transfer",
+    "cash_withdrawal_not_recognised",
+    "exchange_charge",
+    "top_up_by_card_charge",
+    "activate_my_card",
+    "cash_withdrawal_charge",
+    "card_about_to_expire",
+    "apple_pay_or_google_pay",
+    "verify_my_identity",
+    "country_support"
+  ],
+  "manifest_sha256": "d399802be74f525de389b25c921eb59b941ca439a9e6fb2b7ff33b69e1335061",
+  "rows": [
+    {
+      "id": "banking77:test:2212:0139c6c1c696bf14",
+      "label": 55,
+      "text_sha256": "5d1d41463ae321e2cfa27132138589cd98ba6ac78e02b1e39b7e529013bf4868"
+    },
+    {
+      "id": "banking77:test:1935:c434aa433ea778a7",
+      "label": 48,
+      "text_sha256": "cb3c6a89d629f670f84a56892b41f31875a1b58032da6e43bd4510e7a4bd4e9c"
+    },
+    {
+      "id": "banking77:test:169:7966f46b4bf2b46e",
+      "label": 4,
+      "text_sha256": "d1cfb5ca454bf0462230e490bc9d73287b5778983a47b6188b0c246fe1127306"
+    },
+    {
+      "id": "banking77:test:1554:b499ac85a4c4d49a",
+      "label": 38,
+      "text_sha256": "a57896852e8ca495870246993cabc15a18c67552da2b2cded5405f4ce0a60799"
+    },
+    {
+      "id": "banking77:test:350:f1f61b0048dd2155",
+      "label": 8,
+      "text_sha256": "e91a251afc1d3acf91082e920856be85fedfa4c7f0a9ea20051674699032d2ee"
+    },
+    {
+      "id": "banking77:test:1094:7382d06abfe58d92",
+      "label": 27,
+      "text_sha256": "e4404b9b9631bb55502eccc49cc2ecaacfa39238bda14259baf57e66eb304540"
+    },
+    {
+      "id": "banking77:test:195:3ae63ae95957f574",
+      "label": 4,
+      "text_sha256": "35d8a5d7705e25cd531af45eb522f1da7b880cb523d96a5972014011dd90ecea"
+    },
+    {
+      "id": "banking77:test:2523:4b4dcc9b2c87e236",
+      "label": 63,
+      "text_sha256": "b68c06000bf9365a51ce2703b9bbda49161e4db0ed160494be9ca222dff5a29e"
+    },
+    {
+      "id": "banking77:test:1458:7af1c34cad1782eb",
+      "label": 36,
+      "text_sha256": "8d52b35dd9c79b9d9ef785c6678187bd77b5e7150927309279ec7e78038722f5"
+    },
+    {
+      "id": "banking77:test:1332:75a2c3aee1f51859",
+      "label": 33,
+      "text_sha256": "847f57fcd0ad7a20b5ab0aaffb1d64a8c213122a2fda7faeb2e66b1f267ee2b0"
+    },
+    {
+      "id": "banking77:test:46:e7ee215a716be508",
+      "label": 1,
+      "text_sha256": "aa7625310dabb42fc1ecde9dfe26869c30821026b4db162bc315c0fa05d348b7"
+    },
+    {
+      "id": "banking77:test:770:131d5875747f8000",
+      "label": 19,
+      "text_sha256": "16d712fb711b6943219ac9349bc845bcbd05e667141fc24f8fb93ca642a3990a"
+    },
+    {
+      "id": "banking77:test:3068:7316f9b1fa5f895e",
+      "label": 76,
+      "text_sha256": "d5e47c305541a3a51d15a3d3d45c34fd059bcdcba4dfbfe580879fc37b5b8cd8"
+    },
+    {
+      "id": "banking77:test:133:9f6a5bee741f3716",
+      "label": 3,
+      "text_sha256": "edfda318e519d3408b207c48633d504fd0bdd409af85263355c395aadfd21e4b"
+    },
+    {
+      "id": "banking77:test:2326:50abb4ba0301e444",
+      "label": 58,
+      "text_sha256": "721377ce6539806273d4f697b46f4a1dc8ba62b33bae08cf250e7742b2b25e1b"
+    },
+    {
+      "id": "banking77:test:1786:076e3399b5cf738c",
+      "label": 44,
+      "text_sha256": "5765b816759eaa278e73f9220771dfd1ccd273b4d19470b13ee9241a6ac00ff0"
+    },
+    {
+      "id": "banking77:test:1847:345483e1dee02960",
+      "label": 46,
+      "text_sha256": "afd32890fa0c859c9f7483ecc14d620c379a1ecd6a8ae514cff3a8ef11606cdc"
+    },
+    {
+      "id": "banking77:test:899:0a49f7338ab69c96",
+      "label": 22,
+      "text_sha256": "40e2ac6b39bce0f206e8e05fc867405fb46ce2c24bdc02ea117690239f6cc543"
+    },
+    {
+      "id": "banking77:test:1747:3919d6d1a4c37195",
+      "label": 43,
+      "text_sha256": "3c489c9a7f2e4e518b4bd962db1f45b1a4d66f76b51d6b2944d9df518fd0a165"
+    },
+    {
+      "id": "banking77:test:1791:ec4480a327fe7d93",
+      "label": 44,
+      "text_sha256": "5d278a14ba71ea89e0c95c2132baaf4c9980b8458e83900a646c7c745e7e5324"
+    },
+    {
+      "id": "banking77:test:1787:f331d0280a3ca1eb",
+      "label": 44,
+      "text_sha256": "ebd00fa185eb0df2ed922dfcef0c483c019cfc024bfc5a6383c8a12fae2b889f"
+    },
+    {
+      "id": "banking77:test:915:f2d11bb5df4868de",
+      "label": 22,
+      "text_sha256": "c18b6ec3d65c35c69f2448ac7f941fbd863f084c45ea6eee7afb9757bf38f45d"
+    },
+    {
+      "id": "banking77:test:2795:5fa9d0464bc4dc2f",
+      "label": 69,
+      "text_sha256": "ef941c653279fd67349ede60f6c8a8f65fddf383fde004f5cd94db2532ede51f"
+    },
+    {
+      "id": "banking77:test:2650:3e430cd1bc0e1c22",
+      "label": 66,
+      "text_sha256": "7184657e3a8009b8d78532a7df152c759ce2e5b5d5f9954cd9f30dfff1189421"
+    },
+    {
+      "id": "banking77:test:2242:5f463ad3f578f997",
+      "label": 56,
+      "text_sha256": "d2d1c5c481a003e9e2eb1f5df92b5be03fe4b2279efc30abfb9a50366573ebf2"
+    },
+    {
+      "id": "banking77:test:1266:1fdecbb54e3a50a5",
+      "label": 31,
+      "text_sha256": "96c3b5c685a11e29f3e62a1705300df871e4da3111aa2cc136efff3f96091351"
+    },
+    {
+      "id": "banking77:test:1429:1f132017f23942b6",
+      "label": 35,
+      "text_sha256": "16895348f8b4938a6587ce76a65d27bb70afdca7a4dacef7bd2591a965482c70"
+    },
+    {
+      "id": "banking77:test:293:0a9240dc7daa3a9e",
+      "label": 7,
+      "text_sha256": "24c957616da05fcec2407e49fb5746c32fb7dcb30239b3fd4ace2f674a1bb9de"
+    },
+    {
+      "id": "banking77:test:2083:2257df847d308cca",
+      "label": 52,
+      "text_sha256": "fc18e6f4151c9af8d3c1175b7e6974ea35148e05382cd466969561dbf7ecd971"
+    },
+    {
+      "id": "banking77:test:2172:21b66b47e1e4847c",
+      "label": 54,
+      "text_sha256": "017cd9605738df021bf3dca2d7ae3db2206ce893e1d0ad4761530dcf0285c72a"
+    },
+    {
+      "id": "banking77:test:2858:805e39e7951ffdb9",
+      "label": 71,
+      "text_sha256": "66ab72732ef6b138e34f4974e3b1782b67b186297e9d34875222160bdbf01d92"
+    },
+    {
+      "id": "banking77:test:5:cd49b64fb938c153",
+      "label": 0,
+      "text_sha256": "bac3a30aec6ad4d8d91ab1d9e17fc8fe2c103560f9ffffc699d51f3f4a734587"
+    },
+    {
+      "id": "banking77:test:1061:f90bbddd3c795de0",
+      "label": 26,
+      "text_sha256": "c1e20b854658f2dbfee202ca501282c94618fc29f8dd8436ed431a388a22b5b3"
+    },
+    {
+      "id": "banking77:test:1418:67a70408b2063efd",
+      "label": 35,
+      "text_sha256": "cbc169911d3758cd6653cd696fa41429db3d71ad449c96aeba6ec319d0e5cbeb"
+    },
+    {
+      "id": "banking77:test:83:b032bd49e6923eb5",
+      "label": 2,
+      "text_sha256": "837957676330dd48a97a527b51c90e91b21d5b0aa5fd4ccc622361eb11796d8a"
+    },
+    {
+      "id": "banking77:test:1508:43193954ca8a04e1",
+      "label": 37,
+      "text_sha256": "ebc031fec73238886934379bb3dfc2508fd987250c79c0e19f4c2df1907e13fd"
+    },
+    {
+      "id": "banking77:test:206:fe2864c85401976f",
+      "label": 5,
+      "text_sha256": "e57148d458b4c6f99da39739d603f9a33266189c3aa254c2b7ff651c2cf0cf21"
+    },
+    {
+      "id": "banking77:test:2803:a830ff10cd84517e",
+      "label": 70,
+      "text_sha256": "2bcc53e8b2620f696d1988ed07095eae4cf76ead5937134c9539776ac6c0eb4a"
+    },
+    {
+      "id": "banking77:test:2259:4deb8cb909eab3eb",
+      "label": 56,
+      "text_sha256": "3ca8a0d4d2e08a9e1ee57e6e87b624e76c5fcb908e50b47db712645038986eda"
+    },
+    {
+      "id": "banking77:test:2554:6e98d76bff4ddfc9",
+      "label": 63,
+      "text_sha256": "1a675c098066b6dbc5e0cc3f1c9c1f58fc3435006fc3ad10e62adf98885fdbd8"
+    },
+    {
+      "id": "banking77:test:2170:64c408074fbeee6f",
+      "label": 54,
+      "text_sha256": "054e0443d94173d87bace645947d8f7cc8511e5c6bc8b3741f741b3ca146ce02"
+    },
+    {
+      "id": "banking77:test:2089:868e165b325985b5",
+      "label": 52,
+      "text_sha256": "85c119a367a2710126539b50d141d970a6e416f69e55a0cc04e8400b53a13ee3"
+    },
+    {
+      "id": "banking77:test:2479:c2b97efe0e6ada28",
+      "label": 61,
+      "text_sha256": "d5595ef206a488145af888c3b1f6af1aa6730712303940e0c81500f651174033"
+    },
+    {
+      "id": "banking77:test:1247:911fc2e7fc8e3a95",
+      "label": 31,
+      "text_sha256": "178d677470d857287514a81cf118bdef66a7a7132b9e998f8c7ea9b7cdacf4e2"
+    },
+    {
+      "id": "banking77:test:2595:eb7c802552f482ed",
+      "label": 64,
+      "text_sha256": "ae6c1c03442e6576c05e7310ccac4e96d39f722c39e42fbb8386b4e2d495bdec"
+    },
+    {
+      "id": "banking77:test:126:3129c67e4b4af356",
+      "label": 3,
+      "text_sha256": "7811a3154c0a03e5f3d772f49b972822d923404a309e60320767b9a03e913926"
+    },
+    {
+      "id": "banking77:test:836:aead0e46ddb12ec8",
+      "label": 20,
+      "text_sha256": "c5fbf3e3ba7870a275949b9f040934b792eed03cfe30c60b8bbe20de4f477252"
+    },
+    {
+      "id": "banking77:test:1354:3c390b4d92da14b0",
+      "label": 33,
+      "text_sha256": "a937edd1c70eaf015c28f7e8de9d5d3f4c6c8d2c61698284e42ed6a522bc90ba"
+    },
+    {
+      "id": "banking77:test:1962:36f1a7fe21326e3a",
+      "label": 49,
+      "text_sha256": "bd72861bf5edbc349243f48a8b420036e38bc15cd4d5b529113325ab14819452"
+    },
+    {
+      "id": "banking77:test:590:08693f37fd50cb20",
+      "label": 14,
+      "text_sha256": "73aa4f1f63af93748314555b130cfc169f634164785bcfe2e3bc0391271d45f7"
+    },
+    {
+      "id": "banking77:test:1905:ee27264ed3dc41fe",
+      "label": 47,
+      "text_sha256": "d4e34a330506689a135f557b8dba8bdf5fdbacc5e5395224b621e551fd3ce9f0"
+    },
+    {
+      "id": "banking77:test:2574:ce775b3fb9540180",
+      "label": 64,
+      "text_sha256": "f0f8d47dd58451ae8588dcf0db86ef9f11a150152e7ef7983d5583d4606653e1"
+    },
+    {
+      "id": "banking77:test:2733:9062cd263143b3ee",
+      "label": 68,
+      "text_sha256": "adee890a1ca6d8dd55ebe4a8d0984d2b457baef389787948690f1ed1adbd6850"
+    },
+    {
+      "id": "banking77:test:271:7632185c607b8d28",
+      "label": 6,
+      "text_sha256": "58558727159d2c89e92201631304056acc27434bb1b44afe0d426d94c4269112"
+    },
+    {
+      "id": "banking77:test:978:9eaa9362835f5fab",
+      "label": 24,
+      "text_sha256": "6f162b8a0bb16c502db6e02ce5fcc4c633860514b79f41490d15047b54168ef9"
+    },
+    {
+      "id": "banking77:test:375:79650df0aa555fbb",
+      "label": 9,
+      "text_sha256": "17f10b198561191908a7307c68c352dcc368855a290c9378af488073e83240f1"
+    },
+    {
+      "id": "banking77:test:862:e274df3e56fb34f5",
+      "label": 21,
+      "text_sha256": "0382e29ab4319bef67933c32d05e8ec6979e22009b7e49fbed5116d14bc85e2a"
+    },
+    {
+      "id": "banking77:test:1577:81221a87b8f4915a",
+      "label": 39,
+      "text_sha256": "477cbb8339f45cd2c55d7699bbb9f5f48f276668e9df22f854360c97af570d28"
+    },
+    {
+      "id": "banking77:test:1106:af8e038094e3fb07",
+      "label": 27,
+      "text_sha256": "6b8264058805a9bbead69b352071f4d18016aff995f625a6ef4d3ede7f0eb906"
+    },
+    {
+      "id": "banking77:test:1604:dd235e2facfb970c",
+      "label": 40,
+      "text_sha256": "3f484ababc6a19dc8eb17b6a107bf523750c31524fdf531a1aa51c4c72c8aa3a"
+    },
+    {
+      "id": "banking77:test:2075:faa3fb8acc28b2b1",
+      "label": 51,
+      "text_sha256": "04597c80df8988de6c2c90684e0ca1f26a2dabdceec17ccd58e89a23524bf30e"
+    },
+    {
+      "id": "banking77:test:1679:cdfaf1d3c6c116f3",
+      "label": 41,
+      "text_sha256": "ae8627885d27855a475d4f7ab03baeec6e33b2d024794aaff724b764f7b98c9e"
+    },
+    {
+      "id": "banking77:test:959:2b2c1b6bc86d7de8",
+      "label": 23,
+      "text_sha256": "d01c44f58bbdbe44b2e0cc6a4248bb1ebcabd64e7e9def29e83544ff470fb318"
+    },
+    {
+      "id": "banking77:test:242:b555a66687457bb4",
+      "label": 6,
+      "text_sha256": "f6982298e7cd6eae92a882eacd1200aaa0e840a489b81c71f68de60ba2c9b9a1"
+    },
+    {
+      "id": "banking77:test:414:14c1e39c4dfd191f",
+      "label": 10,
+      "text_sha256": "d70aaa5de16ee0eb03024503ba1bf479b1f7c4573f56c431e79f48b650501637"
+    },
+    {
+      "id": "banking77:test:329:7c87cf105f0b2cda",
+      "label": 8,
+      "text_sha256": "e75337439e27ea5701c26098edf04af29b7597d013a37935f05b7aedbb0c38c0"
+    },
+    {
+      "id": "banking77:test:367:5a266a0244da2ce1",
+      "label": 9,
+      "text_sha256": "a59d689655cf9dcfe91c8bccd12a56a6f7c69ec2a125e6954c4628ffd968458c"
+    },
+    {
+      "id": "banking77:test:655:d048e09079626d14",
+      "label": 16,
+      "text_sha256": "e263d3b7dd455ea5e26024df956b92f38890e5fe1310c04163cc79e375ee2bd3"
+    },
+    {
+      "id": "banking77:test:1697:8e19c41b395fc2db",
+      "label": 42,
+      "text_sha256": "62b2d30902c712f865a79ea4e0a52178a046f4e91d69d1660ce45383552f2ddc"
+    },
+    {
+      "id": "banking77:test:1137:5ea4cdd5397793f2",
+      "label": 28,
+      "text_sha256": "3b702dd0452b9c4379ebabc4375b44d7ee3e368f9f1af98b3c856f37a3cf1e4e"
+    },
+    {
+      "id": "banking77:test:512:94b16e87f938dfcc",
+      "label": 12,
+      "text_sha256": "63a2fdabe9a741588ad403f125c74f34ddea4eac44785335b517a8f35e705255"
+    },
+    {
+      "id": "banking77:test:800:3a1a083e01c8c55a",
+      "label": 20,
+      "text_sha256": "f1c7bac23b5dca0be76393c0fe162416040311d37a5d3e0b98142e3def6d7b90"
+    },
+    {
+      "id": "banking77:test:2062:bb79938f5dc5151f",
+      "label": 51,
+      "text_sha256": "d646b24e6de8455af945f24d56bac4252e0326a075c325e06880d1b16c244d5c"
+    },
+    {
+      "id": "banking77:test:2451:eb269eb45c0de542",
+      "label": 61,
+      "text_sha256": "ef2bef973c9341494e5f34dc236f09814b27b60d128cc6bf0021fced2c1472e0"
+    },
+    {
+      "id": "banking77:test:1081:93cc2eb3597c41c4",
+      "label": 27,
+      "text_sha256": "71ce6d16f92b770d963d0f5ad4575ff2ec71e2b58c7b06755f44b4086d4376a4"
+    },
+    {
+      "id": "banking77:test:180:fc2d896a3aed23c8",
+      "label": 4,
+      "text_sha256": "3973137dfd1ee3069788c984a1fd6503e3c24a9d354b7cacafba50caf6b57227"
+    },
+    {
+      "id": "banking77:test:255:bfb26b1fc8a2e2fd",
+      "label": 6,
+      "text_sha256": "a37d16758367c278d3369583c30d5eb84b49120642d4b60e6f56083589a092bd"
+    },
+    {
+      "id": "banking77:test:958:5c3d9a737adae612",
+      "label": 23,
+      "text_sha256": "2eb218f2f9b8b198091a2d76d08c8edf8c2a7aad347e6ba0adbf041b7887577a"
+    },
+    {
+      "id": "banking77:test:1959:6bec681d25a0fa59",
+      "label": 48,
+      "text_sha256": "2d209fd72814bf5701e6c137e0af80bdc350f43354205e4f735942632593c07d"
+    },
+    {
+      "id": "banking77:test:1186:a03fc27e8ae40609",
+      "label": 29,
+      "text_sha256": "024694b30d3678f59cebceec772f3e1f815aa6f2791841f416b6a3f2f00d1ba1"
+    },
+    {
+      "id": "banking77:test:1595:711391a9d77df74e",
+      "label": 39,
+      "text_sha256": "4fc4ca0869189b8501aa2cb393efa662fcb6327b8a236088182d1c473af1b9e9"
+    },
+    {
+      "id": "banking77:test:1698:0c8ee200ec5741a2",
+      "label": 42,
+      "text_sha256": "edffccb8b85627e4372cb35a6e312af14eb0da69b3a583ce7312addb1e05d981"
+    },
+    {
+      "id": "banking77:test:119:22b02c904204b239",
+      "label": 2,
+      "text_sha256": "a53e422dd89b1c69b55407dbfbdc9ec8c5f031224ef2047a56ffdd36fc543cb5"
+    },
+    {
+      "id": "banking77:test:123:4f075ff527f29967",
+      "label": 3,
+      "text_sha256": "8d25838b46108d77c5d1fef6bab100343c56b2d02e0897fd85b5a2a3c1f7961d"
+    },
+    {
+      "id": "banking77:test:431:db22d74f9d723619",
+      "label": 10,
+      "text_sha256": "e125a854671d09b69d2bb9cf76cb5ccee1c746482f7b08791929aea640addf35"
+    },
+    {
+      "id": "banking77:test:1471:e68eadccc03b8e42",
+      "label": 36,
+      "text_sha256": "cb21983d6612a81642e980ec6d2865c1040fcd0cd697fc62a8c944ff7b7d05c7"
+    },
+    {
+      "id": "banking77:test:1062:51bacdf5137d9476",
+      "label": 26,
+      "text_sha256": "7e6a4756e2d84203498990e1416f71d104ae9a4f846223834d170c7e174a52d1"
+    },
+    {
+      "id": "banking77:test:1831:c5e1929ad1239a78",
+      "label": 45,
+      "text_sha256": "f238c71231032f7e726557c0fe6664e7a8eb4b804a2c79c133123921b6cef803"
+    },
+    {
+      "id": "banking77:test:2814:4fac08cd2708faba",
+      "label": 70,
+      "text_sha256": "0fc4c84b724a8f5a342c427c5b11e0feeb013d9cab3d993d7f9b17c6b8ca8d51"
+    },
+    {
+      "id": "banking77:test:1978:b6fe744b4fbf9ed6",
+      "label": 49,
+      "text_sha256": "518d850ff425a8bd28685afbd2ed920e45279f06e261c4782fbf6fbbe38e7476"
+    },
+    {
+      "id": "banking77:test:1000:72e10939a6af7d7c",
+      "label": 25,
+      "text_sha256": "b96cd2de014007d01c1cf93f661d490b3af4d4cd2899235a1c178c26822cc4b3"
+    },
+    {
+      "id": "banking77:test:2408:1f7f345b92a94ed2",
+      "label": 60,
+      "text_sha256": "015845f72e80087664a19b0a0735d7082336e9d3f34c7bbf56359428e1d3a826"
+    },
+    {
+      "id": "banking77:test:645:f4f30401cd157aad",
+      "label": 16,
+      "text_sha256": "c5e9b2a9dca88130916001a684efb27e4b710360fc84a2c0a6b1634f9e7d0fd1"
+    },
+    {
+      "id": "banking77:test:2964:4652929c4bd2c49f",
+      "label": 74,
+      "text_sha256": "af4ac4358dcfd3701543a3241520740646264130251142e078ec466455ddc790"
+    },
+    {
+      "id": "banking77:test:760:de6e5a6f394e5a68",
+      "label": 19,
+      "text_sha256": "cf3722e6f84db0eb3b05862fe75fc41513cf7b29188795cb907d1603794390c8"
+    },
+    {
+      "id": "banking77:test:536:9b84b637a14e221a",
+      "label": 13,
+      "text_sha256": "9ec28c33e5bd87895775ea48bd698b34769226fe73906b763f340f0afb66918d"
+    },
+    {
+      "id": "banking77:test:1385:ab63857b0ce98706",
+      "label": 34,
+      "text_sha256": "138d6f78a729dbe31c2f8a77f533f398fd3c814afd66a9d9689eae7716791ee2"
+    },
+    {
+      "id": "banking77:test:685:0e326e92036a3689",
+      "label": 17,
+      "text_sha256": "c42b9505199b4958d4c102317658ab641b6283eed287c73c16d8e210d7718db1"
+    },
+    {
+      "id": "banking77:test:2799:9f0ffcb83d72be6a",
+      "label": 69,
+      "text_sha256": "af60f3e43b4b98534ca0173b35f35cebc9109037d110e02c9b72f5e6583117ca"
+    },
+    {
+      "id": "banking77:test:1347:eacabd60fef0a95f",
+      "label": 33,
+      "text_sha256": "d266b2fcbddd8b442b20cc7bb13e286827459b11f8bf92d5786ca911f51b810c"
+    },
+    {
+      "id": "banking77:test:1173:9bf165984ce5da9b",
+      "label": 29,
+      "text_sha256": "9be91fa86b81401f67b717113da4180f278ab79d70c21da3dd70b97d57645651"
+    },
+    {
+      "id": "banking77:test:1136:ad2728fd69b2a827",
+      "label": 28,
+      "text_sha256": "90bae9a963ca36f5ed89844718a3a16eae529051143bb9adc426a7b1df883cf6"
+    },
+    {
+      "id": "banking77:test:1467:31d5325500e00e3b",
+      "label": 36,
+      "text_sha256": "5cb74e00c26b2d5e843ed393870fab16d2d72796c2bb2c2a502b38a33ed86405"
+    },
+    {
+      "id": "banking77:test:885:9c0cc8071bfabd23",
+      "label": 22,
+      "text_sha256": "a313d09d9dd99ee7bac45afed15daeb1f7334e0dede59c81f9e10e729259d7b5"
+    },
+    {
+      "id": "banking77:test:1180:3ffefbb418ec649c",
+      "label": 29,
+      "text_sha256": "231ae72f809abc6fe4ba856dd5b4a99bb1c8489d185fe1afbdc339e7744b3c20"
+    },
+    {
+      "id": "banking77:test:1563:ea223bde438bfb13",
+      "label": 39,
+      "text_sha256": "78808724b271d0ace2bf05bf401fd6315b3d5c6c3e68666ef28be5036afc8a3f"
+    },
+    {
+      "id": "banking77:test:1652:08cea0d35be4ebc8",
+      "label": 41,
+      "text_sha256": "bf38eb6514857961edb38330e6df6dea1ad661531fff52ec0e037e534628a7ad"
+    },
+    {
+      "id": "banking77:test:230:ab6b570a864a14ae",
+      "label": 5,
+      "text_sha256": "e93067794139eef4196da1f1e2fd83aa7d0073185a94e1ddc25ba38840b0e086"
+    },
+    {
+      "id": "banking77:test:2433:160fe86ddeacbbcb",
+      "label": 60,
+      "text_sha256": "f388d53aed860dfd00265adc4593e27918a9a2f5eeaa9c4381f0255f6a4a754e"
+    },
+    {
+      "id": "banking77:test:281:ee93afa9adfbe9e6",
+      "label": 7,
+      "text_sha256": "306053f1239d8cd75e73d65be35f8ed699c5d86ab00b089e8a6ee0aade51fbf4"
+    },
+    {
+      "id": "banking77:test:975:b7684e2ca693762c",
+      "label": 24,
+      "text_sha256": "801c852210dc0b6d1d958bac1309d2101e0eb29ef2573aa605b6b306092947e1"
+    },
+    {
+      "id": "banking77:test:1688:9724fbdc5e19bb45",
+      "label": 42,
+      "text_sha256": "76b9e363e71e31d4f9521bd056c909e7254a4d5199fdb70776c26d05d1dea38a"
+    },
+    {
+      "id": "banking77:test:2892:49aa92903f8686b6",
+      "label": 72,
+      "text_sha256": "dac210c6eaad4c202204a537e806cf042202feff3bc5ad66df369148cc9870e9"
+    },
+    {
+      "id": "banking77:test:1650:a9fa11b907575cf3",
+      "label": 41,
+      "text_sha256": "7c3f624cd3d65a34e40d9a0b9e2a7178e36f4b4a4dd9696b5d6ac702bdd46995"
+    },
+    {
+      "id": "banking77:test:520:9b6f5546097a430d",
+      "label": 13,
+      "text_sha256": "cb8fd9731954cc585640fd877f143588ebcf1bcd968852017a0ce3962beff938"
+    },
+    {
+      "id": "banking77:test:577:c5824485532b69a5",
+      "label": 14,
+      "text_sha256": "991326527e2edc1920a374a12fc6323084cf79517727cf7f830f89a05a040204"
+    },
+    {
+      "id": "banking77:test:1055:320dce217be8e3b2",
+      "label": 26,
+      "text_sha256": "77c3699b55204fcebb9244c200b2c6c94296c2298800197991737ef91e79a1a6"
+    },
+    {
+      "id": "banking77:test:2518:6c55724468a8c394",
+      "label": 62,
+      "text_sha256": "57917bdb506c14c7d02a34f32b8316698f405e262d37eed8818ee1589fc9e5b0"
+    },
+    {
+      "id": "banking77:test:404:52af94075d3f33f7",
+      "label": 10,
+      "text_sha256": "d8a11a22b8ae8b5e799b5780df7f6308d01dd6c2079320f68ec02def024048ae"
+    },
+    {
+      "id": "banking77:test:1887:e0e1478835480094",
+      "label": 47,
+      "text_sha256": "d6ae184e713de430768c16a12553ea73ac7bcf6faca6e4b80ebcf88c80db859b"
+    },
+    {
+      "id": "banking77:test:688:75dfa5c67605dfd3",
+      "label": 17,
+      "text_sha256": "70dd95bacc503b2b0c40d7a79ca1a08286feef30f458d5da2e3e31220819f9db"
+    },
+    {
+      "id": "banking77:test:731:9caf16c3a47e4620",
+      "label": 18,
+      "text_sha256": "6152e636ab04140803c7b8f4a4e42686ff185fdb703c386a95e16eae2708a8da"
+    },
+    {
+      "id": "banking77:test:2482:cdcaa9e16b81825b",
+      "label": 62,
+      "text_sha256": "d68e3ae2002aa5d42c58c6b6b2ee6e451183a0dfe3022c4dce6e09fa30947fc6"
+    },
+    {
+      "id": "banking77:test:2230:646c4f2e022a9b46",
+      "label": 55,
+      "text_sha256": "1080e7db2b284c9f79c1a2a443da24c87def9ce2298b6699848dd8d6612ee9b6"
+    },
+    {
+      "id": "banking77:test:789:af7a4230838b2b6f",
+      "label": 19,
+      "text_sha256": "bb5cbc778c68e5a608a3fa45dd1f2c5275bf305c0d665b2606f229317efa42d0"
+    },
+    {
+      "id": "banking77:test:2744:194798458b284531",
+      "label": 68,
+      "text_sha256": "c67858d6a962d2bfe2e1fc9d237554709219dfcb10b8b12a1c8beaae4137a8bc"
+    },
+    {
+      "id": "banking77:test:866:2a51ac35ef2390db",
+      "label": 21,
+      "text_sha256": "1c2f1b8056c2de3af84735ebeeb35d9acecfe6d459b33d34de8f27f1974e7dc0"
+    },
+    {
+      "id": "banking77:test:2919:05e81da38a803b5d",
+      "label": 72,
+      "text_sha256": "34174d8923af969b5826f1b291e9fc8b0f59c2072fa40bc82ea5009c101ab2b5"
+    },
+    {
+      "id": "banking77:test:335:4e3f8746f1823c37",
+      "label": 8,
+      "text_sha256": "1b9b96ea0c459e5c04e987e1a37a18b8f199ebaad61a77651a7ae8db3cf64862"
+    },
+    {
+      "id": "banking77:test:2157:e2da8b43392d8b96",
+      "label": 53,
+      "text_sha256": "1893d161c13759df7d8747db5c6cb94e18d0e223dfe8fe769706461f15a7cae8"
+    },
+    {
+      "id": "banking77:test:2336:468b3e1d6ea2e113",
+      "label": 58,
+      "text_sha256": "0cedce877aab4e4fc2a53d01df4d50e9228e1b6756296fa2e2a7c102b12434a7"
+    },
+    {
+      "id": "banking77:test:925:405d4b27a4ee017d",
+      "label": 23,
+      "text_sha256": "14f408c43d43b6873b288c8f9d5dc8a937094b035577f7f93143e6a1bee4b343"
+    },
+    {
+      "id": "banking77:test:443:e77e5a97c4429071",
+      "label": 11,
+      "text_sha256": "a2a9ebce2acae72f3f7bc4b324c4505cec948fbd30123bd06ac4811aaded335e"
+    },
+    {
+      "id": "banking77:test:1634:4d6b7fb27cf764b4",
+      "label": 40,
+      "text_sha256": "bfe0e24e63b49f5904698aa554e538c74c1bd03b58038764d63c007fcf70f1db"
+    },
+    {
+      "id": "banking77:test:1286:ddaf707a9e1f584f",
+      "label": 32,
+      "text_sha256": "c20581c80296941b1b0c58cf0072e3fa4e3de0355215243f4e063004e9f5a819"
+    },
+    {
+      "id": "banking77:test:2009:e6053386923956cd",
+      "label": 50,
+      "text_sha256": "48b84cb6a92fba45691567b79d5804d06412e4d14f69758318dfe547b9bd9868"
+    },
+    {
+      "id": "banking77:test:3079:c34e375ba596e05d",
+      "label": 76,
+      "text_sha256": "a203071e87d923fe9300cb768b710312267f73749a41df5bfdf869279cceecc2"
+    },
+    {
+      "id": "banking77:test:568:e8191e2f86ff2f29",
+      "label": 14,
+      "text_sha256": "a44419f4a4f1cad336ac3c7f4b6677d5f68b36e68e0d7de6b6a8c04d4886a453"
+    },
+    {
+      "id": "banking77:test:90:502fe2595753166e",
+      "label": 2,
+      "text_sha256": "61c8454f0e8070e14ae9255f9e2692dbfde3c66b783a5a53dc7da4b281551ea9"
+    },
+    {
+      "id": "banking77:test:823:7edea0212b4a5146",
+      "label": 20,
+      "text_sha256": "148997186d756ad220751b8c4b25d95901584b67b4efed0bf864e293788e374e"
+    },
+    {
+      "id": "banking77:test:2666:6c9ce25f0b6631d4",
+      "label": 66,
+      "text_sha256": "6810c04cb9e9b1fcd8a14d1028ea207b18f3e27e68dc0dbcd403edc5e88515a7"
+    },
+    {
+      "id": "banking77:test:2:fb6e440003dcb8e9",
+      "label": 0,
+      "text_sha256": "f3b7b46e7249c36b65cc5734dfcdf78d1446ee55aaf68600d8fd8b77a114565e"
+    },
+    {
+      "id": "banking77:test:1218:8ae3c1e17112c1c5",
+      "label": 30,
+      "text_sha256": "2cd154a054ad790fd982f1f06384e1e2106591ea4ca6aca6d70d3f95d1be7336"
+    },
+    {
+      "id": "banking77:test:737:a5c4e18a46a28b91",
+      "label": 18,
+      "text_sha256": "9f1771c5960c5b3d7838e85cc31d1460da8e529d8930902338c9cb1c839a9dbe"
+    },
+    {
+      "id": "banking77:test:2619:8c5d0d25d2192a2d",
+      "label": 65,
+      "text_sha256": "f05f2991b12bec9d6a49cb9df958d6e5ab700d91c2ec606692e269f8d0563eee"
+    },
+    {
+      "id": "banking77:test:27:28f6e1d4497817ad",
+      "label": 0,
+      "text_sha256": "4103b473946ee338393a82e319bd143af9517cc3c0c16e699e92b858bf13672f"
+    },
+    {
+      "id": "banking77:test:1487:b6c8f79b94c8397c",
+      "label": 37,
+      "text_sha256": "9ce74dde90a026ed58b00df0b2a12f46c3a922fff203914fa295159ab858a0ba"
+    },
+    {
+      "id": "banking77:test:1289:f97cdb75ab89eacd",
+      "label": 32,
+      "text_sha256": "70f35a58897a1284a06f7862e65819ec5441fbd193537a477578c75f0a6ce7cf"
+    },
+    {
+      "id": "banking77:test:2938:3437ac60c39f58fa",
+      "label": 73,
+      "text_sha256": "df841c4c1f04dd44d5b2fe6f01f773378102199576414d910cefb4d3ba49021a"
+    },
+    {
+      "id": "banking77:test:491:3ad74965eb1981bb",
+      "label": 12,
+      "text_sha256": "0445fc84deae7bd3280cbd1abc4e70480f3c227b7997fd0b720589fa4afd960d"
+    },
+    {
+      "id": "banking77:test:1237:7c94becaf03119e4",
+      "label": 30,
+      "text_sha256": "5e4a3d37008a35f70e57249b51d86fe2f98bbb57fb96c3f257fe5ae8626e058d"
+    },
+    {
+      "id": "banking77:test:870:6f5d2a3f7218516b",
+      "label": 21,
+      "text_sha256": "13f2fe03858807dad6b81f9919e959487a7ea59e73f6756db628cbb1c41d43a6"
+    },
+    {
+      "id": "banking77:test:290:e0053739898e47b0",
+      "label": 7,
+      "text_sha256": "16e70a6320dba88e96d6d963297f2c86cf11e4d905a70dc505ae9fcac931dbcc"
+    },
+    {
+      "id": "banking77:test:1417:251e4eb3ee621575",
+      "label": 35,
+      "text_sha256": "54c8c4bb76af464af747d64f3cf5ebaa95dd65b2b231ee353d7d4263d7ec9e28"
+    },
+    {
+      "id": "banking77:test:2841:be81c5aecd7b80f8",
+      "label": 71,
+      "text_sha256": "3106dbcd7026bac730e62ef8b4c90c43bc047674a446f44673fa25822f0d84ff"
+    },
+    {
+      "id": "banking77:test:2395:a24d10211bc62f61",
+      "label": 59,
+      "text_sha256": "0eb9c367e181a760750a0047378be89abf3c32d3bc34177e7701d42b0041c8d3"
+    },
+    {
+      "id": "banking77:test:1317:d73f155282491995",
+      "label": 32,
+      "text_sha256": "e390cd59c1b4394f68dfbec201af87430495fdefb0fd66d9c556bcb5ce1167b2"
+    },
+    {
+      "id": "banking77:test:2023:cd8e706bf064cabc",
+      "label": 50,
+      "text_sha256": "bdcde7014e49c829604ff2543b14882a9236c1a036f72ea9bf165688881a9ec1"
+    },
+    {
+      "id": "banking77:test:2703:fcb5bdbd9d25dd6a",
+      "label": 67,
+      "text_sha256": "dd34371a877c4208b15c1c82a570f593a51e6d0d66d3bd563e66e30d3af14061"
+    },
+    {
+      "id": "banking77:test:729:55b4aa0fa805673d",
+      "label": 18,
+      "text_sha256": "746232e99d0fd4b6040861d86c0ffc09b5d5ba6130600a4cd7a4967444f5bd99"
+    },
+    {
+      "id": "banking77:test:2388:066777b561a713ef",
+      "label": 59,
+      "text_sha256": "333bd2fcb1f532be54329ee7cc819f67a5cc23ee05a23ade46d7456e0f0d96d3"
+    },
+    {
+      "id": "banking77:test:666:3c1ed2fb9a812cec",
+      "label": 16,
+      "text_sha256": "af7cd7d38ebe7594c3e7c5063381b2819844936939731d0a668eb1c3360741cd"
+    },
+    {
+      "id": "banking77:test:2682:b5fd4597834e6f08",
+      "label": 67,
+      "text_sha256": "a7311a50449af7bdf43c7ddd6a1e33d5ca8116d5929a0c3b2ffc4b8c2c1ea5e4"
+    },
+    {
+      "id": "banking77:test:237:e77214e113afa5ea",
+      "label": 5,
+      "text_sha256": "ec0ad1b36669844acf4e8bd2135d1dc50eff06a498b36a2b76e6ea4b63d8e3f7"
+    },
+    {
+      "id": "banking77:test:1133:9eb4885a753c1875",
+      "label": 28,
+      "text_sha256": "97e27b3e48f0f738c6f90f57a6c0da418f7ff79fc66f45c0b6f0bddc5a2bec2b"
+    },
+    {
+      "id": "banking77:test:973:e5bcadade951ae32",
+      "label": 24,
+      "text_sha256": "f66618c58c30f10bb1b30ee01fa67e96139c75e0b9ea288e528af0018362e9f7"
+    },
+    {
+      "id": "banking77:test:361:d788194092854785",
+      "label": 9,
+      "text_sha256": "42f23203055b961c727a593fc53902931be7a80d019abcc35f5cf07db36963a5"
+    },
+    {
+      "id": "banking77:test:1802:1536c1435dbec0b3",
+      "label": 45,
+      "text_sha256": "21d45c117334d2465fec2b43d3d4b0e70534b107109f42f009f79f36265cbe83"
+    },
+    {
+      "id": "banking77:test:1816:9c88a7461a189450",
+      "label": 45,
+      "text_sha256": "6971ab5c21519974fd68d47cb302ddd00768add4c43e4242281dad072ef17764"
+    },
+    {
+      "id": "banking77:test:460:f50b880a2095fe9e",
+      "label": 11,
+      "text_sha256": "c04c2829387b6c6acaf0a705972f68a3047d98835ad06505054077bba3e75b54"
+    },
+    {
+      "id": "banking77:test:1521:3adffda16ae1dda7",
+      "label": 38,
+      "text_sha256": "23d4f62d7aca5576a5f7f283152ddbda309dca93b4f4caf2c672260ff5a0cd11"
+    },
+    {
+      "id": "banking77:test:3009:b80b9d4a3f76c381",
+      "label": 75,
+      "text_sha256": "a7e720da604187be0f9fa681e19a97dc1db94769ef4301b9fab258f4cbc088c4"
+    },
+    {
+      "id": "banking77:test:1501:30db0de7bd7fe317",
+      "label": 37,
+      "text_sha256": "3f47e21ce0667fa0ecf0d5041ca344cd26647702a8bf467754b4895b4dccf47b"
+    },
+    {
+      "id": "banking77:test:1860:95e5504987d87303",
+      "label": 46,
+      "text_sha256": "106eabce8cb39c44d3931fafc69318a2e11ae71f800e74b6c1ed18979dd7f8dd"
+    },
+    {
+      "id": "banking77:test:500:a30a8b4f8d9c10af",
+      "label": 12,
+      "text_sha256": "339c3677f55513933bc8576cce93f2c2ea2a7289f286236f4916d3899a301f95"
+    },
+    {
+      "id": "banking77:test:477:2598500e30669c5a",
+      "label": 11,
+      "text_sha256": "3bc5bedc58942313c42ba77d44b6fb42700d37e8827f0152dc1ae0d434ef0a7f"
+    },
+    {
+      "id": "banking77:test:1239:a2ba2d176ec8440e",
+      "label": 30,
+      "text_sha256": "fe0a9c62645489f07640091114cb658806a9c7f04eb3122d9c4bf2fc09a77820"
+    },
+    {
+      "id": "banking77:test:2973:d906e195d054c548",
+      "label": 74,
+      "text_sha256": "bf7985becb4ab597213f10b64ee317afe1e533b5aa8fe4f3af7300beec766755"
+    },
+    {
+      "id": "banking77:test:2932:8ff9dfdabfc7e459",
+      "label": 73,
+      "text_sha256": "da2e64892c3445088ab59bb62e64bb75a1b644e6ef1c0caedd2e80e1a1cd3bb5"
+    },
+    {
+      "id": "banking77:test:2143:ec4499ca0e946660",
+      "label": 53,
+      "text_sha256": "20368e7caf3c7e0ada71b88df2a2672308a12ead3309463056dc45c660879a10"
+    },
+    {
+      "id": "banking77:test:1269:3a05d486df749722",
+      "label": 31,
+      "text_sha256": "90282c760c1f253f9b5e5a3b8df7cd01d19b2d7d3282e760b1b525cd322c6ec5"
+    },
+    {
+      "id": "banking77:test:1393:2aa340a163426920",
+      "label": 34,
+      "text_sha256": "6979574a2382629fb143593a34e92c5fb2df300ddb47594fb602ec705b063b26"
+    },
+    {
+      "id": "banking77:test:550:04fac85407af6281",
+      "label": 13,
+      "text_sha256": "f82fd6fcd919da387c89cbe6f575480e15e6979bdcba3b509ab0c3fb7c7592d7"
+    },
+    {
+      "id": "banking77:test:1557:38a0216e4b4d250b",
+      "label": 38,
+      "text_sha256": "21312c1e69a4ed77d97cf24053d45528a79a8aeb880fd0b74b1767da23bf9cdd"
+    },
+    {
+      "id": "banking77:test:1619:25b0dcbe36793e80",
+      "label": 40,
+      "text_sha256": "078308c5356f172e3e9f63e31caacbfef739c23900ebef1f6d4a355c40afee27"
+    },
+    {
+      "id": "banking77:test:1751:56231bda6ad717d4",
+      "label": 43,
+      "text_sha256": "4ef157457280521f587818f2fc4e8cbddd13bc90ab46ec2f50ba09194f0f2474"
+    },
+    {
+      "id": "banking77:test:620:fb176bdc61ea33dd",
+      "label": 15,
+      "text_sha256": "bf73a2621409daa277e30385148508f1727ac233aa36fb4918998e71baa7d842"
+    },
+    {
+      "id": "banking77:test:2609:16f01b00d3b552ca",
+      "label": 65,
+      "text_sha256": "072eda4fd1b338d0883f67fcd851a3d40ed4a5835ad0c8015a50537a554e0d7e"
+    },
+    {
+      "id": "banking77:test:1037:b4e4396a1ae5698a",
+      "label": 25,
+      "text_sha256": "5a0ace97c32bca09b3b0794b6e5aca448bf096b55ae107ad99047783927b98ea"
+    },
+    {
+      "id": "banking77:test:73:8606d143255fdf63",
+      "label": 1,
+      "text_sha256": "7164004de4d8338dac4436af0f2b98de5ef20b07fde36f14585e234584aed22c"
+    },
+    {
+      "id": "banking77:test:1019:9e66997805e94cd9",
+      "label": 25,
+      "text_sha256": "d6dbeea59405882a0e4569f4b0533224cfa379395ed83d33a696df2185163b7e"
+    },
+    {
+      "id": "banking77:test:714:5154cf733108a6c1",
+      "label": 17,
+      "text_sha256": "e1a5edb5f0345465a14b38adef3e43ba028bee55916df298955a1a0aa5612881"
+    },
+    {
+      "id": "banking77:test:634:9ff42bde05c7b724",
+      "label": 15,
+      "text_sha256": "aaab7b2867308130666f1aca4b9b90fad568dd00a5908cd6380dbb64adb21589"
+    },
+    {
+      "id": "banking77:test:629:45ac796713943247",
+      "label": 15,
+      "text_sha256": "65450ee0b4601e31eb51f53b7bf6ff044d502265efb666786ce1dec8065e3488"
+    },
+    {
+      "id": "banking77:test:1396:da982007f40e9f93",
+      "label": 34,
+      "text_sha256": "47d714a4e0fb2dddf15447b05d611a6121eb3a296aac4102c10c95f538ca64ec"
+    },
+    {
+      "id": "banking77:test:1742:7dce4ff1eeca8711",
+      "label": 43,
+      "text_sha256": "66d15f371cb38c348adb9cff51a8aa56aaa625997f9b96e9f90c068a21b9e3aa"
+    },
+    {
+      "id": "banking77:test:70:2ba0640336aaf182",
+      "label": 1,
+      "text_sha256": "56629430ef1b876998176d64daf6fb71c5c2840aea89a679be439163590533f9"
+    },
+    {
+      "id": "banking77:test:2300:a7212aa7a5fd348f",
+      "label": 57,
+      "text_sha256": "6f2ff955aafaf302175742c78dfee01930d5bb14a0efd4bbab8afb0c113d994d"
+    },
+    {
+      "id": "banking77:test:3014:a78a11e01afdba32",
+      "label": 75,
+      "text_sha256": "2ebed13170da91c9107c15089509b2686e1ee5c892e20f6b956144b506164b7d"
+    },
+    {
+      "id": "banking77:test:2305:6b39ac2e56b7bb6b",
+      "label": 57,
+      "text_sha256": "91cb003847eef7a14c5cfd069085dfb7f52b89e7eccc08ade03cdc9e3d72c068"
+    }
+  ]
+}

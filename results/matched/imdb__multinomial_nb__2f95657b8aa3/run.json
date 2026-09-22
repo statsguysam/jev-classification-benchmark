@@ -1,0 +1,521 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-22T09:56:10.674600+00:00",
+  "config": {
+    "model": "multinomial_nb",
+    "train_per_class": 1
+  },
+  "dataset": "imdb",
+  "dataset_manifest": {
+    "duplicate_policy": {
+      "before_subsampling": true,
+      "heldout_priority": "test then validation then train",
+      "limitation": "Exact normalized text filtering does not detect semantic/phrase overlap or pretraining contamination",
+      "normalization": "Unicode NFKC, casefold, collapse whitespace; no punctuation or HTML changes",
+      "train_rows_removed_for_test_overlap": [
+        "imdb:train:6:8a1491af5d44af33",
+        "imdb:train:7:00084e27aaadda52",
+        "imdb:train:893:c2c53d58d0da95fa",
+        "imdb:train:1543:1b2774505172f630",
+        "imdb:train:1544:f501e50279d06ab1",
+        "imdb:train:1841:2302ae04959814c3",
+        "imdb:train:2057:4db068a4834d7fad",
+        "imdb:train:2058:6ee43971cf94df50",
+        "imdb:train:2059:d1d3840264bb6b46",
+        "imdb:train:2457:08fcf4379c2ed44a",
+        "imdb:train:3370:17a0e231b4e4e2be",
+        "imdb:train:3371:282e6b93b102b064",
+        "imdb:train:4569:5e3c256e4730f80d",
+        "imdb:train:5420:9a6f9250c9000182",
+        "imdb:train:5436:075e12d6a4b10752",
+        "imdb:train:5437:4562c7be9e0e6e85",
+        "imdb:train:5438:7d0c3914d90f3ae0",
+        "imdb:train:5439:fb50dc5aa7c37a02",
+        "imdb:train:6154:23a525b4b03f59b9",
+        "imdb:train:6155:2656162ec7889278",
+        "imdb:train:6898:57ffe2261107f6fc",
+        "imdb:train:6899:18f0c6fb56161252",
+        "imdb:train:8164:3fae7346e0af4e3c",
+        "imdb:train:8165:5b4fcbe20ced2d08",
+        "imdb:train:9344:e9b2854f79d0c61f",
+        "imdb:train:9345:00301806f9bc59c4",
+        "imdb:train:9346:efab3d72ad33b6a0",
+        "imdb:train:9347:2558c47eb9804455",
+        "imdb:train:9348:75e094a8992cf9c5",
+        "imdb:train:9349:8547e36d2b1e9102",
+        "imdb:train:9350:0d068423120f0832",
+        "imdb:train:9351:a03806b6456edea0",
+        "imdb:train:9352:48742f2727788192",
+        "imdb:train:9353:9be741863cd3eef5",
+        "imdb:train:9354:32d3158ba0740c22",
+        "imdb:train:9355:a334df970eed3f68",
+        "imdb:train:9356:d4a9d07d0edee0d7",
+        "imdb:train:9357:498fa4f93a9ad028",
+        "imdb:train:9358:4912aa984226bc7c",
+        "imdb:train:9359:47f8c95813f6ea9c",
+        "imdb:train:9360:1b3eafcc0ec6253f",
+        "imdb:train:9361:d605fcbcfed362f9",
+        "imdb:train:9362:b4e6d99964715d95",
+        "imdb:train:9363:4d0d0aea148e20f4",
+        "imdb:train:9364:16741fce45077438",
+        "imdb:train:9365:34c00e2c15397ec2",
+        "imdb:train:9366:1065b1540395dc69",
+        "imdb:train:9367:ecd515df21489fb0",
+        "imdb:train:9368:c387329108995d88",
+        "imdb:train:9369:8a6b335e4dc4a75f",
+        "imdb:train:9370:817b227a24dbde21",
+        "imdb:train:9371:3d5cf1a0ed621fb6",
+        "imdb:train:9416:80722e899dd8d0d1",
+        "imdb:train:9417:d656a110622ba422",
+        "imdb:train:9534:f0a6815363cb2217",
+        "imdb:train:9599:2343fbcebfe63434",
+        "imdb:train:10141:54883c917b422848",
+        "imdb:train:10142:2bfbca591f74b135",
+        "imdb:train:10143:1915a3c0bed95636",
+        "imdb:train:10144:1ac3d6fd9743b9dd",
+        "imdb:train:10145:637ff30a855420e2",
+        "imdb:train:10146:309d3a15ffed8bb3",
+        "imdb:train:10147:56977a295fa9ae0b",
+        "imdb:train:10148:54f73816a9b707da",
+        "imdb:train:10149:b654f3d2cc4fc76d",
+        "imdb:train:10150:59c376a5cde31fdb",
+        "imdb:train:10151:21c035a5e64ebb58",
+        "imdb:train:10152:c5977d35e6f3bb80",
+        "imdb:train:10153:9a203edbfc0a5165",
+        "imdb:train:10468:8d01ae53b3e2ce93",
+        "imdb:train:10469:6ea7883b9da76efe",
+        "imdb:train:10470:fe477a24e5a88477",
+        "imdb:train:10625:f84e84cbe67e8f51",
+        "imdb:train:12096:d9651e62ddd21d40",
+        "imdb:train:12097:bccd68c89fd17a28",
+        "imdb:train:12098:e8c7aff9b25c5f07",
+        "imdb:train:12099:203417e0d832330c",
+        "imdb:train:12100:c005bde68193866c",
+        "imdb:train:12101:bee78e20abaefa26",
+        "imdb:train:12102:18a1a7b06fb3373c",
+        "imdb:train:12103:38cad3510df942dc",
+        "imdb:train:12401:4b1f91357e431579",
+        "imdb:train:12402:58ecc649d3255b4c",
+        "imdb:train:12403:6740844eeacc2846",
+        "imdb:train:12404:90fab10f38182888",
+        "imdb:train:12405:3c0aa318d318e9e2",
+        "imdb:train:12406:8fc1a90ee90ba9a1",
+        "imdb:train:12407:42d985dd8e95509b",
+        "imdb:train:12408:d80090cdee30f641",
+        "imdb:train:12409:4705dea8d316a132",
+        "imdb:train:12410:8b79889aa0c88063",
+        "imdb:train:12411:8875f01aa2b4a3a9",
+        "imdb:train:12412:3f96c8f18b6c3028",
+        "imdb:train:12413:7ef1b76bde9b1ad5",
+        "imdb:train:12414:81bb56916f710230",
+        "imdb:train:12828:45fc1866f169e0a1",
+        "imdb:train:12829:a3f956fe4bfafdda",
+        "imdb:train:12830:1f1ed37c22a49cee",
+        "imdb:train:12831:66c32caa15b5daf7",
+        "imdb:train:14830:73a6a551395d0ade",
+        "imdb:train:14831:da1c6df6818dc4cb",
+        "imdb:train:14832:0768bc17925e5243",
+        "imdb:train:19735:29f18c1cb8ce9c02",
+        "imdb:train:19736:51239a91f5aed394",
+        "imdb:train:19737:5778a84a4d778a32",
+        "imdb:train:19738:713e9edf602e414d",
+        "imdb:train:20820:2481a57e3e426c1b",
+        "imdb:train:20821:ca59d69b8a05966e",
+        "imdb:train:20822:b7976db53945d8da",
+        "imdb:train:20823:24672ecdb31097b4",
+        "imdb:train:20824:9a865907012fa0ae",
+        "imdb:train:20825:2c09f183e8823316",
+        "imdb:train:20826:cb30e77a1f78fef0",
+        "imdb:train:20827:2028853f6989c3c1",
+        "imdb:train:20828:ba45e5aecef63d7a",
+        "imdb:train:20829:b18f49874b0ba9e8",
+        "imdb:train:20830:de3fadf6df44e231",
+        "imdb:train:20831:4fa9abd1d82c19b9",
+        "imdb:train:20832:1cd1484b03bd73dc",
+        "imdb:train:20833:98c1fb6742cd40ea",
+        "imdb:train:21074:fbc58f1b6054a6d5",
+        "imdb:train:21075:524d8bba6fa03939",
+        "imdb:train:23232:9b168f595d52ad07"
+      ],
+      "train_rows_removed_for_validation_overlap": [
+        "imdb:train:168:69ee884b11fb3fea",
+        "imdb:train:360:a708b672b8a9e22d",
+        "imdb:train:2790:c836454540713cb1",
+        "imdb:train:2793:5ff183f92cb7b2b3",
+        "imdb:train:4215:ad5d5b0a6bfc4d79",
+        "imdb:train:5023:7f79a8530cc4c656",
+        "imdb:train:5557:b955afe94542eed5",
+        "imdb:train:6541:2a3d8342aab8e712",
+        "imdb:train:7177:b129bd648354deb6",
+        "imdb:train:7871:ebd76b5e91f29ace",
+        "imdb:train:10171:a00a336136a95d31",
+        "imdb:train:11864:4cf1610dc1c3cf67",
+        "imdb:train:12231:d68f8dbfe1e16b78",
+        "imdb:train:12308:0780ed69bef96aef",
+        "imdb:train:12309:0780ed69bef96aef",
+        "imdb:train:12383:23d7068e1af88c9b",
+        "imdb:train:13423:be419bb115763bd9",
+        "imdb:train:13447:ecf6688cfb91035c",
+        "imdb:train:16820:fb3d1ea88bf536e4",
+        "imdb:train:22162:ee8b066e49453e4a"
+      ],
+      "within_split": "retain all natural duplicates, including final test; report counts"
+    },
+    "files_sha256": {
+      "test.jsonl": "4dae6b5df66b71747cfb24aea086eba0887babb28d7e5c62014e4ee846942789",
+      "train.jsonl": "539a94ab2a191fa9d7b4a671f5bd649652df4dcf216f4a194b0e96d9adfb7228",
+      "validation.jsonl": "1a06b5b83aceea7c6908e1f4933108eb5a429ecf09e1c6a59b2b6be8b8adf510"
+    },
+    "labels": [
+      "negative",
+      "positive"
+    ],
+    "limits": {
+      "test": 200,
+      "train": 10000,
+      "validation": 1000
+    },
+    "name": "imdb",
+    "post_transform_overlap_removed": {
+      "train": 0,
+      "validation": 0
+    },
+    "prepared_content_sha256": "487d7e60f2c54e3e680ab79453bc1167b72cdea181430269e33aa7572542dec8",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "card": "https://huggingface.co/datasets/stanfordnlp/imdb",
+      "files": {
+        "test": "plain_text/test-00000-of-00001.parquet",
+        "train": "plain_text/train-00000-of-00001.parquet"
+      },
+      "files_sha256": {
+        "test": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da",
+        "train": "db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c"
+      },
+      "homepage": "https://ai.stanford.edu/~amaas/data/sentiment/",
+      "label_column": "label",
+      "labels": [
+        "negative",
+        "positive"
+      ],
+      "license": "apache-2.0 per dataset card; review original data terms",
+      "notes": "Official train/test split; unsupervised split unused. Long texts require a common declared input truncation policy when comparing LLMs.",
+      "repo_id": "stanfordnlp/imdb",
+      "revision": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+      "source": "huggingface_parquet",
+      "source_splits": {
+        "test": "test",
+        "train": "train"
+      },
+      "text_column": "text",
+      "validation_fraction": 0.1
+    },
+    "source_counts": {
+      "test": 25000,
+      "train": 25000
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 100,
+          "1": 100
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "54e0a89cbe7ca8fb1df11406a5a180ff0c8f4b57f15ef754af5708faa6b21618",
+        "rows": 200
+      },
+      "train": {
+        "class_counts": {
+          "0": 4984,
+          "1": 5016
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 14,
+        "row_ids_sha256": "469344330bb036b50609ea4a92620e724cf2b2c4ee8a4899b8e6f420a9acd979",
+        "rows": 10000
+      },
+      "validation": {
+        "class_counts": {
+          "0": 499,
+          "1": 501
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "4a7312320c858eb5c6411fe79d5605451502fa9004c61185d313a5aa74b1a1ac",
+        "rows": 1000
+      }
+    },
+    "text_policy": {
+      "applies_to": "all splits and all model families",
+      "kind": "character_prefix",
+      "max_chars": 2000
+    },
+    "truncated_rows": {
+      "test": 39,
+      "train": 1752,
+      "validation": 173
+    },
+    "validation_fraction": 0.1
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "negative",
+    "positive"
+  ],
+  "manifest_sha256": "c90b127e15682236ab41d36264158fd72cd1ce80036b3a3e5e401f42301b0207",
+  "method": "classical",
+  "metrics": {
+    "accuracy": 0.47,
+    "average_precision": 0.49904013515420503,
+    "balanced_accuracy": 0.47000000000000003,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.44,
+            0.5
+          ],
+          "estimate": 0.47
+        },
+        "macro_f1": {
+          "ci95": [
+            0.3127147766323024,
+            0.38077198825134717
+          ],
+          "estimate": 0.3427579365079365
+        }
+      },
+      "samples": 1000,
+      "seed": 13
+    },
+    "brier_sum": 0.5071135049891055,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        3,
+        97,
+        0
+      ],
+      [
+        9,
+        91,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.07242254150837517,
+    "failure_rate": 0.0,
+    "input_tokens": null,
+    "input_tokens_coverage": 0.0,
+    "input_tokens_known_total": 0,
+    "latency_p50_s": 0.0007545779150677844,
+    "latency_p95_s": 0.0007545779150677844,
+    "log_loss": 0.7003132284180346,
+    "macro_f1": 0.3427579365079365,
+    "n_classes": 2,
+    "n_failures": 0,
+    "n_probability_rows": 200,
+    "n_test": 200,
+    "output_tokens": null,
+    "output_tokens_coverage": 0.0,
+    "output_tokens_known_total": 0,
+    "per_class": [
+      {
+        "f1": 0.05357142857142857,
+        "label": 0,
+        "precision": 0.25,
+        "recall": 0.03,
+        "support": 100
+      },
+      {
+        "f1": 0.6319444444444444,
+        "label": 1,
+        "precision": 0.48404255319148937,
+        "recall": 0.91,
+        "support": 100
+      }
+    ],
+    "prediction_time_s": 0.1509155830135569,
+    "probability_coverage": 1.0,
+    "probability_renormalized_rows": 199,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 5,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 6,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.45588235294117646,
+        "bin": 7,
+        "count": 68,
+        "mean_confidence": 0.5181570163743059
+      },
+      {
+        "accuracy": 0.48091603053435117,
+        "bin": 8,
+        "count": 131,
+        "mean_confidence": 0.5544707844294184
+      },
+      {
+        "accuracy": 0.0,
+        "bin": 9,
+        "count": 1,
+        "mean_confidence": 0.6141584279684209
+      },
+      {
+        "accuracy": null,
+        "bin": 10,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 11,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 12,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 13,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 14,
+        "count": 0,
+        "mean_confidence": null
+      }
+    ],
+    "roc_auc": 0.48150000000000004,
+    "valid_response_accuracy": 0.47,
+    "zero_true_class_probability_rows": 0
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "imdb__multinomial_nb__2f95657b8aa3",
+  "seed": 13,
+  "started_at": "2026-09-22T09:56:09.432438+00:00",
+  "status": "complete",
+  "test_ids_sha256": "4480c101119f8bf88c80185e64e2bab18c7a6cef5b59ba00b9c79562415e2901",
+  "training": {
+    "candidate_budget": 1,
+    "feature_fit_s": 0.004463000106625259,
+    "features": {
+      "char_wb_ngrams": [
+        3,
+        5
+      ],
+      "feature_count": 2761,
+      "max_char_features": 80000,
+      "max_word_features": 60000,
+      "sublinear_tf": true,
+      "vocabulary_fit_split": "train only",
+      "word_ngrams": [
+        1,
+        2
+      ]
+    },
+    "fit_and_selection_s": 0.005279833101667464,
+    "hyperparameter_trials": [
+      {
+        "fit_s": 0.0007917089387774467,
+        "parameters": {
+          "alpha": 1.0
+        },
+        "validation_macro_f1": null
+      }
+    ],
+    "latency_measurement": "amortized batch; not individual request latency",
+    "model": "multinomial_nb",
+    "probability_kind": "native_uncalibrated",
+    "refit_with_validation": false,
+    "seed": 13,
+    "selected_parameters": {
+      "alpha": 1.0
+    },
+    "selected_validation_macro_f1": null,
+    "selection_metric": "fixed_a_priori",
+    "sklearn_version": "1.9.1",
+    "test_inference_s": 0.1509155830135569,
+    "test_rows": 200,
+    "train_per_class": 1,
+    "training_row_ids": [
+      "imdb:train:6857:de7644684dfd88d2",
+      "imdb:train:22027:330d3bb509ece382"
+    ],
+    "training_row_ids_sha256": "72081a6dc2017011635dc975e2507e1e42d713d6ab41b7aa96a2b02e8bd30151",
+    "training_rows": 2,
+    "validation_rows": 0
+  },
+  "training_example_ids": [
+    "imdb:train:6857:de7644684dfd88d2",
+    "imdb:train:22027:330d3bb509ece382"
+  ],
+  "wall_time_s": 0.43917904200498015
+}

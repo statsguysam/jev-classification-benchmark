@@ -1,0 +1,1087 @@
+{
+  "metric": "macro_f1",
+  "aggregation": "arithmetic mean and sample standard deviation (ddof=1)",
+  "test_split_note": "Same fixed held-out split across all seeds; no independent test replications",
+  "groups": [
+    {
+      "dataset": "sst2",
+      "model": "majority",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3288590604026846,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "sst2__majority__a308248b6514",
+        "sst2__majority__4027f3099eaf",
+        "sst2__majority__649c2fc1ccb5"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "majority",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3288590604026846,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "sst2__majority__3c38c4cc8505",
+        "sst2__majority__face6e86e516",
+        "sst2__majority__a65c6e3805ee"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "majority",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3288590604026846,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "sst2__majority__d15076e77efe",
+        "sst2__majority__949822ad3cb5",
+        "sst2__majority__9084cf1b46ee"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "logistic_regression",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.42852570322809885,
+      "macro_f1_sample_sd": 0.05030794184750007,
+      "run_ids": [
+        "sst2__logistic_regression__4e1348580ee0",
+        "sst2__logistic_regression__0c2cf298af9e",
+        "sst2__logistic_regression__d0db16de3cb7"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "logistic_regression",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5057057058115113,
+      "macro_f1_sample_sd": 0.026136844552828453,
+      "run_ids": [
+        "sst2__logistic_regression__1d9bf7cf3f40",
+        "sst2__logistic_regression__81d2ff14c2be",
+        "sst2__logistic_regression__cfcddc45f4c0"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "logistic_regression",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5243642226971198,
+      "macro_f1_sample_sd": 0.02518574302917783,
+      "run_ids": [
+        "sst2__logistic_regression__438d9214a3b0",
+        "sst2__logistic_regression__e8d3a9051b50",
+        "sst2__logistic_regression__a2c83a09a133"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "linear_svc",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.42852570322809885,
+      "macro_f1_sample_sd": 0.05030794184750007,
+      "run_ids": [
+        "sst2__linear_svc__5d5353f7ff44",
+        "sst2__linear_svc__87b15f3f41ff",
+        "sst2__linear_svc__5f1135ca1bd9"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "linear_svc",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5040091443276749,
+      "macro_f1_sample_sd": 0.022320269582033137,
+      "run_ids": [
+        "sst2__linear_svc__5d6bf7bf2be1",
+        "sst2__linear_svc__3e7e9ec774d5",
+        "sst2__linear_svc__70ad665ab46e"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "linear_svc",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5270022282354645,
+      "macro_f1_sample_sd": 0.02615916655009253,
+      "run_ids": [
+        "sst2__linear_svc__18c9c06b3867",
+        "sst2__linear_svc__14482a9afc73",
+        "sst2__linear_svc__da1dd06a9b86"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "multinomial_nb",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4840071632082556,
+      "macro_f1_sample_sd": 0.0574984070232506,
+      "run_ids": [
+        "sst2__multinomial_nb__3782d9f18a77",
+        "sst2__multinomial_nb__1b53f00fa2ff",
+        "sst2__multinomial_nb__b01cc64f96a7"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "multinomial_nb",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5125889329299466,
+      "macro_f1_sample_sd": 0.02748154421001443,
+      "run_ids": [
+        "sst2__multinomial_nb__5937daad8a5c",
+        "sst2__multinomial_nb__a094038879f9",
+        "sst2__multinomial_nb__619a9edb03e6"
+      ]
+    },
+    {
+      "dataset": "sst2",
+      "model": "multinomial_nb",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5274585300479723,
+      "macro_f1_sample_sd": 0.02022155441601102,
+      "run_ids": [
+        "sst2__multinomial_nb__d282297b45d8",
+        "sst2__multinomial_nb__c91332d3badb",
+        "sst2__multinomial_nb__115424056059"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "majority",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3333333333333333,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "imdb__majority__f35842a0d360",
+        "imdb__majority__31e7c46c857c",
+        "imdb__majority__b07afb92b07c"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "majority",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3333333333333333,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "imdb__majority__bba509af627b",
+        "imdb__majority__562de0d0de73",
+        "imdb__majority__8ee398fb1fa3"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "majority",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3333333333333333,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "imdb__majority__3051ed4734df",
+        "imdb__majority__a123876c67cb",
+        "imdb__majority__65d9ffde4aa2"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "logistic_regression",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5013417497804561,
+      "macro_f1_sample_sd": 0.07061760269476196,
+      "run_ids": [
+        "imdb__logistic_regression__431403e97299",
+        "imdb__logistic_regression__44411843bcc2",
+        "imdb__logistic_regression__4147831495bd"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "logistic_regression",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5424367697144621,
+      "macro_f1_sample_sd": 0.05870019448336747,
+      "run_ids": [
+        "imdb__logistic_regression__fd6902f0cbe5",
+        "imdb__logistic_regression__1ef646fb8e67",
+        "imdb__logistic_regression__057973b2407a"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "logistic_regression",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5929388578170087,
+      "macro_f1_sample_sd": 0.05365058117290752,
+      "run_ids": [
+        "imdb__logistic_regression__ec5d4fa662ea",
+        "imdb__logistic_regression__7cc8c516ba98",
+        "imdb__logistic_regression__459df2914565"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "linear_svc",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5013417497804561,
+      "macro_f1_sample_sd": 0.07061760269476196,
+      "run_ids": [
+        "imdb__linear_svc__2af5dbeccac6",
+        "imdb__linear_svc__8761b9a8b010",
+        "imdb__linear_svc__2fa60e69cc28"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "linear_svc",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5393387211940596,
+      "macro_f1_sample_sd": 0.05677436266234772,
+      "run_ids": [
+        "imdb__linear_svc__9d78ccd13599",
+        "imdb__linear_svc__2ad929b3cc6a",
+        "imdb__linear_svc__712052f31cd8"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "linear_svc",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.600643071976898,
+      "macro_f1_sample_sd": 0.049434194713989195,
+      "run_ids": [
+        "imdb__linear_svc__18082b2f6110",
+        "imdb__linear_svc__be7fefa95849",
+        "imdb__linear_svc__4e9a61a4181f"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "multinomial_nb",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4448912786691851,
+      "macro_f1_sample_sd": 0.09023061025542234,
+      "run_ids": [
+        "imdb__multinomial_nb__2f95657b8aa3",
+        "imdb__multinomial_nb__64175f46f518",
+        "imdb__multinomial_nb__01cc186a7ea7"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "multinomial_nb",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5337088237320452,
+      "macro_f1_sample_sd": 0.04860348262413231,
+      "run_ids": [
+        "imdb__multinomial_nb__4b2170962c85",
+        "imdb__multinomial_nb__0adf93da38dc",
+        "imdb__multinomial_nb__6e017624f400"
+      ]
+    },
+    {
+      "dataset": "imdb",
+      "model": "multinomial_nb",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5623091488968136,
+      "macro_f1_sample_sd": 0.0371002831602772,
+      "run_ids": [
+        "imdb__multinomial_nb__5b6da0744061",
+        "imdb__multinomial_nb__fed293a56a40",
+        "imdb__multinomial_nb__447d1d9a520f"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "majority",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.1,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "ag_news__majority__9d3d6fdb908c",
+        "ag_news__majority__c228639d7607",
+        "ag_news__majority__1596dbab2ca1"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "majority",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.1,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "ag_news__majority__6e8d326c55a7",
+        "ag_news__majority__a8a0d0ea7ac8",
+        "ag_news__majority__8c48f45fad8f"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "majority",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.1,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "ag_news__majority__475965e68130",
+        "ag_news__majority__e94318a58439",
+        "ag_news__majority__7eaed2cabc55"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "logistic_regression",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.310781419127576,
+      "macro_f1_sample_sd": 0.042592519649760005,
+      "run_ids": [
+        "ag_news__logistic_regression__83d110b60c77",
+        "ag_news__logistic_regression__7802064b9937",
+        "ag_news__logistic_regression__3747233fa1c5"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "logistic_regression",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4756256770643795,
+      "macro_f1_sample_sd": 0.003094912829761992,
+      "run_ids": [
+        "ag_news__logistic_regression__6c4eb9bed611",
+        "ag_news__logistic_regression__f3e487f9ab2a",
+        "ag_news__logistic_regression__30539bb04da6"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "logistic_regression",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5585899751598575,
+      "macro_f1_sample_sd": 0.05248736405491874,
+      "run_ids": [
+        "ag_news__logistic_regression__732b5faf469e",
+        "ag_news__logistic_regression__301560f36ba5",
+        "ag_news__logistic_regression__d2c150a876bc"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "linear_svc",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.31081509926889833,
+      "macro_f1_sample_sd": 0.04258128588193551,
+      "run_ids": [
+        "ag_news__linear_svc__8da839bdcd3a",
+        "ag_news__linear_svc__b61bd9c3ea0f",
+        "ag_news__linear_svc__46cd33e241a2"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "linear_svc",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4736639846699452,
+      "macro_f1_sample_sd": 0.010159492343662525,
+      "run_ids": [
+        "ag_news__linear_svc__66f32a0680f4",
+        "ag_news__linear_svc__bb553fae9f66",
+        "ag_news__linear_svc__6debf0f35d1f"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "linear_svc",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5523256959875937,
+      "macro_f1_sample_sd": 0.049976614939662295,
+      "run_ids": [
+        "ag_news__linear_svc__8e8746fd97a1",
+        "ag_news__linear_svc__a4c8f0fbf3e7",
+        "ag_news__linear_svc__6bebb3cb259f"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "multinomial_nb",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.314070728072123,
+      "macro_f1_sample_sd": 0.03225395192132096,
+      "run_ids": [
+        "ag_news__multinomial_nb__fb2e513cbfa0",
+        "ag_news__multinomial_nb__ed1992193713",
+        "ag_news__multinomial_nb__c4f2ba45a16e"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "multinomial_nb",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4729157831979233,
+      "macro_f1_sample_sd": 0.02102238338411292,
+      "run_ids": [
+        "ag_news__multinomial_nb__cd6038b111f9",
+        "ag_news__multinomial_nb__2822ae8d78ea",
+        "ag_news__multinomial_nb__2e0d6bd1e7d5"
+      ]
+    },
+    {
+      "dataset": "ag_news",
+      "model": "multinomial_nb",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5349086941154644,
+      "macro_f1_sample_sd": 0.0364768473560611,
+      "run_ids": [
+        "ag_news__multinomial_nb__74901beb4108",
+        "ag_news__multinomial_nb__713fea3a6e78",
+        "ag_news__multinomial_nb__7c34f0a53e98"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "majority",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.006535947712418301,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "trec__majority__ab3edf816371",
+        "trec__majority__d4b044a9973f",
+        "trec__majority__5b7d90ecc740"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "majority",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.006535947712418301,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "trec__majority__73483ce85b66",
+        "trec__majority__d3cfb0a0827d",
+        "trec__majority__c4018d674dfa"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "majority",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.006535947712418301,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "trec__majority__eee4c80202b3",
+        "trec__majority__0c1e65d99c6f",
+        "trec__majority__125ac498caf7"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "logistic_regression",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.2680188088108727,
+      "macro_f1_sample_sd": 0.09388839137910444,
+      "run_ids": [
+        "trec__logistic_regression__b7758f0b1dcb",
+        "trec__logistic_regression__9bb5fc3f868b",
+        "trec__logistic_regression__3fa113858100"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "logistic_regression",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.40271522109960867,
+      "macro_f1_sample_sd": 0.17324748885947477,
+      "run_ids": [
+        "trec__logistic_regression__1628142dcbc2",
+        "trec__logistic_regression__8bc76aab4183",
+        "trec__logistic_regression__57bf2b203878"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "logistic_regression",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5058688118405543,
+      "macro_f1_sample_sd": 0.06957736735978581,
+      "run_ids": [
+        "trec__logistic_regression__5243b88090a4",
+        "trec__logistic_regression__a561efecd730",
+        "trec__logistic_regression__f42a5eb1dbfa"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "linear_svc",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.2614174659289859,
+      "macro_f1_sample_sd": 0.08634435235488422,
+      "run_ids": [
+        "trec__linear_svc__39d7a385a06f",
+        "trec__linear_svc__eb72709fbf05",
+        "trec__linear_svc__e6f2ad9a555f"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "linear_svc",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4062462712429949,
+      "macro_f1_sample_sd": 0.16175748705915993,
+      "run_ids": [
+        "trec__linear_svc__cd598a6823fa",
+        "trec__linear_svc__d2b4ae115ac0",
+        "trec__linear_svc__78104410b92e"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "linear_svc",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5066088764346699,
+      "macro_f1_sample_sd": 0.056272692290424836,
+      "run_ids": [
+        "trec__linear_svc__8abd895ed113",
+        "trec__linear_svc__59024d5d5d6a",
+        "trec__linear_svc__2a1b47b9cc72"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "multinomial_nb",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.25303638566528464,
+      "macro_f1_sample_sd": 0.10652075632939798,
+      "run_ids": [
+        "trec__multinomial_nb__330d424e5744",
+        "trec__multinomial_nb__58c59b28f04b",
+        "trec__multinomial_nb__fc8d46f957b6"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "multinomial_nb",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3620604867184885,
+      "macro_f1_sample_sd": 0.18799905297340708,
+      "run_ids": [
+        "trec__multinomial_nb__175aa9377646",
+        "trec__multinomial_nb__db3012a1e2fb",
+        "trec__multinomial_nb__7ea293992de5"
+      ]
+    },
+    {
+      "dataset": "trec",
+      "model": "multinomial_nb",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.4473685665108079,
+      "macro_f1_sample_sd": 0.108089953284963,
+      "run_ids": [
+        "trec__multinomial_nb__02bfc7bb0f4d",
+        "trec__multinomial_nb__9263aec0dc1b",
+        "trec__multinomial_nb__ea339a6769e9"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "majority",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.00038385260060136905,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "banking77__majority__321bd5f4a247",
+        "banking77__majority__cd3e169c6468",
+        "banking77__majority__4c78884955a2"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "majority",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.00038385260060136905,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "banking77__majority__830b2ae033a2",
+        "banking77__majority__17d71238e242",
+        "banking77__majority__f9920287191d"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "majority",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.00038385260060136905,
+      "macro_f1_sample_sd": 0.0,
+      "run_ids": [
+        "banking77__majority__f06807f5ead7",
+        "banking77__majority__6dfd8bfdeb8d",
+        "banking77__majority__abbbd06e4f2a"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "logistic_regression",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.298363949662651,
+      "macro_f1_sample_sd": 0.045855897701266114,
+      "run_ids": [
+        "banking77__logistic_regression__e83bd8a891e3",
+        "banking77__logistic_regression__3a04d0d40835",
+        "banking77__logistic_regression__cf4f1988159e"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "logistic_regression",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5482306053734625,
+      "macro_f1_sample_sd": 0.02413548245033022,
+      "run_ids": [
+        "banking77__logistic_regression__aa84628045bb",
+        "banking77__logistic_regression__9f8fca344d2e",
+        "banking77__logistic_regression__6c50507cdbc1"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "logistic_regression",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.687514601800316,
+      "macro_f1_sample_sd": 0.018498420775091652,
+      "run_ids": [
+        "banking77__logistic_regression__6cee70ffe4c8",
+        "banking77__logistic_regression__f02e77c225dc",
+        "banking77__logistic_regression__4f55c880a028"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "linear_svc",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.2943294560177677,
+      "macro_f1_sample_sd": 0.049041941472243764,
+      "run_ids": [
+        "banking77__linear_svc__f7ed925b5def",
+        "banking77__linear_svc__654596c41198",
+        "banking77__linear_svc__2fe0a43bb1ae"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "linear_svc",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5247377922702597,
+      "macro_f1_sample_sd": 0.032730556431770925,
+      "run_ids": [
+        "banking77__linear_svc__b5d26f3bdc9b",
+        "banking77__linear_svc__6b1940bc8028",
+        "banking77__linear_svc__2f96c6d09360"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "linear_svc",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.6781763210334638,
+      "macro_f1_sample_sd": 0.016361060584513643,
+      "run_ids": [
+        "banking77__linear_svc__bef4d50ed986",
+        "banking77__linear_svc__280a2d451d4b",
+        "banking77__linear_svc__43a69df54fee"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "multinomial_nb",
+      "train_per_class": 1,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.3003342016329029,
+      "macro_f1_sample_sd": 0.0429255567402701,
+      "run_ids": [
+        "banking77__multinomial_nb__6dce584ab687",
+        "banking77__multinomial_nb__8104764875c8",
+        "banking77__multinomial_nb__56e5f207092c"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "multinomial_nb",
+      "train_per_class": 4,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.5167256985438803,
+      "macro_f1_sample_sd": 0.013889866097292343,
+      "run_ids": [
+        "banking77__multinomial_nb__c5e91eee3d5a",
+        "banking77__multinomial_nb__ce01e834b93c",
+        "banking77__multinomial_nb__619065a0858e"
+      ]
+    },
+    {
+      "dataset": "banking77",
+      "model": "multinomial_nb",
+      "train_per_class": 8,
+      "seeds": [
+        13,
+        42,
+        87
+      ],
+      "n_seeds": 3,
+      "macro_f1_mean": 0.6619734762591905,
+      "macro_f1_sample_sd": 0.010228530963094564,
+      "run_ids": [
+        "banking77__multinomial_nb__9a473fb4910c",
+        "banking77__multinomial_nb__20c367fc796e",
+        "banking77__multinomial_nb__840cf6e0e08a"
+      ]
+    }
+  ]
+}

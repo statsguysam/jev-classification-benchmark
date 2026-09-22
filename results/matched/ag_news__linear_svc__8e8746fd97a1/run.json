@@ -1,0 +1,412 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-22T09:57:35.836268+00:00",
+  "config": {
+    "model": "linear_svc",
+    "train_per_class": 8
+  },
+  "dataset": "ag_news",
+  "dataset_manifest": {
+    "duplicate_policy": {
+      "before_subsampling": true,
+      "heldout_priority": "test then validation then train",
+      "limitation": "Exact normalized text filtering does not detect semantic/phrase overlap or pretraining contamination",
+      "normalization": "Unicode NFKC, casefold, collapse whitespace; no punctuation or HTML changes",
+      "train_rows_removed_for_test_overlap": [
+        "ag_news:train:2279:352c830a738800c4",
+        "ag_news:train:5871:cd6388b90f83bdcf",
+        "ag_news:train:52294:8950b186309afe3d",
+        "ag_news:train:53272:3accdad22a8f5539",
+        "ag_news:train:78392:b9c39c7f64085a08",
+        "ag_news:train:79624:0d24405df92336a3",
+        "ag_news:train:79938:41a713e913492a3f",
+        "ag_news:train:83489:6db8f411cbb7756b",
+        "ag_news:train:91434:d59d94f7da698ccb",
+        "ag_news:train:103350:2dfb0f4c50ea46bd"
+      ],
+      "train_rows_removed_for_validation_overlap": [
+        "ag_news:train:533:bde69a8f0df43cfe",
+        "ag_news:train:1686:74db83965918fbe1",
+        "ag_news:train:3386:f960a1771a16e40f",
+        "ag_news:train:4544:02016b1299ef5bed",
+        "ag_news:train:4858:db2ca5843157fa8b",
+        "ag_news:train:5343:2fffbc1fd5e49b24",
+        "ag_news:train:5424:813ac3aa28561853",
+        "ag_news:train:35164:22341fa8e5b7f1d2",
+        "ag_news:train:47827:7bde3e791b8e09e4",
+        "ag_news:train:48023:12031ee53ec3ecc0",
+        "ag_news:train:50729:dd97dbfafeacf9a9",
+        "ag_news:train:53876:105609ebc1ed9b5c",
+        "ag_news:train:64194:6806120643df50bb",
+        "ag_news:train:72062:ba5abcd911bb9065",
+        "ag_news:train:83989:dc9f1830d8a08a0a",
+        "ag_news:train:85323:a7b501ed316a9a24",
+        "ag_news:train:88557:d3cdfc631ff369ae",
+        "ag_news:train:117520:8dc655eb4b0d5826"
+      ],
+      "within_split": "retain all natural duplicates, including final test; report counts"
+    },
+    "files_sha256": {
+      "test.jsonl": "2bb7b668dccb24417bbb9fd13f9c452fdf1ef992bf3fd4c092e8e26a6cadf742",
+      "train.jsonl": "262f856c8342808e5687ba9b527d02734ce260717d8c1afb08f896156e737a40",
+      "validation.jsonl": "21c45ae41d2376e87ff8b91b93c7f9eb9f185040075eb4595a3ab9a6e6e917e2"
+    },
+    "labels": [
+      "World",
+      "Sports",
+      "Business",
+      "Sci/Tech"
+    ],
+    "limits": {
+      "test": 200,
+      "train": 10000,
+      "validation": 1000
+    },
+    "name": "ag_news",
+    "post_transform_overlap_removed": {
+      "train": 0,
+      "validation": 0
+    },
+    "prepared_content_sha256": "6bfd7b015ff1b67c5f2ec82b95613c5428a1a6f537be591c202052e30d1ba7fb",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "card": "https://huggingface.co/datasets/fancyzhx/ag_news",
+      "files": {
+        "test": "data/test-00000-of-00001.parquet",
+        "train": "data/train-00000-of-00001.parquet"
+      },
+      "files_sha256": {
+        "test": "71de87ec66bc5737752a2502204dfa6d7fe9856ade3ea444dc6317789a4f13fb",
+        "train": "fc508d6d9868594e3da960a8cfeb63ab5a4746598b93428c224397080c1f52ee"
+      },
+      "homepage": "http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html",
+      "label_column": "label",
+      "labels": [
+        "World",
+        "Sports",
+        "Business",
+        "Sci/Tech"
+      ],
+      "license": "unknown; consult original source before redistribution",
+      "notes": "Official 4-class train/test split.",
+      "repo_id": "fancyzhx/ag_news",
+      "revision": "eb185aade064a813bc0b7f42de02595523103ca4",
+      "source": "huggingface_parquet",
+      "source_splits": {
+        "test": "test",
+        "train": "train"
+      },
+      "text_column": "text",
+      "validation_fraction": 0.1
+    },
+    "source_counts": {
+      "test": 7600,
+      "train": 120000
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 50,
+          "1": 50,
+          "2": 50,
+          "3": 50
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "bba811c28240001e2f28b6d1f3c1a583dc53c1fc3b6894279aeaddd3f0fcb2ce",
+        "rows": 200
+      },
+      "train": {
+        "class_counts": {
+          "0": 2500,
+          "1": 2500,
+          "2": 2500,
+          "3": 2500
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 1,
+        "row_ids_sha256": "0e353f8ce0b0a1fde7d562f641269a0d3991ba65955f76aa5d6b379c14f8e71c",
+        "rows": 10000
+      },
+      "validation": {
+        "class_counts": {
+          "0": 250,
+          "1": 250,
+          "2": 250,
+          "3": 250
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "688b599ed297d3b2db2ae49826fd4384da3384dc4e9d02c8e53a27b28ad85c83",
+        "rows": 1000
+      }
+    },
+    "text_policy": {
+      "applies_to": "all splits and all model families",
+      "kind": "character_prefix",
+      "max_chars": 2000
+    },
+    "truncated_rows": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    },
+    "validation_fraction": 0.1
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "manifest_sha256": "4bf4199c04845b8f3dfd30dd7e8ec3e4eaf2617b8defd41d537e3066446172cd",
+  "method": "classical",
+  "metrics": {
+    "accuracy": 0.52,
+    "balanced_accuracy": 0.52,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.45,
+            0.5851249999999999
+          ],
+          "estimate": 0.52
+        },
+        "macro_f1": {
+          "ci95": [
+            0.44365866894424844,
+            0.5849214565081694
+          ],
+          "estimate": 0.5153781256504029
+        }
+      },
+      "samples": 1000,
+      "seed": 13
+    },
+    "confusion_matrix": [
+      [
+        28,
+        11,
+        7,
+        4,
+        0
+      ],
+      [
+        7,
+        34,
+        8,
+        1,
+        0
+      ],
+      [
+        11,
+        8,
+        24,
+        7,
+        0
+      ],
+      [
+        5,
+        8,
+        19,
+        18,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      2,
+      3,
+      "failure"
+    ],
+    "failure_rate": 0.0,
+    "input_tokens": null,
+    "input_tokens_coverage": 0.0,
+    "input_tokens_known_total": 0,
+    "latency_p50_s": 0.0003010299999732524,
+    "latency_p95_s": 0.0003010299999732524,
+    "macro_f1": 0.5153781256504029,
+    "n_classes": 4,
+    "n_failures": 0,
+    "n_probability_rows": 0,
+    "n_test": 200,
+    "output_tokens": null,
+    "output_tokens_coverage": 0.0,
+    "output_tokens_known_total": 0,
+    "per_class": [
+      {
+        "f1": 0.5544554455445545,
+        "label": 0,
+        "precision": 0.5490196078431373,
+        "recall": 0.56,
+        "support": 50
+      },
+      {
+        "f1": 0.6126126126126126,
+        "label": 1,
+        "precision": 0.5573770491803278,
+        "recall": 0.68,
+        "support": 50
+      },
+      {
+        "f1": 0.4444444444444444,
+        "label": 2,
+        "precision": 0.41379310344827586,
+        "recall": 0.48,
+        "support": 50
+      },
+      {
+        "f1": 0.45,
+        "label": 3,
+        "precision": 0.6,
+        "recall": 0.36,
+        "support": 50
+      }
+    ],
+    "prediction_time_s": 0.060205999994650476,
+    "probability_coverage": 0.0,
+    "valid_response_accuracy": 0.52
+  },
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "run_id": "ag_news__linear_svc__8e8746fd97a1",
+  "seed": 13,
+  "started_at": "2026-09-22T09:57:34.129140+00:00",
+  "status": "complete",
+  "test_ids_sha256": "30c3f843b97756ad9b02482ce00dc934dfeae849a55a48c71a6d8b800e018174",
+  "training": {
+    "candidate_budget": 1,
+    "feature_fit_s": 0.02082175004761666,
+    "features": {
+      "char_wb_ngrams": [
+        3,
+        5
+      ],
+      "feature_count": 8289,
+      "max_char_features": 80000,
+      "max_word_features": 60000,
+      "sublinear_tf": true,
+      "vocabulary_fit_split": "train only",
+      "word_ngrams": [
+        1,
+        2
+      ]
+    },
+    "fit_and_selection_s": 0.02558300003875047,
+    "hyperparameter_trials": [
+      {
+        "fit_s": 0.004726250073872507,
+        "parameters": {
+          "C": 1.0
+        },
+        "validation_macro_f1": null
+      }
+    ],
+    "latency_measurement": "amortized batch; not individual request latency",
+    "model": "linear_svc",
+    "probability_kind": "none",
+    "refit_with_validation": false,
+    "seed": 13,
+    "selected_parameters": {
+      "C": 1.0
+    },
+    "selected_validation_macro_f1": null,
+    "selection_metric": "fixed_a_priori",
+    "sklearn_version": "1.9.1",
+    "test_inference_s": 0.06020599999465048,
+    "test_rows": 200,
+    "train_per_class": 8,
+    "training_row_ids": [
+      "ag_news:train:17510:30821eae500392e9",
+      "ag_news:train:94759:daa07e05645d6c7d",
+      "ag_news:train:113539:d3f9358bda56e0e4",
+      "ag_news:train:43350:50a26f5d5a69b890",
+      "ag_news:train:92115:05095edbdfabc97a",
+      "ag_news:train:66328:aa5dd24cb8615337",
+      "ag_news:train:42942:d20154a10008d0ae",
+      "ag_news:train:49270:75a8c5e7163e80b7",
+      "ag_news:train:76263:75c2ff1bfe1df360",
+      "ag_news:train:23700:c299fed2fd065062",
+      "ag_news:train:112893:85f52ebd99f05fb3",
+      "ag_news:train:116132:44a6eb156b49500c",
+      "ag_news:train:55649:09b45fc14630c57f",
+      "ag_news:train:95772:326a460f816acae8",
+      "ag_news:train:104653:e8484ea4e0fcf62f",
+      "ag_news:train:89772:6563a8ca27345c5c",
+      "ag_news:train:82454:09aa4fa09fdcfacd",
+      "ag_news:train:112371:171bae5500da0e79",
+      "ag_news:train:72723:72f0aa24307b0ac7",
+      "ag_news:train:7649:5c99a6734224ce7e",
+      "ag_news:train:79404:254b1ea044e7e25f",
+      "ag_news:train:88759:bfa9424444e8569d",
+      "ag_news:train:106025:fe4f5f47377ddf04",
+      "ag_news:train:62312:dce055ff2a3eebaa",
+      "ag_news:train:86847:aee32928037ad538",
+      "ag_news:train:69979:9b765874f5396260",
+      "ag_news:train:58357:002cd01a51f0ec55",
+      "ag_news:train:20906:f20e9726f502f64b",
+      "ag_news:train:82387:0f870aada6667170",
+      "ag_news:train:19335:f6f8fae1a0eae7e4",
+      "ag_news:train:75797:7f56c0b0f63df38b",
+      "ag_news:train:51261:f8610ad1c946c76f"
+    ],
+    "training_row_ids_sha256": "1eb54c558a0061e4bccdc85b4504299fda2e773a95b9601c1de1173c3c031372",
+    "training_rows": 32,
+    "validation_rows": 0
+  },
+  "training_example_ids": [
+    "ag_news:train:17510:30821eae500392e9",
+    "ag_news:train:94759:daa07e05645d6c7d",
+    "ag_news:train:113539:d3f9358bda56e0e4",
+    "ag_news:train:43350:50a26f5d5a69b890",
+    "ag_news:train:92115:05095edbdfabc97a",
+    "ag_news:train:66328:aa5dd24cb8615337",
+    "ag_news:train:42942:d20154a10008d0ae",
+    "ag_news:train:49270:75a8c5e7163e80b7",
+    "ag_news:train:76263:75c2ff1bfe1df360",
+    "ag_news:train:23700:c299fed2fd065062",
+    "ag_news:train:112893:85f52ebd99f05fb3",
+    "ag_news:train:116132:44a6eb156b49500c",
+    "ag_news:train:55649:09b45fc14630c57f",
+    "ag_news:train:95772:326a460f816acae8",
+    "ag_news:train:104653:e8484ea4e0fcf62f",
+    "ag_news:train:89772:6563a8ca27345c5c",
+    "ag_news:train:82454:09aa4fa09fdcfacd",
+    "ag_news:train:112371:171bae5500da0e79",
+    "ag_news:train:72723:72f0aa24307b0ac7",
+    "ag_news:train:7649:5c99a6734224ce7e",
+    "ag_news:train:79404:254b1ea044e7e25f",
+    "ag_news:train:88759:bfa9424444e8569d",
+    "ag_news:train:106025:fe4f5f47377ddf04",
+    "ag_news:train:62312:dce055ff2a3eebaa",
+    "ag_news:train:86847:aee32928037ad538",
+    "ag_news:train:69979:9b765874f5396260",
+    "ag_news:train:58357:002cd01a51f0ec55",
+    "ag_news:train:20906:f20e9726f502f64b",
+    "ag_news:train:82387:0f870aada6667170",
+    "ag_news:train:19335:f6f8fae1a0eae7e4",
+    "ag_news:train:75797:7f56c0b0f63df38b",
+    "ag_news:train:51261:f8610ad1c946c76f"
+  ],
+  "wall_time_s": 0.17210608394816518
+}
