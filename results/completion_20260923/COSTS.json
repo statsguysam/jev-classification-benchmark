@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "authorized_usd": "25.000000000",
+  "conservative_total_usd": "24.110484775",
+  "remaining_under_authorization_usd": "0.889515225",
+  "ledgers": [
+    {
+      "path": "results/completion_20260923/control_retries/budget.jsonl",
+      "ledger_id": "80833b90-d6c0-44f2-b1f2-732c77c01355",
+      "allocated_usd": "0.080640000",
+      "charged_or_reserved_usd": "0.040320000",
+      "counted_toward_cumulative_cap_usd": "0.040320000",
+      "reservations": 15,
+      "settlements": 0,
+      "artifact_sha256": {
+        "results/completion_20260923/control_retries/budget.jsonl": "b5e53e46c92fded484db81b7692b708e7eb6d7d07e4990501f4334cc0a05e8a0",
+        "results/completion_20260923/control_retries/budget.jsonl.lock": "0d53b5554b506df0c294f5c981fa258901407ed021c381c080df441aa2b9345e"
+      }
+    },
+    {
+      "path": "results/completion_20260923/retries/budget.jsonl",
+      "ledger_id": "9136bcda-f3aa-48e8-9814-e550c08d4a46",
+      "allocated_usd": "0.668116000",
+      "charged_or_reserved_usd": "0.215772500",
+      "counted_toward_cumulative_cap_usd": "0.215772500",
+      "reservations": 71,
+      "settlements": 1,
+      "artifact_sha256": {
+        "results/completion_20260923/retries/budget.jsonl": "e346bcf3fdb1f6002cbdb389e02e80947fb5382bb210f9b7696f4f30266c8918",
+        "results/completion_20260923/retries/budget.jsonl.lock": "e68083a173e62e9dccbd91f251aa1594ce18fc2d4c0ee64e2b30d0e994bb5a6b"
+      }
+    },
+    {
+      "path": "results/health_checks/jev-20260923/budget.jsonl",
+      "ledger_id": "dce91e74-70ef-4ce4-80f7-1caf500dce0d",
+      "allocated_usd": "0.002688000",
+      "charged_or_reserved_usd": "0.002688000",
+      "counted_toward_cumulative_cap_usd": "0.002688000",
+      "reservations": 1,
+      "settlements": 0,
+      "artifact_sha256": {
+        "results/health_checks/jev-20260923/budget.jsonl": "2db8278c3a2ae3071190b03664a579b6cfb8782d2876b75951f8ab46341bf38c",
+        "results/health_checks/jev-20260923/budget.jsonl.lock": "f977b99cb87d4b58bb2579c5f37eba8655f056b3dedbc95ac266117d4f1d6ade"
+      }
+    },
+    {
+      "path": "results/jev-budget.jsonl",
+      "ledger_id": "bfbdb3d2-0a73-43e0-8e7a-bbfdd87ee107",
+      "allocated_usd": "2.500000000",
+      "charged_or_reserved_usd": "2.150400000",
+      "counted_toward_cumulative_cap_usd": "2.150400000",
+      "reservations": 800,
+      "settlements": 0,
+      "artifact_sha256": {
+        "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+        "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d"
+      }
+    },
+    {
+      "path": "results/numeric_decisions/review-budget.jsonl",
+      "ledger_id": "4d07d9e0-feb2-40cb-a47d-dc524a414c27",
+      "allocated_usd": "0.900000000",
+      "charged_or_reserved_usd": "0.803712000",
+      "counted_toward_cumulative_cap_usd": "0.803712000",
+      "reservations": 299,
+      "settlements": 0,
+      "artifact_sha256": {
+        "results/numeric_decisions/review-budget.jsonl": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a",
+        "results/numeric_decisions/review-budget.jsonl.lock": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49"
+      }
+    },
+    {
+      "path": "results/numeric_expansion/review-budget.jsonl",
+      "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "allocated_usd": "5.000000000",
+      "charged_or_reserved_usd": "4.032000000",
+      "counted_toward_cumulative_cap_usd": "4.032000000",
+      "reservations": 1500,
+      "settlements": 0,
+      "artifact_sha256": {
+        "results/numeric_expansion/review-budget.jsonl": "71767df266ff980cc9296de5827dbce2a4d0589c130f85cf567aa6c59b4b35e9",
+        "results/numeric_expansion/review-budget.jsonl.lock": "5649f6a8aa24a9f301740d6ae437972f3ec5b15efe79f05c2f0d80243afaf823"
+      }
+    },
+    {
+      "path": "results/openai-budget.jsonl",
+      "ledger_id": "8ac5aa0b-40e5-41d9-a9fd-c150d24f8994",
+      "allocated_usd": "7.500000000",
+      "charged_or_reserved_usd": "3.142607000",
+      "counted_toward_cumulative_cap_usd": "3.142607000",
+      "reservations": 1600,
+      "settlements": 1600,
+      "artifact_sha256": {
+        "results/openai-budget.jsonl": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a",
+        "results/openai-budget.jsonl.lock": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278"
+      }
+    },
+    {
+      "path": "results/review_controls/execution/budget.jsonl",
+      "ledger_id": "b5e362c1-6b01-455c-a577-04bc4e4de7cb",
+      "allocated_usd": "1.122234029",
+      "charged_or_reserved_usd": "0.192398804",
+      "counted_toward_cumulative_cap_usd": "0.192398804",
+      "reservations": 1714,
+      "settlements": 1699,
+      "artifact_sha256": {
+        "results/review_controls/execution/budget.jsonl": "cf4b29351ce7d387f6a50b04da17a4035b67884c09efd4a93a50e28167cb2e8e",
+        "results/review_controls/execution/budget.jsonl.lock": "bb462a59959eeddbf8b41f023a8c8fc9adc64576ce77ed670d94bad1c35618a1"
+      }
+    },
+    {
+      "path": "results/tabular/api-budget.jsonl",
+      "ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "allocated_usd": "14.700000000",
+      "charged_or_reserved_usd": "13.229108700",
+      "counted_toward_cumulative_cap_usd": "13.229108700",
+      "reservations": 2472,
+      "settlements": 1647,
+      "artifact_sha256": {
+        "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+        "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89"
+      }
+    },
+    {
+      "path": "results/text_extension/review-budget.jsonl",
+      "ledger_id": "f98dc1bc-b92f-4d71-8e4d-b91e38e4e8d8",
+      "allocated_usd": "1.600000000",
+      "charged_or_reserved_usd": "0.301477771",
+      "counted_toward_cumulative_cap_usd": "0.301477771",
+      "reservations": 4800,
+      "settlements": 4752,
+      "artifact_sha256": {
+        "results/text_extension/review-budget.jsonl": "26952fec5846fe4a3a8b3bb5e2946e8b860c41d83b6980f691fae6ab5d6739b7",
+        "results/text_extension/review-budget.jsonl.lock": "0291affe38d31024a1b9f9418d2c8650374a043e64728ead8b3ff4e436358838"
+      }
+    }
+  ],
+  "control_recovery_no_op": false,
+  "analysis_sha256": "083758ee912886cb227ef45f34bfbf6cc3764f02de75588b97621e3570869f62",
+  "interpretation": "Retained conservative charges and unresolved reservations across all study phases. Not a provider invoice or account-wide cap. Local/Colab compute is unpriced. Historical reservations remain retained; phase allocation ceilings must not be summed as actual spending."
+}

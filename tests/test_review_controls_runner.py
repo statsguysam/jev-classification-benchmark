@@ -172,6 +172,28 @@ def test_failed_response_cannot_keep_distribution(tmp_path):
         controls.validate_prediction(prediction, plan['requests'][0])
 
 
+@pytest.mark.parametrize("probabilities", [[0.5, 0.5], [0.5000002, 0.4999998]])
+def test_adapter_valid_nonfirst_choice_is_retained(tmp_path, probabilities):
+    plan, identity, ledger = setup(tmp_path)
+    prediction = save_response(tmp_path, plan, identity, ledger)
+    prediction.label = 1
+    prediction.probabilities = probabilities
+    before = json.dumps(asdict(prediction), sort_keys=True)
+    controls.validate_prediction(prediction, plan["requests"][0])
+    assert json.dumps(asdict(prediction), sort_keys=True) == before
+    (tmp_path / "predictions.jsonl").write_text(json.dumps(asdict(prediction)) + "\n")
+    assert controls.audit_saved(plan, identity, ledger, tmp_path / "predictions.jsonl") == [prediction]
+
+
+def test_choice_beyond_adapter_tolerance_is_rejected(tmp_path):
+    plan, identity, ledger = setup(tmp_path)
+    prediction = save_response(tmp_path, plan, identity, ledger)
+    prediction.label = 1
+    prediction.probabilities = [0.500001, 0.499999]
+    with pytest.raises(controls.budget.GuardError, match="beyond adapter tolerance"):
+        controls.validate_prediction(prediction, plan["requests"][0])
+
+
 def test_health_probe_keeps_full_allowance_and_missing_anchor_fails(monkeypatch, tmp_path):
     path = tmp_path / "health-budget.jsonl"
     monkeypatch.setattr(controls, "HEALTH_LEDGER", path)
@@ -199,6 +221,7 @@ def test_controls_remaining_budget_includes_health_probe(monkeypatch, tmp_path):
     path = tmp_path / "health-budget.jsonl"
     monkeypatch.setattr(controls, "ROOT", tmp_path)
     monkeypatch.setattr(controls, "HEALTH_LEDGER", path)
+    monkeypatch.setattr(controls, "RECOVERY", tmp_path / "no-recovery")
     monkeypatch.setattr(controls, "producer_pins", lambda: {})
     monkeypatch.setattr(controls.historical, "verify_envelope", lambda: None)
     monkeypatch.setattr(controls.numeric_report, "collect", lambda **_: {"complete_runs": 68})
@@ -218,3 +241,30 @@ def test_controls_remaining_budget_includes_health_probe(monkeypatch, tmp_path):
         stream.write("changed")
     with pytest.raises(controls.budget.GuardError, match="earlier ledger changed"):
         controls.check_prior(result)
+
+
+def test_recovery_accounting_requires_finalized_immutable_evidence(monkeypatch, tmp_path):
+    area = tmp_path / "recovery"
+    monkeypatch.setattr(controls, "RECOVERY", area)
+    assert controls.recovery_accounting() == (0, [])
+    area.mkdir()
+    with pytest.raises(controls.budget.GuardError, match="partial"):
+        controls.recovery_accounting()
+    ledger = controls.budget.Ledger(area / "budget.jsonl", "0.1", initialize=True)
+    ident = ledger.reserve(controls.route.RESERVE_NANO, {"purpose": "retry-fixture"})
+    ledger.result(ident, {"outcome": "returned"})
+    (area / "plan.json").write_text('{}\n')
+    (area / "attempts.jsonl").write_text('{}\n')
+    record = {"status": "running", "budget": ledger.snapshot(), "protected_artifacts_sha256": {
+        name: controls.file_sha(area / name) for name in ("plan.json", "attempts.jsonl", "budget.jsonl", "budget.jsonl.lock")}}
+    (area / "run.json").write_text(json.dumps(record))
+    with pytest.raises(controls.budget.GuardError, match="finalized"):
+        controls.recovery_accounting()
+    record["status"] = "complete"
+    (area / "run.json").write_text(json.dumps(record))
+    amount, paths = controls.recovery_accounting()
+    assert amount == controls.Decimal("0.002688000")
+    assert len(paths) == 5
+    (area / "attempts.jsonl").write_text('{}\n{}\n')
+    with pytest.raises(controls.budget.GuardError, match="evidence changed"):
+        controls.recovery_accounting()

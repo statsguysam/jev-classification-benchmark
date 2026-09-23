@@ -22,3 +22,6 @@ results/text_extension/review-execution.lock
 results/review_controls/prepared_full/requests.jsonl
 results/review_controls/execution/execution.lock
 results/health_checks/jev-20260923/execution.lock
+results/completion_sessions/execution.lock
+results/completion_20260923/retries/execution.lock
+results/completion_20260923/control_retries/execution.lock

@@ -1,0 +1,5464 @@
+{
+  "api_outcomes": {
+    "dependent_first_calls": 1,
+    "dependent_review_calls": 1,
+    "new_calls": 71,
+    "ordinary_paid_failure_retry_calls": 70,
+    "outcomes": {
+      "invalid_output": 5,
+      "success": 66
+    },
+    "stages": {
+      "dependent_first_call": 1,
+      "retry": 70
+    },
+    "upstream_unresolved_not_called": 0
+  },
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 42,
+  "budget": {
+    "budget_usd": "0.668116000",
+    "charged_or_reserved_usd": "0.215772500",
+    "events": 144,
+    "halted": false,
+    "ledger_id": "9136bcda-f3aa-48e8-9814-e550c08d4a46",
+    "remaining_reservation_usd": "0.452343500",
+    "reservations": 71,
+    "settlements": 1
+  },
+  "complete_service_condition_views": 23,
+  "conditions": [
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "breast_cancer",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9369472649852604,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.9383415435139573,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9469026548672567
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 113
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8947368421052632,
+                0.9824561403508771
+              ],
+              "estimate": 0.9385964912280702
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8897145849468653,
+                0.9807432432432432
+              ],
+              "estimate": 0.9383415435139573
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8947368421052632,
+                0.9824561403508771
+              ],
+              "estimate": 0.9385964912280702
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8897145849468653,
+                0.9807432432432432
+              ],
+              "estimate": 0.9383415435139573
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9035087719298246,
+                0.9824561403508771
+              ],
+              "estimate": 0.9473684210526315
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8968068623377893,
+                0.9821875
+              ],
+              "estimate": 0.9444805194805195
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "176cc7fe0d4177089b38db077d0156a645ce3426407844a7207beebab0954f33",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "breast_cancer__astra__jev-review": "breast_cancer__astra__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "46c5ea9a26ea9fa2703c0351f6a962045dc986f0d92f96c63b8f68c23755a4a7"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 114,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "breast_cancer__astra__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9369472649852604,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.9383415435139573,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9469026548672567
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 113
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.00877192982456132,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 114,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.026315789473684292
+            ],
+            "estimate": 0.00877192982456132
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.021028846153846193
+            ],
+            "estimate": 0.00613897596656221
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.9473684210526315,
+          "balanced_accuracy": 0.9485751719620046,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9444805194805195,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9473684210526315
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 114
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "gpt-6-astra",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "breast_cancer",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.9286656770575623,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9380530973451328
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 113
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8776547104244491,
+                0.9725723853625902
+              ],
+              "estimate": 0.9286656770575623
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8776547104244491,
+                0.9725723853625902
+              ],
+              "estimate": 0.9286656770575623
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8947368421052632,
+                0.9824561403508771
+              ],
+              "estimate": 0.9385964912280702
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8844468689090782,
+                0.97869338350351
+              ],
+              "estimate": 0.9349474199070678
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "1b5dd0334ccf981d719027c1a912a2617250d7f7908af71949a367cb2c5d8258",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "breast_cancer__jev-1.13__3d1cba817d2a": "breast_cancer__jev-1.13__3d1cba817d2a"
+        },
+        "original_attempt_identity_sha256": [
+          "c5d080cb87ddd60f814f54a90749619e8969fd999b531701ff58622aeef34390"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "few_shot",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 114,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "breast_cancer__jev-1.13__3d1cba817d2a",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.9286656770575623,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9380530973451328
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 113
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.00877192982456143,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 114,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.026315789473684292
+            ],
+            "estimate": 0.00877192982456143
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.02159474815724805
+            ],
+            "estimate": 0.006281742849505445
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9369472649852604,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9349474199070678,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9385964912280702
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 114
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": null,
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "breast_cancer",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.8448950829940495,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.8495575221238938
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 113,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.7719298245614035,
+                0.9122807017543859
+              ],
+              "estimate": 0.8421052631578947
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7725502602079117,
+                0.9114618874069478
+              ],
+              "estimate": 0.8448950829940495
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.7719298245614035,
+                0.9122807017543859
+              ],
+              "estimate": 0.8421052631578947
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7725502602079117,
+                0.9114618874069478
+              ],
+              "estimate": 0.8448950829940495
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.7807017543859649,
+                0.9122807017543859
+              ],
+              "estimate": 0.8508771929824561
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7778124269119826,
+                0.9121746012243163
+              ],
+              "estimate": 0.8494757281553398
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "bf51ca743e7e3c16126fe4e7baa72138f68587c1c02e175f4ffad23649de4431",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "breast_cancer__jev-1.13__e30c52b19b9e": "breast_cancer__jev-1.13__e30c52b19b9e"
+        },
+        "original_attempt_identity_sha256": [
+          "b7b1b7fab4763ad4feb941f45eed6256a862ea4b8d06df14fa3a6a198867f4cd"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 114,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "breast_cancer__jev-1.13__e30c52b19b9e",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.8448950829940495,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.8495575221238938
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 113,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.00877192982456143,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 114,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.026315789473684292
+            ],
+            "estimate": 0.00877192982456143
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.015648241818479253
+            ],
+            "estimate": 0.004580645161290309
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.8508771929824561,
+          "balanced_accuracy": 0.880281690140845,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8494757281553398,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.8508771929824561
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 114
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": null,
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "breast_cancer",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.9210526315789473,
+          "balanced_accuracy": 0.9274484113986243,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.9227088402270884,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9292035398230089
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 113,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.868421052631579,
+                0.9649122807017544
+              ],
+              "estimate": 0.9210526315789473
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8684020429866187,
+                0.9690613225624077
+              ],
+              "estimate": 0.9227088402270884
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.868421052631579,
+                0.9649122807017544
+              ],
+              "estimate": 0.9210526315789473
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8684020429866187,
+                0.9690613225624077
+              ],
+              "estimate": 0.9227088402270884
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8714975845410629,
+                0.9727598566308244
+              ],
+              "estimate": 0.9265700483091788
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "78d8f5a7cd2686e510df057fb3aa3b9fb578767f22cb2a82e59ed9a1802b210a",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "breast_cancer__luna__k4__jev-review": "breast_cancer__luna__k4__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "ad12084afc0f95e8b153042456d59bfab85a8ad4b6e0ad146d44c2b43f49bb44"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 114,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "breast_cancer__luna__k4__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.9210526315789473,
+          "balanced_accuracy": 0.9274484113986243,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.9227088402270884,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9292035398230089
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 113,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.00877192982456143,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 114,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.026315789473684292
+            ],
+            "estimate": 0.00877192982456143
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.012969415408439877
+            ],
+            "estimate": 0.0038612080820903394
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9344906649197511,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9265700483091788,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9298245614035088
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 114
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "gpt-5.6-luna",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "breast_cancer",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.8947368421052632,
+          "balanced_accuracy": 0.9017359973796266,
+          "failure_rate": 0.052631578947368474,
+          "macro_f1": 0.9172320217096337,
+          "n_failures": 6,
+          "n_probability_rows": 108,
+          "n_rows": 114,
+          "probability_coverage": 0.9473684210526315,
+          "valid_response_accuracy": 0.9444444444444444
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "billing": 6,
+          "success": 108
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8333333333333334,
+                0.9473684210526315
+              ],
+              "estimate": 0.8947368421052632
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8606430834528933,
+                0.960009264024704
+              ],
+              "estimate": 0.9172320217096337
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8333333333333334,
+                0.9473684210526315
+              ],
+              "estimate": 0.8947368421052632
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8606430834528933,
+                0.960009264024704
+              ],
+              "estimate": 0.9172320217096337
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8947368421052632,
+                0.9824561403508771
+              ],
+              "estimate": 0.9385964912280702
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8859543806985131,
+                0.9797081578331579
+              ],
+              "estimate": 0.9359910162829871
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "5e428183f44906a21a4089cf000b34cb77c419eb931c7fd0f1fe310a712adad2",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "breast_cancer__smollm2__k4__jev-review": "breast_cancer__smollm2__k4__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "f1234301782eaff5b75e33041534a339c17434ff5a9e5197ce1509061cf10459",
+          "423af83b953b0b38cb221775f8513cafd10a92749acc01019b34d62cb74df30a",
+          "c5038f5c29b31ca2148ef95bd698606c111b5f62354d4fcf0706f7a25a682349",
+          "56e20a5d74b2bf4679de3e46f8963e4f13b2995d9d7dd7afb54271ac3ed0296a",
+          "369c5966ad8a9e8750150c923b4bbe5399a61439b27b2b8b55ee14d77aae4f7f",
+          "9e09dcdb35c8f3baa4e480f5d24515bbf1c7af9be9a075a6e66a2f9d05f5754f"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 6,
+      "n_rows": 114,
+      "new_call_stage_counts": {
+        "retry": 6
+      },
+      "new_service_outcome_counts": {
+        "success": 6
+      },
+      "original_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.8947368421052632,
+          "balanced_accuracy": 0.9017359973796266,
+          "failure_rate": 0.052631578947368474,
+          "macro_f1": 0.9172320217096337,
+          "n_failures": 6,
+          "n_probability_rows": 108,
+          "n_rows": 114,
+          "probability_coverage": 0.9473684210526315,
+          "valid_response_accuracy": 0.9444444444444444
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "billing": 6,
+          "success": 108
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.04385964912280704,
+        "corrected": 5,
+        "harmed": 0,
+        "n_rows": 114,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.00877192982456143,
+              0.08771929824561397
+            ],
+            "estimate": 0.04385964912280704
+          },
+          "macro_f1": {
+            "ci95": [
+              -0.0029149817593876306,
+              0.044281224579215295
+            ],
+            "estimate": 0.018758994573353394
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9461185718964953,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9359910162829871,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9385964912280702
+        },
+        "n_not_attempted": 0,
+        "n_observed": 114,
+        "n_rows": 114,
+        "outcome_counts": {
+          "success": 114
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "sst2",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.935,
+          "balanced_accuracy": 0.935874349739896,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.937364847875283,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.9396984924623115
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9,
+                0.965
+              ],
+              "estimate": 0.935
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9016315503895108,
+                0.9691166251824509
+              ],
+              "estimate": 0.937364847875283
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9,
+                0.965
+              ],
+              "estimate": 0.935
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9016315503895108,
+                0.9691166251824509
+              ],
+              "estimate": 0.937364847875283
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.905,
+                0.97
+              ],
+              "estimate": 0.94
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9045935639989705,
+                0.9699879951980792
+              ],
+              "estimate": 0.9399459513562206
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "6c754e951d70ed842e81154a874c70db2df1843b41f191661fd46d9aff01528e",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "sst2__astra__k0__jev-review": "sst2__astra__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "db20e78503f63f523c5fd8e721b3b23d1ed3a417f0860a840dadb50cdbb3db61"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "sst2__astra__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.935,
+          "balanced_accuracy": 0.935874349739896,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.937364847875283,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.9396984924623115
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.004999999999999893,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.004999999999999893
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.008790671210025972
+            ],
+            "estimate": 0.002581103480937652
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.94,
+          "balanced_accuracy": 0.9409763905562225,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9399459513562206,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.94
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "gpt-6-astra",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "sst2",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.935,
+          "balanced_accuracy": 0.9360744297719088,
+          "failure_rate": 0.010000000000000009,
+          "macro_f1": 0.9394919752306331,
+          "n_failures": 2,
+          "n_probability_rows": 198,
+          "n_rows": 200,
+          "probability_coverage": 0.99,
+          "valid_response_accuracy": 0.9444444444444444
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 198,
+          "transport": 2
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9,
+                0.97
+              ],
+              "estimate": 0.935
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9049876073669937,
+                0.9700933279497503
+              ],
+              "estimate": 0.9394919752306331
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9,
+                0.97
+              ],
+              "estimate": 0.935
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9049876073669937,
+                0.9700933279497503
+              ],
+              "estimate": 0.9394919752306331
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.91,
+                0.975
+              ],
+              "estimate": 0.945
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9099997749774977,
+                0.974969337438362
+              ],
+              "estimate": 0.9449656035021888
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "fba633418c81aab1df537aa7af0de7ec9e7b337d7fcf0ec90fb279e0a798e52a",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "sst2__jev-1.13__9d5a851767fc": "sst2__jev-1.13__9d5a851767fc"
+        },
+        "original_attempt_identity_sha256": [
+          "8b42bc8fe153eaa0c8164e4a75d432b67af055715f6cba8164cf88ec7df9e363",
+          "015279248ed758f35f1a144efd10b8643f954a667d7c4b543befea4f82f7bc33"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 2,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 2
+      },
+      "new_service_outcome_counts": {
+        "success": 2
+      },
+      "original_run_id": "sst2__jev-1.13__9d5a851767fc",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.935,
+          "balanced_accuracy": 0.9360744297719088,
+          "failure_rate": 0.010000000000000009,
+          "macro_f1": 0.9394919752306331,
+          "n_failures": 2,
+          "n_probability_rows": 198,
+          "n_rows": 200,
+          "probability_coverage": 0.99,
+          "valid_response_accuracy": 0.9444444444444444
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 198,
+          "transport": 2
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.009999999999999898,
+        "corrected": 2,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.025000000000000022
+            ],
+            "estimate": 0.009999999999999898
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.014101838449902121
+            ],
+            "estimate": 0.0054736282715557305
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.945,
+          "balanced_accuracy": 0.9458783513405362,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9449656035021888,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.945
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": null,
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "sst2",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.94,
+          "balanced_accuracy": 0.9409763905562225,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.9422428966557707,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.9447236180904522
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.905,
+                0.97
+              ],
+              "estimate": 0.94
+            },
+            "macro_f1": {
+              "ci95": [
+                0.908842220354425,
+                0.9724377102694454
+              ],
+              "estimate": 0.9422428966557707
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.905,
+                0.97
+              ],
+              "estimate": 0.94
+            },
+            "macro_f1": {
+              "ci95": [
+                0.908842220354425,
+                0.9724377102694454
+              ],
+              "estimate": 0.9422428966557707
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.91,
+                0.975
+              ],
+              "estimate": 0.945
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9099997749774977,
+                0.974969337438362
+              ],
+              "estimate": 0.9449656035021888
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "6fc6289ef87ac84ff63d2a694861485cf982f54f8131e4611bad70e6a6623a33",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "sst2__qwen_main__k0__jev-review": "sst2__qwen_main__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "0020712670d8df59cb56dbac87f8e5fe85c10d54b3e3ce6d99a896b1d5f8e35d"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "sst2__qwen_main__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.94,
+          "balanced_accuracy": 0.9409763905562225,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.9422428966557707,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.9447236180904522
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0050000000000000044,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.008940136547464542
+            ],
+            "estimate": 0.002722706846418177
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.945,
+          "balanced_accuracy": 0.9458783513405362,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9449656035021888,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.945
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "sst2",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.96,
+          "balanced_accuracy": 0.9605842336934773,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.9623850444745967,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.964824120603015
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 199,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.93,
+                0.985
+              ],
+              "estimate": 0.96
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9345264273612753,
+                0.9872200605405793
+              ],
+              "estimate": 0.9623850444745967
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.93,
+                0.985
+              ],
+              "estimate": 0.96
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9345264273612753,
+                0.9872200605405793
+              ],
+              "estimate": 0.9623850444745967
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.94,
+                0.99
+              ],
+              "estimate": 0.965
+            },
+            "macro_f1": {
+              "ci95": [
+                0.938608812586565,
+                0.9899507587177168
+              ],
+              "estimate": 0.9649991249781245
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "9eaf8b0ffab5e0fc22a076d023e45acb9aee5c52113f3a2f5d68bc80990a8d9c",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "sst2__qwen_main__k4__jev-review": "sst2__qwen_main__k4__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "40a2c7eb7b7bf56ec3b1f07e7975a4df77b299500b31d586d0ce4e117c70e5d6"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "sst2__qwen_main__k4__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.96,
+          "balanced_accuracy": 0.9605842336934773,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.9623850444745967,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.964824120603015
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 199,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0050000000000000044,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.008659900687753658
+            ],
+            "estimate": 0.002614080503527738
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.965,
+          "balanced_accuracy": 0.965486194477791,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9649991249781245,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.965
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "titanic",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.7442748091603053,
+          "balanced_accuracy": 0.7396296296296296,
+          "failure_rate": 0.003816793893129722,
+          "macro_f1": 0.7358283888635326,
+          "n_failures": 1,
+          "n_probability_rows": 261,
+          "n_rows": 262,
+          "probability_coverage": 0.9961832061068703,
+          "valid_response_accuracy": 0.7471264367816092
+        },
+        "n_not_attempted": 0,
+        "n_observed": 262,
+        "n_rows": 262,
+        "outcome_counts": {
+          "success": 261,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 218,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.6904556650246305,
+                0.7991971824305094
+              ],
+              "estimate": 0.7442748091603053
+            },
+            "macro_f1": {
+              "ci95": [
+                0.6792555319437215,
+                0.7881228018119707
+              ],
+              "estimate": 0.7358283888635326
+            }
+          },
+          "n_groups": 218,
+          "n_rows": 262,
+          "resampled_row_count_range": [
+            229,
+            340
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 218,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.6904556650246305,
+                0.7991971824305094
+              ],
+              "estimate": 0.7442748091603053
+            },
+            "macro_f1": {
+              "ci95": [
+                0.6792555319437215,
+                0.7881228018119707
+              ],
+              "estimate": 0.7358283888635326
+            }
+          },
+          "n_groups": 218,
+          "n_rows": 262,
+          "resampled_row_count_range": [
+            229,
+            340
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 218,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.6940195300095269,
+                0.800725678827253
+              ],
+              "estimate": 0.7480916030534351
+            },
+            "macro_f1": {
+              "ci95": [
+                0.6818877780560103,
+                0.7903262750090112
+              ],
+              "estimate": 0.737761601455869
+            }
+          },
+          "n_groups": 218,
+          "n_rows": 262,
+          "resampled_row_count_range": [
+            229,
+            340
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "cc29f0a633643ac1fa6fbccf49f471d08277909b922bfdef3cbb8972ece0e206",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "titanic__jev-1.13__ca2172a48634": "titanic__jev-1.13__ca2172a48634"
+        },
+        "original_attempt_identity_sha256": [
+          "ae0a63c946ffff99b12c5276f59bcb95c5dfb79cbadecd5b79fc9aa907e0690a"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "few_shot",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 262,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "titanic__jev-1.13__ca2172a48634",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.7442748091603053,
+          "balanced_accuracy": 0.7396296296296296,
+          "failure_rate": 0.003816793893129722,
+          "macro_f1": 0.7358283888635326,
+          "n_failures": 1,
+          "n_probability_rows": 261,
+          "n_rows": 262,
+          "probability_coverage": 0.9961832061068703,
+          "valid_response_accuracy": 0.7471264367816092
+        },
+        "n_not_attempted": 0,
+        "n_observed": 262,
+        "n_rows": 262,
+        "outcome_counts": {
+          "success": 261,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.003816793893129833,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 262,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 218,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.012097998563406017
+            ],
+            "estimate": 0.003816793893129833
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.006461301181077225
+            ],
+            "estimate": 0.0019332125923363641
+          }
+        },
+        "n_groups": 218,
+        "n_rows": 262,
+        "resampled_row_count_range": [
+          229,
+          340
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.7480916030534351,
+          "balanced_accuracy": 0.7427160493827161,
+          "failure_rate": 0.0,
+          "macro_f1": 0.737761601455869,
+          "n_failures": 0,
+          "n_probability_rows": 262,
+          "n_rows": 262,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.7480916030534351
+        },
+        "n_not_attempted": 0,
+        "n_observed": 262,
+        "n_rows": 262,
+        "outcome_counts": {
+          "success": 262
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "historical_additional_dataset",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": null,
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.42,
+          "balanced_accuracy": 0.45421344006870323,
+          "failure_rate": 0.050000000000000044,
+          "macro_f1": 0.4547779705674442,
+          "n_failures": 10,
+          "n_probability_rows": 190,
+          "n_rows": 200,
+          "probability_coverage": 0.95,
+          "valid_response_accuracy": 0.4421052631578947
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 10,
+          "success": 190
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.35,
+                0.49
+              ],
+              "estimate": 0.42
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3105628361679783,
+                0.5130251574938276
+              ],
+              "estimate": 0.4547779705674442
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.35,
+                0.49
+              ],
+              "estimate": 0.42
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3105628361679783,
+                0.5130251574938276
+              ],
+              "estimate": 0.4547779705674442
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.375,
+                0.515
+              ],
+              "estimate": 0.445
+            },
+            "macro_f1": {
+              "ci95": [
+                0.4222536518541687,
+                0.5397198063123779
+              ],
+              "estimate": 0.4938041193225457
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "ca389caeff2fd2a1fa4484f02f9eb098ffccb314c3fda937dad61fa972fc1174",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__astra__k0__jev-review": "trec__astra__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "2b0d9f2b83bc01b018eb1dc5d6a745d3596630558bb792859007db58e1e3eef5",
+          "4d3789a12e6b9525bdf53c8221a100420f99dadddf6a88536ea4fc9496db76f6",
+          "683ef1d8f3f82f9c1e3b87ea24414aeb13ced9c2b41048c14cb397954d2ba96c",
+          "4ee120b9227ab840fe6e2c9bb15a9ed607fdb34865bab6993519402202624d20",
+          "047125ddb09fb4a50a49fb77cf80707e38bfe66983a2fa91fdcc094231e8c180",
+          "a708de20ba7217b1e71a736538ce8ca0bea9ec87a12499a19a52b390c1b604ee",
+          "55e8251b53cfffb4b3e758a8cc94b06db0860e3918174049e98a313ee42accce",
+          "1f00f2e33f735cbb95802cb1c576d793f2853b4f407b6b86bb0998c57d58452e",
+          "c348e309043174036226a7ada0c1deff5baa5237c9e7d3b09a1f9ab44a7028fc",
+          "e427fb5ec86782e371b19a6da5bffbe2d4e435032706213f2befef1ec7a491a4",
+          "c348e309043174036226a7ada0c1deff5baa5237c9e7d3b09a1f9ab44a7028fc"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 11,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 11
+      },
+      "new_service_outcome_counts": {
+        "invalid_output": 2,
+        "success": 9
+      },
+      "original_run_id": "trec__astra__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.42,
+          "balanced_accuracy": 0.45421344006870323,
+          "failure_rate": 0.050000000000000044,
+          "macro_f1": 0.4547779705674442,
+          "n_failures": 10,
+          "n_probability_rows": 190,
+          "n_rows": 200,
+          "probability_coverage": 0.95,
+          "valid_response_accuracy": 0.4421052631578947
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 10,
+          "success": 190
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.025000000000000022,
+        "corrected": 5,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0050000000000000044,
+              0.04999999999999999
+            ],
+            "estimate": 0.025000000000000022
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0027514234014539216,
+              0.16714995556439305
+            ],
+            "estimate": 0.03902614875510152
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.445,
+          "balanced_accuracy": 0.5149149644215434,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.4938041193225457,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.4472361809045226
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "gpt-6-astra",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.395,
+          "balanced_accuracy": 0.4620725217764692,
+          "failure_rate": 0.015000000000000013,
+          "macro_f1": 0.43115022349936144,
+          "n_failures": 3,
+          "n_probability_rows": 197,
+          "n_rows": 200,
+          "probability_coverage": 0.985,
+          "valid_response_accuracy": 0.4010152284263959
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 3,
+          "success": 197
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.325,
+                0.46
+              ],
+              "estimate": 0.395
+            },
+            "macro_f1": {
+              "ci95": [
+                0.36498488206654334,
+                0.47711203734861934
+              ],
+              "estimate": 0.43115022349936144
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.325,
+                0.46
+              ],
+              "estimate": 0.395
+            },
+            "macro_f1": {
+              "ci95": [
+                0.36498488206654334,
+                0.47711203734861934
+              ],
+              "estimate": 0.43115022349936144
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.325,
+                0.46
+              ],
+              "estimate": 0.395
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3636522099801947,
+                0.47617519971970224
+              ],
+              "estimate": 0.42989488161901956
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "8e3f1b694cab2a170b443f7e7dcd2123866c4ca0eb2467ac7c35d84017117b56",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__granite__k0__jev-review": "trec__granite__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "ea44d621195912b704978d6512c23a8626a45bf5cff1248d18883d52afb4fa73",
+          "4a86cf6914f96c3131b0568895d562a55d67f2fc6d8a45711edb754b48fce0ba",
+          "57a43600be8a5c8902584d392deb6008a371974e6ed28d48bd2771ec441c1b2c"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 3,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 3
+      },
+      "new_service_outcome_counts": {
+        "success": 3
+      },
+      "original_run_id": "trec__granite__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.395,
+          "balanced_accuracy": 0.4620725217764692,
+          "failure_rate": 0.015000000000000013,
+          "macro_f1": 0.43115022349936144,
+          "n_failures": 3,
+          "n_probability_rows": 197,
+          "n_rows": 200,
+          "probability_coverage": 0.985,
+          "valid_response_accuracy": 0.4010152284263959
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 3,
+          "success": 197
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0,
+        "corrected": 0,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          },
+          "macro_f1": {
+            "ci95": [
+              -0.0028632177633514514,
+              0.0
+            ],
+            "estimate": -0.0012553418803418759
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.395,
+          "balanced_accuracy": 0.4620725217764692,
+          "failure_rate": 0.0,
+          "macro_f1": 0.42989488161901956,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.395
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.855,
+          "balanced_accuracy": 0.8961063485734538,
+          "failure_rate": 0.020000000000000018,
+          "macro_f1": 0.8808170995670995,
+          "n_failures": 4,
+          "n_probability_rows": 196,
+          "n_rows": 200,
+          "probability_coverage": 0.98,
+          "valid_response_accuracy": 0.8724489795918368
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "invalid_output": 3,
+          "success": 196
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.805,
+                0.905
+              ],
+              "estimate": 0.855
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7909767783020615,
+                0.9272065546054388
+              ],
+              "estimate": 0.8808170995670995
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.805,
+                0.905
+              ],
+              "estimate": 0.855
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7909767783020615,
+                0.9272065546054388
+              ],
+              "estimate": 0.8808170995670995
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.825,
+                0.92
+              ],
+              "estimate": 0.875
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8007564476271712,
+                0.9350202731956047
+              ],
+              "estimate": 0.8895580941103933
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "90b5a5498e4aa58c67003d1524c7bb843ff611d2f0c50e216ed478d0617c104d",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__granite__k4__jev-review": "trec__granite__k4__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "4870485d4a24e67cf7f7b1cc3bacf480824b1f3ca419910d863533750770a4c3",
+          "6381fc336a2d964792061d5a5c2589533140a13226dfc43fddd07736898845e6",
+          "ccf242ca67a5a221b7f2483c7684823ed1050e348bfdb8a0fe25bc51dde3a903",
+          "add78719102b4c38d7db65d7086849b71c645671221d960c1562842159d8ac4f"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 4,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 4
+      },
+      "new_service_outcome_counts": {
+        "success": 4
+      },
+      "original_run_id": "trec__granite__k4__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.855,
+          "balanced_accuracy": 0.8961063485734538,
+          "failure_rate": 0.020000000000000018,
+          "macro_f1": 0.8808170995670995,
+          "n_failures": 4,
+          "n_probability_rows": 196,
+          "n_rows": 200,
+          "probability_coverage": 0.98,
+          "valid_response_accuracy": 0.8724489795918368
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "invalid_output": 3,
+          "success": 196
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.020000000000000018,
+        "corrected": 4,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0050000000000000044,
+              0.040000000000000036
+            ],
+            "estimate": 0.020000000000000018
+          },
+          "macro_f1": {
+            "ci95": [
+              0.001831501831501825,
+              0.01865767486568396
+            ],
+            "estimate": 0.0087409945432938
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.875,
+          "balanced_accuracy": 0.911612285132022,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8895580941103933,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.875
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.335,
+          "balanced_accuracy": 0.40332321187584347,
+          "failure_rate": 0.015000000000000013,
+          "macro_f1": 0.3622405215302796,
+          "n_failures": 3,
+          "n_probability_rows": 197,
+          "n_rows": 200,
+          "probability_coverage": 0.985,
+          "valid_response_accuracy": 0.3401015228426396
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 2,
+          "success": 197,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.27,
+                0.4
+              ],
+              "estimate": 0.335
+            },
+            "macro_f1": {
+              "ci95": [
+                0.26182475400916977,
+                0.4161470306448635
+              ],
+              "estimate": 0.3622405215302796
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.27,
+                0.4
+              ],
+              "estimate": 0.335
+            },
+            "macro_f1": {
+              "ci95": [
+                0.26182475400916977,
+                0.4161470306448635
+              ],
+              "estimate": 0.3622405215302796
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.27,
+                0.4
+              ],
+              "estimate": 0.335
+            },
+            "macro_f1": {
+              "ci95": [
+                0.26092169836543494,
+                0.4141883634499641
+              ],
+              "estimate": 0.359820939870201
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "107e24952631b5cea6beab8ac19eb5c975a5b4639d548448a33c4595e66ea8fe",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__jev-1.13__ce2f8d23bf30": "trec__jev-1.13__ce2f8d23bf30"
+        },
+        "original_attempt_identity_sha256": [
+          "a3bde31fd72f4fb52e87b327ff5ee8efb834367a1c11eac7f3af2f71c746b9dd",
+          "aa7b241bd85ff0ea7028efe718e2f88791beda097996fd0857e300ce499b0c90",
+          "561678d0fb84216e46f6062eb0ea74a32a7c0b0dbfe652395bc5b116937cc33c"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 3,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 3
+      },
+      "new_service_outcome_counts": {
+        "success": 3
+      },
+      "original_run_id": "trec__jev-1.13__ce2f8d23bf30",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.335,
+          "balanced_accuracy": 0.40332321187584347,
+          "failure_rate": 0.015000000000000013,
+          "macro_f1": 0.3622405215302796,
+          "n_failures": 3,
+          "n_probability_rows": 197,
+          "n_rows": 200,
+          "probability_coverage": 0.985,
+          "valid_response_accuracy": 0.3401015228426396
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 2,
+          "success": 197,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0,
+        "corrected": 0,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          },
+          "macro_f1": {
+            "ci95": [
+              -0.006457869040093123,
+              0.0
+            ],
+            "estimate": -0.002419581660078607
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.335,
+          "balanced_accuracy": 0.40332321187584347,
+          "failure_rate": 0.0,
+          "macro_f1": 0.359820939870201,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.335
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": null,
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.395,
+          "balanced_accuracy": 0.4206527573303889,
+          "failure_rate": 0.020000000000000018,
+          "macro_f1": 0.4075130052020808,
+          "n_failures": 4,
+          "n_probability_rows": 196,
+          "n_rows": 200,
+          "probability_coverage": 0.98,
+          "valid_response_accuracy": 0.4030612244897959
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 4,
+          "success": 196
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.325,
+                0.465
+              ],
+              "estimate": 0.395
+            },
+            "macro_f1": {
+              "ci95": [
+                0.25861914135787706,
+                0.4647840613452129
+              ],
+              "estimate": 0.4075130052020808
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.325,
+                0.465
+              ],
+              "estimate": 0.395
+            },
+            "macro_f1": {
+              "ci95": [
+                0.25861914135787706,
+                0.4647840613452129
+              ],
+              "estimate": 0.4075130052020808
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.345,
+                0.48
+              ],
+              "estimate": 0.41
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3744801074655919,
+                0.48256364324842793
+              ],
+              "estimate": 0.43823432821404423
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "6ed3351216d162698492cf48ba90775980ab0798aa976d143165df3506d3591b",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__luna__k0__jev-review": "trec__luna__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "be1fbae45a7ad545b508721f2a0740f1e2cf682fe7dd95f5002c019ad198723f",
+          "8c26cd224e980c63ec3adda87bd50cc6b2bc5b39a4242afd7f782f1ca8ecfe1e",
+          "ff7f12f899c1a5cb15c4b50df26867d6adbb49f9ca18e3b81ae90320bcd8c236",
+          "288f9cf81af0513b6f10a4b81712ecbe64ea379f759f528e4f241036eb57c108",
+          "ff7f12f899c1a5cb15c4b50df26867d6adbb49f9ca18e3b81ae90320bcd8c236",
+          "288f9cf81af0513b6f10a4b81712ecbe64ea379f759f528e4f241036eb57c108"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 6,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 6
+      },
+      "new_service_outcome_counts": {
+        "invalid_output": 2,
+        "success": 4
+      },
+      "original_run_id": "trec__luna__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.395,
+          "balanced_accuracy": 0.4206527573303889,
+          "failure_rate": 0.020000000000000018,
+          "macro_f1": 0.4075130052020808,
+          "n_failures": 4,
+          "n_probability_rows": 196,
+          "n_rows": 200,
+          "probability_coverage": 0.98,
+          "valid_response_accuracy": 0.4030612244897959
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 4,
+          "success": 196
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.014999999999999958,
+        "corrected": 3,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.034999999999999976
+            ],
+            "estimate": 0.014999999999999958
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.16966324857786907
+            ],
+            "estimate": 0.030721323011963453
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.41,
+          "balanced_accuracy": 0.4727360906637223,
+          "failure_rate": 0.0,
+          "macro_f1": 0.43823432821404423,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.41
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "gpt-5.6-luna",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.85,
+          "balanced_accuracy": 0.8936093390040759,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.8722352641502565,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.8542713567839196
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8,
+                0.9
+              ],
+              "estimate": 0.85
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7779946893545817,
+                0.921025593623844
+              ],
+              "estimate": 0.8722352641502565
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8,
+                0.9
+              ],
+              "estimate": 0.85
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7779946893545817,
+                0.921025593623844
+              ],
+              "estimate": 0.8722352641502565
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.805,
+                0.905
+              ],
+              "estimate": 0.855
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7819240991466676,
+                0.9232845140462673
+              ],
+              "estimate": 0.8741504837621052
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "2dfb92a64d7b98e2e0158162a86fb0948fb95359cfd75cd74b2fbd010c50611e",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__luna__k4__jev-review": "trec__luna__k4__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "7fa4b7ce9d67425d4d19fcab0526997cbe6b514ff4704a8e7ab4d527cec217f6"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "trec__luna__k4__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.85,
+          "balanced_accuracy": 0.8936093390040759,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.8722352641502565,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.8542713567839196
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 1,
+          "success": 199
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0050000000000000044,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.006844506844506881
+            ],
+            "estimate": 0.0019152196118487064
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.855,
+          "balanced_accuracy": 0.8973130427077796,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8741504837621052,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.855
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "gpt-5.6-luna",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.415,
+          "balanced_accuracy": 0.488689654643602,
+          "failure_rate": 0.03500000000000003,
+          "macro_f1": 0.45953304182823196,
+          "n_failures": 7,
+          "n_probability_rows": 193,
+          "n_rows": 200,
+          "probability_coverage": 0.965,
+          "valid_response_accuracy": 0.43005181347150256
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 7,
+          "success": 193
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.35,
+                0.48
+              ],
+              "estimate": 0.415
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3942165137435561,
+                0.5049524485034931
+              ],
+              "estimate": 0.45953304182823196
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.35,
+                0.48
+              ],
+              "estimate": 0.415
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3942165137435561,
+                0.5049524485034931
+              ],
+              "estimate": 0.45953304182823196
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.355,
+                0.485
+              ],
+              "estimate": 0.42
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3945842854025996,
+                0.5039963945586359
+              ],
+              "estimate": 0.45831591415830547
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "9e517430d4567ed43c910d63f761f47e79384cee4e1a0bfacb2f39364892c261",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__qwen_main__k0__jev-review": "trec__qwen_main__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "d8f5d6ea4c2b30075ddd44bcb31dc4db4706175b70c35e6643649df55711901c",
+          "4da39c40d9364b50d24ba8f588d6456eb7b9daf966de56e8bf5b974def4015e2",
+          "c6f26e9dcb1a3b20151866fe34568cae37c62eba8448f32ebd580abd645dba3a",
+          "a7b2c813bcd24c9a8a9e2344f33707de062c965e77dfe592431551612fa448d6",
+          "7b4cae28621f54d04b87a464e9a81bb0c9b011877a0d6aa8514f645fa9bfda7e",
+          "d4072b8755f20403a935b49b3c15d9cc2343d5bc8a97ac461a859853d5c46514",
+          "4fbdca3f92eb48c1c15b4efd17e4c2a4245c3ba95a72da5933334511a09cc97c"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 7,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 7
+      },
+      "new_service_outcome_counts": {
+        "success": 7
+      },
+      "original_run_id": "trec__qwen_main__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.415,
+          "balanced_accuracy": 0.488689654643602,
+          "failure_rate": 0.03500000000000003,
+          "macro_f1": 0.45953304182823196,
+          "n_failures": 7,
+          "n_probability_rows": 193,
+          "n_rows": 200,
+          "probability_coverage": 0.965,
+          "valid_response_accuracy": 0.43005181347150256
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 7,
+          "success": 193
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0050000000000000044,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              -0.004211900245950527,
+              0.002358421650380226
+            ],
+            "estimate": -0.0012171276699264877
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.42,
+          "balanced_accuracy": 0.49171995767390503,
+          "failure_rate": 0.0,
+          "macro_f1": 0.45831591415830547,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.42
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.325,
+          "balanced_accuracy": 0.3957716077781867,
+          "failure_rate": 0.03500000000000003,
+          "macro_f1": 0.3820723551688019,
+          "n_failures": 7,
+          "n_probability_rows": 193,
+          "n_rows": 200,
+          "probability_coverage": 0.965,
+          "valid_response_accuracy": 0.33678756476683935
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 7,
+          "success": 193
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.26,
+                0.39
+              ],
+              "estimate": 0.325
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3125535715153902,
+                0.4305783513558187
+              ],
+              "estimate": 0.3820723551688019
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.26,
+                0.39
+              ],
+              "estimate": 0.325
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3125535715153902,
+                0.4305783513558187
+              ],
+              "estimate": 0.3820723551688019
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.27,
+                0.395
+              ],
+              "estimate": 0.335
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3129390239405954,
+                0.43054207938404604
+              ],
+              "estimate": 0.3815346295106415
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "33a14ef27f2a470da37a6b7436e0d8fffc69cf53486af20ea5ad64bc830634ae",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__qwen_small__k0__jev-review": "trec__qwen_small__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "08e2f21c61789999c961994c53b9030f6e67df789448fc62a07bc7ca6dc269bc",
+          "ecfdaf32d18b12b44758d716642a4af3a7c4a23771c731dd4c406766f5279572",
+          "e4878ad78d6da6563538e88c86a38727d7ff67b56429db45ac7d00e4eee81a2b",
+          "4cdf9efc4ded4af9c22abf43b16c4979372b1bd5efcae5b995cba9887eda4fb1",
+          "8abd4d239b185852dec08536df7a93485857ca4dae4f555891ea099c841db641",
+          "6694eb731cffebf9818f5eec137fb3aeab0c3716a0ec2b34d2c352cc28424d5b",
+          "65be2b3c842cc27603760e97c81b3248836952637d5c4c51f18652419c0c441f",
+          "6694eb731cffebf9818f5eec137fb3aeab0c3716a0ec2b34d2c352cc28424d5b"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 8,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 8
+      },
+      "new_service_outcome_counts": {
+        "invalid_output": 1,
+        "success": 7
+      },
+      "original_run_id": "trec__qwen_small__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.325,
+          "balanced_accuracy": 0.3957716077781867,
+          "failure_rate": 0.03500000000000003,
+          "macro_f1": 0.3820723551688019,
+          "n_failures": 7,
+          "n_probability_rows": 193,
+          "n_rows": 200,
+          "probability_coverage": 0.965,
+          "valid_response_accuracy": 0.33678756476683935
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 7,
+          "success": 193
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.010000000000000009,
+        "corrected": 2,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.025000000000000022
+            ],
+            "estimate": 0.010000000000000009
+          },
+          "macro_f1": {
+            "ci95": [
+              -0.005899447868276937,
+              0.004744039524095109
+            ],
+            "estimate": -0.000537725658160404
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.335,
+          "balanced_accuracy": 0.4018322138387928,
+          "failure_rate": 0.0,
+          "macro_f1": 0.3815346295106415,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.335
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.325,
+          "balanced_accuracy": 0.39103599251625565,
+          "failure_rate": 0.03500000000000003,
+          "macro_f1": 0.3711158786200986,
+          "n_failures": 7,
+          "n_probability_rows": 193,
+          "n_rows": 200,
+          "probability_coverage": 0.965,
+          "valid_response_accuracy": 0.33678756476683935
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 7,
+          "success": 193
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.26,
+                0.39
+              ],
+              "estimate": 0.325
+            },
+            "macro_f1": {
+              "ci95": [
+                0.30617373755586097,
+                0.4172957346950528
+              ],
+              "estimate": 0.3711158786200986
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.26,
+                0.39
+              ],
+              "estimate": 0.325
+            },
+            "macro_f1": {
+              "ci95": [
+                0.30617373755586097,
+                0.4172957346950528
+              ],
+              "estimate": 0.3711158786200986
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.275,
+                0.41
+              ],
+              "estimate": 0.345
+            },
+            "macro_f1": {
+              "ci95": [
+                0.3212471550292524,
+                0.4347742888898896
+              ],
+              "estimate": 0.3867810646734744
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "72202d9becd0ecbb7cc4e85719fe283ae015abf0a064a7b239cbaef640098cfc",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__smollm2__k0__jev-review": "trec__smollm2__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "a458c8ee2d471e39e185b899c953be239a21c00f2fa2c3e7dfb0e4dcebe65344",
+          "f7293a6054845075a3312673070063336da414d2caf5ba39e6ac7ae0b7594e88",
+          "4bb572fb294bd3551660d7fe59a9dae9888b64759f1c410f30e5f30720f0c099",
+          "c54cb8dad959894cb40aa5ab65b7e75e299bb1f2a94a23252191fac0a57e341a",
+          "3b1e3afafaaf746d4f117e87be7df0da5f264d48e420b6c1c08e3301c93cf0fb",
+          "8df479572f72af4935248ac9b4054c4baea1817d01f8475e2bce9e8672fa9b18",
+          "56de1e8a9227ed8d9c190736a80f344ed5fdf112a0cbd2048a8f2d384a7130df"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 7,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 7
+      },
+      "new_service_outcome_counts": {
+        "success": 7
+      },
+      "original_run_id": "trec__smollm2__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.325,
+          "balanced_accuracy": 0.39103599251625565,
+          "failure_rate": 0.03500000000000003,
+          "macro_f1": 0.3711158786200986,
+          "n_failures": 7,
+          "n_probability_rows": 193,
+          "n_rows": 200,
+          "probability_coverage": 0.965,
+          "valid_response_accuracy": 0.33678756476683935
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "invalid_output": 7,
+          "success": 193
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.019999999999999962,
+        "corrected": 4,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0050000000000000044,
+              0.040000000000000036
+            ],
+            "estimate": 0.019999999999999962
+          },
+          "macro_f1": {
+            "ci95": [
+              -2.570002221767978e-05,
+              0.03800356744828262
+            ],
+            "estimate": 0.0156651860533758
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.345,
+          "balanced_accuracy": 0.40871518832045145,
+          "failure_rate": 0.0,
+          "macro_f1": 0.3867810646734744,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.345
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "trec",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.845,
+          "balanced_accuracy": 0.8843387910822121,
+          "failure_rate": 0.010000000000000009,
+          "macro_f1": 0.8696204183417154,
+          "n_failures": 2,
+          "n_probability_rows": 198,
+          "n_rows": 200,
+          "probability_coverage": 0.99,
+          "valid_response_accuracy": 0.8535353535353535
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 198,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.79,
+                0.895
+              ],
+              "estimate": 0.845
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7780780816400248,
+                0.9171226955023463
+              ],
+              "estimate": 0.8696204183417154
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.79,
+                0.895
+              ],
+              "estimate": 0.845
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7780780816400248,
+                0.9171226955023463
+              ],
+              "estimate": 0.8696204183417154
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8,
+                0.905
+              ],
+              "estimate": 0.855
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7836917784135219,
+                0.9231215015673395
+              ],
+              "estimate": 0.8758938566787989
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "1647fef8bcc8ae5f951b0c44d7552374a9f5cba4709c38c43048cb287b7a1183",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "trec__smollm2__k4__jev-review": "trec__smollm2__k4__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "311d16beb150c93c470e60e9192257954a30ce04ab9859efb254a50a9c9079a5",
+          "8b54db7b398b0aaec99731109e3700966c278af7ad65439d19a95b45deabfc87"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 2,
+      "n_rows": 200,
+      "new_call_stage_counts": {
+        "retry": 2
+      },
+      "new_service_outcome_counts": {
+        "success": 2
+      },
+      "original_run_id": "trec__smollm2__k4__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.845,
+          "balanced_accuracy": 0.8843387910822121,
+          "failure_rate": 0.010000000000000009,
+          "macro_f1": 0.8696204183417154,
+          "n_failures": 2,
+          "n_probability_rows": 198,
+          "n_rows": 200,
+          "probability_coverage": 0.99,
+          "valid_response_accuracy": 0.8535353535353535
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "http_service": 1,
+          "success": 198,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.010000000000000009,
+        "corrected": 2,
+        "harmed": 0,
+        "n_rows": 200,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.025000000000000022
+            ],
+            "estimate": 0.010000000000000009
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.01770130709703212
+            ],
+            "estimate": 0.006273438337083492
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.855,
+          "balanced_accuracy": 0.8959573808258018,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8758938566787989,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.855
+        },
+        "n_not_attempted": 0,
+        "n_observed": 200,
+        "n_rows": 200,
+        "outcome_counts": {
+          "success": 200
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "dependent_source_recovery_overlay",
+      "dataset": "wine",
+      "dependent_review_first_calls": 1,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.9722222222222222,
+          "balanced_accuracy": 0.9761904761904763,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9717813051146384,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9722222222222222
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 36
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9166666666666666,
+                1.0
+              ],
+              "estimate": 0.9722222222222222
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9011745313510018,
+                1.0
+              ],
+              "estimate": 0.9717813051146384
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8611111111111112,
+                1.0
+              ],
+              "estimate": 0.9444444444444444
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8809185379837553,
+                1.0
+              ],
+              "estimate": 0.9584859584859585
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9166666666666666,
+                1.0
+              ],
+              "estimate": 0.9722222222222222
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9011745313510018,
+                1.0
+              ],
+              "estimate": 0.9717813051146384
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "4fe4510a7c3feb605bc99695bcbc16d2250737777b37cf18254fe6989b38750e",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "wine__astra__jev-review::dependent-source-recovery-v1": "wine__astra__jev-review::dependent-source-recovery-overlay-v1"
+        },
+        "original_attempt_identity_sha256": [
+          "4ce22dc26020077c4f60d81f24643e9a4f6d3d9e97aeb359ad26dfdb09fbeae3"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 36,
+      "new_call_stage_counts": {
+        "dependent_first_call": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "wine__astra__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.9444444444444444,
+          "balanced_accuracy": 0.9523809523809524,
+          "failure_rate": 0.02777777777777779,
+          "macro_f1": 0.9584859584859585,
+          "n_failures": 1,
+          "n_probability_rows": 35,
+          "n_rows": 36,
+          "probability_coverage": 0.9722222222222222,
+          "valid_response_accuracy": 0.9714285714285714
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 35,
+          "upstream_not_called": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.0,
+        "corrected": 0,
+        "harmed": 0,
+        "n_rows": 36,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.9722222222222222,
+          "balanced_accuracy": 0.9761904761904763,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9717813051146384,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9722222222222222
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 36
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": false,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": "gpt-6-astra",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "wine",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.9722222222222222,
+          "balanced_accuracy": 0.9761904761904763,
+          "failure_rate": 0.02777777777777779,
+          "macro_f1": 0.9876543209876543,
+          "n_failures": 1,
+          "n_probability_rows": 0,
+          "n_rows": 36,
+          "probability_coverage": 0.0,
+          "valid_response_accuracy": 1.0
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 35,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9166666666666666,
+                1.0
+              ],
+              "estimate": 0.9722222222222222
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9523809523809524,
+                1.0
+              ],
+              "estimate": 0.9876543209876543
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9166666666666666,
+                1.0
+              ],
+              "estimate": 0.9722222222222222
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9523809523809524,
+                1.0
+              ],
+              "estimate": 0.9876543209876543
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "estimate": 1.0
+            },
+            "macro_f1": {
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "estimate": 1.0
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "731aa6aaf96d5ea7533a44297da2774161729078135cf6df7ef7e35457acc6d8",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "wine__gpt-6-astra__d5c2863bd80f": "wine__gpt-6-astra__d5c2863bd80f"
+        },
+        "original_attempt_identity_sha256": [
+          "ae4418ee6522568878bec16051529efc434615932c3b8992b8b8c91f24d0b0b8"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "few_shot",
+      "model": "gpt-6-astra",
+      "n_new_calls": 1,
+      "n_rows": 36,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "wine__gpt-6-astra__d5c2863bd80f",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.9722222222222222,
+          "balanced_accuracy": 0.9761904761904763,
+          "failure_rate": 0.02777777777777779,
+          "macro_f1": 0.9876543209876543,
+          "n_failures": 1,
+          "n_probability_rows": 0,
+          "n_rows": 36,
+          "probability_coverage": 0.0,
+          "valid_response_accuracy": 1.0
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 35,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.02777777777777779,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 36,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.08333333333333337
+            ],
+            "estimate": 0.02777777777777779
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.04761904761904756
+            ],
+            "estimate": 0.012345679012345734
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "openai",
+      "recovered": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "failure_rate": 0.0,
+          "macro_f1": 1.0,
+          "n_failures": 0,
+          "n_probability_rows": 0,
+          "n_rows": 36,
+          "probability_coverage": 0.0,
+          "valid_response_accuracy": 1.0
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 36
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 4,
+      "source_model": null,
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    },
+    {
+      "analysis_status": "audited_full_condition",
+      "condition_variant": "original_request_recovery",
+      "dataset": "wine",
+      "dependent_review_first_calls": 0,
+      "first_attempt": {
+        "metrics": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.32936507936507936,
+          "failure_rate": 0.02777777777777779,
+          "macro_f1": 0.20833333333333334,
+          "n_failures": 1,
+          "n_probability_rows": 35,
+          "n_rows": 36,
+          "probability_coverage": 0.9722222222222222,
+          "valid_response_accuracy": 0.34285714285714286
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 35,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "group_bootstrap": {
+        "first_attempt": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.19444444444444445,
+                0.5
+              ],
+              "estimate": 0.3333333333333333
+            },
+            "macro_f1": {
+              "ci95": [
+                0.11382113821138212,
+                0.3151933599526767
+              ],
+              "estimate": 0.20833333333333334
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "original_snapshot": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.19444444444444445,
+                0.5
+              ],
+              "estimate": 0.3333333333333333
+            },
+            "macro_f1": {
+              "ci95": [
+                0.11382113821138212,
+                0.3151933599526767
+              ],
+              "estimate": 0.20833333333333334
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "recovered": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.19444444444444445,
+                0.5277777777777778
+              ],
+              "estimate": 0.3611111111111111
+            },
+            "macro_f1": {
+              "ci95": [
+                0.12698412698412698,
+                0.3241895424836601
+              ],
+              "estimate": 0.21944444444444444
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        }
+      },
+      "identity_provenance": {
+        "attempt_records_sha256": "35349f3c041abf9524a3244f62924dc1f4838ee9ab8737a69e99e2cecf49b83a",
+        "condition_grouping": "An analysis-only condition alias groups full-fold outcomes; original audited attempt identities and request hashes are retained.",
+        "condition_id_aliases": {
+          "wine__granite__k0__jev-review": "wine__granite__k0__jev-review"
+        },
+        "original_attempt_identity_sha256": [
+          "05a28a508e29fabd5f7a379289c254599d8d568626a1c6601300e00eac109967"
+        ]
+      },
+      "latency_measurement_status": "not_reported_for_mixed_attempts",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "n_new_calls": 1,
+      "n_rows": 36,
+      "new_call_stage_counts": {
+        "retry": 1
+      },
+      "new_service_outcome_counts": {
+        "success": 1
+      },
+      "original_run_id": "wine__granite__k0__jev-review",
+      "original_snapshot": {
+        "metrics": {
+          "accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.32936507936507936,
+          "failure_rate": 0.02777777777777779,
+          "macro_f1": 0.20833333333333334,
+          "n_failures": 1,
+          "n_probability_rows": 35,
+          "n_rows": 36,
+          "probability_coverage": 0.9722222222222222,
+          "valid_response_accuracy": 0.34285714285714286
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 35,
+          "transport": 1
+        },
+        "status": "complete"
+      },
+      "paired_first_to_recovered": {
+        "accuracy_delta": 0.02777777777777779,
+        "corrected": 1,
+        "harmed": 0,
+        "n_rows": 36,
+        "note": "Retry availability effect; successful first responses are preserved, so this is not evidence of better semantic decisions."
+      },
+      "paired_group_bootstrap": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.08333333333333337
+            ],
+            "estimate": 0.02777777777777779
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.039536120732310734
+            ],
+            "estimate": 0.0111111111111111
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "provider": "jev",
+      "recovered": {
+        "metrics": {
+          "accuracy": 0.3611111111111111,
+          "balanced_accuracy": 0.35714285714285715,
+          "failure_rate": 0.0,
+          "macro_f1": 0.21944444444444444,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.3611111111111111
+        },
+        "n_not_attempted": 0,
+        "n_observed": 36,
+        "n_rows": 36,
+        "outcome_counts": {
+          "success": 36
+        },
+        "status": "complete"
+      },
+      "same_request_as_original_snapshot": true,
+      "scope": "current_four_dataset_study",
+      "selection_rule": "preserve original success; otherwise earliest valid success by append-ordered attempt index",
+      "shots_per_class": 0,
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "status": "complete",
+      "unresolved_upstream_rows": 0
+    }
+  ],
+  "execution_status": "complete",
+  "limitations": [
+    "Original outcomes and reservations remain immutable; retries add calls and cost.",
+    "An upstream skip is distinct from a paid failure. A dependent review begins only after its source has a valid recovered response.",
+    "First attempt means the first actual service call; original_snapshot also includes historical upstream skips.",
+    "Earliest valid success is selected without using truth labels. Original valid responses, including wrong ones, remain unchanged.",
+    "Full-condition metrics include failures as incorrect. Unattempted dependent rows suppress full service-view metrics.",
+    "Paired group bootstrap intervals are unadjusted and conditional on these cases and observed attempts; they measure recovery availability, not semantic model improvement.",
+    "Affected conditions were selected for operational errors and are not a new independent benchmark. No overall accuracy winner or latency claim is reported."
+  ],
+  "n_affected_conditions": 23,
+  "provenance": {
+    "analysis_sha256": "3e51a3f127cc6d608b6eb0bff4828ae486279bf23a0bcead846798241031c811",
+    "original_artifact_sha256": {
+      "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/predictions.jsonl": "19c651cc59b1530d7b001f9ab31897e6e7c533fcf06c1c2aeec8b5abc13a5a0a",
+      "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/run.json": "849a5d8d1d8e1761c3859b9399e986dad474d8e22cf665e4c9781efdbd751eb5",
+      "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+      "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/predictions.jsonl": "d1ee99e24e4d2850f5c83e8afe6b22b341b46f8d8ed57c8323c4c38d611b2f06",
+      "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/run.json": "52356557a98032673cf65b2576d8e97834cbade77e02370745128d5320e5d085",
+      "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+      "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/predictions.jsonl": "6518fe6e0c6d1e45474ff9d065963cd23e2e5487ca75ffa4bac95342f1699979",
+      "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/run.json": "ab7dfac815f7b4473b6ee9ef23712c3857bc2afaed20cf9c258f15ff63a8596a",
+      "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+      "results/hosted/sst2__gpt-6-astra__9279b61f6e7a/predictions.jsonl": "bcfdc54dd9671520e44f48eaa1198066206ce2f462ea3375f6706f2e21f796d4",
+      "results/hosted/sst2__gpt-6-astra__9279b61f6e7a/run.json": "5d5e5188b49fbe7ba354d6e833f04dedafe585f04510f9477bc2ef694323ee91",
+      "results/hosted/sst2__gpt-6-astra__9279b61f6e7a/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+      "results/hosted/trec__gpt-5.6-luna__0434e88259a6/predictions.jsonl": "0ee2257091128c0e2b260282ef2750591a43f97e1e39d3e3a31aecea5a166708",
+      "results/hosted/trec__gpt-5.6-luna__0434e88259a6/run.json": "4e9b1f443bdb6e13312ec2e325ee866f803e3ee57a2bf5cc54b99715e7ebf5e6",
+      "results/hosted/trec__gpt-5.6-luna__0434e88259a6/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/hosted/trec__gpt-5.6-luna__a183fc22ddc8/predictions.jsonl": "b3a6d0a9ff26fb33e064538e2c33dd1d90a453ece4952b57cd8c6b8c79787568",
+      "results/hosted/trec__gpt-5.6-luna__a183fc22ddc8/run.json": "9210eacaf200bd4595986f60281c8ef9527ba330b4d3522a40b8a799124d7ce0",
+      "results/hosted/trec__gpt-5.6-luna__a183fc22ddc8/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/hosted/trec__gpt-6-astra__4788a3f7e01d/predictions.jsonl": "190e7aa8751b370215d952f52714a4f7dd34c7b8e9f7b60fbff7a118f99d6615",
+      "results/hosted/trec__gpt-6-astra__4788a3f7e01d/run.json": "66ee96053a56f3604d580dc29f2138349dbf89b2b1ccc2b392d262d37844d5ed",
+      "results/hosted/trec__gpt-6-astra__4788a3f7e01d/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+      "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+      "results/jev/sst2__jev-1.13__9d5a851767fc/predictions.jsonl": "5e2f23b554635abf4d060f168d9a7685877038661673718de0866b4e7ffbd83f",
+      "results/jev/sst2__jev-1.13__9d5a851767fc/run.json": "d9651bf77ef5f50d294dba21cf1872805406e32bd984ac3310d6e2f84382b1e8",
+      "results/jev/sst2__jev-1.13__9d5a851767fc/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+      "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl": "b45f10272e0b9b1e97e04540c4e1d678587e4849450c624aad9444f25684b356",
+      "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json": "31963954a8c6b1af404030ff514178e714006cd517d7a05e7096ce69ffb3f87b",
+      "results/jev/trec__jev-1.13__ce2f8d23bf30/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/numeric_decisions/review-budget.jsonl": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a",
+      "results/numeric_decisions/review-budget.jsonl.lock": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+      "results/numeric_decisions/review/breast_cancer__astra__jev-review/predictions.jsonl": "ebdb5f9455c2401b48d79c58e2539747acf76f3dd53d81a81ec7f3575abef2b1",
+      "results/numeric_decisions/review/breast_cancer__astra__jev-review/run.json": "4c9f63f0de765395ce0c3914e5c06860651f1116091a7c1cb5a076778ae223a7",
+      "results/numeric_decisions/review/breast_cancer__astra__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/numeric_decisions/review/wine__astra__jev-review/predictions.jsonl": "90427f92c0442400abb54c60a27445c46421f0492d88dd7eba78fd110a4fce3c",
+      "results/numeric_decisions/review/wine__astra__jev-review/run.json": "e85950e389894748e7abdda557df992147ee6b5e533201c31ac3e1c9cc5ab814",
+      "results/numeric_decisions/review/wine__astra__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+      "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+      "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+      "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+      "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+      "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+      "results/numeric_expansion/review-budget.jsonl": "71767df266ff980cc9296de5827dbce2a4d0589c130f85cf567aa6c59b4b35e9",
+      "results/numeric_expansion/review-budget.jsonl.lock": "5649f6a8aa24a9f301740d6ae437972f3ec5b15efe79f05c2f0d80243afaf823",
+      "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/predictions.jsonl": "b21ac3e75a98c3ab4d44b7313cba4d1ecbaeed7c360594468076f33d62181917",
+      "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/run.json": "6cd6ffdd2f2c391e55af485aec85d414fd31157e0c332d8d3bb2d8c97762ef14",
+      "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "118071d29a25fadbd99d9de57fcc6be0951fdc04eedbf6e7d28e0db8db5b328b",
+      "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "bc0ef4d30d9f108c30bf44f297fcbede8bb6e5a02a8398f4bb2987994e2e8949",
+      "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/numeric_expansion/review/wine__granite__k0__jev-review/predictions.jsonl": "c6ebdf266c78526b1d8b7c96105d22e109f54f7dacedcd08600d8e1c31b7bc55",
+      "results/numeric_expansion/review/wine__granite__k0__jev-review/run.json": "1b0dada90c43c0e570a884d99257066a58e2553ba97a08b0b40fdd8812904f86",
+      "results/numeric_expansion/review/wine__granite__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+      "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/predictions.jsonl": "aec8ab0d1329a97a6f06739a0abae6fd92951c332636c63fdaa35314664cbade",
+      "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/run.json": "f3c622c1a48d6b540afae94693b84c841824fd7a23469d2877bcab8791bf86f9",
+      "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+      "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+      "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/predictions.jsonl": "4d2af7785ed8971d2615ea61a9ce65b79c5a02f2ef00d573bf3852b5121eac3b",
+      "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/run.json": "01107fcc70c87781c76638d647919aaceff247cdba8c570765ac9167a244556c",
+      "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/predictions.jsonl": "872826ba524654e0e4bdabccca79dc69e9403e884bf5ac9a29407d600705b177",
+      "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/run.json": "bb1c82612d9c4787d057d78be96ea225ebe592738ee8090a27b08d08963a1176",
+      "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/predictions.jsonl": "36b92cc4799c94d58dfbd838b9cb79bacfb7e8adbec0b46829541bb3313e9493",
+      "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/run.json": "e6a83786bf04da9cc41af3b80d3c751f2f67bc27f087ca766d372f09b00b0e34",
+      "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/predictions.jsonl": "52ffbfc87f9e1f7598088b7c37f251d6260649c4fc8bc2d3cc4d707d8d9aac67",
+      "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/run.json": "764a97a6ebc45670396979ff0a06f73faeb053794069d9fdcb939284bee9520b",
+      "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+      "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/predictions.jsonl": "eb49086b5596cafa066befcb943a34c8781610d4f99e623b374db04cb2ec2b9b",
+      "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/run.json": "4214a14c0ed2fb4b4ef3bc16cfccb90d20b37594ffa7e6b2a7c3e030a675f52c",
+      "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11",
+      "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/predictions.jsonl": "dbe5ff17012aec89bf5588be1493217451e25607eb725b6a422fedda986156ab",
+      "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/run.json": "c3162e3b5defb51b2d0fe24d9d05a5e131c67f2ff7ce1f0dfa02077256999622",
+      "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+      "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/predictions.jsonl": "718191482013f937dac94dd5b9baaf026b85268ae5ace1b1bdb3b9f5fa590981",
+      "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/run.json": "20b381da20457614430cf9197d65ec8a8e0caa4912b4f93f25acd21b3e091597",
+      "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/predictions.jsonl": "01fe373621527a19bea1d83a948b5cf53bf9a9b737c11b26507cdc0e3ec14c2e",
+      "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/run.json": "d5977ff6a0b4054d7cdd7912a29db6911c70949a568b99c577d6fcbaa0654988",
+      "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+      "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+      "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/predictions.jsonl": "0c9ccb392667f606b0f01a4a14f318366157a34ada34a736b696dfb98ac21dd4",
+      "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/run.json": "d1e9b04f116bfc0124a764360a4c1a6ef7ad0755f6e13562d54f55eddec5f3fe",
+      "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review-budget.jsonl": "26952fec5846fe4a3a8b3bb5e2946e8b860c41d83b6980f691fae6ab5d6739b7",
+      "results/text_extension/review-budget.jsonl.lock": "0291affe38d31024a1b9f9418d2c8650374a043e64728ead8b3ff4e436358838",
+      "results/text_extension/review/sst2__astra__k0__jev-review/predictions.jsonl": "6ecfcba74ad71f058f965a1cd47e6e10529bcabe61b0a90fdbebb5eec143f1d3",
+      "results/text_extension/review/sst2__astra__k0__jev-review/run.json": "2010cd1d33aaa489992343eef6dd658a497a80036c67edaa63167e0998e4c4d5",
+      "results/text_extension/review/sst2__astra__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+      "results/text_extension/review/sst2__qwen_main__k0__jev-review/predictions.jsonl": "91ac6e4f30a196d755c754dea85b73a267c946a28300ea0abd72d4b6d60b8201",
+      "results/text_extension/review/sst2__qwen_main__k0__jev-review/run.json": "6d7c101b05a9179de5c4289ec4db12620a6cf6ca2316c301235ed8de025ff7c0",
+      "results/text_extension/review/sst2__qwen_main__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+      "results/text_extension/review/sst2__qwen_main__k4__jev-review/predictions.jsonl": "9cc249d004aef0f2c414485bcf0642503d2d8c4f7249e926630b942ab3a75f51",
+      "results/text_extension/review/sst2__qwen_main__k4__jev-review/run.json": "a34334978b5400cff35dc85bbc92f4e5dbb993988601598974ddcb69ae3b9deb",
+      "results/text_extension/review/sst2__qwen_main__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+      "results/text_extension/review/trec__astra__k0__jev-review/predictions.jsonl": "1f509b2dc4a51dcb0c08410678fe69ca8f5185664c2f907eca1b04d23aa13a13",
+      "results/text_extension/review/trec__astra__k0__jev-review/run.json": "8fe91713ebc44f876438f808661bdd0c31b76fb3e21a209e021433448c3e4117",
+      "results/text_extension/review/trec__astra__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__granite__k0__jev-review/predictions.jsonl": "e2923b1dac8e246ecbf5413c85063571e03918a82ed410e3688ea723a3070698",
+      "results/text_extension/review/trec__granite__k0__jev-review/run.json": "1dec38cc6934d0e22d33ef09b2b934119d7033eb83c4306112a7dd6cddfbe81a",
+      "results/text_extension/review/trec__granite__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__granite__k4__jev-review/predictions.jsonl": "266f3eddfdc601552851616e70e8217079a502b21fee489a4ed5fc93a7613f2d",
+      "results/text_extension/review/trec__granite__k4__jev-review/run.json": "8ec185eca4c2b7a1ece89976a3ed7f49874affe8e905320fcf286369cf6ee067",
+      "results/text_extension/review/trec__granite__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__luna__k0__jev-review/predictions.jsonl": "dafc87bc32d17529a2b7677f3596123a0ea88f0c96c49ea1d2773bb184039f0d",
+      "results/text_extension/review/trec__luna__k0__jev-review/run.json": "e4e54f3acffb9106b92dc3061758a6bb0202cef19e651ee0b4bcd8b009b5719c",
+      "results/text_extension/review/trec__luna__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__luna__k4__jev-review/predictions.jsonl": "1232968dd94b28d9ac384eb75a9df24ecd2792bb05e1f1ef2b8aa2bb33d025f0",
+      "results/text_extension/review/trec__luna__k4__jev-review/run.json": "a59e87e4fdbedaa91a1ecedbe249b44aa943fc04818564b363d230c9f0a08bde",
+      "results/text_extension/review/trec__luna__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__qwen_main__k0__jev-review/predictions.jsonl": "a74536fb0495e893a87b643e45553891d3ef9202522ef04bb86854e37e53f77e",
+      "results/text_extension/review/trec__qwen_main__k0__jev-review/run.json": "c12ab8ac854bcfb9e4177b7473194ce970aaf395c82fd1fd8a7ab6a3331e4435",
+      "results/text_extension/review/trec__qwen_main__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__qwen_small__k0__jev-review/predictions.jsonl": "416c786fb92c72e4962eb79ffa24f0b1a5f025dc4d6a1270af83fe5230aa5fac",
+      "results/text_extension/review/trec__qwen_small__k0__jev-review/run.json": "086693dd58f168eab53793d945b326fc6615a9feb48b5cd3561e1fd5fdcf8ce6",
+      "results/text_extension/review/trec__qwen_small__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__smollm2__k0__jev-review/predictions.jsonl": "86da92490a49becb3d1f8bf76fe4b81d0ef964a0eac9f26198e0a160840c66d0",
+      "results/text_extension/review/trec__smollm2__k0__jev-review/run.json": "dab5d0a468a29dd6223d99ac4b97b5da2fd9092f2bfb9141c7c3f9dca7624f95",
+      "results/text_extension/review/trec__smollm2__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+      "results/text_extension/review/trec__smollm2__k4__jev-review/predictions.jsonl": "b40fadf17670a06532af8575baac8a2ef78495914435003533e7f9fdd2d40867",
+      "results/text_extension/review/trec__smollm2__k4__jev-review/run.json": "fd06f4894a96e6e9c06e75a5002614953bd5a7fe0c03b8704eb41cbb663050a0",
+      "results/text_extension/review/trec__smollm2__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+    },
+    "pure_helper_sha256": "c6a606113d79dc8a1038058a45a2f191c2eb2f42d19fd3b7627f246aed136df8",
+    "retry_artifact_sha256": {
+      "attempts.jsonl": "e314764968c53f527f322065180ec2e74eb6b4cc3092286221b5d9a9508376bc",
+      "budget.jsonl": "e346bcf3fdb1f6002cbdb389e02e80947fb5382bb210f9b7696f4f30266c8918",
+      "budget.jsonl.lock": "e68083a173e62e9dccbd91f251aa1594ce18fc2d4c0ee64e2b30d0e994bb5a6b",
+      "plan.json": "0f0f6674a8befdd291f6cb3101743f75e19f62b5d484a368ccd7ab7bc39bb8fb",
+      "run.json": "1d76a620ed4d8103a12f54cd83a646b9b618a12be5418686fcde04fb61132b2f"
+    }
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "study": "failed-call-recovery-report-v1"
+}

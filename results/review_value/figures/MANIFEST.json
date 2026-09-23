@@ -1,10 +1,10 @@
 {
-  "data_sha256": "d7a2657158e0266315d39c82b4cd198762a21118d9d34c77607baec7efb524d8",
-  "script_sha256": "69930b9d541f838415dd8784bb7a2e61ec3719419b5712b8e9b25bdafc2d4a95",
+  "data_sha256": "ffd480fc113778d14c174cafa938f3708ed78abe7828f44cd09ad30e27734ca2",
+  "script_sha256": "ee4885f16815d62289c242313bf30c0c997bb4ed979bf918ecd9a85a53a0a6bb",
   "matplotlib_version": "3.11.2",
-  "data_scope": "All four eligible conditions; accuracy only",
+  "data_scope": "All 5 eligible conditions; accuracy only",
   "figures": {
-    "selective_review.png": "995eeeae313ccd7e5908125cfecd23930e406e83ca2cd6b91ade0601b5bf89d5",
-    "selective_review.svg": "cb2d7c2fd9b0674c79ac9750488c96829d5fc9991746680026bebf75cf959962"
+    "selective_review.png": "719be978e5c383ecbcf0d3c9b8c8625bc7bf30700b71032c60358275f93fa193",
+    "selective_review.svg": "41fe496d0cbde1f31373509f3a86ec27c03e40a66c53ebf06dcd44ef67589aa1"
   }
 }

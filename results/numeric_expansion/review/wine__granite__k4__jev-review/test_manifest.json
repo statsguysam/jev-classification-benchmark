@@ -1,0 +1,191 @@
+{
+  "dataset": "wine",
+  "labels": [
+    "cultivar 1",
+    "cultivar 2",
+    "cultivar 3"
+  ],
+  "manifest_sha256": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2",
+  "rows": [
+    {
+      "id": "wine:source:00000:222a17893d32a98e",
+      "label": 0,
+      "text_sha256": "849b90ce518d6509e77f00fc44542b5567b6eb92e2579da290b90ba1cb46b6e0"
+    },
+    {
+      "id": "wine:source:00014:38e865a94cb0f3bd",
+      "label": 0,
+      "text_sha256": "17184c05bb462bbe890c3907ade2d72b45b4717537085a572f4ca6f3735a8ea9"
+    },
+    {
+      "id": "wine:source:00024:0a1234821dd93255",
+      "label": 0,
+      "text_sha256": "fe1c0269d45b2b8cc080f43b77fc6d8c0b3c8cafcf1cf81a629ba9f2f6ec070e"
+    },
+    {
+      "id": "wine:source:00026:ba13aca2ad218286",
+      "label": 0,
+      "text_sha256": "cb4617d7a0b193159cb31fd5aa89fe0adebfb79abead477cb6b5a61841ed6e58"
+    },
+    {
+      "id": "wine:source:00028:defcf172d02ed096",
+      "label": 0,
+      "text_sha256": "e143e7d9bed9083412889f7f1625f857f9dec805b4f64a3c4954c6765dc684aa"
+    },
+    {
+      "id": "wine:source:00031:777a5ecdb699c8cc",
+      "label": 0,
+      "text_sha256": "64ba9fae5d5af6476a51f5bfef7201ec5266b9947151d1521a4d5431a05aacb6"
+    },
+    {
+      "id": "wine:source:00044:c5d724bc041b00b7",
+      "label": 0,
+      "text_sha256": "c2f40888134581514ee3a67e2c988233c38ad7e5e3508bce1de84d755208fe85"
+    },
+    {
+      "id": "wine:source:00046:76f146123a8296cc",
+      "label": 0,
+      "text_sha256": "5b5714c97e41d42128006a09dcaf0641cc28c9eb7971bae2e9177f39c5962572"
+    },
+    {
+      "id": "wine:source:00048:9d2852d16f77c9cf",
+      "label": 0,
+      "text_sha256": "9d4cc78d295b69364004d3a711d1937df14f01363e252495f7ecb1a5e2a46826"
+    },
+    {
+      "id": "wine:source:00049:92bc4cc9b1b77eec",
+      "label": 0,
+      "text_sha256": "d8f40137afd84704de9ae96719625ed03807b455bbeb2571a1236d846c4eb6c0"
+    },
+    {
+      "id": "wine:source:00051:d8fe705a3ccd4bea",
+      "label": 0,
+      "text_sha256": "9ae58453eef947ac4f56b4ca2ff9e98eda337a6889f9de8db678767c1d8c3304"
+    },
+    {
+      "id": "wine:source:00053:50241e9d5d60e0c4",
+      "label": 0,
+      "text_sha256": "3f0c51582895ebe6fe212302f8878ab43d39152bf175a910abb8a4afa23b94fd"
+    },
+    {
+      "id": "wine:source:00060:7636e616346c5ee1",
+      "label": 1,
+      "text_sha256": "ad382c07d567b07c4dcd95525e280cf371a5fc859c93bf81aae4767a09c25a98"
+    },
+    {
+      "id": "wine:source:00071:1c31eca604502231",
+      "label": 1,
+      "text_sha256": "a5247c4e7c05f1318f0348dd33ace528394b8575fd452f5457d1236014455590"
+    },
+    {
+      "id": "wine:source:00072:cf40af9d370c5072",
+      "label": 1,
+      "text_sha256": "1eba1cbcf17ab0edcc7876541380abf9396b98c7ffd458844a682046018f0647"
+    },
+    {
+      "id": "wine:source:00075:989fffc8f6d943f2",
+      "label": 1,
+      "text_sha256": "7156b55eab9d0f389f8fe8a6f25f702c7a9a22aa94e2d403736ec63489f8aaaf"
+    },
+    {
+      "id": "wine:source:00079:f971ef75dfa124f4",
+      "label": 1,
+      "text_sha256": "0b38891a8a9d8d9bd2413b9838f65a5aa59419e56840c7cfd02058dd1762baf5"
+    },
+    {
+      "id": "wine:source:00088:a95865a1f69a80c6",
+      "label": 1,
+      "text_sha256": "f0bea47123fd9707e9bfeccddecc75e506768a205c5658e194947bd11b9bd92c"
+    },
+    {
+      "id": "wine:source:00090:e48f46e7869379f9",
+      "label": 1,
+      "text_sha256": "2a88f2756a2806fcb3869e6a955e6935973fe026dddc0a2d6eaccd1efe10285c"
+    },
+    {
+      "id": "wine:source:00111:9a26545a6a4489df",
+      "label": 1,
+      "text_sha256": "197496bf97d6d58bb10985247744ae8f9e62334f14150400131687c446f24215"
+    },
+    {
+      "id": "wine:source:00112:93d271fc87473c7a",
+      "label": 1,
+      "text_sha256": "886893e86375bf5ca6251847b283299176f40f7ba0762171002fb5dab751fc6d"
+    },
+    {
+      "id": "wine:source:00116:2e83e09e1c03e452",
+      "label": 1,
+      "text_sha256": "3f611c5fb847cb585494a4d1f48f83d81e8e2286b868a817262f8141f6500037"
+    },
+    {
+      "id": "wine:source:00118:8c019b47336603f7",
+      "label": 1,
+      "text_sha256": "e4398e5984cb0d2086c7faea46730cf379f51ce829855c83e74b1fab5a36278a"
+    },
+    {
+      "id": "wine:source:00123:3e5a79743d16466b",
+      "label": 1,
+      "text_sha256": "bc71a66b691d755b5728c90cc26c28a289ac5492e72454e4f0c21cf7b533596b"
+    },
+    {
+      "id": "wine:source:00124:4e063a2d108f18ff",
+      "label": 1,
+      "text_sha256": "3659fc133cb5b10e582a62813618a5bca9bdbc71ce778c1f0ce51a53a27e285c"
+    },
+    {
+      "id": "wine:source:00125:c1f1e125b4c79762",
+      "label": 1,
+      "text_sha256": "0f1378cea683b5c2144c53de4b661d26be04454a1fee133edaba2a950c01bb4d"
+    },
+    {
+      "id": "wine:source:00136:2458eb880bdb3423",
+      "label": 2,
+      "text_sha256": "08e069fb6896a571e79f84deea35352ff15dcc86e07ae0e20686849b45d86690"
+    },
+    {
+      "id": "wine:source:00141:bfe7c1e0b381e013",
+      "label": 2,
+      "text_sha256": "41d11c38e21818371ab07f59c56676abeb80acdc80a8a1b563ae97d717af2cca"
+    },
+    {
+      "id": "wine:source:00148:2f8544f1ac6831d9",
+      "label": 2,
+      "text_sha256": "7ffc672d0eb62bc2a9756fd44bd5617b98d00f99f2d2a3b7c474a67cddd656a4"
+    },
+    {
+      "id": "wine:source:00156:ed74be42ee9e8bc5",
+      "label": 2,
+      "text_sha256": "76e82670f2cfcf4d4a82cdf9ee5d9ff295bc3b862ae579d1a1ca6073852bbc12"
+    },
+    {
+      "id": "wine:source:00157:e2a94b56e5d41ccb",
+      "label": 2,
+      "text_sha256": "2b15191d55003da18f375fe55cc224d5858a2ea40d355165fae1dcb37d63cf19"
+    },
+    {
+      "id": "wine:source:00167:bbcb8f1a8666f028",
+      "label": 2,
+      "text_sha256": "d5c7d8763278ce04d04f9808483aa0d0494126a3dc30e4d56e687d8db95c0c8a"
+    },
+    {
+      "id": "wine:source:00170:11182418f65caff1",
+      "label": 2,
+      "text_sha256": "7db4a893d8336ad82d8a7c324b140e44e9d38f45000b31ba3236c72ab5a45f61"
+    },
+    {
+      "id": "wine:source:00173:4ceec8a75fd567c3",
+      "label": 2,
+      "text_sha256": "19da5bbb15f1fac05c0cf069a5dd958be3f1b37cdffcdab2b0b4619d1d937bce"
+    },
+    {
+      "id": "wine:source:00175:3692b6bc2dd7cde9",
+      "label": 2,
+      "text_sha256": "5f96dba5a3c5298610d43eed0ef8eedd644e55a1d361cd91b7d73eb4f79f8038"
+    },
+    {
+      "id": "wine:source:00177:18878236b73bea6e",
+      "label": 2,
+      "text_sha256": "0b67b6e63fbef305f506a58b2788a21c111dcbbe8dbae7ae16335b997a1eca03"
+    }
+  ]
+}

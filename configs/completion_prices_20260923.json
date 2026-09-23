@@ -1,0 +1,14 @@
+{
+  "gpt-6-astra": {
+    "provider": "openai",
+    "input_usd_per_million": "10",
+    "output_usd_per_million": "50",
+    "input_multiplier": "1.25",
+    "mode": "utf8_bound",
+    "max_input_tokens": 272000,
+    "max_output_tokens": 128000,
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "verified_on": "2026-09-23",
+    "declaration": "I verified the maximum standard request rates and context limits at the cited official source today"
+  }
+}

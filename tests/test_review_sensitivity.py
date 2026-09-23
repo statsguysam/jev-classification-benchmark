@@ -55,14 +55,14 @@ def test_real_appendix_counts_endpoints_and_primary_artifacts_unchanged(monkeypa
     saved = sensitivity.primary.source.read(sensitivity.ROOT / "results/review_value/ANALYSIS.json")
     before = {path: sensitivity.file_sha(path) for path in sensitivity.protected_paths(sensitivity.ROOT, saved)}
     report = sensitivity.collect()
-    assert report["counters"] == {"completed_review_conditions_audited": 17, "expected_review_conditions": 24,
-        "primary_eligible_conditions": 4, "sensitivity_eligible_conditions": 9,
-        "added_constant_label_conditions": 5, "added_constant_conditions_with_varying_max_probability": 5,
-        "excluded_complete_conditions": 8, "unscored_incomplete_conditions": 7,
-        "scored_curve_points": 54, "partial_condition_metrics": 0}
+    assert report["counters"] == {"completed_review_conditions_audited": 24, "expected_review_conditions": 24,
+        "primary_eligible_conditions": 5, "sensitivity_eligible_conditions": 16,
+        "added_constant_label_conditions": 11, "added_constant_conditions_with_varying_max_probability": 11,
+        "excluded_complete_conditions": 8, "unscored_incomplete_conditions": 0,
+        "scored_curve_points": 96, "partial_condition_metrics": 0}
     assert report["added_condition_accuracy_vs_random_patterns"] == {
-        "above_at_all_intermediate_rates": 1, "below_at_all_intermediate_rates": 2,
-        "ties_at_all_intermediate_rates": 1, "mixed": 1}
+        "above_at_all_intermediate_rates": 2, "below_at_all_intermediate_rates": 4,
+        "ties_at_all_intermediate_rates": 2, "mixed": 3}
     assert before == {path: sensitivity.file_sha(path) for path in before}
     primary_by_run = {c["review_run_id"]: c for c in saved["conditions"]}
     for c in report["conditions"]:

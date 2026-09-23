@@ -1,0 +1,55 @@
+{
+  "budget": {
+    "budget_usd": "0.080640000",
+    "charged_or_reserved_usd": "0.040320000",
+    "events": 31,
+    "halted": false,
+    "ledger_id": "80833b90-d6c0-44f2-b1f2-732c77c01355",
+    "remaining_reservation_usd": "0.040320000",
+    "reservations": 15,
+    "settlements": 0
+  },
+  "counts": {
+    "new_calls": 15,
+    "planned_failures": 15,
+    "recovered": 15,
+    "unrecovered": 0,
+    "upstream_unresolved_not_called": 0
+  },
+  "execution_sessions": [
+    {
+      "path": "results/completion_20260923/control_retries/sessions/20260923T194559Z-3c6eabb9f519",
+      "producer_pins": {
+        "configs/completion_prices_20260923.json": "47e0bd14e397adf27ac23659f18376fac00c5ece18f7eeab4d69784a7db41a5a",
+        "scripts/analyze_jev_recovery.py": "c6a606113d79dc8a1038058a45a2f191c2eb2f42d19fd3b7627f246aed136df8",
+        "scripts/prepare_failed_retries.py": "ccb0e0568b6a693067e8fa737a169b4ecd8e2de5fc9a91d9ba0e9e8b2488bbc2",
+        "scripts/prepare_review_controls.py": "da709c914194c22839f93f37b3b2d051b7eb2e4ba4948cfa5113218e8bc85980",
+        "scripts/probe_jev_health.py": "f59e921cb36d9b1a59a5c9a00826347fc6e409d7abaed4228945546d81e1bb09",
+        "scripts/recover_expanded_numeric_billing.py": "045abae3f02797e921d5eef4758e95e246922e39a03a69bddb65a0f1882fc416",
+        "scripts/run_budgeted_hosted.py": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+        "scripts/run_control_failed_retries.py": "256534446e9063c2154d7cea49b62fe8541a9d470fe5a2a8b1a524d1c2340216",
+        "scripts/run_failed_retries.py": "f855b3299aede41f94ee8e73f9ce5454166944e69b66e145f303503df6bc5181",
+        "scripts/run_jev_completion.py": "5771ab6081179bb9d8bf00411bc3a6f2ff546b3f80ca09597b1e2d0ccb7a7173",
+        "scripts/run_openrouter_jev.py": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f",
+        "scripts/run_review_controls.py": "d048bb4f17a5fa023ed54ee81d7152da1dc4b55814f9d343ef8e27f802afd455",
+        "scripts/summarize_review_controls.py": "e656c4793bf26670cdbb6c946d6ed6f25788efa0d4591c74f1c7936dca4bb5be"
+      },
+      "resume_after_errors": false,
+      "saved_attempts": 0,
+      "started_at": "2026-09-23T19:45:59.811991+00:00"
+    }
+  ],
+  "finished_at": "2026-09-23T19:47:02.501926+00:00",
+  "ledger_id": "80833b90-d6c0-44f2-b1f2-732c77c01355",
+  "no_op": false,
+  "plan_sha256": "0951f39a9f480e68fc27822ba5e2b696bff27c574b65dfc07c06f91c34599779",
+  "protected_artifacts_sha256": {
+    "attempts.jsonl": "f7a1ce87fa27c5dedc94cf1f024070605049b544af585749ba0abd1a6cd1fea4",
+    "budget.jsonl": "b5e53e46c92fded484db81b7692b708e7eb6d7d07e4990501f4334cc0a05e8a0",
+    "budget.jsonl.lock": "0d53b5554b506df0c294f5c981fa258901407ed021c381c080df441aa2b9345e",
+    "plan.json": "0951f39a9f480e68fc27822ba5e2b696bff27c574b65dfc07c06f91c34599779"
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "study": "post-control-failure-recovery-v1"
+}

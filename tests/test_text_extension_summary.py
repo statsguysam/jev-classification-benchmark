@@ -74,6 +74,40 @@ def test_audited_row_preserves_original_manifest_while_pairing_frozen_content(re
     assert row['group_bootstrap']['group_definition'].startswith('Unicode NFKC')
 
 
+def test_jev_tied_maximum_keeps_saved_choice_and_metrics(report_module,source_fixture):
+    ds,r,ps,path=source_fixture
+    r['config']['provider']='jev'
+    ps[0].label,ps[0].probabilities=1,[.5,.5]
+    ps[0].metadata['probability_kind']='jev_choice_distribution'
+    r['metrics']=evaluate(ds.test,ps,2)
+    original=copy.deepcopy((r,ps))
+    row,payload=measured(report_module,source_fixture)
+    assert (r,ps)==original
+    assert payload['predictions'][0]==1
+    assert row['accuracy']==.75 and row['n_failures']==0
+    assert row['chosen_label_argmax_disagreement_rows']==1
+
+
+def test_jev_within_frozen_maximum_tolerance_keeps_saved_choice(report_module,source_fixture):
+    ds,r,ps,path=source_fixture
+    r['config']['provider']='jev'
+    ps[0].label,ps[0].probabilities=1,[.5000001,.4999999]
+    r['metrics']=evaluate(ds.test,ps,2)
+    row,payload=measured(report_module,source_fixture)
+    assert payload['predictions'][0]==1 and row['accuracy']==.75 and row['n_failures']==0
+
+
+@pytest.mark.parametrize('provider,probabilities',[
+    ('hf',[.5,.5]),('classical',[.5,.5]),('jev',[.6,.4]),('jev',[.500002,.499998])])
+def test_tie_fix_preserves_other_recipes_and_rejects_beyond_tolerance(report_module,source_fixture,provider,probabilities):
+    ds,r,ps,path=source_fixture
+    r['config']['provider']=provider
+    ps[0].label,ps[0].probabilities=1,probabilities
+    r['metrics']=evaluate(ds.test,ps,2)
+    with pytest.raises(ValueError,match='Invalid probabilities or decision rule'):
+        measured(report_module,source_fixture)
+
+
 @pytest.mark.parametrize('mutation',['order','training','metric','probability','failed_label'])
 def test_rejects_misalignment_leakage_or_invalid_measurements(report_module,source_fixture,mutation):
     ds,r,ps,path=copy.deepcopy(source_fixture)

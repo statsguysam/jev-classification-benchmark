@@ -1,0 +1,1449 @@
+{
+  "cost_note": "Original unknown-cost reservations remain retained. Reverify prices; allocate each additional call inside the unchanged aggregate $25, counting the health probe and outstanding scopes.",
+  "counts": {
+    "paid_failed_calls": 17,
+    "paid_jev_failures": 16,
+    "paid_openai_failures": 1,
+    "prediction_rows_scanned": 66863,
+    "standard_runs_scanned": 376,
+    "upstream_skips": 1
+  },
+  "failures": [
+    {
+      "artifact_sha256": {
+        "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+        "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+        "results/jev/sst2__jev-1.13__9d5a851767fc/predictions.jsonl": "5e2f23b554635abf4d060f168d9a7685877038661673718de0866b4e7ffbd83f",
+        "results/jev/sst2__jev-1.13__9d5a851767fc/run.json": "d9651bf77ef5f50d294dba21cf1872805406e32bd984ac3310d6e2f84382b1e8",
+        "results/jev/sst2__jev-1.13__9d5a851767fc/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+      },
+      "dataset": "sst2",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "1a780ddd0c2c06c6c1875f894511be32c491199a0939099263ceae00cdaa85ca",
+      "kind": "paid_failure",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "bfbdb3d2-0a73-43e0-8e7a-bbfdd87ee107",
+      "original_ledger_path": "results/jev-budget.jsonl",
+      "original_prediction_sha256": "1dcdb9577e549185fe748ee241276e488096575f4474aa08a81bfe48567e9fc4",
+      "original_prompt_sha256": "60b683349806c10c48ff310944f6d6b80d9a3a99c23b6d37d0501e0c9311f546",
+      "original_reservation_id": "c02b824c-814b-40af-95db-e9b5b4a32250",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 60,
+      "prediction_path": "results/jev/sst2__jev-1.13__9d5a851767fc/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "sst2:validation:504:331ac9be057927e0",
+      "run_id": "sst2__jev-1.13__9d5a851767fc",
+      "run_path": "results/jev/sst2__jev-1.13__9d5a851767fc/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 0,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+        "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+        "results/jev/sst2__jev-1.13__9d5a851767fc/predictions.jsonl": "5e2f23b554635abf4d060f168d9a7685877038661673718de0866b4e7ffbd83f",
+        "results/jev/sst2__jev-1.13__9d5a851767fc/run.json": "d9651bf77ef5f50d294dba21cf1872805406e32bd984ac3310d6e2f84382b1e8",
+        "results/jev/sst2__jev-1.13__9d5a851767fc/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898"
+      },
+      "dataset": "sst2",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "59074907e89dacbcda9120b5af4cca0d4e6dbe504ee1f4dfa19de1bd72ef8b09",
+      "kind": "paid_failure",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "bfbdb3d2-0a73-43e0-8e7a-bbfdd87ee107",
+      "original_ledger_path": "results/jev-budget.jsonl",
+      "original_prediction_sha256": "f8d6b8248137abb962bde667f622cacebd17a61b67c071636aa1ebd69f514345",
+      "original_prompt_sha256": "40c0fa2a75630c0b236b5d71d46832dc6056a81f8eacbb8253036926213de76c",
+      "original_reservation_id": "b820dc7e-0ef6-4c75-9747-767e3bf1e5bd",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 132,
+      "prediction_path": "results/jev/sst2__jev-1.13__9d5a851767fc/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "sst2:validation:849:fd573d8cd381b1e0",
+      "run_id": "sst2__jev-1.13__9d5a851767fc",
+      "run_path": "results/jev/sst2__jev-1.13__9d5a851767fc/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 0,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+        "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl": "b45f10272e0b9b1e97e04540c4e1d678587e4849450c624aad9444f25684b356",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json": "31963954a8c6b1af404030ff514178e714006cd517d7a05e7096ce69ffb3f87b",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "dataset": "trec",
+      "error": "invalid_output: Jev choice disagrees with maximum probability",
+      "failure_id": "0e124ee27ad86a4b0602c656300cbb16002d88f8f948f6cba3c4f62c95e50096",
+      "kind": "paid_failure",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "bfbdb3d2-0a73-43e0-8e7a-bbfdd87ee107",
+      "original_ledger_path": "results/jev-budget.jsonl",
+      "original_prediction_sha256": "70dbf3a0205ee0ce6ad42d94f087858c4be9952fadc38e2a212f6a6efc1604e6",
+      "original_prompt_sha256": "12be8506fe36bac23aa309ef7fcf0f4ee52499a9f57d5d1b691421b226c246e4",
+      "original_reservation_id": "9808d18c-83b4-4924-a00a-2789a584c3f8",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 25,
+      "prediction_path": "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "trec:test:112:80775c58f0add4ca",
+      "run_id": "trec__jev-1.13__ce2f8d23bf30",
+      "run_path": "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 0,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+        "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl": "b45f10272e0b9b1e97e04540c4e1d678587e4849450c624aad9444f25684b356",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json": "31963954a8c6b1af404030ff514178e714006cd517d7a05e7096ce69ffb3f87b",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "dataset": "trec",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "26bc087d94670bd20c883d2162c6bef1e7010c3f285bb80fd56f30a5f2f5bb7e",
+      "kind": "paid_failure",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "bfbdb3d2-0a73-43e0-8e7a-bbfdd87ee107",
+      "original_ledger_path": "results/jev-budget.jsonl",
+      "original_prediction_sha256": "3d8e2c087a45b37e9a210b4a4f8751ca070dbd9e63a9a5653d9277188cb1d3df",
+      "original_prompt_sha256": "0a6134abdf3a159921a280452edcbeb3ff8a72766b1ea5f1a7cf8c95fa422539",
+      "original_reservation_id": "1674802f-7c55-4aed-a548-d48bd6c526f0",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 66,
+      "prediction_path": "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "trec:test:138:6dfcf7c292a1a1e8",
+      "run_id": "trec__jev-1.13__ce2f8d23bf30",
+      "run_path": "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 0,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+        "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl": "b45f10272e0b9b1e97e04540c4e1d678587e4849450c624aad9444f25684b356",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json": "31963954a8c6b1af404030ff514178e714006cd517d7a05e7096ce69ffb3f87b",
+        "results/jev/trec__jev-1.13__ce2f8d23bf30/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "dataset": "trec",
+      "error": "invalid_output: probabilities do not sum to one",
+      "failure_id": "dcb9f28b5cad2a17b221bcb68445fe03f76cb1f3b86de3eb93d0a4553ff4c31b",
+      "kind": "paid_failure",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "bfbdb3d2-0a73-43e0-8e7a-bbfdd87ee107",
+      "original_ledger_path": "results/jev-budget.jsonl",
+      "original_prediction_sha256": "4189a27ce9664d4c4d8e6be7e5d030094e39b50b5390916596d95bf3f4e01ae5",
+      "original_prompt_sha256": "3ea855a926fc23a0fa4b17365a12b8e6895903c7e62d7906125a98b6fe7345f9",
+      "original_reservation_id": "6780325c-8a83-4a37-827b-058ef0e71481",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 85,
+      "prediction_path": "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "trec:test:192:1be61c5c61dab77e",
+      "run_id": "trec__jev-1.13__ce2f8d23bf30",
+      "run_path": "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 0,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_decisions/review-budget.jsonl": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a",
+        "results/numeric_decisions/review-budget.jsonl.lock": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+        "results/numeric_decisions/review/breast_cancer__astra__jev-review/predictions.jsonl": "ebdb5f9455c2401b48d79c58e2539747acf76f3dd53d81a81ec7f3575abef2b1",
+        "results/numeric_decisions/review/breast_cancer__astra__jev-review/run.json": "4c9f63f0de765395ce0c3914e5c06860651f1116091a7c1cb5a076778ae223a7",
+        "results/numeric_decisions/review/breast_cancer__astra__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/predictions.jsonl": "872826ba524654e0e4bdabccca79dc69e9403e884bf5ac9a29407d600705b177",
+        "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/run.json": "bb1c82612d9c4787d057d78be96ea225ebe592738ee8090a27b08d08963a1176",
+        "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=520; no automatic retry",
+      "failure_id": "5316c1564f8f8b1e2524371b8aaac54d40ab31c5ae0f3e135b0e32fc70b858d5",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "4d07d9e0-feb2-40cb-a47d-dc524a414c27",
+      "original_ledger_path": "results/numeric_decisions/review-budget.jsonl",
+      "original_prediction_sha256": "1a5a7bcaf060183255e260059e8ed14da74978725905f2c91c24b66b2fa1edc7",
+      "original_prompt_sha256": "e6b6322d419ae0ae1699943b5a722e70a4d67920f9cbd2880ac1e547785b40dd",
+      "original_reservation_id": "d6675b81-fa2b-405d-91a6-fa5c1d40a492",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 35,
+      "prediction_path": "results/numeric_decisions/review/breast_cancer__astra__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00199:add44081f786a96c",
+      "run_id": "breast_cancer__astra__jev-review",
+      "run_path": "results/numeric_decisions/review/breast_cancer__astra__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "gpt-6-astra",
+        "source_path": "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170",
+        "source_prediction_sha256": "2990bbb2bad113b8774b1135040ce2ada9b126325a741d1fc8a9b439dd77579e",
+        "source_row_id": "breast_cancer:source:00199:add44081f786a96c",
+        "source_run_id": "breast_cancer__gpt-6-astra__6be368014170"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_decisions/review/wine__astra__jev-review/predictions.jsonl": "90427f92c0442400abb54c60a27445c46421f0492d88dd7eba78fd110a4fce3c",
+        "results/numeric_decisions/review/wine__astra__jev-review/run.json": "e85950e389894748e7abdda557df992147ee6b5e533201c31ac3e1c9cc5ab814",
+        "results/numeric_decisions/review/wine__astra__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+        "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/predictions.jsonl": "dbe5ff17012aec89bf5588be1493217451e25607eb725b6a422fedda986156ab",
+        "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/run.json": "c3162e3b5defb51b2d0fe24d9d05a5e131c67f2ff7ce1f0dfa02077256999622",
+        "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "dataset": "wine",
+      "dependency": "Recover the failed source separately, then record a new dependent Jev attempt",
+      "depends_on_failure_id": "0bfeee106f13e98b19b837190d5776b02d3019d0b797d0e21dfcbec3b0f989d9",
+      "error": "source_proposal_failed: Jev review not called",
+      "failure_id": "ccbe9014153dc0c40b630b7997ed0a167613e1abeb01f51088572c71420fd727",
+      "kind": "upstream_skip",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": null,
+      "original_ledger_path": null,
+      "original_prediction_sha256": "559d41fa6d1a7bf7290c269cf788a01ce8cfce05f5a8282ec0e516f1ee31bc5a",
+      "original_prompt_sha256": null,
+      "original_reservation_id": null,
+      "original_retained_reservation_usd": "0",
+      "prediction_line_1based": 22,
+      "prediction_path": "results/numeric_decisions/review/wine__astra__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "wine:source:00116:2e83e09e1c03e452",
+      "run_id": "wine__astra__jev-review",
+      "run_path": "results/numeric_decisions/review/wine__astra__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": true,
+        "source_model": "gpt-6-astra",
+        "source_path": "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f",
+        "source_prediction_sha256": "363540b63106bab1d3a33d7f38d272cb56f17dab78c8fe38c05420f6afcfd2df",
+        "source_row_id": "wine:source:00116:2e83e09e1c03e452",
+        "source_run_id": "wine__gpt-6-astra__d5c2863bd80f"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/predictions.jsonl": "b21ac3e75a98c3ab4d44b7313cba4d1ecbaeed7c360594468076f33d62181917",
+        "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/run.json": "6cd6ffdd2f2c391e55af485aec85d414fd31157e0c332d8d3bb2d8c97762ef14",
+        "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/predictions.jsonl": "4d2af7785ed8971d2615ea61a9ce65b79c5a02f2ef00d573bf3852b5121eac3b",
+        "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/run.json": "01107fcc70c87781c76638d647919aaceff247cdba8c570765ac9167a244556c",
+        "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "dataset": "breast_cancer",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "14dda59788af49e26670484111c14fb161d2d999f192102e90b7368d442d0aaa",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "07746fb5a4dd1467e0abcd98665838d77a6b3bf0655e2ac4d07d68f1901fe5db",
+      "original_prompt_sha256": "f570a0411cf74acbeadd673612b458c3459e92173107bf56d1cb1fbd90e2b102",
+      "original_reservation_id": "52dabac3-373e-4e2e-8244-d9546baa954a",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 36,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00200:3e69524f5b79ccdc",
+      "run_id": "breast_cancer__luna__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "gpt-5.6-luna",
+        "source_path": "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2",
+        "source_prediction_sha256": "d04ec69ba9cfc737426aad42f852f1fe2c7428f137290e5c89715c943d93dbd5",
+        "source_row_id": "breast_cancer:source:00200:3e69524f5b79ccdc",
+        "source_run_id": "breast_cancer__gpt-5.6-luna__6874301c84d2"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=402; no automatic retry",
+      "failure_id": "51d26f7758be308e0ecdb56777626ff9a3d7d43ef18426a65005c561156da727",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "82b5303c1a76f3af44f3ba6d36252475d44fe228c74202cfe7b81e69b15d2dbc",
+      "original_prompt_sha256": "efd82371d20c9fe6e3f1bb72b222bbf8c64057667f8a2d72c17e81abf1551cd6",
+      "original_reservation_id": "9292ca86-7bff-473a-aafc-240d57459606",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 77,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00379:1a9b516ef2c8b154",
+      "run_id": "breast_cancer__smollm2__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_prediction_sha256": "8c763f3a6dc90ba3e4f7022d0d8234ea73cdb96229111274b35a89698576496b",
+        "source_row_id": "breast_cancer:source:00379:1a9b516ef2c8b154",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=402; no automatic retry",
+      "failure_id": "a354a7d9705e119620b4ab1199573bb9dfb5862e4d61bd9d86ebd65df77ced1e",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "b7f87910ada2ba97bfccb18d3cbc90097d1b348477ce888a588246f6a3616a8b",
+      "original_prompt_sha256": "4bb497aed67fe317e0a8a1a98c75d7435790cf3f86bd897223d8fede88fb84bc",
+      "original_reservation_id": "5696adb8-46b3-43f5-88ca-f716ddcf4a58",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 79,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00389:84ced4866c177887",
+      "run_id": "breast_cancer__smollm2__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_prediction_sha256": "ebb9fa17d587f1a11b7a1f819cc91624abee93a8bf54310739782f91ef569bfd",
+        "source_row_id": "breast_cancer:source:00389:84ced4866c177887",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=402; no automatic retry",
+      "failure_id": "4a23cd0befbc978d5b062a207eb609c31f98001d4e63483d6fbdb3b71c43ca10",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "71b2ea224c1aa0ffc5aac5f3c815817164bedbc9f916d08c7661a7f6039d7b3b",
+      "original_prompt_sha256": "c9d3aa0889770fa4e1b6b758f0ad87e393a986f01df8a958151d3fb193d3fd4a",
+      "original_reservation_id": "f7b8da53-e85c-4c85-bd6b-0e18beb52b54",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 80,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00391:329f603a286992a8",
+      "run_id": "breast_cancer__smollm2__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_prediction_sha256": "deb9858f316e8b2b7ea01b6f03f0b1e1aab48eea58b51dfe3ea206727bd3e16c",
+        "source_row_id": "breast_cancer:source:00391:329f603a286992a8",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=402; no automatic retry",
+      "failure_id": "69fbfef209b3f3e0bc4f7047d6129276b82b937252b9bd9cb14271c59ebed2eb",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "ecf017e9b6c6b49817ac5efef19eb91afcde73f60c432d81ff268c6326ef92a4",
+      "original_prompt_sha256": "0c8d15d489fb4539449559916ce4947de8c35e2ac50361ebd262489541db6e3c",
+      "original_reservation_id": "c3dc9e33-42ce-47e1-9602-3e0731751f56",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 83,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00403:87561888be5dd48f",
+      "run_id": "breast_cancer__smollm2__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_prediction_sha256": "956959ae15994217e557eb4fb21797f2e147813661c4a9e87ee6245c532307bb",
+        "source_row_id": "breast_cancer:source:00403:87561888be5dd48f",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=402; no automatic retry",
+      "failure_id": "29c26ae4a73020c631108657a0a9a5c5729894363c53ddfd4b6c0b474f8311fb",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "06ac54d000f83016b820928c4ebb913b74505d9c9c5946611d09e687bbf5d909",
+      "original_prompt_sha256": "56841bddc01c11cc418d0443ddbc8fa57eb7356a3f693fc1b1d8df3b4e7a06cc",
+      "original_reservation_id": "d37ea690-1701-40fa-a03d-43b61c8302d5",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 84,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00406:988ceba59dc227d9",
+      "run_id": "breast_cancer__smollm2__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_prediction_sha256": "b16430a01f0a96329064ac84c27e5769b8d3c47376250ef6dbc7dbcb44e7ef5b",
+        "source_row_id": "breast_cancer:source:00406:988ceba59dc227d9",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+        "results/numeric_expansion/review-budget.jsonl": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
+        "results/numeric_expansion/review-budget.jsonl.lock": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49",
+        "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=402; no automatic retry",
+      "failure_id": "03e3fdfa21fef3f8adafab0908151ea2f8fc30bdba6412f7f4c7805bcda985ef",
+      "kind": "paid_failure",
+      "method": "cached_label_jev_review",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+      "original_ledger_path": "results/numeric_expansion/review-budget.jsonl",
+      "original_prediction_sha256": "c8f82484c8d317eaa54b563e16c748fc306c37ed1d11cae09c87711bcc0a0a88",
+      "original_prompt_sha256": "cae38551883c70e49be006d15d36d489de315514625472efbf45e4dbc640a527",
+      "original_reservation_id": "eb45126d-9c64-4bdd-82b7-47f55bdb9168",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 85,
+      "prediction_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "numeric_cached_proposal",
+      "row_id": "breast_cancer:source:00407:ebb9bae6e3c43491",
+      "run_id": "breast_cancer__smollm2__k4__jev-review",
+      "run_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": {
+        "source_failed": false,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_prediction_sha256": "019ed2199d3783675426fd3a224b42b878b1821908eeedcd392e2c71490c2b1a",
+        "source_row_id": "breast_cancer:source:00407:ebb9bae6e3c43491",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      }
+    },
+    {
+      "artifact_sha256": {
+        "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+        "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+        "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/predictions.jsonl": "36b92cc4799c94d58dfbd838b9cb79bacfb7e8adbec0b46829541bb3313e9493",
+        "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/run.json": "e6a83786bf04da9cc41af3b80d3c751f2f67bc27f087ca766d372f09b00b0e34",
+        "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "dataset": "breast_cancer",
+      "error": "http_error: status=520; no automatic retry",
+      "failure_id": "0586d8fb4e40f4324518f75b25f86679675f0520a9f2ed609718136516d3ffc4",
+      "kind": "paid_failure",
+      "method": "few_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "original_ledger_path": "results/tabular/api-budget.jsonl",
+      "original_prediction_sha256": "94fc8a4c2db5f0afd9ab767a59e846634d5ba8ee483f8e9b9d68c4a1e3997cd8",
+      "original_prompt_sha256": "375b67f75ca4778cd9aa0960497cf357c6f904b7d9b3806da968c6a567f9233a",
+      "original_reservation_id": "d48d520c-f2b2-4ee6-ac0f-dcad42d26b9b",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 35,
+      "prediction_path": "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "breast_cancer:source:00199:add44081f786a96c",
+      "run_id": "breast_cancer__jev-1.13__3d1cba817d2a",
+      "run_path": "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+        "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+        "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/predictions.jsonl": "52ffbfc87f9e1f7598088b7c37f251d6260649c4fc8bc2d3cc4d707d8d9aac67",
+        "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/run.json": "764a97a6ebc45670396979ff0a06f73faeb053794069d9fdcb939284bee9520b",
+        "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "dataset": "breast_cancer",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "d6a24d93c30af39e4b5fc4f3c4cc3b3b30ca7cf7696fec70f0ef056a7decf832",
+      "kind": "paid_failure",
+      "method": "zero_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "original_ledger_path": "results/tabular/api-budget.jsonl",
+      "original_prediction_sha256": "04d7803e8569e668e76f40a211eaf63ddda6b8d31f4b935446f757f3c31d68bd",
+      "original_prompt_sha256": "f308e953ed53abf2173b60cbeaac8dac842c0825ac707f40a0707eff812f8d49",
+      "original_reservation_id": "fe4da6d6-bb17-4194-90a9-7351d785db40",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 98,
+      "prediction_path": "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+      "run_id": "breast_cancer__jev-1.13__e30c52b19b9e",
+      "run_path": "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 0,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+        "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+        "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/predictions.jsonl": "eb49086b5596cafa066befcb943a34c8781610d4f99e623b374db04cb2ec2b9b",
+        "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/run.json": "4214a14c0ed2fb4b4ef3bc16cfccb90d20b37594ffa7e6b2a7c3e030a675f52c",
+        "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/test_manifest.json": "e25882e2519a76c747a9b36a01710e7179c8365613450ca7c6329bfc9c0e3d11"
+      },
+      "dataset": "titanic",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "84de80b374c0b24f9034dbcc325ab9e16718e67372da8799c50084732030dcd7",
+      "kind": "paid_failure",
+      "method": "few_shot",
+      "model": "typesafe/jev-1.13",
+      "original_ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "original_ledger_path": "results/tabular/api-budget.jsonl",
+      "original_prediction_sha256": "b12b7876500461615349ca9fdec0c1420e1131013860a93eea4dc87902feae7a",
+      "original_prompt_sha256": "36bc86624d8602cf899487657f50a1e771e0d81d97c791eef8b297d47429b66a",
+      "original_reservation_id": "42848d8e-4425-4749-8ac3-ef379115cddc",
+      "original_retained_reservation_usd": "0.002688000",
+      "prediction_line_1based": 155,
+      "prediction_path": "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/predictions.jsonl",
+      "provider": "jev",
+      "request_recipe": "standard_prompt",
+      "row_id": "titanic:source:00754:994a6eb566eb8798",
+      "run_id": "titanic__jev-1.13__ca2172a48634",
+      "run_path": "results/tabular/hosted/titanic__jev-1.13__ca2172a48634/run.json",
+      "scope": "historical_additional_dataset",
+      "shots_per_class": 4,
+      "source_condition": null
+    },
+    {
+      "artifact_sha256": {
+        "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+        "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+        "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/predictions.jsonl": "dbe5ff17012aec89bf5588be1493217451e25607eb725b6a422fedda986156ab",
+        "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/run.json": "c3162e3b5defb51b2d0fe24d9d05a5e131c67f2ff7ce1f0dfa02077256999622",
+        "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "dataset": "wine",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "failure_id": "0bfeee106f13e98b19b837190d5776b02d3019d0b797d0e21dfcbec3b0f989d9",
+      "kind": "paid_failure",
+      "method": "few_shot",
+      "model": "gpt-6-astra",
+      "original_ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+      "original_ledger_path": "results/tabular/api-budget.jsonl",
+      "original_prediction_sha256": "147fca15761df8d6c7e7536b77a8b775a7edd81c907d22a644926ff075f521cc",
+      "original_prompt_sha256": "a8660cdc7382f534c1f9c1b733b0103b3f095a220206d29ec60bf5860246e52e",
+      "original_reservation_id": "18c643f8-9f11-4d3f-8233-b263910ed030",
+      "original_retained_reservation_usd": "0.156650000",
+      "prediction_line_1based": 22,
+      "prediction_path": "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/predictions.jsonl",
+      "provider": "openai",
+      "request_recipe": "standard_prompt",
+      "row_id": "wine:source:00116:2e83e09e1c03e452",
+      "run_id": "wine__gpt-6-astra__d5c2863bd80f",
+      "run_path": "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/run.json",
+      "scope": "current_four_dataset_study",
+      "shots_per_class": 4,
+      "source_condition": null
+    }
+  ],
+  "frozen_control_requests": 1714,
+  "frozen_core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "pending_first_pass": {
+    "by_condition": [
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 0,
+        "source_run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 4,
+        "source_run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 0,
+        "source_run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 4,
+        "source_run_id": "breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 0,
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 29,
+        "saved_rows": 85,
+        "shots_per_class": 4,
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 114,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 114,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 0,
+        "source_run_id": "breast_cancer__gpt-5.6-luna__b8612044e1e5"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 4,
+        "source_run_id": "breast_cancer__gpt-5.6-luna__6874301c84d2"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 0,
+        "source_run_id": "breast_cancer__gpt-6-astra__c2361622445b"
+      },
+      {
+        "dataset": "breast_cancer",
+        "expected_rows": 114,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 114,
+        "shots_per_class": 4,
+        "source_run_id": "breast_cancer__gpt-6-astra__6be368014170"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 0,
+        "source_run_id": "wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 4,
+        "source_run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 0,
+        "source_run_id": "wine__Qwen3-4B-Instruct-2507__c923604a4ba1"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 4,
+        "source_run_id": "wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 36,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 36,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 36,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 36,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 0,
+        "source_run_id": "wine__gpt-5.6-luna__e3ff7ad8c4ad"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 4,
+        "source_run_id": "wine__gpt-5.6-luna__bf0ee5396886"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 0,
+        "source_run_id": "wine__gpt-6-astra__bb75b85e6193"
+      },
+      {
+        "dataset": "wine",
+        "expected_rows": 36,
+        "family": "numeric_expansion",
+        "pending_rows": 0,
+        "saved_rows": 36,
+        "shots_per_class": 4,
+        "source_run_id": "wine__gpt-6-astra__d5c2863bd80f"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "sst2__Qwen3-4B-Instruct-2507__5823bb43da99"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "sst2__gpt-5.6-luna__31e207fb95d3"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "sst2__gpt-5.6-luna__af6e2721cfa0"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "sst2__gpt-6-astra__9279b61f6e7a"
+      },
+      {
+        "dataset": "sst2",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "sst2__gpt-6-astra__e77320ccd3cf"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "trec__Qwen2.5-0.5B-Instruct__67b435872393"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "trec__gpt-5.6-luna__0434e88259a6"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "trec__gpt-5.6-luna__a183fc22ddc8"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 0,
+        "source_run_id": "trec__gpt-6-astra__4788a3f7e01d"
+      },
+      {
+        "dataset": "trec",
+        "expected_rows": 200,
+        "family": "text_extension",
+        "pending_rows": 200,
+        "saved_rows": 0,
+        "shots_per_class": 4,
+        "source_run_id": "trec__gpt-6-astra__f4c124cbaa8e"
+      }
+    ],
+    "failed_source_rows": 1,
+    "invalid_success_source_labels": 0,
+    "numeric_pending_rows": 401,
+    "source_runs": [
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__gpt-5.6-luna__b8612044e1e5"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__gpt-5.6-luna__6874301c84d2"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__gpt-6-astra__c2361622445b"
+      },
+      {
+        "dataset": "breast_cancer",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 114,
+        "run_id": "breast_cancer__gpt-6-astra__6be368014170"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__Qwen3-4B-Instruct-2507__c923604a4ba1"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__granite-3.3-2b-instruct__16efece16c12"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__gpt-5.6-luna__e3ff7ad8c4ad"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__gpt-5.6-luna__bf0ee5396886"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__gpt-6-astra__bb75b85e6193"
+      },
+      {
+        "dataset": "wine",
+        "failed_rows": 1,
+        "invalid_success_labels": 0,
+        "n_rows": 36,
+        "run_id": "wine__gpt-6-astra__d5c2863bd80f"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__Qwen3-4B-Instruct-2507__5823bb43da99"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__gpt-5.6-luna__31e207fb95d3"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__gpt-5.6-luna__af6e2721cfa0"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__gpt-6-astra__9279b61f6e7a"
+      },
+      {
+        "dataset": "sst2",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "sst2__gpt-6-astra__e77320ccd3cf"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__Qwen2.5-0.5B-Instruct__67b435872393"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__gpt-5.6-luna__0434e88259a6"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__gpt-5.6-luna__a183fc22ddc8"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__gpt-6-astra__4788a3f7e01d"
+      },
+      {
+        "dataset": "trec",
+        "failed_rows": 0,
+        "invalid_success_labels": 0,
+        "n_rows": 200,
+        "run_id": "trec__gpt-6-astra__f4c124cbaa8e"
+      }
+    ],
+    "text_pending_rows": 4800
+  },
+  "prediction_hash_algorithm": "SHA256 of sorted compact UTF-8 JSON with ensure_ascii=False and allow_nan=False",
+  "producer_sha256": "4be52d8c1ce48592b58651f73efbd3f1c08f509314af33f5ecbe7b8b82c772cb",
+  "retry_policy": {
+    "maximum_additional_attempts_per_original_failure": 2,
+    "new_failures": "Rescan completed first-pass outputs into a new immutable inventory; no recursive retries",
+    "preserve_originals": true,
+    "rounds": "At most two separate failure-only rounds; never repeat a successful response",
+    "selection": "Original error only; never accuracy or confidence",
+    "separate_recovered_report": true,
+    "stop_on_first_valid_success": true,
+    "unresolved_orphan_requests": "Stop for accounting reconciliation; do not infer free failures or retry uncertain calls"
+  },
+  "schema_version": 1,
+  "scope": "All saved original standard inference failures; no retries of wrong-but-valid labels or poor LoRA outcomes"
+}

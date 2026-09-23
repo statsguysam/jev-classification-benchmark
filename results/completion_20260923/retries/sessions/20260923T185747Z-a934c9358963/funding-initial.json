@@ -1,0 +1,8 @@
+{
+  "authenticated": true,
+  "checked_at": "2026-09-23T18:57:46.293505+00:00",
+  "endpoint": "https://openrouter.ai/api/v1/credits",
+  "http_status": 200,
+  "method": "GET",
+  "positive_available_credit": true
+}

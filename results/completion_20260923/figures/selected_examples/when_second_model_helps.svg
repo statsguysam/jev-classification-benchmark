@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="576pt" height="576pt" viewBox="0 0 576 576" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576 
+L 576 576 
+L 576 0 
+L 0 0 
+z
+" style="fill: #f3f6fa"/>
+  </g>
+  <g id="patch_2">
+   <path d="M 29.952 298.368 
+L 546.048 298.368 
+Q 556.416 298.368 556.416 288 
+L 556.416 80.64 
+Q 556.416 70.272 546.048 70.272 
+L 29.952 70.272 
+Q 19.584 70.272 19.584 80.64 
+L 19.584 288 
+Q 19.584 298.368 29.952 298.368 
+z
+" style="fill: #ffffff; stroke: #dde5ee; stroke-width: 0.8; stroke-linejoin: miter"/>
+  </g>
+  <g id="patch_3">
+   <path d="M 29.952 480.384 
+L 546.048 480.384 
+Q 556.416 480.384 556.416 470.016 
+L 556.416 311.04 
+Q 556.416 300.672 546.048 300.672 
+L 29.952 300.672 
+Q 19.584 300.672 19.584 311.04 
+L 19.584 470.016 
+Q 19.584 480.384 29.952 480.384 
+z
+" style="fill: #ffffff; stroke: #dde5ee; stroke-width: 0.8; stroke-linejoin: miter"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_4">
+    <path d="M 167.04 228.672 
+L 529.92 228.672 
+L 529.92 133.056 
+L 167.04 133.056 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 167.04 228.672 
+L 167.04 133.056 
+" clip-path="url(#p7ad9e96deb)" style="fill: none; stroke: #e9eef4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #516477" x="167.04" y="238.250125" transform="rotate(-0 167.04 238.250125)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 305.543817 228.672 
+L 305.543817 133.056 
+" clip-path="url(#p7ad9e96deb)" style="fill: none; stroke: #e9eef4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #516477" x="305.543817" y="238.250125" transform="rotate(-0 305.543817 238.250125)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 444.047634 228.672 
+L 444.047634 133.056 
+" clip-path="url(#p7ad9e96deb)" style="fill: none; stroke: #e9eef4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #516477" x="444.047634" y="238.250125" transform="rotate(-0 444.047634 238.250125)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="163.54" y="149.33672" transform="rotate(-0 163.54 149.33672)">Qwen2.5 0.5B</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="163.54" y="172.887459" transform="rotate(-0 163.54 172.887459)">Source → Jev</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="163.54" y="196.438588" transform="rotate(-0 163.54 196.438588)">Jev alone</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="163.54" y="219.989327" transform="rotate(-0 163.54 219.989327)">Logistic regression</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 167.04 138.590424 
+L 259.375878 138.590424 
+L 259.375878 152.48536 
+L 167.04 152.48536 
+z
+" clip-path="url(#p7ad9e96deb)" style="fill: #687891"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 167.04 162.141163 
+L 420.963664 162.141163 
+L 420.963664 176.036099 
+L 167.04 176.036099 
+z
+" clip-path="url(#p7ad9e96deb)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 167.04 185.691901 
+L 420.963664 185.691901 
+L 420.963664 199.586837 
+L 167.04 199.586837 
+z
+" clip-path="url(#p7ad9e96deb)" style="fill: #64aaa5"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 167.04 209.24264 
+L 436.352977 209.24264 
+L 436.352977 223.137576 
+L 167.04 223.137576 
+z
+" clip-path="url(#p7ad9e96deb)" style="fill: #b98535"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="455.127939" y="148.784962" transform="rotate(-0 455.127939 148.784962)">12/36</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="455.127939" y="172.335701" transform="rotate(-0 455.127939 172.335701)">33/36</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="455.127939" y="195.88644" transform="rotate(-0 455.127939 195.88644)">33/36</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="455.127939" y="219.437179" transform="rotate(-0 455.127939 219.437179)">35/36</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_9">
+    <path d="M 167.04 407.808 
+L 529.92 407.808 
+L 529.92 354.24 
+L 167.04 354.24 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_4">
+     <g id="line2d_11">
+      <path d="M 167.04 407.808 
+L 167.04 354.24 
+" clip-path="url(#p9e5dfea222)" style="fill: none; stroke: #e9eef4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #516477" x="167.04" y="417.386125" transform="rotate(-0 167.04 417.386125)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_13">
+      <path d="M 305.543817 407.808 
+L 305.543817 354.24 
+" clip-path="url(#p9e5dfea222)" style="fill: none; stroke: #e9eef4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #516477" x="305.543817" y="417.386125" transform="rotate(-0 305.543817 417.386125)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_15">
+      <path d="M 444.047634 407.808 
+L 444.047634 354.24 
+" clip-path="url(#p9e5dfea222)" style="fill: none; stroke: #e9eef4; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_14">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #516477" x="444.047634" y="417.386125" transform="rotate(-0 444.047634 417.386125)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_5">
+     <g id="line2d_17"/>
+     <g id="text_15">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="163.54" y="371.820886" transform="rotate(-0 163.54 371.820886)">GPT-6 Astra</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_18"/>
+     <g id="text_16">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="163.54" y="397.82477" transform="rotate(-0 163.54 397.82477)">Source → Jev</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_10">
+    <path d="M 167.04 360.350913 
+L 435.737405 360.350913 
+L 435.737405 375.693204 
+L 167.04 375.693204 
+z
+" clip-path="url(#p9e5dfea222)" style="fill: #687891"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 167.04 386.354796 
+L 406.651603 386.354796 
+L 406.651603 401.697087 
+L 167.04 401.697087 
+z
+" clip-path="url(#p9e5dfea222)" style="fill: #087f8c"/>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="455.127939" y="371.269129" transform="rotate(-0 455.127939 371.269129)">194/200</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="455.127939" y="397.273012" transform="rotate(-0 455.127939 397.273012)">173/200</text>
+   </g>
+  </g>
+  <g id="text_19">
+   <text style="font-weight: 700; font-size: 22.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="31.68" y="28.224" transform="rotate(-0 31.68 28.224)">When does a second model help?</text>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="31.68" y="50.112" transform="rotate(-0 31.68 50.112)">Two selected first-attempt examples · 4 training examples per class</text>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="39.168" y="94.464" transform="rotate(-0 39.168 94.464)">01  Wine · numerical data</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="39.168" y="112.32" transform="rotate(-0 39.168 112.32)">3 classes · N = 36 · 12 training labels for each method shown</text>
+  </g>
+  <g id="text_23">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="39.168" y="249.408" transform="rotate(-0 39.168 249.408)">Review − source: +58.3 pp  (paired 95% CI +41.7 to +75.0)</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 9.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="39.168" y="264.96" transform="rotate(-0 39.168 264.96)">21 corrected  ·  0 harmed by a wrong label  ·  0 harmed by failure</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="39.168" y="281.088" transform="rotate(-0 39.168 281.088)">The reviewed pipeline matched Jev alone's accuracy here.</text>
+  </g>
+  <g id="text_26">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="39.168" y="326.016" transform="rotate(-0 39.168 326.016)">02  TREC · text classification</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="39.168" y="343.296" transform="rotate(-0 39.168 343.296)">6 classes · N = 200 · 24 training labels for each method shown</text>
+  </g>
+  <g id="text_28">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="39.168" y="429.12" transform="rotate(-0 39.168 429.12)">Review − source: -10.5 pp  (paired 95% CI -15.5 to -6.0)</text>
+  </g>
+  <g id="text_29">
+   <text style="font-size: 9.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="39.168" y="445.248" transform="rotate(-0 39.168 445.248)">3 corrected  ·  24 harmed by a wrong label  ·  0 harmed by failure</text>
+  </g>
+  <g id="text_30">
+   <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="39.168" y="460.8" transform="rotate(-0 39.168 460.8)">Failed source rows: 0 · failed review rows (including upstream skips): 0</text>
+  </g>
+  <g id="text_31">
+   <text style="font-size: 9.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="31.68" y="497.664" transform="rotate(-0 31.68 497.664)">Different datasets and denominators. The classical-ML comparison is Wine only.</text>
+  </g>
+  <g id="text_32">
+   <text style="font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="31.68" y="510.912" transform="rotate(-0 31.68 510.912)">Exploratory: familiar public holdouts; intervals condition on fixed rows, prompts and responses.</text>
+  </g>
+  <g id="text_33">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="31.68" y="523.584" transform="rotate(-0 31.68 523.584)">Unadjusted intervals. Failures count as incorrect in full N. One fixed split.</text>
+  </g>
+  <g id="text_34">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="31.68" y="536.256" transform="rotate(-0 31.68 536.256)">Selected examples are not an overall ranking. See all 48 conditions in the repository.</text>
+  </g>
+  <g id="text_35">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #132b40" x="31.68" y="553.536" transform="rotate(-0 31.68 553.536)">github.com/statsguysam/jev-classification-benchmark</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #516477" x="31.68" y="565.056" transform="rotate(-0 31.68 565.056)">Original results preserved · Retry recoveries excluded · Values and source hashes in MANIFEST.json</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7ad9e96deb">
+   <rect x="167.04" y="133.056" width="362.88" height="95.616"/>
+  </clipPath>
+  <clipPath id="p9e5dfea222">
+   <rect x="167.04" y="354.24" width="362.88" height="53.568"/>
+  </clipPath>
+ </defs>
+</svg>

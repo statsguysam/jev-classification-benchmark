@@ -1,6 +1,6 @@
 # Reproduce the text extension
 
-Read the [protocol](TEXT_EXTENSION_PROTOCOL.md) first. Use the existing frozen SST-2/TREC pilot and preserved historical evidence. Do not overwrite their splits or rerun hosted source models to replace inconvenient outcomes. The extension adds eight local source conditions and sixteen classical conditions, then plans twenty-four Jev reviews; it adds no LoRA training.
+Read the [protocol](TEXT_EXTENSION_PROTOCOL.md) first. Use the existing frozen SST-2/TREC pilot and preserved historical evidence. Do not overwrite their splits or rerun hosted source models to replace inconvenient outcomes. The completed extension adds eight local source conditions, sixteen classical conditions and twenty-four Jev review conditions; it adds no LoRA training.
 
 ## Environment and frozen data
 
@@ -78,15 +78,18 @@ This fixed runner executes or audits/reuses all sixteen conditions. Its train-on
 
 ## Jev review and aggregate reports
 
-All twenty-four review conditions are pending in the current 44/68 snapshot; all source predictions and classical references are complete. Funded provider credit, complete audited sources, a frozen source manifest and current transport verification are required before paid execution. The [budget guide](BUDGET.md) documents the separate US$1.60 ledger, the existing US$25 cumulative ceiling, first initialization, conservative success settlement and resume rules. Historical source calls are reused, not charged again by this stage. Their recorded costs are not zero-cost estimates for running the complete pipeline afresh.
+The first-attempt matrix is complete: **68/68 conditions and 72/72 contrasts**, including all twenty-four Jev review conditions. Completed conditions retain failed predictions in the full test denominator; completion does not mean every request succeeded. Subsequent failed-call recovery has separate evidence and metrics in the [completion analysis](COMPLETION_REPRODUCTION.md), and does not replace these first-attempt scores.
 
-Rebuild reports and a visibly incomplete aggregate asset with:
+The [budget guide](BUDGET.md) records the original US$1.60 stage allocation and US$25 cumulative ceiling; the [completion protocol](COMPLETION_RETRY_PROTOCOL.md) documents the later execution and recovery policy. Historical source calls were reused, not charged again by this stage. Their recorded costs are not zero-cost estimates for running the complete pipeline afresh. Rebuilding the saved analysis below needs neither API credentials nor provider credit.
+
+After restoring the frozen datasets, refresh the report before the dashboard asset:
 
 ```bash
 python scripts/summarize_text_extension.py --bootstrap-samples 2000
-python scripts/build_text_extension_dashboard.py --allow-incomplete
+python scripts/build_text_extension_dashboard.py
+node dashboard/tests/text-dashboard.smoke.cjs dashboard
 ```
 
-The report preserves all 68 conditions and 72 planned contrasts. Missing scores/intervals remain unavailable, and metrics are never calculated from partial checkpoints. The dashboard builder independently reaudits the report; without `--allow-incomplete` it requires a completed matrix. Source and inference producers remain frozen when regenerating summaries.
+The dashboard builder independently reaudits the report and requires the completed matrix. Missing scores/intervals remain unavailable, and metrics are never calculated from partial checkpoints. `--allow-incomplete` is reserved for explicitly labeled interim snapshots; it is unnecessary for this completed study. Source and inference producers remain frozen when regenerating summaries. For a fresh checkout covering the numerical results, proposal controls and recovery as well, follow the exact restoration and refresh order in the [completion reproduction guide](COMPLETION_REPRODUCTION.md).
 
 Serve the repository mirror with `python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist` and open `/text.html`. The [hosted text view](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/text.html) and linked repository remain private to their owning account. Building an asset or notebook does not publish the site or make these results public.

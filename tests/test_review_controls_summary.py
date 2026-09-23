@@ -140,21 +140,35 @@ def test_orphan_execution_evidence_is_not_reported_as_not_started(tmp_path, monk
         summary.load_execution({})
 
 
-def test_real_pending_report_is_offline_and_has_no_execution_mutation(monkeypatch):
+def test_real_report_is_offline_and_has_no_execution_mutation(monkeypatch):
     import socket
     if not (summary.PREPARED / "protocol.json").exists():
         pytest.skip("Frozen plan not yet available")
-    if summary.execution.OUTPUT.exists():
-        pytest.skip("Execution exists; pending-only integration test no longer applies")
     protocol = summary.read(summary.PREPARED / "protocol.json")
     if protocol.get("repeat_request_count") != 64:
         pytest.skip("Updated repeat protocol not yet frozen")
     def no_connect(*args, **kwargs):
         raise AssertionError("Control report attempted network access")
     monkeypatch.setattr(socket.socket, "connect", no_connect)
-    before = {path: path.read_bytes() for path in summary.PREPARED.iterdir()}
+    files = list(summary.PREPARED.iterdir())
+    existed = summary.execution.OUTPUT.exists()
+    if existed:
+        files += [p for p in summary.execution.OUTPUT.rglob("*") if p.is_file()]
+    before = {path: path.read_bytes() for path in files}
     report = summary.collect()
-    assert report["saved_requests"] == report["complete_primary_arms"] == 0
     assert report["expected_requests"] == 1714
-    assert not summary.execution.OUTPUT.exists()
+    if existed:
+        saved = summary.read(summary.execution.OUTPUT / "run.json")
+        if saved["status"] == "complete":
+            assert report["status"] == "complete"
+            assert report["saved_requests"] == 1714
+            assert report["complete_primary_arms"] == 12
+            assert report["complete_primary_contrasts"] == 8
+            assert report["serving_repeat_diagnostic"]["available_complete_pairs"] == 64
+        else:
+            assert report["status"] == "incomplete_execution"
+            assert all(r["metrics"] is None for r in report["runs"] if r["status"] != "complete")
+    else:
+        assert report["saved_requests"] == report["complete_primary_arms"] == 0
+    assert summary.execution.OUTPUT.exists() == existed
     assert before == {path: path.read_bytes() for path in before}

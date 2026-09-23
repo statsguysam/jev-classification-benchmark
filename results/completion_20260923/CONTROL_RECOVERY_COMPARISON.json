@@ -1,0 +1,2586 @@
+{
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 42,
+  "budget": {
+    "budget_usd": "0.080640000",
+    "charged_or_reserved_usd": "0.040320000",
+    "events": 31,
+    "halted": false,
+    "ledger_id": "80833b90-d6c0-44f2-b1f2-732c77c01355",
+    "remaining_reservation_usd": "0.040320000",
+    "reservations": 15,
+    "settlements": 0
+  },
+  "comparisons": [
+    {
+      "a": "actual",
+      "b": "no_proposal",
+      "contrast": "actual_minus_no_proposal",
+      "dataset": "breast_cancer",
+      "first_attempt": {
+        "balanced_accuracy_delta": 0.009171306911234911,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.04385964912280704,
+                0.04385964912280704
+              ],
+              "estimate": 0.0
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.03809710527525365,
+                0.04928157302913278
+              ],
+              "estimate": 0.004688752291564846
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.0,
+          "both_correct": 103,
+          "both_wrong": 5,
+          "changed_predictions": 6,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 3,
+          "correct_to_wrong_label": 2,
+          "net_correct_change": 0,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 3
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": 0.020799213887979118,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.026315789473684292,
+                0.04385964912280704
+              ],
+              "estimate": 0.00877192982456143
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.02797407786746023,
+                0.05224071697594765
+              ],
+              "estimate": 0.010671658274470919
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.8771929824561403,
+          "both_correct": 104,
+          "both_wrong": 5,
+          "changed_predictions": 5,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 2,
+          "correct_to_wrong_label": 2,
+          "net_correct_change": 1,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 3
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "shuffled",
+      "contrast": "actual_minus_shuffled",
+      "dataset": "breast_cancer",
+      "first_attempt": {
+        "balanced_accuracy_delta": 0.0045856534556174555,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.03508771929824561,
+                0.03508771929824561
+              ],
+              "estimate": 0.0
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.031677485831628854,
+                0.024252996103227568
+              ],
+              "estimate": -0.002798213810590866
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.0,
+          "both_correct": 104,
+          "both_wrong": 6,
+          "changed_predictions": 4,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 2,
+          "correct_to_wrong_label": 1,
+          "net_correct_change": 0,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 2,
+          "wrong_to_correct": 2
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": -0.007042253521126751,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.026315789473684292,
+                0.0
+              ],
+              "estimate": -0.00877192982456132
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.02804588672374111,
+                0.0
+              ],
+              "estimate": -0.008936519948896993
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -0.8771929824561403,
+          "both_correct": 107,
+          "both_wrong": 6,
+          "changed_predictions": 1,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 1,
+          "correct_to_wrong_label": 1,
+          "net_correct_change": -1,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 0
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "no_proposal",
+      "contrast": "actual_minus_no_proposal",
+      "dataset": "sst2",
+      "first_attempt": {
+        "balanced_accuracy_delta": 0.004901960784313708,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.010000000000000009,
+                0.02499999999999991
+              ],
+              "estimate": 0.0050000000000000044
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.0052584300578830566,
+                0.018621465792910304
+              ],
+              "estimate": 0.005002140205020322
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.5,
+          "both_correct": 190,
+          "both_wrong": 7,
+          "changed_predictions": 3,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 1,
+          "correct_to_wrong_label": 0,
+          "net_correct_change": 1,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 1,
+          "wrong_to_correct": 2
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": 0.004901960784313708,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.0,
+                0.015000000000000013
+              ],
+              "estimate": 0.0050000000000000044
+            },
+            "macro_f1": {
+              "ci95": [
+                0.0,
+                0.015216843178012047
+              ],
+              "estimate": 0.005003125378164497
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.5,
+          "both_correct": 192,
+          "both_wrong": 7,
+          "changed_predictions": 1,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 0,
+          "correct_to_wrong_label": 0,
+          "net_correct_change": 1,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 1
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "shuffled",
+      "contrast": "actual_minus_shuffled",
+      "dataset": "sst2",
+      "first_attempt": {
+        "balanced_accuracy_delta": 0.019807923169267716,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.0,
+                0.04499999999999993
+              ],
+              "estimate": 0.020000000000000018
+            },
+            "macro_f1": {
+              "ci95": [
+                0.0,
+                0.037980154394907144
+              ],
+              "estimate": 0.017625234680169855
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 2.0,
+          "both_correct": 187,
+          "both_wrong": 7,
+          "changed_predictions": 6,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 1,
+          "correct_to_wrong_label": 0,
+          "net_correct_change": 4,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 2,
+          "wrong_to_correct": 5
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": 0.014705882352941124,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.0,
+                0.03499999999999992
+              ],
+              "estimate": 0.015000000000000013
+            },
+            "macro_f1": {
+              "ci95": [
+                0.0,
+                0.034955317864851815
+              ],
+              "estimate": 0.015019132981325733
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 1.5,
+          "both_correct": 190,
+          "both_wrong": 7,
+          "changed_predictions": 3,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 0,
+          "correct_to_wrong_label": 0,
+          "net_correct_change": 3,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 3
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "no_proposal",
+      "contrast": "actual_minus_no_proposal",
+      "dataset": "trec",
+      "first_attempt": {
+        "balanced_accuracy_delta": 0.00034965034965039887,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.030000000000000027,
+                0.015000000000000013
+              ],
+              "estimate": -0.0050000000000000044
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.0174194158070277,
+                0.01240538085467581
+              ],
+              "estimate": -0.0023006445596236436
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -0.5,
+          "both_correct": 170,
+          "both_wrong": 25,
+          "changed_predictions": 5,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 3,
+          "correct_to_wrong_label": 2,
+          "net_correct_change": -1,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 1,
+          "wrong_to_correct": 2
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": 0.00034965034965039887,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.025000000000000022,
+                0.010000000000000009
+              ],
+              "estimate": -0.0050000000000000044
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.01534704424839671,
+                0.011250991924058398
+              ],
+              "estimate": -0.0022099115225073795
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -0.5,
+          "both_correct": 172,
+          "both_wrong": 25,
+          "changed_predictions": 3,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 2,
+          "correct_to_wrong_label": 2,
+          "net_correct_change": -1,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 1
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "shuffled",
+      "contrast": "actual_minus_shuffled",
+      "dataset": "trec",
+      "first_attempt": {
+        "balanced_accuracy_delta": -0.014299242424242409,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.040000000000000036,
+                -0.0050000000000000044
+              ],
+              "estimate": -0.020000000000000018
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.032258995555323966,
+                -0.004787152102110083
+              ],
+              "estimate": -0.01612193688912389
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -2.0,
+          "both_correct": 172,
+          "both_wrong": 24,
+          "changed_predictions": 6,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 4,
+          "correct_to_wrong_label": 3,
+          "net_correct_change": -4,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 2,
+          "wrong_to_correct": 0
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": -0.011268939393939359,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.03500000000000003,
+                0.0
+              ],
+              "estimate": -0.015000000000000013
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.025407893984366558,
+                0.0
+              ],
+              "estimate": -0.011111025787689632
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -1.5,
+          "both_correct": 173,
+          "both_wrong": 24,
+          "changed_predictions": 3,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 3,
+          "correct_to_wrong_label": 3,
+          "net_correct_change": -3,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 0
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "no_proposal",
+      "contrast": "actual_minus_no_proposal",
+      "dataset": "wine",
+      "first_attempt": {
+        "balanced_accuracy_delta": 0.0,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.13888888888888884,
+                0.13888888888888884
+              ],
+              "estimate": 0.0
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.12757824869078066,
+                0.10580860835699542
+              ],
+              "estimate": -0.011001317523056664
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.0,
+          "both_correct": 28,
+          "both_wrong": 2,
+          "changed_predictions": 6,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 3,
+          "correct_to_wrong_label": 2,
+          "net_correct_change": 0,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 2,
+          "wrong_to_correct": 3
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": -0.02777777777777768,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.11111111111111116,
+                0.05555555555555558
+              ],
+              "estimate": -0.02777777777777779
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.11918522202869104,
+                0.06986566425718548
+              ],
+              "estimate": -0.02561670213844136
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -2.7777777777777777,
+          "both_correct": 31,
+          "both_wrong": 2,
+          "changed_predictions": 3,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 2,
+          "correct_to_wrong_label": 2,
+          "net_correct_change": -1,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 1
+        }
+      },
+      "status": "complete"
+    },
+    {
+      "a": "actual",
+      "b": "shuffled",
+      "contrast": "actual_minus_shuffled",
+      "dataset": "wine",
+      "first_attempt": {
+        "balanced_accuracy_delta": -0.023809523809523836,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                -0.08333333333333337,
+                0.0
+              ],
+              "estimate": -0.02777777777777768
+            },
+            "macro_f1": {
+              "ci95": [
+                -0.056868474364968016,
+                0.0
+              ],
+              "estimate": -0.01538461538461533
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": -2.7777777777777777,
+          "both_correct": 31,
+          "both_wrong": 4,
+          "changed_predictions": 1,
+          "correct_to_failure": 1,
+          "correct_to_wrong": 1,
+          "correct_to_wrong_label": 0,
+          "net_correct_change": -1,
+          "review_stage_failure_rows": 1,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 0
+        }
+      },
+      "recovered": {
+        "balanced_accuracy_delta": 0.0,
+        "paired_group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "paired unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "estimate": 0.0
+            },
+            "macro_f1": {
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "estimate": 0.0
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "transitions_B_to_A": {
+          "accuracy_delta_pp": 0.0,
+          "both_correct": 32,
+          "both_wrong": 4,
+          "changed_predictions": 0,
+          "correct_to_failure": 0,
+          "correct_to_wrong": 0,
+          "correct_to_wrong_label": 0,
+          "net_correct_change": 0,
+          "review_stage_failure_rows": 0,
+          "source_failure_rows": 0,
+          "wrong_to_correct": 0
+        }
+      },
+      "status": "complete"
+    }
+  ],
+  "first_attempt_serving_repeat_diagnostic": {
+    "available_complete_pairs": 64,
+    "by_dataset": {
+      "breast_cancer": {
+        "both_failed": 0,
+        "both_valid": 16,
+        "reference_failed_only": 0,
+        "repeat_failed_only": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0,
+        "valid_label_agreement": 16,
+        "valid_label_disagreement": 0
+      },
+      "sst2": {
+        "both_failed": 1,
+        "both_valid": 15,
+        "reference_failed_only": 0,
+        "repeat_failed_only": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0,
+        "valid_label_agreement": 15,
+        "valid_label_disagreement": 0
+      },
+      "trec": {
+        "both_failed": 0,
+        "both_valid": 16,
+        "reference_failed_only": 0,
+        "repeat_failed_only": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0,
+        "valid_label_agreement": 16,
+        "valid_label_disagreement": 0
+      },
+      "wine": {
+        "both_failed": 0,
+        "both_valid": 15,
+        "reference_failed_only": 1,
+        "repeat_failed_only": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0,
+        "valid_label_agreement": 15,
+        "valid_label_disagreement": 0
+      }
+    },
+    "counts": {
+      "both_failed": 1,
+      "both_valid": 62,
+      "reference_failed_only": 1,
+      "repeat_failed_only": 0,
+      "resolved_model_mismatch_among_valid": 0,
+      "unknown_resolved_model_among_valid": 0,
+      "valid_label_agreement": 62,
+      "valid_label_disagreement": 0
+    },
+    "expected_pairs": 64,
+    "interpretation": "Descriptive, prospectively selected identical-prompt pairs; not independent architecture trials or proof of deterministic serving. Failures remain separate from label disagreements.",
+    "status": "complete",
+    "valid_agreement_fraction_of_all_pairs": 0.96875,
+    "valid_pair_agreement": 1.0
+  },
+  "latency_measurement_status": "not_reported_for_mixed_attempts",
+  "limitations": [
+    "This is a secondary availability sensitivity view on the same frozen cases, not a new test set.",
+    "Primary first-attempt controls and the original serving-repeat diagnostic remain unchanged.",
+    "An incorrect but valid recovered label is retained; true labels never select a retry.",
+    "Every error remaining after the finite policy counts as incorrect with the full original denominator.",
+    "Intervals are exploratory unadjusted group bootstraps conditional on frozen cases and served responses; balanced-accuracy deltas have no interval.",
+    "Retries use additional calls and retain their full conservative reservation; this does not estimate deployment savings."
+  ],
+  "new_call_outcomes": {
+    "counts": {
+      "success": 15
+    },
+    "n_calls": 15
+  },
+  "no_op": false,
+  "primary_report": "results/review_controls/COMPARISON.json",
+  "provenance": {
+    "analysis_sha256": "081514afa07e5c3296bb4bcdcbe0b743980317cdf6a3a1decb6da871ead020e9",
+    "attempt_records_sha256": "ae5dbf7fa8d95ca8be5fa1bb45edf4e0b390b759db60d3853c0bcd36f845b142",
+    "original_control_artifact_sha256": {
+      "budget.jsonl": "cf4b29351ce7d387f6a50b04da17a4035b67884c09efd4a93a50e28167cb2e8e",
+      "budget.jsonl.lock": "bb462a59959eeddbf8b41f023a8c8fc9adc64576ce77ed670d94bad1c35618a1",
+      "predictions.jsonl": "0175c3a99498ad02cf6990d633b8331611d19e7169d757e7c2e6078b8dc7f945",
+      "run.json": "2cc5336ba2189e3d11f7ef91e3892a5209644445e4a87776f5f117320cc6d7be"
+    },
+    "prepared_files_sha256": {
+      "manifest.json": "786c68ac439b400310ef4a2fcc77369bb8508e981d6d7372a6395a9d814f8ef4",
+      "protocol.json": "c1c94d336ad8700c1bb39b306069ca426ac22e392f588d5f967aeb03d2783992",
+      "requests.jsonl": "ae24a2a13a952bddac30f591a5d9b34559a96119c355e73e26e3c5fb5a327d60"
+    },
+    "primary_analysis_sha256": "e656c4793bf26670cdbb6c946d6ed6f25788efa0d4591c74f1c7936dca4bb5be",
+    "primary_report_sha256": "b7eedd2a8c45a50edfd2393a367e4dea20db626af3a8bba5c583d5e76af3078d",
+    "recovery_artifact_sha256": {
+      "attempts.jsonl": "f7a1ce87fa27c5dedc94cf1f024070605049b544af585749ba0abd1a6cd1fea4",
+      "budget.jsonl": "b5e53e46c92fded484db81b7692b708e7eb6d7d07e4990501f4334cc0a05e8a0",
+      "budget.jsonl.lock": "0d53b5554b506df0c294f5c981fa258901407ed021c381c080df441aa2b9345e",
+      "plan.json": "0951f39a9f480e68fc27822ba5e2b696bff27c574b65dfc07c06f91c34599779",
+      "run.json": "22a858ef8ad0146ad1cc5daba8e58d86f2df9b65d08b9198f3cef6f457e9dba8"
+    }
+  },
+  "recovery_counts": {
+    "primary": {
+      "new_calls": 14,
+      "original_failures": 14,
+      "remaining_failures": 0,
+      "resolved_failures": 14
+    },
+    "repeat": {
+      "new_calls": 1,
+      "original_failures": 1,
+      "remaining_failures": 0,
+      "resolved_failures": 1
+    }
+  },
+  "runs": [
+    {
+      "arm": "actual",
+      "dataset": "breast_cancer",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8774572667149249,
+                0.9727598566308244
+              ],
+              "estimate": 0.930008110300081
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9344906649197511,
+          "failure_rate": 0.00877192982456143,
+          "macro_f1": 0.930008110300081,
+          "n_failures": 1,
+          "n_probability_rows": 113,
+          "n_rows": 114,
+          "n_test": 114,
+          "probability_coverage": 0.9912280701754386,
+          "valid_response_accuracy": 0.9380530973451328
+        }
+      },
+      "n_rows": 114,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.026315789473684292
+            ],
+            "estimate": 0.00877192982456143
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.021485676215856064
+            ],
+            "estimate": 0.005982905982906073
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8947368421052632,
+                0.9824561403508771
+              ],
+              "estimate": 0.9385964912280702
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8859543806985131,
+                0.9797081578331579
+              ],
+              "estimate": 0.9359910162829871
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9385964912280702,
+          "balanced_accuracy": 0.9461185718964953,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9359910162829871,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "n_test": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9385964912280702
+        }
+      },
+      "resolved_failures": 1,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.8771929824561403,
+        "both_correct": 106,
+        "both_wrong": 7,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 1,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 1,
+        "wrong_to_correct": 1
+      }
+    },
+    {
+      "arm": "no_proposal",
+      "dataset": "breast_cancer",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8714975845410629,
+                0.9715828832571666
+              ],
+              "estimate": 0.9253193580085162
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9253193580085162,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "n_test": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9298245614035088
+        }
+      },
+      "n_rows": 114,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8714975845410629,
+                0.9715828832571666
+              ],
+              "estimate": 0.9253193580085162
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9253193580085162,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "n_test": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9298245614035088
+        }
+      },
+      "resolved_failures": 0,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.0,
+        "both_correct": 106,
+        "both_wrong": 8,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 0,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 0,
+        "wrong_to_correct": 0
+      }
+    },
+    {
+      "arm": "shuffled",
+      "dataset": "breast_cancer",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8771929824561403,
+                0.9736842105263158
+              ],
+              "estimate": 0.9298245614035088
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8825596600196142,
+                0.9742559014710914
+              ],
+              "estimate": 0.9328063241106719
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9299050114641336,
+          "failure_rate": 0.01754385964912286,
+          "macro_f1": 0.9328063241106719,
+          "n_failures": 2,
+          "n_probability_rows": 112,
+          "n_rows": 114,
+          "n_test": 114,
+          "probability_coverage": 0.9824561403508771,
+          "valid_response_accuracy": 0.9464285714285714
+        }
+      },
+      "n_rows": 114,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 114,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.04385964912280704
+            ],
+            "estimate": 0.01754385964912275
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.03294276332454132
+            ],
+            "estimate": 0.0121212121212122
+          }
+        },
+        "n_groups": 114,
+        "n_rows": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 114,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.9035087719298246,
+                0.9824561403508771
+              ],
+              "estimate": 0.9473684210526315
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8977745169968208,
+                0.9820075757575757
+              ],
+              "estimate": 0.9449275362318841
+            }
+          },
+          "n_groups": 114,
+          "n_rows": 114,
+          "resampled_row_count_range": [
+            114,
+            114
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9473684210526315,
+          "balanced_accuracy": 0.953160825417622,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9449275362318841,
+          "n_failures": 0,
+          "n_probability_rows": 114,
+          "n_rows": 114,
+          "n_test": 114,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9473684210526315
+        }
+      },
+      "resolved_failures": 2,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 1.7543859649122806,
+        "both_correct": 106,
+        "both_wrong": 6,
+        "changed_predictions": 2,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 2,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 2,
+        "wrong_to_correct": 2
+      }
+    },
+    {
+      "arm": "actual",
+      "dataset": "sst2",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.935,
+                0.985
+              ],
+              "estimate": 0.96
+            },
+            "macro_f1": {
+              "ci95": [
+                0.934868107918535,
+                0.9870209192243091
+              ],
+              "estimate": 0.9624120603015075
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.96,
+          "balanced_accuracy": 0.9603841536614646,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.9624120603015075,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.964824120603015
+        }
+      },
+      "n_rows": 200,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.008370217687825865
+            ],
+            "estimate": 0.002587064676616957
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.94,
+                0.99
+              ],
+              "estimate": 0.965
+            },
+            "macro_f1": {
+              "ci95": [
+                0.938608812586565,
+                0.9899507587177168
+              ],
+              "estimate": 0.9649991249781245
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.965,
+          "balanced_accuracy": 0.965486194477791,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9649991249781245,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.965
+        }
+      },
+      "resolved_failures": 1,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.5,
+        "both_correct": 192,
+        "both_wrong": 7,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 1,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 1,
+        "wrong_to_correct": 1
+      }
+    },
+    {
+      "arm": "no_proposal",
+      "dataset": "sst2",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.925,
+                0.98
+              ],
+              "estimate": 0.955
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9273399014778325,
+                0.9825446473615176
+              ],
+              "estimate": 0.9574099200964872
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.955,
+          "balanced_accuracy": 0.9554821928771509,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.9574099200964872,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.9597989949748744
+        }
+      },
+      "n_rows": 200,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.008737952812435345
+            ],
+            "estimate": 0.0025860795034727824
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.93,
+                0.985
+              ],
+              "estimate": 0.96
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9299719887955182,
+                0.9849906191369606
+              ],
+              "estimate": 0.95999599959996
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.96,
+          "balanced_accuracy": 0.9605842336934773,
+          "failure_rate": 0.0,
+          "macro_f1": 0.95999599959996,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.96
+        }
+      },
+      "resolved_failures": 1,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.5,
+        "both_correct": 191,
+        "both_wrong": 8,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 1,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 1,
+        "wrong_to_correct": 1
+      }
+    },
+    {
+      "arm": "shuffled",
+      "dataset": "sst2",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.905,
+                0.97
+              ],
+              "estimate": 0.94
+            },
+            "macro_f1": {
+              "ci95": [
+                0.9109766637856526,
+                0.9748939268409028
+              ],
+              "estimate": 0.9447868256213376
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.94,
+          "balanced_accuracy": 0.9405762304921969,
+          "failure_rate": 0.010000000000000009,
+          "macro_f1": 0.9447868256213376,
+          "n_failures": 2,
+          "n_probability_rows": 198,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 0.99,
+          "valid_response_accuracy": 0.9494949494949495
+        }
+      },
+      "n_rows": 200,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.025000000000000022
+            ],
+            "estimate": 0.010000000000000009
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.014047222460814445
+            ],
+            "estimate": 0.005193166375461078
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.919875,
+                0.98
+              ],
+              "estimate": 0.95
+            },
+            "macro_f1": {
+              "ci95": [
+                0.917825685789928,
+                0.9798711755233495
+              ],
+              "estimate": 0.9499799919967987
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.95,
+          "balanced_accuracy": 0.9507803121248499,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9499799919967987,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.95
+        }
+      },
+      "resolved_failures": 2,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 1.0,
+        "both_correct": 188,
+        "both_wrong": 10,
+        "changed_predictions": 2,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 2,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 2,
+        "wrong_to_correct": 2
+      }
+    },
+    {
+      "arm": "actual",
+      "dataset": "trec",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.81,
+                0.905
+              ],
+              "estimate": 0.86
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7884789111417914,
+                0.9273036121065097
+              ],
+              "estimate": 0.8806411739884706
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.86,
+          "balanced_accuracy": 0.898987683856105,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.8806411739884706,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.864321608040201
+        }
+      },
+      "n_rows": 200,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.007024265644955285
+            ],
+            "estimate": 0.002103934357248205
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.815,
+                0.9101249999999993
+              ],
+              "estimate": 0.865
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7906720538602617,
+                0.9295000827867148
+              ],
+              "estimate": 0.8827451083457188
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.865,
+          "balanced_accuracy": 0.902017986886408,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8827451083457188,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.865
+        }
+      },
+      "resolved_failures": 1,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.5,
+        "both_correct": 172,
+        "both_wrong": 27,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 1,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 1,
+        "wrong_to_correct": 1
+      }
+    },
+    {
+      "arm": "no_proposal",
+      "dataset": "trec",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.815,
+                0.91
+              ],
+              "estimate": 0.865
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7910983809367285,
+                0.9281060361432699
+              ],
+              "estimate": 0.8829418185480943
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.865,
+          "balanced_accuracy": 0.8986380335064545,
+          "failure_rate": 0.0050000000000000044,
+          "macro_f1": 0.8829418185480943,
+          "n_failures": 1,
+          "n_probability_rows": 199,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 0.995,
+          "valid_response_accuracy": 0.8693467336683417
+        }
+      },
+      "n_rows": 200,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.015000000000000013
+            ],
+            "estimate": 0.0050000000000000044
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.007118734554079262
+            ],
+            "estimate": 0.002013201320131941
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.82,
+                0.915
+              ],
+              "estimate": 0.87
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7947474602606369,
+                0.9302052407162854
+              ],
+              "estimate": 0.8849550198682262
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.87,
+          "balanced_accuracy": 0.9016683365367576,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8849550198682262,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.87
+        }
+      },
+      "resolved_failures": 1,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.5,
+        "both_correct": 173,
+        "both_wrong": 26,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 1,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 1,
+        "wrong_to_correct": 1
+      }
+    },
+    {
+      "arm": "shuffled",
+      "dataset": "trec",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.835,
+                0.925
+              ],
+              "estimate": 0.88
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8106575897041975,
+                0.9407905042189556
+              ],
+              "estimate": 0.8967631108775945
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.88,
+          "balanced_accuracy": 0.9132869262803474,
+          "failure_rate": 0.010000000000000009,
+          "macro_f1": 0.8967631108775945,
+          "n_failures": 2,
+          "n_probability_rows": 198,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 0.99,
+          "valid_response_accuracy": 0.8888888888888888
+        }
+      },
+      "n_rows": 200,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 200,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          },
+          "macro_f1": {
+            "ci95": [
+              -0.007723200494284771,
+              0.0
+            ],
+            "estimate": -0.0029069767441860517
+          }
+        },
+        "n_groups": 200,
+        "n_rows": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 200,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.835,
+                0.925
+              ],
+              "estimate": 0.88
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8031466532063944,
+                0.9391129208363563
+              ],
+              "estimate": 0.8938561341334085
+            }
+          },
+          "n_groups": 200,
+          "n_rows": 200,
+          "resampled_row_count_range": [
+            200,
+            200
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.88,
+          "balanced_accuracy": 0.9132869262803474,
+          "failure_rate": 0.0,
+          "macro_f1": 0.8938561341334085,
+          "n_failures": 0,
+          "n_probability_rows": 200,
+          "n_rows": 200,
+          "n_test": 200,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.88
+        }
+      },
+      "resolved_failures": 2,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.0,
+        "both_correct": 176,
+        "both_wrong": 24,
+        "changed_predictions": 2,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 0,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 2,
+        "wrong_to_correct": 0
+      }
+    },
+    {
+      "arm": "actual",
+      "dataset": "wine",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.75,
+                0.9722222222222222
+              ],
+              "estimate": 0.8611111111111112
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7554020620956104,
+                0.9670259329538268
+              ],
+              "estimate": 0.8753623188405797
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.8611111111111112,
+          "balanced_accuracy": 0.876984126984127,
+          "failure_rate": 0.02777777777777779,
+          "macro_f1": 0.8753623188405797,
+          "n_failures": 1,
+          "n_probability_rows": 35,
+          "n_rows": 36,
+          "n_test": 36,
+          "probability_coverage": 0.9722222222222222,
+          "valid_response_accuracy": 0.8857142857142857
+        }
+      },
+      "n_rows": 36,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.08333333333333337
+            ],
+            "estimate": 0.02777777777777768
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.056868474364967954
+            ],
+            "estimate": 0.01538461538461533
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.7777777777777778,
+                0.9722222222222222
+              ],
+              "estimate": 0.8888888888888888
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7778556376273142,
+                0.9743318269180821
+              ],
+              "estimate": 0.890746934225195
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.8888888888888888,
+          "balanced_accuracy": 0.9007936507936508,
+          "failure_rate": 0.0,
+          "macro_f1": 0.890746934225195,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "n_test": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.8888888888888888
+        }
+      },
+      "resolved_failures": 1,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 2.7777777777777777,
+        "both_correct": 31,
+        "both_wrong": 4,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 1,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 1,
+        "wrong_to_correct": 1
+      }
+    },
+    {
+      "arm": "no_proposal",
+      "dataset": "wine",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.75,
+                0.9722222222222222
+              ],
+              "estimate": 0.8611111111111112
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7720804754833791,
+                0.9740259740259741
+              ],
+              "estimate": 0.8863636363636364
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.8611111111111112,
+          "balanced_accuracy": 0.876984126984127,
+          "failure_rate": 0.05555555555555558,
+          "macro_f1": 0.8863636363636364,
+          "n_failures": 2,
+          "n_probability_rows": 34,
+          "n_rows": 36,
+          "n_test": 36,
+          "probability_coverage": 0.9444444444444444,
+          "valid_response_accuracy": 0.9117647058823529
+        }
+      },
+      "n_rows": 36,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.13888888888888884
+            ],
+            "estimate": 0.05555555555555547
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.0844899087550595
+            ],
+            "estimate": 0.030000000000000027
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.8326388888888889,
+                1.0
+              ],
+              "estimate": 0.9166666666666666
+            },
+            "macro_f1": {
+              "ci95": [
+                0.8076845555918781,
+                1.0
+              ],
+              "estimate": 0.9163636363636364
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "failure_rate": 0.0,
+          "macro_f1": 0.9163636363636364,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "n_test": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.9166666666666666
+        }
+      },
+      "resolved_failures": 2,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 5.555555555555555,
+        "both_correct": 31,
+        "both_wrong": 3,
+        "changed_predictions": 2,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 2,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 2,
+        "wrong_to_correct": 2
+      }
+    },
+    {
+      "arm": "shuffled",
+      "dataset": "wine",
+      "first_attempt": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.7777777777777778,
+                0.9722222222222222
+              ],
+              "estimate": 0.8888888888888888
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7778556376273142,
+                0.9743318269180821
+              ],
+              "estimate": 0.890746934225195
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.8888888888888888,
+          "balanced_accuracy": 0.9007936507936508,
+          "failure_rate": 0.0,
+          "macro_f1": 0.890746934225195,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "n_test": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.8888888888888888
+        }
+      },
+      "n_rows": 36,
+      "paired_first_to_recovered": {
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "draws_per_replicate": 36,
+        "group_definition": "identical serialized test text SHA256",
+        "method": "paired unstratified group percentile bootstrap",
+        "metrics": {
+          "accuracy": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          },
+          "macro_f1": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0
+          }
+        },
+        "n_groups": 36,
+        "n_rows": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "samples": 2000,
+        "seed": 42
+      },
+      "recovered": {
+        "group_bootstrap": {
+          "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+          "draws_per_replicate": 36,
+          "group_definition": "identical serialized test text SHA256",
+          "method": "unstratified group percentile bootstrap",
+          "metrics": {
+            "accuracy": {
+              "ci95": [
+                0.7777777777777778,
+                0.9722222222222222
+              ],
+              "estimate": 0.8888888888888888
+            },
+            "macro_f1": {
+              "ci95": [
+                0.7778556376273142,
+                0.9743318269180821
+              ],
+              "estimate": 0.890746934225195
+            }
+          },
+          "n_groups": 36,
+          "n_rows": 36,
+          "resampled_row_count_range": [
+            36,
+            36
+          ],
+          "samples": 2000,
+          "seed": 42
+        },
+        "metrics": {
+          "accuracy": 0.8888888888888888,
+          "balanced_accuracy": 0.9007936507936508,
+          "failure_rate": 0.0,
+          "macro_f1": 0.890746934225195,
+          "n_failures": 0,
+          "n_probability_rows": 36,
+          "n_rows": 36,
+          "n_test": 36,
+          "probability_coverage": 1.0,
+          "valid_response_accuracy": 0.8888888888888888
+        }
+      },
+      "resolved_failures": 0,
+      "status": "complete",
+      "transitions_first_to_recovered": {
+        "accuracy_delta_pp": 0.0,
+        "both_correct": 32,
+        "both_wrong": 4,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong": 0,
+        "correct_to_wrong_label": 0,
+        "net_correct_change": 0,
+        "review_stage_failure_rows": 0,
+        "source_failure_rows": 0,
+        "wrong_to_correct": 0
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selection_rule": "Preserve every original success; otherwise select the earliest valid recovery regardless of correctness. Two failures remain incorrect.",
+  "status": "complete",
+  "study": "recovered-control-sensitivity-v1",
+  "study_role": "secondary_failure_recovery_sensitivity"
+}

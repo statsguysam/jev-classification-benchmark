@@ -1,8 +1,8 @@
-# Reproduce the review-value analysis and control plan
+# Reproduce the completed review-value analysis and controls
 
-The existing-results analysis and the newly prepared controls are separate. The analysis reuses audited predictions. The full control plan contains **550 cases, 1,650 primary requests and 64 exact no-proposal repeats: 1,714 planned requests**, with no measured control outcomes yet.
+The original numerical and text matrices are complete: **136 conditions, 48 source-to-Jev review conditions and 144 contrasts**. The numerical analysis reuses its 24 review conditions; the [text first pass](../results/text_extension/COMPARISON.json) retains 48 errors across 4,800 new review calls. The separate [matched controls](../results/review_controls/FINDINGS.md) completed **550 cases, 1,650 primary requests and 64 exact no-proposal repeats: 1,714 requests**, with all 12 arms and eight contrasts audited. [Historical recovery](../results/completion_20260923/RECOVERY_FINDINGS.md) resolved 65 of 66 failed paid requests in 71 new calls and supplied the first Jev call for one previously skipped row. [Post-control recovery](../results/completion_20260923/CONTROL_RECOVERY_FINDINGS.md) resolved all 15 failed control/repeat requests in 15 calls. Recovery never replaces the original metrics or repeat diagnostic. [Final conservative accounting](../results/completion_20260923/COSTS.md) is **US$24.110484775**, leaving **US$0.889515225** under the US$25 ceiling. Local and private hosted assets include the completed results.
 
-Run these commands from the repository root with its Python environment. The frozen numerical and text datasets must already exist; preparation and exact-hash restoration are documented in [numerical reproduction](EXPANDED_NUMERIC_REPRODUCTION.md) and [text reproduction](TEXT_EXTENSION_REPRODUCTION.md). All commands below are offline with respect to model providers: they make no inference calls and need no API keys.
+Run these commands from the repository root with its Python environment. The frozen numerical and text datasets must already exist; preparation and exact-hash restoration are documented in [numerical reproduction](EXPANDED_NUMERIC_REPRODUCTION.md) and [text reproduction](TEXT_EXTENSION_REPRODUCTION.md). The audit, restoration, planning and rendering commands below are offline with respect to model providers: they make no inference calls and need no API keys. Run aggregate audits and exports after inference workers have stopped; changed evidence must fail its hash checks rather than be published.
 
 ## Recompute the existing-results analysis
 
@@ -10,7 +10,7 @@ Run these commands from the repository root with its Python environment. The fro
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/analyze_review_value.py
 ```
 
-This audits prior evidence and writes [ANALYSIS.json](../results/review_value/ANALYSIS.json) and [FINDINGS.md](../results/review_value/FINDINGS.md). It does not fill missing reviews or create new measurements. The matched-prompt comparisons overlap and are not independent repeatability trials; selective-review curves are retrospective simulations rather than validated deployment policies.
+This audits prior evidence and writes [ANALYSIS.json](../results/review_value/ANALYSIS.json) and [FINDINGS.md](../results/review_value/FINDINGS.md). It does not fill missing reviews or create new measurements. The matched-prompt comparisons overlap and are not independent repeatability trials; all five eligible primary selective-review curves are retrospective simulations rather than validated deployment policies. Original first-attempt failures remain in full denominators. The [output-validation notes](OUTPUT_VALIDATION_NOTES.md) explain why rejected responses and accepted wrong labels are different outcomes, and the [completion reproduction guide](COMPLETION_REPRODUCTION.md) keeps later recovery reports separate.
 
 ## Restore the ignored request payload after cloning
 
@@ -38,9 +38,9 @@ The request payload contains no per-case test truth. Source identities and evide
 
 ## Funding and execution remain separate
 
-Restoration, verification and analysis allocate **US$0** and send **zero model requests**. Preparing 1,714 requests does not establish funding. Paid execution remains gated on available provider credit, completion and audit of the earlier review studies, and an explicit guarded allocation within the existing **US$25 cumulative authorization**. Historical reservations and protected allocations are not repriced by these commands.
+Restoration, verification and analysis allocate **US$0** and send **zero model requests**. The completed paid execution required available provider credit, audited numerical/text first passes, finalized historical failure recovery and a guarded allocation within the existing **US$25 cumulative authorization**. That allocation included the retained full health-probe allowance and all prior conservative charges. Offline reproduction does not reprice historical reservations or renew the frozen execution wrapper's dated transport guard. The final accounting is conservative, not a provider invoice, and excludes a valuation of local/Colab compute.
 
-Until the new controls execute and pass their audits, there is no measured actual-versus-no-proposal, actual-versus-shuffled, or serving-repeat result from this new experiment. Existing direct-Jev results are contextual references because their prompt wording differs from the exact no-proposal control.
+The completed control report contains every actual-versus-no-proposal and actual-versus-shuffled contrast, plus the original serving-repeat diagnostic. Existing direct-Jev results remain contextual references because their prompt wording differs from the exact no-proposal control. Use the [completion reproduction sequence](COMPLETION_REPRODUCTION.md) to audit both recovery reports and final costs before rebuilding aggregate assets.
 
 ## Aggregate dashboard and sharing figure
 
@@ -53,11 +53,11 @@ python -m pip install 'matplotlib==3.11.2'  # optional plotting dependency
 python scripts/plot_review_value.py
 ```
 
-The exporter copies explicit aggregate fields only: no prompts, row IDs, source inputs or API credentials. The figure includes every eligible condition, not only the two encouraging curves, and writes its source/data hashes alongside PNG and SVG outputs. Rendering uses the saved audited dashboard snapshot and makes no model calls. The report, figure and LinkedIn draft distinguish measured results, retrospective simulations and unexecuted controls.
+The exporter copies explicit aggregate fields only: no prompts, row IDs, source inputs or API credentials. The numerical figure includes all five eligible primary conditions, not only the two encouraging curves, and writes its source/data hashes alongside PNG and SVG outputs. Rendering uses the saved audited dashboard snapshot and makes no model calls. The report, figure and LinkedIn draft distinguish original measured results, separate recovery sensitivity analyses and retrospective simulations. Local asset generation does not publish the hosted site.
 
 ## Constant-label sensitivity appendix
 
-Run `python scripts/analyze_review_sensitivity.py` to regenerate the separate nine-condition appendix. It changes only the primary analysis's constant-label exclusion, preserves the same six coverage points and random reference, and verifies the four original curves and every full-review endpoint. It sends no model calls and does not modify the primary dashboard or report. All nine conditions are reported; no winning coverage is selected.
+After rebuilding the dashboard asset, run `python scripts/analyze_review_sensitivity.py` to regenerate the separate sixteen-condition appendix: five primary conditions and eleven constant-label additions, all eleven with varying maximum scores. It changes only the primary analysis's constant-label exclusion, preserves the same six coverage points and random reference, and verifies the five eligible primary curves and every full-review endpoint. It sends no model calls and does not modify the primary dashboard or report. All sixteen conditions are reported; no winning coverage is selected.
 
 ## Completed validation scoring diagnostic
 

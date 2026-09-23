@@ -1,0 +1,78 @@
+{
+  "completed_at": "2026-09-23T19:43:41.418500+00:00",
+  "execution_sessions": [
+    {
+      "funding_check": {
+        "authenticated": true,
+        "checked_at": "2026-09-23T19:08:31.082738+00:00",
+        "endpoint": "https://openrouter.ai/api/v1/credits",
+        "http_status": 200,
+        "method": "GET",
+        "positive_available_credit": true
+      },
+      "saved_requests": 0,
+      "started_at": "2026-09-23T19:08:31.102230+00:00"
+    }
+  ],
+  "ledger_id": "b5e362c1-6b01-455c-a577-04bc4e4de7cb",
+  "price": {
+    "catalog_context_tokens": 32000,
+    "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+    "input_usd_per_million": "0.042",
+    "output_usd_per_million": "0",
+    "per_request_reserved_usd": "0.002688000",
+    "reserve_input_tokens": 64000,
+    "source": "https://openrouter.ai/typesafe/jev-1.13",
+    "verified_on": "2026-09-22"
+  },
+  "prior_snapshot": {
+    "allocation_usd": "1.122234029",
+    "authorized_usd": "25.00",
+    "files_sha256": {
+      "results/completion_20260923/retries/attempts.jsonl": "e314764968c53f527f322065180ec2e74eb6b4cc3092286221b5d9a9508376bc",
+      "results/completion_20260923/retries/budget.jsonl": "e346bcf3fdb1f6002cbdb389e02e80947fb5382bb210f9b7696f4f30266c8918",
+      "results/completion_20260923/retries/budget.jsonl.lock": "e68083a173e62e9dccbd91f251aa1594ce18fc2d4c0ee64e2b30d0e994bb5a6b",
+      "results/completion_20260923/retries/plan.json": "0f0f6674a8befdd291f6cb3101743f75e19f62b5d484a368ccd7ab7bc39bb8fb",
+      "results/completion_20260923/retries/run.json": "1d76a620ed4d8103a12f54cd83a646b9b618a12be5418686fcde04fb61132b2f",
+      "results/health_checks/jev-20260923/budget.jsonl": "2db8278c3a2ae3071190b03664a579b6cfb8782d2876b75951f8ab46341bf38c",
+      "results/health_checks/jev-20260923/budget.jsonl.lock": "f977b99cb87d4b58bb2579c5f37eba8655f056b3dedbc95ac266117d4f1d6ade",
+      "results/jev-budget.jsonl": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5",
+      "results/jev-budget.jsonl.lock": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+      "results/numeric_decisions/review-budget.jsonl": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a",
+      "results/numeric_decisions/review-budget.jsonl.lock": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+      "results/numeric_expansion/review-budget.jsonl": "71767df266ff980cc9296de5827dbce2a4d0589c130f85cf567aa6c59b4b35e9",
+      "results/numeric_expansion/review-budget.jsonl.lock": "5649f6a8aa24a9f301740d6ae437972f3ec5b15efe79f05c2f0d80243afaf823",
+      "results/openai-budget.jsonl": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a",
+      "results/openai-budget.jsonl.lock": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+      "results/tabular/api-budget.jsonl": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c",
+      "results/tabular/api-budget.jsonl.lock": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+      "results/text_extension/review-budget.jsonl": "26952fec5846fe4a3a8b3bb5e2946e8b860c41d83b6980f691fae6ab5d6739b7",
+      "results/text_extension/review-budget.jsonl.lock": "0291affe38d31024a1b9f9418d2c8650374a043e64728ead8b3ff4e436358838"
+    },
+    "health_check_allowance_usd": "0.002688000",
+    "numeric_complete": 68,
+    "numeric_planned": 68,
+    "prior_conservative_usd": "23.877765971",
+    "ready_for_new_controls": true,
+    "recovery_conservative_usd": "0.215772500",
+    "text_complete": 68,
+    "text_planned": 68
+  },
+  "producer_pins": {
+    "ledger": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+    "preparer": "da709c914194c22839f93f37b3b2d051b7eb2e4ba4948cfa5113218e8bc85980",
+    "route": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f",
+    "runner": "d048bb4f17a5fa023ed54ee81d7152da1dc4b55814f9d343ef8e27f802afd455",
+    "text_accounting_helper": "bdc3d1cac8e52791359023b57abac8833d898af6ff7b0240512e337baa3ba43e"
+  },
+  "protocol_sha256": "c1c94d336ad8700c1bb39b306069ca426ac22e392f588d5f967aeb03d2783992",
+  "request_count": 1714,
+  "requests_sha256": "ae24a2a13a952bddac30f591a5d9b34559a96119c355e73e26e3c5fb5a327d60",
+  "route": "https://openrouter.ai/api/v1/systemone",
+  "saved_requests": 1714,
+  "schema_version": 1,
+  "settlement_version": "verified-success-max-reported-or-token-cost-times-1.25-v1",
+  "started_at": "2026-09-23T19:08:31.102209+00:00",
+  "status": "complete",
+  "study": "proposal-value-controls-v1"
+}

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "scope": "offline post-hoc analysis of complete numeric review conditions",
   "expected_review_conditions": 24,
-  "complete_review_conditions": 17,
+  "complete_review_conditions": 24,
   "scored_partial_conditions": 0,
   "unique_test_rows": {
     "breast_cancer": 114,
@@ -26,7 +26,7 @@
       "wine": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2"
     },
     "file_pins": {
-      "scripts/analyze_review_value.py": "493533ca368343b54fe6e7ca8603cc0a66140b47eccf68644324b1ebdfd88b08",
+      "scripts/analyze_review_value.py": "4772c3ecd98b8a0571d0f38762312a9f846ef593df7234b90a5622511c076577",
       "scripts/summarize_expanded_numeric.py": "3910031e6c27ae157b636903323225849e51d8901968ed10a9f5dfc3838f0d41",
       "scripts/summarize_numeric_decisions.py": "0ae7844e8c6b775ebf730c94e830289ddfeee22566ca8f487381cfd44b6b8164",
       "scripts/summarize_tabular.py": "422e973822e97e928e2128f604dabe84fa3675e57fdcb86305a75473c55b7157",
@@ -37,7 +37,7 @@
       "docs/EXPANDED_NUMERIC_PROTOCOL.md": "08909cfda1d4dcbdbcff36cdbe99e91cbc8a20952253980daacd3369604757b0",
       "results/TABULAR_COMPARISON.json": "7e3df4dc6a04aa0a88068e9639e3d04d95f86bcae38d3086ad12d23b4f11a7e2",
       "results/numeric_decisions/COMPARISON.json": "881dfb668ea8fca161de42fcba8ca8f0635a0d314507afc542567be11c471e76",
-      "results/numeric_expansion/COMPARISON.json": "79c0c3620012ca9ce1e8e86bc6f68a6ec0a0a9b3fad2d91aa008d03dc3299cd7"
+      "results/numeric_expansion/COMPARISON.json": "b6b33421c51ee1cf9809659589f0724bb2ea883d9d1bb094b9f973d5ea654256"
     }
   },
   "artifacts": {
@@ -881,6 +881,474 @@
         {
           "cached_rows": 0,
           "started_at": "2026-09-22T18:22:31.474227+00:00"
+        }
+      ]
+    },
+    "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8": {
+      "path": "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json",
+      "sha256": {
+        "run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+        "predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 4
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "31b70e2e869a7173562077fd711b654946d38674"
+      ],
+      "started_at": "2026-09-22T17:42:02.634578+00:00",
+      "completed_at": "2026-09-22T17:45:47.916908+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 114,
+          "started_at": "2026-09-22T17:42:02.649920+00:00"
+        }
+      ]
+    },
+    "breast_cancer__smollm2__k4__jev-review": {
+      "path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
+      "sha256": {
+        "run.json": "bc0ef4d30d9f108c30bf44f297fcbede8bb6e5a02a8398f4bb2987994e2e8949",
+        "predictions.jsonl": "118071d29a25fadbd99d9de57fcc6be0951fdc04eedbf6e7d28e0db8db5b328b",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "breast_cancer",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "smollm2",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "smollm2_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+            "run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+            "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__smollm2__k4.json",
+          "source_manifest_sha256": "453df600f0e886552fc721a21dfc252369d7d045459880b3598f5a2e8cab52d1",
+          "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-22T18:24:28.192727+00:00",
+      "completed_at": "2026-09-23T15:02:36.409076+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-22T18:24:28.197992+00:00"
+        },
+        {
+          "cached_rows": 85,
+          "started_at": "2026-09-23T15:02:04.264935+00:00"
+        }
+      ]
+    },
+    "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a": {
+      "path": "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/run.json",
+      "sha256": {
+        "run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+        "predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 0
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+      ],
+      "started_at": "2026-09-22T17:47:27.844748+00:00",
+      "completed_at": "2026-09-22T17:48:32.260130+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 114,
+          "started_at": "2026-09-22T17:47:27.859074+00:00"
+        }
+      ]
+    },
+    "breast_cancer__granite__k0__jev-review": {
+      "path": "results/numeric_expansion/review/breast_cancer__granite__k0__jev-review/run.json",
+      "sha256": {
+        "run.json": "f74c18c53d14ac7d2874f16da1067a5569751fd39ced7454afd0cfe3e464e31d",
+        "predictions.jsonl": "88242c933ad0f7fdd10c113eb77e8dcaf5fe05c759a4b2d8240c0c9a77f8693b",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "breast_cancer",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k0",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 0,
+          "source_files_sha256": {
+            "predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+            "run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+            "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__granite__k0.json",
+          "source_manifest_sha256": "66abf3d40ac34c3dcc6f79948787ece2cf7766780505297da63f0ace0bbfa0a4",
+          "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+          "source_shots_per_class": 0,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 0,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+        "source_shots_per_class": 0,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-23T15:02:38.825655+00:00",
+      "completed_at": "2026-09-23T15:06:03.621193+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-23T15:02:38.831055+00:00"
+        }
+      ]
+    },
+    "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba": {
+      "path": "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/run.json",
+      "sha256": {
+        "run.json": "1fae2fc598159e17ba106497df0aac6a9ed34701fcadaa62b904ddba8d8cddc6",
+        "predictions.jsonl": "7354e1f8f4004cd8b5d7ce365805ee398bfa157869a3ea2be333e108f0bb14a1",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 4
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+      ],
+      "started_at": "2026-09-22T17:48:32.335188+00:00",
+      "completed_at": "2026-09-22T18:14:05.494450+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 114,
+          "started_at": "2026-09-22T17:48:32.351751+00:00"
+        }
+      ]
+    },
+    "breast_cancer__granite__k4__jev-review": {
+      "path": "results/numeric_expansion/review/breast_cancer__granite__k4__jev-review/run.json",
+      "sha256": {
+        "run.json": "b39d10499ae0ac368a779caeee866c05c8f85ac92d98a92d375f3a997ae60272",
+        "predictions.jsonl": "f291c949d69f756cc0ec5aba94c71e0273beb0906e0314a8bc58e4e953827970",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "breast_cancer",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "7354e1f8f4004cd8b5d7ce365805ee398bfa157869a3ea2be333e108f0bb14a1",
+            "run.json": "1fae2fc598159e17ba106497df0aac6a9ed34701fcadaa62b904ddba8d8cddc6",
+            "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__granite__k4.json",
+          "source_manifest_sha256": "010cbdc1a0c0af9c58bfda5b33f8e91eb42d94e7f89eeae1464cb17d5070c6f2",
+          "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-23T15:06:03.773283+00:00",
+      "completed_at": "2026-09-23T15:08:10.026634+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-23T15:06:03.778435+00:00"
         }
       ]
     },
@@ -2207,6 +2675,624 @@
         {
           "cached_rows": 0,
           "started_at": "2026-09-22T17:04:37.724747+00:00"
+        }
+      ]
+    },
+    "wine__SmolLM2-1.7B-Instruct__709bcc1f2998": {
+      "path": "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__709bcc1f2998/run.json",
+      "sha256": {
+        "run.json": "b9aaebf43a2110f0b164e5043b029dd1e06791bb9f377dbfdb5e59cdc4181f31",
+        "predictions.jsonl": "a2a79d7c51f5f94ba89792517cd08bfbe8f42f047447a8a19acab36d187c2c86",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 0
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "31b70e2e869a7173562077fd711b654946d38674"
+      ],
+      "started_at": "2026-09-22T17:45:47.998401+00:00",
+      "completed_at": "2026-09-22T17:45:58.963643+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 36,
+          "started_at": "2026-09-22T17:45:48.013206+00:00"
+        }
+      ]
+    },
+    "wine__smollm2__k0__jev-review": {
+      "path": "results/numeric_expansion/review/wine__smollm2__k0__jev-review/run.json",
+      "sha256": {
+        "run.json": "e1c3afccfa3e125bb64fd5b0e6ab208396599abdae6e0a48f51dead5881db3e5",
+        "predictions.jsonl": "20359ebf2215d5383b8b3fec55c31f1a25ae1db9618ac4f3f13093b4f1f44abb",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "smollm2",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "smollm2_k0",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 0,
+          "source_files_sha256": {
+            "predictions.jsonl": "a2a79d7c51f5f94ba89792517cd08bfbe8f42f047447a8a19acab36d187c2c86",
+            "run.json": "b9aaebf43a2110f0b164e5043b029dd1e06791bb9f377dbfdb5e59cdc4181f31",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__smollm2__k0.json",
+          "source_manifest_sha256": "ac20e42f52931039fab43ac8c27b09f66a87baf297cd7d6bd947fa6ed5647a97",
+          "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+          "source_shots_per_class": 0,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 0,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+        "source_shots_per_class": 0,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-23T15:08:10.198953+00:00",
+      "completed_at": "2026-09-23T15:08:53.300646+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-23T15:08:10.204467+00:00"
+        }
+      ]
+    },
+    "wine__SmolLM2-1.7B-Instruct__61b7e37b5455": {
+      "path": "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__61b7e37b5455/run.json",
+      "sha256": {
+        "run.json": "b9c9a31d709d2ad5e4baff909f0d5d632972a7f672ec275158cd2de5ff4b9445",
+        "predictions.jsonl": "92594bfe34cea905411dadde88619088f980e9cb4fe5ff6ac3205e7806719bff",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "872be49dbb638044ad01b60388f48d469ff2980e5f0dccdc22ec907db54d0788",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "smollm2",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+            "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+            "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+            "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+            "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+          },
+          "tokenizer_fingerprint_sha256": "568f9fec874000de73d4bac82fa3c3d3ce8cbcd1f3587ed007763940c9d2f074",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "shots_per_class": 4
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "31b70e2e869a7173562077fd711b654946d38674"
+      ],
+      "started_at": "2026-09-22T17:45:59.026334+00:00",
+      "completed_at": "2026-09-22T17:47:03.829112+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 36,
+          "started_at": "2026-09-22T17:45:59.042439+00:00"
+        }
+      ]
+    },
+    "wine__smollm2__k4__jev-review": {
+      "path": "results/numeric_expansion/review/wine__smollm2__k4__jev-review/run.json",
+      "sha256": {
+        "run.json": "ae6063c28cda8049427e7cdb9b873a25b8bbed845f8492d74bb89bb31fc6bf5b",
+        "predictions.jsonl": "738de4e779b8c55f4cf4616dd14b064e8e867f582cd1a3fa058e77997ee274dd",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "smollm2",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "smollm2_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "92594bfe34cea905411dadde88619088f980e9cb4fe5ff6ac3205e7806719bff",
+            "run.json": "b9c9a31d709d2ad5e4baff909f0d5d632972a7f672ec275158cd2de5ff4b9445",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__smollm2__k4.json",
+          "source_manifest_sha256": "96ae085d5e241966b85d3add0c979b3e77000c7292dfc78b54572cb8297d13a9",
+          "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-23T15:08:53.407026+00:00",
+      "completed_at": "2026-09-23T15:09:36.750734+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-23T15:08:53.412291+00:00"
+        }
+      ]
+    },
+    "wine__granite-3.3-2b-instruct__29b8530e4f40": {
+      "path": "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/run.json",
+      "sha256": {
+        "run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+        "predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 0
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+      ],
+      "started_at": "2026-09-22T18:14:05.581170+00:00",
+      "completed_at": "2026-09-22T18:14:24.492445+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 36,
+          "started_at": "2026-09-22T18:14:05.607046+00:00"
+        }
+      ]
+    },
+    "wine__granite__k0__jev-review": {
+      "path": "results/numeric_expansion/review/wine__granite__k0__jev-review/run.json",
+      "sha256": {
+        "run.json": "1b0dada90c43c0e570a884d99257066a58e2553ba97a08b0b40fdd8812904f86",
+        "predictions.jsonl": "c6ebdf266c78526b1d8b7c96105d22e109f54f7dacedcd08600d8e1c31b7bc55",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k0",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 0,
+          "source_files_sha256": {
+            "predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+            "run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__granite__k0.json",
+          "source_manifest_sha256": "3e7ad94159c7f0c88d02f64ecd5789c02d569e85ef0f8909c733107196f8ed57",
+          "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+          "source_shots_per_class": 0,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 0,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+        "source_shots_per_class": 0,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-23T15:09:36.861916+00:00",
+      "completed_at": "2026-09-23T15:12:20.085245+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-23T15:09:36.868820+00:00"
+        }
+      ]
+    },
+    "wine__granite-3.3-2b-instruct__16efece16c12": {
+      "path": "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__16efece16c12/run.json",
+      "sha256": {
+        "run.json": "c3f6f198a8842f5554a57d34fb2253549ad14218f9ecedea32ab9409a23d50c2",
+        "predictions.jsonl": "04cdf6e5d6f7c1695b7d20aee318634e9b6c5658b51b2f7845f6885b1f91f192",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "device": "cuda",
+        "dtype": "float16",
+        "max_context_tokens": 8192,
+        "model": "ibm-granite/granite-3.3-2b-instruct",
+        "provider": "hf",
+        "renderer": {
+          "chat_template_sha256": "0bea7711316005a1c37c9941a7ee2a26311d223c979abee416aab0a402fc5b56",
+          "core_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+          "helper_sha256": "b0c07e82e03b79040f13bd7810baf92bcd3a30fe8aa3b48d0704baedea8801a3",
+          "model_key": "granite",
+          "preset_file_sha256": "ed176a77f40fd8cd842672193333559a8221b3ac9dd52259d275c54da4cf6421",
+          "system_message": "You are a helpful assistant.",
+          "thinking": false,
+          "tokenizer_files_sha256": {
+            "added_tokens.json": "bb33d55934aa82d29cc62f3d19cdbc60f315763f6ccee21bdfd8b3bde2f33d3b",
+            "merges.txt": "303127a244b0078878156c17229f36d11b7a3a3f8e47b7cfdbb304ff46be5030",
+            "special_tokens_map.json": "21ce694081bb9ae1bd4bc64549e72e0799ebb74705e6b650e3585d85b71ebdc1",
+            "tokenizer.json": "91168e938f05796aa6dcca7e485e4b30ab52785320c7a6391ecef86e6c84681e",
+            "tokenizer_config.json": "f65a6a5a911424c85f157c40cfbdf06e025814c755480ba2e998d7fba1178664",
+            "vocab.json": "80ab859339a2525fdfbda14bc39df02dffb824aefdaf86426217bbb146d17e01"
+          },
+          "tokenizer_fingerprint_sha256": "3e02f50631a763c445e1d1ad72588c8986309690567c76e45e840a95e514e3d0",
+          "version": "fixed-system-no-thinking-v1"
+        },
+        "revision": "707f574c62054322f6b5b04b6d075f0a8f05e0f0",
+        "shots_per_class": 4
+      },
+      "resolved_models": [],
+      "resolved_revisions": [
+        "707f574c62054322f6b5b04b6d075f0a8f05e0f0"
+      ],
+      "started_at": "2026-09-22T18:14:24.555899+00:00",
+      "completed_at": "2026-09-22T18:20:38.418118+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "environment": {
+            "packages": {
+              "accelerate": "1.14.0",
+              "huggingface-hub": "0.36.2",
+              "numpy": "2.1.3",
+              "peft": "0.20.0",
+              "pyarrow": "23.0.1",
+              "scikit-learn": "1.6.1",
+              "scipy": "1.16.3",
+              "torch": "2.11.0+cu128",
+              "transformers": "4.57.6"
+            },
+            "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+            "python": "3.13.15",
+            "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+          },
+          "new_rows_requested": 36,
+          "started_at": "2026-09-22T18:14:24.571730+00:00"
+        }
+      ]
+    },
+    "wine__granite__k4__jev-review": {
+      "path": "results/numeric_expansion/review/wine__granite__k4__jev-review/run.json",
+      "sha256": {
+        "run.json": "2f7a93e77b29f4903c7aac832921f236fde4fd1c1c6d66a86f107ad08ec4b91d",
+        "predictions.jsonl": "3b81d5a6d0f8896ef8cac47058b197351f96b8957141116bca3851c3c2ba08a2",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "04cdf6e5d6f7c1695b7d20aee318634e9b6c5658b51b2f7845f6885b1f91f192",
+            "run.json": "c3f6f198a8842f5554a57d34fb2253549ad14218f9ecedea32ab9409a23d50c2",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__granite__k4.json",
+          "source_manifest_sha256": "c10cdcdc171cc8d9e0f6739373143daef482d9812f864eb55778e6bb2ae0859a",
+          "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "started_at": "2026-09-23T15:12:20.198111+00:00",
+      "completed_at": "2026-09-23T15:13:02.399648+00:00",
+      "execution_sessions": [
+        {
+          "cached_rows": 0,
+          "started_at": "2026-09-23T15:12:20.204536+00:00"
         }
       ]
     },
@@ -5856,6 +6942,1196 @@
     },
     {
       "dataset": "breast_cancer",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 4,
+      "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+      "review_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "direct_jev_run_id": "breast_cancer__jev-1.13__3d1cba817d2a",
+      "n_rows": 114,
+      "labels": [
+        "malignant",
+        "benign"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.37719298245614036,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.27388535031847133,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.8947368421052632,
+          "balanced_accuracy": 0.9017359973796266,
+          "macro_f1": 0.9172320217096337,
+          "n_rows": 114,
+          "n_failures": 6
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "macro_f1": 0.9286656770575623,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 4,
+          "001": 0,
+          "010": 5,
+          "011": 62,
+          "100": 1,
+          "101": 3,
+          "110": 2,
+          "111": 37
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 62,
+        "correct_to_wrong": 3,
+        "both_correct": 40,
+        "both_wrong": 9,
+        "changed_predictions": 69,
+        "correct_to_failure": 2,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 6,
+        "net_correct_change": 59,
+        "accuracy_delta_pp": 51.75438596491228
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 7,
+        "both_correct": 99,
+        "both_wrong": 5,
+        "changed_predictions": 10,
+        "correct_to_failure": 6,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 6,
+        "net_correct_change": -4,
+        "accuracy_delta_pp": -3.508771929824561
+      },
+      "failures": {
+        "base": [],
+        "review": [
+          {
+            "row_id": "breast_cancer:source:00379:1a9b516ef2c8b154",
+            "error": "http_error: status=402; no automatic retry",
+            "reported_cost_usd": null
+          },
+          {
+            "row_id": "breast_cancer:source:00389:84ced4866c177887",
+            "error": "http_error: status=402; no automatic retry",
+            "reported_cost_usd": null
+          },
+          {
+            "row_id": "breast_cancer:source:00391:329f603a286992a8",
+            "error": "http_error: status=402; no automatic retry",
+            "reported_cost_usd": null
+          },
+          {
+            "row_id": "breast_cancer:source:00403:87561888be5dd48f",
+            "error": "http_error: status=402; no automatic retry",
+            "reported_cost_usd": null
+          },
+          {
+            "row_id": "breast_cancer:source:00406:988ceba59dc227d9",
+            "error": "http_error: status=402; no automatic retry",
+            "reported_cost_usd": null
+          },
+          {
+            "row_id": "breast_cancer:source:00407:ebb9bae6e3c43491",
+            "error": "http_error: status=402; no automatic retry",
+            "reported_cost_usd": null
+          }
+        ],
+        "direct_jev": [
+          {
+            "row_id": "breast_cancer:source:00199:add44081f786a96c",
+            "error": "http_error: status=520; no automatic retry",
+            "reported_cost_usd": null
+          }
+        ]
+      },
+      "observed_review_request_records": 114,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "exclusion_reasons": [
+          "constant_or_missing_source_labels"
+        ],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 0,
+      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+      "review_run_id": "breast_cancer__granite__k0__jev-review",
+      "direct_jev_run_id": "breast_cancer__jev-1.13__e30c52b19b9e",
+      "n_rows": 114,
+      "labels": [
+        "malignant",
+        "benign"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.37719298245614036,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.27388535031847133,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.8596491228070176,
+          "balanced_accuracy": 0.8781526367507371,
+          "macro_f1": 0.856828885400314,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.8421052631578947,
+          "balanced_accuracy": 0.8732394366197183,
+          "macro_f1": 0.8448950829940495,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 10,
+          "001": 8,
+          "010": 4,
+          "011": 49,
+          "100": 0,
+          "101": 0,
+          "110": 2,
+          "111": 41
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 57,
+        "correct_to_wrong": 2,
+        "both_correct": 41,
+        "both_wrong": 14,
+        "changed_predictions": 59,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 55,
+        "accuracy_delta_pp": 48.24561403508772
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 8,
+        "correct_to_wrong": 6,
+        "both_correct": 90,
+        "both_wrong": 10,
+        "changed_predictions": 14,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 6,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 2,
+        "accuracy_delta_pp": 1.7543859649122806
+      },
+      "failures": {
+        "base": [],
+        "review": [],
+        "direct_jev": [
+          {
+            "row_id": "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+            "error": "network_error: connection failed or timed out; no automatic retry",
+            "reported_cost_usd": null
+          }
+        ]
+      },
+      "observed_review_request_records": 114,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "exclusion_reasons": [
+          "constant_or_missing_source_labels"
+        ],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": null
+    },
+    {
+      "dataset": "breast_cancer",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 4,
+      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+      "review_run_id": "breast_cancer__granite__k4__jev-review",
+      "direct_jev_run_id": "breast_cancer__jev-1.13__3d1cba817d2a",
+      "n_rows": 114,
+      "labels": [
+        "malignant",
+        "benign"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.6140350877192983,
+          "balanced_accuracy": 0.6901408450704225,
+          "macro_f1": 0.6062794348508633,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9210526315789473,
+          "balanced_accuracy": 0.9228627579430069,
+          "macro_f1": 0.9170641015277665,
+          "n_rows": 114,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9298245614035088,
+          "balanced_accuracy": 0.9253193580085162,
+          "macro_f1": 0.9286656770575623,
+          "n_rows": 114,
+          "n_failures": 1
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 4,
+          "001": 0,
+          "010": 2,
+          "011": 38,
+          "100": 3,
+          "101": 1,
+          "110": 0,
+          "111": 66
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 38,
+        "correct_to_wrong": 3,
+        "both_correct": 67,
+        "both_wrong": 6,
+        "changed_predictions": 41,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 3,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 35,
+        "accuracy_delta_pp": 30.70175438596491
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 2,
+        "both_correct": 104,
+        "both_wrong": 7,
+        "changed_predictions": 3,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -0.8771929824561403
+      },
+      "failures": {
+        "base": [],
+        "review": [],
+        "direct_jev": [
+          {
+            "row_id": "breast_cancer:source:00199:add44081f786a96c",
+            "error": "http_error: status=520; no automatic retry",
+            "reported_cost_usd": null
+          }
+        ]
+      },
+      "observed_review_request_records": 114,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 114,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 114,
+          "review_api_requests": 114,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 114
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": true,
+        "exclusion_reasons": [],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": {
+        "ranking": "ascending source max probability; ascending SHA-256(row_id) breaks ties",
+        "rounding": "nearest integer, .5 upward",
+        "ranked_row_ids": [
+          "breast_cancer:source:00418:0525573f528ff6fe",
+          "breast_cancer:source:00528:7c5dcdc36c16c92c",
+          "breast_cancer:source:00200:3e69524f5b79ccdc",
+          "breast_cancer:source:00311:e606e5694b4ef81d",
+          "breast_cancer:source:00360:ce241318bc9f0d83",
+          "breast_cancer:source:00326:44ec714151eee2bf",
+          "breast_cancer:source:00061:fed205d8860b73ce",
+          "breast_cancer:source:00553:89aea9f4eb804004",
+          "breast_cancer:source:00332:87dcb61c2a81b3a4",
+          "breast_cancer:source:00310:bd0ed6aa32065e96",
+          "breast_cancer:source:00534:014eddbe3c4e3ff8",
+          "breast_cancer:source:00269:640c25ced4ffe595",
+          "breast_cancer:source:00410:bf813ee3f3c3236a",
+          "breast_cancer:source:00386:3591263a42b2292e",
+          "breast_cancer:source:00092:5ead4cf554c4aa7a",
+          "breast_cancer:source:00318:8710c573c722f8a8",
+          "breast_cancer:source:00453:700556f98ddb7a94",
+          "breast_cancer:source:00294:7263df827b680756",
+          "breast_cancer:source:00178:517f45d30829df46",
+          "breast_cancer:source:00241:a7ef446b83e04b89",
+          "breast_cancer:source:00113:c50cb79af4358582",
+          "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+          "breast_cancer:source:00319:98ed12117a537c55",
+          "breast_cancer:source:00551:cf1f8a196d7890f6",
+          "breast_cancer:source:00179:b5a294f6f1b804da",
+          "breast_cancer:source:00402:e63ca5d2501ca69b",
+          "breast_cancer:source:00529:8ff78e3e9cbaafbf",
+          "breast_cancer:source:00211:ed8400cd29ffd46c",
+          "breast_cancer:source:00438:31524e32d241af7d",
+          "breast_cancer:source:00391:329f603a286992a8",
+          "breast_cancer:source:00312:36ccc9484ab56a47",
+          "breast_cancer:source:00409:d83ef2bbf424db01",
+          "breast_cancer:source:00519:7ca17fbb7c26a040",
+          "breast_cancer:source:00320:1670636876bb8176",
+          "breast_cancer:source:00398:f50e11609ef3e550",
+          "breast_cancer:source:00348:860ecd74443b5c86",
+          "breast_cancer:source:00226:0973bc8364233e16",
+          "breast_cancer:source:00104:55f40ab90d604dc6",
+          "breast_cancer:source:00114:cc1befb35b0a2596",
+          "breast_cancer:source:00222:1fd61b9ca3626f2d",
+          "breast_cancer:source:00478:ea382a156cce5ced",
+          "breast_cancer:source:00107:9f768480e3b73d8b",
+          "breast_cancer:source:00192:da1ef950f5ba612d",
+          "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+          "breast_cancer:source:00336:9991d061b399d5b7",
+          "breast_cancer:source:00546:803630ad541ca8de",
+          "breast_cancer:source:00060:31a4481f6a8b9489",
+          "breast_cancer:source:00457:72fa4fb310ea68dd",
+          "breast_cancer:source:00204:eccf60b4172ff2d3",
+          "breast_cancer:source:00169:a35438fbadf97f57",
+          "breast_cancer:source:00069:3a082e0fe537900e",
+          "breast_cancer:source:00081:5a08a8dc7b0629b8",
+          "breast_cancer:source:00242:bb9c4e427c336184",
+          "breast_cancer:source:00403:87561888be5dd48f",
+          "breast_cancer:source:00174:3ae6bd1d27f5c06b",
+          "breast_cancer:source:00448:9e598e6dff34d397",
+          "breast_cancer:source:00246:f5adc57b48890848",
+          "breast_cancer:source:00539:494e27284f068721",
+          "breast_cancer:source:00555:342b7c434f1efca9",
+          "breast_cancer:source:00183:0a9669614a3a3074",
+          "breast_cancer:source:00485:5db666ef49627665",
+          "breast_cancer:source:00406:988ceba59dc227d9",
+          "breast_cancer:source:00109:15250696c0cd3558",
+          "breast_cancer:source:00205:2a27ea606ae5a27f",
+          "breast_cancer:source:00407:ebb9bae6e3c43491",
+          "breast_cancer:source:00506:93a70980871cecf3",
+          "breast_cancer:source:00086:d152c33a08df00bb",
+          "breast_cancer:source:00375:ae45b3a95b87c316",
+          "breast_cancer:source:00379:1a9b516ef2c8b154",
+          "breast_cancer:source:00115:67bfee72e580647a",
+          "breast_cancer:source:00466:6a7e6b96a2b161b2",
+          "breast_cancer:source:00007:85bb43827ef3811a",
+          "breast_cancer:source:00261:f740c724bab895b5",
+          "breast_cancer:source:00111:bb2b5196e21fbc71",
+          "breast_cancer:source:00199:add44081f786a96c",
+          "breast_cancer:source:00560:2fa91fd3a7bf7699",
+          "breast_cancer:source:00014:81342240bd142b4a",
+          "breast_cancer:source:00455:6ec7d486925e7fa8",
+          "breast_cancer:source:00131:12218ae0a458879b",
+          "breast_cancer:source:00414:2605a007f913ee55",
+          "breast_cancer:source:00317:1145b7fa8c2fb771",
+          "breast_cancer:source:00253:0acae4a503eab71e",
+          "breast_cancer:source:00282:0413bbf6ec9bd866",
+          "breast_cancer:source:00329:55d1dc33326fbcb0",
+          "breast_cancer:source:00277:107dda63c7edf72e",
+          "breast_cancer:source:00029:2fd20f9f1db6a0b1",
+          "breast_cancer:source:00025:d3db054111d104e5",
+          "breast_cancer:source:00512:724c0198d50b22ad",
+          "breast_cancer:source:00070:011f89fd67ff16ea",
+          "breast_cancer:source:00417:aae8463f36d37e77",
+          "breast_cancer:source:00283:91a534564cd0b9f1",
+          "breast_cancer:source:00258:c45b22c60e19c1e1",
+          "breast_cancer:source:00468:456a8dda3a657609",
+          "breast_cancer:source:00087:14097fb439513330",
+          "breast_cancer:source:00177:2e95cabad6cc0ed1",
+          "breast_cancer:source:00262:592467f069188787",
+          "breast_cancer:source:00168:89abb9c4ead426fc",
+          "breast_cancer:source:00389:84ced4866c177887",
+          "breast_cancer:source:00218:70913b91f7c5402f",
+          "breast_cancer:source:00433:b9d08ebcce4717f2",
+          "breast_cancer:source:00254:2b87765b83949d9c",
+          "breast_cancer:source:00201:dbbca20ab0a25a2c",
+          "breast_cancer:source:00370:1c827b272813d998",
+          "breast_cancer:source:00056:b9d4079b9e5b1de0",
+          "breast_cancer:source:00035:0b4481d3121bb40c",
+          "breast_cancer:source:00024:3cb4ff826c388a9d",
+          "breast_cancer:source:00210:09943cdccb41259f",
+          "breast_cancer:source:00239:f75f3d1c007c7417",
+          "breast_cancer:source:00260:8578547e102efa1d",
+          "breast_cancer:source:00129:4c1d3d794c41e9d3",
+          "breast_cancer:source:00078:e1c8439a363648b7",
+          "breast_cancer:source:00122:e297e802bb3e875b",
+          "breast_cancer:source:00339:99b007d3e1d7cc39",
+          "breast_cancer:source:00352:b907d80ce24b1eab"
+        ],
+        "source_max_probabilities": {
+          "breast_cancer:source:00007:85bb43827ef3811a": 0.983089040734313,
+          "breast_cancer:source:00014:81342240bd142b4a": 0.9886728142936615,
+          "breast_cancer:source:00024:3cb4ff826c388a9d": 0.997528561113495,
+          "breast_cancer:source:00025:d3db054111d104e5": 0.9934121181731271,
+          "breast_cancer:source:00029:2fd20f9f1db6a0b1": 0.9933096674590659,
+          "breast_cancer:source:00035:0b4481d3121bb40c": 0.9974504593486934,
+          "breast_cancer:source:00056:b9d4079b9e5b1de0": 0.9969260862097131,
+          "breast_cancer:source:00060:31a4481f6a8b9489": 0.8596601442735352,
+          "breast_cancer:source:00061:fed205d8860b73ce": 0.6076894656111894,
+          "breast_cancer:source:00069:3a082e0fe537900e": 0.8948054458926639,
+          "breast_cancer:source:00070:011f89fd67ff16ea": 0.9944475991038937,
+          "breast_cancer:source:00078:e1c8439a363648b7": 0.9989684607006831,
+          "breast_cancer:source:00081:5a08a8dc7b0629b8": 0.9033022071402139,
+          "breast_cancer:source:00086:d152c33a08df00bb": 0.9720015293206944,
+          "breast_cancer:source:00087:14097fb439513330": 0.9953200614472433,
+          "breast_cancer:source:00092:5ead4cf554c4aa7a": 0.6477881613235555,
+          "breast_cancer:source:00104:55f40ab90d604dc6": 0.8031699990057449,
+          "breast_cancer:source:00107:9f768480e3b73d8b": 0.8105074605606705,
+          "breast_cancer:source:00109:15250696c0cd3558": 0.9559919403658366,
+          "breast_cancer:source:00111:bb2b5196e21fbc71": 0.9861555538852836,
+          "breast_cancer:source:00113:c50cb79af4358582": 0.682593738402527,
+          "breast_cancer:source:00114:cc1befb35b0a2596": 0.805624479452368,
+          "breast_cancer:source:00115:67bfee72e580647a": 0.979672185842347,
+          "breast_cancer:source:00122:e297e802bb3e875b": 0.999279533025421,
+          "breast_cancer:source:00129:4c1d3d794c41e9d3": 0.9987940378676942,
+          "breast_cancer:source:00131:12218ae0a458879b": 0.9899886616455146,
+          "breast_cancer:source:00168:89abb9c4ead426fc": 0.9959310066913237,
+          "breast_cancer:source:00169:a35438fbadf97f57": 0.8824486922911968,
+          "breast_cancer:source:00174:3ae6bd1d27f5c06b": 0.9086139246175361,
+          "breast_cancer:source:00177:2e95cabad6cc0ed1": 0.9953925271849436,
+          "breast_cancer:source:00178:517f45d30829df46": 0.6723601928351045,
+          "breast_cancer:source:00179:b5a294f6f1b804da": 0.7371774774696214,
+          "breast_cancer:source:00183:0a9669614a3a3074": 0.9372083492352545,
+          "breast_cancer:source:00192:da1ef950f5ba612d": 0.8221836690499618,
+          "breast_cancer:source:00199:add44081f786a96c": 0.9873780956094332,
+          "breast_cancer:source:00200:3e69524f5b79ccdc": 0.5350762462667642,
+          "breast_cancer:source:00201:dbbca20ab0a25a2c": 0.9965183013824217,
+          "breast_cancer:source:00204:eccf60b4172ff2d3": 0.8808192783834254,
+          "breast_cancer:source:00205:2a27ea606ae5a27f": 0.9585436129547541,
+          "breast_cancer:source:00210:09943cdccb41259f": 0.9976779445008794,
+          "breast_cancer:source:00211:ed8400cd29ffd46c": 0.7690697836882491,
+          "breast_cancer:source:00218:70913b91f7c5402f": 0.9961769200368006,
+          "breast_cancer:source:00222:1fd61b9ca3626f2d": 0.8080620921263004,
+          "breast_cancer:source:00226:0973bc8364233e16": 0.8031647763797268,
+          "breast_cancer:source:00239:f75f3d1c007c7417": 0.9984518965650412,
+          "breast_cancer:source:00241:a7ef446b83e04b89": 0.6757969557922927,
+          "breast_cancer:source:00242:bb9c4e427c336184": 0.9033066311088445,
+          "breast_cancer:source:00246:f5adc57b48890848": 0.9136917232787929,
+          "breast_cancer:source:00253:0acae4a503eab71e": 0.9926564297400254,
+          "breast_cancer:source:00254:2b87765b83949d9c": 0.9965176387579417,
+          "breast_cancer:source:00258:c45b22c60e19c1e1": 0.9950962909903568,
+          "breast_cancer:source:00260:8578547e102efa1d": 0.9985455634047445,
+          "breast_cancer:source:00261:f740c724bab895b5": 0.9845818286041658,
+          "breast_cancer:source:00262:592467f069188787": 0.9953926782488473,
+          "breast_cancer:source:00269:640c25ced4ffe595": 0.63340406320138,
+          "breast_cancer:source:00277:107dda63c7edf72e": 0.993204577107001,
+          "breast_cancer:source:00282:0413bbf6ec9bd866": 0.9926569170389976,
+          "breast_cancer:source:00283:91a534564cd0b9f1": 0.9945331143974553,
+          "breast_cancer:source:00294:7263df827b680756": 0.6584081435888873,
+          "breast_cancer:source:00310:bd0ed6aa32065e96": 0.6297621553080825,
+          "breast_cancer:source:00311:e606e5694b4ef81d": 0.5926896226789493,
+          "breast_cancer:source:00312:36ccc9484ab56a47": 0.7772952903339668,
+          "breast_cancer:source:00317:1145b7fa8c2fb771": 0.9910172151377684,
+          "breast_cancer:source:00318:8710c573c722f8a8": 0.6513488480142079,
+          "breast_cancer:source:00319:98ed12117a537c55": 0.7341015808927341,
+          "breast_cancer:source:00320:1670636876bb8176": 0.7826527759029791,
+          "breast_cancer:source:00326:44ec714151eee2bf": 0.6076488742166233,
+          "breast_cancer:source:00329:55d1dc33326fbcb0": 0.9930992189167487,
+          "breast_cancer:source:00332:87dcb61c2a81b3a4": 0.6261468087373804,
+          "breast_cancer:source:00336:9991d061b399d5b7": 0.8311562581429396,
+          "breast_cancer:source:00339:99b007d3e1d7cc39": 0.9993741506648255,
+          "breast_cancer:source:00348:860ecd74443b5c86": 0.8006819406224409,
+          "breast_cancer:source:00352:b907d80ce24b1eab": 0.9994388951115624,
+          "breast_cancer:source:00360:ce241318bc9f0d83": 0.6002133890162343,
+          "breast_cancer:source:00370:1c827b272813d998": 0.9967789140206996,
+          "breast_cancer:source:00375:ae45b3a95b87c316": 0.9740473779044558,
+          "breast_cancer:source:00379:1a9b516ef2c8b154": 0.9748267843849951,
+          "breast_cancer:source:00386:3591263a42b2292e": 0.644215523004145,
+          "breast_cancer:source:00389:84ced4866c177887": 0.9959942655984289,
+          "breast_cancer:source:00391:329f603a286992a8": 0.7772945474370516,
+          "breast_cancer:source:00398:f50e11609ef3e550": 0.7905243620260203,
+          "breast_cancer:source:00402:e63ca5d2501ca69b": 0.7461610136417887,
+          "breast_cancer:source:00403:87561888be5dd48f": 0.9073272917667564,
+          "breast_cancer:source:00406:988ceba59dc227d9": 0.9504211366001482,
+          "breast_cancer:source:00407:ebb9bae6e3c43491": 0.9669194782853799,
+          "breast_cancer:source:00409:d83ef2bbf424db01": 0.7773206922173309,
+          "breast_cancer:source:00410:bf813ee3f3c3236a": 0.6334281866816843,
+          "breast_cancer:source:00414:2605a007f913ee55": 0.9908780033519577,
+          "breast_cancer:source:00417:aae8463f36d37e77": 0.9945327919607573,
+          "breast_cancer:source:00418:0525573f528ff6fe": 0.5156380476040806,
+          "breast_cancer:source:00433:b9d08ebcce4717f2": 0.9962940778303427,
+          "breast_cancer:source:00438:31524e32d241af7d": 0.7718597249354089,
+          "breast_cancer:source:00439:9dd3bccbf82fe1d3": 0.7279999637524787,
+          "breast_cancer:source:00448:9e598e6dff34d397": 0.9086276912650298,
+          "breast_cancer:source:00453:700556f98ddb7a94": 0.6549151846268833,
+          "breast_cancer:source:00455:6ec7d486925e7fa8": 0.9888480065689055,
+          "breast_cancer:source:00457:72fa4fb310ea68dd": 0.8596782915208289,
+          "breast_cancer:source:00458:f121d3b5c7c9fa1a": 0.8289608962159565,
+          "breast_cancer:source:00466:6a7e6b96a2b161b2": 0.9825620414524271,
+          "breast_cancer:source:00468:456a8dda3a657609": 0.9951721503648396,
+          "breast_cancer:source:00478:ea382a156cce5ced": 0.8104704763634648,
+          "breast_cancer:source:00485:5db666ef49627665": 0.939040597992331,
+          "breast_cancer:source:00506:93a70980871cecf3": 0.9711363447342428,
+          "breast_cancer:source:00512:724c0198d50b22ad": 0.9935145810759091,
+          "breast_cancer:source:00519:7ca17fbb7c26a040": 0.7800099351708422,
+          "breast_cancer:source:00528:7c5dcdc36c16c92c": 0.527334618785587,
+          "breast_cancer:source:00529:8ff78e3e9cbaafbf": 0.7662893626008638,
+          "breast_cancer:source:00534:014eddbe3c4e3ff8": 0.6334027345221054,
+          "breast_cancer:source:00539:494e27284f068721": 0.9207966259017628,
+          "breast_cancer:source:00546:803630ad541ca8de": 0.855846271579441,
+          "breast_cancer:source:00551:cf1f8a196d7890f6": 0.7371758145237335,
+          "breast_cancer:source:00553:89aea9f4eb804004": 0.6261348930794546,
+          "breast_cancer:source:00555:342b7c434f1efca9": 0.9304722421778531,
+          "breast_cancer:source:00560:2fa91fd3a7bf7699": 0.9877640818467797
+        },
+        "points": [
+          {
+            "requested_review_percent": 0,
+            "selected_rows": 0,
+            "actual_review_fraction": 0.0,
+            "selected_row_ids": [],
+            "metrics": {
+              "micro_accuracy": 0.6140350877192983,
+              "balanced_accuracy": 0.6901408450704225,
+              "macro_f1": 0.6062794348508633,
+              "n_rows": 114,
+              "n_failures": 0
+            },
+            "transitions_from_never_review": {
+              "wrong_to_correct": 0,
+              "correct_to_wrong": 0,
+              "both_correct": 70,
+              "both_wrong": 44,
+              "changed_predictions": 0,
+              "correct_to_failure": 0,
+              "correct_to_wrong_label": 0,
+              "source_failure_rows": 0,
+              "review_stage_failure_rows": 0,
+              "net_correct_change": 0,
+              "accuracy_delta_pp": 0.0
+            },
+            "required_inferences": {
+              "source": 114,
+              "review_api_requests": 0,
+              "direct_jev": 0
+            },
+            "random_matched_rate": {
+              "micro_accuracy": 0.6140350877192983,
+              "balanced_accuracy": 0.6901408450704225,
+              "expected_fixed": 0.0,
+              "expected_harmed": 0.0,
+              "expected_net_fixed": 0.0,
+              "expected_failures": 0.0,
+              "linear_metrics_method": "exact uniform fixed-size subset expectation",
+              "macro_f1": 0.6062794348508633,
+              "macro_f1_method": "exact endpoint",
+              "macro_f1_monte_carlo_se": 0.0,
+              "samples": 0
+            }
+          },
+          {
+            "requested_review_percent": 10,
+            "selected_rows": 11,
+            "actual_review_fraction": 0.09649122807017543,
+            "selected_row_ids": [
+              "breast_cancer:source:00418:0525573f528ff6fe",
+              "breast_cancer:source:00528:7c5dcdc36c16c92c",
+              "breast_cancer:source:00200:3e69524f5b79ccdc",
+              "breast_cancer:source:00311:e606e5694b4ef81d",
+              "breast_cancer:source:00360:ce241318bc9f0d83",
+              "breast_cancer:source:00326:44ec714151eee2bf",
+              "breast_cancer:source:00061:fed205d8860b73ce",
+              "breast_cancer:source:00553:89aea9f4eb804004",
+              "breast_cancer:source:00332:87dcb61c2a81b3a4",
+              "breast_cancer:source:00310:bd0ed6aa32065e96",
+              "breast_cancer:source:00534:014eddbe3c4e3ff8"
+            ],
+            "metrics": {
+              "micro_accuracy": 0.6754385964912281,
+              "balanced_accuracy": 0.7394366197183099,
+              "macro_f1": 0.6734030197444831,
+              "n_rows": 114,
+              "n_failures": 0
+            },
+            "transitions_from_never_review": {
+              "wrong_to_correct": 7,
+              "correct_to_wrong": 0,
+              "both_correct": 70,
+              "both_wrong": 37,
+              "changed_predictions": 7,
+              "correct_to_failure": 0,
+              "correct_to_wrong_label": 0,
+              "source_failure_rows": 0,
+              "review_stage_failure_rows": 0,
+              "net_correct_change": 7,
+              "accuracy_delta_pp": 6.140350877192983
+            },
+            "required_inferences": {
+              "source": 114,
+              "review_api_requests": 11,
+              "direct_jev": 0
+            },
+            "random_matched_rate": {
+              "micro_accuracy": 0.6436595875654048,
+              "balanced_accuracy": 0.7125964682423386,
+              "expected_fixed": 3.6666666666666665,
+              "expected_harmed": 0.2894736842105263,
+              "expected_net_fixed": 3.37719298245614,
+              "expected_failures": 0.0,
+              "linear_metrics_method": "exact uniform fixed-size subset expectation",
+              "macro_f1": 0.6394713546487507,
+              "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+              "macro_f1_monte_carlo_se": 0.00015284743357871734,
+              "samples": 10000,
+              "random_seed": 20260923
+            }
+          },
+          {
+            "requested_review_percent": 25,
+            "selected_rows": 29,
+            "actual_review_fraction": 0.2543859649122807,
+            "selected_row_ids": [
+              "breast_cancer:source:00418:0525573f528ff6fe",
+              "breast_cancer:source:00528:7c5dcdc36c16c92c",
+              "breast_cancer:source:00200:3e69524f5b79ccdc",
+              "breast_cancer:source:00311:e606e5694b4ef81d",
+              "breast_cancer:source:00360:ce241318bc9f0d83",
+              "breast_cancer:source:00326:44ec714151eee2bf",
+              "breast_cancer:source:00061:fed205d8860b73ce",
+              "breast_cancer:source:00553:89aea9f4eb804004",
+              "breast_cancer:source:00332:87dcb61c2a81b3a4",
+              "breast_cancer:source:00310:bd0ed6aa32065e96",
+              "breast_cancer:source:00534:014eddbe3c4e3ff8",
+              "breast_cancer:source:00269:640c25ced4ffe595",
+              "breast_cancer:source:00410:bf813ee3f3c3236a",
+              "breast_cancer:source:00386:3591263a42b2292e",
+              "breast_cancer:source:00092:5ead4cf554c4aa7a",
+              "breast_cancer:source:00318:8710c573c722f8a8",
+              "breast_cancer:source:00453:700556f98ddb7a94",
+              "breast_cancer:source:00294:7263df827b680756",
+              "breast_cancer:source:00178:517f45d30829df46",
+              "breast_cancer:source:00241:a7ef446b83e04b89",
+              "breast_cancer:source:00113:c50cb79af4358582",
+              "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+              "breast_cancer:source:00319:98ed12117a537c55",
+              "breast_cancer:source:00551:cf1f8a196d7890f6",
+              "breast_cancer:source:00179:b5a294f6f1b804da",
+              "breast_cancer:source:00402:e63ca5d2501ca69b",
+              "breast_cancer:source:00529:8ff78e3e9cbaafbf",
+              "breast_cancer:source:00211:ed8400cd29ffd46c",
+              "breast_cancer:source:00438:31524e32d241af7d"
+            ],
+            "metrics": {
+              "micro_accuracy": 0.7631578947368421,
+              "balanced_accuracy": 0.8098591549295775,
+              "macro_f1": 0.7631396691035013,
+              "n_rows": 114,
+              "n_failures": 0
+            },
+            "transitions_from_never_review": {
+              "wrong_to_correct": 17,
+              "correct_to_wrong": 0,
+              "both_correct": 70,
+              "both_wrong": 27,
+              "changed_predictions": 17,
+              "correct_to_failure": 0,
+              "correct_to_wrong_label": 0,
+              "source_failure_rows": 0,
+              "review_stage_failure_rows": 0,
+              "net_correct_change": 17,
+              "accuracy_delta_pp": 14.912280701754385
+            },
+            "required_inferences": {
+              "source": 114,
+              "review_api_requests": 29,
+              "direct_jev": 0
+            },
+            "random_matched_rate": {
+              "micro_accuracy": 0.6921360418590335,
+              "balanced_accuracy": 0.7493420334327466,
+              "expected_fixed": 9.666666666666668,
+              "expected_harmed": 0.7631578947368421,
+              "expected_net_fixed": 8.903508771929825,
+              "expected_failures": 0.0,
+              "linear_metrics_method": "exact uniform fixed-size subset expectation",
+              "macro_f1": 0.691215089764895,
+              "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+              "macro_f1_monte_carlo_se": 0.00021558373485592236,
+              "samples": 10000,
+              "random_seed": 20260923
+            }
+          },
+          {
+            "requested_review_percent": 50,
+            "selected_rows": 57,
+            "actual_review_fraction": 0.5,
+            "selected_row_ids": [
+              "breast_cancer:source:00418:0525573f528ff6fe",
+              "breast_cancer:source:00528:7c5dcdc36c16c92c",
+              "breast_cancer:source:00200:3e69524f5b79ccdc",
+              "breast_cancer:source:00311:e606e5694b4ef81d",
+              "breast_cancer:source:00360:ce241318bc9f0d83",
+              "breast_cancer:source:00326:44ec714151eee2bf",
+              "breast_cancer:source:00061:fed205d8860b73ce",
+              "breast_cancer:source:00553:89aea9f4eb804004",
+              "breast_cancer:source:00332:87dcb61c2a81b3a4",
+              "breast_cancer:source:00310:bd0ed6aa32065e96",
+              "breast_cancer:source:00534:014eddbe3c4e3ff8",
+              "breast_cancer:source:00269:640c25ced4ffe595",
+              "breast_cancer:source:00410:bf813ee3f3c3236a",
+              "breast_cancer:source:00386:3591263a42b2292e",
+              "breast_cancer:source:00092:5ead4cf554c4aa7a",
+              "breast_cancer:source:00318:8710c573c722f8a8",
+              "breast_cancer:source:00453:700556f98ddb7a94",
+              "breast_cancer:source:00294:7263df827b680756",
+              "breast_cancer:source:00178:517f45d30829df46",
+              "breast_cancer:source:00241:a7ef446b83e04b89",
+              "breast_cancer:source:00113:c50cb79af4358582",
+              "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+              "breast_cancer:source:00319:98ed12117a537c55",
+              "breast_cancer:source:00551:cf1f8a196d7890f6",
+              "breast_cancer:source:00179:b5a294f6f1b804da",
+              "breast_cancer:source:00402:e63ca5d2501ca69b",
+              "breast_cancer:source:00529:8ff78e3e9cbaafbf",
+              "breast_cancer:source:00211:ed8400cd29ffd46c",
+              "breast_cancer:source:00438:31524e32d241af7d",
+              "breast_cancer:source:00391:329f603a286992a8",
+              "breast_cancer:source:00312:36ccc9484ab56a47",
+              "breast_cancer:source:00409:d83ef2bbf424db01",
+              "breast_cancer:source:00519:7ca17fbb7c26a040",
+              "breast_cancer:source:00320:1670636876bb8176",
+              "breast_cancer:source:00398:f50e11609ef3e550",
+              "breast_cancer:source:00348:860ecd74443b5c86",
+              "breast_cancer:source:00226:0973bc8364233e16",
+              "breast_cancer:source:00104:55f40ab90d604dc6",
+              "breast_cancer:source:00114:cc1befb35b0a2596",
+              "breast_cancer:source:00222:1fd61b9ca3626f2d",
+              "breast_cancer:source:00478:ea382a156cce5ced",
+              "breast_cancer:source:00107:9f768480e3b73d8b",
+              "breast_cancer:source:00192:da1ef950f5ba612d",
+              "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+              "breast_cancer:source:00336:9991d061b399d5b7",
+              "breast_cancer:source:00546:803630ad541ca8de",
+              "breast_cancer:source:00060:31a4481f6a8b9489",
+              "breast_cancer:source:00457:72fa4fb310ea68dd",
+              "breast_cancer:source:00204:eccf60b4172ff2d3",
+              "breast_cancer:source:00169:a35438fbadf97f57",
+              "breast_cancer:source:00069:3a082e0fe537900e",
+              "breast_cancer:source:00081:5a08a8dc7b0629b8",
+              "breast_cancer:source:00242:bb9c4e427c336184",
+              "breast_cancer:source:00403:87561888be5dd48f",
+              "breast_cancer:source:00174:3ae6bd1d27f5c06b",
+              "breast_cancer:source:00448:9e598e6dff34d397",
+              "breast_cancer:source:00246:f5adc57b48890848"
+            ],
+            "metrics": {
+              "micro_accuracy": 0.868421052631579,
+              "balanced_accuracy": 0.8943661971830985,
+              "macro_f1": 0.8666874561471896,
+              "n_rows": 114,
+              "n_failures": 0
+            },
+            "transitions_from_never_review": {
+              "wrong_to_correct": 29,
+              "correct_to_wrong": 0,
+              "both_correct": 70,
+              "both_wrong": 15,
+              "changed_predictions": 29,
+              "correct_to_failure": 0,
+              "correct_to_wrong_label": 0,
+              "source_failure_rows": 0,
+              "review_stage_failure_rows": 0,
+              "net_correct_change": 29,
+              "accuracy_delta_pp": 25.43859649122807
+            },
+            "required_inferences": {
+              "source": 114,
+              "review_api_requests": 57,
+              "direct_jev": 0
+            },
+            "random_matched_rate": {
+              "micro_accuracy": 0.7675438596491229,
+              "balanced_accuracy": 0.8065018015067147,
+              "expected_fixed": 19.0,
+              "expected_harmed": 1.5,
+              "expected_net_fixed": 17.5,
+              "expected_failures": 0.0,
+              "linear_metrics_method": "exact uniform fixed-size subset expectation",
+              "macro_f1": 0.7669210110998347,
+              "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+              "macro_f1_monte_carlo_se": 0.00023899722308401083,
+              "samples": 10000,
+              "random_seed": 20260923
+            }
+          },
+          {
+            "requested_review_percent": 75,
+            "selected_rows": 86,
+            "actual_review_fraction": 0.7543859649122807,
+            "selected_row_ids": [
+              "breast_cancer:source:00418:0525573f528ff6fe",
+              "breast_cancer:source:00528:7c5dcdc36c16c92c",
+              "breast_cancer:source:00200:3e69524f5b79ccdc",
+              "breast_cancer:source:00311:e606e5694b4ef81d",
+              "breast_cancer:source:00360:ce241318bc9f0d83",
+              "breast_cancer:source:00326:44ec714151eee2bf",
+              "breast_cancer:source:00061:fed205d8860b73ce",
+              "breast_cancer:source:00553:89aea9f4eb804004",
+              "breast_cancer:source:00332:87dcb61c2a81b3a4",
+              "breast_cancer:source:00310:bd0ed6aa32065e96",
+              "breast_cancer:source:00534:014eddbe3c4e3ff8",
+              "breast_cancer:source:00269:640c25ced4ffe595",
+              "breast_cancer:source:00410:bf813ee3f3c3236a",
+              "breast_cancer:source:00386:3591263a42b2292e",
+              "breast_cancer:source:00092:5ead4cf554c4aa7a",
+              "breast_cancer:source:00318:8710c573c722f8a8",
+              "breast_cancer:source:00453:700556f98ddb7a94",
+              "breast_cancer:source:00294:7263df827b680756",
+              "breast_cancer:source:00178:517f45d30829df46",
+              "breast_cancer:source:00241:a7ef446b83e04b89",
+              "breast_cancer:source:00113:c50cb79af4358582",
+              "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+              "breast_cancer:source:00319:98ed12117a537c55",
+              "breast_cancer:source:00551:cf1f8a196d7890f6",
+              "breast_cancer:source:00179:b5a294f6f1b804da",
+              "breast_cancer:source:00402:e63ca5d2501ca69b",
+              "breast_cancer:source:00529:8ff78e3e9cbaafbf",
+              "breast_cancer:source:00211:ed8400cd29ffd46c",
+              "breast_cancer:source:00438:31524e32d241af7d",
+              "breast_cancer:source:00391:329f603a286992a8",
+              "breast_cancer:source:00312:36ccc9484ab56a47",
+              "breast_cancer:source:00409:d83ef2bbf424db01",
+              "breast_cancer:source:00519:7ca17fbb7c26a040",
+              "breast_cancer:source:00320:1670636876bb8176",
+              "breast_cancer:source:00398:f50e11609ef3e550",
+              "breast_cancer:source:00348:860ecd74443b5c86",
+              "breast_cancer:source:00226:0973bc8364233e16",
+              "breast_cancer:source:00104:55f40ab90d604dc6",
+              "breast_cancer:source:00114:cc1befb35b0a2596",
+              "breast_cancer:source:00222:1fd61b9ca3626f2d",
+              "breast_cancer:source:00478:ea382a156cce5ced",
+              "breast_cancer:source:00107:9f768480e3b73d8b",
+              "breast_cancer:source:00192:da1ef950f5ba612d",
+              "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+              "breast_cancer:source:00336:9991d061b399d5b7",
+              "breast_cancer:source:00546:803630ad541ca8de",
+              "breast_cancer:source:00060:31a4481f6a8b9489",
+              "breast_cancer:source:00457:72fa4fb310ea68dd",
+              "breast_cancer:source:00204:eccf60b4172ff2d3",
+              "breast_cancer:source:00169:a35438fbadf97f57",
+              "breast_cancer:source:00069:3a082e0fe537900e",
+              "breast_cancer:source:00081:5a08a8dc7b0629b8",
+              "breast_cancer:source:00242:bb9c4e427c336184",
+              "breast_cancer:source:00403:87561888be5dd48f",
+              "breast_cancer:source:00174:3ae6bd1d27f5c06b",
+              "breast_cancer:source:00448:9e598e6dff34d397",
+              "breast_cancer:source:00246:f5adc57b48890848",
+              "breast_cancer:source:00539:494e27284f068721",
+              "breast_cancer:source:00555:342b7c434f1efca9",
+              "breast_cancer:source:00183:0a9669614a3a3074",
+              "breast_cancer:source:00485:5db666ef49627665",
+              "breast_cancer:source:00406:988ceba59dc227d9",
+              "breast_cancer:source:00109:15250696c0cd3558",
+              "breast_cancer:source:00205:2a27ea606ae5a27f",
+              "breast_cancer:source:00407:ebb9bae6e3c43491",
+              "breast_cancer:source:00506:93a70980871cecf3",
+              "breast_cancer:source:00086:d152c33a08df00bb",
+              "breast_cancer:source:00375:ae45b3a95b87c316",
+              "breast_cancer:source:00379:1a9b516ef2c8b154",
+              "breast_cancer:source:00115:67bfee72e580647a",
+              "breast_cancer:source:00466:6a7e6b96a2b161b2",
+              "breast_cancer:source:00007:85bb43827ef3811a",
+              "breast_cancer:source:00261:f740c724bab895b5",
+              "breast_cancer:source:00111:bb2b5196e21fbc71",
+              "breast_cancer:source:00199:add44081f786a96c",
+              "breast_cancer:source:00560:2fa91fd3a7bf7699",
+              "breast_cancer:source:00014:81342240bd142b4a",
+              "breast_cancer:source:00455:6ec7d486925e7fa8",
+              "breast_cancer:source:00131:12218ae0a458879b",
+              "breast_cancer:source:00414:2605a007f913ee55",
+              "breast_cancer:source:00317:1145b7fa8c2fb771",
+              "breast_cancer:source:00253:0acae4a503eab71e",
+              "breast_cancer:source:00282:0413bbf6ec9bd866",
+              "breast_cancer:source:00329:55d1dc33326fbcb0",
+              "breast_cancer:source:00277:107dda63c7edf72e",
+              "breast_cancer:source:00029:2fd20f9f1db6a0b1"
+            ],
+            "metrics": {
+              "micro_accuracy": 0.9210526315789473,
+              "balanced_accuracy": 0.9228627579430069,
+              "macro_f1": 0.9170641015277665,
+              "n_rows": 114,
+              "n_failures": 0
+            },
+            "transitions_from_never_review": {
+              "wrong_to_correct": 38,
+              "correct_to_wrong": 3,
+              "both_correct": 67,
+              "both_wrong": 6,
+              "changed_predictions": 41,
+              "correct_to_failure": 0,
+              "correct_to_wrong_label": 3,
+              "source_failure_rows": 0,
+              "review_stage_failure_rows": 0,
+              "net_correct_change": 35,
+              "accuracy_delta_pp": 30.70175438596491
+            },
+            "required_inferences": {
+              "source": 114,
+              "review_api_requests": 86,
+              "direct_jev": 0
+            },
+            "random_matched_rate": {
+              "micro_accuracy": 0.8456448137888581,
+              "balanced_accuracy": 0.8657029898690388,
+              "expected_fixed": 28.666666666666668,
+              "expected_harmed": 2.263157894736842,
+              "expected_net_fixed": 26.403508771929825,
+              "expected_failures": 0.0,
+              "linear_metrics_method": "exact uniform fixed-size subset expectation",
+              "macro_f1": 0.8427423997792896,
+              "macro_f1_method": "Monte Carlo mean over uniform fixed-size subsets",
+              "macro_f1_monte_carlo_se": 0.00020658814530608372,
+              "samples": 10000,
+              "random_seed": 20260923
+            }
+          },
+          {
+            "requested_review_percent": 100,
+            "selected_rows": 114,
+            "actual_review_fraction": 1.0,
+            "selected_row_ids": [
+              "breast_cancer:source:00418:0525573f528ff6fe",
+              "breast_cancer:source:00528:7c5dcdc36c16c92c",
+              "breast_cancer:source:00200:3e69524f5b79ccdc",
+              "breast_cancer:source:00311:e606e5694b4ef81d",
+              "breast_cancer:source:00360:ce241318bc9f0d83",
+              "breast_cancer:source:00326:44ec714151eee2bf",
+              "breast_cancer:source:00061:fed205d8860b73ce",
+              "breast_cancer:source:00553:89aea9f4eb804004",
+              "breast_cancer:source:00332:87dcb61c2a81b3a4",
+              "breast_cancer:source:00310:bd0ed6aa32065e96",
+              "breast_cancer:source:00534:014eddbe3c4e3ff8",
+              "breast_cancer:source:00269:640c25ced4ffe595",
+              "breast_cancer:source:00410:bf813ee3f3c3236a",
+              "breast_cancer:source:00386:3591263a42b2292e",
+              "breast_cancer:source:00092:5ead4cf554c4aa7a",
+              "breast_cancer:source:00318:8710c573c722f8a8",
+              "breast_cancer:source:00453:700556f98ddb7a94",
+              "breast_cancer:source:00294:7263df827b680756",
+              "breast_cancer:source:00178:517f45d30829df46",
+              "breast_cancer:source:00241:a7ef446b83e04b89",
+              "breast_cancer:source:00113:c50cb79af4358582",
+              "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+              "breast_cancer:source:00319:98ed12117a537c55",
+              "breast_cancer:source:00551:cf1f8a196d7890f6",
+              "breast_cancer:source:00179:b5a294f6f1b804da",
+              "breast_cancer:source:00402:e63ca5d2501ca69b",
+              "breast_cancer:source:00529:8ff78e3e9cbaafbf",
+              "breast_cancer:source:00211:ed8400cd29ffd46c",
+              "breast_cancer:source:00438:31524e32d241af7d",
+              "breast_cancer:source:00391:329f603a286992a8",
+              "breast_cancer:source:00312:36ccc9484ab56a47",
+              "breast_cancer:source:00409:d83ef2bbf424db01",
+              "breast_cancer:source:00519:7ca17fbb7c26a040",
+              "breast_cancer:source:00320:1670636876bb8176",
+              "breast_cancer:source:00398:f50e11609ef3e550",
+              "breast_cancer:source:00348:860ecd74443b5c86",
+              "breast_cancer:source:00226:0973bc8364233e16",
+              "breast_cancer:source:00104:55f40ab90d604dc6",
+              "breast_cancer:source:00114:cc1befb35b0a2596",
+              "breast_cancer:source:00222:1fd61b9ca3626f2d",
+              "breast_cancer:source:00478:ea382a156cce5ced",
+              "breast_cancer:source:00107:9f768480e3b73d8b",
+              "breast_cancer:source:00192:da1ef950f5ba612d",
+              "breast_cancer:source:00458:f121d3b5c7c9fa1a",
+              "breast_cancer:source:00336:9991d061b399d5b7",
+              "breast_cancer:source:00546:803630ad541ca8de",
+              "breast_cancer:source:00060:31a4481f6a8b9489",
+              "breast_cancer:source:00457:72fa4fb310ea68dd",
+              "breast_cancer:source:00204:eccf60b4172ff2d3",
+              "breast_cancer:source:00169:a35438fbadf97f57",
+              "breast_cancer:source:00069:3a082e0fe537900e",
+              "breast_cancer:source:00081:5a08a8dc7b0629b8",
+              "breast_cancer:source:00242:bb9c4e427c336184",
+              "breast_cancer:source:00403:87561888be5dd48f",
+              "breast_cancer:source:00174:3ae6bd1d27f5c06b",
+              "breast_cancer:source:00448:9e598e6dff34d397",
+              "breast_cancer:source:00246:f5adc57b48890848",
+              "breast_cancer:source:00539:494e27284f068721",
+              "breast_cancer:source:00555:342b7c434f1efca9",
+              "breast_cancer:source:00183:0a9669614a3a3074",
+              "breast_cancer:source:00485:5db666ef49627665",
+              "breast_cancer:source:00406:988ceba59dc227d9",
+              "breast_cancer:source:00109:15250696c0cd3558",
+              "breast_cancer:source:00205:2a27ea606ae5a27f",
+              "breast_cancer:source:00407:ebb9bae6e3c43491",
+              "breast_cancer:source:00506:93a70980871cecf3",
+              "breast_cancer:source:00086:d152c33a08df00bb",
+              "breast_cancer:source:00375:ae45b3a95b87c316",
+              "breast_cancer:source:00379:1a9b516ef2c8b154",
+              "breast_cancer:source:00115:67bfee72e580647a",
+              "breast_cancer:source:00466:6a7e6b96a2b161b2",
+              "breast_cancer:source:00007:85bb43827ef3811a",
+              "breast_cancer:source:00261:f740c724bab895b5",
+              "breast_cancer:source:00111:bb2b5196e21fbc71",
+              "breast_cancer:source:00199:add44081f786a96c",
+              "breast_cancer:source:00560:2fa91fd3a7bf7699",
+              "breast_cancer:source:00014:81342240bd142b4a",
+              "breast_cancer:source:00455:6ec7d486925e7fa8",
+              "breast_cancer:source:00131:12218ae0a458879b",
+              "breast_cancer:source:00414:2605a007f913ee55",
+              "breast_cancer:source:00317:1145b7fa8c2fb771",
+              "breast_cancer:source:00253:0acae4a503eab71e",
+              "breast_cancer:source:00282:0413bbf6ec9bd866",
+              "breast_cancer:source:00329:55d1dc33326fbcb0",
+              "breast_cancer:source:00277:107dda63c7edf72e",
+              "breast_cancer:source:00029:2fd20f9f1db6a0b1",
+              "breast_cancer:source:00025:d3db054111d104e5",
+              "breast_cancer:source:00512:724c0198d50b22ad",
+              "breast_cancer:source:00070:011f89fd67ff16ea",
+              "breast_cancer:source:00417:aae8463f36d37e77",
+              "breast_cancer:source:00283:91a534564cd0b9f1",
+              "breast_cancer:source:00258:c45b22c60e19c1e1",
+              "breast_cancer:source:00468:456a8dda3a657609",
+              "breast_cancer:source:00087:14097fb439513330",
+              "breast_cancer:source:00177:2e95cabad6cc0ed1",
+              "breast_cancer:source:00262:592467f069188787",
+              "breast_cancer:source:00168:89abb9c4ead426fc",
+              "breast_cancer:source:00389:84ced4866c177887",
+              "breast_cancer:source:00218:70913b91f7c5402f",
+              "breast_cancer:source:00433:b9d08ebcce4717f2",
+              "breast_cancer:source:00254:2b87765b83949d9c",
+              "breast_cancer:source:00201:dbbca20ab0a25a2c",
+              "breast_cancer:source:00370:1c827b272813d998",
+              "breast_cancer:source:00056:b9d4079b9e5b1de0",
+              "breast_cancer:source:00035:0b4481d3121bb40c",
+              "breast_cancer:source:00024:3cb4ff826c388a9d",
+              "breast_cancer:source:00210:09943cdccb41259f",
+              "breast_cancer:source:00239:f75f3d1c007c7417",
+              "breast_cancer:source:00260:8578547e102efa1d",
+              "breast_cancer:source:00129:4c1d3d794c41e9d3",
+              "breast_cancer:source:00078:e1c8439a363648b7",
+              "breast_cancer:source:00122:e297e802bb3e875b",
+              "breast_cancer:source:00339:99b007d3e1d7cc39",
+              "breast_cancer:source:00352:b907d80ce24b1eab"
+            ],
+            "metrics": {
+              "micro_accuracy": 0.9210526315789473,
+              "balanced_accuracy": 0.9228627579430069,
+              "macro_f1": 0.9170641015277665,
+              "n_rows": 114,
+              "n_failures": 0
+            },
+            "transitions_from_never_review": {
+              "wrong_to_correct": 38,
+              "correct_to_wrong": 3,
+              "both_correct": 67,
+              "both_wrong": 6,
+              "changed_predictions": 41,
+              "correct_to_failure": 0,
+              "correct_to_wrong_label": 3,
+              "source_failure_rows": 0,
+              "review_stage_failure_rows": 0,
+              "net_correct_change": 35,
+              "accuracy_delta_pp": 30.70175438596491
+            },
+            "required_inferences": {
+              "source": 114,
+              "review_api_requests": 114,
+              "direct_jev": 0
+            },
+            "random_matched_rate": {
+              "micro_accuracy": 0.9210526315789473,
+              "balanced_accuracy": 0.9228627579430069,
+              "expected_fixed": 38.0,
+              "expected_harmed": 3.0,
+              "expected_net_fixed": 35.0,
+              "expected_failures": 0.0,
+              "linear_metrics_method": "exact uniform fixed-size subset expectation",
+              "macro_f1": 0.9170641015277665,
+              "macro_f1_method": "exact endpoint",
+              "macro_f1_monte_carlo_se": 0.0,
+              "samples": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "breast_cancer",
       "source_model": "gpt-5.6-luna",
       "shots_per_class": 0,
       "source_run_id": "breast_cancer__gpt-5.6-luna__b8612044e1e5",
@@ -7242,6 +9518,464 @@
     },
     {
       "dataset": "wine",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 0,
+      "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+      "review_run_id": "wine__smollm2__k0__jev-review",
+      "direct_jev_run_id": "wine__jev-1.13__7daebee622e6",
+      "n_rows": 36,
+      "labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 24,
+          "001": 0,
+          "010": 0,
+          "011": 0,
+          "100": 0,
+          "101": 0,
+          "110": 0,
+          "111": 12
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 24,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 24,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "failures": {
+        "base": [],
+        "review": [],
+        "direct_jev": []
+      },
+      "observed_review_request_records": 36,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "exclusion_reasons": [
+          "constant_or_missing_source_labels"
+        ],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "shots_per_class": 4,
+      "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+      "review_run_id": "wine__smollm2__k4__jev-review",
+      "direct_jev_run_id": "wine__jev-1.13__33047fa693a8",
+      "n_rows": 36,
+      "labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.8888888888888888,
+          "balanced_accuracy": 0.9047619047619048,
+          "macro_f1": 0.8876328502415459,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 3,
+          "001": 0,
+          "010": 1,
+          "011": 20,
+          "100": 0,
+          "101": 0,
+          "110": 0,
+          "111": 12
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 20,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 4,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 20,
+        "accuracy_delta_pp": 55.55555555555556
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 1,
+        "both_correct": 32,
+        "both_wrong": 3,
+        "changed_predictions": 1,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -2.7777777777777777
+      },
+      "failures": {
+        "base": [],
+        "review": [],
+        "direct_jev": []
+      },
+      "observed_review_request_records": 36,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "exclusion_reasons": [
+          "constant_or_missing_source_labels"
+        ],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 0,
+      "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+      "review_run_id": "wine__granite__k0__jev-review",
+      "direct_jev_run_id": "wine__jev-1.13__7daebee622e6",
+      "n_rows": 36,
+      "labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.2777777777777778,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.14492753623188406,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.32936507936507936,
+          "macro_f1": 0.20833333333333334,
+          "n_rows": 36,
+          "n_failures": 1
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 13,
+          "001": 1,
+          "010": 1,
+          "011": 11,
+          "100": 10,
+          "101": 0,
+          "110": 0,
+          "111": 0
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 12,
+        "correct_to_wrong": 10,
+        "both_correct": 0,
+        "both_wrong": 14,
+        "changed_predictions": 35,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 10,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 2,
+        "accuracy_delta_pp": 5.555555555555555
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 1,
+        "both_correct": 11,
+        "both_wrong": 23,
+        "changed_predictions": 4,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "failures": {
+        "base": [],
+        "review": [
+          {
+            "row_id": "wine:source:00044:c5d724bc041b00b7",
+            "error": "network_error: connection failed or timed out; no automatic retry",
+            "reported_cost_usd": null
+          }
+        ],
+        "direct_jev": []
+      },
+      "observed_review_request_records": 36,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "exclusion_reasons": [
+          "constant_or_missing_source_labels"
+        ],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": null
+    },
+    {
+      "dataset": "wine",
+      "source_model": "ibm-granite/granite-3.3-2b-instruct",
+      "shots_per_class": 4,
+      "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+      "review_run_id": "wine__granite__k4__jev-review",
+      "direct_jev_run_id": "wine__jev-1.13__33047fa693a8",
+      "n_rows": 36,
+      "labels": [
+        "cultivar 1",
+        "cultivar 2",
+        "cultivar 3"
+      ],
+      "metrics": {
+        "never_review": {
+          "micro_accuracy": 0.3333333333333333,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "always_review": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        },
+        "direct_jev": {
+          "micro_accuracy": 0.9166666666666666,
+          "balanced_accuracy": 0.9285714285714285,
+          "macro_f1": 0.9163636363636364,
+          "n_rows": 36,
+          "n_failures": 0
+        }
+      },
+      "joint_correctness": {
+        "bit_order": [
+          "base_correct",
+          "direct_jev_correct",
+          "review_correct"
+        ],
+        "counts": {
+          "000": 3,
+          "001": 0,
+          "010": 0,
+          "011": 21,
+          "100": 0,
+          "101": 0,
+          "110": 0,
+          "111": 12
+        },
+        "failures_count_as_incorrect": true
+      },
+      "review_minus_base": {
+        "wrong_to_correct": 21,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 3,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 21,
+        "accuracy_delta_pp": 58.333333333333336
+      },
+      "review_minus_direct": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 33,
+        "both_wrong": 3,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
+      "failures": {
+        "base": [],
+        "review": [],
+        "direct_jev": []
+      },
+      "observed_review_request_records": 36,
+      "observed_skipped_source_failure_rows": 0,
+      "required_inferences": {
+        "never_review": {
+          "source": 36,
+          "review_api_requests": 0,
+          "direct_jev": 0
+        },
+        "always_review": {
+          "source": 36,
+          "review_api_requests": 36,
+          "direct_jev": 0
+        },
+        "direct_jev": {
+          "source": 0,
+          "review_api_requests": 0,
+          "direct_jev": 36
+        }
+      },
+      "selective_review_eligibility": {
+        "eligible": false,
+        "exclusion_reasons": [
+          "constant_or_missing_source_labels"
+        ],
+        "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
+      },
+      "selective_review": null
+    },
+    {
+      "dataset": "wine",
       "source_model": "gpt-5.6-luna",
       "shots_per_class": 0,
       "source_run_id": "wine__gpt-5.6-luna__e3ff7ad8c4ad",
@@ -7710,95 +10444,7 @@
       "selective_review": null
     }
   ],
-  "excluded_conditions": [
-    {
-      "dataset": "breast_cancer",
-      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "shots_per_class": 4,
-      "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
-      "review_run_id": "breast_cancer__smollm2__k4__jev-review",
-      "status": "stopped_after_three_consecutive_errors",
-      "source_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
-      "available_artifact_pins": {
-        "run.json": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2",
-        "predictions.jsonl": "2435446b31e57f032bd280b35bbbdd4515ae916aab462b3229d55649b4697e49"
-      },
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    },
-    {
-      "dataset": "breast_cancer",
-      "source_model": "ibm-granite/granite-3.3-2b-instruct",
-      "shots_per_class": 0,
-      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
-      "review_run_id": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::0",
-      "status": "pending: no complete audited artifact",
-      "source_path": null,
-      "available_artifact_pins": {},
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    },
-    {
-      "dataset": "breast_cancer",
-      "source_model": "ibm-granite/granite-3.3-2b-instruct",
-      "shots_per_class": 4,
-      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
-      "review_run_id": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "status": "pending: no complete audited artifact",
-      "source_path": null,
-      "available_artifact_pins": {},
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    },
-    {
-      "dataset": "wine",
-      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "shots_per_class": 0,
-      "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
-      "review_run_id": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
-      "status": "pending: no complete audited artifact",
-      "source_path": null,
-      "available_artifact_pins": {},
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    },
-    {
-      "dataset": "wine",
-      "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-      "shots_per_class": 4,
-      "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
-      "review_run_id": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
-      "status": "pending: no complete audited artifact",
-      "source_path": null,
-      "available_artifact_pins": {},
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    },
-    {
-      "dataset": "wine",
-      "source_model": "ibm-granite/granite-3.3-2b-instruct",
-      "shots_per_class": 0,
-      "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
-      "review_run_id": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::0",
-      "status": "pending: no complete audited artifact",
-      "source_path": null,
-      "available_artifact_pins": {},
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    },
-    {
-      "dataset": "wine",
-      "source_model": "ibm-granite/granite-3.3-2b-instruct",
-      "shots_per_class": 4,
-      "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
-      "review_run_id": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "status": "pending: no complete audited artifact",
-      "source_path": null,
-      "available_artifact_pins": {},
-      "metrics": null,
-      "reason": "Incomplete conditions receive no partial metrics"
-    }
-  ],
+  "excluded_conditions": [],
   "gate_inventory": [
     {
       "dataset": "breast_cancer",
@@ -7862,7 +10508,6 @@
       "review_run_id": "breast_cancer__smollm2__k4__jev-review",
       "eligible": false,
       "exclusion_reasons": [
-        "review_condition_incomplete",
         "constant_or_missing_source_labels"
       ],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
@@ -7872,10 +10517,9 @@
       "source_model": "ibm-granite/granite-3.3-2b-instruct",
       "shots_per_class": 0,
       "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
-      "review_run_id": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "review_run_id": "breast_cancer__granite__k0__jev-review",
       "eligible": false,
       "exclusion_reasons": [
-        "review_condition_incomplete",
         "constant_or_missing_source_labels"
       ],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
@@ -7885,11 +10529,9 @@
       "source_model": "ibm-granite/granite-3.3-2b-instruct",
       "shots_per_class": 4,
       "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
-      "review_run_id": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "eligible": false,
-      "exclusion_reasons": [
-        "review_condition_incomplete"
-      ],
+      "review_run_id": "breast_cancer__granite__k4__jev-review",
+      "eligible": true,
+      "exclusion_reasons": [],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
     },
     {
@@ -7995,10 +10637,9 @@
       "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
       "shots_per_class": 0,
       "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
-      "review_run_id": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
+      "review_run_id": "wine__smollm2__k0__jev-review",
       "eligible": false,
       "exclusion_reasons": [
-        "review_condition_incomplete",
         "constant_or_missing_source_labels"
       ],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
@@ -8008,10 +10649,9 @@
       "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
       "shots_per_class": 4,
       "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
-      "review_run_id": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
+      "review_run_id": "wine__smollm2__k4__jev-review",
       "eligible": false,
       "exclusion_reasons": [
-        "review_condition_incomplete",
         "constant_or_missing_source_labels"
       ],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
@@ -8021,10 +10661,9 @@
       "source_model": "ibm-granite/granite-3.3-2b-instruct",
       "shots_per_class": 0,
       "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
-      "review_run_id": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "review_run_id": "wine__granite__k0__jev-review",
       "eligible": false,
       "exclusion_reasons": [
-        "review_condition_incomplete",
         "constant_or_missing_source_labels"
       ],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
@@ -8034,10 +10673,9 @@
       "source_model": "ibm-granite/granite-3.3-2b-instruct",
       "shots_per_class": 4,
       "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
-      "review_run_id": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::4",
+      "review_run_id": "wine__granite__k4__jev-review",
       "eligible": false,
       "exclusion_reasons": [
-        "review_condition_incomplete",
         "constant_or_missing_source_labels"
       ],
       "probability_semantics": "normalized numeric-class-ID-plus-EOS sequence likelihood; not calibrated confidence"
@@ -8136,6 +10774,29 @@
       "dataset": "breast_cancer",
       "shots_per_class": 0,
       "a_run_id": "breast_cancer__qwen_small__k0__jev-review",
+      "b_run_id": "breast_cancer__granite__k0__jev-review",
+      "same_label_identical_prompt_rows": 114,
+      "both_valid_rows": 114,
+      "valid_output_disagreements": 9,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00014:81342240bd142b4a",
+        "breast_cancer:source:00111:bb2b5196e21fbc71",
+        "breast_cancer:source:00178:517f45d30829df46",
+        "breast_cancer:source:00204:eccf60b4172ff2d3",
+        "breast_cancer:source:00379:1a9b516ef2c8b154",
+        "breast_cancer:source:00402:e63ca5d2501ca69b",
+        "breast_cancer:source:00438:31524e32d241af7d",
+        "breast_cancer:source:00439:9dd3bccbf82fe1d3",
+        "breast_cancer:source:00560:2fa91fd3a7bf7699"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 0,
+      "a_run_id": "breast_cancer__qwen_small__k0__jev-review",
       "b_run_id": "breast_cancer__luna__k0__jev-review",
       "same_label_identical_prompt_rows": 69,
       "both_valid_rows": 69,
@@ -8173,6 +10834,32 @@
       "b_run_id": "breast_cancer__qwen3_4b__jev-review",
       "same_label_identical_prompt_rows": 56,
       "both_valid_rows": 56,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__qwen_small__k4__jev-review",
+      "b_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "same_label_identical_prompt_rows": 1,
+      "both_valid_rows": 0,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 1,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__qwen_small__k4__jev-review",
+      "b_run_id": "breast_cancer__granite__k4__jev-review",
+      "same_label_identical_prompt_rows": 26,
+      "both_valid_rows": 26,
       "valid_output_disagreements": 0,
       "both_valid_resolved_model_mismatches": 0,
       "both_valid_unknown_resolved_model_rows": 0,
@@ -8222,6 +10909,22 @@
       "dataset": "breast_cancer",
       "shots_per_class": 0,
       "a_run_id": "breast_cancer__qwen_main__k0__jev-review",
+      "b_run_id": "breast_cancer__granite__k0__jev-review",
+      "same_label_identical_prompt_rows": 13,
+      "both_valid_rows": 13,
+      "valid_output_disagreements": 2,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00014:81342240bd142b4a",
+        "breast_cancer:source:00204:eccf60b4172ff2d3"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 0,
+      "a_run_id": "breast_cancer__qwen_main__k0__jev-review",
       "b_run_id": "breast_cancer__luna__k0__jev-review",
       "same_label_identical_prompt_rows": 48,
       "both_valid_rows": 48,
@@ -8249,6 +10952,36 @@
         "breast_cancer:source:00014:81342240bd142b4a",
         "breast_cancer:source:00448:9e598e6dff34d397",
         "breast_cancer:source:00453:700556f98ddb7a94"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__qwen3_4b__jev-review",
+      "b_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "same_label_identical_prompt_rows": 59,
+      "both_valid_rows": 55,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 4,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00007:85bb43827ef3811a"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__qwen3_4b__jev-review",
+      "b_run_id": "breast_cancer__granite__k4__jev-review",
+      "same_label_identical_prompt_rows": 76,
+      "both_valid_rows": 76,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00086:d152c33a08df00bb"
       ]
     },
     {
@@ -8287,6 +11020,27 @@
       "dataset": "breast_cancer",
       "shots_per_class": 0,
       "a_run_id": "breast_cancer__smollm2__k0__jev-review",
+      "b_run_id": "breast_cancer__granite__k0__jev-review",
+      "same_label_identical_prompt_rows": 114,
+      "both_valid_rows": 114,
+      "valid_output_disagreements": 7,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00014:81342240bd142b4a",
+        "breast_cancer:source:00111:bb2b5196e21fbc71",
+        "breast_cancer:source:00178:517f45d30829df46",
+        "breast_cancer:source:00204:eccf60b4172ff2d3",
+        "breast_cancer:source:00311:e606e5694b4ef81d",
+        "breast_cancer:source:00438:31524e32d241af7d",
+        "breast_cancer:source:00455:6ec7d486925e7fa8"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 0,
+      "a_run_id": "breast_cancer__smollm2__k0__jev-review",
       "b_run_id": "breast_cancer__luna__k0__jev-review",
       "same_label_identical_prompt_rows": 69,
       "both_valid_rows": 69,
@@ -8315,6 +11069,116 @@
       "disagreement_row_ids": [
         "breast_cancer:source:00014:81342240bd142b4a",
         "breast_cancer:source:00512:724c0198d50b22ad"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "b_run_id": "breast_cancer__granite__k4__jev-review",
+      "same_label_identical_prompt_rows": 87,
+      "both_valid_rows": 82,
+      "valid_output_disagreements": 2,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 5,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00007:85bb43827ef3811a",
+        "breast_cancer:source:00086:d152c33a08df00bb"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "b_run_id": "breast_cancer__luna__k4__jev-review",
+      "same_label_identical_prompt_rows": 49,
+      "both_valid_rows": 46,
+      "valid_output_disagreements": 2,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 3,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00086:d152c33a08df00bb",
+        "breast_cancer:source:00318:8710c573c722f8a8"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__smollm2__k4__jev-review",
+      "b_run_id": "breast_cancer__astra__jev-review",
+      "same_label_identical_prompt_rows": 41,
+      "both_valid_rows": 38,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 3,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 0,
+      "a_run_id": "breast_cancer__granite__k0__jev-review",
+      "b_run_id": "breast_cancer__luna__k0__jev-review",
+      "same_label_identical_prompt_rows": 69,
+      "both_valid_rows": 69,
+      "valid_output_disagreements": 6,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00111:bb2b5196e21fbc71",
+        "breast_cancer:source:00178:517f45d30829df46",
+        "breast_cancer:source:00204:eccf60b4172ff2d3",
+        "breast_cancer:source:00375:ae45b3a95b87c316",
+        "breast_cancer:source:00379:1a9b516ef2c8b154",
+        "breast_cancer:source:00438:31524e32d241af7d"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 0,
+      "a_run_id": "breast_cancer__granite__k0__jev-review",
+      "b_run_id": "breast_cancer__astra__k0__jev-review",
+      "same_label_identical_prompt_rows": 42,
+      "both_valid_rows": 42,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00512:724c0198d50b22ad"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__granite__k4__jev-review",
+      "b_run_id": "breast_cancer__luna__k4__jev-review",
+      "same_label_identical_prompt_rows": 74,
+      "both_valid_rows": 73,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 1,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00007:85bb43827ef3811a"
+      ]
+    },
+    {
+      "dataset": "breast_cancer",
+      "shots_per_class": 4,
+      "a_run_id": "breast_cancer__granite__k4__jev-review",
+      "b_run_id": "breast_cancer__astra__jev-review",
+      "same_label_identical_prompt_rows": 68,
+      "both_valid_rows": 67,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 1,
+      "disagreement_row_ids": [
+        "breast_cancer:source:00007:85bb43827ef3811a"
       ]
     },
     {
@@ -8350,6 +11214,32 @@
       "shots_per_class": 0,
       "a_run_id": "wine__qwen_small__k0__jev-review",
       "b_run_id": "wine__qwen_main__k0__jev-review",
+      "same_label_identical_prompt_rows": 0,
+      "both_valid_rows": 0,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__qwen_small__k0__jev-review",
+      "b_run_id": "wine__smollm2__k0__jev-review",
+      "same_label_identical_prompt_rows": 36,
+      "both_valid_rows": 36,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__qwen_small__k0__jev-review",
+      "b_run_id": "wine__granite__k0__jev-review",
       "same_label_identical_prompt_rows": 0,
       "both_valid_rows": 0,
       "valid_output_disagreements": 0,
@@ -8401,6 +11291,34 @@
       "dataset": "wine",
       "shots_per_class": 4,
       "a_run_id": "wine__qwen_small__k4__jev-review",
+      "b_run_id": "wine__smollm2__k4__jev-review",
+      "same_label_identical_prompt_rows": 36,
+      "both_valid_rows": 36,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "wine:source:00118:8c019b47336603f7"
+      ]
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__qwen_small__k4__jev-review",
+      "b_run_id": "wine__granite__k4__jev-review",
+      "same_label_identical_prompt_rows": 36,
+      "both_valid_rows": 36,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__qwen_small__k4__jev-review",
       "b_run_id": "wine__luna__k4__jev-review",
       "same_label_identical_prompt_rows": 12,
       "both_valid_rows": 12,
@@ -8417,6 +11335,32 @@
       "b_run_id": "wine__astra__jev-review",
       "same_label_identical_prompt_rows": 12,
       "both_valid_rows": 12,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__qwen_main__k0__jev-review",
+      "b_run_id": "wine__smollm2__k0__jev-review",
+      "same_label_identical_prompt_rows": 0,
+      "both_valid_rows": 0,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__qwen_main__k0__jev-review",
+      "b_run_id": "wine__granite__k0__jev-review",
+      "same_label_identical_prompt_rows": 0,
+      "both_valid_rows": 0,
       "valid_output_disagreements": 0,
       "both_valid_resolved_model_mismatches": 0,
       "both_valid_unknown_resolved_model_rows": 0,
@@ -8464,6 +11408,32 @@
       "dataset": "wine",
       "shots_per_class": 4,
       "a_run_id": "wine__qwen3_4b__jev-review",
+      "b_run_id": "wine__smollm2__k4__jev-review",
+      "same_label_identical_prompt_rows": 9,
+      "both_valid_rows": 9,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__qwen3_4b__jev-review",
+      "b_run_id": "wine__granite__k4__jev-review",
+      "same_label_identical_prompt_rows": 9,
+      "both_valid_rows": 9,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__qwen3_4b__jev-review",
       "b_run_id": "wine__luna__k4__jev-review",
       "same_label_identical_prompt_rows": 29,
       "both_valid_rows": 29,
@@ -8482,6 +11452,140 @@
       "b_run_id": "wine__astra__jev-review",
       "same_label_identical_prompt_rows": 28,
       "both_valid_rows": 28,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__smollm2__k0__jev-review",
+      "b_run_id": "wine__granite__k0__jev-review",
+      "same_label_identical_prompt_rows": 0,
+      "both_valid_rows": 0,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__smollm2__k0__jev-review",
+      "b_run_id": "wine__luna__k0__jev-review",
+      "same_label_identical_prompt_rows": 6,
+      "both_valid_rows": 6,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__smollm2__k0__jev-review",
+      "b_run_id": "wine__astra__k0__jev-review",
+      "same_label_identical_prompt_rows": 12,
+      "both_valid_rows": 12,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__smollm2__k4__jev-review",
+      "b_run_id": "wine__granite__k4__jev-review",
+      "same_label_identical_prompt_rows": 36,
+      "both_valid_rows": 36,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "wine:source:00118:8c019b47336603f7"
+      ]
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__smollm2__k4__jev-review",
+      "b_run_id": "wine__luna__k4__jev-review",
+      "same_label_identical_prompt_rows": 12,
+      "both_valid_rows": 12,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__smollm2__k4__jev-review",
+      "b_run_id": "wine__astra__jev-review",
+      "same_label_identical_prompt_rows": 12,
+      "both_valid_rows": 12,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__granite__k0__jev-review",
+      "b_run_id": "wine__luna__k0__jev-review",
+      "same_label_identical_prompt_rows": 0,
+      "both_valid_rows": 0,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 0,
+      "a_run_id": "wine__granite__k0__jev-review",
+      "b_run_id": "wine__astra__k0__jev-review",
+      "same_label_identical_prompt_rows": 10,
+      "both_valid_rows": 10,
+      "valid_output_disagreements": 1,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": [
+        "wine:source:00175:3692b6bc2dd7cde9"
+      ]
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__granite__k4__jev-review",
+      "b_run_id": "wine__luna__k4__jev-review",
+      "same_label_identical_prompt_rows": 12,
+      "both_valid_rows": 12,
+      "valid_output_disagreements": 0,
+      "both_valid_resolved_model_mismatches": 0,
+      "both_valid_unknown_resolved_model_rows": 0,
+      "rows_with_either_review_failure": 0,
+      "disagreement_row_ids": []
+    },
+    {
+      "dataset": "wine",
+      "shots_per_class": 4,
+      "a_run_id": "wine__granite__k4__jev-review",
+      "b_run_id": "wine__astra__jev-review",
+      "same_label_identical_prompt_rows": 12,
+      "both_valid_rows": 12,
       "valid_output_disagreements": 0,
       "both_valid_resolved_model_mismatches": 0,
       "both_valid_unknown_resolved_model_rows": 0,

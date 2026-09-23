@@ -1,6 +1,6 @@
 # Added value of Jev review: offline numeric evidence
 
-**17/24 complete numeric review conditions are scored.** The other conditions remain unscored; no partial-run accuracy is used. Breast Cancer has 114 test cases, Wine 36, each on one frozen split. No text review conclusions are available here.
+**24/24 complete numeric review conditions are scored.** No partial-run accuracy is used. Breast Cancer has 114 test cases, Wine 36, each on one frozen split. This report covers numerical reviews; the text extension is reported separately.
 
 This analysis reconstructs raw predictions through the unchanged provenance/metric auditors. Source, direct Jev and review share the same held-out rows and matching zero/four examples per class. All failures count as incorrect. The machine report preserves each failure and its unknown reported charge; it does not convert unknown charges to zero.
 
@@ -17,6 +17,9 @@ Accuracy below is micro accuracy within each condition. Balanced accuracy and ma
 | Breast Cancer | Qwen3 4B | 0 | 61.4% | 93.0% | 84.2% | 38 | 2 | +36 | +10 |
 | Breast Cancer | Qwen3 4B | 4 | 86.0% | 93.0% | 93.0% | 10 | 2 | +8 | +0 |
 | Breast Cancer | SmolLM2 1.7B | 0 | 37.7% | 86.8% | 84.2% | 57 | 1 | +56 | +3 |
+| Breast Cancer | SmolLM2 1.7B | 4 | 37.7% | 89.5% | 93.0% | 62 | 3 | +59 | -4 |
+| Breast Cancer | Granite 3.3 2B | 0 | 37.7% | 86.0% | 84.2% | 57 | 2 | +55 | +2 |
+| Breast Cancer | Granite 3.3 2B | 4 | 61.4% | 92.1% | 93.0% | 38 | 3 | +35 | -1 |
 | Breast Cancer | GPT-5.6 Luna | 0 | 75.4% | 87.7% | 84.2% | 15 | 1 | +14 | +4 |
 | Breast Cancer | GPT-5.6 Luna | 4 | 91.2% | 92.1% | 93.0% | 3 | 2 | +1 | -1 |
 | Breast Cancer | GPT-6 Astra | 0 | 99.1% | 95.6% | 84.2% | 0 | 4 | -4 | +13 |
@@ -25,6 +28,10 @@ Accuracy below is micro accuracy within each condition. Balanced accuracy and ma
 | Wine | Qwen2.5 0.5B | 4 | 33.3% | 91.7% | 91.7% | 21 | 0 | +21 | +0 |
 | Wine | Qwen3 4B | 0 | 38.9% | 36.1% | 33.3% | 12 | 13 | -1 | +1 |
 | Wine | Qwen3 4B | 4 | 80.6% | 88.9% | 91.7% | 3 | 0 | +3 | -1 |
+| Wine | SmolLM2 1.7B | 0 | 33.3% | 33.3% | 33.3% | 0 | 0 | +0 | +0 |
+| Wine | SmolLM2 1.7B | 4 | 33.3% | 88.9% | 91.7% | 20 | 0 | +20 | -1 |
+| Wine | Granite 3.3 2B | 0 | 27.8% | 33.3% | 33.3% | 12 | 10 | +2 | +0 |
+| Wine | Granite 3.3 2B | 4 | 33.3% | 91.7% | 91.7% | 21 | 0 | +21 | +0 |
 | Wine | GPT-5.6 Luna | 0 | 47.2% | 38.9% | 33.3% | 7 | 10 | -3 | +2 |
 | Wine | GPT-5.6 Luna | 4 | 88.9% | 91.7% | 91.7% | 2 | 1 | +1 | +0 |
 | Wine | GPT-6 Astra | 0 | 100.0% | 44.4% | 33.3% | 0 | 20 | -20 | +4 |
@@ -34,7 +41,7 @@ The JSON supplies all eight joint correctness combinations for source/direct/rev
 
 ## Same proposed label means the same reviewer prompt
 
-Across 28 within-dataset/shot source pairs, 1260 row-pair comparisons had the same valid proposed label. All had exactly matching audited review-prompt hashes. Of 1255 comparisons with two valid review responses, 41 produced different final labels; 5 comparisons had at least one review failure. These are overlapping pairwise comparisons, not independent trials.
+Across 60 within-dataset/shot source pairs, 2331 row-pair comparisons had the same valid proposed label. All had exactly matching audited review-prompt hashes. Of 2308 comparisons with two valid review responses, 77 produced different final labels; 23 comparisons had at least one review failure. These are overlapping pairwise comparisons, not independent trials.
 
 The both-valid comparisons contain 0 resolved-model-ID mismatches and 0 unknown resolved-model comparisons. Per-run resolved IDs, start/completion times and execution sessions are preserved in the artifact inventory. Matching returned IDs do not establish an unchanged serving backend.
 
@@ -42,7 +49,7 @@ Source identity, confidence and rationale are absent from the reviewer prompt. T
 
 ## Fixed-coverage selective review
 
-Eligible conditions require a complete review, a local HF source, complete normalized class-sequence probabilities and at least two distinct source labels. Constant-label sources and hosted sources without probability scores are excluded. This leaves 4 conditions in the current snapshot. Eligibility depends on source outputs and completion, not test correctness; it defines the scope of this descriptive analysis.
+Eligible conditions require a complete review, a local HF source, complete normalized class-sequence probabilities and at least two distinct source labels. Constant-label sources and hosted sources without probability scores are excluded. This leaves 5 conditions in the current snapshot. Eligibility depends on source outputs and completion, not test correctness; it defines the scope of this descriptive analysis.
 
 Rank rows by ascending source maximum probability, with SHA-256(row ID) breaking ties. Select the nearest integer number of rows at predetermined 0/10/25/50/75/100% coverage (.5 rounds upward). No labels choose the rank, coverage, or threshold. This is a fixed-coverage batch simulation, not a validated deployable gate. Sequence likelihoods include numeric label plus EOS and are not calibrated probabilities of correctness.
 
@@ -68,6 +75,12 @@ Random matched-rate accuracy and balanced accuracy are exact expectations over u
 | Breast Cancer / Qwen3 4B / 4 | 57/114 | 93.0% | 93.4% | 0.927 | 89.5% | 10 | 2 | 114 + 57 |
 | Breast Cancer / Qwen3 4B / 4 | 86/114 | 93.0% | 93.4% | 0.927 | 91.3% | 10 | 2 | 114 + 86 |
 | Breast Cancer / Qwen3 4B / 4 | 114/114 | 93.0% | 93.4% | 0.927 | 93.0% | 10 | 2 | 114 + 114 |
+| Breast Cancer / Granite 3.3 2B / 4 | 0/114 | 61.4% | 69.0% | 0.606 | 61.4% | 0 | 0 | 114 + 0 |
+| Breast Cancer / Granite 3.3 2B / 4 | 11/114 | 67.5% | 73.9% | 0.673 | 64.4% | 7 | 0 | 114 + 11 |
+| Breast Cancer / Granite 3.3 2B / 4 | 29/114 | 76.3% | 81.0% | 0.763 | 69.2% | 17 | 0 | 114 + 29 |
+| Breast Cancer / Granite 3.3 2B / 4 | 57/114 | 86.8% | 89.4% | 0.867 | 76.8% | 29 | 0 | 114 + 57 |
+| Breast Cancer / Granite 3.3 2B / 4 | 86/114 | 92.1% | 92.3% | 0.917 | 84.6% | 38 | 3 | 114 + 86 |
+| Breast Cancer / Granite 3.3 2B / 4 | 114/114 | 92.1% | 92.3% | 0.917 | 92.1% | 38 | 3 | 114 + 114 |
 | Wine / Qwen3 4B / 4 | 0/36 | 80.6% | 82.1% | 0.809 | 80.6% | 0 | 0 | 36 + 0 |
 | Wine / Qwen3 4B / 4 | 4/36 | 83.3% | 84.9% | 0.836 | 81.5% | 1 | 0 | 36 + 4 |
 | Wine / Qwen3 4B / 4 | 9/36 | 83.3% | 84.9% | 0.836 | 82.6% | 1 | 0 | 36 + 9 |
@@ -79,6 +92,6 @@ Never-review needs one source inference per row. Always-review additionally requ
 
 ## Limits and next evidence needed
 
-These are exploratory analyses chosen after earlier test results were seen. The coverage grid is fixed before this analysis is calculated, but was not preregistered before the original outcomes existed. Do not select a winning coverage on these test cases and call it validated. Unknown serving outcomes remain recorded failures. 7 incomplete conditions and all text reviews remain outside scored comparisons.
+These are exploratory analyses chosen after earlier test results were seen. The coverage grid is fixed before this analysis is calculated, but was not preregistered before the original outcomes existed. Do not select a winning coverage on these test cases and call it validated. Unknown serving outcomes remain recorded failures. 0 incomplete conditions and all text reviews remain outside scored comparisons.
 
-Review versus existing direct Jev changes prompt wording as well as adding a proposal, and uses separate serving occasions. A same-prompt no-proposal control and randomized-proposal control are still needed to identify proposal value or anchoring causally. The familiar public datasets, one split, tiny Wine sample, restricted-label source scoring, repeated cases and mixed runtimes limit generalization. No architecture-wide or universal improvement claim follows.
+Review versus existing direct Jev changes prompt wording as well as adding a proposal, and uses separate serving occasions. The separate [matched proposal-control experiment](../review_controls/FINDINGS.md) changes only the proposal slot and reports its own execution status and comparisons; the historical direct-Jev arm is not that control. The familiar public datasets, one split, tiny Wine sample, restricted-label source scoring, repeated cases and mixed runtimes limit generalization. No architecture-wide or universal improvement claim follows.

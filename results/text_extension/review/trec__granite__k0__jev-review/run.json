@@ -1,0 +1,525 @@
+{
+  "bootstrap_samples": 1000,
+  "completed_at": "2026-09-23T18:31:44.384280+00:00",
+  "config": {
+    "api_key_env": "OPENROUTER_API_KEY",
+    "base_url": "https://openrouter.ai/api/v1",
+    "budget_guard": {
+      "aggregate_authorized_usd": "25.00",
+      "dataset": "trec",
+      "endpoint": "https://openrouter.ai/api/v1/systemone",
+      "fixed_prior_usd": "19.325827700",
+      "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+      "ledger_id": "f98dc1bc-b92f-4d71-8e4d-b91e38e4e8d8",
+      "model_key": "granite",
+      "numeric_reserved_allowance_usd": "4.032000000",
+      "price": {
+        "catalog_context_tokens": 32000,
+        "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+        "input_usd_per_million": "0.042",
+        "output_usd_per_million": "0",
+        "per_request_reserved_usd": "0.002688000",
+        "reserve_input_tokens": 64000,
+        "source": "https://openrouter.ai/typesafe/jev-1.13",
+        "verified_on": "2026-09-22"
+      },
+      "proposal_key": "granite_k0",
+      "review_prompt_version": "cached-label-text-review-v1",
+      "route": "OpenRouter",
+      "seed": 42,
+      "settlement_version": "verified-success-max-reported-or-token-cost-times-1.25-v1",
+      "shots_per_class": 0,
+      "source_files_sha256": {
+        "predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+        "run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+        "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+      },
+      "source_manifest_path": "results/text_extension/sources/trec__granite__k0.json",
+      "source_manifest_sha256": "70e17c1c37e6f6a6e924a62a7fbd57e766c2d5294f78f070f3629d7abf3fb1ee",
+      "source_registry_sha256": "b3425448e9a4478acf6762bfb37bb7d6df8090ffc49774f671820d11e5bd762d",
+      "source_run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
+      "source_shots_per_class": 0,
+      "stage_cap_usd": "1.60",
+      "text_review_wrapper_sha256": "bdc3d1cac8e52791359023b57abac8833d898af6ff7b0240512e337baa3ba43e",
+      "text_source_validator_sha256": "6f33dea3df79cb8523bcdb06b52105cdb7c0bb4be29f4d2ad1ceacf07c56c290",
+      "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+    },
+    "model": "typesafe/jev-1.13",
+    "provider": "jev",
+    "shots_per_class": 0,
+    "source_model": "ibm-granite/granite-3.3-2b-instruct",
+    "source_run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
+    "timeout": 120
+  },
+  "dataset": "trec",
+  "dataset_manifest": {
+    "duplicate_policy": {
+      "before_subsampling": true,
+      "heldout_priority": "test then validation then train",
+      "limitation": "Exact normalized text filtering does not detect semantic/phrase overlap or pretraining contamination",
+      "normalization": "Unicode NFKC, casefold, collapse whitespace; no punctuation or HTML changes",
+      "train_rows_removed_for_test_overlap": [
+        "trec:train:557:bb91a1e7bcab3092",
+        "trec:train:590:1775cc59d61c50e6",
+        "trec:train:697:9048b855a88fe25d",
+        "trec:train:1193:7de493d3bf5c3f8d",
+        "trec:train:2260:6e7d656896505632",
+        "trec:train:2344:ba284ce1d1c77222",
+        "trec:train:2582:25bc21427bd77698",
+        "trec:train:3133:c14c6bde920efec7",
+        "trec:train:3520:a4a5c4f6f77bdb75",
+        "trec:train:4876:1612ae58c364bb52",
+        "trec:train:5262:7a3cfef598dd9d5a"
+      ],
+      "train_rows_removed_for_validation_overlap": [
+        "trec:train:369:652c2f52ae461893",
+        "trec:train:464:652c2f52ae461893",
+        "trec:train:504:0808c12119c2adff",
+        "trec:train:727:dec02c2862534f49",
+        "trec:train:1009:def8143be9d2d54d",
+        "trec:train:1378:85134f2eed7c7722",
+        "trec:train:2003:85134f2eed7c7722",
+        "trec:train:2059:218f1c428ca57cd4",
+        "trec:train:4266:b8310680132cac01",
+        "trec:train:4542:b977b108221360e4"
+      ],
+      "within_split": "retain all natural duplicates, including final test; report counts"
+    },
+    "files_sha256": {
+      "test.jsonl": "c976747fdde4939e152cd22d869310cb18e1d87e1656a5886d3b4f382f0dec8c",
+      "train.jsonl": "c90e524693b0c3d15a81232320b8858bc03772ca848eee9fec07009ad8861824",
+      "validation.jsonl": "f7c354ee547c26c388b3730fd775a4c3101d26620d1ba91c9b07e6e58a4115a5"
+    },
+    "labels": [
+      "abbreviation",
+      "entity",
+      "description or abstract concept",
+      "human being",
+      "location",
+      "numeric value"
+    ],
+    "limits": {
+      "test": 200,
+      "train": 10000,
+      "validation": 1000
+    },
+    "name": "trec",
+    "post_transform_overlap_removed": {
+      "train": 0,
+      "validation": 0
+    },
+    "prepared_content_sha256": "bccc636a93d4afaa6eb6f60db3c6cb078373b05f32943b4ae6c201a5cfcb3aad",
+    "schema_version": 1,
+    "seed": 42,
+    "source": {
+      "card": "https://huggingface.co/datasets/CogComp/trec",
+      "files": {
+        "test": "default/test/0000.parquet",
+        "train": "default/train/0000.parquet"
+      },
+      "files_sha256": {
+        "test": "6aa889b0289e02760644caa22ac9aa833e79e34fb1f1ced69f745a078550c56e",
+        "train": "5ffb07b1cbd45e47b4dd1dd113dadd19e44eb260721114c6147e0ce6c1e47590"
+      },
+      "homepage": "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
+      "label_column": "coarse_label",
+      "labels": [
+        "abbreviation",
+        "entity",
+        "description or abstract concept",
+        "human being",
+        "location",
+        "numeric value"
+      ],
+      "license": "unknown; consult original source before redistribution",
+      "notes": "Six coarse classes in original label order ABBR, ENTY, DESC, HUM, LOC, NUM; 50 fine classes unused. Pinned converted Parquet avoids legacy remote code.",
+      "repo_id": "CogComp/trec",
+      "resolved_from": "refs/convert/parquet",
+      "revision": "65752bf53af25bc935a0dce92fb5b6c930728450",
+      "source": "huggingface_parquet",
+      "source_splits": {
+        "test": "test",
+        "train": "train"
+      },
+      "text_column": "text",
+      "validation_fraction": 0.1
+    },
+    "source_counts": {
+      "test": 500,
+      "train": 5452
+    },
+    "splits": {
+      "test": {
+        "class_counts": {
+          "0": 4,
+          "1": 38,
+          "2": 55,
+          "3": 26,
+          "4": 32,
+          "5": 45
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 0,
+        "row_ids_sha256": "7f0b3cc30379f483dc4d675eca14ee56a75aa020afaa5675129b6c8e3c26b417",
+        "rows": 200
+      },
+      "train": {
+        "class_counts": {
+          "0": 76,
+          "1": 1124,
+          "2": 1040,
+          "3": 1100,
+          "4": 750,
+          "5": 796
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 59,
+        "row_ids_sha256": "42f3b61b3514bef3e47d09153349113f0c5b2290f0c40d1780c9aac5ce326a92",
+        "rows": 4886
+      },
+      "validation": {
+        "class_counts": {
+          "0": 8,
+          "1": 125,
+          "2": 116,
+          "3": 122,
+          "4": 84,
+          "5": 90
+        },
+        "conflicting_label_text_groups": 0,
+        "duplicate_text_rows": 3,
+        "row_ids_sha256": "ca43aca8b49bc77f3bb9736bbccb3c8539b435a32c573aa32effc115bc6b8a24",
+        "rows": 545
+      }
+    },
+    "text_policy": {
+      "applies_to": "all splits and all model families",
+      "kind": "character_prefix",
+      "max_chars": 2000
+    },
+    "truncated_rows": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    },
+    "validation_fraction": 0.1
+  },
+  "environment": {
+    "packages": {
+      "accelerate": "1.15.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "peft": "0.21.0",
+      "pyarrow": "23.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.4",
+    "source_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608"
+  },
+  "execution": {
+    "automatic_retries": 0,
+    "concurrency": 1,
+    "latency_scope": "Jev review only; source stage recorded separately",
+    "max_total_review_requests": 4800,
+    "proposal_source": "cached_labels_only",
+    "source_and_reviewer_shots_matched": true
+  },
+  "execution_sessions": [
+    {
+      "cached_rows": 0,
+      "funding_check": {
+        "authenticated": true,
+        "checked_at": "2026-09-23T15:13:09.219629+00:00",
+        "endpoint": "https://openrouter.ai/api/v1/credits",
+        "http_status": 200,
+        "method": "GET",
+        "positive_available_credit": true
+      },
+      "started_at": "2026-09-23T18:19:05.291377+00:00"
+    }
+  ],
+  "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
+  "labels": [
+    "abbreviation",
+    "entity",
+    "description or abstract concept",
+    "human being",
+    "location",
+    "numeric value"
+  ],
+  "manifest_sha256": "d44f342fb000a58a037309a667697f2cf9c3720d52437298b5c50cbc239e333a",
+  "method": "cached_label_jev_review",
+  "method_label": "cached-label proposal + Jev text review",
+  "metrics": {
+    "accuracy": 0.395,
+    "balanced_accuracy": 0.4620725217764692,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.35,
+            0.445
+          ],
+          "estimate": 0.395
+        },
+        "macro_f1": {
+          "ci95": [
+            0.38185720415747376,
+            0.4785244823831435
+          ],
+          "estimate": 0.43115022349936144
+        }
+      },
+      "samples": 1000,
+      "seed": 42
+    },
+    "brier_sum": 0.7935715736040608,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        29,
+        0,
+        5,
+        0,
+        1
+      ],
+      [
+        0,
+        7,
+        47,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        8,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        13,
+        0,
+        17,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        32,
+        5,
+        4,
+        0,
+        0
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.287005076142132,
+    "failure_rate": 0.015000000000000013,
+    "input_tokens": 106091,
+    "input_tokens_coverage": 1.0,
+    "input_tokens_known_total": 106091,
+    "latency_p50_s": 2.012484582955949,
+    "latency_p95_s": 2.6084231097367585,
+    "log_loss": 2.642115191388156,
+    "macro_f1": 0.43115022349936144,
+    "n_classes": 6,
+    "n_failures": 3,
+    "n_probability_rows": 197,
+    "n_test": 200,
+    "output_tokens": 11800,
+    "output_tokens_coverage": 1.0,
+    "output_tokens_known_total": 11800,
+    "per_class": [
+      {
+        "f1": 1.0,
+        "label": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 4
+      },
+      {
+        "f1": 0.1111111111111111,
+        "label": 1,
+        "precision": 0.1875,
+        "recall": 0.07894736842105263,
+        "support": 38
+      },
+      {
+        "f1": 0.4895833333333333,
+        "label": 2,
+        "precision": 0.34306569343065696,
+        "recall": 0.8545454545454545,
+        "support": 55
+      },
+      {
+        "f1": 0.4,
+        "label": 3,
+        "precision": 0.5714285714285714,
+        "recall": 0.3076923076923077,
+        "support": 26
+      },
+      {
+        "f1": 0.5862068965517241,
+        "label": 4,
+        "precision": 0.6538461538461539,
+        "recall": 0.53125,
+        "support": 32
+      },
+      {
+        "f1": 0.0,
+        "label": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 45
+      }
+    ],
+    "prediction_time_s": 417.69947600062005,
+    "probability_coverage": 0.985,
+    "probability_renormalized_rows": 4,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 0.0,
+        "bin": 5,
+        "count": 3,
+        "mean_confidence": 0.38999999999999996
+      },
+      {
+        "accuracy": 0.08333333333333333,
+        "bin": 6,
+        "count": 12,
+        "mean_confidence": 0.4308333333333334
+      },
+      {
+        "accuracy": 0.3125,
+        "bin": 7,
+        "count": 32,
+        "mean_confidence": 0.506875
+      },
+      {
+        "accuracy": 0.3181818181818182,
+        "bin": 8,
+        "count": 22,
+        "mean_confidence": 0.5659090909090909
+      },
+      {
+        "accuracy": 0.4,
+        "bin": 9,
+        "count": 20,
+        "mean_confidence": 0.6275
+      },
+      {
+        "accuracy": 0.38461538461538464,
+        "bin": 10,
+        "count": 26,
+        "mean_confidence": 0.7000000000000001
+      },
+      {
+        "accuracy": 0.4074074074074074,
+        "bin": 11,
+        "count": 27,
+        "mean_confidence": 0.7685185185185185
+      },
+      {
+        "accuracy": 0.45454545454545453,
+        "bin": 12,
+        "count": 22,
+        "mean_confidence": 0.8272727272727273
+      },
+      {
+        "accuracy": 0.5,
+        "bin": 13,
+        "count": 16,
+        "mean_confidence": 0.9
+      },
+      {
+        "accuracy": 0.8235294117647058,
+        "bin": 14,
+        "count": 17,
+        "mean_confidence": 0.9664705882352941
+      }
+    ],
+    "valid_response_accuracy": 0.4010152284263959,
+    "zero_true_class_probability_rows": 7
+  },
+  "new_proposal_generation": false,
+  "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
+  "proposal": {
+    "hashes": {
+      "predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+      "run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+      "test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89"
+    },
+    "model": "ibm-granite/granite-3.3-2b-instruct",
+    "path": "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba",
+    "provider": "hf"
+  },
+  "run_id": "trec__granite__k0__jev-review",
+  "seed": 42,
+  "source_manifest_sha256": "70e17c1c37e6f6a6e924a62a7fbd57e766c2d5294f78f070f3629d7abf3fb1ee",
+  "started_at": "2026-09-23T18:19:05.284471+00:00",
+  "status": "complete",
+  "test_ids_sha256": "2cc832acac30d7611501a14ba5ac9609562ebbd121c421e6cfccc0870b2b26f2",
+  "training_example_ids": []
+}

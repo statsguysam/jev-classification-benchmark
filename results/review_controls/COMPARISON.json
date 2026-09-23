@@ -2,13 +2,13 @@
   "schema_version": 1,
   "study": "proposal-value-controls-v1",
   "study_role": "primary_full_fixed_holdouts",
-  "status": "pending_no_execution",
+  "status": "complete",
   "expected_requests": 1714,
-  "saved_requests": 0,
+  "saved_requests": 1714,
   "expected_primary_arms": 12,
-  "complete_primary_arms": 0,
+  "complete_primary_arms": 12,
   "expected_primary_contrasts": 8,
-  "complete_primary_contrasts": 0,
+  "complete_primary_contrasts": 8,
   "partial_arm_metrics_reported": false,
   "bootstrap_samples": 2000,
   "bootstrap_seed": 42,
@@ -16,134 +16,2686 @@
     {
       "dataset": "breast_cancer",
       "arm": "actual",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 114,
-      "saved_requests": 0,
+      "saved_requests": 114,
       "training_examples": 8,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 114,
+        "n_classes": 2,
+        "accuracy": 0.9298245614035088,
+        "macro_f1": 0.930008110300081,
+        "balanced_accuracy": 0.9344906649197511,
+        "failure_rate": 0.00877192982456143,
+        "n_failures": 1,
+        "confusion_matrix": [
+          [
+            41,
+            1,
+            1
+          ],
+          [
+            6,
+            65,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.8723404255319149,
+            "recall": 0.9534883720930233,
+            "f1": 0.9111111111111111,
+            "support": 43
+          },
+          {
+            "label": 1,
+            "precision": 0.9848484848484849,
+            "recall": 0.9154929577464789,
+            "f1": 0.948905109489051,
+            "support": 71
+          }
+        ],
+        "valid_response_accuracy": 0.9380530973451328,
+        "latency_p50_s": 0.7168611045344733,
+        "latency_p95_s": 2.620315885072341,
+        "prediction_time_s": 107.19269045139663,
+        "input_tokens": null,
+        "input_tokens_known_total": 460567,
+        "input_tokens_coverage": 0.9912280701754386,
+        "output_tokens": null,
+        "output_tokens_known_total": 3503,
+        "output_tokens_coverage": 0.9912280701754386,
+        "probability_coverage": 0.9912280701754386,
+        "n_probability_rows": 113,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.15990718100489282,
+        "brier_sum": 0.09548495575221239,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.0788495575221238,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.525,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 8,
+            "count": 2,
+            "mean_confidence": 0.5700000000000001,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 9,
+            "count": 3,
+            "mean_confidence": 0.6166666666666667,
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "bin": 10,
+            "count": 1,
+            "mean_confidence": 0.71,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 11,
+            "count": 5,
+            "mean_confidence": 0.764,
+            "accuracy": 0.4
+          },
+          {
+            "bin": 12,
+            "count": 10,
+            "mean_confidence": 0.834,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 20,
+            "mean_confidence": 0.9,
+            "accuracy": 0.95
+          },
+          {
+            "bin": 14,
+            "count": 70,
+            "mean_confidence": 0.984857142857143,
+            "accuracy": 1.0
+          }
+        ],
+        "roc_auc": 0.9906103286384977,
+        "average_precision": 0.9945630544204006,
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.9298245614035088,
+            "ci95": [
+              0.8771929824561403,
+              0.9736842105263158
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.930008110300081,
+            "ci95": [
+              0.8774572667149249,
+              0.9727598566308244
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "breast_cancer:source:00024:3cb4ff826c388a9d",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "breast_cancer",
       "arm": "no_proposal",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 114,
-      "saved_requests": 0,
+      "saved_requests": 114,
       "training_examples": 8,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 114,
+        "n_classes": 2,
+        "accuracy": 0.9298245614035088,
+        "macro_f1": 0.9253193580085162,
+        "balanced_accuracy": 0.9253193580085162,
+        "failure_rate": 0.0,
+        "n_failures": 0,
+        "confusion_matrix": [
+          [
+            39,
+            4,
+            0
+          ],
+          [
+            4,
+            67,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.9069767441860465,
+            "recall": 0.9069767441860465,
+            "f1": 0.9069767441860465,
+            "support": 43
+          },
+          {
+            "label": 1,
+            "precision": 0.9436619718309859,
+            "recall": 0.9436619718309859,
+            "f1": 0.9436619718309859,
+            "support": 71
+          }
+        ],
+        "valid_response_accuracy": 0.9298245614035088,
+        "latency_p50_s": 0.7015412710024975,
+        "latency_p95_s": 0.9633560141315672,
+        "prediction_time_s": 89.43060354457702,
+        "input_tokens": 464751,
+        "input_tokens_known_total": 464751,
+        "input_tokens_coverage": 1.0,
+        "output_tokens": 3534,
+        "output_tokens_known_total": 3534,
+        "output_tokens_coverage": 1.0,
+        "probability_coverage": 1.0,
+        "n_probability_rows": 114,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.14976510560619466,
+        "brier_sum": 0.08732280701754383,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.047368421052631546,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 8,
+            "count": 5,
+            "mean_confidence": 0.568,
+            "accuracy": 0.4
+          },
+          {
+            "bin": 9,
+            "count": 2,
+            "mean_confidence": 0.64,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 10,
+            "count": 4,
+            "mean_confidence": 0.7175,
+            "accuracy": 0.75
+          },
+          {
+            "bin": 11,
+            "count": 3,
+            "mean_confidence": 0.7733333333333334,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 12,
+            "count": 6,
+            "mean_confidence": 0.8483333333333333,
+            "accuracy": 0.8333333333333334
+          },
+          {
+            "bin": 13,
+            "count": 22,
+            "mean_confidence": 0.8954545454545456,
+            "accuracy": 0.9545454545454546
+          },
+          {
+            "bin": 14,
+            "count": 72,
+            "mean_confidence": 0.985,
+            "accuracy": 1.0
+          }
+        ],
+        "roc_auc": 0.9890271863740583,
+        "average_precision": 0.993119435242579,
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.9298245614035088,
+            "ci95": [
+              0.8771929824561403,
+              0.9736842105263158
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9253193580085162,
+            "ci95": [
+              0.8714975845410629,
+              0.9715828832571666
+            ]
+          }
+        }
+      },
+      "failures": []
     },
     {
       "dataset": "breast_cancer",
       "arm": "shuffled",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 114,
-      "saved_requests": 0,
+      "saved_requests": 114,
       "training_examples": 8,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 114,
+        "n_classes": 2,
+        "accuracy": 0.9298245614035088,
+        "macro_f1": 0.9328063241106719,
+        "balanced_accuracy": 0.9299050114641336,
+        "failure_rate": 0.01754385964912286,
+        "n_failures": 2,
+        "confusion_matrix": [
+          [
+            40,
+            1,
+            2
+          ],
+          [
+            5,
+            66,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.8888888888888888,
+            "recall": 0.9302325581395349,
+            "f1": 0.9090909090909091,
+            "support": 43
+          },
+          {
+            "label": 1,
+            "precision": 0.9850746268656716,
+            "recall": 0.9295774647887324,
+            "f1": 0.9565217391304348,
+            "support": 71
+          }
+        ],
+        "valid_response_accuracy": 0.9464285714285714,
+        "latency_p50_s": 0.7157466875505634,
+        "latency_p95_s": 1.0475879977282603,
+        "prediction_time_s": 89.32163508655503,
+        "input_tokens": null,
+        "input_tokens_known_total": 456489,
+        "input_tokens_coverage": 0.9824561403508771,
+        "output_tokens": null,
+        "output_tokens_known_total": 3472,
+        "output_tokens_coverage": 0.9824561403508771,
+        "probability_coverage": 0.9824561403508771,
+        "n_probability_rows": 112,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.18047326649008902,
+        "brier_sum": 0.10359821428571427,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.04651785714285706,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.5,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 8,
+            "count": 4,
+            "mean_confidence": 0.5625,
+            "accuracy": 0.75
+          },
+          {
+            "bin": 9,
+            "count": 3,
+            "mean_confidence": 0.6266666666666666,
+            "accuracy": 0.6666666666666666
+          },
+          {
+            "bin": 10,
+            "count": 5,
+            "mean_confidence": 0.7,
+            "accuracy": 0.8
+          },
+          {
+            "bin": 11,
+            "count": 4,
+            "mean_confidence": 0.7725000000000001,
+            "accuracy": 0.75
+          },
+          {
+            "bin": 12,
+            "count": 8,
+            "mean_confidence": 0.8262499999999999,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 24,
+            "mean_confidence": 0.9041666666666668,
+            "accuracy": 0.9166666666666666
+          },
+          {
+            "bin": 14,
+            "count": 62,
+            "mean_confidence": 0.9829032258064517,
+            "accuracy": 1.0
+          }
+        ],
+        "roc_auc": 0.9845413947097218,
+        "average_precision": 0.9904480101261739,
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.9298245614035088,
+            "ci95": [
+              0.8771929824561403,
+              0.9736842105263158
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9328063241106719,
+            "ci95": [
+              0.8825596600196142,
+              0.9742559014710914
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "breast_cancer:source:00329:55d1dc33326fbcb0",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        },
+        {
+          "row_id": "breast_cancer:source:00087:14097fb439513330",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "sst2",
       "arm": "actual",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 200,
-      "saved_requests": 0,
+      "saved_requests": 200,
       "training_examples": 8,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 200,
+        "n_classes": 2,
+        "accuracy": 0.96,
+        "macro_f1": 0.9624120603015075,
+        "balanced_accuracy": 0.9603841536614646,
+        "failure_rate": 0.0050000000000000044,
+        "n_failures": 1,
+        "confusion_matrix": [
+          [
+            96,
+            1,
+            1
+          ],
+          [
+            6,
+            96,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.9411764705882353,
+            "recall": 0.9795918367346939,
+            "f1": 0.96,
+            "support": 98
+          },
+          {
+            "label": 1,
+            "precision": 0.9896907216494846,
+            "recall": 0.9411764705882353,
+            "f1": 0.964824120603015,
+            "support": 102
+          }
+        ],
+        "valid_response_accuracy": 0.964824120603015,
+        "latency_p50_s": 0.699462708493229,
+        "latency_p95_s": 1.014011266996385,
+        "prediction_time_s": 152.18285808875225,
+        "input_tokens": null,
+        "input_tokens_known_total": 136509,
+        "input_tokens_coverage": 0.995,
+        "output_tokens": null,
+        "output_tokens_known_total": 6169,
+        "output_tokens_coverage": 0.995,
+        "probability_coverage": 0.995,
+        "n_probability_rows": 199,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.07862680248391411,
+        "brier_sum": 0.04296381909547739,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.02396984924623122,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.52,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 8,
+            "count": 2,
+            "mean_confidence": 0.58,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 9,
+            "count": 3,
+            "mean_confidence": 0.6433333333333334,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 10,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 11,
+            "count": 4,
+            "mean_confidence": 0.7625,
+            "accuracy": 0.75
+          },
+          {
+            "bin": 12,
+            "count": 5,
+            "mean_confidence": 0.82,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 7,
+            "mean_confidence": 0.91,
+            "accuracy": 0.8571428571428571
+          },
+          {
+            "bin": 14,
+            "count": 176,
+            "mean_confidence": 0.9953409090909091,
+            "accuracy": 0.9943181818181818
+          }
+        ],
+        "roc_auc": 0.998483929654336,
+        "average_precision": 0.998540105177975,
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.96,
+            "ci95": [
+              0.935,
+              0.985
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9624120603015075,
+            "ci95": [
+              0.934868107918535,
+              0.9870209192243091
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "sst2:validation:548:67513523b088c043",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "sst2",
       "arm": "no_proposal",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 200,
-      "saved_requests": 0,
+      "saved_requests": 200,
       "training_examples": 8,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 200,
+        "n_classes": 2,
+        "accuracy": 0.955,
+        "macro_f1": 0.9574099200964872,
+        "balanced_accuracy": 0.9554821928771509,
+        "failure_rate": 0.0050000000000000044,
+        "n_failures": 1,
+        "confusion_matrix": [
+          [
+            96,
+            1,
+            1
+          ],
+          [
+            7,
+            95,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.9320388349514563,
+            "recall": 0.9795918367346939,
+            "f1": 0.9552238805970149,
+            "support": 98
+          },
+          {
+            "label": 1,
+            "precision": 0.9895833333333334,
+            "recall": 0.9313725490196079,
+            "f1": 0.9595959595959596,
+            "support": 102
+          }
+        ],
+        "valid_response_accuracy": 0.9597989949748744,
+        "latency_p50_s": 0.7077957915025763,
+        "latency_p95_s": 1.3059767128492181,
+        "prediction_time_s": 285.74737633857876,
+        "input_tokens": null,
+        "input_tokens_known_total": 136684,
+        "input_tokens_coverage": 0.995,
+        "output_tokens": null,
+        "output_tokens_known_total": 6169,
+        "output_tokens_coverage": 0.995,
+        "probability_coverage": 0.995,
+        "n_probability_rows": 199,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.08028698749060094,
+        "brier_sum": 0.04490452261306532,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.024623115577889466,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 1,
+            "mean_confidence": 0.53,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 8,
+            "count": 2,
+            "mean_confidence": 0.58,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 9,
+            "count": 2,
+            "mean_confidence": 0.645,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 10,
+            "count": 3,
+            "mean_confidence": 0.71,
+            "accuracy": 0.6666666666666666
+          },
+          {
+            "bin": 11,
+            "count": 4,
+            "mean_confidence": 0.76,
+            "accuracy": 0.75
+          },
+          {
+            "bin": 12,
+            "count": 6,
+            "mean_confidence": 0.8399999999999999,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 7,
+            "mean_confidence": 0.9114285714285714,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 14,
+            "count": 174,
+            "mean_confidence": 0.9952298850574712,
+            "accuracy": 0.9942528735632183
+          }
+        ],
+        "roc_auc": 0.9980796442288256,
+        "average_precision": 0.9980950417405017,
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.955,
+            "ci95": [
+              0.925,
+              0.98
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9574099200964872,
+            "ci95": [
+              0.9273399014778325,
+              0.9825446473615176
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "sst2:validation:582:08db5c08a23cc22e",
+          "error": "network_error: connection failed or timed out; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "sst2",
       "arm": "shuffled",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 200,
-      "saved_requests": 0,
+      "saved_requests": 200,
       "training_examples": 8,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 200,
+        "n_classes": 2,
+        "accuracy": 0.94,
+        "macro_f1": 0.9447868256213376,
+        "balanced_accuracy": 0.9405762304921969,
+        "failure_rate": 0.010000000000000009,
+        "n_failures": 2,
+        "confusion_matrix": [
+          [
+            95,
+            1,
+            2
+          ],
+          [
+            9,
+            93,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.9134615384615384,
+            "recall": 0.9693877551020408,
+            "f1": 0.9405940594059405,
+            "support": 98
+          },
+          {
+            "label": 1,
+            "precision": 0.9893617021276596,
+            "recall": 0.9117647058823529,
+            "f1": 0.9489795918367347,
+            "support": 102
+          }
+        ],
+        "valid_response_accuracy": 0.9494949494949495,
+        "latency_p50_s": 0.6922484580427408,
+        "latency_p95_s": 1.0870732327923167,
+        "prediction_time_s": 302.70399690419436,
+        "input_tokens": null,
+        "input_tokens_known_total": 135852,
+        "input_tokens_coverage": 0.99,
+        "output_tokens": null,
+        "output_tokens_known_total": 6138,
+        "output_tokens_coverage": 0.99,
+        "probability_coverage": 0.99,
+        "n_probability_rows": 198,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.09179409216136632,
+        "brier_sum": 0.0543060606060606,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.023282828282828214,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.525,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 8,
+            "count": 2,
+            "mean_confidence": 0.545,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 9,
+            "count": 5,
+            "mean_confidence": 0.6180000000000001,
+            "accuracy": 0.4
+          },
+          {
+            "bin": 10,
+            "count": 1,
+            "mean_confidence": 0.68,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 11,
+            "count": 4,
+            "mean_confidence": 0.7650000000000001,
+            "accuracy": 0.75
+          },
+          {
+            "bin": 12,
+            "count": 8,
+            "mean_confidence": 0.8374999999999999,
+            "accuracy": 0.875
+          },
+          {
+            "bin": 13,
+            "count": 9,
+            "mean_confidence": 0.9244444444444445,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 14,
+            "count": 167,
+            "mean_confidence": 0.994131736526946,
+            "accuracy": 0.9940119760479041
+          }
+        ],
+        "roc_auc": 0.9974979575163399,
+        "average_precision": 0.9974519375403244,
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.94,
+            "ci95": [
+              0.905,
+              0.97
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9447868256213376,
+            "ci95": [
+              0.9109766637856526,
+              0.9748939268409028
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "sst2:validation:764:be10fb8a1e985185",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        },
+        {
+          "row_id": "sst2:validation:113:bd32211b376dadda",
+          "error": "network_error: connection failed or timed out; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "trec",
       "arm": "actual",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 200,
-      "saved_requests": 0,
+      "saved_requests": 200,
       "training_examples": 24,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 200,
+        "n_classes": 6,
+        "accuracy": 0.86,
+        "macro_f1": 0.8806411739884706,
+        "balanced_accuracy": 0.898987683856105,
+        "failure_rate": 0.0050000000000000044,
+        "n_failures": 1,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            33,
+            4,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            16,
+            37,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            26,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            28,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            44,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8888888888888888,
+            "support": 4
+          },
+          {
+            "label": 1,
+            "precision": 0.6226415094339622,
+            "recall": 0.868421052631579,
+            "f1": 0.7252747252747253,
+            "support": 38
+          },
+          {
+            "label": 2,
+            "precision": 0.8809523809523809,
+            "recall": 0.6727272727272727,
+            "f1": 0.7628865979381443,
+            "support": 55
+          },
+          {
+            "label": 3,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 26
+          },
+          {
+            "label": 4,
+            "precision": 0.9655172413793104,
+            "recall": 0.875,
+            "f1": 0.9180327868852459,
+            "support": 32
+          },
+          {
+            "label": 5,
+            "precision": 1.0,
+            "recall": 0.9777777777777777,
+            "f1": 0.9887640449438202,
+            "support": 45
+          }
+        ],
+        "valid_response_accuracy": 0.864321608040201,
+        "latency_p50_s": 0.6966009164461866,
+        "latency_p95_s": 1.8850840375933324,
+        "prediction_time_s": 170.84748788143042,
+        "input_tokens": null,
+        "input_tokens_known_total": 220189,
+        "input_tokens_coverage": 0.995,
+        "output_tokens": null,
+        "output_tokens_known_total": 11741,
+        "output_tokens_coverage": 0.995,
+        "probability_coverage": 0.995,
+        "n_probability_rows": 199,
+        "probability_renormalized_rows": 1,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.26948331632488504,
+        "brier_sum": 0.1635045226130653,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.05075376884422103,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 4,
+            "mean_confidence": 0.5125,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 8,
+            "count": 4,
+            "mean_confidence": 0.56,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 9,
+            "count": 11,
+            "mean_confidence": 0.6327272727272727,
+            "accuracy": 0.36363636363636365
+          },
+          {
+            "bin": 10,
+            "count": 13,
+            "mean_confidence": 0.7053846153846155,
+            "accuracy": 0.46153846153846156
+          },
+          {
+            "bin": 11,
+            "count": 5,
+            "mean_confidence": 0.756,
+            "accuracy": 0.8
+          },
+          {
+            "bin": 12,
+            "count": 16,
+            "mean_confidence": 0.835,
+            "accuracy": 0.8125
+          },
+          {
+            "bin": 13,
+            "count": 24,
+            "mean_confidence": 0.9025,
+            "accuracy": 0.9166666666666666
+          },
+          {
+            "bin": 14,
+            "count": 122,
+            "mean_confidence": 0.9855737704918034,
+            "accuracy": 0.9918032786885246
+          }
+        ],
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.86,
+            "ci95": [
+              0.81,
+              0.905
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.8806411739884706,
+            "ci95": [
+              0.7884789111417914,
+              0.9273036121065097
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "trec:test:423:dcadaf98fce8a3a4",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "trec",
       "arm": "no_proposal",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 200,
-      "saved_requests": 0,
+      "saved_requests": 200,
       "training_examples": 24,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 200,
+        "n_classes": 6,
+        "accuracy": 0.865,
+        "macro_f1": 0.8829418185480943,
+        "balanced_accuracy": 0.8986380335064545,
+        "failure_rate": 0.0050000000000000044,
+        "n_failures": 1,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            33,
+            4,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            14,
+            39,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            25,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            28,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            44,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8888888888888888,
+            "support": 4
+          },
+          {
+            "label": 1,
+            "precision": 0.6470588235294118,
+            "recall": 0.868421052631579,
+            "f1": 0.7415730337078652,
+            "support": 38
+          },
+          {
+            "label": 2,
+            "precision": 0.8666666666666667,
+            "recall": 0.7090909090909091,
+            "f1": 0.78,
+            "support": 55
+          },
+          {
+            "label": 3,
+            "precision": 1.0,
+            "recall": 0.9615384615384616,
+            "f1": 0.9803921568627451,
+            "support": 26
+          },
+          {
+            "label": 4,
+            "precision": 0.9655172413793104,
+            "recall": 0.875,
+            "f1": 0.9180327868852459,
+            "support": 32
+          },
+          {
+            "label": 5,
+            "precision": 1.0,
+            "recall": 0.9777777777777777,
+            "f1": 0.9887640449438202,
+            "support": 45
+          }
+        ],
+        "valid_response_accuracy": 0.8693467336683417,
+        "latency_p50_s": 0.6817423754837364,
+        "latency_p95_s": 0.9161847268173005,
+        "prediction_time_s": 151.8650069553405,
+        "input_tokens": 221491,
+        "input_tokens_known_total": 221491,
+        "input_tokens_coverage": 1.0,
+        "output_tokens": 11800,
+        "output_tokens_known_total": 11800,
+        "output_tokens_coverage": 1.0,
+        "probability_coverage": 0.995,
+        "n_probability_rows": 199,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.2723247614342904,
+        "brier_sum": 0.16523819095477385,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.04306532663316578,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 1,
+            "mean_confidence": 0.35000000000000003,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 5,
+            "mean_confidence": 0.506,
+            "accuracy": 0.4
+          },
+          {
+            "bin": 8,
+            "count": 7,
+            "mean_confidence": 0.5685714285714286,
+            "accuracy": 0.14285714285714285
+          },
+          {
+            "bin": 9,
+            "count": 6,
+            "mean_confidence": 0.6383333333333333,
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "bin": 10,
+            "count": 11,
+            "mean_confidence": 0.6990909090909091,
+            "accuracy": 0.7272727272727273
+          },
+          {
+            "bin": 11,
+            "count": 11,
+            "mean_confidence": 0.7654545454545455,
+            "accuracy": 0.7272727272727273
+          },
+          {
+            "bin": 12,
+            "count": 12,
+            "mean_confidence": 0.8316666666666666,
+            "accuracy": 0.8333333333333334
+          },
+          {
+            "bin": 13,
+            "count": 18,
+            "mean_confidence": 0.8988888888888888,
+            "accuracy": 0.8333333333333334
+          },
+          {
+            "bin": 14,
+            "count": 128,
+            "mean_confidence": 0.9847656250000001,
+            "accuracy": 0.9921875
+          }
+        ],
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.865,
+            "ci95": [
+              0.815,
+              0.91
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.8829418185480943,
+            "ci95": [
+              0.7910983809367285,
+              0.9281060361432699
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "trec:test:222:f3b733cb2df8b6ab",
+          "error": "invalid_output: probabilities do not sum to one",
+          "reported_cost_usd": "0.000046536"
+        }
+      ]
     },
     {
       "dataset": "trec",
       "arm": "shuffled",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 200,
-      "saved_requests": 0,
+      "saved_requests": 200,
       "training_examples": 24,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 200,
+        "n_classes": 6,
+        "accuracy": 0.88,
+        "macro_f1": 0.8967631108775945,
+        "balanced_accuracy": 0.9132869262803474,
+        "failure_rate": 0.010000000000000009,
+        "n_failures": 2,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            33,
+            4,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            12,
+            40,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            26,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0,
+            29,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            44,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8888888888888888,
+            "support": 4
+          },
+          {
+            "label": 1,
+            "precision": 0.6875,
+            "recall": 0.868421052631579,
+            "f1": 0.7674418604651163,
+            "support": 38
+          },
+          {
+            "label": 2,
+            "precision": 0.8888888888888888,
+            "recall": 0.7272727272727273,
+            "f1": 0.8,
+            "support": 55
+          },
+          {
+            "label": 3,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 26
+          },
+          {
+            "label": 4,
+            "precision": 0.9666666666666667,
+            "recall": 0.90625,
+            "f1": 0.9354838709677419,
+            "support": 32
+          },
+          {
+            "label": 5,
+            "precision": 1.0,
+            "recall": 0.9777777777777777,
+            "f1": 0.9887640449438202,
+            "support": 45
+          }
+        ],
+        "valid_response_accuracy": 0.8888888888888888,
+        "latency_p50_s": 0.6859200624749064,
+        "latency_p95_s": 0.9044796478818168,
+        "prediction_time_s": 151.1928704981692,
+        "input_tokens": null,
+        "input_tokens_known_total": 220186,
+        "input_tokens_coverage": 0.995,
+        "output_tokens": null,
+        "output_tokens_known_total": 11741,
+        "output_tokens_coverage": 0.995,
+        "probability_coverage": 0.99,
+        "n_probability_rows": 198,
+        "probability_renormalized_rows": 3,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.24902689685876594,
+        "brier_sum": 0.15068989898989898,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.05590909090909089,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 1,
+            "mean_confidence": 0.36,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 6,
+            "count": 1,
+            "mean_confidence": 0.45,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.52,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 8,
+            "count": 6,
+            "mean_confidence": 0.5666666666666667,
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "bin": 9,
+            "count": 8,
+            "mean_confidence": 0.625,
+            "accuracy": 0.375
+          },
+          {
+            "bin": 10,
+            "count": 10,
+            "mean_confidence": 0.697,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 11,
+            "count": 6,
+            "mean_confidence": 0.7533333333333333,
+            "accuracy": 0.8333333333333334
+          },
+          {
+            "bin": 12,
+            "count": 19,
+            "mean_confidence": 0.8310526315789474,
+            "accuracy": 0.8947368421052632
+          },
+          {
+            "bin": 13,
+            "count": 21,
+            "mean_confidence": 0.9033333333333333,
+            "accuracy": 0.8571428571428571
+          },
+          {
+            "bin": 14,
+            "count": 124,
+            "mean_confidence": 0.9839516129032259,
+            "accuracy": 0.9919354838709677
+          }
+        ],
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.88,
+            "ci95": [
+              0.835,
+              0.925
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.8967631108775945,
+            "ci95": [
+              0.8106575897041975,
+              0.9407905042189556
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "trec:test:105:9938d04349f64b6c",
+          "error": "invalid_output: probabilities do not sum to one",
+          "reported_cost_usd": "0.000046326"
+        },
+        {
+          "row_id": "trec:test:329:1612ae58c364bb52",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "wine",
       "arm": "actual",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 36,
-      "saved_requests": 0,
+      "saved_requests": 36,
       "training_examples": 12,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 36,
+        "n_classes": 3,
+        "accuracy": 0.8611111111111112,
+        "macro_f1": 0.8753623188405797,
+        "balanced_accuracy": 0.876984126984127,
+        "failure_rate": 0.02777777777777779,
+        "n_failures": 1,
+        "confusion_matrix": [
+          [
+            11,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            3,
+            1
+          ],
+          [
+            0,
+            0,
+            10,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          2,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 12
+          },
+          {
+            "label": 1,
+            "precision": 0.9090909090909091,
+            "recall": 0.7142857142857143,
+            "f1": 0.8,
+            "support": 14
+          },
+          {
+            "label": 2,
+            "precision": 0.7692307692307693,
+            "recall": 1.0,
+            "f1": 0.8695652173913043,
+            "support": 10
+          }
+        ],
+        "valid_response_accuracy": 0.8857142857142857,
+        "latency_p50_s": 0.7280786460032687,
+        "latency_p95_s": 1.8971668335143477,
+        "prediction_time_s": 32.21682312467601,
+        "input_tokens": 104990,
+        "input_tokens_known_total": 104990,
+        "input_tokens_coverage": 1.0,
+        "output_tokens": 1368,
+        "output_tokens_known_total": 1368,
+        "output_tokens_coverage": 1.0,
+        "probability_coverage": 0.9722222222222222,
+        "n_probability_rows": 35,
+        "probability_renormalized_rows": 0,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.23190736696732617,
+        "brier_sum": 0.13439428571428574,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.09942857142857146,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.505,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 8,
+            "count": 2,
+            "mean_confidence": 0.55,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 9,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 10,
+            "count": 1,
+            "mean_confidence": 0.72,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 11,
+            "count": 1,
+            "mean_confidence": 0.74,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 12,
+            "count": 5,
+            "mean_confidence": 0.8160000000000001,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 5,
+            "mean_confidence": 0.8960000000000001,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 14,
+            "count": 19,
+            "mean_confidence": 0.9752631578947367,
+            "accuracy": 1.0
+          }
+        ],
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.8611111111111112,
+            "ci95": [
+              0.75,
+              0.9722222222222222
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.8753623188405797,
+            "ci95": [
+              0.7554020620956104,
+              0.9670259329538268
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "wine:source:00060:7636e616346c5ee1",
+          "error": "invalid_output: probabilities do not sum to one",
+          "reported_cost_usd": "0.000122514"
+        }
+      ]
     },
     {
       "dataset": "wine",
       "arm": "no_proposal",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 36,
-      "saved_requests": 0,
+      "saved_requests": 36,
       "training_examples": 12,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 36,
+        "n_classes": 3,
+        "accuracy": 0.8611111111111112,
+        "macro_f1": 0.8863636363636364,
+        "balanced_accuracy": 0.876984126984127,
+        "failure_rate": 0.05555555555555558,
+        "n_failures": 2,
+        "confusion_matrix": [
+          [
+            11,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            10,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            10,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          2,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 0.9166666666666666,
+            "recall": 0.9166666666666666,
+            "f1": 0.9166666666666666,
+            "support": 12
+          },
+          {
+            "label": 1,
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "f1": 0.8333333333333334,
+            "support": 14
+          },
+          {
+            "label": 2,
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091,
+            "support": 10
+          }
+        ],
+        "valid_response_accuracy": 0.9117647058823529,
+        "latency_p50_s": 0.7219661045237444,
+        "latency_p95_s": 0.9115613232424948,
+        "prediction_time_s": 30.144908002926968,
+        "input_tokens": null,
+        "input_tokens_known_total": 99188,
+        "input_tokens_coverage": 0.9444444444444444,
+        "output_tokens": null,
+        "output_tokens_known_total": 1292,
+        "output_tokens_coverage": 0.9444444444444444,
+        "probability_coverage": 0.9444444444444444,
+        "n_probability_rows": 34,
+        "probability_renormalized_rows": 1,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.2393258164473816,
+        "brier_sum": 0.12538235294117644,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.09882352941176464,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 8,
+            "count": 2,
+            "mean_confidence": 0.5700000000000001,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 9,
+            "count": 4,
+            "mean_confidence": 0.6225,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 10,
+            "count": 3,
+            "mean_confidence": 0.7166666666666667,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 11,
+            "count": 2,
+            "mean_confidence": 0.755,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 12,
+            "count": 3,
+            "mean_confidence": 0.8466666666666667,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 6,
+            "mean_confidence": 0.9066666666666667,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 14,
+            "count": 14,
+            "mean_confidence": 0.9735714285714288,
+            "accuracy": 1.0
+          }
+        ],
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.8611111111111112,
+            "ci95": [
+              0.75,
+              0.9722222222222222
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.8863636363636364,
+            "ci95": [
+              0.7720804754833791,
+              0.9740259740259741
+            ]
+          }
+        }
+      },
+      "failures": [
+        {
+          "row_id": "wine:source:00000:222a17893d32a98e",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        },
+        {
+          "row_id": "wine:source:00090:e48f46e7869379f9",
+          "error": "http_error: status=529; no automatic retry",
+          "reported_cost_usd": null
+        }
+      ]
     },
     {
       "dataset": "wine",
       "arm": "shuffled",
-      "status": "pending",
+      "status": "complete",
       "expected_requests": 36,
-      "saved_requests": 0,
+      "saved_requests": 36,
       "training_examples": 12,
-      "metrics": null,
-      "group_bootstrap": null,
-      "failures": null
+      "metrics": {
+        "n_test": 36,
+        "n_classes": 3,
+        "accuracy": 0.8888888888888888,
+        "macro_f1": 0.890746934225195,
+        "balanced_accuracy": 0.9007936507936508,
+        "failure_rate": 0.0,
+        "n_failures": 0,
+        "confusion_matrix": [
+          [
+            11,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            10,
+            0
+          ]
+        ],
+        "confusion_matrix_columns": [
+          0,
+          1,
+          2,
+          "failure"
+        ],
+        "per_class": [
+          {
+            "label": 0,
+            "precision": 1.0,
+            "recall": 0.9166666666666666,
+            "f1": 0.9565217391304348,
+            "support": 12
+          },
+          {
+            "label": 1,
+            "precision": 0.9166666666666666,
+            "recall": 0.7857142857142857,
+            "f1": 0.8461538461538461,
+            "support": 14
+          },
+          {
+            "label": 2,
+            "precision": 0.7692307692307693,
+            "recall": 1.0,
+            "f1": 0.8695652173913043,
+            "support": 10
+          }
+        ],
+        "valid_response_accuracy": 0.8888888888888888,
+        "latency_p50_s": 0.6746949795051478,
+        "latency_p95_s": 1.247626875527203,
+        "prediction_time_s": 27.93115520675201,
+        "input_tokens": 104990,
+        "input_tokens_known_total": 104990,
+        "input_tokens_coverage": 1.0,
+        "output_tokens": 1368,
+        "output_tokens_known_total": 1368,
+        "output_tokens_coverage": 1.0,
+        "probability_coverage": 1.0,
+        "n_probability_rows": 36,
+        "probability_renormalized_rows": 1,
+        "zero_true_class_probability_rows": 0,
+        "log_loss": 0.2883701701201729,
+        "brier_sum": 0.15296111111111113,
+        "chosen_label_argmax_disagreement_rows": 0,
+        "ece_15_equal_width": 0.1005555555555556,
+        "reliability_bins": [
+          {
+            "bin": 0,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 1,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 2,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 3,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 4,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 5,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 6,
+            "count": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "bin": 7,
+            "count": 2,
+            "mean_confidence": 0.52,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 8,
+            "count": 4,
+            "mean_confidence": 0.5575,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 9,
+            "count": 1,
+            "mean_confidence": 0.6,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 10,
+            "count": 3,
+            "mean_confidence": 0.7133333333333334,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 11,
+            "count": 3,
+            "mean_confidence": 0.7666666666666666,
+            "accuracy": 0.6666666666666666
+          },
+          {
+            "bin": 12,
+            "count": 2,
+            "mean_confidence": 0.825,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 13,
+            "count": 9,
+            "mean_confidence": 0.8988888888888888,
+            "accuracy": 1.0
+          },
+          {
+            "bin": 14,
+            "count": 12,
+            "mean_confidence": 0.9558333333333332,
+            "accuracy": 1.0
+          }
+        ],
+        "balanced_accuracy_missing_classes": [],
+        "balanced_accuracy_status": "available"
+      },
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.8888888888888888,
+            "ci95": [
+              0.7777777777777778,
+              0.9722222222222222
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.890746934225195,
+            "ci95": [
+              0.7778556376273142,
+              0.9743318269180821
+            ]
+          }
+        }
+      },
+      "failures": []
     }
   ],
   "comparisons": [
@@ -152,10 +2704,51 @@
       "contrast": "actual_minus_no_proposal",
       "a": "actual",
       "b": "no_proposal",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.04385964912280704,
+              0.04385964912280704
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.004688752291564846,
+            "ci95": [
+              -0.03809710527525365,
+              0.04928157302913278
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": 0.009171306911234911,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 3,
+        "both_correct": 103,
+        "both_wrong": 5,
+        "changed_predictions": 6,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -163,10 +2756,51 @@
       "contrast": "actual_minus_shuffled",
       "a": "actual",
       "b": "shuffled",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.03508771929824561,
+              0.03508771929824561
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.002798213810590866,
+            "ci95": [
+              -0.031677485831628854,
+              0.024252996103227568
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": 0.0045856534556174555,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 2,
+        "both_correct": 104,
+        "both_wrong": 6,
+        "changed_predictions": 4,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 2,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -174,10 +2808,51 @@
       "contrast": "actual_minus_no_proposal",
       "a": "actual",
       "b": "no_proposal",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0050000000000000044,
+            "ci95": [
+              -0.010000000000000009,
+              0.02499999999999991
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.005002140205020322,
+            "ci95": [
+              -0.0052584300578830566,
+              0.018621465792910304
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": 0.004901960784313708,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 1,
+        "both_correct": 190,
+        "both_wrong": 7,
+        "changed_predictions": 3,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 1,
+        "accuracy_delta_pp": 0.5
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -185,10 +2860,51 @@
       "contrast": "actual_minus_shuffled",
       "a": "actual",
       "b": "shuffled",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.020000000000000018,
+            "ci95": [
+              0.0,
+              0.04499999999999993
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.017625234680169855,
+            "ci95": [
+              0.0,
+              0.037980154394907144
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": 0.019807923169267716,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 5,
+        "correct_to_wrong": 1,
+        "both_correct": 187,
+        "both_wrong": 7,
+        "changed_predictions": 6,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 2,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 4,
+        "accuracy_delta_pp": 2.0
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -196,10 +2912,51 @@
       "contrast": "actual_minus_no_proposal",
       "a": "actual",
       "b": "no_proposal",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": -0.0050000000000000044,
+            "ci95": [
+              -0.030000000000000027,
+              0.015000000000000013
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.0023006445596236436,
+            "ci95": [
+              -0.0174194158070277,
+              0.01240538085467581
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": 0.00034965034965039887,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 3,
+        "both_correct": 170,
+        "both_wrong": 25,
+        "changed_predictions": 5,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 1,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -0.5
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -207,10 +2964,51 @@
       "contrast": "actual_minus_shuffled",
       "a": "actual",
       "b": "shuffled",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 200,
+        "n_groups": 200,
+        "draws_per_replicate": 200,
+        "resampled_row_count_range": [
+          200,
+          200
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": -0.020000000000000018,
+            "ci95": [
+              -0.040000000000000036,
+              -0.0050000000000000044
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.01612193688912389,
+            "ci95": [
+              -0.032258995555323966,
+              -0.004787152102110083
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": -0.014299242424242409,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 4,
+        "both_correct": 172,
+        "both_wrong": 24,
+        "changed_predictions": 6,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 3,
+        "source_failure_rows": 2,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": -4,
+        "accuracy_delta_pp": -2.0
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -218,10 +3016,51 @@
       "contrast": "actual_minus_no_proposal",
       "a": "actual",
       "b": "no_proposal",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.13888888888888884,
+              0.13888888888888884
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.011001317523056664,
+            "ci95": [
+              -0.12757824869078066,
+              0.10580860835699542
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": 0.0,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 3,
+        "both_correct": 28,
+        "both_wrong": 2,
+        "changed_predictions": 6,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 2,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     },
     {
@@ -229,22 +3068,236 @@
       "contrast": "actual_minus_shuffled",
       "a": "actual",
       "b": "shuffled",
-      "status": "pending",
-      "paired_group_bootstrap": null,
-      "balanced_accuracy_delta": null,
-      "transitions_B_to_A": null,
+      "status": "complete",
+      "paired_group_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": -0.02777777777777768,
+            "ci95": [
+              -0.08333333333333337,
+              0.0
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.01538461538461533,
+            "ci95": [
+              -0.056868474364968016,
+              0.0
+            ]
+          }
+        }
+      },
+      "balanced_accuracy_delta": -0.023809523809523836,
+      "transitions_B_to_A": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 1,
+        "both_correct": 31,
+        "both_wrong": 4,
+        "changed_predictions": 1,
+        "correct_to_failure": 1,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": -1,
+        "accuracy_delta_pp": -2.7777777777777777
+      },
       "interpretation": "A minus B; exploratory unadjusted interval conditional on frozen cases, prompts, examples and served responses"
     }
   ],
   "serving_repeat_diagnostic": {
-    "status": "pending",
+    "status": "complete",
     "expected_pairs": 64,
-    "available_complete_pairs": 0,
-    "counts": null,
-    "by_dataset": null,
-    "interpretation": "Descriptive, prospectively selected identical-prompt pairs; not independent architecture trials or proof of deterministic serving. Failures remain separate from label disagreements."
+    "available_complete_pairs": 64,
+    "counts": {
+      "both_valid": 62,
+      "valid_label_agreement": 62,
+      "valid_label_disagreement": 0,
+      "reference_failed_only": 1,
+      "repeat_failed_only": 0,
+      "both_failed": 1,
+      "resolved_model_mismatch_among_valid": 0,
+      "unknown_resolved_model_among_valid": 0
+    },
+    "by_dataset": {
+      "sst2": {
+        "both_valid": 15,
+        "valid_label_agreement": 15,
+        "valid_label_disagreement": 0,
+        "reference_failed_only": 0,
+        "repeat_failed_only": 0,
+        "both_failed": 1,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0
+      },
+      "trec": {
+        "both_valid": 16,
+        "valid_label_agreement": 16,
+        "valid_label_disagreement": 0,
+        "reference_failed_only": 0,
+        "repeat_failed_only": 0,
+        "both_failed": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0
+      },
+      "breast_cancer": {
+        "both_valid": 16,
+        "valid_label_agreement": 16,
+        "valid_label_disagreement": 0,
+        "reference_failed_only": 0,
+        "repeat_failed_only": 0,
+        "both_failed": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0
+      },
+      "wine": {
+        "both_valid": 15,
+        "valid_label_agreement": 15,
+        "valid_label_disagreement": 0,
+        "reference_failed_only": 1,
+        "repeat_failed_only": 0,
+        "both_failed": 0,
+        "resolved_model_mismatch_among_valid": 0,
+        "unknown_resolved_model_among_valid": 0
+      }
+    },
+    "interpretation": "Descriptive, prospectively selected identical-prompt pairs; not independent architecture trials or proof of deterministic serving. Failures remain separate from label disagreements.",
+    "valid_pair_agreement": 1.0,
+    "valid_agreement_fraction_of_all_pairs": 0.96875
   },
-  "saved_failure_records": [],
+  "saved_failure_records": [
+    {
+      "request_id": "breast_cancer__case-6b61f05e23a0455b15283872__actual",
+      "dataset": "breast_cancer",
+      "arm": "actual",
+      "row_id": "breast_cancer:source:00024:3cb4ff826c388a9d",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "trec__case-7c710ba527b7f2a8c1152cdc__no_proposal",
+      "dataset": "trec",
+      "arm": "no_proposal",
+      "row_id": "trec:test:222:f3b733cb2df8b6ab",
+      "error": "invalid_output: probabilities do not sum to one",
+      "reported_cost_usd": "0.000046536"
+    },
+    {
+      "request_id": "sst2__case-b158353d29df5eff78bdec39__shuffled",
+      "dataset": "sst2",
+      "arm": "shuffled",
+      "row_id": "sst2:validation:113:bd32211b376dadda",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "sst2__case-e4cac8b08681c5991fb99201__shuffled",
+      "dataset": "sst2",
+      "arm": "shuffled",
+      "row_id": "sst2:validation:764:be10fb8a1e985185",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "trec__case-057d6da4a19876c9d238ff37__shuffled",
+      "dataset": "trec",
+      "arm": "shuffled",
+      "row_id": "trec:test:105:9938d04349f64b6c",
+      "error": "invalid_output: probabilities do not sum to one",
+      "reported_cost_usd": "0.000046326"
+    },
+    {
+      "request_id": "wine__case-e44fc6d1a5600e90c963ade4__no_proposal",
+      "dataset": "wine",
+      "arm": "no_proposal",
+      "row_id": "wine:source:00000:222a17893d32a98e",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "sst2__case-efcfc83e7721baed2b2f5d39__no_proposal",
+      "dataset": "sst2",
+      "arm": "no_proposal",
+      "row_id": "sst2:validation:582:08db5c08a23cc22e",
+      "error": "network_error: connection failed or timed out; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "sst2__case-4ed6833d33ad6b5d8e479409__actual",
+      "dataset": "sst2",
+      "arm": "actual",
+      "row_id": "sst2:validation:548:67513523b088c043",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "sst2__case-efcfc83e7721baed2b2f5d39__no_proposal_repeat",
+      "dataset": "sst2",
+      "arm": "no_proposal_repeat",
+      "row_id": "sst2:validation:582:08db5c08a23cc22e",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "wine__case-f69bd5725556ae0802300a19__no_proposal",
+      "dataset": "wine",
+      "arm": "no_proposal",
+      "row_id": "wine:source:00090:e48f46e7869379f9",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "breast_cancer__case-a061a8b5c83165d94b6314b0__shuffled",
+      "dataset": "breast_cancer",
+      "arm": "shuffled",
+      "row_id": "breast_cancer:source:00329:55d1dc33326fbcb0",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "wine__case-4c54c4c03b05f87481212365__actual",
+      "dataset": "wine",
+      "arm": "actual",
+      "row_id": "wine:source:00060:7636e616346c5ee1",
+      "error": "invalid_output: probabilities do not sum to one",
+      "reported_cost_usd": "0.000122514"
+    },
+    {
+      "request_id": "trec__case-7a6520d8d2f10640ad3c60ff__shuffled",
+      "dataset": "trec",
+      "arm": "shuffled",
+      "row_id": "trec:test:329:1612ae58c364bb52",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "breast_cancer__case-133bcc33edd4d4cd78dc03d6__shuffled",
+      "dataset": "breast_cancer",
+      "arm": "shuffled",
+      "row_id": "breast_cancer:source:00087:14097fb439513330",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    },
+    {
+      "request_id": "trec__case-4dc358288510b3cdbdc7db35__actual",
+      "dataset": "trec",
+      "arm": "actual",
+      "row_id": "trec:test:423:dcadaf98fce8a3a4",
+      "error": "http_error: status=529; no automatic retry",
+      "reported_cost_usd": null
+    }
+  ],
   "limitations": [
     "Existing holdouts were already observed; this is exploratory, not a fresh confirmatory test.",
     "Only the proposal-slot value differs; no-proposal uses an explicit not-provided slot.",
@@ -255,9 +3308,42 @@
     "No aggregate winner, causal architecture claim, deployable confidence threshold, or dollar savings is established."
   ],
   "execution": {
-    "status": "not_started",
-    "budget": null,
-    "artifact_sha256": {}
+    "status": "complete",
+    "started_at": "2026-09-23T19:08:31.102209+00:00",
+    "completed_at": "2026-09-23T19:43:41.418500+00:00",
+    "execution_sessions": [
+      {
+        "funding_check": {
+          "authenticated": true,
+          "checked_at": "2026-09-23T19:08:31.082738+00:00",
+          "endpoint": "https://openrouter.ai/api/v1/credits",
+          "http_status": 200,
+          "method": "GET",
+          "positive_available_credit": true
+        },
+        "saved_requests": 0,
+        "started_at": "2026-09-23T19:08:31.102230+00:00"
+      }
+    ],
+    "budget": {
+      "ledger_id": "b5e362c1-6b01-455c-a577-04bc4e4de7cb",
+      "budget_usd": "1.122234029",
+      "charged_or_reserved_usd": "0.192398804",
+      "remaining_reservation_usd": "0.929835225",
+      "reservations": 1714,
+      "settlements": 1699,
+      "events": 5128,
+      "halted": false
+    },
+    "artifact_sha256": {
+      "run.json": "2cc5336ba2189e3d11f7ef91e3892a5209644445e4a87776f5f117320cc6d7be",
+      "predictions.jsonl": "0175c3a99498ad02cf6990d633b8331611d19e7169d757e7c2e6078b8dc7f945",
+      "budget.jsonl": "cf4b29351ce7d387f6a50b04da17a4035b67884c09efd4a93a50e28167cb2e8e",
+      "budget.jsonl.lock": "bb462a59959eeddbf8b41f023a8c8fc9adc64576ce77ed670d94bad1c35618a1"
+    },
+    "resolved_models": [
+      "typesafe/jev-1.13-20260917"
+    ]
   },
   "protocol": {
     "path": "results/review_controls/prepared_full/protocol.json",
@@ -1753,5 +4839,5 @@
     }
   },
   "analysis_source_sha256": "e656c4793bf26670cdbb6c946d6ed6f25788efa0d4591c74f1c7936dca4bb5be",
-  "analysis_tests_sha256": "6cc922eafed6d66c666e53c6cb1ae97520dbce84a78256429a6d71b956422aff"
+  "analysis_tests_sha256": "0c832cbe3df54c1745e45f1f74049b4f7746c43ad73cbec90dc1a77d2e0996b6"
 }

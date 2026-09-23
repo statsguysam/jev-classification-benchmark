@@ -1,0 +1,50 @@
+{
+  "budget": {
+    "budget_usd": "0.668116000",
+    "charged_or_reserved_usd": "0.215772500",
+    "events": 144,
+    "halted": false,
+    "ledger_id": "9136bcda-f3aa-48e8-9814-e550c08d4a46",
+    "remaining_reservation_usd": "0.452343500",
+    "reservations": 71,
+    "settlements": 1
+  },
+  "counts": {
+    "new_calls": 71,
+    "planned_failures": 67,
+    "recovered": 66,
+    "unrecovered": 1,
+    "upstream_unresolved_not_called": 0
+  },
+  "execution_sessions": [
+    {
+      "path": "results/completion_20260923/retries/sessions/20260923T185747Z-a934c9358963",
+      "producer_pins": {
+        "configs/completion_prices_20260923.json": "47e0bd14e397adf27ac23659f18376fac00c5ece18f7eeab4d69784a7db41a5a",
+        "scripts/analyze_jev_recovery.py": "c6a606113d79dc8a1038058a45a2f191c2eb2f42d19fd3b7627f246aed136df8",
+        "scripts/prepare_failed_retries.py": "ccb0e0568b6a693067e8fa737a169b4ecd8e2de5fc9a91d9ba0e9e8b2488bbc2",
+        "scripts/probe_jev_health.py": "f59e921cb36d9b1a59a5c9a00826347fc6e409d7abaed4228945546d81e1bb09",
+        "scripts/recover_expanded_numeric_billing.py": "045abae3f02797e921d5eef4758e95e246922e39a03a69bddb65a0f1882fc416",
+        "scripts/run_budgeted_hosted.py": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+        "scripts/run_failed_retries.py": "f855b3299aede41f94ee8e73f9ce5454166944e69b66e145f303503df6bc5181",
+        "scripts/run_jev_completion.py": "5771ab6081179bb9d8bf00411bc3a6f2ff546b3f80ca09597b1e2d0ccb7a7173",
+        "scripts/run_openrouter_jev.py": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+      },
+      "resume_after_errors": false,
+      "saved_attempts": 0,
+      "started_at": "2026-09-23T18:57:47.719409+00:00"
+    }
+  ],
+  "finished_at": "2026-09-23T19:07:02.575134+00:00",
+  "ledger_id": "9136bcda-f3aa-48e8-9814-e550c08d4a46",
+  "plan_sha256": "0f0f6674a8befdd291f6cb3101743f75e19f62b5d484a368ccd7ab7bc39bb8fb",
+  "protected_artifacts_sha256": {
+    "attempts.jsonl": "e314764968c53f527f322065180ec2e74eb6b4cc3092286221b5d9a9508376bc",
+    "budget.jsonl": "e346bcf3fdb1f6002cbdb389e02e80947fb5382bb210f9b7696f4f30266c8918",
+    "budget.jsonl.lock": "e68083a173e62e9dccbd91f251aa1594ce18fc2d4c0ee64e2b30d0e994bb5a6b",
+    "plan.json": "0f0f6674a8befdd291f6cb3101743f75e19f62b5d484a368ccd7ab7bc39bb8fb"
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "study": "failed-call-recovery-v1"
+}

@@ -1,0 +1,10 @@
+{
+  "report_sha256": "b7eedd2a8c45a50edfd2393a367e4dea20db626af3a8bba5c583d5e76af3078d",
+  "script_sha256": "5214186574568ce81751994c2c25844c4e85895210b79d4159baeb94a29146bb",
+  "matplotlib_version": "3.11.2",
+  "data_scope": "All four datasets, three primary arms and both prespecified paired contrasts; first attempts",
+  "figures": {
+    "proposal_value.png": "8753106689eb5c5756d71d84e352cdd33fe1fa75dd932cba3accf4139d55781d",
+    "proposal_value.svg": "789808a14eb6fc867e4e0feb963f50a001595dc81f486012d6e7dff853495ff0"
+  }
+}

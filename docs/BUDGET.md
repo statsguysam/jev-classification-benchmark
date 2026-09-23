@@ -1,20 +1,64 @@
 # Hosted API budget and resumption
 
-The approved cumulative total is **US$25**: the original US$10 ceiling, US$10 for the tabular extension, and US$5 for the expanded numerical zero/few-shot review experiment. The new text pipeline extension uses remaining headroom inside this ceiling and preserves the full unfinished numerical allowance; it adds no spending authorization. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
+The approved cumulative total is **US$25**: the original US$10 ceiling, US$10 for the tabular extension, and US$5 for the expanded numerical zero/few-shot review experiment. The text extension, explicit failure recovery and matched proposal controls share remaining headroom inside this ceiling; they add no spending authorization. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
+
+## Completed execution and final reconciliation
+
+The [final audited reconciliation](../results/completion_20260923/COSTS.md) counts **US$24.110484775** against the **US$25** authorization, leaving **US$0.889515225**. It includes all ten ledgers, the full health-probe reservation, historical failure recovery, completed proposal controls and post-control recovery. These are retained conservative charges/reservations, not a provider invoice; local and Colab compute are unpriced. Allocation ceilings must not be added together as spending.
+
+All 1,500 numerical expansion requests, all 68
+numerical conditions (including 24 reviews), and all 72 contrasts are complete
+and audited. The stage reports US$0.124087194 in known provider charges and
+eight unknown-charge calls; unknown charges are not zero. Its ledger retains
+US$4.032000000. Together
+with the fixed earlier US$19.325827700 and the US$0.002688000 health allowance,
+the conservative subtotal before text reviews is **US$23.360515700**. This is a
+scoped subtotal, not the live cumulative amount after text, recovery or controls.
+
+The text first pass is complete: all 4,800 requests, 24 reviews, 68 total
+conditions and 72 contrasts are audited. Its stage retains **US$0.301477771**
+in conservative charges/reservations, with **US$0.138994044** in known reported
+charges for 4,794 calls and six unknown charges. The 48 saved review errors
+remain incorrect in first-attempt metrics. Together the original numerical and
+text matrices contain **136 complete conditions, including 48 reviews**.
+
+[Historical recovery](../results/completion_20260923/RECOVERY_FINDINGS.md) used
+71 new calls to recover 65 of 66 failed paid requests and supply one previously
+skipped dependent review; one invalid response remained after the finite policy.
+The [matched controls](../results/review_controls/FINDINGS.md) completed all
+**1,714 requests, 12 primary arms and eight contrasts**. A separate
+[post-control recovery](../results/completion_20260923/CONTROL_RECOVERY_FINDINGS.md)
+recovered all 15 failed control/repeat requests in 15 new calls. Original valid
+responses, first-attempt metrics and serving-repeat diagnostics remain unchanged.
+No old failed reservation was released.
+
+| Completed phase | New calls | Retained conservative USD |
+|---|---:|---:|
+| Historical failure recovery, including dependent first call | 71 | 0.215772500 |
+| Matched controls, including exact-prompt repeats | 1,714 | 0.192398804 |
+| Post-control failure recovery | 15 | 0.040320000 |
+
+The [completion protocol](COMPLETION_RETRY_PROTOCOL.md) and
+[reproduction guide](COMPLETION_REPRODUCTION.md) describe the current path.
+September 22 execution commands below document the original drivers and their
+historical guard; the separately reviewed September 23 compatibility wrapper
+records fresh verification without changing those frozen sources.
 
 ## Operational check on 23 September 2026
 
 The isolated [Jev health probe](../scripts/probe_jev_health.py) has a single-request allowance of **US$0.002688**, recorded separately in `results/health_checks/jev-20260923/budget.jsonl` and its anchor. It uses a synthetic input and is excluded from benchmark metrics. Its full allowance remains reserved even if the provider reports a lower charge or the request fails. It does not retry or replace a historical prediction.
 
-The full outstanding numeric/text envelope below plus this probe is **US$24.960515700**, within the existing US$25 authorization. The controls allocator includes the probe ledger and anchor among protected prior files and subtracts its full allowance before allocating any remaining funds. Historical study reports retain their study-only totals; this operational allowance is additional to those totals. The check's new route/pricing evidence does not renew the historical producers' dated execution guards.
+The protected envelope below—completed numerical reservations plus the full text allocation—and this probe total **US$24.960515700**, within the US$25 authorization. This allocation envelope is not a live spend total; later recovery and control allocations depend on audited remaining headroom. The controls allocator includes the probe ledger and anchor among protected prior files and subtracts its full allowance before allocating any remaining funds. Historical study reports retain their study-only totals; this operational allowance is additional to those totals. The check's new route/pricing evidence does not renew the historical producers' dated execution guards.
 
 The [saved check](../results/health_checks/jev-20260923/run.json) completed successfully at **2026-09-23 14:48:43 UTC**. TypeSafe served `typesafe/jev-1.13-20260917`, returned the expected bounded choice in approximately 0.55 seconds, and reported US$0.000014658 for this request. The ledger still retains the full US$0.002688 allowance. Historical evidence was unchanged; the synthetic check contributes no benchmark accuracy or speed claim.
 
 ## Text pipeline extension allocation
 
-**No text-review calls have started.** Twenty-four planned source → Jev conditions on SST-2/TREC require at most **4,800 new review requests**. Existing Qwen/Luna/Astra and direct-Jev predictions are reused; SmolLM2/Granite use local or Colab public weights. Reusing paid source predictions creates no new source-model charge in this stage, but it does not make the cost of running a fresh two-stage pipeline zero.
+**The text-review first pass is complete and audited: 4,800 calls across all twenty-four source → Jev conditions.** Its ledger records 4,752 eligible successful settlements and 48 retained failed-call reservations, with no missing result records or partial checkpoints. Four accepted exact-tie Choices remain successful responses under the frozen adapter contract; the [collector correction](OUTPUT_VALIDATION_NOTES.md) changes no saved prediction or charge. Existing Qwen/Luna/Astra and direct-Jev predictions are reused; SmolLM2/Granite used Colab public weights. Reusing paid source predictions creates no new source-model charge in this stage, but it does not make a fresh two-stage pipeline free.
 
-The new `results/text_extension/review-budget.jsonl` has a **US$1.60 allocation**, separate from all previous ledgers. Its envelope protects the entire 1,500-request numerical expansion, including currently unfinished rows:
+The [completed text report](../results/text_extension/COMPARISON.json) reconciles **US$0.301477771** retained by this stage against its US$1.60 allocation. Known reported charges total **US$0.138994044**; six of the 4,800 charges are unknown. Its **US$23.659305471** cumulative study subtotal includes the fixed earlier work and full numerical expansion, but excludes the separate health-probe allowance and subsequent recovery/controls. It is a scoped subtotal, not a provider invoice. The [final cumulative reconciliation](../results/completion_20260923/COSTS.md) is US$24.110484775 after the health probe, recovery and controls.
+
+The new `results/text_extension/review-budget.jsonl` has a **US$1.60 allocation**, separate from all previous ledgers. Its envelope protects the entire 1,500-request numerical expansion, including the rows that were unfinished at allocation:
 
 | Protected amount | USD |
 |---|---:|
@@ -24,7 +68,7 @@ The new `results/text_extension/review-budget.jsonl` has a **US$1.60 allocation*
 | Maximum combined conservative accounting | **24.957827700** |
 | Existing cumulative authorization | **25.000000000** |
 
-Earlier text, tabular and initial numerical ledgers remain frozen. The numerical expansion ledger retains its original reservation policy and remaining allowance. The new wrapper verifies those identities and the combined envelope before reservations; it does not release, rewrite or reprice previous events.
+Earlier text, tabular and initial numerical ledgers remain frozen. The now-complete numerical expansion ledger retains its original reservation policy and all US$4.032000000 reserved for its 1,500 calls. The new wrapper verifies those identities and the combined envelope before reservations; it does not release, rewrite or reprice previous events.
 
 ### New-call settlement policy
 
@@ -38,7 +82,7 @@ min(original reservation,
 
 The 1.25 multiplier applies to the larger of reported cost and uncached input-token cost; it is not a 0.125 multiplier. Output tokens are free under the frozen route declaration. Any released difference becomes available only within this new text ledger. Failed predictions, unknown costs/usage, timeouts and interrupted calls retain the full reservation. Reported charges, usage-derived estimates and conservative charges remain distinct; none is represented as an invoice.
 
-Keeping every planned request at its original reservation would require US$12.9024, exceeding this new allocation. Completion therefore depends on eligible conservative settlements and funded provider credit. **The US$1.60 cap does not guarantee all 4,800 calls will complete.** A failed or unaccounted request is not retried to make a condition complete, and a partial condition has no final accuracy score.
+Keeping every request at its original reservation would have required US$12.9024, exceeding this allocation. Eligible conservative settlements allowed the actual 4,800-call first pass to finish within US$1.60; that allocation alone was not a guarantee of completion. The first-pass runner did not retry failures. Explicit recovery remains a separate experiment, and any partial condition has no final accuracy score.
 
 ### Planning, first execution and resumption
 
@@ -71,13 +115,13 @@ All four earlier ledgers and their lock files remain frozen. Their cumulative co
 
 Six source models are compared at zero and four examples per class on Breast Cancer and Wine. Existing source predictions and the four original Qwen3 4B/Astra few-shot reviews are reused. SmolLM2 and Granite inference runs locally or on Colab with public weights. No new paid source-LLM calls are required.
 
-### Current halt and guarded recovery
+### Historical September 22 halt and guarded recovery
 
-The audited snapshot is **61/68 conditions complete**: 24 source runs, 17 reviews, four direct Jev references and 16 native references. Seven reviews remain unfinished, and 54/72 comparisons are complete. See [the current status](../results/numeric_expansion/STATUS.md) for the exact remaining conditions. The ledger contains **1,099 new Jev requests**, including seven calls with unknown reported cost. Known reported charges total **US$0.084934668**; these are not the complete expense. Retained reservations total **US$2.954112000** for this stage and **US$22.279939700 of US$25** cumulatively.
+The September 22 audited snapshot was **61/68 conditions complete**: 24 source runs, 17 reviews, four direct Jev references and 16 native references. Seven reviews were unfinished, and 54/72 comparisons were complete. See [the current status](../results/numeric_expansion/STATUS.md) for the completed September 23 snapshot. The following counts and commands describe that historical halt and its next-unseen-row recovery procedure, not current unfinished work. At that point the ledger contained **1,099 new Jev requests**, including seven calls with unknown reported cost. Known reported charges were **US$0.084934668**; these were not the complete expense. Retained reservations were **US$2.954112000** for this stage and **US$22.279939700 of US$25** cumulatively.
 
-The Breast Cancer SmolLM2 four-per-class checkpoint has **85/114 saved rows**, including **six HTTP 402 failures**. The current halt follows three consecutive billing failures. Those failures stay in the evidence and count as incorrect when the full condition completes. Partial predictions are not scored as a completed test. **401 next-unseen rows remain across seven conditions.**
+The historical Breast Cancer SmolLM2 four-per-class checkpoint had **85/114 saved rows**, including **six HTTP 402 failures**, and halted after three consecutive billing failures. Those six failures remain in its now-complete first-attempt score. At the historical halt, **401 next-unseen rows remained across seven conditions**; all have since been attempted. No partial checkpoint was scored as a completed test.
 
-Recovery requires funded provider credits as well as the existing benchmark budget headroom. The ordinary runner alone cannot clear the current billing halt. Do not delete or reset the ledger, lock, failed predictions, source manifests or halted checkpoint, and do not retry already recorded failed rows. Stop any previous worker before recovery; the wrapper also acquires the same execution lock.
+That historical recovery required funded provider credits as well as benchmark budget headroom. The ordinary runner alone could not clear the billing halt. Do not delete or reset the ledger, lock, failed predictions, source manifests or halted checkpoint, and do not retry already recorded failed rows. Stop any previous worker before recovery; the wrapper also acquires the same execution lock.
 
 The [billing-recovery wrapper](../scripts/recover_expanded_numeric_billing.py) defaults to a read-only audit and does not read credentials in this mode:
 
@@ -106,7 +150,7 @@ python scripts/run_expanded_numeric_review.py \
   --execute --prompt-api-key
 ```
 
-The expansion ledger is already initialized; never add `--init-ledger` to recovery or resumption. All 24 source conditions are complete. Source manifests freeze each individual model/dataset/shot artifact, and changing model, prompt, source code or provenance is not a resume. Unknown costs and interrupted calls retain their reservation; no automatic retries occur. Reconcile with `python scripts/audit_expanded_numeric_costs.py` after execution, then regenerate the numerical summary before updating completion claims. The remaining 401 planned calls would retain another US$1.077888, bringing cumulative conservative accounting to US$23.357827700 if all are executed under the unchanged per-request reservation.
+The expansion ledger is already initialized; never add `--init-ledger` to recovery or resumption. All 24 source conditions are complete. Source manifests freeze each individual model/dataset/shot artifact, and changing model, prompt, source code or provenance is not a resume. Unknown costs and interrupted calls retain their reservation; no automatic retries occur. Reconcile with `python scripts/audit_expanded_numeric_costs.py` after execution, then regenerate the numerical summary before updating completion claims. The 401 then-remaining calls have now retained another US$1.077888 under the unchanged policy, producing the completed numerical subtotal of US$23.357827700 before the separate health, text, recovery and control phases.
 
 ## Historical tabular allocation
 
@@ -239,9 +283,9 @@ Both drivers require prices verified on the current UTC date. For a later OpenAI
 
 ## Proposal-value controls: sequenced within the same US$25
 
-The frozen follow-up plans **1,650 primary requests plus 64 identical-prompt repeats** across 550 cases. Preparation and saved-results analysis made no model calls. The new [control runner](../scripts/run_review_controls.py) first requires both existing numerical and text matrices to reach 68/68 audited conditions. It then pins every prior ledger and lock file and may allocate only `25.00 − cumulative conservative accounting` to a new control ledger. No earlier reservation is released or changed.
+The frozen follow-up completed **1,650 primary requests plus 64 identical-prompt repeats** across 550 cases, with all 12 primary arms and eight contrasts audited. Preparation and saved-results analysis made no model calls. The [control runner](../scripts/run_review_controls.py) requires both numerical and text matrices to reach 68/68 audited conditions and the separate historical failure-recovery run to be finalized and audited. It then pins every prior ledger and lock file, including recovery evidence and the full health-probe allowance, and may allocate only `25.00 − cumulative conservative accounting` to a new control ledger. No earlier reservation is released or changed. The control ledger retains US$0.192398804; [audited first-attempt results](../results/review_controls/FINDINGS.md) retain its 15 failed calls (14 primary, one repeat). The separate recovery ledger retains US$0.040320000 for 15 successful recovery calls; neither the primary results nor the original repeat diagnostic is overwritten.
 
-The new control ledger reuses the text stage's verified settlement rule. The full study is not guaranteed to fit: each call needs its complete reservation before dispatch, unknown/failed charges remain reserved, and no automatic retry or source-label fallback is permitted. Outstanding historical work takes priority. Funding the provider account does not raise the authorized ceiling. Planning is read-only and shows no allocation until the earlier matrices are complete:
+The control ledger reused the text stage's verified settlement rule. Completion did not relax its guards: each call required its complete reservation before dispatch, unknown/failed charges remained reserved, and automatic retries or source-label fallback were prohibited. The separate post-control recovery policy ran only after the controls completed. Funding the provider account did not raise the authorized ceiling. Planning and readiness are read-only; the original allocation was permitted only after both matrices and historical failure recovery passed their audits:
 
 ```bash
 python scripts/restore_review_controls_payload.py

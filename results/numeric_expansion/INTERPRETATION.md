@@ -1,6 +1,6 @@
 # What the numerical classification experiment shows
 
-**Status:** 61/68 conditions and 54/72 contrasts are audited. All 24 source-model conditions and all classical/direct-Jev references are complete. Seventeen of 24 review conditions are complete; seven remain unfinished after an OpenRouter HTTP 402 billing halt. The interrupted condition retains its 85 saved predictions, including six billing failures. No partial-test score is reported.
+**Status, 23 September 2026 UTC:** all 68/68 conditions and 72/72 contrasts are audited, including all 24 source-model and 24 review conditions. Historical failures remain in the first-attempt scores, including six Breast Cancer SmolLM2 four-shot billing failures. Any subsequent recovery results are separate; no original outcome is replaced and no partial-test score is reported.
 
 The expansion compares six source LLMs—Qwen2.5 0.5B, Qwen3 4B, SmolLM2 1.7B, Granite 3.3 2B, GPT-5.6 Luna and GPT-6 Astra—on the same serialized numerical rows from Breast Cancer Wisconsin Diagnostic and Wine. Each model is evaluated with zero examples and four examples per class. Jev then reviews its saved proposed label using the original row and the same examples. Direct Jev and native-feature logistic regression, random forest, XGBoost and LightGBM provide references. Four examples per class mean eight labeled training rows for Breast Cancer and twelve for Wine. This expansion adds no LoRA training.
 
@@ -15,8 +15,8 @@ Each entry shows **LLM alone → LLM followed by Jev**, as accuracy. Few-shot me
 | Source model | Zero-shot | Few-shot |
 |---|---:|---:|
 | Qwen2.5 0.5B | 37.7% → 85.1% | 61.4% → 93.9% |
-| SmolLM2 1.7B | 37.7% → 86.8% | 37.7% → pending |
-| Granite 3.3 2B | 37.7% → pending | 61.4% → pending |
+| SmolLM2 1.7B | 37.7% → 86.8% | 37.7% → 89.5% |
+| Granite 3.3 2B | 37.7% → 86.0% | 61.4% → 92.1% |
 | Qwen3 4B | 61.4% → 93.0% | 86.0% → 93.0% |
 | GPT-5.6 Luna | 75.4% → 87.7% | 91.2% → 92.1% |
 | GPT-6 Astra | 99.1% → 95.6% | 98.2% → 93.9% |
@@ -27,8 +27,8 @@ Each entry shows **LLM alone → LLM followed by Jev**, as accuracy. Few-shot me
 | Source model | Zero-shot | Few-shot |
 |---|---:|---:|
 | Qwen2.5 0.5B | 33.3% → 33.3% | 33.3% → 91.7% |
-| SmolLM2 1.7B | 33.3% → pending | 33.3% → pending |
-| Granite 3.3 2B | 27.8% → pending | 33.3% → pending |
+| SmolLM2 1.7B | 33.3% → 33.3% | 33.3% → 88.9% |
+| Granite 3.3 2B | 27.8% → 33.3% | 33.3% → 91.7% |
 | Qwen3 4B | 38.9% → 36.1% | 80.6% → 88.9% |
 | GPT-5.6 Luna | 47.2% → 38.9% | 88.9% → 91.7% |
 | GPT-6 Astra | 100.0% → 44.4% | 97.2% → 94.4% |
@@ -36,7 +36,7 @@ Each entry shows **LLM alone → LLM followed by Jev**, as accuracy. Few-shot me
 
 Seven of the eight new SmolLM2/Granite source conditions predicted one class. Only Granite Breast Cancer few-shot varied (87 class-0 and 27 class-1 predictions). All 600 probability vectors were finite, normalized, and matched their argmax labels; there were no inference failures or truncated prompts. These weak results are retained.
 
-At zero-shot Breast Cancer, Qwen 0.5B, SmolLM2 and Granite supplied identical proposal vectors. At zero-shot Wine, Qwen 0.5B and SmolLM2 matched; at few-shot Wine, Qwen 0.5B, SmolLM2 and Granite matched. Their Jev prompts are identical within each group. Differences among those review runs are repeated-call variation, not distinct source-proposal treatments.
+At zero-shot Breast Cancer, Qwen 0.5B, SmolLM2 and Granite supplied identical proposal vectors. At zero-shot Wine, Qwen 0.5B and SmolLM2 matched; at few-shot Wine, Qwen 0.5B, SmolLM2 and Granite matched. Their Jev prompts are identical within each group. Those historical calls occurred at different serving times. Their differences cannot be attributed to a different visible source proposal; these overlapping comparisons were not designed as independent replicates or a repeatability estimate.
 
 The small open-model results describe the recorded class-label likelihood recipe, not the models’ general capabilities. Their source prompts and serving protocols are documented explicitly.
 
@@ -85,6 +85,8 @@ The expansion was chosen after earlier results were observed. It covers two fami
 
 ## Reproduction and accounting
 
-See the [protocol](../../docs/EXPANDED_NUMERIC_PROTOCOL.md), [Colab guide](../../docs/EXPANDED_NUMERIC_REPRODUCTION.md), [dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site), and [LinkedIn draft](LINKEDIN_DRAFT.md). The repository and dashboard remain private.
+See the [protocol](../../docs/EXPANDED_NUMERIC_PROTOCOL.md), [Colab guide](../../docs/EXPANDED_NUMERIC_REPRODUCTION.md), [dashboard](https://jev-benchmark-observatory.statsguysalim.chatgpt.site), and [numeric LinkedIn draft](LINKEDIN_DRAFT.md). The [main publication draft](../review_value/LINKEDIN_DRAFT.md) integrates the broader study; this numeric report makes no text or proposal-control claim. Verify public link access before publication.
 
-The 1,099 new Jev requests have US$0.084934668 of known reported charges and 7 unknown-cost calls. The expansion retains US$2.954112000 in conservative reservations; cumulative accounting is US$22.279939700 within the US$25.00 authorization. These figures are not a provider invoice. Local compute is unpriced.
+The 1,500 new Jev requests have US$0.124087194 of known reported charges and 8 unknown-cost calls. The expansion retains US$4.032000000 in conservative reservations. Its report's cumulative subtotal is US$23.357827700; adding the separate US$0.002688000 health probe gives US$23.360515700 before text completion, retries and controls. This is a scoped subtotal, not the live global spend; those phases share the unchanged US$25.00 ceiling. Unknown charges are not zero, these figures are not a provider invoice, and local compute is unpriced.
+
+The [selective-review analysis](../review_value/FINDINGS.md) now contains all five eligible primary curves. Its [sensitivity appendix](../review_value_sensitivity/FINDINGS.md) includes all 16 probability-bearing local conditions, including 11 constant-label sources. It retains the two Qwen3 four-shot half-review/full-review accuracy matches, alongside counterexamples that perform below random selection. Both analyses are post-hoc fixed-coverage simulations on cached outcomes, not validated confidence gates or evidence of dollar savings.

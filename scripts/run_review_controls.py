@@ -34,6 +34,7 @@ OUTPUT = AREA / "execution"
 LEDGER = OUTPUT / "budget.jsonl"
 HEALTH_LEDGER = ROOT / "results/health_checks/jev-20260923/budget.jsonl"
 HEALTH_ALLOWANCE = "0.002688000"
+RECOVERY = ROOT / "results/completion_20260923/retries"
 TOTAL = Decimal("25.00")
 TEXT_WRAPPER_SHA = "bdc3d1cac8e52791359023b57abac8833d898af6ff7b0240512e337baa3ba43e"
 
@@ -86,12 +87,33 @@ def health_check_allowance():
     return Decimal(HEALTH_ALLOWANCE)
 
 
+def recovery_accounting():
+    """Only finalized explicit retries can precede the new control allocation."""
+    names = ("run.json", "plan.json", "attempts.jsonl", "budget.jsonl", "budget.jsonl.lock")
+    if not RECOVERY.exists():
+        return Decimal(0), []
+    require(not RECOVERY.is_symlink() and all((RECOVERY / name).is_file() and
+            not (RECOVERY / name).is_symlink() for name in names),
+            "Recovery accounting is partial; finish or reconcile it before controls")
+    record = json.loads((RECOVERY / "run.json").read_text())
+    require(record.get("status") == "complete", "Recovery attempts must be finalized before controls")
+    recorded = record["budget"]
+    state = budget.Ledger(RECOVERY / "budget.jsonl", recorded["budget_usd"]).snapshot()
+    require(state == recorded and not state["halted"], "Recovery ledger changed or halted")
+    expected = record.get("protected_artifacts_sha256", {})
+    require(set(expected) == set(names) - {"run.json"} and all(
+        file_sha(RECOVERY / name) == digest for name, digest in expected.items()),
+        "Finalized recovery evidence changed")
+    return Decimal(state["charged_or_reserved_usd"]), [RECOVERY / name for name in names]
+
+
 def prior_paths():
     paths = [ROOT / name for name in historical.numeric.PRIOR]
     paths += [historical.numeric.LEDGER, historical.LEDGER]
     if health_check_allowance():
         paths.append(HEALTH_LEDGER)
-    return [item for path in paths for item in (path, path.with_name(path.name + ".lock"))]
+    _, recovered_paths = recovery_accounting()
+    return [item for path in paths for item in (path, path.with_name(path.name + ".lock"))] + recovered_paths
 
 
 def protected_hashes():
@@ -118,12 +140,14 @@ def readiness():
     text = text_report.collect(samples=100)
     ready = numeric["complete_runs"] == 68 and text["complete_runs"] == 68
     probe = health_check_allowance()
-    prior_amount = Decimal(text["costs"]["cumulative_conservative_usd"]) + probe
+    recovery, _ = recovery_accounting()
+    prior_amount = Decimal(text["costs"]["cumulative_conservative_usd"]) + probe + recovery
     result = {"numeric_complete": numeric["complete_runs"], "numeric_planned": 68,
               "text_complete": text["complete_runs"], "text_planned": 68,
               "ready_for_new_controls": ready,
               "prior_conservative_usd": budget.usd_string(budget.usd_nano(str(prior_amount))),
               "health_check_allowance_usd": budget.usd_string(budget.usd_nano(str(probe))),
+              "recovery_conservative_usd": budget.usd_string(budget.usd_nano(str(recovery))),
               "authorized_usd": "25.00"}
     if ready:
         amount = Decimal(result["prior_conservative_usd"])
@@ -175,8 +199,10 @@ def validate_prediction(prediction, request):
         require(isinstance(probabilities, list) and len(probabilities) == k and
                 all(type(p) in (int, float) and math.isfinite(p) and 0 <= p <= 1 for p in probabilities)
                 and math.isclose(sum(probabilities), 1, abs_tol=1e-6), "Invalid Choice distribution")
-        require(prediction.label == max(range(k), key=lambda i: probabilities[i]),
-                "Choice label differs from its distribution argmax")
+        # Match the frozen adapter: retain its chosen class at exact ties or
+        # within its existing absolute tolerance; never relabel the response.
+        require(probabilities[prediction.label] >= max(probabilities) - 1e-6,
+                "Choice label differs from maximum probability beyond adapter tolerance")
 
 
 def audit_saved(plan, identity, ledger, path):

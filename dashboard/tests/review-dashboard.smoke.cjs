@@ -41,29 +41,30 @@ async function harness(data, failure=null) {
   const context=vm.createContext({console, document:{getElementById(id){assert.ok(elements.has(id),`Unknown DOM ID ${id}`);return elements.get(id);}},
     async fetch(url){fetches++;assert.equal(url,'review-data.json');if(failure==='network')throw Error('simulated network failure');return {ok:!failure,status:503,async json(){return data;}};}});
   assert.match(source,/init\(\);\s*$/,'Expected single trailing init call');
-  vm.runInContext(source.replace(/init\(\);\s*$/,'')+'\n;globalThis.smoke={init,renderComparison,renderGate};',context,{timeout:1000});
+  vm.runInContext(source.replace(/init\(\);\s*$/,'')+'\n;globalThis.smoke={init,renderComparison,renderGate,renderControls,renderRecovery};',context,{timeout:1000});
   await context.smoke.init();
   assert.equal(fetches,1,'Only the aggregate asset may be fetched');
   return {elements,api:context.smoke};
 }
 function validateAsset(data) {
-  assert.equal(data.complete_review_conditions,17);assert.equal(data.expected_review_conditions,24);
-  assert.equal(data.conditions.length,17);assert.equal(data.pending_conditions.length,7);
-  assert.equal(new Set(data.conditions.map(c=>JSON.stringify([c.dataset,c.source_model,c.shots_per_class]))).size,17);
-  assert.equal(data.conditions.filter(c=>c.curve).length,4);
+  assert.equal(data.expected_review_conditions,24);
+  assert.equal(data.conditions.length,data.complete_review_conditions);assert.equal(data.pending_conditions.length,24-data.complete_review_conditions);
+  assert.equal(new Set(data.conditions.map(c=>JSON.stringify([c.dataset,c.source_model,c.shots_per_class]))).size,data.conditions.length);
   assert.equal(data.controls.runs.length,12);
-  assert.ok(data.controls.runs.every(r=>r.status==='pending'&&r.metrics===null),'Planned controls must not be numeric zeros');
+  assert.ok(data.controls.runs.every(r=>r.status==='complete'||r.metrics===null),'Planned controls must not be numeric zeros');
   const forbidden=new Set(['row_id','row_ids','selected_row_ids','ranked_row_ids','prompt','source_max_probabilities','request_id','config']);
   function visit(value){if(Array.isArray(value)){value.forEach(visit);}else if(value&&typeof value==='object'){for(const [key,child] of Object.entries(value)){assert.ok(!forbidden.has(key),`Raw field published: ${key}`);visit(child);}}}
   visit(data);
 }
 async function main(){
   validateAsset(asset);const before=JSON.stringify(asset),h=await harness(asset),e=h.elements;
-  assert.equal(e.get('condition').options.length,17);assert.equal(e.get('gate').options.length,4);
-  assert.match(e.get('status').textContent,/17\/24/);assert.match(e.get('control-status').textContent,/0\/12/);
-  assert.match(e.get('control-status').textContent,/No controlled result is available/);
-  assert.match(e.get('prompt-variability').textContent,/41 different final labels/);
-  assert.match(e.get('prompt-variability').textContent,/1,255/);
+  assert.equal(e.get('condition').options.length,asset.conditions.length);assert.equal(e.get('gate').options.length,asset.conditions.filter(c=>c.curve).length);
+  assert.ok(e.get('status').textContent.includes(asset.complete_review_conditions+'/24'));
+  const completed=asset.controls.runs.filter(r=>r.status==='complete').length;
+  assert.ok(e.get('control-status').textContent.includes(completed+'/12'));
+  if(!completed)assert.match(e.get('control-status').textContent,/No controlled result is available/);
+  assert.ok(e.get('prompt-variability').textContent.includes(asset.identical_prompts.valid_output_disagreements+' different final labels'));
+  assert.ok(e.get('prompt-variability').textContent.includes(asset.identical_prompts.both_valid_rows.toLocaleString()));
   let comparisons=0,gatesChecked=0;
   for(const [index,c] of asset.conditions.entries())for(const metric of metrics){
     e.get('condition').change(index);e.get('metric').change(metric);
@@ -106,7 +107,142 @@ async function main(){
     assert.equal(failed.elements.get('comparison').innerHTML,'');assert.equal(failed.elements.get('curve').innerHTML,'');
   }
   assert.equal(JSON.stringify(asset),before,'Dashboard must not mutate the aggregate input');
-  assert.equal(comparisons,51);assert.equal(gatesChecked,12);
-  console.log('PASS: 17 conditions × 3 metrics; 4 eligible gates × 3 metrics; all six coverages and exact chart/table values; 12 pending controls; skipped-source request count; HTTP/network failure; aggregate-only export. No network, inference or writes.');
+  assert.equal(comparisons,asset.conditions.length*3);assert.equal(gatesChecked,gates.length*3);
+  await checkPublishedControlRecovery(asset);
+  await checkControls();
+  console.log('PASS: every published condition and gate × 3 metrics; all six coverages; published control recovery × 4 datasets × 3 metrics; complete/pending synthetic controls and paired CIs; explicit missing/pending recovery; repeat agreement/failure denominators; first-attempt/recovery display; HTTP/network failures. No network, inference or writes.');
+}
+
+async function checkPublishedControlRecovery(data){
+ const original=JSON.stringify(data),h=await harness(data),e=h.elements,r=data.control_recovery;
+ if(!r||r.status!=='complete'){
+  assert.match(e.get('control-recovery-status').textContent,/Post-control recovery pending/);
+  assert.equal(e.get('control-recovery-arms').innerHTML,'');
+  assert.equal(e.get('control-recovery-contrasts').innerHTML,'');
+  return;
+ }
+ assert.equal(r.runs.length,12);assert.equal(r.comparisons.length,8);
+ const counts=r.recovery_counts;
+ if(r.no_op)assert.match(e.get('control-recovery-status').textContent,/No-op: every original control and repeat response was valid/);
+ else{
+  assert.ok(e.get('control-recovery-status').textContent.includes(`${r.new_calls} additional calls`));
+  assert.ok(e.get('control-recovery-status').textContent.includes(`Primary failures: ${counts.primary.original_failures} → ${counts.primary.remaining_failures}; repeat failures: ${counts.repeat.original_failures} → ${counts.repeat.remaining_failures}`));
+ }
+ const armNames={actual:'Actual proposal',no_proposal:'No proposal',shuffled:'Shuffled proposal'};
+ for(const dataset of ['breast_cancer','wine','sst2','trec'])for(const metric of metrics){
+  e.get('control-dataset').change(dataset);e.get('metric').change(metric);
+  const m=metric==='micro_accuracy'?'accuracy':metric, runs=r.runs.filter(v=>v.dataset===dataset), contrasts=r.comparisons.filter(v=>v.dataset===dataset);
+  assert.equal(runs.length,3);assert.equal(contrasts.length,2);
+  assert.deepEqual(tableRows(e.get('control-recovery-arms').innerHTML),runs.map(v=>[
+   armNames[v.arm],String(v.n_rows),fmt(v.first_attempt.metrics[m],metric),fmt(v.recovered.metrics[m],metric),`${v.first_attempt.metrics.n_failures} / ${v.recovered.metrics.n_failures}`]));
+  const diff=v=>m==='macro_f1'?`${v>0?'+':''}${v.toFixed(3)}`:`${v>0?'+':''}${(100*v).toFixed(1)} pp`;
+  const display=view=>{
+   const ci=view.paired_group_bootstrap?.metrics?.[m];
+   const point=m==='balanced_accuracy'?view.balanced_accuracy_delta:ci?.estimate;
+   assert.equal(typeof point,'number','A completed contrast must contain the selected metric');
+   return `${diff(point)} · ${ci?.ci95?ci.ci95.map(diff).join(' to '):'Unavailable'}`;
+  };
+  assert.deepEqual(tableRows(e.get('control-recovery-contrasts').innerHTML),contrasts.map(v=>[
+   `${armNames[v.a]} − ${armNames[v.b]}`,display(v.first_attempt),display(v.recovered)]));
+ }
+ assert.equal(JSON.stringify(data),original,'Rendering recovered controls must not mutate primary or recovered evidence');
+}
+
+function controlFixture(){
+ const d=JSON.parse(JSON.stringify(asset)), expected={breast_cancer:114,wine:36,sst2:200,trec:200};
+ d.recovery={status:'not_available',conditions:[]};
+ d.control_recovery={status:'not_available',no_op:null,new_calls:null,recovery_counts:null,runs:[],comparisons:[]};
+ const arm={actual:{accuracy:.875,balanced_accuracy:.84,macro_f1:.83},no_proposal:{accuracy:.75,balanced_accuracy:.73,macro_f1:.70},shuffled:{accuracy:.5,balanced_accuracy:.47,macro_f1:.42}};
+ const ci=(a,b=0)=>({metrics:Object.fromEntries(['accuracy','macro_f1'].map(m=>[m,{estimate:a[m]-(b?b[m]:0),ci95:[a[m]-(b?b[m]:0)-.05,a[m]-(b?b[m]:0)+.05]}]))});
+ d.controls={status:'complete',planned_cases:550,planned_primary_requests:1650,planned_repeats:64,expected_requests:1714,saved_requests:1714,expected_primary_arms:12,complete_primary_arms:12,expected_primary_contrasts:8,complete_primary_contrasts:8,
+  runs:Object.keys(expected).flatMap(dataset=>Object.keys(arm).map((a,i)=>({dataset,arm:a,status:'complete',saved_requests:expected[dataset],expected_requests:expected[dataset],training_examples:8,metrics:{...arm[a],n_rows:expected[dataset],n_failures:i+1},group_bootstrap:ci(arm[a])}))),
+  comparisons:Object.keys(expected).flatMap(dataset=>['no_proposal','shuffled'].map(b=>({dataset,a:'actual',b,status:'complete',paired_group_bootstrap:ci(arm.actual,arm[b]),balanced_accuracy_delta:arm.actual.balanced_accuracy-arm[b].balanced_accuracy,transitions_B_to_A:{wrong_to_correct:23,correct_to_wrong:11}})))};
+ const per={both_valid:15,valid_label_agreement:14,valid_label_disagreement:1,reference_failed_only:0,repeat_failed_only:0,both_failed:1};
+ d.controls.serving_repeat_diagnostic={status:'complete',expected_pairs:64,available_complete_pairs:64,valid_pair_agreement:56/60,valid_agreement_fraction_of_all_pairs:56/64,counts:Object.fromEntries(Object.entries(per).map(([k,v])=>[k,v*4])),by_dataset:Object.fromEntries(Object.keys(expected).map(k=>[k,{...per}]))};
+ return d;
+}
+async function checkControls(){
+ const fixture=controlFixture(), original=JSON.stringify(fixture),h=await harness(fixture),e=h.elements;
+ assert.match(e.get('control-status').textContent,/12\/12/);assert.match(e.get('control-status').textContent,/1,714\/1,714/);
+ for(const dataset of ['breast_cancer','wine','sst2','trec'])for(const metric of metrics){
+  e.get('control-dataset').change(dataset);e.get('metric').change(metric);
+  const m=metric==='micro_accuracy'?'accuracy':metric, rows=tableRows(e.get('control-arms').innerHTML), contrasts=tableRows(e.get('control-contrasts').innerHTML);
+  assert.equal(rows.length,3);assert.equal(contrasts.length,2);
+  const expected=fixture.controls.runs.filter(r=>r.dataset===dataset);
+  for(const [i,r] of expected.entries()){
+   assert.equal(rows[i][1],r.saved_requests+'/'+r.expected_requests);assert.equal(rows[i][2],'Complete');
+   assert.equal(rows[i][3],fmt(r.metrics[m],metric));assert.equal(rows[i][5],String(r.metrics.n_failures));
+   assert.equal(rows[i][4],m==='balanced_accuracy'?'Unavailable':r.group_bootstrap.metrics[m].ci95.map(v=>fmt(v,metric)).join(' to '));
+  }
+  const diff=v=>m==='macro_f1'?`${v>0?'+':''}${v.toFixed(3)}`:`${v>0?'+':''}${(100*v).toFixed(1)} pp`;
+  for(const [i,c] of fixture.controls.comparisons.filter(r=>r.dataset===dataset).entries()){
+   assert.match(contrasts[i][0],/^Actual proposal − (No proposal|Shuffled proposal)$/);
+   assert.equal(contrasts[i][2],diff(m==='balanced_accuracy'?c.balanced_accuracy_delta:c.paired_group_bootstrap.metrics[m].estimate));
+   assert.equal(contrasts[i][3],m==='balanced_accuracy'?'Unavailable':c.paired_group_bootstrap.metrics[m].ci95.map(diff).join(' to '));
+   assert.equal(contrasts[i][4],'23 / 11');
+  }
+ }
+ assert.match(e.get('repeat-summary').textContent,/93.3% agreement among 60 pairs/);
+ assert.match(e.get('repeat-summary').textContent,/56 agree; 4 disagree/);
+ assert.equal(tableRows(e.get('repeat-table').innerHTML).length,4);
+ assert.ok(tableRows(e.get('repeat-table').innerHTML).every(r=>r.slice(1).join('|')==='15|14 / 1|0|0|1'));
+ assert.match(e.get('recovery-status').textContent,/Recovery report pending/);
+ assert.match(e.get('control-recovery-status').textContent,/Post-control recovery pending/);
+ assert.equal(e.get('recovery-table').innerHTML,'');
+ assert.equal(e.get('control-recovery-arms').innerHTML,'');
+ assert.equal(e.get('control-recovery-contrasts').innerHTML,'');
+ for(const status of ['absent','pending']){
+  const missing=controlFixture();
+  if(status==='absent')delete missing.control_recovery;
+  else missing.control_recovery.status='pending';
+  const mh=await harness(missing),me=mh.elements;
+  assert.match(me.get('control-recovery-status').textContent,/Post-control recovery pending/);
+  assert.equal(me.get('control-recovery-arms').innerHTML,'');
+  assert.equal(me.get('control-recovery-contrasts').innerHTML,'');
+  assert.equal(tableRows(me.get('control-arms').innerHTML).length,3,'Missing recovery must preserve the primary results');
+ }
+ const partial=controlFixture();partial.controls.runs[0].status='pending';partial.controls.runs[0].saved_requests=113;
+ partial.controls.runs[0].metrics=null;partial.controls.runs[0].group_bootstrap=null;
+ partial.controls.comparisons.filter(c=>c.dataset==='breast_cancer').forEach(c=>{c.status='pending';c.paired_group_bootstrap=null;c.balanced_accuracy_delta=null;c.transitions_B_to_A=null;});
+ partial.controls.serving_repeat_diagnostic={status:'pending',expected_pairs:64,available_complete_pairs:63,counts:null,by_dataset:null};
+ const pending=await harness(partial),p=pending.elements;
+ assert.match(p.get('control-status').textContent,/11\/12/);
+ assert.deepEqual(tableRows(p.get('control-arms').innerHTML)[0],['Actual proposal','113/114','Pending','Pending','Pending','Pending']);
+ assert.ok(tableRows(p.get('control-contrasts').innerHTML).every(r=>r.slice(1).every(v=>v==='Pending')));
+ assert.match(p.get('repeat-status').textContent,/63\/64/);assert.equal(p.get('repeat-summary').textContent,'Agreement: Pending');assert.equal(p.get('repeat-table').innerHTML,'');
+ const recovered=controlFixture();recovered.recovery={status:'complete',note:'Audited recovery overlay; original first attempts remain.',conditions:[{dataset:'wine',model:'gpt-6-astra',shots_per_class:4,n_rows:36,status:'complete',same_request_as_original_snapshot:true,original_snapshot:{accuracy:.75,n_failures:1},first_attempt:{accuracy:.75,n_failures:1},recovered:{accuracy:.7777777778,n_failures:0},paired_group_bootstrap:{metrics:{accuracy:{estimate:1/36,ci95:[0,1/12]}}},corrected:1,harmed:0}]};
+ const recovery=await harness(recovered),rr=tableRows(recovery.elements.get('recovery-table').innerHTML)[0];
+ assert.deepEqual(rr.slice(1),['Complete','75.0%','75.0%','77.8%','+2.8 pp · 0.0 pp to +8.3 pp','1 / 1 / 0','1 / 0']);
+ const dependent=JSON.parse(JSON.stringify(recovered));dependent.recovery.conditions[0].same_request_as_original_snapshot=false;
+ dependent.recovery.conditions[0].first_attempt={accuracy:.7777777778,n_failures:0};
+ dependent.recovery.conditions[0].paired_group_bootstrap={metrics:{accuracy:{estimate:0,ci95:[0,0]}}};
+ dependent.recovery.conditions[0].corrected=0;
+ const dh=await harness(dependent), dr=tableRows(dh.elements.get('recovery-table').innerHTML)[0];
+ assert.equal(dr[1],'Complete · dependent overlay');assert.equal(dr[2],'75.0%');assert.equal(dr[3],'77.8%');assert.equal(dr[6],'1 / 0 / 0');assert.equal(dr[7],'0 / 0');
+ const secondary=controlFixture(), primarySnapshot=JSON.stringify(secondary.controls);
+ secondary.control_recovery={status:'complete',no_op:false,new_calls:16,
+  recovery_counts:{primary:{original_failures:12,remaining_failures:0},repeat:{original_failures:4,remaining_failures:0}},
+  runs:secondary.controls.runs.map(v=>({dataset:v.dataset,arm:v.arm,n_rows:v.metrics.n_rows,
+   first_attempt:{metrics:v.metrics},recovered:{metrics:{...v.metrics,accuracy:1,balanced_accuracy:1,macro_f1:1,n_failures:0}}})),
+  comparisons:secondary.controls.comparisons.map(v=>({dataset:v.dataset,a:v.a,b:v.b,first_attempt:v,
+   recovered:{paired_group_bootstrap:{metrics:{accuracy:{estimate:0,ci95:[0,0]},macro_f1:{estimate:0,ci95:[0,0]}}},balanced_accuracy_delta:0}})),
+  note:'Separate secondary sensitivity.',interval_note:'Balanced-accuracy differences have no interval.'};
+ const sh=await harness(secondary), se=sh.elements;
+ assert.match(se.get('control-recovery-status').textContent,/16 additional calls/);
+ assert.match(se.get('control-recovery-status').textContent,/Primary failures: 12 → 0; repeat failures: 4 → 0/);
+ for(const dataset of ['breast_cancer','wine','sst2','trec'])for(const metric of metrics){
+  se.get('control-dataset').change(dataset);se.get('metric').change(metric);
+  const m=metric==='micro_accuracy'?'accuracy':metric, rows=tableRows(se.get('control-recovery-arms').innerHTML);
+  const old=secondary.controls.runs.filter(v=>v.dataset===dataset);
+  assert.equal(rows.length,3);
+  rows.forEach((r,i)=>{assert.equal(r[2],fmt(old[i].metrics[m],metric));assert.equal(r[3],fmt(1,metric));assert.equal(r[4],old[i].metrics.n_failures+' / 0');});
+  const contrasts=tableRows(se.get('control-recovery-contrasts').innerHTML);
+  assert.equal(contrasts.length,2);
+  assert.ok(contrasts.every(r=>r[2]===(m==='macro_f1'?'0.000 · 0.000 to 0.000':m==='balanced_accuracy'?'0.0 pp · Unavailable':'0.0 pp · 0.0 pp to 0.0 pp')));
+ }
+ assert.equal(JSON.stringify(secondary.controls),primarySnapshot);
+ secondary.control_recovery.no_op=true;secondary.control_recovery.new_calls=0;
+ const noop=await harness(secondary);assert.match(noop.elements.get('control-recovery-status').textContent,/No-op: every original control and repeat response was valid/);
+ assert.equal(JSON.stringify(fixture),original,'Rendering controls must not mutate the evidence');
 }
 main().catch(error=>{console.error(error.stack||error);process.exitCode=1;});

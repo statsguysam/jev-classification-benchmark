@@ -1,5 +1,6 @@
 {
   "bootstrap_samples": 1000,
+  "completed_at": "2026-09-23T15:02:36.409076+00:00",
   "config": {
     "api_key_env": "OPENROUTER_API_KEY",
     "base_url": "https://openrouter.ai/api/v1",
@@ -488,6 +489,45 @@
   },
   "execution": {
     "automatic_retries": 0,
+    "billing_recoveries": [
+      {
+        "acknowledged_billing_tail": {
+          "reservation_event_sha256": [
+            "ee3a8f626256f4feb143c41b979a69af170603ba8cf60702b9f408bac9d0fa94",
+            "31e6d0b6c5ba1f411c04ff2669dfa789e655e0bc06931353f88d0d1fd9dd1439",
+            "27ec217263c0172db3333729f749f808124a63c52c8d82b88844a67d2df45cb1"
+          ],
+          "reservation_ids": [
+            "c3dc9e33-42ce-47e1-9602-3e0731751f56",
+            "d37ea690-1701-40fa-a03d-43b61c8302d5",
+            "eb45126d-9c64-4bdd-82b7-47f55bdb9168"
+          ],
+          "result_event_sha256": [
+            "84f3e8f01946a463227949517c60873c63ba39b0ffc5640ee4aa43043b3a12b7",
+            "022ce02231eccb9942ebc8fc7ed8a6f92b255e9eb7143faa4fb78a2fadd349d2",
+            "4f74841b0029e51586ca3ff23eb774549b38b39795a76e757138ad68427d079c"
+          ]
+        },
+        "credit_receipt": {
+          "authenticated": true,
+          "checked_at": "2026-09-23T15:02:04.085580+00:00",
+          "endpoint": "https://openrouter.ai/api/v1/credits",
+          "http_status": 200,
+          "method": "GET",
+          "positive_available_credit": true
+        },
+        "halted_run_sha256": "1e9fa8ac2b94113754c20c71097aad313fcf3481343d2c52990c1a27f58987f2",
+        "helper_sha256": "045abae3f02797e921d5eef4758e95e246922e39a03a69bddb65a0f1882fc416",
+        "ledger_anchor_before": {
+          "event_count": 2199,
+          "ledger_head_sha256": "4f74841b0029e51586ca3ff23eb774549b38b39795a76e757138ad68427d079c",
+          "ledger_lock_sha256": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
+          "ledger_sha256": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496"
+        },
+        "manifest_path": "results/numeric_expansion/billing_recovery/breast_cancer__smollm2__k4__jev-review__1e9fa8ac2b941137/manifest.json",
+        "recovery_id": "breast_cancer__smollm2__k4__jev-review__1e9fa8ac2b941137"
+      }
+    ],
     "concurrency": 1,
     "latency_scope": "Jev review only; source runtime is stored in the source run",
     "max_total_review_requests": 1500,
@@ -498,6 +538,10 @@
     {
       "cached_rows": 0,
       "started_at": "2026-09-22T18:24:28.197992+00:00"
+    },
+    {
+      "cached_rows": 85,
+      "started_at": "2026-09-23T15:02:04.264935+00:00"
     }
   ],
   "implementation_sha256": "d5547ccde4224e182653315d81c0a631c789bbe294ad7bcf95ef0cddd25ce608",
@@ -508,7 +552,181 @@
   "manifest_sha256": "7d249be2e4fc809c60339c5f398e6beb88fc2ee79b8ff83bf3be7637b05d6980",
   "method": "cached_label_jev_review",
   "method_label": "cached-label proposal + Jev review",
-  "n_predictions": 85,
+  "metrics": {
+    "accuracy": 0.8947368421052632,
+    "average_precision": 0.9937895854427801,
+    "balanced_accuracy": 0.9017359973796266,
+    "bootstrap": {
+      "method": "stratified percentile bootstrap",
+      "metrics": {
+        "accuracy": {
+          "ci95": [
+            0.8333333333333334,
+            0.9473684210526315
+          ],
+          "estimate": 0.8947368421052632
+        },
+        "macro_f1": {
+          "ci95": [
+            0.8654135829656612,
+            0.9590245520902456
+          ],
+          "estimate": 0.9172320217096337
+        }
+      },
+      "samples": 1000,
+      "seed": 42
+    },
+    "brier_sum": 0.09358888888888889,
+    "chosen_label_argmax_disagreement_rows": 0,
+    "confusion_matrix": [
+      [
+        40,
+        1,
+        2
+      ],
+      [
+        5,
+        62,
+        4
+      ]
+    ],
+    "confusion_matrix_columns": [
+      0,
+      1,
+      "failure"
+    ],
+    "ece_15_equal_width": 0.06888888888888893,
+    "failure_rate": 0.052631578947368474,
+    "input_tokens": null,
+    "input_tokens_coverage": 0.9473684210526315,
+    "input_tokens_known_total": 439468,
+    "latency_p50_s": 0.9715888954815455,
+    "latency_p95_s": 1.1736946311313659,
+    "log_loss": 0.16640319047679522,
+    "macro_f1": 0.9172320217096337,
+    "n_classes": 2,
+    "n_failures": 6,
+    "n_probability_rows": 108,
+    "n_test": 114,
+    "output_tokens": null,
+    "output_tokens_coverage": 0.9473684210526315,
+    "output_tokens_known_total": 3348,
+    "per_class": [
+      {
+        "f1": 0.9090909090909091,
+        "label": 0,
+        "precision": 0.8888888888888888,
+        "recall": 0.9302325581395349,
+        "support": 43
+      },
+      {
+        "f1": 0.9253731343283582,
+        "label": 1,
+        "precision": 0.9841269841269841,
+        "recall": 0.8732394366197183,
+        "support": 71
+      }
+    ],
+    "prediction_time_s": 110.9219610360451,
+    "probability_coverage": 0.9473684210526315,
+    "probability_renormalized_rows": 0,
+    "reliability_bins": [
+      {
+        "accuracy": null,
+        "bin": 0,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 1,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 2,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 3,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 4,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 5,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": null,
+        "bin": 6,
+        "count": 0,
+        "mean_confidence": null
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 7,
+        "count": 1,
+        "mean_confidence": 0.53
+      },
+      {
+        "accuracy": 0.5,
+        "bin": 8,
+        "count": 2,
+        "mean_confidence": 0.565
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 9,
+        "count": 3,
+        "mean_confidence": 0.6266666666666666
+      },
+      {
+        "accuracy": 0.3333333333333333,
+        "bin": 10,
+        "count": 3,
+        "mean_confidence": 0.7033333333333333
+      },
+      {
+        "accuracy": 0.6666666666666666,
+        "bin": 11,
+        "count": 6,
+        "mean_confidence": 0.7683333333333334
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 12,
+        "count": 13,
+        "mean_confidence": 0.84
+      },
+      {
+        "accuracy": 0.9523809523809523,
+        "bin": 13,
+        "count": 21,
+        "mean_confidence": 0.9057142857142857
+      },
+      {
+        "accuracy": 1.0,
+        "bin": 14,
+        "count": 59,
+        "mean_confidence": 0.9840677966101694
+      }
+    ],
+    "roc_auc": 0.9899890789952676,
+    "valid_response_accuracy": 0.9444444444444444,
+    "zero_true_class_probability_rows": 0
+  },
   "new_proposal_generation": false,
   "prompt_template_sha256": "902b3f87ad3a8b97cec877934df2482185ac6a3d2b6e5429c3aa33d895c58cf9",
   "proposal": {
@@ -525,7 +743,7 @@
   "seed": 42,
   "source_manifest_sha256": "453df600f0e886552fc721a21dfc252369d7d045459880b3598f5a2e8cab52d1",
   "started_at": "2026-09-22T18:24:28.192727+00:00",
-  "status": "stopped_after_three_consecutive_errors",
+  "status": "complete",
   "test_ids_sha256": "15e9c2e140f7a74f1410926dddf9966dadfe8640e5ef43a21b79a65d3fe8d835",
   "training_example_ids": [
     "breast_cancer:source:00012:70aebe6dfd338fdd",

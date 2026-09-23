@@ -14,12 +14,12 @@
     "gpt-6-astra": "GPT-6 Astra"
   },
   "expected_runs": 68,
-  "complete_runs": 61,
-  "status": "in_progress_or_incomplete",
+  "complete_runs": 68,
+  "status": "complete",
   "expected_base_runs": 24,
   "complete_base_runs": 24,
   "expected_review_runs": 24,
-  "complete_review_runs": 17,
+  "complete_review_runs": 24,
   "expected_direct_jev_runs": 4,
   "complete_direct_jev_runs": 4,
   "expected_classical_runs": 16,
@@ -27,7 +27,7 @@
   "expected_new_local_runs": 8,
   "complete_new_local_runs": 8,
   "expected_new_review_runs": 20,
-  "complete_new_review_runs": 13,
+  "complete_new_review_runs": 20,
   "expected_reused_review_runs": 4,
   "complete_reused_review_runs": 4,
   "bootstrap_samples": 2000,
@@ -2872,22 +2872,296 @@
       "dataset": "breast_cancer",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct+jev_review",
       "display_model": "SmolLM2 1.7B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 4,
-      "train_labels": null,
+      "train_labels": 8,
       "seed": 42,
+      "status": "complete",
       "run_id": "breast_cancer__smollm2__k4__jev-review",
       "source_path": "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json",
-      "status": "stopped_after_three_consecutive_errors",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8"
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.8947368421052632,
+            "ci95": [
+              0.8333333333333334,
+              0.9473684210526315
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9172320217096337,
+            "ci95": [
+              0.8606430834528933,
+              0.960009264024704
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "bc0ef4d30d9f108c30bf44f297fcbede8bb6e5a02a8398f4bb2987994e2e8949",
+        "predictions.jsonl": "118071d29a25fadbd99d9de57fcc6be0951fdc04eedbf6e7d28e0db8db5b328b",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution",
+        "unreported"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "breast_cancer",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "smollm2",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "smollm2_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+            "run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+            "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__smollm2__k4.json",
+          "source_manifest_sha256": "453df600f0e886552fc721a21dfc252369d7d045459880b3598f5a2e8cab52d1",
+          "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "n_test": 114,
+      "n_classes": 2,
+      "accuracy": 0.8947368421052632,
+      "macro_f1": 0.9172320217096337,
+      "balanced_accuracy": 0.9017359973796266,
+      "failure_rate": 0.052631578947368474,
+      "n_failures": 6,
+      "confusion_matrix": [
+        [
+          40,
+          1,
+          2
+        ],
+        [
+          5,
+          62,
+          4
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.8888888888888888,
+          "recall": 0.9302325581395349,
+          "f1": 0.9090909090909091,
+          "support": 43
+        },
+        {
+          "label": 1,
+          "precision": 0.9841269841269841,
+          "recall": 0.8732394366197183,
+          "f1": 0.9253731343283582,
+          "support": 71
+        }
+      ],
+      "valid_response_accuracy": 0.9444444444444444,
+      "latency_p50_s": 0.9715888954815455,
+      "latency_p95_s": 1.1736946311313659,
+      "prediction_time_s": 110.9219610360451,
+      "input_tokens": null,
+      "input_tokens_known_total": 439468,
+      "input_tokens_coverage": 0.9473684210526315,
+      "output_tokens": null,
+      "output_tokens_known_total": 3348,
+      "output_tokens_coverage": 0.9473684210526315,
+      "probability_coverage": 0.9473684210526315,
+      "n_probability_rows": 108,
+      "probability_renormalized_rows": 0,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 0.16640319047679522,
+      "brier_sum": 0.09358888888888889,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "ece_15_equal_width": 0.06888888888888893,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 7,
+          "count": 1,
+          "mean_confidence": 0.53,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 8,
+          "count": 2,
+          "mean_confidence": 0.565,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 9,
+          "count": 3,
+          "mean_confidence": 0.6266666666666666,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 10,
+          "count": 3,
+          "mean_confidence": 0.7033333333333333,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 11,
+          "count": 6,
+          "mean_confidence": 0.7683333333333334,
+          "accuracy": 0.6666666666666666
+        },
+        {
+          "bin": 12,
+          "count": 13,
+          "mean_confidence": 0.84,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 13,
+          "count": 21,
+          "mean_confidence": 0.9057142857142857,
+          "accuracy": 0.9523809523809523
+        },
+        {
+          "bin": 14,
+          "count": 59,
+          "mean_confidence": 0.9840677966101694,
+          "accuracy": 1.0
+        }
+      ],
+      "roc_auc": 0.9899890789952676,
+      "average_precision": 0.9937895854427801,
+      "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 62,
+        "correct_to_wrong": 3,
+        "both_correct": 40,
+        "both_wrong": 9,
+        "changed_predictions": 69,
+        "correct_to_failure": 2,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 6,
+        "net_correct_change": 59,
+        "accuracy_delta_pp": 51.75438596491228
+      }
     },
     {
       "dataset": "breast_cancer",
@@ -3136,22 +3410,295 @@
       "dataset": "breast_cancer",
       "model": "ibm-granite/granite-3.3-2b-instruct+jev_review",
       "display_model": "Granite 3.3 2B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 0,
-      "train_labels": null,
+      "train_labels": 0,
       "seed": 42,
-      "run_id": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::0",
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a"
+      "status": "complete",
+      "run_id": "breast_cancer__granite__k0__jev-review",
+      "source_path": "results/numeric_expansion/review/breast_cancer__granite__k0__jev-review/run.json",
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.8596491228070176,
+            "ci95": [
+              0.7982456140350878,
+              0.9210526315789473
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.856828885400314,
+            "ci95": [
+              0.7862558082660798,
+              0.918796992481203
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "f74c18c53d14ac7d2874f16da1067a5569751fd39ced7454afd0cfe3e464e31d",
+        "predictions.jsonl": "88242c933ad0f7fdd10c113eb77e8dcaf5fe05c759a4b2d8240c0c9a77f8693b",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "breast_cancer",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k0",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 0,
+          "source_files_sha256": {
+            "predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+            "run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+            "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__granite__k0.json",
+          "source_manifest_sha256": "66abf3d40ac34c3dcc6f79948787ece2cf7766780505297da63f0ace0bbfa0a4",
+          "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+          "source_shots_per_class": 0,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 0,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+        "source_shots_per_class": 0,
+        "timeout": 120
+      },
+      "n_test": 114,
+      "n_classes": 2,
+      "accuracy": 0.8596491228070176,
+      "macro_f1": 0.856828885400314,
+      "balanced_accuracy": 0.8781526367507371,
+      "failure_rate": 0.0,
+      "n_failures": 0,
+      "confusion_matrix": [
+        [
+          41,
+          2,
+          0
+        ],
+        [
+          14,
+          57,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.7454545454545455,
+          "recall": 0.9534883720930233,
+          "f1": 0.8367346938775511,
+          "support": 43
+        },
+        {
+          "label": 1,
+          "precision": 0.9661016949152542,
+          "recall": 0.8028169014084507,
+          "f1": 0.8769230769230769,
+          "support": 71
+        }
+      ],
+      "valid_response_accuracy": 0.8596491228070176,
+      "latency_p50_s": 1.0535187289933674,
+      "latency_p95_s": 1.3185055978130549,
+      "prediction_time_s": 196.57985400035977,
+      "input_tokens": 94935,
+      "input_tokens_known_total": 94935,
+      "input_tokens_coverage": 1.0,
+      "output_tokens": 3534,
+      "output_tokens_known_total": 3534,
+      "output_tokens_coverage": 1.0,
+      "probability_coverage": 1.0,
+      "n_probability_rows": 114,
+      "probability_renormalized_rows": 0,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 0.3856514116222895,
+      "brier_sum": 0.23506140350877197,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "ece_15_equal_width": 0.12394736842105264,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 7,
+          "count": 10,
+          "mean_confidence": 0.5230000000000001,
+          "accuracy": 0.7
+        },
+        {
+          "bin": 8,
+          "count": 11,
+          "mean_confidence": 0.5636363636363636,
+          "accuracy": 0.6363636363636364
+        },
+        {
+          "bin": 9,
+          "count": 18,
+          "mean_confidence": 0.633888888888889,
+          "accuracy": 0.7222222222222222
+        },
+        {
+          "bin": 10,
+          "count": 19,
+          "mean_confidence": 0.691578947368421,
+          "accuracy": 0.7894736842105263
+        },
+        {
+          "bin": 11,
+          "count": 9,
+          "mean_confidence": 0.7655555555555555,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 12,
+          "count": 22,
+          "mean_confidence": 0.8254545454545454,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 13,
+          "count": 17,
+          "mean_confidence": 0.8952941176470588,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 14,
+          "count": 8,
+          "mean_confidence": 0.9524999999999999,
+          "accuracy": 1.0
+        }
+      ],
+      "roc_auc": 0.9733049459547986,
+      "average_precision": 0.9828213318037731,
+      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 57,
+        "correct_to_wrong": 2,
+        "both_correct": 41,
+        "both_wrong": 14,
+        "changed_predictions": 59,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 55,
+        "accuracy_delta_pp": 48.24561403508772
+      }
     },
     {
       "dataset": "breast_cancer",
@@ -3400,22 +3947,295 @@
       "dataset": "breast_cancer",
       "model": "ibm-granite/granite-3.3-2b-instruct+jev_review",
       "display_model": "Granite 3.3 2B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 4,
-      "train_labels": null,
+      "train_labels": 8,
       "seed": 42,
-      "run_id": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba"
+      "status": "complete",
+      "run_id": "breast_cancer__granite__k4__jev-review",
+      "source_path": "results/numeric_expansion/review/breast_cancer__granite__k4__jev-review/run.json",
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.9210526315789473,
+            "ci95": [
+              0.868421052631579,
+              0.9649122807017544
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9170641015277665,
+            "ci95": [
+              0.8642735535074245,
+              0.9635549872122762
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "b39d10499ae0ac368a779caeee866c05c8f85ac92d98a92d375f3a997ae60272",
+        "predictions.jsonl": "f291c949d69f756cc0ec5aba94c71e0273beb0906e0314a8bc58e4e953827970",
+        "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "breast_cancer",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "7354e1f8f4004cd8b5d7ce365805ee398bfa157869a3ea2be333e108f0bb14a1",
+            "run.json": "1fae2fc598159e17ba106497df0aac6a9ed34701fcadaa62b904ddba8d8cddc6",
+            "test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/breast_cancer__granite__k4.json",
+          "source_manifest_sha256": "010cbdc1a0c0af9c58bfda5b33f8e91eb42d94e7f89eeae1464cb17d5070c6f2",
+          "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "n_test": 114,
+      "n_classes": 2,
+      "accuracy": 0.9210526315789473,
+      "macro_f1": 0.9170641015277665,
+      "balanced_accuracy": 0.9228627579430069,
+      "failure_rate": 0.0,
+      "n_failures": 0,
+      "confusion_matrix": [
+        [
+          40,
+          3,
+          0
+        ],
+        [
+          6,
+          65,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.8695652173913043,
+          "recall": 0.9302325581395349,
+          "f1": 0.898876404494382,
+          "support": 43
+        },
+        {
+          "label": 1,
+          "precision": 0.9558823529411765,
+          "recall": 0.9154929577464789,
+          "f1": 0.935251798561151,
+          "support": 71
+        }
+      ],
+      "valid_response_accuracy": 0.9210526315789473,
+      "latency_p50_s": 1.0069613750092685,
+      "latency_p95_s": 1.2358052709780165,
+      "prediction_time_s": 116.82342717167921,
+      "input_tokens": 463839,
+      "input_tokens_known_total": 463839,
+      "input_tokens_coverage": 1.0,
+      "output_tokens": 3534,
+      "output_tokens_known_total": 3534,
+      "output_tokens_coverage": 1.0,
+      "probability_coverage": 1.0,
+      "n_probability_rows": 114,
+      "probability_renormalized_rows": 0,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 0.16784426016221043,
+      "brier_sum": 0.09744736842105264,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "ece_15_equal_width": 0.06324561403508776,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 7,
+          "count": 2,
+          "mean_confidence": 0.525,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 8,
+          "count": 3,
+          "mean_confidence": 0.5666666666666665,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 9,
+          "count": 2,
+          "mean_confidence": 0.615,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 10,
+          "count": 3,
+          "mean_confidence": 0.7033333333333333,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 11,
+          "count": 4,
+          "mean_confidence": 0.78,
+          "accuracy": 0.75
+        },
+        {
+          "bin": 12,
+          "count": 13,
+          "mean_confidence": 0.8315384615384616,
+          "accuracy": 0.9230769230769231
+        },
+        {
+          "bin": 13,
+          "count": 21,
+          "mean_confidence": 0.8985714285714285,
+          "accuracy": 0.9523809523809523
+        },
+        {
+          "bin": 14,
+          "count": 66,
+          "mean_confidence": 0.9827272727272727,
+          "accuracy": 1.0
+        }
+      ],
+      "roc_auc": 0.9905011464133638,
+      "average_precision": 0.9942143788758053,
+      "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 38,
+        "correct_to_wrong": 3,
+        "both_correct": 67,
+        "both_wrong": 6,
+        "changed_predictions": 41,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 3,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 35,
+        "accuracy_delta_pp": 30.70175438596491
+      }
     },
     {
       "dataset": "breast_cancer",
@@ -9967,22 +10787,309 @@
       "dataset": "wine",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct+jev_review",
       "display_model": "SmolLM2 1.7B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 0,
-      "train_labels": null,
+      "train_labels": 0,
       "seed": 42,
-      "run_id": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998"
+      "status": "complete",
+      "run_id": "wine__smollm2__k0__jev-review",
+      "source_path": "results/numeric_expansion/review/wine__smollm2__k0__jev-review/run.json",
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.3333333333333333,
+            "ci95": [
+              0.19444444444444445,
+              0.5
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.16666666666666666,
+            "ci95": [
+              0.10852713178294575,
+              0.2222222222222222
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "e1c3afccfa3e125bb64fd5b0e6ab208396599abdae6e0a48f51dead5881db3e5",
+        "predictions.jsonl": "20359ebf2215d5383b8b3fec55c31f1a25ae1db9618ac4f3f13093b4f1f44abb",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "smollm2",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "smollm2_k0",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 0,
+          "source_files_sha256": {
+            "predictions.jsonl": "a2a79d7c51f5f94ba89792517cd08bfbe8f42f047447a8a19acab36d187c2c86",
+            "run.json": "b9aaebf43a2110f0b164e5043b029dd1e06791bb9f377dbfdb5e59cdc4181f31",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__smollm2__k0.json",
+          "source_manifest_sha256": "ac20e42f52931039fab43ac8c27b09f66a87baf297cd7d6bd947fa6ed5647a97",
+          "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+          "source_shots_per_class": 0,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 0,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+        "source_shots_per_class": 0,
+        "timeout": 120
+      },
+      "n_test": 36,
+      "n_classes": 3,
+      "accuracy": 0.3333333333333333,
+      "macro_f1": 0.16666666666666666,
+      "balanced_accuracy": 0.3333333333333333,
+      "failure_rate": 0.0,
+      "n_failures": 0,
+      "confusion_matrix": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 12
+        },
+        {
+          "label": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14
+        },
+        {
+          "label": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        }
+      ],
+      "valid_response_accuracy": 0.3333333333333333,
+      "latency_p50_s": 1.1028175000101328,
+      "latency_p95_s": 1.3537184994784184,
+      "prediction_time_s": 39.98524200194515,
+      "input_tokens": 23270,
+      "input_tokens_known_total": 23270,
+      "input_tokens_coverage": 1.0,
+      "output_tokens": 1368,
+      "output_tokens_known_total": 1368,
+      "output_tokens_coverage": 1.0,
+      "probability_coverage": 1.0,
+      "n_probability_rows": 36,
+      "probability_renormalized_rows": 2,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 1.3039621214075996,
+      "brier_sum": 0.8133444444444444,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "ece_15_equal_width": 0.3330555555555555,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 7,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 8,
+          "count": 2,
+          "mean_confidence": 0.575,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 9,
+          "count": 17,
+          "mean_confidence": 0.6323529411764705,
+          "accuracy": 0.35294117647058826
+        },
+        {
+          "bin": 10,
+          "count": 12,
+          "mean_confidence": 0.6916666666666668,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 11,
+          "count": 5,
+          "mean_confidence": 0.758,
+          "accuracy": 0.4
+        },
+        {
+          "bin": 12,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 13,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 14,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        }
+      ],
+      "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 24,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      }
     },
     {
       "dataset": "wine",
@@ -10244,22 +11351,309 @@
       "dataset": "wine",
       "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct+jev_review",
       "display_model": "SmolLM2 1.7B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 4,
-      "train_labels": null,
+      "train_labels": 12,
       "seed": 42,
-      "run_id": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455"
+      "status": "complete",
+      "run_id": "wine__smollm2__k4__jev-review",
+      "source_path": "results/numeric_expansion/review/wine__smollm2__k4__jev-review/run.json",
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.8888888888888888,
+            "ci95": [
+              0.7777777777777778,
+              0.9722222222222222
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.8876328502415459,
+            "ci95": [
+              0.7696564364445343,
+              0.9733333333333333
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "ae6063c28cda8049427e7cdb9b873a25b8bbed845f8492d74bb89bb31fc6bf5b",
+        "predictions.jsonl": "738de4e779b8c55f4cf4616dd14b064e8e867f582cd1a3fa058e77997ee274dd",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "smollm2",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "smollm2_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "92594bfe34cea905411dadde88619088f980e9cb4fe5ff6ac3205e7806719bff",
+            "run.json": "b9c9a31d709d2ad5e4baff909f0d5d632972a7f672ec275158cd2de5ff4b9445",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__smollm2__k4.json",
+          "source_manifest_sha256": "96ae085d5e241966b85d3add0c979b3e77000c7292dfc78b54572cb8297d13a9",
+          "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "n_test": 36,
+      "n_classes": 3,
+      "accuracy": 0.8888888888888888,
+      "macro_f1": 0.8876328502415459,
+      "balanced_accuracy": 0.9047619047619048,
+      "failure_rate": 0.0,
+      "n_failures": 0,
+      "confusion_matrix": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          10,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          10,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.9230769230769231,
+          "recall": 1.0,
+          "f1": 0.96,
+          "support": 12
+        },
+        {
+          "label": 1,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333334,
+          "support": 14
+        },
+        {
+          "label": 2,
+          "precision": 0.7692307692307693,
+          "recall": 1.0,
+          "f1": 0.8695652173913043,
+          "support": 10
+        }
+      ],
+      "valid_response_accuracy": 0.8888888888888888,
+      "latency_p50_s": 1.094780000508763,
+      "latency_p95_s": 1.272258500015596,
+      "prediction_time_s": 39.93034208472818,
+      "input_tokens": 104738,
+      "input_tokens_known_total": 104738,
+      "input_tokens_coverage": 1.0,
+      "output_tokens": 1368,
+      "output_tokens_known_total": 1368,
+      "output_tokens_coverage": 1.0,
+      "probability_coverage": 1.0,
+      "n_probability_rows": 36,
+      "probability_renormalized_rows": 2,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 0.26433240132358976,
+      "brier_sum": 0.13323333333333334,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "ece_15_equal_width": 0.11694444444444456,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 7,
+          "count": 2,
+          "mean_confidence": 0.495,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 8,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 9,
+          "count": 5,
+          "mean_confidence": 0.622,
+          "accuracy": 0.6
+        },
+        {
+          "bin": 10,
+          "count": 3,
+          "mean_confidence": 0.7033333333333333,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 11,
+          "count": 2,
+          "mean_confidence": 0.76,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 12,
+          "count": 4,
+          "mean_confidence": 0.8174999999999999,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 13,
+          "count": 5,
+          "mean_confidence": 0.9019999999999999,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 14,
+          "count": 15,
+          "mean_confidence": 0.9653333333333332,
+          "accuracy": 1.0
+        }
+      ],
+      "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 20,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 4,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 20,
+        "accuracy_delta_pp": 55.55555555555556
+      }
     },
     {
       "dataset": "wine",
@@ -10522,22 +11916,310 @@
       "dataset": "wine",
       "model": "ibm-granite/granite-3.3-2b-instruct+jev_review",
       "display_model": "Granite 3.3 2B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 0,
-      "train_labels": null,
+      "train_labels": 0,
       "seed": 42,
-      "run_id": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::0",
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40"
+      "status": "complete",
+      "run_id": "wine__granite__k0__jev-review",
+      "source_path": "results/numeric_expansion/review/wine__granite__k0__jev-review/run.json",
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.3333333333333333,
+            "ci95": [
+              0.19444444444444445,
+              0.5
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.20833333333333334,
+            "ci95": [
+              0.11382113821138212,
+              0.3151933599526767
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "1b0dada90c43c0e570a884d99257066a58e2553ba97a08b0b40fdd8812904f86",
+        "predictions.jsonl": "c6ebdf266c78526b1d8b7c96105d22e109f54f7dacedcd08600d8e1c31b7bc55",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution",
+        "unreported"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k0",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 0,
+          "source_files_sha256": {
+            "predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+            "run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__granite__k0.json",
+          "source_manifest_sha256": "3e7ad94159c7f0c88d02f64ecd5789c02d569e85ef0f8909c733107196f8ed57",
+          "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+          "source_shots_per_class": 0,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 0,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+        "source_shots_per_class": 0,
+        "timeout": 120
+      },
+      "n_test": 36,
+      "n_classes": 3,
+      "accuracy": 0.3333333333333333,
+      "macro_f1": 0.20833333333333334,
+      "balanced_accuracy": 0.32936507936507936,
+      "failure_rate": 0.02777777777777779,
+      "n_failures": 1,
+      "confusion_matrix": [
+        [
+          11,
+          0,
+          0,
+          1
+        ],
+        [
+          12,
+          1,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.34375,
+          "recall": 0.9166666666666666,
+          "f1": 0.5,
+          "support": 12
+        },
+        {
+          "label": 1,
+          "precision": 0.5,
+          "recall": 0.07142857142857142,
+          "f1": 0.125,
+          "support": 14
+        },
+        {
+          "label": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        }
+      ],
+      "valid_response_accuracy": 0.34285714285714286,
+      "latency_p50_s": 1.0880342499585822,
+      "latency_p95_s": 1.366002822527662,
+      "prediction_time_s": 159.6327544131782,
+      "input_tokens": null,
+      "input_tokens_known_total": 22629,
+      "input_tokens_coverage": 0.9722222222222222,
+      "output_tokens": null,
+      "output_tokens_known_total": 1330,
+      "output_tokens_coverage": 0.9722222222222222,
+      "probability_coverage": 0.9722222222222222,
+      "n_probability_rows": 35,
+      "probability_renormalized_rows": 1,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 1.0831532254106726,
+      "brier_sum": 0.6570857142857143,
+      "chosen_label_argmax_disagreement_rows": 1,
+      "ece_15_equal_width": 0.07685714285714283,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 32,
+          "mean_confidence": 0.3734375,
+          "accuracy": 0.3125
+        },
+        {
+          "bin": 6,
+          "count": 3,
+          "mean_confidence": 0.42,
+          "accuracy": 0.6666666666666666
+        },
+        {
+          "bin": 7,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 8,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 9,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 10,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 11,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 12,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 13,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 14,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        }
+      ],
+      "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 12,
+        "correct_to_wrong": 10,
+        "both_correct": 0,
+        "both_wrong": 14,
+        "changed_predictions": 35,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 10,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 2,
+        "accuracy_delta_pp": 5.555555555555555
+      }
     },
     {
       "dataset": "wine",
@@ -10800,22 +12482,309 @@
       "dataset": "wine",
       "model": "ibm-granite/granite-3.3-2b-instruct+jev_review",
       "display_model": "Granite 3.3 2B \u2192 Jev",
-      "arm": "review",
       "method": "cached_label_jev_review",
       "train_per_class": 4,
-      "train_labels": null,
+      "train_labels": 12,
       "seed": 42,
-      "run_id": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "source_path": null,
-      "status": "pending: no complete audited artifact",
-      "accuracy": null,
-      "macro_f1": null,
-      "n_failures": null,
-      "n_test": null,
-      "group_bootstrap": null,
-      "probability_coverage": null,
-      "probability_kind": null,
-      "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12"
+      "status": "complete",
+      "run_id": "wine__granite__k4__jev-review",
+      "source_path": "results/numeric_expansion/review/wine__granite__k4__jev-review/run.json",
+      "group_bootstrap": {
+        "method": "unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.9166666666666666,
+            "ci95": [
+              0.8326388888888889,
+              1.0
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.9163636363636364,
+            "ci95": [
+              0.8076845555918781,
+              1.0
+            ]
+          }
+        }
+      },
+      "artifact_sha256": {
+        "run.json": "2f7a93e77b29f4903c7aac832921f236fde4fd1c1c6d66a86f107ad08ec4b91d",
+        "predictions.jsonl": "3b81d5a6d0f8896ef8cac47058b197351f96b8957141116bca3851c3c2ba08a2",
+        "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+      },
+      "probability_kinds": [
+        "jev_choice_distribution"
+      ],
+      "resolved_models": [
+        "typesafe/jev-1.13-20260917"
+      ],
+      "resolved_revisions": [],
+      "inference_dtypes": [],
+      "devices": [],
+      "config": {
+        "api_key_env": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1",
+        "budget_guard": {
+          "aggregate_authorized_usd": "25.00",
+          "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+          "dataset": "wine",
+          "endpoint": "https://openrouter.ai/api/v1/systemone",
+          "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+          "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+          "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+          "model_key": "granite",
+          "price": {
+            "catalog_context_tokens": 32000,
+            "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+            "input_usd_per_million": "0.042",
+            "output_usd_per_million": "0",
+            "per_request_reserved_usd": "0.002688000",
+            "reserve_input_tokens": 64000,
+            "source": "https://openrouter.ai/typesafe/jev-1.13",
+            "verified_on": "2026-09-22"
+          },
+          "prior_charged_or_reserved_usd": "19.325827700",
+          "prior_ledgers": {
+            "results/jev-budget.jsonl": {
+              "cap": "2.50",
+              "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+              "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+            },
+            "results/numeric_decisions/review-budget.jsonl": {
+              "cap": "0.90",
+              "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+              "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+            },
+            "results/openai-budget.jsonl": {
+              "cap": "7.50",
+              "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+              "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+            },
+            "results/tabular/api-budget.jsonl": {
+              "cap": "14.70",
+              "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+              "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+            }
+          },
+          "proposal_key": "granite_k4",
+          "review_prompt_version": "cached-label-proposal-review-v1",
+          "route": "OpenRouter",
+          "seed": 42,
+          "shots_per_class": 4,
+          "source_files_sha256": {
+            "predictions.jsonl": "04cdf6e5d6f7c1695b7d20aee318634e9b6c5658b51b2f7845f6885b1f91f192",
+            "run.json": "c3f6f198a8842f5554a57d34fb2253549ad14218f9ecedea32ab9409a23d50c2",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "source_manifest_path": "results/numeric_expansion/sources/wine__granite__k4.json",
+          "source_manifest_sha256": "c10cdcdc171cc8d9e0f6739373143daef482d9812f864eb55778e6bb2ae0859a",
+          "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+          "source_shots_per_class": 4,
+          "stage_cap_usd": "5.00",
+          "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+        },
+        "model": "typesafe/jev-1.13",
+        "provider": "jev",
+        "shots_per_class": 4,
+        "source_model": "ibm-granite/granite-3.3-2b-instruct",
+        "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+        "source_shots_per_class": 4,
+        "timeout": 120
+      },
+      "n_test": 36,
+      "n_classes": 3,
+      "accuracy": 0.9166666666666666,
+      "macro_f1": 0.9163636363636364,
+      "balanced_accuracy": 0.9285714285714285,
+      "failure_rate": 0.0,
+      "n_failures": 0,
+      "confusion_matrix": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          10,
+          0
+        ]
+      ],
+      "confusion_matrix_columns": [
+        0,
+        1,
+        2,
+        "failure"
+      ],
+      "per_class": [
+        {
+          "label": 0,
+          "precision": 0.9230769230769231,
+          "recall": 1.0,
+          "f1": 0.96,
+          "support": 12
+        },
+        {
+          "label": 1,
+          "precision": 1.0,
+          "recall": 0.7857142857142857,
+          "f1": 0.88,
+          "support": 14
+        },
+        {
+          "label": 2,
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 10
+        }
+      ],
+      "valid_response_accuracy": 0.9166666666666666,
+      "latency_p50_s": 1.0670864790445194,
+      "latency_p95_s": 1.2614944057131652,
+      "prediction_time_s": 39.10758974892087,
+      "input_tokens": 104738,
+      "input_tokens_known_total": 104738,
+      "input_tokens_coverage": 1.0,
+      "output_tokens": 1368,
+      "output_tokens_known_total": 1368,
+      "output_tokens_coverage": 1.0,
+      "probability_coverage": 1.0,
+      "n_probability_rows": 36,
+      "probability_renormalized_rows": 0,
+      "zero_true_class_probability_rows": 0,
+      "log_loss": 0.27325467523504954,
+      "brier_sum": 0.13926666666666665,
+      "chosen_label_argmax_disagreement_rows": 0,
+      "ece_15_equal_width": 0.15361111111111125,
+      "reliability_bins": [
+        {
+          "bin": 0,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 5,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 6,
+          "count": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 7,
+          "count": 1,
+          "mean_confidence": 0.5,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 8,
+          "count": 2,
+          "mean_confidence": 0.575,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 9,
+          "count": 4,
+          "mean_confidence": 0.6224999999999999,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 10,
+          "count": 3,
+          "mean_confidence": 0.6966666666666667,
+          "accuracy": 0.6666666666666666
+        },
+        {
+          "bin": 11,
+          "count": 2,
+          "mean_confidence": 0.765,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 12,
+          "count": 4,
+          "mean_confidence": 0.8174999999999999,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 13,
+          "count": 5,
+          "mean_confidence": 0.898,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 14,
+          "count": 15,
+          "mean_confidence": 0.9619999999999997,
+          "accuracy": 1.0
+        }
+      ],
+      "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+      "measurement_origin": "new_review_expansion",
+      "arm": "review",
+      "review_transitions": {
+        "wrong_to_correct": 21,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 3,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 21,
+        "accuracy_delta_pp": 58.333333333333336
+      }
     },
     {
       "dataset": "wine",
@@ -15876,10 +17845,52 @@
       "b_display": "SmolLM2 1.7B",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.5175438596491229,
+            "ci95": [
+              0.412280701754386,
+              0.6140350877192983
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.6433466713911624,
+            "ci95": [
+              0.5806009427727451,
+              0.7031442795759278
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 62,
+        "correct_to_wrong": 3,
+        "both_correct": 40,
+        "both_wrong": 9,
+        "changed_predictions": 69,
+        "correct_to_failure": 2,
+        "correct_to_wrong_label": 1,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 6,
+        "net_correct_change": 59,
+        "accuracy_delta_pp": 51.75438596491228
+      }
     },
     {
       "kind": "review_minus_jev_alone",
@@ -15890,8 +17901,37 @@
       "b_display": "Jev alone",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": -0.03508771929824561,
+            "ci95": [
+              -0.0964912280701754,
+              0.01754385964912286
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.011433655347928617,
+            "ci95": [
+              -0.055224712261416314,
+              0.030639629226329117
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
@@ -15947,64 +17987,235 @@
       "b_display": "SmolLM2 1.7B \u2192 Jev",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.02631578947368418,
+            "ci95": [
+              -0.04385964912280704,
+              0.09649122807017552
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.05112913235093042,
+            "ci95": [
+              -0.013282785600246125,
+              0.12227714578906006
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": false
     },
     {
       "kind": "review_minus_source",
       "dataset": "breast_cancer",
-      "a": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "a": "breast_cancer__granite__k0__jev-review",
       "b": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Granite 3.3 2B",
       "train_per_class_a": 0,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.4824561403508772,
+            "ci95": [
+              0.3859649122807018,
+              0.5789473684210527
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.5829435350818426,
+            "ci95": [
+              0.5151600581781479,
+              0.6478493065057277
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 57,
+        "correct_to_wrong": 2,
+        "both_correct": 41,
+        "both_wrong": 14,
+        "changed_predictions": 59,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 2,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 55,
+        "accuracy_delta_pp": 48.24561403508772
+      }
     },
     {
       "kind": "review_minus_jev_alone",
       "dataset": "breast_cancer",
-      "a": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "a": "breast_cancer__granite__k0__jev-review",
       "b": "breast_cancer__jev-1.13__e30c52b19b9e",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Jev alone",
       "train_per_class_a": 0,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.01754385964912286,
+            "ci95": [
+              -0.04385964912280704,
+              0.07894736842105265
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.011933802406264515,
+            "ci95": [
+              -0.052153915029944375,
+              0.07287967415753513
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
     {
       "kind": "review_minus_source",
       "dataset": "breast_cancer",
-      "a": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::4",
+      "a": "breast_cancer__granite__k4__jev-review",
       "b": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Granite 3.3 2B",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.3070175438596491,
+            "ci95": [
+              0.21052631578947367,
+              0.4035087719298245
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.3107846666769032,
+            "ci95": [
+              0.21949758832882096,
+              0.4058782979996477
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 38,
+        "correct_to_wrong": 3,
+        "both_correct": 67,
+        "both_wrong": 6,
+        "changed_predictions": 41,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 3,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 35,
+        "accuracy_delta_pp": 30.70175438596491
+      }
     },
     {
       "kind": "review_minus_jev_alone",
       "dataset": "breast_cancer",
-      "a": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::4",
+      "a": "breast_cancer__granite__k4__jev-review",
       "b": "breast_cancer__jev-1.13__3d1cba817d2a",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Jev alone",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": -0.00877192982456143,
+            "ci95": [
+              -0.03508771929824561,
+              0.01754385964912286
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.011601575529795793,
+            "ci95": [
+              -0.03949096773785766,
+              0.013446508148494907
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
@@ -16054,14 +18265,43 @@
     {
       "kind": "few_minus_zero_descriptive",
       "dataset": "breast_cancer",
-      "a": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "b": "pending::breast_cancer::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "a": "breast_cancer__granite__k4__jev-review",
+      "b": "breast_cancer__granite__k0__jev-review",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Granite 3.3 2B \u2192 Jev",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 114,
+        "n_groups": 114,
+        "draws_per_replicate": 114,
+        "resampled_row_count_range": [
+          114,
+          114
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.06140350877192979,
+            "ci95": [
+              -0.00877192982456143,
+              0.14035087719298245
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.06023521612745253,
+            "ci95": [
+              -0.010590122227984755,
+              0.13970982498184772
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": false
     },
@@ -17204,56 +19444,198 @@
     {
       "kind": "review_minus_source",
       "dataset": "wine",
-      "a": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
+      "a": "wine__smollm2__k0__jev-review",
       "b": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
       "a_display": "SmolLM2 1.7B \u2192 Jev",
       "b_display": "SmolLM2 1.7B",
       "train_per_class_a": 0,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 24,
+        "changed_predictions": 0,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 0,
+        "accuracy_delta_pp": 0.0
+      }
     },
     {
       "kind": "review_minus_jev_alone",
       "dataset": "wine",
-      "a": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
+      "a": "wine__smollm2__k0__jev-review",
       "b": "wine__jev-1.13__7daebee622e6",
       "a_display": "SmolLM2 1.7B \u2192 Jev",
       "b_display": "Jev alone",
       "train_per_class_a": 0,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
     {
       "kind": "review_minus_source",
       "dataset": "wine",
-      "a": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
+      "a": "wine__smollm2__k4__jev-review",
       "b": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
       "a_display": "SmolLM2 1.7B \u2192 Jev",
       "b_display": "SmolLM2 1.7B",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.5555555555555556,
+            "ci95": [
+              0.3888888888888889,
+              0.7222222222222222
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.7209661835748793,
+            "ci95": [
+              0.5970425124411192,
+              0.8231292517006803
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 20,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 4,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 20,
+        "accuracy_delta_pp": 55.55555555555556
+      }
     },
     {
       "kind": "review_minus_jev_alone",
       "dataset": "wine",
-      "a": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
+      "a": "wine__smollm2__k4__jev-review",
       "b": "wine__jev-1.13__33047fa693a8",
       "a_display": "SmolLM2 1.7B \u2192 Jev",
       "b_display": "Jev alone",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": -0.02777777777777779,
+            "ci95": [
+              -0.08333333333333337,
+              0.0
+            ]
+          },
+          "macro_f1": {
+            "estimate": -0.028730786122090457,
+            "ci95": [
+              -0.09543728909420975,
+              0.0
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
@@ -17303,70 +19685,241 @@
     {
       "kind": "few_minus_zero_descriptive",
       "dataset": "wine",
-      "a": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::4",
-      "b": "pending::wine::HuggingFaceTB/SmolLM2-1.7B-Instruct::review::0",
+      "a": "wine__smollm2__k4__jev-review",
+      "b": "wine__smollm2__k0__jev-review",
       "a_display": "SmolLM2 1.7B \u2192 Jev",
       "b_display": "SmolLM2 1.7B \u2192 Jev",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.5555555555555556,
+            "ci95": [
+              0.3888888888888889,
+              0.7222222222222222
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.7209661835748793,
+            "ci95": [
+              0.5970425124411192,
+              0.8231292517006803
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": false
     },
     {
       "kind": "review_minus_source",
       "dataset": "wine",
-      "a": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "a": "wine__granite__k0__jev-review",
       "b": "wine__granite-3.3-2b-instruct__29b8530e4f40",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Granite 3.3 2B",
       "train_per_class_a": 0,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.055555555555555525,
+            "ci95": [
+              -0.19444444444444445,
+              0.3055555555555556
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.06340579710144928,
+            "ci95": [
+              -0.06142519760940813,
+              0.20122036742758198
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 12,
+        "correct_to_wrong": 10,
+        "both_correct": 0,
+        "both_wrong": 14,
+        "changed_predictions": 35,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 10,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 1,
+        "net_correct_change": 2,
+        "accuracy_delta_pp": 5.555555555555555
+      }
     },
     {
       "kind": "review_minus_jev_alone",
       "dataset": "wine",
-      "a": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "a": "wine__granite__k0__jev-review",
       "b": "wine__jev-1.13__7daebee622e6",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Jev alone",
       "train_per_class_a": 0,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              -0.08333333333333334,
+              0.08333333333333331
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.041666666666666685,
+            "ci95": [
+              -0.023703703703703727,
+              0.1314597355850552
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
     {
       "kind": "review_minus_source",
       "dataset": "wine",
-      "a": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::4",
+      "a": "wine__granite__k4__jev-review",
       "b": "wine__granite-3.3-2b-instruct__16efece16c12",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Granite 3.3 2B",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.5833333333333333,
+            "ci95": [
+              0.4166666666666667,
+              0.75
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.7496969696969698,
+            "ci95": [
+              0.6317717341173756,
+              0.8439716312056738
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
-      "equal_new_label_budget": true
+      "equal_new_label_budget": true,
+      "transitions": {
+        "wrong_to_correct": 21,
+        "correct_to_wrong": 0,
+        "both_correct": 12,
+        "both_wrong": 3,
+        "changed_predictions": 23,
+        "correct_to_failure": 0,
+        "correct_to_wrong_label": 0,
+        "source_failure_rows": 0,
+        "review_stage_failure_rows": 0,
+        "net_correct_change": 21,
+        "accuracy_delta_pp": 58.333333333333336
+      }
     },
     {
       "kind": "review_minus_jev_alone",
       "dataset": "wine",
-      "a": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::4",
+      "a": "wine__granite__k4__jev-review",
       "b": "wine__jev-1.13__33047fa693a8",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Jev alone",
       "train_per_class_a": 4,
       "train_per_class_b": 4,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": true
     },
@@ -17416,14 +19969,43 @@
     {
       "kind": "few_minus_zero_descriptive",
       "dataset": "wine",
-      "a": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::4",
-      "b": "pending::wine::ibm-granite/granite-3.3-2b-instruct::review::0",
+      "a": "wine__granite__k4__jev-review",
+      "b": "wine__granite__k0__jev-review",
       "a_display": "Granite 3.3 2B \u2192 Jev",
       "b_display": "Granite 3.3 2B \u2192 Jev",
       "train_per_class_a": 4,
       "train_per_class_b": 0,
-      "status": "pending",
-      "paired_bootstrap": null,
+      "status": "complete",
+      "paired_bootstrap": {
+        "method": "paired unstratified group percentile bootstrap",
+        "group_definition": "identical serialized test text SHA256",
+        "samples": 2000,
+        "seed": 42,
+        "n_rows": 36,
+        "n_groups": 36,
+        "draws_per_replicate": 36,
+        "resampled_row_count_range": [
+          36,
+          36
+        ],
+        "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+        "metrics": {
+          "accuracy": {
+            "estimate": 0.5833333333333333,
+            "ci95": [
+              0.38888888888888895,
+              0.75
+            ]
+          },
+          "macro_f1": {
+            "estimate": 0.708030303030303,
+            "ci95": [
+              0.528926997977295,
+              0.8449612403100775
+            ]
+          }
+        }
+      },
       "interpretation": "Exploratory, unadjusted, A minus B; fixed split/models/serialization",
       "equal_new_label_budget": false
     },
@@ -17997,7 +20579,7 @@
     }
   ],
   "expected_comparisons": 72,
-  "complete_comparisons": 54,
+  "complete_comparisons": 72,
   "source_sha256": "3910031e6c27ae157b636903323225849e51d8901968ed10a9f5dfc3838f0d41",
   "protocol_sha256": "08909cfda1d4dcbdbcff36cdbe99e91cbc8a20952253980daacd3369604757b0",
   "pinned_source_reports": {
@@ -18009,26 +20591,26 @@
     "wine": "c7a3d9348f88f2e375a83ed12ecb233bc52b3533bc1da6a9e67f3a5100fce6b2"
   },
   "costs": {
-    "status": "halted",
-    "new_model_requests": 1099,
-    "reported_cost_requests": 1092,
-    "unknown_cost_requests": 7,
-    "known_reported_api_usd": "0.084934668",
-    "review_conservative_usd": "2.954112000",
+    "status": "complete",
+    "new_model_requests": 1500,
+    "reported_cost_requests": 1492,
+    "unknown_cost_requests": 8,
+    "known_reported_api_usd": "0.124087194",
+    "review_conservative_usd": "4.032000000",
     "prior_conservative_usd": "19.325827700",
-    "cumulative_conservative_usd": "22.279939700",
+    "cumulative_conservative_usd": "23.357827700",
     "cumulative_authorized_usd": "25.00",
     "new_llm_generation_calls": 0,
-    "ledger_sha256": "9ae26c11d837440425730abefae9354f0bdd5d61284232c33877633e2a72f496",
-    "ledger_lock_sha256": "209edf538afc2f2e932586cd66aa98abb8214199b431cc518bd34d4d689b5bb9",
-    "unique_result_events": 1099,
-    "checkpointed_paid_predictions": 1099,
+    "ledger_sha256": "71767df266ff980cc9296de5827dbce2a4d0589c130f85cf567aa6c59b4b35e9",
+    "ledger_lock_sha256": "5649f6a8aa24a9f301740d6ae437972f3ec5b15efe79f05c2f0d80243afaf823",
+    "unique_result_events": 1500,
+    "checkpointed_paid_predictions": 1500,
     "reservations_without_result": 0,
     "results_without_saved_prediction": 0,
     "source_failure_rows_without_jev_call": 0,
     "partial_checkpoint_files": 0,
-    "complete_checkpoint_conditions": 13,
-    "complete_summary_conditions": 13,
+    "complete_checkpoint_conditions": 20,
+    "complete_summary_conditions": 20,
     "expected_new_review_conditions": 20,
     "maximum_new_model_requests": 1500,
     "stage_authorized_usd": "5.00",
@@ -18051,12 +20633,12 @@
         "dataset": "breast_cancer",
         "model_key": "granite",
         "shots_per_class": 0,
-        "model_requests": 0,
-        "reported_cost_requests": 0,
+        "model_requests": 114,
+        "reported_cost_requests": 114,
         "unknown_cost_requests": 0,
-        "known_reported_api_usd": "0",
-        "conservative_usd": "0.000000000",
-        "checkpointed_paid_predictions": 0,
+        "known_reported_api_usd": "0.003987270",
+        "conservative_usd": "0.306432000",
+        "checkpointed_paid_predictions": 114,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       },
@@ -18064,12 +20646,12 @@
         "dataset": "breast_cancer",
         "model_key": "granite",
         "shots_per_class": 4,
-        "model_requests": 0,
-        "reported_cost_requests": 0,
+        "model_requests": 114,
+        "reported_cost_requests": 114,
         "unknown_cost_requests": 0,
-        "known_reported_api_usd": "0",
-        "conservative_usd": "0.000000000",
-        "checkpointed_paid_predictions": 0,
+        "known_reported_api_usd": "0.019481238",
+        "conservative_usd": "0.306432000",
+        "checkpointed_paid_predictions": 114,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       },
@@ -18155,12 +20737,12 @@
         "dataset": "breast_cancer",
         "model_key": "smollm2",
         "shots_per_class": 4,
-        "model_requests": 85,
-        "reported_cost_requests": 79,
+        "model_requests": 114,
+        "reported_cost_requests": 108,
         "unknown_cost_requests": 6,
-        "known_reported_api_usd": "0.013499388",
-        "conservative_usd": "0.228480000",
-        "checkpointed_paid_predictions": 85,
+        "known_reported_api_usd": "0.018457656",
+        "conservative_usd": "0.306432000",
+        "checkpointed_paid_predictions": 114,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       },
@@ -18181,12 +20763,12 @@
         "dataset": "wine",
         "model_key": "granite",
         "shots_per_class": 0,
-        "model_requests": 0,
-        "reported_cost_requests": 0,
-        "unknown_cost_requests": 0,
-        "known_reported_api_usd": "0",
-        "conservative_usd": "0.000000000",
-        "checkpointed_paid_predictions": 0,
+        "model_requests": 36,
+        "reported_cost_requests": 35,
+        "unknown_cost_requests": 1,
+        "known_reported_api_usd": "0.000950418",
+        "conservative_usd": "0.096768000",
+        "checkpointed_paid_predictions": 36,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       },
@@ -18194,12 +20776,12 @@
         "dataset": "wine",
         "model_key": "granite",
         "shots_per_class": 4,
-        "model_requests": 0,
-        "reported_cost_requests": 0,
+        "model_requests": 36,
+        "reported_cost_requests": 36,
         "unknown_cost_requests": 0,
-        "known_reported_api_usd": "0",
-        "conservative_usd": "0.000000000",
-        "checkpointed_paid_predictions": 0,
+        "known_reported_api_usd": "0.004398996",
+        "conservative_usd": "0.096768000",
+        "checkpointed_paid_predictions": 36,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       },
@@ -18272,12 +20854,12 @@
         "dataset": "wine",
         "model_key": "smollm2",
         "shots_per_class": 0,
-        "model_requests": 0,
-        "reported_cost_requests": 0,
+        "model_requests": 36,
+        "reported_cost_requests": 36,
         "unknown_cost_requests": 0,
-        "known_reported_api_usd": "0",
-        "conservative_usd": "0.000000000",
-        "checkpointed_paid_predictions": 0,
+        "known_reported_api_usd": "0.000977340",
+        "conservative_usd": "0.096768000",
+        "checkpointed_paid_predictions": 36,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       },
@@ -18285,12 +20867,12 @@
         "dataset": "wine",
         "model_key": "smollm2",
         "shots_per_class": 4,
-        "model_requests": 0,
-        "reported_cost_requests": 0,
+        "model_requests": 36,
+        "reported_cost_requests": 36,
         "unknown_cost_requests": 0,
-        "known_reported_api_usd": "0",
-        "conservative_usd": "0.000000000",
-        "checkpointed_paid_predictions": 0,
+        "known_reported_api_usd": "0.004398996",
+        "conservative_usd": "0.096768000",
+        "checkpointed_paid_predictions": 36,
         "reservations_without_result": 0,
         "results_without_saved_prediction": 0
       }

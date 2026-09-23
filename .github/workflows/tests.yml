@@ -15,7 +15,7 @@ jobs:
       - name: CPU tensor runtime for offline helper tests
         run: python -m pip install 'torch>=2.4,<3' --index-url https://download.pytorch.org/whl/cpu
       - name: Recreate frozen numeric feature bundles
-        run: python scripts/tabular_data.py --datasets breast_cancer wine --output data/tabular-full --seed 42
+        run: python scripts/tabular_data.py --datasets titanic breast_cancer wine --output data/tabular-full --seed 42
       - name: Recreate and verify frozen text pilot bytes
         run: |
           jevbench prepare sst2 trec --cache-dir data --output data/pilot --seed 42 --train-limit 10000 --validation-limit 1000 --test-limit 200 --max-text-chars 2000
@@ -37,6 +37,10 @@ jobs:
           HF_HUB_OFFLINE: '1'
           TRANSFORMERS_OFFLINE: '1'
         run: python -m pytest -q -rs
+      - name: Reconcile final cumulative benchmark accounting
+        run: |
+          python scripts/summarize_completion_costs.py
+          git diff --exit-code -- results/completion_20260923/COSTS.json results/completion_20260923/COSTS.md
       - name: Validate dashboard source and measured data snapshot
         run: |
           node --check dashboard/dist/app.js

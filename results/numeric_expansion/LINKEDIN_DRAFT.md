@@ -1,27 +1,21 @@
-# LinkedIn draft
+# Numeric LinkedIn draft
 
-Draft only; not posted. The repository and dashboard are currently private, so arrange public access or a public evidence copy before sharing their links. The current completion status must remain visible when sharing. Use the dashboard to inspect each condition; final publication figures require the completed review matrix.
+Draft only; not posted. This numeric-only version describes completed first-attempt results: 68/68 conditions, 24/24 reviews and 72/72 contrasts. Original failures remain included; [completed recovery](../completion_20260923/RECOVERY_FINDINGS.md) is a separate view. The [main publication draft](../review_value/LINKEDIN_DRAFT.md) incorporates the completed text, matched-control and recovery evidence. Verify public access to linked evidence before sharing.
 
 ---
 
-I tested whether a bounded decision reviewer could improve numerical classification.
+I tested whether adding a decision reviewer improved numerical classification. Sometimes it corrected the source. Sometimes it damaged answers that were already right.
 
-I tested six LLMs (Qwen 0.5B/4B, SmolLM2, Granite, GPT Luna and Astra) on serialized Breast Cancer and Wine data, with zero examples and four examples per class. Jev reviews each saved class proposal; direct Jev and classical ML provide references.
+Six LLMs, two public datasets, zero examples or four examples per class. Jev reviewed each saved class proposal using the same row and examples. I also measured Jev alone and native-feature classical models.
 
-The source runs are complete; Jev review is complete in 17 of 24 settings, with the remainder paused by provider billing. These examples come from completed settings.
+All 24 review settings are complete. Three observations stand out:
 
-Three results made me pause:
+- Astra's zero-shot Wine accuracy fell from 36/36 to 16/36: **100% → 44.4%**. Twenty correct answers became wrong labels. This condition had no API failures.
+- Qwen2.5 0.5B's four-shot Wine accuracy rose from 12/36 to 33/36: **33.3% → 91.7%**. Yet every reviewed label matched Jev alone. That large gain over the source added no observed accuracy over direct Jev.
+- With the same twelve Wine training examples, native-feature logistic regression reached **35/36 (97.2%)**, and random forest **34/36 (94.4%)**.
 
-• Astra's zero-shot Wine accuracy fell from 100% to 44.4% after Jev review. Twenty correct answers became wrong labels. There were no API failures in that condition.
+That changes how I evaluate a review stage: measure both what it fixes and what it breaks, compare it with its source and with the reviewer alone, and keep simple baselines in the experiment.
 
-• Qwen2.5 0.5B's few-shot Wine accuracy rose from 33.3% to 91.7%. But every reviewed prediction matched direct Jev. The large improvement over Qwen added no accuracy over Jev alone here.
+These are exploratory results from 150 unique held-out rows across two familiar public datasets, one split and fixed recipes. The small models use a particular restricted-label scoring setup; Wine cultivar IDs are arbitrary without examples. The results do not establish general model superiority or the causal value of a proposal. Original inference failures remain in the denominators; separate retries must not erase them.
 
-• With the same twelve Wine training examples, native-feature logistic regression reached 97.2% and random forest 94.4%. Those simple baselines deserve a place in the comparison.
-
-I'm learning to ask two questions: did review improve the source, and did the source add anything beyond the reviewer alone? Bounded outputs can still be wrong.
-
-This is exploratory: two small public datasets, one split, and possible pretraining exposure. Wine's cultivar IDs are arbitrary without examples. These results don't establish general model superiority.
-
-Code, predictions and protocol: https://github.com/statsguysam/jev-classification-benchmark
-
-How would you test whether a reviewer adds value to a classifier?
+Code, predictions and protocol: [jev-classification-benchmark](https://github.com/statsguysam/jev-classification-benchmark).

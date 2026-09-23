@@ -242,8 +242,13 @@ def audited_row(dataset, record, predictions, *, model, arm, budget, path, sampl
             if prediction.probabilities is not None:
                 p = prediction.probabilities
                 require(len(p) == len(dataset.labels) and all(type(v) in (float, int) and math.isfinite(v) and 0 <= v <= 1 for v in p)
-                    and math.isclose(sum(p), 1, abs_tol=1e-6) and prediction.label == max(range(len(p)), key=p.__getitem__),
-                    "Invalid probabilities or decision rule")
+                    and math.isclose(sum(p), 1, abs_tol=1e-6), "Invalid probabilities or decision rule")
+                # Jev supplies its own Choice label. Match the frozen adapter's
+                # tolerance without imposing a first-index argmax tie break.
+                # Other recipes retain their declared first-argmax decision.
+                decision_valid = (p[prediction.label] >= max(p) - 1e-6 if record["config"].get("provider") == "jev"
+                    else prediction.label == max(range(len(p)), key=p.__getitem__))
+                require(decision_valid, "Invalid probabilities or decision rule")
     metrics = evaluate(dataset.test, predictions, len(dataset.labels))
     require(all(record["metrics"].get(k) == v for k, v in metrics.items()), "Saved metrics disagree with predictions")
     values = chosen(predictions, len(dataset.labels))
