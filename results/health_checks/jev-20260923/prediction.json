@@ -1,0 +1,29 @@
+{
+  "error": null,
+  "input_tokens": 349,
+  "label": 0,
+  "latency_s": 0.5478723329724744,
+  "metadata": {
+    "budget": {
+      "ledger_id": "dce91e74-70ef-4ce4-80f7-1caf500dce0d",
+      "reservation_id": "0c703752-42ba-4d7c-9b2e-e9b8004d19d6",
+      "reservation_released": false,
+      "reserved_upper_bound_usd": "0.002688000"
+    },
+    "openrouter": {
+      "endpoint": "https://openrouter.ai/api/v1/systemone",
+      "id": "gen-dec-1790174923-2y9ZuUxe0qssBJk4Loqv",
+      "provider": "TypeSafe",
+      "reported_cost_usd": "0.000014658"
+    },
+    "probability_kind": "jev_choice_distribution",
+    "requested_model": "typesafe/jev-1.13",
+    "resolved_model": "typesafe/jev-1.13-20260917"
+  },
+  "output_tokens": 31,
+  "probabilities": [
+    1.0,
+    0.0
+  ],
+  "row_id": "jev-health-20260923"
+}

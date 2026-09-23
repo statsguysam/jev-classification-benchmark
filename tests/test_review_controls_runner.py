@@ -170,3 +170,51 @@ def test_failed_response_cannot_keep_distribution(tmp_path):
     prediction.probabilities = [0.8, 0.2]
     with pytest.raises(controls.budget.GuardError, match='fallback'):
         controls.validate_prediction(prediction, plan['requests'][0])
+
+
+def test_health_probe_keeps_full_allowance_and_missing_anchor_fails(monkeypatch, tmp_path):
+    path = tmp_path / "health-budget.jsonl"
+    monkeypatch.setattr(controls, "HEALTH_LEDGER", path)
+    assert controls.health_check_allowance() == 0
+    ledger = controls.budget.Ledger(path, controls.HEALTH_ALLOWANCE, initialize=True)
+    assert controls.health_check_allowance() == controls.Decimal("0.002688000")
+    ledger.reserve(controls.route.RESERVE_NANO, {"purpose": "fixture"})
+    assert controls.health_check_allowance() == controls.Decimal("0.002688000")
+    path.with_name(path.name + ".lock").unlink()
+    with pytest.raises(controls.budget.GuardError, match="Health-check ledger/anchor"):
+        controls.health_check_allowance()
+
+
+def test_health_probe_route_violation_blocks_controls(monkeypatch, tmp_path):
+    path = tmp_path / "health-budget.jsonl"
+    monkeypatch.setattr(controls, "HEALTH_LEDGER", path)
+    ledger = controls.budget.Ledger(path, controls.HEALTH_ALLOWANCE, initialize=True)
+    ident = ledger.reserve(controls.route.RESERVE_NANO, {"purpose": "fixture"})
+    ledger.result(ident, {"usage_exceeded_reservation_assumptions": True})
+    with pytest.raises(controls.budget.GuardError, match="Health-check accounting"):
+        controls.health_check_allowance()
+
+
+def test_controls_remaining_budget_includes_health_probe(monkeypatch, tmp_path):
+    path = tmp_path / "health-budget.jsonl"
+    monkeypatch.setattr(controls, "ROOT", tmp_path)
+    monkeypatch.setattr(controls, "HEALTH_LEDGER", path)
+    monkeypatch.setattr(controls, "producer_pins", lambda: {})
+    monkeypatch.setattr(controls.historical, "verify_envelope", lambda: None)
+    monkeypatch.setattr(controls.numeric_report, "collect", lambda **_: {"complete_runs": 68})
+    monkeypatch.setattr(controls.text_report, "collect", lambda **_: {
+        "complete_runs": 68, "costs": {"cumulative_conservative_usd": "24.00"}})
+    paths = [path, path.with_name(path.name + ".lock")]
+    monkeypatch.setattr(controls, "prior_paths", lambda: paths)
+    ledger = controls.budget.Ledger(path, controls.HEALTH_ALLOWANCE, initialize=True)
+    ident = ledger.reserve(controls.route.RESERVE_NANO, {"purpose": "fixture"})
+    ledger.result(ident, {"outcome": "returned", "reported_cost_usd": "0.000001"})
+    result = controls.readiness()
+    assert result["prior_conservative_usd"] == "24.002688000"
+    assert result["allocation_usd"] == "0.997312000"
+    assert result["health_check_allowance_usd"] == "0.002688000"
+    assert set(result["files_sha256"]) == {p.name for p in paths}
+    with path.open("a") as stream:
+        stream.write("changed")
+    with pytest.raises(controls.budget.GuardError, match="earlier ledger changed"):
+        controls.check_prior(result)

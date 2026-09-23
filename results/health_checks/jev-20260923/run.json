@@ -1,0 +1,44 @@
+{
+  "budget": {
+    "budget_usd": "0.002688000",
+    "charged_or_reserved_usd": "0.002688000",
+    "events": 3,
+    "halted": false,
+    "ledger_id": "dce91e74-70ef-4ce4-80f7-1caf500dce0d",
+    "remaining_reservation_usd": "0.000000000",
+    "reservations": 1,
+    "settlements": 0
+  },
+  "completed_at": "2026-09-23T14:48:43.719717+00:00",
+  "credit_receipt": {
+    "authenticated": true,
+    "checked_at": "2026-09-23T14:48:41.662472+00:00",
+    "endpoint": "https://openrouter.ai/api/v1/credits",
+    "http_status": 200,
+    "method": "GET",
+    "positive_available_credit": true
+  },
+  "exception_type": null,
+  "historical_files_unchanged": true,
+  "no_automatic_retry": true,
+  "no_benchmark_metrics": true,
+  "prediction_error": null,
+  "provenance": {
+    "authorized_total_usd": "25.00",
+    "fresh_verification_sha256": "5157a8507ca3ba2df1d1b537d6db137b2a13924cd60bc03df4b69b8225d3c2e1",
+    "historical_envelope_usd": "24.957827700",
+    "probe_sha256": "f59e921cb36d9b1a59a5c9a00826347fc6e409d7abaed4228945546d81e1bb09",
+    "purpose": "isolated_health_probe_not_benchmark",
+    "verified_on": "2026-09-23"
+  },
+  "request": {
+    "expected_choice": 0,
+    "labels": [
+      "fruit",
+      "vehicle"
+    ],
+    "prompt": "Classify the final text.\nClasses:\n0: fruit\n1: vehicle\nFinal text: An apple is a fruit.\nClass ID:",
+    "row_id": "jev-health-20260923"
+  },
+  "status": "responded_expected_choice"
+}

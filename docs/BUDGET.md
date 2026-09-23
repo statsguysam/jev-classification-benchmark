@@ -2,6 +2,14 @@
 
 The approved cumulative total is **US$25**: the original US$10 ceiling, US$10 for the tabular extension, and US$5 for the expanded numerical zero/few-shot review experiment. The new text pipeline extension uses remaining headroom inside this ceiling and preserves the full unfinished numerical allowance; it adds no spending authorization. These ledgers enforce reservations under the documented pricing assumptions; they are not provider invoices or account-wide caps.
 
+## Operational check on 23 September 2026
+
+The isolated [Jev health probe](../scripts/probe_jev_health.py) has a single-request allowance of **US$0.002688**, recorded separately in `results/health_checks/jev-20260923/budget.jsonl` and its anchor. It uses a synthetic input and is excluded from benchmark metrics. Its full allowance remains reserved even if the provider reports a lower charge or the request fails. It does not retry or replace a historical prediction.
+
+The full outstanding numeric/text envelope below plus this probe is **US$24.960515700**, within the existing US$25 authorization. The controls allocator includes the probe ledger and anchor among protected prior files and subtracts its full allowance before allocating any remaining funds. Historical study reports retain their study-only totals; this operational allowance is additional to those totals. The check's new route/pricing evidence does not renew the historical producers' dated execution guards.
+
+The [saved check](../results/health_checks/jev-20260923/run.json) completed successfully at **2026-09-23 14:48:43 UTC**. TypeSafe served `typesafe/jev-1.13-20260917`, returned the expected bounded choice in approximately 0.55 seconds, and reported US$0.000014658 for this request. The ledger still retains the full US$0.002688 allowance. Historical evidence was unchanged; the synthetic check contributes no benchmark accuracy or speed claim.
+
 ## Text pipeline extension allocation
 
 **No text-review calls have started.** Twenty-four planned source → Jev conditions on SST-2/TREC require at most **4,800 new review requests**. Existing Qwen/Luna/Astra and direct-Jev predictions are reused; SmolLM2/Granite use local or Colab public weights. Reusing paid source predictions creates no new source-model charge in this stage, but it does not make the cost of running a fresh two-stage pipeline zero.

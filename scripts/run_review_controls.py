@@ -32,6 +32,8 @@ AREA = ROOT / "results/review_controls"
 PREPARED = AREA / "prepared_full"
 OUTPUT = AREA / "execution"
 LEDGER = OUTPUT / "budget.jsonl"
+HEALTH_LEDGER = ROOT / "results/health_checks/jev-20260923/budget.jsonl"
+HEALTH_ALLOWANCE = "0.002688000"
 TOTAL = Decimal("25.00")
 TEXT_WRAPPER_SHA = "bdc3d1cac8e52791359023b57abac8833d898af6ff7b0240512e337baa3ba43e"
 
@@ -68,9 +70,27 @@ def producer_pins():
             "route": file_sha(route.__file__), "ledger": file_sha(route._BUDGET_PATH)}
 
 
+def health_check_allowance():
+    """Preserve the isolated operational probe's full allowance, including orphans."""
+    lock = HEALTH_LEDGER.with_name(HEALTH_LEDGER.name + ".lock")
+    if not HEALTH_LEDGER.exists() and not lock.exists():
+        return Decimal(0)
+    require(HEALTH_LEDGER.is_file() and lock.is_file() and
+            not HEALTH_LEDGER.is_symlink() and not lock.is_symlink(),
+            "Health-check ledger/anchor is missing or unsafe; reconcile before controls")
+    state = budget.Ledger(HEALTH_LEDGER, HEALTH_ALLOWANCE).snapshot()
+    require(not state["halted"] and state["reservations"] <= 1 and state["settlements"] == 0,
+            "Health-check accounting differs; reconcile before controls")
+    # Even an initialized but interrupted probe keeps its entire allocation.
+    # Provider-reported cost is never used to reclaim this reservation.
+    return Decimal(HEALTH_ALLOWANCE)
+
+
 def prior_paths():
     paths = [ROOT / name for name in historical.numeric.PRIOR]
     paths += [historical.numeric.LEDGER, historical.LEDGER]
+    if health_check_allowance():
+        paths.append(HEALTH_LEDGER)
     return [item for path in paths for item in (path, path.with_name(path.name + ".lock"))]
 
 
@@ -97,10 +117,13 @@ def readiness():
     numeric = numeric_report.collect(samples=100)
     text = text_report.collect(samples=100)
     ready = numeric["complete_runs"] == 68 and text["complete_runs"] == 68
+    probe = health_check_allowance()
+    prior_amount = Decimal(text["costs"]["cumulative_conservative_usd"]) + probe
     result = {"numeric_complete": numeric["complete_runs"], "numeric_planned": 68,
               "text_complete": text["complete_runs"], "text_planned": 68,
               "ready_for_new_controls": ready,
-              "prior_conservative_usd": text["costs"]["cumulative_conservative_usd"],
+              "prior_conservative_usd": budget.usd_string(budget.usd_nano(str(prior_amount))),
+              "health_check_allowance_usd": budget.usd_string(budget.usd_nano(str(probe))),
               "authorized_usd": "25.00"}
     if ready:
         amount = Decimal(result["prior_conservative_usd"])
