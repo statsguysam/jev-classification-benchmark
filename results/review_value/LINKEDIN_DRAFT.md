@@ -5,10 +5,10 @@ The question was practical: how well does it handle bounded decisions, such as y
 Zero-shot classification makes experimentation easier. Choosing a model still requires labeled evaluation data, checks on its confidence scores, and a fair comparison with practical alternatives. A small trained classifier belongs in that comparison too.
 
 So I tested:
-• An LLM alone
-• Jev alone
-• An LLM’s proposed class reviewed by Jev
-• XGBoost, LightGBM, logistic regression and random forest
+• LLMs alone — open-weight models: Qwen2.5 0.5B, Qwen3 4B, SmolLM2 1.7B and IBM Granite 3.3 2B; hosted OpenAI models: GPT-5.6 Luna and GPT-6 Astra.
+• Jev alone — TypeSafe’s Jev 1.13.
+• LLM → Jev review — each LLM’s proposed class reviewed by Jev 1.13.
+• Classical ML — XGBoost, LightGBM, logistic regression and random forest.
 
 Six source LLMs, zero-shot and four examples per class, across numerical Breast Cancer and Wine data, plus SST-2 sentiment and TREC question classification. Each method saw the same test rows within its dataset; matched-label and full-training ML references stayed separate.
 
