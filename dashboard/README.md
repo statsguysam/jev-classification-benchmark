@@ -2,7 +2,7 @@
 
 A dashboard for comparing an LLM's original answer, its Jev-reviewed answer, Jev alone and classical classifiers. Six LLMs run zero-shot and with four examples per class. The landing page covers the 68 numerical conditions; `text.html` covers the separate 68-condition SST-2/TREC study. Earlier experiments are available at `historical.html`.
 
-The hosted site is private to the owning account. It makes no model API calls. Source links point to the private benchmark repository.
+The hosted site is private to the owning account. It makes no model API calls. Source links point to this public benchmark repository. The dashboard code and aggregate data can also be served locally using the instructions below.
 
 ## Numerical view
 

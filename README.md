@@ -18,7 +18,9 @@ Jev sometimes corrected a weak source and sometimes overruled a stronger answer.
 
 These are exploratory results from 550 distinct test rows, one split per dataset and one selection of few-shot examples. Reusing those rows across models does not create independent replications. The proposal controls were designed after the earlier results had been seen.
 
-Read the [full evidence story](results/review_value/STORY.md), the [illustrated article](results/medium_story/ARTICLE.md), or the [LinkedIn draft](results/review_value/LINKEDIN_DRAFT.md). The repository and dashboard are private.
+Read the [full evidence story](results/review_value/STORY.md), the [illustrated Medium draft submitted to Analytics Vidhya](results/medium_story/ARTICLE.md), or the [published LinkedIn post](https://www.linkedin.com/feed/update/urn:li:ugcPost:7508737309828075521/). The [original LinkedIn draft](results/review_value/LINKEDIN_DRAFT.md) is also retained.
+
+This repository became public on September 24, 2026. The hosted dashboard remains private, and its code and aggregate data are available in [dashboard/](dashboard/).
 
 ## Datasets and methods
 
@@ -262,7 +264,7 @@ With four core datasets and 200 heldout rows each, that broader configuration pl
 
 ## LoRA and Colab
 
-Open [notebooks/colab_benchmark.ipynb](notebooks/colab_benchmark.ipynb) in Colab and select a GPU runtime. For this private repository, run `python scripts/export_colab_bundle.py` locally and upload `artifacts/jev-classification-benchmark-colab.zip` through the notebook. It verifies the source checksums, extracts into a fresh directory, and installs the same package/CLI. The source bundle excludes datasets, results, weights, environment files, and saved notebook outputs; review source code for manually pasted secrets before sharing it. Included README links to measured results become usable only after you generate or separately supply those results.
+Open [notebooks/colab_benchmark.ipynb](notebooks/colab_benchmark.ipynb) in Colab and select a GPU runtime. Run `python scripts/export_colab_bundle.py` locally and upload `artifacts/jev-classification-benchmark-colab.zip` through the notebook. It verifies the source checksums, extracts into a fresh directory, and installs the same package/CLI. The source bundle excludes datasets, results, weights, environment files, and saved notebook outputs; review source code for manually pasted secrets before sharing it. Included README links to measured results become usable only after you generate or separately supply those results.
 
 The notebook runs local weights only, with no hosted API calls. Colab compute quotas and charges depend on your account. Start with `qwen_small` to check the pipeline if GPU memory or session time is limited; this is a technical smoke model, not the main 4B comparison. Download the notebook's allowlisted results ZIP before the runtime expires.
 
