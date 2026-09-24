@@ -10,7 +10,12 @@ So I tested:
 • LLM → Jev review — each LLM’s proposed class reviewed by Jev 1.13.
 • Classical ML — XGBoost, LightGBM, logistic regression and random forest.
 
-Six source LLMs, zero-shot and four examples per class, across numerical Breast Cancer and Wine data, plus SST-2 sentiment and TREC question classification. Each method saw the same test rows within its dataset; matched-label and full-training ML references stayed separate.
+Datasets:
+• Numeric — Breast Cancer: binary; Wine: multiclass (3 classes).
+• Text — SST-2 sentiment: binary; TREC questions: multiclass (6 classes).
+
+LLMs and Jev: zero-shot (no labeled examples) and few-shot (4 per class).
+Same test rows for all methods within each dataset. Classical ML used either the same few-shot training examples or the full training set, reported separately.
 
 Three findings stood out:
 
