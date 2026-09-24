@@ -35,7 +35,7 @@ Jev corrected 3 mistakes and replaced 24 correct answers with wrong ones. Neithe
 
 Keeping the row, examples and Jev prompt wording fixed, I compared real Qwen3 proposals, no proposal, and shuffled proposals.
 
-Real versus no proposal changed first-attempt accuracy by −0.5 to +0.5 percentage points across the four datasets. All four paired 95% intervals included zero. After separate failure recovery, all four intervals still included zero. This does not prove equivalence.
+Real versus no proposal changed first-attempt accuracy by −0.5 to +0.5 percentage points across the four datasets. All four paired 95% intervals included zero, both before and after separate failure recovery. This does not prove equivalence.
 
 My takeaway: assess a two-model pipeline against both stages alone and credible classical baselines. Count what the reviewer fixes—and what it breaks.
 
