@@ -8,7 +8,7 @@ This answers a narrower, concrete question than the earlier dashboard: what happ
 
 [TypeSafe describes Jev](https://docs.typesafe.ai/concepts/system-one) as a separate decision model. It receives a state and typed questions. In our experiment, the question is a Choice with exactly two or three allowed categories. A numerical row is serialized into named feature values; Jev returns one allowed class and a probability distribution. That distribution must still be evaluated against the true outcomes.
 
-The new composition is:
+The pipeline works like this:
 
 ```text
 Numeric row + the same labeled examples
@@ -41,7 +41,7 @@ The Breast Cancer accuracy changes have paired 95% bootstrap intervals of **+7.0
 
 Jev alone achieved **93.0% / 91.7%** on Breast Cancer / Wine. The Qwen → Jev chain achieved **93.0% / 88.9%**. In these measurements, starting with Qwen did not improve on Jev's direct accuracy. Astra → Jev was slightly above Jev alone, but the paired intervals do not establish an advantage.
 
-The useful architecture lesson is to test the components as well as the chain. Improving a weak first-stage model does not show that both stages are necessary. In a live application, the chain also pays for and waits for the first LLM call, even though this experiment reused cached proposals.
+These comparisons show why each stage needs its own baseline. Improving a weak first-stage model does not show that both stages are necessary. In a live application, the chain also pays for and waits for the first LLM call, even though this experiment reused cached proposals.
 
 ## Comparison with classical ML
 
@@ -60,7 +60,7 @@ Most Jev-versus-boosting paired intervals cross zero. The largest separation was
 
 ![Numerical-only model comparison](numeric-comparison.png)
 
-## A defensible conclusion to share
+## What these results show
 
 **A bounded decision layer is not an automatic accuracy upgrade. In this small numerical pilot, Jev helped the weaker LLM, hurt the stronger one, and classical ML remained competitive. The results depended on the component models and the training-label budget; adding a second stage did not consistently improve accuracy.**
 

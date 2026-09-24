@@ -36,7 +36,7 @@ class Element {
 async function harness(data, failure=null) {
   const elements=new Map([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>[m[1],new Element(m[1])]));
   for(const match of html.matchAll(/<select\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/select>/g))elements.get(match[1]).innerHTML=match[2];
-  for(const id of ['source-score','review-score','direct-score','transitions'])elements.get(id).textContent='—';
+  for(const id of ['source-score','review-score','direct-score','transitions'])elements.get(id).textContent='N/A';
   let fetches=0;
   const context=vm.createContext({console, document:{getElementById(id){assert.ok(elements.has(id),`Unknown DOM ID ${id}`);return elements.get(id);}},
     async fetch(url){fetches++;assert.equal(url,'review-data.json');if(failure==='network')throw Error('simulated network failure');return {ok:!failure,status:503,async json(){return data;}};}});
@@ -95,7 +95,7 @@ async function main(){
     const direct=svg.match(/<line x1="72" x2="722" y1="([^"]+)" y2="([^"]+)" stroke="#c17b36"/);
     assert.ok(direct);close(Number(direct[1]),275-225*c.metrics.direct_jev[metric],'Direct Jev baseline');
     const axis=[...svg.matchAll(/<text x="60"[^>]*>([^<]+)<\/text>/g)].map(m=>m[1]);assert.equal(axis.length,5);
-    if(metric==='macro_f1')assert.ok(axis.every(label=>!label.includes('%')),'Macro-F1 axis must match 0–1 score formatting');
+    if(metric==='macro_f1')assert.ok(axis.every(label=>!label.includes('%')),'Macro-F1 axis must match 0 to 1 score formatting');
     else assert.ok(axis.every(label=>label.includes('%')));
     gatesChecked++;
   }
@@ -103,7 +103,7 @@ async function main(){
     const failed=await harness(asset,failure);
     assert.match(failed.elements.get('status').textContent,/Evidence unavailable:/);
     assert.match(failed.elements.get('status').textContent,/No scores have been substituted/);
-    for(const id of ['source-score','review-score','direct-score'])assert.equal(failed.elements.get(id).textContent,'—');
+    for(const id of ['source-score','review-score','direct-score'])assert.equal(failed.elements.get(id).textContent,'N/A');
     assert.equal(failed.elements.get('comparison').innerHTML,'');assert.equal(failed.elements.get('curve').innerHTML,'');
   }
   assert.equal(JSON.stringify(asset),before,'Dashboard must not mutate the aggregate input');
@@ -123,7 +123,7 @@ async function checkPublishedControlRecovery(data){
  }
  assert.equal(r.runs.length,12);assert.equal(r.comparisons.length,8);
  const counts=r.recovery_counts;
- if(r.no_op)assert.match(e.get('control-recovery-status').textContent,/No-op: every original control and repeat response was valid/);
+ if(r.no_op)assert.match(e.get('control-recovery-status').textContent,/Every original control and repeat response was valid, so no additional calls were needed and scores are unchanged/);
  else{
   assert.ok(e.get('control-recovery-status').textContent.includes(`${r.new_calls} additional calls`));
   assert.ok(e.get('control-recovery-status').textContent.includes(`Primary failures: ${counts.primary.original_failures} → ${counts.primary.remaining_failures}; repeat failures: ${counts.repeat.original_failures} → ${counts.repeat.remaining_failures}`));
@@ -218,7 +218,7 @@ async function checkControls(){
  dependent.recovery.conditions[0].paired_group_bootstrap={metrics:{accuracy:{estimate:0,ci95:[0,0]}}};
  dependent.recovery.conditions[0].corrected=0;
  const dh=await harness(dependent), dr=tableRows(dh.elements.get('recovery-table').innerHTML)[0];
- assert.equal(dr[1],'Complete · dependent overlay');assert.equal(dr[2],'75.0%');assert.equal(dr[3],'77.8%');assert.equal(dr[6],'1 / 0 / 0');assert.equal(dr[7],'0 / 0');
+ assert.equal(dr[1],'Complete · source recovered before review');assert.equal(dr[2],'75.0%');assert.equal(dr[3],'77.8%');assert.equal(dr[6],'1 / 0 / 0');assert.equal(dr[7],'0 / 0');
  const secondary=controlFixture(), primarySnapshot=JSON.stringify(secondary.controls);
  secondary.control_recovery={status:'complete',no_op:false,new_calls:16,
   recovery_counts:{primary:{original_failures:12,remaining_failures:0},repeat:{original_failures:4,remaining_failures:0}},
@@ -242,7 +242,7 @@ async function checkControls(){
  }
  assert.equal(JSON.stringify(secondary.controls),primarySnapshot);
  secondary.control_recovery.no_op=true;secondary.control_recovery.new_calls=0;
- const noop=await harness(secondary);assert.match(noop.elements.get('control-recovery-status').textContent,/No-op: every original control and repeat response was valid/);
+ const noop=await harness(secondary);assert.match(noop.elements.get('control-recovery-status').textContent,/Every original control and repeat response was valid, so no additional calls were needed and scores are unchanged/);
  assert.equal(JSON.stringify(fixture),original,'Rendering controls must not mutate the evidence');
 }
 main().catch(error=>{console.error(error.stack||error);process.exitCode=1;});

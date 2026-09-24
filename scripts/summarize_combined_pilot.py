@@ -178,7 +178,7 @@ def collect(root):
 
 
 def fmt(value, digits=4):
-    return '—' if value is None else f'{value:.{digits}f}'
+    return 'N/A' if value is None else f'{value:.{digits}f}'
 
 
 def score(row, metric):
@@ -214,8 +214,8 @@ def summarize(root, output):
     for row in rows:
         row['manifest_group'] = groups.get((row['dataset'], row.get('manifest_sha256')), '')
     lines = ['# Combined SST-2 / TREC pilot', '',
-             f'**{len(complete)} completed model/reference rows** are summarized below. {len(pending)} planned or unfinished rows have no score. Only completed imported run artifacts supply numbers; UI observations and partial predictions are not scored.', '',
-             'This is a **200-test-row, one-selection-seed (42) pilot per dataset**, using the shared 2,000-character prefix. Zero-shot uses no new task examples. Four-per-class prompting, adaptation and the fixed Naive Bayes reference use eight labeled examples for SST-2 or 24 for TREC, with no development labels. Pretraining data/compute are not matched.', '',
+             f'This report contains **{len(complete)} completed model/reference rows**. Scores come from completed saved runs. Planned or unfinished rows without scores: {len(pending)}.', '',
+             'Each dataset has **200 test rows**, with training examples selected using seed 42. Every method sees the same first 2,000 characters of each input. Zero-shot uses no new task examples. Four-per-class prompting, adaptation and the fixed Naive Bayes reference use eight labeled examples for SST-2 or 24 for TREC, with no development labels. Pretraining data and compute differ between models.', '',
              'The 0.5B adapter uses ordinary LoRA; the 4B adapter uses QLoRA when its recorded metadata confirms four-bit training. Both use normal configured precision for inference. Hosted LoRA, including Jev LoRA, is unavailable. Jev runs use the exact requested OpenRouter model `typesafe/jev-1.13` with native Choice probabilities; absent or incomplete runs remain pending and are never assigned a zero score.', '',
              '## Completed runs by exact manifest group', '',
              'Different complete manifest hashes are kept in separate groups. Membership alone is not proof that two environments prepared equivalent data. Cross-environment equivalence requires the separately linked audit of ordered IDs, labels, text/content hashes and training provenance; this summarizer does not infer paired contrasts across hashes.', '']
@@ -231,10 +231,10 @@ def summarize(root, output):
     lines += ['## Pending and unavailable conditions', '',
               '| Dataset | Model | Method | State | Existing artifact |', '|---|---|---|---|---|']
     for r in pending:
-        artifact = f"[run]({link(root/r['source_path'], output)})" if r['source_path'] else '—'
+        artifact = f"[run]({link(root/r['source_path'], output)})" if r['source_path'] else 'N/A'
         lines.append(f"| {r['dataset']} | {r['display_model']} | {r['method_label']} | {r['status']} | {artifact} |")
     if not pending:
-        lines.append('| — | — | — | No pending conditions in this inventory | — |')
+        lines.append('| N/A | N/A | N/A | No pending conditions in this inventory | N/A |')
     lines += ['', '## Larger supervised reference: extra training and development labels', '',
               'The observed test-best classical result is included only as a **post-hoc descriptive reference**, not a prespecified winner. Its ordinary bootstrap interval does not adjust for choosing the best test score. The highest-validation-score estimator is also shown when it differs. Neither is an equal-label comparison with the k=4 arms. Candidate families are logistic regression, linear SVM and Multinomial NB; each uses its recorded three-candidate development search.', '',
               '| Dataset / group | Model | Reference selection | Train / dev labels | Accuracy [95% CI] | Macro-F1 [95% CI] | Artifact |',

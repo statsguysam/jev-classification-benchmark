@@ -1,4 +1,4 @@
-# LinkedIn draft — numerical Jev experiment
+# LinkedIn draft: numerical Jev experiment
 
 Owner note: this draft has **not been posted**. The GitHub repository is currently private. Make a reviewed public repository/release available before presenting its link as open-source access. Suggested image: [review-corrections.png](review-corrections.png); optional second image: [numeric-comparison.png](numeric-comparison.png). Results and limitations are documented in [INTERPRETATION.md](INTERPRETATION.md).
 
@@ -20,7 +20,7 @@ The result depended on the first model:
 
 On Breast Cancer, Jev fixed 10 Qwen errors and introduced 2. For Astra, it fixed none, introduced 4 wrong labels, and had 1 transport failure. Failures stayed in the score.
 
-The comparison with ML was equally useful. Jev's few-shot point estimates exceeded our fixed XGBoost/LightGBM recipes at this tiny label budget. But logistic regression did better than Jev with the same labels. Both boosted-tree models also exceeded Jev's few-shot accuracy when trained on the full training split—a different label budget.
+The classical models gave me another reference. Jev's few-shot point estimates exceeded our fixed XGBoost/LightGBM recipes at this tiny label budget. But logistic regression did better than Jev with the same labels. Both boosted-tree models also exceeded Jev's few-shot accuracy when trained on the full training split, which used more labels.
 
 And Jev alone already scored 93.0% / 91.7%, compared with 93.0% / 88.9% for Qwen → Jev. Adding an LLM stage did not improve those point estimates.
 

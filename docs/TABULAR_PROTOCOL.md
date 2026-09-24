@@ -26,7 +26,7 @@ A source hash mismatch fails preparation. The prepared manifests also record the
 
 ## Feature selection and serialization
 
-Titanic allows only `pclass`, `sex`, `age_years`, `sibsp`, `parch`, `fare_gbp`, and `embarked`. Passenger class is categorical. Age is in years; fare is in British pounds; `sibsp` and `parch` are family-member counts. Embarkation codes become full port names. The target and excluded columns—name, ticket, cabin, boat, body, and home/destination—never enter model input. Boat and body can reveal outcomes; identifiers and unnecessary personal descriptions are also omitted.
+Titanic allows only `pclass`, `sex`, `age_years`, `sibsp`, `parch`, `fare_gbp`, and `embarked`. Passenger class is categorical. Age is in years; fare is in British pounds; `sibsp` and `parch` are family-member counts. Embarkation codes become full port names. The target never enters model input. Excluded columns are name, ticket, cabin, boat, body, and home/destination. Boat and body can reveal outcomes; identifiers and unnecessary personal descriptions are also omitted.
 
 Breast Cancer uses all 30 supplied measurements: the mean, standard error and worst summaries of cell-nucleus features. Wine uses all 13 supplied chemical measurements. Numerical values retain their original source scales. Units are stated when documented, otherwise the schema says that the original source scale is used; the benchmark does not invent physical units.
 

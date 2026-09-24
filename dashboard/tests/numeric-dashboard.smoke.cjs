@@ -23,9 +23,9 @@ const metricNames = {accuracy: 'Accuracy', macro_f1: 'Macro-F1'};
 const modelIds = ['Qwen/Qwen2.5-0.5B-Instruct', 'Qwen/Qwen3-4B-Instruct-2507',
   'HuggingFaceTB/SmolLM2-1.7B-Instruct', 'ibm-granite/granite-3.3-2b-instruct', 'gpt-5.6-luna', 'gpt-6-astra'];
 const sourceModels = modelIds.map(id => ({id}));
-const pct = v => v == null ? '—' : `${(100 * v).toFixed(1)}%`;
-const signed = v => v == null ? '—' : `${v >= 0 ? '+' : ''}${(100 * v).toFixed(1)}`;
-const ci = v => v == null ? '—' : `[${v.map(signed).join(', ')}]`;
+const pct = v => v == null ? 'N/A' : `${(100 * v).toFixed(1)}%`;
+const signed = v => v == null ? 'N/A' : `${v >= 0 ? '+' : ''}${(100 * v).toFixed(1)}`;
+const ci = v => v == null ? 'N/A' : `[${v.map(signed).join(', ')}]`;
 const close = (actual, expected, message) => assert.ok(Math.abs(actual - expected) <= 1e-11, `${message}: ${actual} != ${expected}`);
 const decode = value => value.replace(/&(?:amp|lt|gt|quot|#39);/g, c => ({'&amp;':'&', '&lt;':'<', '&gt;':'>', '&quot;':'"', '&#39;':"'"})[c]);
 const plain = value => decode(value.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
@@ -117,7 +117,7 @@ async function verifyView(h, data, state) {
   const actual = tableRows(h.elements.get('pair-table').innerHTML);
   assert.equal(actual.length, expected.length);
   assert.match(h.elements.get('pair-table').innerHTML, /Pipeline failures/);
-  assert.match(h.elements.get('pair-table').innerHTML, /inherited source failures/);
+  assert.match(h.elements.get('pair-table').innerHTML, /A source failure counts as a pipeline failure, and no Jev call is made for that row/);
   const chart = h.elements.get('chart').innerHTML;
   const circles = [...chart.matchAll(/<circle cx="([^"]+)" cy="([^"]+)"/g)];
   const diamonds = [...chart.matchAll(/<path d="M([^,]+),([^ ]+) /g)];
@@ -132,7 +132,7 @@ async function verifyView(h, data, state) {
     assert.equal(c.train_per_class_a, Number(state.shots)); assert.equal(c.train_per_class_b, Number(state.shots));
     if (review[m] != null && reference[m] != null) close(c[`${m}_delta`], review[m] - reference[m], 'Paired A−B difference');
     else { assert.equal(c[`${m}_delta`], null); assert.equal(c[`${m}_delta_ci95`], null); }
-    assert.deepEqual(actual[i], [base.display_model, pct(reference[m]), pct(review[m]), `${signed(c[`${m}_delta`])} ${ci(c[`${m}_delta_ci95`])}`, t ? `${t.wrong_to_correct} / ${t.correct_to_wrong}` : '—', review.n_failures == null ? '—' : `${review.n_failures} / ${review.n_test}`, review[m] == null ? 'Pending' : 'Complete']);
+    assert.deepEqual(actual[i], [base.display_model, pct(reference[m]), pct(review[m]), `${signed(c[`${m}_delta`])} ${ci(c[`${m}_delta_ci95`])}`, t ? `${t.wrong_to_correct} / ${t.correct_to_wrong}` : 'N/A', review.n_failures == null ? 'N/A' : `${review.n_failures} / ${review.n_test}`, review[m] == null ? 'Pending' : 'Complete']);
     if (review[m] != null && reference[m] != null) {
       close(Number(circles[marker][1]), 205 + 480 * reference[m], 'Reference marker');
       close(Number(diamonds[marker][1]), 205 + 480 * review[m], 'Review marker');
@@ -177,7 +177,7 @@ async function verifyView(h, data, state) {
   assert.ok(nativeContext.includes(`Jev below always has ${4*ds.n_classes} labels.`));
   assert.ok(nativeContext.includes(`Classical models have ${state.nativeBudget === 'full' ? ds.full_training_labels : 4*ds.n_classes} labels.`));
   assert.equal(nativeContext.includes('different label budget from the zero-shot chart'), state.shots === '0');
-  assert.equal(nativeContext.includes('unequal-label reference'), state.nativeBudget === 'full');
+  assert.equal(nativeContext.includes('Full training uses more labels and is reported separately'), state.nativeBudget === 'full');
   const url = new URLSearchParams(h.capture.history.slice(1));
   for (const [key,value] of Object.entries(state)) assert.equal(url.get(key), value, `URL state ${key}`);
 }

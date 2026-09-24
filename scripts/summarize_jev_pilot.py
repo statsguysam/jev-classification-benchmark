@@ -109,7 +109,7 @@ def collect(results_root: Path, data_root: Path, seed: int):
 
 
 def fmt(value):
-    return "—" if value is None else f"{value:.4f}"
+    return "N/A" if value is None else f"{value:.4f}"
 
 
 def summarize(results_root: Path, data_root: Path, output: Path, seed=42):
@@ -145,7 +145,7 @@ def summarize(results_root: Path, data_root: Path, output: Path, seed=42):
         for row in rows:
             if row["dataset"] == dataset:
                 link = os.path.relpath(row["source_path"], output.parent).replace(os.sep, "/")
-                lines.append(f"| [{row['model']}]({link}) | {row['method_label']} | {row['training_labels']} | {row['n_probability_rows']}/{row['n_test']} | {fmt(row['log_loss'])} | {fmt(row['brier_sum'])} | {fmt(row['ece_15_equal_width'])} | {row['zero_true_class_probability_rows'] if row['zero_true_class_probability_rows'] is not None else '—'} |")
+                lines.append(f"| [{row['model']}]({link}) | {row['method_label']} | {row['training_labels']} | {row['n_probability_rows']}/{row['n_test']} | {fmt(row['log_loss'])} | {fmt(row['brier_sum'])} | {fmt(row['ece_15_equal_width'])} | {row['zero_true_class_probability_rows'] if row['zero_true_class_probability_rows'] is not None else 'N/A'} |")
         lines.append("")
     lines += ["## Matched-label paired comparisons", "", "The separate [comparison index](comparisons/combined/index.md) includes Jev few-shot minus fixed TF-IDF Naive Bayes, Astra few-shot and Qwen 4B few-shot. Each comparison audits the exact same training IDs/seed and test items. These are additional exploratory, unadjusted contrasts selected after earlier pilot results were visible; they are not prospectively registered. No equal-training paired claim is made for Jev zero-shot versus few-shot. Cross-model/protocol contrasts remain descriptive.", "", "OpenAI label-only runs do not expose a class-probability vector in this experiment, so they have no NLL, Brier or ECE entry. Jev probabilities alone do not establish an advantage over absent OpenAI probability measurements. [Combined accuracy report](COMPARISON.md) · [Colab content audit](COLAB_AUDIT.md).", ""]
     if pending:

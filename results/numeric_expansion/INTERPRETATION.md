@@ -2,7 +2,9 @@
 
 **Status, 23 September 2026 UTC:** all 68/68 conditions and 72/72 contrasts are audited, including all 24 source-model and 24 review conditions. Historical failures remain in the first-attempt scores, including six Breast Cancer SmolLM2 four-shot billing failures. Any subsequent recovery results are separate; no original outcome is replaced and no partial-test score is reported.
 
-The expansion compares six source LLMs—Qwen2.5 0.5B, Qwen3 4B, SmolLM2 1.7B, Granite 3.3 2B, GPT-5.6 Luna and GPT-6 Astra—on the same serialized numerical rows from Breast Cancer Wisconsin Diagnostic and Wine. Each model is evaluated with zero examples and four examples per class. Jev then reviews its saved proposed label using the original row and the same examples. Direct Jev and native-feature logistic regression, random forest, XGBoost and LightGBM provide references. Four examples per class mean eight labeled training rows for Breast Cancer and twelve for Wine. This expansion adds no LoRA training.
+The expansion compares six source LLMs on the same serialized numerical rows from Breast Cancer Wisconsin Diagnostic and Wine: Qwen2.5 0.5B, Qwen3 4B, SmolLM2 1.7B, Granite 3.3 2B, GPT-5.6 Luna and GPT-6 Astra. Each model is evaluated with zero examples and four examples per class. Jev then reviews its saved proposed label using the original row and the same examples.
+
+The references are Jev alone and four classifiers trained on the native numerical features: logistic regression, random forest, XGBoost and LightGBM. Four examples per class mean eight labeled training rows for Breast Cancer and twelve for Wine. This expansion adds no LoRA training.
 
 The most useful finding is that review is a separate decision stage whose value must be measured. It can correct weak proposals, reproduce what Jev would already predict alone, or replace a correct source prediction with a wrong one. Producing a valid choice from a bounded class set does not guarantee that the choice is correct.
 
@@ -50,7 +52,7 @@ The reviewed pipeline still exceeded direct Jev's 12/36 correct predictions. Tha
 
 In all four Astra conditions, review reduced the correct counts from 113 to 109 and 112 to 107 on Breast Cancer, and from 36 to 16 and 35 to 34 on Wine, for zero and four examples per class respectively. No case was corrected in those four conditions. Wine's few-shot pipeline inherited one source failure; the additional loss was one actual wrong-label replacement.
 
-## A large improvement over a weak source may add nothing over direct Jev
+## The large Wine gain did not exceed Jev's standalone score
 
 Qwen2.5 0.5B on Wine with four examples per class improved from **12/36 to 33/36**, or **33.3% to 91.7%**, after review. Jev corrected 21 cases and harmed none. The paired change was **+58.33 percentage points**, with an exploratory 95% bootstrap interval of **[+41.67, +75.00]**.
 

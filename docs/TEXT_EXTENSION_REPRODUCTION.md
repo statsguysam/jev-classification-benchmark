@@ -1,6 +1,6 @@
 # Reproduce the text extension
 
-Read the [protocol](TEXT_EXTENSION_PROTOCOL.md) first. Use the existing frozen SST-2/TREC pilot and preserved historical evidence. Do not overwrite their splits or rerun hosted source models to replace inconvenient outcomes. The completed extension adds eight local source conditions, sixteen classical conditions and twenty-four Jev review conditions; it adds no LoRA training.
+Read the [protocol](TEXT_EXTENSION_PROTOCOL.md) first. Reproduction uses the frozen SST-2/TREC pilot splits and saved source predictions. Keep those records intact, including unsuccessful outcomes. The completed extension adds eight local source conditions, sixteen classical conditions and twenty-four Jev review conditions; it adds no LoRA training.
 
 ## Environment and frozen data
 

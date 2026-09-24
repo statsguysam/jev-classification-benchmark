@@ -1,12 +1,14 @@
 # Jev Benchmark Observatory
 
-A static dashboard for the numerical classification experiment: six LLMs at zero-shot and four examples per class, their Jev-reviewed decisions, direct Jev and four native classical estimators. The default page reads the audited 68-condition numerical aggregate; `text.html` applies the same pipeline comparison to a separate 68-condition SST-2/TREC extension. The earlier broad study is preserved at `historical.html`.
+A dashboard for comparing an LLM's original answer, its Jev-reviewed answer, Jev alone and classical classifiers. Six LLMs run zero-shot and with four examples per class. The landing page covers the 68 numerical conditions; `text.html` covers the separate 68-condition SST-2/TREC study. Earlier experiments are available at `historical.html`.
 
 The hosted site is private to the owning account. It makes no model API calls. Source links point to the private benchmark repository.
 
 ## Numerical view
 
-Filter the binary Breast Cancer or multiclass Wine task, supplied examples, source LLM and accuracy/macro-F1. Compare the reviewed pipeline with its source or with Jev alone. All 68 numerical conditions, including 24 reviews, and all 72 paired contrasts are audited. The paired table displays the saved exploratory 95% bootstrap intervals, predictions corrected/harmed, and pipeline failures including inherited source failures. Intervals are conditional on the recorded split and unadjusted across comparisons. Native XGBoost, LightGBM, logistic regression and random forest have a separate matched/full label-budget selector. No cross-dataset pooled score or controlled latency ranking is shown.
+Choose Breast Cancer (binary) or Wine (three classes), then filter by examples supplied, source LLM and accuracy/macro-F1. Compare the reviewed pipeline with its source or with Jev alone. XGBoost, LightGBM, logistic regression and random forest have a separate selector for matched or full-training label budgets.
+
+All 68 numerical conditions, including 24 reviews, and all 72 contrasts are audited. The paired table shows the 95% bootstrap interval, corrected and harmed predictions, and pipeline failures, including failures inherited from the source. These exploratory intervals describe the recorded split and are unadjusted across comparisons. The page keeps datasets separate and makes no controlled latency ranking.
 
 The CSV exports the selected paired comparison, with its metric, endpoints and separate source/reviewer failure counts. Filters are retained in the page URL.
 
@@ -14,9 +16,18 @@ The CSV exports the selected paired comparison, with its metric, endpoints and s
 
 [Open the text extension](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/text.html), private to the owning account. SST-2 is binary sentiment and TREC is six-class question type; each has the same 200 frozen test rows across all methods. Six source LLMs at zero/four examples per class are compared alone and after Jev review. Jev sees the original prepared text, the same demonstrations and only the source's cached class proposal. Four direct-Jev references and sixteen classical conditions complete the matrix.
 
-The [saved text report](../results/text_extension/COMPARISON.json) is complete: **68/68 conditions and 72/72 contrasts**, including all twenty-four Jev reviews and 4,800 new review calls. Its 48 review errors remain incorrect in the full first-attempt denominators. The rebuilt local `text-data.json` contains the complete matrix; the private hosted text view has been refreshed with that same snapshot. Missing values remain unavailable rather than zero. Both original matrices together contain 136 conditions, including 48 source-to-review conditions. [Final conservative accounting](../results/completion_20260923/COSTS.md) totals US$24.110484775, leaving US$0.889515225 under the US$25 ceiling; it is not a provider invoice.
+The [saved text report](../results/text_extension/COMPARISON.json) contains **68 completed conditions and 72 contrasts**, including all twenty-four Jev reviews and 4,800 new review calls. Its 48 review errors count as incorrect in the original scores. Both the local `text-data.json` and private hosted page contain this complete matrix. Missing measurements are shown as unavailable.
 
-Classical XGBoost, LightGBM, logistic regression and random forest use train-only word/character TF-IDF. Matched training uses 8/24 labels and full-prepared-training references use 10,000/4,886 labels for SST-2/TREC. Full and matched references must remain distinct. XGBoost's unstored sparse entries mean missing; other estimators use zero. There is no validation-label fitting or tuning. The 72 audited contrasts comprise review-minus-source, review-minus-direct-Jev and descriptive few-minus-zero comparisons; 95% intervals are unadjusted and conditional on one split/seed. Bounded output validity is separate from accuracy. See the [protocol](../docs/TEXT_EXTENSION_PROTOCOL.md) and [reproduction guide](../docs/TEXT_EXTENSION_REPRODUCTION.md).
+Together, the numerical and text matrices contain 136 conditions, including 48 source-to-review conditions. [Final conservative accounting](../results/completion_20260923/COSTS.md) totals US$24.110484775, leaving US$0.889515225 under the US$25 ceiling. These totals include retained reservations and are not a provider invoice.
+
+The four classical classifiers fit word/character TF-IDF on training data only. They use these label budgets:
+
+| Dataset | Matched training | Full prepared training |
+|---|---:|---:|
+| SST-2 | 8 | 10,000 |
+| TREC | 24 | 4,886 |
+
+XGBoost treats unstored sparse entries as missing; the other estimators use zero. There is no validation-label fitting or tuning. The 72 contrasts compare review with source, review with Jev alone, and few-shot with zero-shot. The last comparison changes the label budget. The intervals are unadjusted and describe one split and seed. An allowed class can still be wrong. See the [protocol](../docs/TEXT_EXTENSION_PROTOCOL.md) and [reproduction guide](../docs/TEXT_EXTENSION_REPRODUCTION.md).
 
 ## Reproduce locally
 
@@ -42,11 +53,15 @@ node dashboard/tests/text-dashboard.smoke.cjs dashboard
 node dashboard/tests/review-dashboard.smoke.cjs dashboard
 ```
 
-The historical view retains all 318 broad-study executions (290 distinct conditions). Its measurements do not replace the later numerical or text pipeline studies. All views keep unavailable values distinct from zero and retain failures in accuracy. Both extensions use familiar public datasets, one split/seed and fixed inference recipes; pretraining exposure cannot be excluded. Full-training ML uses more labels. No new LoRA training is included in either extension, and there is no pooled cross-domain model ranking.
+The historical view retains all 318 broad-study executions (290 distinct conditions). These earlier measurements remain separate from the numerical and text pipeline studies. All pages distinguish unavailable values from zero and retain failures in accuracy. Both extensions use familiar public datasets, one split and seed, and fixed inference recipes. Pretraining exposure cannot be excluded, full-training ML uses more labels, and neither extension adds LoRA training. The dashboard does not pool the datasets into one model ranking.
 
 
 ## Value of review
 
-[The review-value view](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/review.html) adds source / direct-Jev / pipeline metrics, corrected and harmed decisions, and every eligible fixed-coverage curve. It shows all 24 complete numerical review conditions. All five eligible primary curves are included; the linked sensitivity appendix covers all sixteen local probability-bearing conditions, including eleven constant-label additions. The local asset includes [completed matched controls](../results/review_controls/FINDINGS.md): 1,714 requests, 12 primary arms and eight paired contrasts. [Historical recovery](../results/completion_20260923/RECOVERY_FINDINGS.md) resolved 65/66 failed paid requests in 71 new calls and supplied one dependent first call after its source recovered. [Post-control recovery](../results/completion_20260923/CONTROL_RECOVERY_FINDINGS.md) resolved 15/15 failed control/repeat requests in 15 calls. These are separate views; original scores and the original repeat diagnostic stay intact. The private hosted review page now serves these completed assets. Unavailable metrics remain distinct from zero, and partial arms are never scored. Sequence likelihoods are not calibrated confidence; curves are retrospective simulations, not deployment or dollar-saving results. [Output-validation notes](../docs/OUTPUT_VALIDATION_NOTES.md) distinguish an accepted wrong class from a rejected response. First-attempt accuracy counts both as incorrect while preserving their separate categories; recovery results cannot overwrite those original outcomes.
+[The review-value view](https://jev-benchmark-observatory.statsguysalim.chatgpt.site/review.html) shows source, Jev-alone and pipeline metrics for all 24 numerical review conditions, along with corrected and harmed decisions. It includes all five eligible selective-review curves. The linked sensitivity appendix covers all sixteen local conditions with probability scores, including eleven additions that predicted a constant class. Sequence likelihoods are not calibrated confidence, and the curves are retrospective simulations rather than measured deployment or cost savings.
+
+The page also contains the [completed matched controls](../results/review_controls/FINDINGS.md): 1,714 requests, 12 primary arms and eight paired contrasts. Separate recovery views preserve the original scores and repeat diagnostic. [Historical recovery](../results/completion_20260923/RECOVERY_FINDINGS.md) resolved 65 of 66 failed paid requests in 71 calls and supplied one dependent first call after its source recovered. [Control recovery](../results/completion_20260923/CONTROL_RECOVERY_FINDINGS.md) resolved all fifteen failed control/repeat requests in fifteen calls.
+
+Both the local asset and private hosted page contain these completed results. Partial conditions are never scored. The [output-validation notes](../docs/OUTPUT_VALIDATION_NOTES.md) explain the distinction between an accepted wrong class and a rejected response. Original accuracy counts both as incorrect, while the breakdown keeps them separate; recovery results do not overwrite either category.
 
 Use the audited report/export order in the [completion reproduction guide](../docs/COMPLETION_REPRODUCTION.md), then rebuild with `python scripts/build_review_value_dashboard.py` and verify with `node dashboard/tests/review-dashboard.smoke.cjs dashboard`. Regenerate the sensitivity appendix after this asset because it records the asset hash. Only explicit aggregate fields are exported. See the [story](../results/review_value/STORY.md), [sharing figure](../results/review_value/figures/selective_review.png), and [draft post](../results/review_value/LINKEDIN_DRAFT.md). The deployment remains private.

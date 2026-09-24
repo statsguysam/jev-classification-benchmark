@@ -106,7 +106,7 @@ Every listed estimator uses fixed parameters; this report does not choose a winn
 | wine | Random forest | 106 | 1.0000 [1.0000, 1.0000] | 1.0000 [1.0000, 1.0000] | 0 | 100.0% |
 | wine | Hist. gradient boosting | 106 | 0.9722 [0.9167, 1.0000] | 0.9718 [0.9012, 1.0000] | 0 | 100.0% |
 
-## Paired contrasts — main matched comparison
+## Paired contrasts with matched labels
 
 Differences are A minus B. Both predictions receive the same resampled groups. All intervals are exploratory and unadjusted for multiple comparisons.
 
@@ -131,7 +131,7 @@ Differences are A minus B. Both predictions receive the same resampled groups. A
 | wine | Qwen2.5 0.5B lora | Qwen2.5 0.5B few shot | +0.0000 [+0.0000, +0.0000] | +0.0000 [+0.0000, +0.0000] | 36 |
 | wine | Qwen3 4B lora | Qwen3 4B few shot | -0.5278 [-0.6944, -0.3611] | -0.6639 [-0.7716, -0.5232] | 36 |
 
-## Paired contrasts — descriptive: few-shot versus zero-shot; unequal labels
+## Few-shot versus zero-shot (descriptive; unequal labels)
 
 Differences are A minus B. Both predictions receive the same resampled groups. All intervals are exploratory and unadjusted for multiple comparisons.
 
@@ -153,7 +153,7 @@ Differences are A minus B. Both predictions receive the same resampled groups. A
 | wine | GPT-5.6 Luna few shot | GPT-5.6 Luna zero shot | +0.4167 [+0.1944, +0.6389] | +0.5438 [+0.3687, +0.7172] | 36 |
 | wine | GPT-6 Astra few shot | GPT-6 Astra zero shot | -0.0278 [-0.0833, +0.0000] | -0.0123 [-0.0476, +0.0000] | 36 |
 
-## Paired contrasts — descriptive: full versus 4/class; unequal labels
+## Full training versus four examples per class (descriptive; unequal labels)
 
 Differences are A minus B. Both predictions receive the same resampled groups. All intervals are exploratory and unadjusted for multiple comparisons.
 
@@ -185,8 +185,8 @@ Classification failures count as incorrect predictions. Probability metrics cove
 | titanic | Majority / full training | native_uncalibrated | 100.0% | 13.1827 | 0.7634 | 0.3817 |
 | titanic | Logistic regression / 4/class | native_uncalibrated | 100.0% | 0.7849 | 0.5124 | 0.1215 |
 | titanic | Logistic regression / full training | native_uncalibrated | 100.0% | 0.4602 | 0.2946 | 0.0359 |
-| titanic | RBF SVM / 4/class | none | 0.0% | — | — | — |
-| titanic | RBF SVM / full training | none | 0.0% | — | — | — |
+| titanic | RBF SVM / 4/class | none | 0.0% | N/A | N/A | N/A |
+| titanic | RBF SVM / full training | none | 0.0% | N/A | N/A | N/A |
 | titanic | Random forest / 4/class | native_uncalibrated | 100.0% | 0.6993 | 0.5050 | 0.1509 |
 | titanic | Random forest / full training | native_uncalibrated | 100.0% | 0.5110 | 0.3081 | 0.0618 |
 | titanic | Hist. gradient boosting / 4/class | native_uncalibrated | 100.0% | 1.1382 | 0.6845 | 0.3080 |
@@ -199,16 +199,16 @@ Classification failures count as incorrect predictions. Probability metrics cove
 | titanic | Qwen3 4B / QLoRA 4/class | label_sequence_likelihood_normalized | 100.0% | 2.2707 | 0.6808 | 0.3244 |
 | titanic | Jev 1.13 / zero-shot | jev_choice_distribution | 100.0% | 0.5097 | 0.3235 | 0.0669 |
 | titanic | Jev 1.13 / few-shot 4/class | jev_choice_distribution | 99.6% | 0.5405 | 0.3604 | 0.1026 |
-| titanic | GPT-5.6 Luna / zero-shot | unavailable | 0.0% | — | — | — |
-| titanic | GPT-5.6 Luna / few-shot 4/class | unavailable | 0.0% | — | — | — |
-| titanic | GPT-6 Astra / zero-shot | unavailable | 0.0% | — | — | — |
-| titanic | GPT-6 Astra / few-shot 4/class | unavailable | 0.0% | — | — | — |
+| titanic | GPT-5.6 Luna / zero-shot | unavailable | 0.0% | N/A | N/A | N/A |
+| titanic | GPT-5.6 Luna / few-shot 4/class | unavailable | 0.0% | N/A | N/A | N/A |
+| titanic | GPT-6 Astra / zero-shot | unavailable | 0.0% | N/A | N/A | N/A |
+| titanic | GPT-6 Astra / few-shot 4/class | unavailable | 0.0% | N/A | N/A | N/A |
 | breast_cancer | Majority / 4/class | native_uncalibrated | 100.0% | 21.5110 | 1.2456 | 0.6228 |
 | breast_cancer | Majority / full training | native_uncalibrated | 100.0% | 13.0278 | 0.7544 | 0.3772 |
 | breast_cancer | Logistic regression / 4/class | native_uncalibrated | 100.0% | 0.1521 | 0.0800 | 0.0624 |
 | breast_cancer | Logistic regression / full training | native_uncalibrated | 100.0% | 0.0431 | 0.0222 | 0.0340 |
-| breast_cancer | RBF SVM / 4/class | none | 0.0% | — | — | — |
-| breast_cancer | RBF SVM / full training | none | 0.0% | — | — | — |
+| breast_cancer | RBF SVM / 4/class | none | 0.0% | N/A | N/A | N/A |
+| breast_cancer | RBF SVM / full training | none | 0.0% | N/A | N/A | N/A |
 | breast_cancer | Random forest / 4/class | native_uncalibrated | 100.0% | 0.1940 | 0.0933 | 0.1170 |
 | breast_cancer | Random forest / full training | native_uncalibrated | 100.0% | 0.0726 | 0.0352 | 0.0397 |
 | breast_cancer | Hist. gradient boosting / 4/class | native_uncalibrated | 100.0% | 0.3434 | 0.1535 | 0.0634 |
@@ -221,16 +221,16 @@ Classification failures count as incorrect predictions. Probability metrics cove
 | breast_cancer | Qwen3 4B / QLoRA 4/class | label_sequence_likelihood_normalized | 100.0% | 6.4233 | 1.2454 | 0.6227 |
 | breast_cancer | Jev 1.13 / zero-shot | jev_choice_distribution | 99.1% | 0.3984 | 0.2361 | 0.1865 |
 | breast_cancer | Jev 1.13 / few-shot 4/class | jev_choice_distribution | 99.1% | 0.1622 | 0.0952 | 0.0524 |
-| breast_cancer | GPT-5.6 Luna / zero-shot | unavailable | 0.0% | — | — | — |
-| breast_cancer | GPT-5.6 Luna / few-shot 4/class | unavailable | 0.0% | — | — | — |
-| breast_cancer | GPT-6 Astra / zero-shot | unavailable | 0.0% | — | — | — |
-| breast_cancer | GPT-6 Astra / few-shot 4/class | unavailable | 0.0% | — | — | — |
+| breast_cancer | GPT-5.6 Luna / zero-shot | unavailable | 0.0% | N/A | N/A | N/A |
+| breast_cancer | GPT-5.6 Luna / few-shot 4/class | unavailable | 0.0% | N/A | N/A | N/A |
+| breast_cancer | GPT-6 Astra / zero-shot | unavailable | 0.0% | N/A | N/A | N/A |
+| breast_cancer | GPT-6 Astra / few-shot 4/class | unavailable | 0.0% | N/A | N/A | N/A |
 | wine | Majority / 4/class | native_uncalibrated | 100.0% | 23.0259 | 1.3333 | 0.6667 |
 | wine | Majority / full training | native_uncalibrated | 100.0% | 21.1070 | 1.2222 | 0.6111 |
 | wine | Logistic regression / 4/class | native_uncalibrated | 100.0% | 0.1723 | 0.0690 | 0.1453 |
 | wine | Logistic regression / full training | native_uncalibrated | 100.0% | 0.0622 | 0.0262 | 0.0519 |
-| wine | RBF SVM / 4/class | none | 0.0% | — | — | — |
-| wine | RBF SVM / full training | none | 0.0% | — | — | — |
+| wine | RBF SVM / 4/class | none | 0.0% | N/A | N/A | N/A |
+| wine | RBF SVM / full training | none | 0.0% | N/A | N/A | N/A |
 | wine | Random forest / 4/class | native_uncalibrated | 100.0% | 0.3756 | 0.1789 | 0.2289 |
 | wine | Random forest / full training | native_uncalibrated | 100.0% | 0.1264 | 0.0502 | 0.1075 |
 | wine | Hist. gradient boosting / 4/class | native_uncalibrated | 100.0% | 0.5854 | 0.2859 | 0.1152 |
@@ -243,10 +243,10 @@ Classification failures count as incorrect predictions. Probability metrics cove
 | wine | Qwen3 4B / QLoRA 4/class | label_sequence_likelihood_normalized | 100.0% | 1.2144 | 0.7219 | 0.1699 |
 | wine | Jev 1.13 / zero-shot | jev_choice_distribution | 100.0% | 1.6428 | 1.0065 | 0.4725 |
 | wine | Jev 1.13 / few-shot 4/class | jev_choice_distribution | 100.0% | 0.2211 | 0.1118 | 0.1183 |
-| wine | GPT-5.6 Luna / zero-shot | unavailable | 0.0% | — | — | — |
-| wine | GPT-5.6 Luna / few-shot 4/class | unavailable | 0.0% | — | — | — |
-| wine | GPT-6 Astra / zero-shot | unavailable | 0.0% | — | — | — |
-| wine | GPT-6 Astra / few-shot 4/class | unavailable | 0.0% | — | — | — |
+| wine | GPT-5.6 Luna / zero-shot | unavailable | 0.0% | N/A | N/A | N/A |
+| wine | GPT-5.6 Luna / few-shot 4/class | unavailable | 0.0% | N/A | N/A | N/A |
+| wine | GPT-6 Astra / zero-shot | unavailable | 0.0% | N/A | N/A | N/A |
+| wine | GPT-6 Astra / few-shot 4/class | unavailable | 0.0% | N/A | N/A | N/A |
 
 ## Model identity and numerical precision
 

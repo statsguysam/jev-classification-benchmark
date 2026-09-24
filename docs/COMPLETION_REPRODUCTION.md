@@ -1,8 +1,10 @@
 # Reproduce the completion and failure-recovery analysis
 
-The [completion protocol](COMPLETION_RETRY_PROTOCOL.md) fixes the execution and
-recovery policy. It supplements the original numerical, text and matched-control
-protocols without replacing their predictions or pricing declarations.
+This guide rebuilds the reports from saved predictions. The [completion
+protocol](COMPLETION_RETRY_PROTOCOL.md) records how the remaining requests and
+failed-call recovery were handled. It supplements the original numerical, text
+and matched-control protocols; their predictions and pricing declarations remain
+part of the evidence.
 
 ## Environment and frozen data
 
@@ -96,7 +98,7 @@ record the rendering version and hashes of the input evidence and output files.
 
 The matched-control figure requires all 1,714 original calls to be present and
 the saved report to equal a fresh audit. It shows every dataset and both planned
-contrasts. A rendering command cannot turn incomplete evidence into a score.
+contrasts and refuses to plot incomplete evidence.
 The review-outcomes figure likewise requires both complete 68-condition matrices.
 It displays all 48 source-to-review conditions, separating corrections, wrong-label
 harms and failure harms while retaining each full test denominator. The selected-example
@@ -137,7 +139,7 @@ commands, source files, notebooks, reports or Git. A new ledger is initialized
 once; resuming always omits `--init-ledger` and preserves both the ledger and its
 `.lock` anchor.
 
-The combined ceiling is US$25. Original failed-call reservations remain retained.
+The combined ceiling is US$25. Original failed-call reservations remain in the ledger.
 Every new Jev recovery call also retains its full conservative reservation. Only
 eligible, verified successful usage in the separately documented current drivers
 can settle a new reservation. These records bound this study's accounted requests;

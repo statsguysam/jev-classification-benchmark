@@ -1,8 +1,8 @@
 # Combined SST-2 / TREC pilot
 
-**28 completed model/reference rows** are summarized below. 0 planned or unfinished rows have no score. Only completed imported run artifacts supply numbers; UI observations and partial predictions are not scored.
+This report contains **28 completed model/reference rows**. Scores come from completed saved runs. Planned or unfinished rows without scores: 0.
 
-This is a **200-test-row, one-selection-seed (42) pilot per dataset**, using the shared 2,000-character prefix. Zero-shot uses no new task examples. Four-per-class prompting, adaptation and the fixed Naive Bayes reference use eight labeled examples for SST-2 or 24 for TREC, with no development labels. Pretraining data/compute are not matched.
+Each dataset has **200 test rows**, with training examples selected using seed 42. Every method sees the same first 2,000 characters of each input. Zero-shot uses no new task examples. Four-per-class prompting, adaptation and the fixed Naive Bayes reference use eight labeled examples for SST-2 or 24 for TREC, with no development labels. Pretraining data and compute differ between models.
 
 The 0.5B adapter uses ordinary LoRA; the 4B adapter uses QLoRA when its recorded metadata confirms four-bit training. Both use normal configured precision for inference. Hosted LoRA, including Jev LoRA, is unavailable. Jev runs use the exact requested OpenRouter model `typesafe/jev-1.13` with native Choice probabilities; absent or incomplete runs remain pending and are never assigned a zero score.
 
@@ -62,7 +62,7 @@ Different complete manifest hashes are kept in separate groups. Membership alone
 
 | Dataset | Model | Method | State | Existing artifact |
 |---|---|---|---|---|
-| — | — | — | No pending conditions in this inventory | — |
+| N/A | N/A | N/A | No pending conditions in this inventory | N/A |
 
 ## Larger supervised reference: extra training and development labels
 

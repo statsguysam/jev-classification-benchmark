@@ -14,7 +14,7 @@ function renderControls(){
  const c=data.controls, dataset=el('control-dataset').value, metric=el('metric').value==='micro_accuracy'?'accuracy':el('metric').value;
  const complete=c.runs.filter(r=>r.status==='complete').length, expected=c.expected_primary_arms??c.runs.length;
  const saved=c.saved_requests==null?'Request progress not reported':`${c.saved_requests.toLocaleString()}/${(c.expected_requests??c.planned_primary_requests+c.planned_repeats).toLocaleString()} requests saved`;
- el('control-status').textContent=`${complete}/${expected} primary conditions complete · ${saved}. ${complete===0?'No controlled result is available.':'Only complete arms and paired contrasts receive scores.'}`;
+ el('control-status').textContent=`${complete}/${expected} primary conditions complete · ${saved}. ${complete===0?'No controlled result is available.':'Scores appear only for complete conditions and comparisons.'}`;
  el('control-note').textContent=c.scope_note??'550 fixed cases across Breast Cancer, Wine, SST-2 and TREC. The same prompt changes only the proposal slot. Planned requests are not results.';
  const runs=c.runs.filter(r=>r.dataset===dataset);
  el('control-arms').innerHTML=table(['Jev input','Saved / planned','Status','Selected metric','95% interval','Failures'],runs.map(r=>{
@@ -35,7 +35,7 @@ function renderControls(){
   el('repeat-summary').textContent='Agreement: Pending';el('repeat-table').innerHTML='';
  }else{
   const n=r.counts;
-  el('repeat-status').textContent=`${r.available_complete_pairs}/${r.expected_pairs} prospectively selected identical-prompt pairs complete. Both failures are not label agreement.`;
+  el('repeat-status').textContent=`${r.available_complete_pairs}/${r.expected_pairs} identical-prompt pairs, selected before execution, are complete. Pairs with two failed responses do not count as label agreement.`;
   el('repeat-summary').textContent=`${fmt(r.valid_pair_agreement,'accuracy')} agreement among ${n.both_valid} pairs with two valid responses (${n.valid_label_agreement} agree; ${n.valid_label_disagreement} disagree).`;
   el('repeat-table').innerHTML=table(['Dataset','Both valid','Agree / disagree','Reference-only failure','Repeat-only failure','Both failed'],Object.entries(r.by_dataset??{}).map(([d,v])=>[datasets[d]??d,count(v.both_valid),`${count(v.valid_label_agreement)} / ${count(v.valid_label_disagreement)}`,count(v.reference_failed_only),count(v.repeat_failed_only),count(v.both_failed)]));
  }
@@ -49,7 +49,7 @@ function renderControlRecovery(){
  }
  const dataset=el('control-dataset').value, metric=el('metric').value==='micro_accuracy'?'accuracy':el('metric').value;
  const c=r.recovery_counts;
- el('control-recovery-status').textContent=r.no_op?'No-op: every original control and repeat response was valid. No additional calls or changes to scores.':`${r.new_calls} additional calls. Primary failures: ${c.primary.original_failures} → ${c.primary.remaining_failures}; repeat failures: ${c.repeat.original_failures} → ${c.repeat.remaining_failures}. This secondary view does not replace the original serving-repeat agreement.`;
+ el('control-recovery-status').textContent=r.no_op?'Every original control and repeat response was valid, so no additional calls were needed and scores are unchanged.':`${r.new_calls} additional calls. Primary failures: ${c.primary.original_failures} → ${c.primary.remaining_failures}; repeat failures: ${c.repeat.original_failures} → ${c.repeat.remaining_failures}. This secondary view does not replace the original serving-repeat agreement.`;
  el('control-recovery-arms').innerHTML=table(['Selected dataset · Jev input','Full rows','First-attempt metric','Recovered metric','First / remaining failures'],r.runs.filter(v=>v.dataset===dataset).map(v=>[armNames[v.arm],v.n_rows,fmt(v.first_attempt.metrics[metric],metric),fmt(v.recovered.metrics[metric],metric),`${v.first_attempt.metrics.n_failures} / ${v.recovered.metrics.n_failures}`]));
  const display=view=>{
   const ci=view.paired_group_bootstrap?.metrics?.[metric], point=metric==='balanced_accuracy'?view.balanced_accuracy_delta:ci?.estimate;
@@ -71,8 +71,8 @@ function renderRecovery(){
   const done=c.status==='complete', score=m=>m==null?'Pending':fmt(m[metric],metric);
   const ci=c.paired_group_bootstrap?.metrics?.[metric], point=metric==='balanced_accuracy'?c.balanced_accuracy_delta:ci?.estimate;
   const model=c.source_model?`${models[c.source_model]??c.source_model} → Jev`:(models[c.model]??c.model);
-  return [`${datasets[c.dataset]??c.dataset} / ${model} / ${c.shots_per_class??'—'} examples per class / n=${c.n_rows??'—'}`,
-   done?(c.same_request_as_original_snapshot===false?'Complete · dependent overlay':'Complete'):'Incomplete service views',
+  return [`${datasets[c.dataset]??c.dataset} / ${model} / ${c.shots_per_class??'N/A'} examples per class / n=${c.n_rows??'N/A'}`,
+   done?(c.same_request_as_original_snapshot===false?'Complete · source recovered before review':'Complete'):'Incomplete results',
    score(c.original_snapshot),score(c.first_attempt),done?score(c.recovered):'Pending',
    done?`${delta(point,metric)} · ${interval(ci?.ci95,metric,true)}`:'Pending',
    `${count(c.original_snapshot?.n_failures)} / ${count(c.first_attempt?.n_failures)} / ${done?count(c.recovered?.n_failures):'Pending'}`,
@@ -104,7 +104,7 @@ function renderGate(){
 async function init(){
  try{
  const response=await fetch('review-data.json'); if(!response.ok)throw Error(`HTTP ${response.status}`); data=await response.json();
- gates=data.conditions.filter(c=>c.curve); if(!data.conditions.length||!gates.length)throw Error('No audited complete conditions');
+ gates=data.conditions.filter(c=>c.curve); if(!data.conditions.length||!gates.length)throw Error('No completed conditions available');
  el('condition').innerHTML=data.conditions.map((c,i)=>`<option value="${i}">${escape(name(c))}</option>`).join('');
  el('gate').innerHTML=gates.map((c,i)=>`<option value="${i}">${escape(name(c))}</option>`).join('');
  el('condition').value=String(Math.max(0,data.conditions.findIndex(c=>c.dataset==='breast_cancer'&&c.source_model.includes('Qwen3')&&c.shots_per_class===4)));
