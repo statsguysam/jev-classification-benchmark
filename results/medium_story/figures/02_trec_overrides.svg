@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="756pt" height="482.4pt" viewBox="0 0 756 482.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 482.4 
+L 756 482.4 
+L 756 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 56.7 323.208 
+L 336.42 323.208 
+L 336.42 115.776 
+L 56.7 115.776 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="116.088193" y="335.065422" transform="rotate(-0 116.088193 335.065422)">GPT-6 Astra</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="277.031807" y="335.065422" transform="rotate(-0 277.031807 335.065422)">Astra + Jev</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 56.7 323.208 
+L 336.42 323.208 
+" clip-path="url(#p6805ceb65c)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="53.2" y="327.386711" transform="rotate(-0 53.2 327.386711)">0%</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 56.7 276.064364 
+L 336.42 276.064364 
+" clip-path="url(#p6805ceb65c)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="53.2" y="280.243075" transform="rotate(-0 53.2 280.243075)">25%</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 56.7 228.920727 
+L 336.42 228.920727 
+" clip-path="url(#p6805ceb65c)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="53.2" y="233.099438" transform="rotate(-0 53.2 233.099438)">50%</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 56.7 181.777091 
+L 336.42 181.777091 
+" clip-path="url(#p6805ceb65c)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="53.2" y="185.955802" transform="rotate(-0 53.2 185.955802)">75%</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 56.7 134.633455 
+L 336.42 134.633455 
+" clip-path="url(#p6805ceb65c)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="53.2" y="138.812165" transform="rotate(-0 53.2 138.812165)">100%</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="15.109453" y="219.492" transform="rotate(-90 15.109453 219.492)">Accuracy</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 69.414545 323.208 
+L 162.761841 323.208 
+L 162.761841 140.290691 
+L 69.414545 140.290691 
+z
+" clip-path="url(#p6805ceb65c)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 230.358159 323.208 
+L 323.705455 323.208 
+L 323.705455 160.091018 
+L 230.358159 160.091018 
+z
+" clip-path="url(#p6805ceb65c)" style="fill: #087f8c"/>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183448" x="116.088193" y="134.633455" transform="rotate(-0 116.088193 134.633455)">97.0%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="116.088193" y="157.2624" transform="rotate(-0 116.088193 157.2624)">194/200</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183448" x="277.031807" y="154.433782" transform="rotate(-0 277.031807 154.433782)">86.5%</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="277.031807" y="177.062727" transform="rotate(-0 277.031807 177.062727)">173/200</text>
+   </g>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="41.58" y="33.768" transform="rotate(-0 41.58 33.768)">A second opinion can undo a good decision.</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #536978" x="41.58" y="61.7472" transform="rotate(-0 41.58 61.7472)">TREC question classification | 200 test questions | 24 examples in each prompt</text>
+  </g>
+  <g id="text_15">
+   <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="404.46" y="128.3184" transform="rotate(-0 404.46 128.3184)">What changed?</text>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 34px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #087f8c" x="404.46" y="192.96" transform="rotate(-0 404.46 192.96)">3</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="472.5" y="183.312" transform="rotate(-0 472.5 183.312)">wrong answers corrected</text>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 34px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #bd5662" x="404.46" y="262.908" transform="rotate(-0 404.46 262.908)">24</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="472.5" y="253.26" transform="rotate(-0 472.5 253.26)">correct answers made wrong</text>
+  </g>
+  <g id="text_20">
+   <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #bd5662" x="404.46" y="318.384" transform="rotate(-0 404.46 318.384)">21 fewer correct answers overall</text>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="41.58" y="400.392" transform="rotate(-0 41.58 400.392)">97.0% to 86.5% accuracy after review</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 10.2px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(41.58 429.9552)">Selected few-shot condition: four examples per class. Jev saw the original question and Astra's proposed class.</text>
+   <text style="font-size: 10.2px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(41.58 445.2552)">Counts follow each question from the source model to the reviewer. One fixed test set.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6805ceb65c">
+   <rect x="56.7" y="115.776" width="279.72" height="207.432"/>
+  </clipPath>
+ </defs>
+</svg>

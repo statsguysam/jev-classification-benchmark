@@ -1,0 +1,27 @@
+{
+  "title": "What Happened When I Added Jev to a Classification Pipeline",
+  "medium_account": "https://medium.com/@statsguysalim",
+  "medium_draft_url": "https://medium.com/p/829da0026f3e/edit",
+  "status": "saved_draft",
+  "published": false,
+  "verified_on": "2026-09-24",
+  "chart_count": 7,
+  "verification": {
+    "draft_reloaded": true,
+    "text_exact_after_whitespace_normalization": true,
+    "all_images_stored_on_medium_cdn": true,
+    "all_images_have_alt_text": true,
+    "all_figures_have_captions": true,
+    "no_image_placeholders": true
+  },
+  "article_sha256": "f887e58eeeed2aef98470862e9ee7186a02d4ca66316223f31ac0c6b7e74d8bd",
+  "saved_medium_text_sha256": "e574b36c573e7be19a11cbe2762e883c6d0d3fea79898d7515c5a2e7ab9126d3",
+  "new_model_api_calls": 0,
+  "files": {
+    "markdown": "ARTICLE.md",
+    "preview": "ARTICLE.html",
+    "paste_template": "MEDIUM_PASTE.html",
+    "image_order": "MEDIUM_IMAGES.json",
+    "chart_provenance": "figures/MANIFEST.json"
+  }
+}

@@ -1,0 +1,2917 @@
+{
+  "script_sha256": "2be4b5d060cdfb6a869bcd32e66d0478d0087dd36eb9536a7f49d76e66ed1648",
+  "matplotlib_version": "3.11.2",
+  "source_sha256": {
+    "results/numeric_expansion/COMPARISON.json": "b6b33421c51ee1cf9809659589f0724bb2ea883d9d1bb094b9f973d5ea654256",
+    "results/text_extension/COMPARISON.json": "ef4e08cc9e44f384a86093db8e874a49bfd42577c1f1f97f5a5a8d176b55a92a",
+    "results/review_controls/COMPARISON.json": "b7eedd2a8c45a50edfd2393a367e4dea20db626af3a8bba5c583d5e76af3078d",
+    "results/review_value/LINKEDIN_COST_NOTE.md": "f53b839acd8b6c6bb322c27c80b18837050994c7128b7651e2a1eecfd9f2a524",
+    "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643/run.json": "30e7e44ae8a4b63dba40c54f2080d76637cfacbbf5daca54a1afae6237d4b9a0",
+    "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643/predictions.jsonl": "14cf2375326d7b38219c2399c533b591056256e4cf5c48fd730f4ee662acf665",
+    "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__qwen_small__k0__jev-review/run.json": "88c0524f5effc1cddf4987c227957b9241f799bd674d6b78f001b82ff8b4d3ec",
+    "results/numeric_expansion/review/breast_cancer__qwen_small__k0__jev-review/predictions.jsonl": "832e8ab07bac6bd721a57a6819bfe94238f7c77bf9e5e3f417f258ffcdaf789b",
+    "results/numeric_expansion/review/breast_cancer__qwen_small__k0__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6/run.json": "816232cb92bc7ebee1f451ed8d626a117d66f5bb2eb0ce54cbb59f0e625bcc59",
+    "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6/predictions.jsonl": "30395487ab9517a445331ac9c206f7a4f8d21c445aa858a08dd79cd9db182f2c",
+    "results/tabular/local/breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__qwen_small__k4__jev-review/run.json": "1afb779f98aa01b91fcb36f890285d129997d580202b8c8f5f1f52f767edc453",
+    "results/numeric_expansion/review/breast_cancer__qwen_small__k4__jev-review/predictions.jsonl": "9e0595123c95e7886acad40d86a3477499a731df2cd32d8e8bedc792c14cc605",
+    "results/numeric_expansion/review/breast_cancer__qwen_small__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23/run.json": "9441d6b4366fbb7d10e695d5ce5a7ce065c15d8a208519700897e686dcd4a1ab",
+    "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23/predictions.jsonl": "111f04f33a536dfbbe49b71ea3bcc12979ca2231a94ea0970234eea8f772b7ed",
+    "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__qwen_main__k0__jev-review/run.json": "9ffd7eed6b7957a231104c31f8afbbca1658c4ceb702d2442773c6a8534618a9",
+    "results/numeric_expansion/review/breast_cancer__qwen_main__k0__jev-review/predictions.jsonl": "6bceee5d3e849f0da14fef05609399ef5c8d7fbfae3b850851e5b2975dc05d21",
+    "results/numeric_expansion/review/breast_cancer__qwen_main__k0__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3/run.json": "a5d870f25fb6c13fd66bd686e77b5ca60cf5c7f1c43991b21297a325eea2146e",
+    "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3/predictions.jsonl": "e5c1b86c06a40de1724e263df2849e46ff24c8957df163d1424b4008a1c58917",
+    "results/tabular/colab/breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_decisions/review/breast_cancer__qwen3_4b__jev-review/run.json": "8a564b37b583cc6e878fe2edefe6c6344199971581e134f9f7d71ee6d40087ee",
+    "results/numeric_decisions/review/breast_cancer__qwen3_4b__jev-review/predictions.jsonl": "99b00fd01d946679fa025837f0793cd8b6f4155a2ec494641033b0b6ca028aee",
+    "results/numeric_decisions/review/breast_cancer__qwen3_4b__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b/run.json": "ddbf4cb3a33847c5ab0c569525de21ef9166046aeed76f624be7dfe9bcd53934",
+    "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b/predictions.jsonl": "3448e9627693beae1db00af2c75aec1d332788726ad1ae5d6a29d0dda2ca5e48",
+    "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__smollm2__k0__jev-review/run.json": "23d8f20368e0102affd6646c97f4597f3cf6dd0a06cc80b2f5ecc5297d93dcde",
+    "results/numeric_expansion/review/breast_cancer__smollm2__k0__jev-review/predictions.jsonl": "782c267cee53dffb5eb5641f24fd06da08c2c8a162319c47864f09b9c197d315",
+    "results/numeric_expansion/review/breast_cancer__smollm2__k0__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/run.json": "ffe5d45a822dbb5f533e66e3f038498b84b1d05a16f931b6df5cbea327e7387e",
+    "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/predictions.jsonl": "bf2a2308172988e3a8c516c4ab545e0fc75e363ff7ff7d9c6c728187be589dcf",
+    "results/numeric_expansion/local/breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/run.json": "bc0ef4d30d9f108c30bf44f297fcbede8bb6e5a02a8398f4bb2987994e2e8949",
+    "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/predictions.jsonl": "118071d29a25fadbd99d9de57fcc6be0951fdc04eedbf6e7d28e0db8db5b328b",
+    "results/numeric_expansion/review/breast_cancer__smollm2__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/run.json": "059d2b372075537273187be53a82f2b57fe4319dea219aad536438c7c401df1b",
+    "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/predictions.jsonl": "6816c726bd294f3055787d1a5482323ed4b2cfd8511e4f86008578b3e4f63109",
+    "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__60f28b8df77a/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__granite__k0__jev-review/run.json": "f74c18c53d14ac7d2874f16da1067a5569751fd39ced7454afd0cfe3e464e31d",
+    "results/numeric_expansion/review/breast_cancer__granite__k0__jev-review/predictions.jsonl": "88242c933ad0f7fdd10c113eb77e8dcaf5fe05c759a4b2d8240c0c9a77f8693b",
+    "results/numeric_expansion/review/breast_cancer__granite__k0__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/run.json": "1fae2fc598159e17ba106497df0aac6a9ed34701fcadaa62b904ddba8d8cddc6",
+    "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/predictions.jsonl": "7354e1f8f4004cd8b5d7ce365805ee398bfa157869a3ea2be333e108f0bb14a1",
+    "results/numeric_expansion/local/breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__granite__k4__jev-review/run.json": "b39d10499ae0ac368a779caeee866c05c8f85ac92d98a92d375f3a997ae60272",
+    "results/numeric_expansion/review/breast_cancer__granite__k4__jev-review/predictions.jsonl": "f291c949d69f756cc0ec5aba94c71e0273beb0906e0314a8bc58e4e953827970",
+    "results/numeric_expansion/review/breast_cancer__granite__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/hosted/breast_cancer__gpt-5.6-luna__b8612044e1e5/run.json": "559aa6e9229c304cc11cdf13993588c396b181409e30b2de8b20df5ed7339f50",
+    "results/tabular/hosted/breast_cancer__gpt-5.6-luna__b8612044e1e5/predictions.jsonl": "6ce8f56cd634cb9657f0fa40d741f389d86a4dbbbbfc7e29a45e071fb4b27f52",
+    "results/tabular/hosted/breast_cancer__gpt-5.6-luna__b8612044e1e5/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__luna__k0__jev-review/run.json": "7582cdf717d8fc1e344e8e95e7fba3b7532ef4a2b3e68c028a77b0ddee53f10a",
+    "results/numeric_expansion/review/breast_cancer__luna__k0__jev-review/predictions.jsonl": "f9b22514ac3b76c67d86c17cf5bd05a5656fb778edafd4d151b57e76eb0bc247",
+    "results/numeric_expansion/review/breast_cancer__luna__k0__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/run.json": "01107fcc70c87781c76638d647919aaceff247cdba8c570765ac9167a244556c",
+    "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/predictions.jsonl": "4d2af7785ed8971d2615ea61a9ce65b79c5a02f2ef00d573bf3852b5121eac3b",
+    "results/tabular/hosted/breast_cancer__gpt-5.6-luna__6874301c84d2/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/run.json": "6cd6ffdd2f2c391e55af485aec85d414fd31157e0c332d8d3bb2d8c97762ef14",
+    "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/predictions.jsonl": "b21ac3e75a98c3ab4d44b7313cba4d1ecbaeed7c360594468076f33d62181917",
+    "results/numeric_expansion/review/breast_cancer__luna__k4__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/hosted/breast_cancer__gpt-6-astra__c2361622445b/run.json": "b65c1ffb1f8ff8472acc4ede9b1202d6426fb0f99783e491f683247032390a9e",
+    "results/tabular/hosted/breast_cancer__gpt-6-astra__c2361622445b/predictions.jsonl": "2923aaf59fe68f0b1827db265e4580e018174a830d132b0a5cd60efd7e1d08ad",
+    "results/tabular/hosted/breast_cancer__gpt-6-astra__c2361622445b/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_expansion/review/breast_cancer__astra__k0__jev-review/run.json": "a0d78a56d1da5d00121f6ffb4ed0c69710bf157be309c294658afe1eae53d362",
+    "results/numeric_expansion/review/breast_cancer__astra__k0__jev-review/predictions.jsonl": "1a4bdff8b852bd963311ab58c913ffe3bc4e5d7dd5306e16a0ff3db803931978",
+    "results/numeric_expansion/review/breast_cancer__astra__k0__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/run.json": "bb1c82612d9c4787d057d78be96ea225ebe592738ee8090a27b08d08963a1176",
+    "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/predictions.jsonl": "872826ba524654e0e4bdabccca79dc69e9403e884bf5ac9a29407d600705b177",
+    "results/tabular/hosted/breast_cancer__gpt-6-astra__6be368014170/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_decisions/review/breast_cancer__astra__jev-review/run.json": "4c9f63f0de765395ce0c3914e5c06860651f1116091a7c1cb5a076778ae223a7",
+    "results/numeric_decisions/review/breast_cancer__astra__jev-review/predictions.jsonl": "ebdb5f9455c2401b48d79c58e2539747acf76f3dd53d81a81ec7f3575abef2b1",
+    "results/numeric_decisions/review/breast_cancer__astra__jev-review/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/run.json": "764a97a6ebc45670396979ff0a06f73faeb053794069d9fdcb939284bee9520b",
+    "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/predictions.jsonl": "52ffbfc87f9e1f7598088b7c37f251d6260649c4fc8bc2d3cc4d707d8d9aac67",
+    "results/tabular/hosted/breast_cancer__jev-1.13__e30c52b19b9e/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/run.json": "e6a83786bf04da9cc41af3b80d3c751f2f67bc27f087ca766d372f09b00b0e34",
+    "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/predictions.jsonl": "36b92cc4799c94d58dfbd838b9cb79bacfb7e8adbec0b46829541bb3313e9493",
+    "results/tabular/hosted/breast_cancer__jev-1.13__3d1cba817d2a/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/classical/breast_cancer__native_logistic_regression__55222f2fa251/run.json": "96978621f7d8853686745d254734813f606fe80569feb1a1c441bf8109678fc4",
+    "results/tabular/classical/breast_cancer__native_logistic_regression__55222f2fa251/predictions.jsonl": "4f9b580753dd1c91ed133166d02befb303c6f97402de33a0458d7f9977b2680e",
+    "results/tabular/classical/breast_cancer__native_logistic_regression__55222f2fa251/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/classical/breast_cancer__native_logistic_regression__438380deafe6/run.json": "82f77922044adbfa5b8e21d59992bd2c88cb378a1a47534baefae6c05db79e64",
+    "results/tabular/classical/breast_cancer__native_logistic_regression__438380deafe6/predictions.jsonl": "ddc685a44a8ad232a10373288e193deab517bd978b93bab303768ccf70fca44a",
+    "results/tabular/classical/breast_cancer__native_logistic_regression__438380deafe6/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/classical/breast_cancer__native_random_forest__a42a202bf624/run.json": "8e84a741bbc14f40f341536760bebdaf173e8b506c55a2fd5b5aa556b29f5dbc",
+    "results/tabular/classical/breast_cancer__native_random_forest__a42a202bf624/predictions.jsonl": "33ea74e093f31c3695de1a5db5f69569a9d978d240d84f36fa8eda4655606b47",
+    "results/tabular/classical/breast_cancer__native_random_forest__a42a202bf624/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/classical/breast_cancer__native_random_forest__751a2e898562/run.json": "f19e8aaf34ab4c35a87b4366c1b71b0c9c2877378b26d8af8199f71aaedfe3fe",
+    "results/tabular/classical/breast_cancer__native_random_forest__751a2e898562/predictions.jsonl": "9bbdb592ebcc5ab54163b85d30e339c00fbd7e0f3fead2c9136b57b8029b7f94",
+    "results/tabular/classical/breast_cancer__native_random_forest__751a2e898562/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_decisions/boosting/breast_cancer__xgboost__9c76aff839d2/run.json": "1ba1587f735c420ed1a9dc030032d52d774fff2de6dceff45ad7de0bacae1a72",
+    "results/numeric_decisions/boosting/breast_cancer__xgboost__9c76aff839d2/predictions.jsonl": "fe7ba1ab65262e3f49b6d240e893686748f041e38cb996465394efd663980dc6",
+    "results/numeric_decisions/boosting/breast_cancer__xgboost__9c76aff839d2/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_decisions/boosting/breast_cancer__xgboost__1dd185c019f9/run.json": "6f380a06024b761d19fc8c9410872a23c0554371a608b70dee4dbea5734b6580",
+    "results/numeric_decisions/boosting/breast_cancer__xgboost__1dd185c019f9/predictions.jsonl": "08460396a8e2abab528a47bea24cdc42fb0a09962e128b7848234389e6b0292b",
+    "results/numeric_decisions/boosting/breast_cancer__xgboost__1dd185c019f9/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_decisions/boosting/breast_cancer__lightgbm__faf40cbee821/run.json": "88975927f780fc3c0d95ecb2b956de22919c61b42d8e16949af9c5e0b9f00dae",
+    "results/numeric_decisions/boosting/breast_cancer__lightgbm__faf40cbee821/predictions.jsonl": "494658aaba30cb091ee073e0303d613d77acc18e3d4619df3a9586256063f829",
+    "results/numeric_decisions/boosting/breast_cancer__lightgbm__faf40cbee821/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/numeric_decisions/boosting/breast_cancer__lightgbm__36bc7b3a8924/run.json": "4cf74e0ee626cf4cf33c72a4e0b092da9dc13b31bc10373eac61b829e5ddd7ad",
+    "results/numeric_decisions/boosting/breast_cancer__lightgbm__36bc7b3a8924/predictions.jsonl": "02c6490e1b806734b1eadc2b26fc428f778093571dfb74d4a9c491ee8b31f0c4",
+    "results/numeric_decisions/boosting/breast_cancer__lightgbm__36bc7b3a8924/test_manifest.json": "d3445c1ee998cbebc299755c9c4284295416ad8a1f4165cfad80ddf85b987685",
+    "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8/run.json": "ecfbca8e70a474d541688b9ab960639592ebc461986dacfa9c48c6a8b2318dc2",
+    "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8/predictions.jsonl": "0cbedbab9e6bafd1e9867997b4c579e4b8990bfdd0b57f6986d488e8b112b5e2",
+    "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__qwen_small__k0__jev-review/run.json": "cc3203cdf0250c28451a68e7be5c000a74ea54a5a5a37e175cdee354e0c54d21",
+    "results/numeric_expansion/review/wine__qwen_small__k0__jev-review/predictions.jsonl": "1941e37d19f62d0e2504fc728f2123b9ac832b6bbffa01c57e2c4e866eb176aa",
+    "results/numeric_expansion/review/wine__qwen_small__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42/run.json": "12d0532066452c7b2ec41c17acba0cbb3e034d08d043d0f5751e6d8146b35852",
+    "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42/predictions.jsonl": "59f736d542c53a94980b51ebe93e69bcd3a6680121da366b299cbce3c1a0ae38",
+    "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__qwen_small__k4__jev-review/run.json": "4f63170cbf5b2a3e1f213b6f180c15817bc9a57f1a93724b7d1fe73a5c734e9d",
+    "results/numeric_expansion/review/wine__qwen_small__k4__jev-review/predictions.jsonl": "ad808a756cab118e666acc6db949c97f1c49387f1d326f3ba6f4134e7025f571",
+    "results/numeric_expansion/review/wine__qwen_small__k4__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__c923604a4ba1/run.json": "b1c0d456a3abe5d53a8a4767541f56b83ee15c81e442b2233e81e0df8e5af96a",
+    "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__c923604a4ba1/predictions.jsonl": "31bc44ecf4883a33688cbaf11b64a13967d47a105835a5adb8294662d49115c7",
+    "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__c923604a4ba1/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__qwen_main__k0__jev-review/run.json": "e8b6ab2045342d46f649ca69e7ec32ca1d5efb77a6205e7577deecf1ab4e2918",
+    "results/numeric_expansion/review/wine__qwen_main__k0__jev-review/predictions.jsonl": "b800abecce48b655f8599082efe4b35ba81cb80d7853128b124005e53eb9eb85",
+    "results/numeric_expansion/review/wine__qwen_main__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0/run.json": "91378022c1e86e476bd4f3b59a301d411d804d50bed3ca8ccc7ba744c25bfb43",
+    "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0/predictions.jsonl": "b9b11638881c31a9853035c1803a4daf61cbf82f83c136ba57494463f16607d4",
+    "results/tabular/colab/wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_decisions/review/wine__qwen3_4b__jev-review/run.json": "998112a64a43e55af353095cd5cde3cb5571610b3d3f3a65aa70d00f0d9028f9",
+    "results/numeric_decisions/review/wine__qwen3_4b__jev-review/predictions.jsonl": "c8c8972e436c520ad101bdd364a236efb6c80ee2c7ef50319847856003bab39c",
+    "results/numeric_decisions/review/wine__qwen3_4b__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__709bcc1f2998/run.json": "b9aaebf43a2110f0b164e5043b029dd1e06791bb9f377dbfdb5e59cdc4181f31",
+    "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__709bcc1f2998/predictions.jsonl": "a2a79d7c51f5f94ba89792517cd08bfbe8f42f047447a8a19acab36d187c2c86",
+    "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__709bcc1f2998/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__smollm2__k0__jev-review/run.json": "e1c3afccfa3e125bb64fd5b0e6ab208396599abdae6e0a48f51dead5881db3e5",
+    "results/numeric_expansion/review/wine__smollm2__k0__jev-review/predictions.jsonl": "20359ebf2215d5383b8b3fec55c31f1a25ae1db9618ac4f3f13093b4f1f44abb",
+    "results/numeric_expansion/review/wine__smollm2__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__61b7e37b5455/run.json": "b9c9a31d709d2ad5e4baff909f0d5d632972a7f672ec275158cd2de5ff4b9445",
+    "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__61b7e37b5455/predictions.jsonl": "92594bfe34cea905411dadde88619088f980e9cb4fe5ff6ac3205e7806719bff",
+    "results/numeric_expansion/local/wine__SmolLM2-1.7B-Instruct__61b7e37b5455/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__smollm2__k4__jev-review/run.json": "ae6063c28cda8049427e7cdb9b873a25b8bbed845f8492d74bb89bb31fc6bf5b",
+    "results/numeric_expansion/review/wine__smollm2__k4__jev-review/predictions.jsonl": "738de4e779b8c55f4cf4616dd14b064e8e867f582cd1a3fa058e77997ee274dd",
+    "results/numeric_expansion/review/wine__smollm2__k4__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/run.json": "f781cde1ab3bbb21aff0e3a98c6fdc1b141df9888d5c2a386676317cbf785ed5",
+    "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/predictions.jsonl": "ec1fadfa23d12f76d8b07dfb53cd3e94eead74efda419cd77924f7c0d94f93a9",
+    "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__29b8530e4f40/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__granite__k0__jev-review/run.json": "1b0dada90c43c0e570a884d99257066a58e2553ba97a08b0b40fdd8812904f86",
+    "results/numeric_expansion/review/wine__granite__k0__jev-review/predictions.jsonl": "c6ebdf266c78526b1d8b7c96105d22e109f54f7dacedcd08600d8e1c31b7bc55",
+    "results/numeric_expansion/review/wine__granite__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__16efece16c12/run.json": "c3f6f198a8842f5554a57d34fb2253549ad14218f9ecedea32ab9409a23d50c2",
+    "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__16efece16c12/predictions.jsonl": "04cdf6e5d6f7c1695b7d20aee318634e9b6c5658b51b2f7845f6885b1f91f192",
+    "results/numeric_expansion/local/wine__granite-3.3-2b-instruct__16efece16c12/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__granite__k4__jev-review/run.json": "2f7a93e77b29f4903c7aac832921f236fde4fd1c1c6d66a86f107ad08ec4b91d",
+    "results/numeric_expansion/review/wine__granite__k4__jev-review/predictions.jsonl": "3b81d5a6d0f8896ef8cac47058b197351f96b8957141116bca3851c3c2ba08a2",
+    "results/numeric_expansion/review/wine__granite__k4__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/hosted/wine__gpt-5.6-luna__e3ff7ad8c4ad/run.json": "5e7188897561f3705abd87e84230a3dfe80502367a9846a2a56ab854cfa6c852",
+    "results/tabular/hosted/wine__gpt-5.6-luna__e3ff7ad8c4ad/predictions.jsonl": "f65e87ad7b9c0ae4b47619d1d22dcc3309d826f570a18a33141a19e153ca5109",
+    "results/tabular/hosted/wine__gpt-5.6-luna__e3ff7ad8c4ad/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__luna__k0__jev-review/run.json": "1a4901505c17695237941e823ef384c6411fc40368681a57d3e6e157a9518f64",
+    "results/numeric_expansion/review/wine__luna__k0__jev-review/predictions.jsonl": "0c99843d07b4511a0711442bca7a06da079f24beedc74ffbc6a210afe4919f05",
+    "results/numeric_expansion/review/wine__luna__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/hosted/wine__gpt-5.6-luna__bf0ee5396886/run.json": "b5469912783e844ff9c7d48ba6b679d09e82ffd2e5499d18f26c72572687738d",
+    "results/tabular/hosted/wine__gpt-5.6-luna__bf0ee5396886/predictions.jsonl": "0248839e865f9fcd1f2f0e032f9f934450f9cff02371d6f68f06657101bbf9d6",
+    "results/tabular/hosted/wine__gpt-5.6-luna__bf0ee5396886/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__luna__k4__jev-review/run.json": "ebe244e1f4c7bf2e39089ee75cae366b57d2b41f4ed3deb8676ddc15ddde9f37",
+    "results/numeric_expansion/review/wine__luna__k4__jev-review/predictions.jsonl": "eb0d8422cf8bfa2ef2743e8f0209a6ec38dc3a037ef27a006fcd8c80cbad830a",
+    "results/numeric_expansion/review/wine__luna__k4__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/hosted/wine__gpt-6-astra__bb75b85e6193/run.json": "fb9a2322140095f404184003409537acb2fed918166e456e9b0772885fc46f92",
+    "results/tabular/hosted/wine__gpt-6-astra__bb75b85e6193/predictions.jsonl": "c27d4c883920ed3b763786fbc88ba4bcbaf08ea84040e576ca1d1f3311340be0",
+    "results/tabular/hosted/wine__gpt-6-astra__bb75b85e6193/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_expansion/review/wine__astra__k0__jev-review/run.json": "215263d9557d8063e3a03a5698943e21a1736049ea6d66a700fa9de7f734c32c",
+    "results/numeric_expansion/review/wine__astra__k0__jev-review/predictions.jsonl": "663e1deadc4ad1fd595fcfd505187b0ec51628d3c87645404a88585acd651dfc",
+    "results/numeric_expansion/review/wine__astra__k0__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/run.json": "c3162e3b5defb51b2d0fe24d9d05a5e131c67f2ff7ce1f0dfa02077256999622",
+    "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/predictions.jsonl": "dbe5ff17012aec89bf5588be1493217451e25607eb725b6a422fedda986156ab",
+    "results/tabular/hosted/wine__gpt-6-astra__d5c2863bd80f/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_decisions/review/wine__astra__jev-review/run.json": "e85950e389894748e7abdda557df992147ee6b5e533201c31ac3e1c9cc5ab814",
+    "results/numeric_decisions/review/wine__astra__jev-review/predictions.jsonl": "90427f92c0442400abb54c60a27445c46421f0492d88dd7eba78fd110a4fce3c",
+    "results/numeric_decisions/review/wine__astra__jev-review/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/hosted/wine__jev-1.13__7daebee622e6/run.json": "834b5842735f7f2f19c619fe25e00e7336c17bdd1e922fe0a4d39014f82652fc",
+    "results/tabular/hosted/wine__jev-1.13__7daebee622e6/predictions.jsonl": "726c44aad812b72e49964fea6764959bad8fca1e64bf232fccf1f32d998ba8d9",
+    "results/tabular/hosted/wine__jev-1.13__7daebee622e6/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/hosted/wine__jev-1.13__33047fa693a8/run.json": "3ddcbe247b12c6103c244ab2dd27373fcb6504f5f4d26a7a25a000935ff48311",
+    "results/tabular/hosted/wine__jev-1.13__33047fa693a8/predictions.jsonl": "8fa3f7e7ee5153a6c9d6d49f41735b6f7614ca7d95603fe4a4f286116322c313",
+    "results/tabular/hosted/wine__jev-1.13__33047fa693a8/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/classical/wine__native_logistic_regression__c517f9ce4b63/run.json": "3a59bf74ba3f8650fbc34fb24f3d41f65d09e1ce13d99af62214b07dedd5423a",
+    "results/tabular/classical/wine__native_logistic_regression__c517f9ce4b63/predictions.jsonl": "cd864ff667e944e5fc920592a30db24fb3903b2c1c2f0fa65589de646b5451c0",
+    "results/tabular/classical/wine__native_logistic_regression__c517f9ce4b63/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/classical/wine__native_logistic_regression__0257df1d8b1e/run.json": "569870352bc0146e154f7bf0c3b247396b7e8084daae4caf63bf6e57f86e4264",
+    "results/tabular/classical/wine__native_logistic_regression__0257df1d8b1e/predictions.jsonl": "5e0fa1c59eda46505dd4b19d025d0f2eaf5e24a847cc294dc44260641c10fcdd",
+    "results/tabular/classical/wine__native_logistic_regression__0257df1d8b1e/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/classical/wine__native_random_forest__b446bd3c19ff/run.json": "537c1d9ccf74bd47dc07e54e9c15a98dc9948ad2e4d57239d76b7424cc223904",
+    "results/tabular/classical/wine__native_random_forest__b446bd3c19ff/predictions.jsonl": "c130396cf7fc601827cac0388c7bd53cb038aec6056b71c7a16a189eb5b3bda1",
+    "results/tabular/classical/wine__native_random_forest__b446bd3c19ff/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/tabular/classical/wine__native_random_forest__2c1bd7cfe916/run.json": "bab4019b9ebbad952cff65d40883d6753b1735f48cfb0514d7d32dbeb0313cd1",
+    "results/tabular/classical/wine__native_random_forest__2c1bd7cfe916/predictions.jsonl": "f44f6d20def9d9ce6ac74fe1b380697e0bbd1ddc00d2b7c2f262427cd4c885d8",
+    "results/tabular/classical/wine__native_random_forest__2c1bd7cfe916/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_decisions/boosting/wine__xgboost__381b6c451e40/run.json": "1fe2ad33939a075e3624d56a09a2bf7bcc00228100b0796ffa35e01ff192f11f",
+    "results/numeric_decisions/boosting/wine__xgboost__381b6c451e40/predictions.jsonl": "7de537a94e2fcdbf043b8df05fd2e0bd78b9ce836ae65971b3e7a031adce21ee",
+    "results/numeric_decisions/boosting/wine__xgboost__381b6c451e40/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_decisions/boosting/wine__xgboost__7a9a66463dea/run.json": "c478b52f72c485731f725b9aa7a1725991c6875fd577dd3b6de65f1ff6d38c29",
+    "results/numeric_decisions/boosting/wine__xgboost__7a9a66463dea/predictions.jsonl": "f5cb55da9c69de212612b3dca711b40411a1a365f6cb87d5a639a19e32c2459d",
+    "results/numeric_decisions/boosting/wine__xgboost__7a9a66463dea/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_decisions/boosting/wine__lightgbm__209e83797064/run.json": "cc42f44467c316ab6ece1254fae0061081518b9daaafb24d0c30317297e41c34",
+    "results/numeric_decisions/boosting/wine__lightgbm__209e83797064/predictions.jsonl": "088a850e97a1f80504d41774442c8b3643931f821f3e479c280585746e75daf5",
+    "results/numeric_decisions/boosting/wine__lightgbm__209e83797064/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/numeric_decisions/boosting/wine__lightgbm__af442a516629/run.json": "d1cce7aaccadea38183905a79ca6f9f5355c822eb8751c45ff25cf9f01505503",
+    "results/numeric_decisions/boosting/wine__lightgbm__af442a516629/predictions.jsonl": "db172e1a7268df94353d78662350425aad41a388bdb968de0ba1fe267daa5cef",
+    "results/numeric_decisions/boosting/wine__lightgbm__af442a516629/test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2/predictions.jsonl": "191a23615b5370aef5804bb5694ad199dfcb82a624491a4f5cbdb0d132f0d499",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2/run.json": "0fe6b04f0b1e2cd201a7fe1985e6b770612997557289efde8efefac9f57ac6d7",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__594a827ceab2/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__qwen_small__k0__jev-review/predictions.jsonl": "ed6cf6e47319c96048f2a024d0385d7fad43a128eb79ba3f2fc2850842364056",
+    "results/text_extension/review/sst2__qwen_small__k0__jev-review/run.json": "a2e5a9e6560bbb230ae584812fb6825dde423971a56d03a8a920fea5542e7c23",
+    "results/text_extension/review/sst2__qwen_small__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc/predictions.jsonl": "0b9f163f2dc76c50e4acfb97024ee02a863984a0ec05330765063a899a8f174c",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc/run.json": "68b405e72b4d46d7f4c435557ab5367e9be198f99d2d7b217b816e7c3a2fd390",
+    "results/pilot/sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__qwen_small__k4__jev-review/predictions.jsonl": "49b631e037d785b2d088acf456348864c569e71181e6a850bd3f6ca5c48b3c61",
+    "results/text_extension/review/sst2__qwen_small__k4__jev-review/run.json": "1e8c8738954c0a332c247d7515fdc8bb61f01d375febeb76dc212f0400768e0a",
+    "results/text_extension/review/sst2__qwen_small__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/predictions.jsonl": "19c651cc59b1530d7b001f9ab31897e6e7c533fcf06c1c2aeec8b5abc13a5a0a",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/run.json": "849a5d8d1d8e1761c3859b9399e986dad474d8e22cf665e4c9781efdbd751eb5",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/text_extension/review/sst2__qwen_main__k0__jev-review/predictions.jsonl": "91ac6e4f30a196d755c754dea85b73a267c946a28300ea0abd72d4b6d60b8201",
+    "results/text_extension/review/sst2__qwen_main__k0__jev-review/run.json": "6d7c101b05a9179de5c4289ec4db12620a6cf6ca2316c301235ed8de025ff7c0",
+    "results/text_extension/review/sst2__qwen_main__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/predictions.jsonl": "d1ee99e24e4d2850f5c83e8afe6b22b341b46f8d8ed57c8323c4c38d611b2f06",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/run.json": "52356557a98032673cf65b2576d8e97834cbade77e02370745128d5320e5d085",
+    "results/colab/sst2__Qwen3-4B-Instruct-2507__5823bb43da99/test_manifest.json": "9964be2fb433e67602760b7385499df94718ece310cf44d5895a9942ffb92ba0",
+    "results/text_extension/review/sst2__qwen_main__k4__jev-review/predictions.jsonl": "9cc249d004aef0f2c414485bcf0642503d2d8c4f7249e926630b942ab3a75f51",
+    "results/text_extension/review/sst2__qwen_main__k4__jev-review/run.json": "a34334978b5400cff35dc85bbc92f4e5dbb993988601598974ddcb69ae3b9deb",
+    "results/text_extension/review/sst2__qwen_main__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4/predictions.jsonl": "bfc62553f0ce2e19433e00d4c903ad42da308a239256b8293562d3b35b14c1c5",
+    "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4/run.json": "e370f453fdaffe06252f305cbdda30c4e1459e4ae5ebb4ac93955c9d0587c2bc",
+    "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__784f110db5d4/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__smollm2__k0__jev-review/predictions.jsonl": "4b9488924253939ccee5d66c85fbce16aeddb2a7319d2695c34f69982f54db58",
+    "results/text_extension/review/sst2__smollm2__k0__jev-review/run.json": "83858ec03d94ba032f93d041bb4b758333e104ed1a55b90b51bfe8995ffeafd5",
+    "results/text_extension/review/sst2__smollm2__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/predictions.jsonl": "4a4571e171425591fe42da69e1a26b3547568fe11359099a1dde956d80b27183",
+    "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/run.json": "29927dbe4b5a83f708ced0199b9b09a32a364c59c39f905d6b636bf40993733a",
+    "results/text_extension/local/sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__smollm2__k4__jev-review/predictions.jsonl": "62a98937ba01e1601797ac2d611a60e69025402ebc2b77b09ef84e54b2589706",
+    "results/text_extension/review/sst2__smollm2__k4__jev-review/run.json": "7f00196204228e08bf4f3aa1d46509e31571caa57d28d7e15f0039a4263e8003",
+    "results/text_extension/review/sst2__smollm2__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/local/sst2__granite-3.3-2b-instruct__70bbadf64a9a/predictions.jsonl": "1e82d65ce78bfe62cee5e7ddf44c1beaaef1bb6a35b6215cdb8b7c240214155a",
+    "results/text_extension/local/sst2__granite-3.3-2b-instruct__70bbadf64a9a/run.json": "63a266166f1877265dcd0dd04e1dccd8c49718e3ac67c52721ba95015db8067c",
+    "results/text_extension/local/sst2__granite-3.3-2b-instruct__70bbadf64a9a/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__granite__k0__jev-review/predictions.jsonl": "8b087a21d1a7e5048cfe65c054b7d04107ee78b20c6bde160373a69cbcc84e46",
+    "results/text_extension/review/sst2__granite__k0__jev-review/run.json": "c95034751715285c19a5ab42f246c9a15b40723ae4cf72989037964f1ca7b206",
+    "results/text_extension/review/sst2__granite__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/local/sst2__granite-3.3-2b-instruct__267442d7a2e7/predictions.jsonl": "c9b75a86558f0d1195c3a9add90544cee7af63fae0e46fe5f330955ada6fbac0",
+    "results/text_extension/local/sst2__granite-3.3-2b-instruct__267442d7a2e7/run.json": "3328f14ba4f189c49c0418b910d6b928301f8ed7452fab43b9f7058dbe8fea4c",
+    "results/text_extension/local/sst2__granite-3.3-2b-instruct__267442d7a2e7/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__granite__k4__jev-review/predictions.jsonl": "491a6e03aceba9a5c038727678e9f0f2a4f375ed03fd7585e5784fc8eb24562e",
+    "results/text_extension/review/sst2__granite__k4__jev-review/run.json": "6370878ef348cd11963d8c5a4698d749fa7df87746c99c5aa3e062cfe5c05a8b",
+    "results/text_extension/review/sst2__granite__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/hosted/sst2__gpt-5.6-luna__31e207fb95d3/predictions.jsonl": "335661d13674c5562eb2f2ba60bb86c74f515ff8db24d54985528ce58e294e52",
+    "results/hosted/sst2__gpt-5.6-luna__31e207fb95d3/run.json": "91f1f73df33791a0047e01649687c69bbc90aadde052c4b7fc93927be91ee1ba",
+    "results/hosted/sst2__gpt-5.6-luna__31e207fb95d3/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__luna__k0__jev-review/predictions.jsonl": "1c2d0890c9dc664bfd0d823b8b2ce7fbbad14b98bb3d4f87baa817e837ea590d",
+    "results/text_extension/review/sst2__luna__k0__jev-review/run.json": "0ad477c15e5b9f98bd309c4d0a1fb2f1efc45c96481c71b2b667c278d1dea3b7",
+    "results/text_extension/review/sst2__luna__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/hosted/sst2__gpt-5.6-luna__af6e2721cfa0/predictions.jsonl": "a346b18a64a72f27dccf877a18648e7dc93a3d8d5fb32888b0c027a99a2348ec",
+    "results/hosted/sst2__gpt-5.6-luna__af6e2721cfa0/run.json": "07ff723d4abe53aa6274f9d4248141322c172a91010ddb7f4971c5e2def9f030",
+    "results/hosted/sst2__gpt-5.6-luna__af6e2721cfa0/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__luna__k4__jev-review/predictions.jsonl": "7c3a4215d2aca16d3c2ec0e68b8710106ec35536056b680891e3174a115b5fe7",
+    "results/text_extension/review/sst2__luna__k4__jev-review/run.json": "640d0ac642f31b9c33b61a28b4c6996090b0623ba09b375faf4b3ca1feb68ea7",
+    "results/text_extension/review/sst2__luna__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/hosted/sst2__gpt-6-astra__9279b61f6e7a/predictions.jsonl": "bcfdc54dd9671520e44f48eaa1198066206ce2f462ea3375f6706f2e21f796d4",
+    "results/hosted/sst2__gpt-6-astra__9279b61f6e7a/run.json": "5d5e5188b49fbe7ba354d6e833f04dedafe585f04510f9477bc2ef694323ee91",
+    "results/hosted/sst2__gpt-6-astra__9279b61f6e7a/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__astra__k0__jev-review/predictions.jsonl": "6ecfcba74ad71f058f965a1cd47e6e10529bcabe61b0a90fdbebb5eec143f1d3",
+    "results/text_extension/review/sst2__astra__k0__jev-review/run.json": "2010cd1d33aaa489992343eef6dd658a497a80036c67edaa63167e0998e4c4d5",
+    "results/text_extension/review/sst2__astra__k0__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/hosted/sst2__gpt-6-astra__e77320ccd3cf/predictions.jsonl": "e2d7d4ba0f39220fe2fdf6ab107bf5364aafae961b3440386d247c674d55357d",
+    "results/hosted/sst2__gpt-6-astra__e77320ccd3cf/run.json": "86c3428b816b6dcd9e366c4eb2e8c804829ef0fc331e7e90509901b90b357f31",
+    "results/hosted/sst2__gpt-6-astra__e77320ccd3cf/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/review/sst2__astra__k4__jev-review/predictions.jsonl": "645f0a94aedd641f212eafec711dfcb8baf54b9ffa8a82f434eab5a58b0a01c7",
+    "results/text_extension/review/sst2__astra__k4__jev-review/run.json": "cf3b705490589a5cccdbf260bcf3c181c3b9d2357673f07cd073990808445553",
+    "results/text_extension/review/sst2__astra__k4__jev-review/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/jev/sst2__jev-1.13__9d5a851767fc/predictions.jsonl": "5e2f23b554635abf4d060f168d9a7685877038661673718de0866b4e7ffbd83f",
+    "results/jev/sst2__jev-1.13__9d5a851767fc/run.json": "d9651bf77ef5f50d294dba21cf1872805406e32bd984ac3310d6e2f84382b1e8",
+    "results/jev/sst2__jev-1.13__9d5a851767fc/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/jev/sst2__jev-1.13__a33c2b36ded6/predictions.jsonl": "9dd69182d8be9d1ad817acf23e700e425a78645593940bdaae3980580ba31523",
+    "results/jev/sst2__jev-1.13__a33c2b36ded6/run.json": "c7881bd2748b462a532adec0780151cf9566caeaeab775eb7f30030097f654bc",
+    "results/jev/sst2__jev-1.13__a33c2b36ded6/test_manifest.json": "9fcb2492f1eb55dca24bfb3524cd8f1578101c6f5732c959eee1eacc67f6d898",
+    "results/text_extension/classical/sst2__logistic_regression__183b97812418/predictions.jsonl": "8c8705d9cdb6e6f746feec4126e84bffc7d94074f56bf6beeb01077c863a1bbc",
+    "results/text_extension/classical/sst2__logistic_regression__183b97812418/run.json": "1843013ad94b3fad739a1ebbc7591dc64a40b8a6a1ca22bba8b511d3e11d71f5",
+    "results/text_extension/classical/sst2__logistic_regression__183b97812418/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__logistic_regression__27fd0d44480c/predictions.jsonl": "9bb7cc5944416ff389ef92aeb519a44eb2135e1d78bfae96fa677881cb236f29",
+    "results/text_extension/classical/sst2__logistic_regression__27fd0d44480c/run.json": "25dbfdd9324421725a61a4f25c02fd6ecf71adc1bdde022d9a19372a0e5e50f8",
+    "results/text_extension/classical/sst2__logistic_regression__27fd0d44480c/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__random_forest__a0595eb5fc13/predictions.jsonl": "b697b4675715bdfa508be09515726257373848616bf56ac68a2bfba71aaafb8e",
+    "results/text_extension/classical/sst2__random_forest__a0595eb5fc13/run.json": "d46d7e3fcc016a2a0d3ac9478e6927df3b414e28c8380024481b449c13232ea0",
+    "results/text_extension/classical/sst2__random_forest__a0595eb5fc13/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__random_forest__2f7570814e2f/predictions.jsonl": "68d42b68f608d7bd11ff11bafe5fc271f3b9277e92cd66e53de093bae357f994",
+    "results/text_extension/classical/sst2__random_forest__2f7570814e2f/run.json": "555963d215ab88fd22760a2adbc70e83e55da50022179b9e83e29a4bb5839859",
+    "results/text_extension/classical/sst2__random_forest__2f7570814e2f/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__xgboost__0545f69b4961/predictions.jsonl": "d7c41343840c7f9107d52cbab09fb8a6263cccc10f73def2d7962b780e278916",
+    "results/text_extension/classical/sst2__xgboost__0545f69b4961/run.json": "43c84ca9e7afb323eab9236a3552f1ab7c9cab3bb531ca22283de04eae3baba4",
+    "results/text_extension/classical/sst2__xgboost__0545f69b4961/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__xgboost__4de672c0a7ad/predictions.jsonl": "d0582ae117feebf7550829e6424dba6d40ca15441024943a573d30167e62a39d",
+    "results/text_extension/classical/sst2__xgboost__4de672c0a7ad/run.json": "c490728a3057494784cf0d85452c6948dd58f0020b538a534971ab3b99488706",
+    "results/text_extension/classical/sst2__xgboost__4de672c0a7ad/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__lightgbm__d34c6efa477d/predictions.jsonl": "e0ad573240bac5956d41e1efc7f7c7264b1ab8d0bbe58ea20806aa5a3b4a04fa",
+    "results/text_extension/classical/sst2__lightgbm__d34c6efa477d/run.json": "8db348bc33650306f6e6cda7cb879c23e367c54d0e9df950d7e44e976f0e1230",
+    "results/text_extension/classical/sst2__lightgbm__d34c6efa477d/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/text_extension/classical/sst2__lightgbm__200f41ad818d/predictions.jsonl": "3fafce3ca36ab15a02a34d7959c5bdd175c8e734dd023e3019d9d2cd5beeb0be",
+    "results/text_extension/classical/sst2__lightgbm__200f41ad818d/run.json": "8124627367a31f02356099b9162469f64014699e8c4f2c4b5623f3b4414f3ffe",
+    "results/text_extension/classical/sst2__lightgbm__200f41ad818d/test_manifest.json": "80b404e8a4f2367ce726a6c586b8b4ceca888fdd48fac910a9618b800c93e764",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/predictions.jsonl": "aec8ab0d1329a97a6f06739a0abae6fd92951c332636c63fdaa35314664cbade",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/run.json": "f3c622c1a48d6b540afae94693b84c841824fd7a23469d2877bcab8791bf86f9",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__67b435872393/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__qwen_small__k0__jev-review/predictions.jsonl": "416c786fb92c72e4962eb79ffa24f0b1a5f025dc4d6a1270af83fe5230aa5fac",
+    "results/text_extension/review/trec__qwen_small__k0__jev-review/run.json": "086693dd58f168eab53793d945b326fc6615a9feb48b5cd3561e1fd5fdcf8ce6",
+    "results/text_extension/review/trec__qwen_small__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60/predictions.jsonl": "3225e963f23ccae334d86867750ab8d611ff2a19a5227eb3c30cfac30071e161",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60/run.json": "f180a4e6fd04827e0eef7c188b49ba7c530ebcdc9878cd87d8e4d7fd6cc45e26",
+    "results/pilot/trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__qwen_small__k4__jev-review/predictions.jsonl": "f84152fbfdd394cdb1004cf64e92af292189694e0f9fe1ef07ba2f0259bf94e6",
+    "results/text_extension/review/trec__qwen_small__k4__jev-review/run.json": "946c0e4516ae52b1f189efd1f8d425a631074380d33cfa0680d7be1538471288",
+    "results/text_extension/review/trec__qwen_small__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/predictions.jsonl": "6518fe6e0c6d1e45474ff9d065963cd23e2e5487ca75ffa4bac95342f1699979",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/run.json": "ab7dfac815f7b4473b6ee9ef23712c3857bc2afaed20cf9c258f15ff63a8596a",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/text_extension/review/trec__qwen_main__k0__jev-review/predictions.jsonl": "a74536fb0495e893a87b643e45553891d3ef9202522ef04bb86854e37e53f77e",
+    "results/text_extension/review/trec__qwen_main__k0__jev-review/run.json": "c12ab8ac854bcfb9e4177b7473194ce970aaf395c82fd1fd8a7ab6a3331e4435",
+    "results/text_extension/review/trec__qwen_main__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f/predictions.jsonl": "075d2c324b92542fe85089be9f310e979568d0574887bfcc59e6c0ef971adf80",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f/run.json": "7c1a7106a7dd43fa0856a8cefdb2986a0590052d9391ca84586966869e4d0362",
+    "results/colab/trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f/test_manifest.json": "95ea0e430c5c11744de599ad7d264384f004be0c39d767329aa96a32e22109fb",
+    "results/text_extension/review/trec__qwen_main__k4__jev-review/predictions.jsonl": "1406a371a5a0bf65cd3b06ee80246379ffd30e2d40741dd362a9b98bb0d78050",
+    "results/text_extension/review/trec__qwen_main__k4__jev-review/run.json": "c78cfd34c0d1de333c8aeedfcdac04f101f1ab9010f09c44811e912a222ecbff",
+    "results/text_extension/review/trec__qwen_main__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/predictions.jsonl": "718191482013f937dac94dd5b9baaf026b85268ae5ace1b1bdb3b9f5fa590981",
+    "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/run.json": "20b381da20457614430cf9197d65ec8a8e0caa4912b4f93f25acd21b3e091597",
+    "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__2801fb02a432/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__smollm2__k0__jev-review/predictions.jsonl": "86da92490a49becb3d1f8bf76fe4b81d0ef964a0eac9f26198e0a160840c66d0",
+    "results/text_extension/review/trec__smollm2__k0__jev-review/run.json": "dab5d0a468a29dd6223d99ac4b97b5da2fd9092f2bfb9141c7c3f9dca7624f95",
+    "results/text_extension/review/trec__smollm2__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/predictions.jsonl": "01fe373621527a19bea1d83a948b5cf53bf9a9b737c11b26507cdc0e3ec14c2e",
+    "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/run.json": "d5977ff6a0b4054d7cdd7912a29db6911c70949a568b99c577d6fcbaa0654988",
+    "results/text_extension/local/trec__SmolLM2-1.7B-Instruct__727fc703c17b/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__smollm2__k4__jev-review/predictions.jsonl": "b40fadf17670a06532af8575baac8a2ef78495914435003533e7f9fdd2d40867",
+    "results/text_extension/review/trec__smollm2__k4__jev-review/run.json": "fd06f4894a96e6e9c06e75a5002614953bd5a7fe0c03b8704eb41cbb663050a0",
+    "results/text_extension/review/trec__smollm2__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/predictions.jsonl": "071f8921cce27b479b9a24917c12224faf5e4376a98884aad2fe3f130387017d",
+    "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/run.json": "7fa25b3bcd47731dc94577237faa87ff7a8bbec0f59e14d0dac729b287d8863d",
+    "results/text_extension/local/trec__granite-3.3-2b-instruct__0799ef2872ba/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__granite__k0__jev-review/predictions.jsonl": "e2923b1dac8e246ecbf5413c85063571e03918a82ed410e3688ea723a3070698",
+    "results/text_extension/review/trec__granite__k0__jev-review/run.json": "1dec38cc6934d0e22d33ef09b2b934119d7033eb83c4306112a7dd6cddfbe81a",
+    "results/text_extension/review/trec__granite__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/predictions.jsonl": "0c9ccb392667f606b0f01a4a14f318366157a34ada34a736b696dfb98ac21dd4",
+    "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/run.json": "d1e9b04f116bfc0124a764360a4c1a6ef7ad0755f6e13562d54f55eddec5f3fe",
+    "results/text_extension/local/trec__granite-3.3-2b-instruct__1f5a5e8bda67/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__granite__k4__jev-review/predictions.jsonl": "266f3eddfdc601552851616e70e8217079a502b21fee489a4ed5fc93a7613f2d",
+    "results/text_extension/review/trec__granite__k4__jev-review/run.json": "8ec185eca4c2b7a1ece89976a3ed7f49874affe8e905320fcf286369cf6ee067",
+    "results/text_extension/review/trec__granite__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/hosted/trec__gpt-5.6-luna__0434e88259a6/predictions.jsonl": "0ee2257091128c0e2b260282ef2750591a43f97e1e39d3e3a31aecea5a166708",
+    "results/hosted/trec__gpt-5.6-luna__0434e88259a6/run.json": "4e9b1f443bdb6e13312ec2e325ee866f803e3ee57a2bf5cc54b99715e7ebf5e6",
+    "results/hosted/trec__gpt-5.6-luna__0434e88259a6/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__luna__k0__jev-review/predictions.jsonl": "dafc87bc32d17529a2b7677f3596123a0ea88f0c96c49ea1d2773bb184039f0d",
+    "results/text_extension/review/trec__luna__k0__jev-review/run.json": "e4e54f3acffb9106b92dc3061758a6bb0202cef19e651ee0b4bcd8b009b5719c",
+    "results/text_extension/review/trec__luna__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/hosted/trec__gpt-5.6-luna__a183fc22ddc8/predictions.jsonl": "b3a6d0a9ff26fb33e064538e2c33dd1d90a453ece4952b57cd8c6b8c79787568",
+    "results/hosted/trec__gpt-5.6-luna__a183fc22ddc8/run.json": "9210eacaf200bd4595986f60281c8ef9527ba330b4d3522a40b8a799124d7ce0",
+    "results/hosted/trec__gpt-5.6-luna__a183fc22ddc8/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__luna__k4__jev-review/predictions.jsonl": "1232968dd94b28d9ac384eb75a9df24ecd2792bb05e1f1ef2b8aa2bb33d025f0",
+    "results/text_extension/review/trec__luna__k4__jev-review/run.json": "a59e87e4fdbedaa91a1ecedbe249b44aa943fc04818564b363d230c9f0a08bde",
+    "results/text_extension/review/trec__luna__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/hosted/trec__gpt-6-astra__4788a3f7e01d/predictions.jsonl": "190e7aa8751b370215d952f52714a4f7dd34c7b8e9f7b60fbff7a118f99d6615",
+    "results/hosted/trec__gpt-6-astra__4788a3f7e01d/run.json": "66ee96053a56f3604d580dc29f2138349dbf89b2b1ccc2b392d262d37844d5ed",
+    "results/hosted/trec__gpt-6-astra__4788a3f7e01d/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__astra__k0__jev-review/predictions.jsonl": "1f509b2dc4a51dcb0c08410678fe69ca8f5185664c2f907eca1b04d23aa13a13",
+    "results/text_extension/review/trec__astra__k0__jev-review/run.json": "8fe91713ebc44f876438f808661bdd0c31b76fb3e21a209e021433448c3e4117",
+    "results/text_extension/review/trec__astra__k0__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/hosted/trec__gpt-6-astra__f4c124cbaa8e/predictions.jsonl": "6690440f7d1f8d02baab7f59270677c653a424c83f21d37e15adeb0bf25c076f",
+    "results/hosted/trec__gpt-6-astra__f4c124cbaa8e/run.json": "5542881d56ffeb439c275c82ecd8d3b8166c33143e6d9e6a4fb212fb9973f715",
+    "results/hosted/trec__gpt-6-astra__f4c124cbaa8e/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/review/trec__astra__k4__jev-review/predictions.jsonl": "d256221fd373a5338f22ab2d420639fd0e90c03f5b8ebb4af64ee9e425e8631a",
+    "results/text_extension/review/trec__astra__k4__jev-review/run.json": "8e1ecb69548d3c6386112b5a1b0415ec2c3878999d589bf37e45b72c4e6e78d6",
+    "results/text_extension/review/trec__astra__k4__jev-review/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/jev/trec__jev-1.13__ce2f8d23bf30/predictions.jsonl": "b45f10272e0b9b1e97e04540c4e1d678587e4849450c624aad9444f25684b356",
+    "results/jev/trec__jev-1.13__ce2f8d23bf30/run.json": "31963954a8c6b1af404030ff514178e714006cd517d7a05e7096ce69ffb3f87b",
+    "results/jev/trec__jev-1.13__ce2f8d23bf30/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/jev/trec__jev-1.13__bc52fb6a4b0f/predictions.jsonl": "3ec3d8ac36fb296de9bd0bd6b20b6c220d2e57b9babab360c1a2437aa4fb2948",
+    "results/jev/trec__jev-1.13__bc52fb6a4b0f/run.json": "baedc8841c6d3d52b8c19e6cd3046eee3e82316f23aa381d260b044e32c108c6",
+    "results/jev/trec__jev-1.13__bc52fb6a4b0f/test_manifest.json": "462a00705aed5a3f6e2846483cac278e870c58a74f248c3fd265820018b33a89",
+    "results/text_extension/classical/trec__logistic_regression__3e1106289632/predictions.jsonl": "25d0f4658638b8eb8b2990d317b877b67e07cee4396732e49d963d10ccf3684d",
+    "results/text_extension/classical/trec__logistic_regression__3e1106289632/run.json": "4ea45870a05b617e814f16b12163abf2fea598a8aaf95872bf37fd576c81a6d2",
+    "results/text_extension/classical/trec__logistic_regression__3e1106289632/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__logistic_regression__a89910bef513/predictions.jsonl": "2ed1339c4efb6a06af5dfe909a088753ba10c5a0fbd02bcb09380415c6f8d69b",
+    "results/text_extension/classical/trec__logistic_regression__a89910bef513/run.json": "b0ffc91500e4697e962dfe8fdb6d5b80f53ff6ea3cee9770a797a0ba75e06d76",
+    "results/text_extension/classical/trec__logistic_regression__a89910bef513/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__random_forest__d6298b0da6c1/predictions.jsonl": "d82e5ea5e536be4ae32d3acd6eb288ae8d3a2c7b895e60423f02f8edb2d7c819",
+    "results/text_extension/classical/trec__random_forest__d6298b0da6c1/run.json": "a2c67ec89b863dea56e1d3bb6e2262a753260fa3447e15d8c09469a60ef0470e",
+    "results/text_extension/classical/trec__random_forest__d6298b0da6c1/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__random_forest__733c659c59e6/predictions.jsonl": "783b9a4bef07d557c12b083673f53540a89c2d979eb687e1560ed13b3558ac8a",
+    "results/text_extension/classical/trec__random_forest__733c659c59e6/run.json": "7ef3a9172388521ba3f226012ef65b75bef002c8eec6b4b3ffcc61e842648e75",
+    "results/text_extension/classical/trec__random_forest__733c659c59e6/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__xgboost__ba75eb4d936a/predictions.jsonl": "8e5c6c0eeee448c30add1da8b8172e9fc878980bdf724adceb423ae0f59e061f",
+    "results/text_extension/classical/trec__xgboost__ba75eb4d936a/run.json": "0fbb1e5c53ecfd01767b3044ef78ccc3c621edae9eaf6cbedbb77a18195aca38",
+    "results/text_extension/classical/trec__xgboost__ba75eb4d936a/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__xgboost__8e8084ca9acb/predictions.jsonl": "65ee1e1bfc733fc785efe7730f18fecee9785ec0c9ca96d384ba1d049f43541b",
+    "results/text_extension/classical/trec__xgboost__8e8084ca9acb/run.json": "47be1ebf0fb9c91260378c42d32d9bcfc13f7624d637a88079c961e5639f77e0",
+    "results/text_extension/classical/trec__xgboost__8e8084ca9acb/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__lightgbm__fc14c8aa249e/predictions.jsonl": "fd0175ecb1d4b07afb986255689719bf873872c953bd4d9ea440679a5483aea9",
+    "results/text_extension/classical/trec__lightgbm__fc14c8aa249e/run.json": "d5138295bd6e399b24ec9e0ecccfa8370e854787986c5edf07d9695284f68881",
+    "results/text_extension/classical/trec__lightgbm__fc14c8aa249e/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e",
+    "results/text_extension/classical/trec__lightgbm__70596227f83e/predictions.jsonl": "17e1d9b9d1d14a1c0d2101474ad0e6b2b76e1775a3851281a127345827077171",
+    "results/text_extension/classical/trec__lightgbm__70596227f83e/run.json": "808cfe78b3cf97b92db972f432a4a014cd868c0936f3a75683b8af855430259d",
+    "results/text_extension/classical/trec__lightgbm__70596227f83e/test_manifest.json": "932fcb2837f718e5ab5db829882ad83d4a545e514d2b5d964e1054d6d004d81e"
+  },
+  "figures": {
+    "01_wine_rescue.png": "90f9a1bcd4e39620090b15f091a854b6fab43be15212dccd36e29db7691c1d48",
+    "01_wine_rescue.svg": "b30dceffc20aa65038b32f2178a9b2c0162ebb0419b14867e6f8899a7179136e",
+    "02_trec_overrides.png": "6f04b7d3743d0dae032a7c3d715d01268e8297bcb7e0919b364872f7eb83da4b",
+    "02_trec_overrides.svg": "d94d917818f8a0333765a6a3b9cadddb554aa5a9912c4048baa3df44b5e31da1",
+    "03_proposal_value.png": "db9ab66f3ec2134c613d3c344029c4f778d60ae4691ac3c96f1a31bbb93d12e5",
+    "03_proposal_value.svg": "daa7ed5ec3b5966b0c1d44fd4f1fce586938f16593b12320629097bdf51ecc0e",
+    "04_trec_cost.png": "8f0889518b1e1e0c4fa72256df7547652445dd5d08dcf526c4ba9a60e92c57e6",
+    "04_trec_cost.svg": "dac713c5ea32d2ef132e9395970339fc2f707907b71e881793cc12b47483db21",
+    "05_matched_label_context.png": "521105414a6649570422ef81384fb777a6e20636d163d9fe758a3c4b2e6429d6",
+    "05_matched_label_context.svg": "5df17cf69f6a965a9edc09da74db79edfec28a2ba263add6d84b1b27fd49b875",
+    "06_jev_few_shot.png": "b466afb4cf32b6f17b161f949b6a1479ec0957aa6e9d2400b6e3dc536149eced",
+    "06_jev_few_shot.svg": "fb09e6e205447ef8f26e92d5a668857c133a9130912eabac9d0b15f4b77780d1",
+    "07_all_review_conditions.png": "a253383bde97dac62c56e89d36bbde728899506ad7ee5288abaedd8bd9baf732",
+    "07_all_review_conditions.svg": "8a813818ca56e44fa910d4d03fb8d02f52ea66b62962026ef06d4946c7cfd9b1"
+  },
+  "captions": {
+    "01_wine_rescue": "On the 36-row Wine test set, adding Jev improved Qwen2.5 from 12 to 33 correct answers. Jev alone made exactly the same final predictions. Logistic regression scored 35/36 with the same 12 training labels.",
+    "02_trec_overrides": "On TREC, Jev corrected three Astra mistakes but changed 24 correct answers to wrong ones. The net effect was 21 fewer correct answers out of 200, a drop of 10.5 percentage points.",
+    "03_proposal_value": "Including Qwen3's proposed answer changed Jev's observed accuracy by no more than half a percentage point in either direction in the original primary comparison. The 95% intervals all include zero. The Wine interval is wide because its test set contains only 36 rows. This does not prove equivalence.",
+    "04_trec_cost": "For the same 200 TREC questions, Jev alone cost about $0.0087 and scored 85.5%; Astra cost an estimated $1.3564 and scored 97.0%. Combining them cost about $1.3656 and scored 86.5%. The comparison counts both pipeline stages once and excludes local compute, training and engineering.",
+    "05_matched_label_context": "With only four training examples per class, classical methods were competitive on these numerical tasks but much weaker on the text tasks. Text baselines used TF-IDF. Equal numbers of task-specific labels do not equalize the prior pretraining available to Jev and Astra. These are fixed-recipe, one-split results.",
+    "06_jev_few_shot": "Jev's standalone accuracy improved after adding four labeled examples per class to the prompt on each dataset, with the largest observed gains on Wine and TREC. This was in-context learning, not fine-tuning.",
+    "07_all_review_conditions": "Across all 48 original source-model and prompting conditions, Jev review improved accuracy in 32, tied in three, and reduced it in 13. Cells show percentage-point changes. The conditions reuse four test sets and are not independent replications."
+  },
+  "chart_data": {
+    "01_wine_rescue": {
+      "scope": "Selected Wine, four examples per class, original saved runs",
+      "runs": [
+        {
+          "dataset": "wine",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "method": "few_shot",
+          "train_per_class": 4,
+          "train_labels": 12,
+          "seed": 42,
+          "status": "complete",
+          "run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+          "source_path": "results/tabular/local/wine__Qwen2.5-0.5B-Instruct__76dea05d8b42/run.json",
+          "group_bootstrap": {
+            "method": "unstratified group percentile bootstrap",
+            "group_definition": "identical serialized test text SHA256",
+            "samples": 2000,
+            "seed": 42,
+            "n_rows": 36,
+            "n_groups": 36,
+            "draws_per_replicate": 36,
+            "resampled_row_count_range": [
+              36,
+              36
+            ],
+            "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+            "metrics": {
+              "accuracy": {
+                "estimate": 0.3333333333333333,
+                "ci95": [
+                  0.19444444444444445,
+                  0.5
+                ]
+              },
+              "macro_f1": {
+                "estimate": 0.16666666666666666,
+                "ci95": [
+                  0.10852713178294575,
+                  0.2222222222222222
+                ]
+              }
+            }
+          },
+          "artifact_sha256": {
+            "run.json": "12d0532066452c7b2ec41c17acba0cbb3e034d08d043d0f5751e6d8146b35852",
+            "predictions.jsonl": "59f736d542c53a94980b51ebe93e69bcd3a6680121da366b299cbce3c1a0ae38",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "probability_kinds": [
+            "label_sequence_likelihood_normalized"
+          ],
+          "resolved_models": [],
+          "resolved_revisions": [
+            "7ae557604adf67be50417f59c2c2f167def9a775"
+          ],
+          "inference_dtypes": [
+            "float16"
+          ],
+          "devices": [
+            "mps"
+          ],
+          "config": {
+            "device": "mps",
+            "max_context_tokens": 8192,
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "provider": "hf",
+            "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+            "shots_per_class": 4
+          },
+          "n_test": 36,
+          "n_classes": 3,
+          "accuracy": 0.3333333333333333,
+          "macro_f1": 0.16666666666666666,
+          "balanced_accuracy": 0.3333333333333333,
+          "failure_rate": 0.0,
+          "n_failures": 0,
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              14,
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "per_class": [
+            {
+              "label": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "f1": 0.5,
+              "support": 12
+            },
+            {
+              "label": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 14
+            },
+            {
+              "label": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 10
+            }
+          ],
+          "valid_response_accuracy": 0.3333333333333333,
+          "latency_p50_s": 9.979466249991674,
+          "latency_p95_s": 11.079622562159784,
+          "prediction_time_s": 361.5568726635538,
+          "input_tokens": 89402,
+          "input_tokens_known_total": 89402,
+          "input_tokens_coverage": 1.0,
+          "output_tokens": 0,
+          "output_tokens_known_total": 0,
+          "output_tokens_coverage": 1.0,
+          "probability_coverage": 1.0,
+          "n_probability_rows": 36,
+          "probability_renormalized_rows": 7,
+          "zero_true_class_probability_rows": 0,
+          "log_loss": 1.5111992552447322,
+          "brier_sum": 0.8555154468676524,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "ece_15_equal_width": 0.3777765415763461,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 7,
+              "count": 1,
+              "mean_confidence": 0.5269132425807806,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 8,
+              "count": 12,
+              "mean_confidence": 0.5680234264903367,
+              "accuracy": 0.6666666666666666
+            },
+            {
+              "bin": 9,
+              "count": 15,
+              "mean_confidence": 0.6338312808899961,
+              "accuracy": 0.13333333333333333
+            },
+            {
+              "bin": 10,
+              "count": 8,
+              "mean_confidence": 0.6794600804829174,
+              "accuracy": 0.125
+            },
+            {
+              "bin": 11,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 12,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 13,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 14,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            }
+          ],
+          "measurement_origin": "reused_original_tabular",
+          "source_prompt_family": "frozen original provider/model rendering",
+          "arm": "base"
+        },
+        {
+          "dataset": "wine",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct+jev_review",
+          "display_model": "Qwen2.5 0.5B \u2192 Jev",
+          "method": "cached_label_jev_review",
+          "train_per_class": 4,
+          "train_labels": 12,
+          "seed": 42,
+          "status": "complete",
+          "run_id": "wine__qwen_small__k4__jev-review",
+          "source_path": "results/numeric_expansion/review/wine__qwen_small__k4__jev-review/run.json",
+          "group_bootstrap": {
+            "method": "unstratified group percentile bootstrap",
+            "group_definition": "identical serialized test text SHA256",
+            "samples": 2000,
+            "seed": 42,
+            "n_rows": 36,
+            "n_groups": 36,
+            "draws_per_replicate": 36,
+            "resampled_row_count_range": [
+              36,
+              36
+            ],
+            "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+            "metrics": {
+              "accuracy": {
+                "estimate": 0.9166666666666666,
+                "ci95": [
+                  0.8326388888888889,
+                  1.0
+                ]
+              },
+              "macro_f1": {
+                "estimate": 0.9163636363636364,
+                "ci95": [
+                  0.8076845555918781,
+                  1.0
+                ]
+              }
+            }
+          },
+          "artifact_sha256": {
+            "run.json": "4f63170cbf5b2a3e1f213b6f180c15817bc9a57f1a93724b7d1fe73a5c734e9d",
+            "predictions.jsonl": "ad808a756cab118e666acc6db949c97f1c49387f1d326f3ba6f4134e7025f571",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "probability_kinds": [
+            "jev_choice_distribution"
+          ],
+          "resolved_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "resolved_revisions": [],
+          "inference_dtypes": [],
+          "devices": [],
+          "config": {
+            "api_key_env": "OPENROUTER_API_KEY",
+            "base_url": "https://openrouter.ai/api/v1",
+            "budget_guard": {
+              "aggregate_authorized_usd": "25.00",
+              "base_review_wrapper_sha256": "6282eb8b74c89ebbaf24d34e7ba29e06b4dc8cab9c700b0b3620fc613f6d3653",
+              "dataset": "wine",
+              "endpoint": "https://openrouter.ai/api/v1/systemone",
+              "expansion_wrapper_sha256": "68a16db205cceb81b46916630c776827ccdb09e7df6aed60dd1db7413d4d7a88",
+              "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+              "ledger_id": "c3b3c91e-8194-48e7-8101-64d96479da49",
+              "model_key": "qwen_small",
+              "price": {
+                "catalog_context_tokens": 32000,
+                "endpoint_source": "https://openrouter.ai/docs/guides/community/typesafe-sdk",
+                "input_usd_per_million": "0.042",
+                "output_usd_per_million": "0",
+                "per_request_reserved_usd": "0.002688000",
+                "reserve_input_tokens": 64000,
+                "source": "https://openrouter.ai/typesafe/jev-1.13",
+                "verified_on": "2026-09-22"
+              },
+              "prior_charged_or_reserved_usd": "19.325827700",
+              "prior_ledgers": {
+                "results/jev-budget.jsonl": {
+                  "cap": "2.50",
+                  "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+                  "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+                },
+                "results/numeric_decisions/review-budget.jsonl": {
+                  "cap": "0.90",
+                  "lock_sha256": "cf1dab0ccde5136c6a28df0297ab057f264ac6c9c529c6bf65bfa3cf6efc0a49",
+                  "sha256": "19d362e5e9894894f60014c580da7f6ed0771020864842e516831cb35a09bc6a"
+                },
+                "results/openai-budget.jsonl": {
+                  "cap": "7.50",
+                  "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+                  "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+                },
+                "results/tabular/api-budget.jsonl": {
+                  "cap": "14.70",
+                  "lock_sha256": "2f2b85695440d144a8dc10484cc5515a71aacc3fb529c607b5162e6854cc8a89",
+                  "sha256": "e829c35af5e4bb0630c327f2e4d9efe4e1ded399f161e25d87c04a9001d84b1c"
+                }
+              },
+              "proposal_key": "qwen_small_k4",
+              "review_prompt_version": "cached-label-proposal-review-v1",
+              "route": "OpenRouter",
+              "seed": 42,
+              "shots_per_class": 4,
+              "source_files_sha256": {
+                "predictions.jsonl": "59f736d542c53a94980b51ebe93e69bcd3a6680121da366b299cbce3c1a0ae38",
+                "run.json": "12d0532066452c7b2ec41c17acba0cbb3e034d08d043d0f5751e6d8146b35852",
+                "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+              },
+              "source_manifest_path": "results/numeric_expansion/sources/wine__qwen_small__k4.json",
+              "source_manifest_sha256": "83ebea0850cd41770978a3895002cfb59daf33a116501fd64fd4af72df4045e1",
+              "source_run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+              "source_shots_per_class": 4,
+              "stage_cap_usd": "5.00",
+              "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+            },
+            "model": "typesafe/jev-1.13",
+            "provider": "jev",
+            "shots_per_class": 4,
+            "source_model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "source_run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+            "source_shots_per_class": 4,
+            "timeout": 120
+          },
+          "n_test": 36,
+          "n_classes": 3,
+          "accuracy": 0.9166666666666666,
+          "macro_f1": 0.9163636363636364,
+          "balanced_accuracy": 0.9285714285714285,
+          "failure_rate": 0.0,
+          "n_failures": 0,
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              11,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              10,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "per_class": [
+            {
+              "label": 0,
+              "precision": 0.9230769230769231,
+              "recall": 1.0,
+              "f1": 0.96,
+              "support": 12
+            },
+            {
+              "label": 1,
+              "precision": 1.0,
+              "recall": 0.7857142857142857,
+              "f1": 0.88,
+              "support": 14
+            },
+            {
+              "label": 2,
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1": 0.9090909090909091,
+              "support": 10
+            }
+          ],
+          "valid_response_accuracy": 0.9166666666666666,
+          "latency_p50_s": 0.9001688749995083,
+          "latency_p95_s": 1.010894666542299,
+          "prediction_time_s": 32.92370253789704,
+          "input_tokens": 104738,
+          "input_tokens_known_total": 104738,
+          "input_tokens_coverage": 1.0,
+          "output_tokens": 1368,
+          "output_tokens_known_total": 1368,
+          "output_tokens_coverage": 1.0,
+          "probability_coverage": 1.0,
+          "n_probability_rows": 36,
+          "probability_renormalized_rows": 1,
+          "zero_true_class_probability_rows": 0,
+          "log_loss": 0.25929167383111856,
+          "brier_sum": 0.12858333333333336,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "ece_15_equal_width": 0.11916666666666671,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 6,
+              "count": 1,
+              "mean_confidence": 0.46,
+              "accuracy": 0.0
+            },
+            {
+              "bin": 7,
+              "count": 1,
+              "mean_confidence": 0.53,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 8,
+              "count": 2,
+              "mean_confidence": 0.565,
+              "accuracy": 0.5
+            },
+            {
+              "bin": 9,
+              "count": 4,
+              "mean_confidence": 0.6525000000000001,
+              "accuracy": 0.75
+            },
+            {
+              "bin": 10,
+              "count": 3,
+              "mean_confidence": 0.7133333333333333,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 11,
+              "count": 3,
+              "mean_confidence": 0.7766666666666667,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 12,
+              "count": 1,
+              "mean_confidence": 0.82,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 13,
+              "count": 6,
+              "mean_confidence": 0.8966666666666666,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 14,
+              "count": 15,
+              "mean_confidence": 0.9659999999999999,
+              "accuracy": 1.0
+            }
+          ],
+          "source_run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+          "measurement_origin": "new_review_expansion",
+          "arm": "review",
+          "review_transitions": {
+            "wrong_to_correct": 21,
+            "correct_to_wrong": 0,
+            "both_correct": 12,
+            "both_wrong": 3,
+            "changed_predictions": 23,
+            "correct_to_failure": 0,
+            "correct_to_wrong_label": 0,
+            "source_failure_rows": 0,
+            "review_stage_failure_rows": 0,
+            "net_correct_change": 21,
+            "accuracy_delta_pp": 58.333333333333336
+          }
+        },
+        {
+          "dataset": "wine",
+          "model": "typesafe/jev-1.13",
+          "display_model": "Jev alone",
+          "method": "few_shot",
+          "train_per_class": 4,
+          "train_labels": 12,
+          "seed": 42,
+          "status": "complete",
+          "run_id": "wine__jev-1.13__33047fa693a8",
+          "source_path": "results/tabular/hosted/wine__jev-1.13__33047fa693a8/run.json",
+          "group_bootstrap": {
+            "method": "unstratified group percentile bootstrap",
+            "group_definition": "identical serialized test text SHA256",
+            "samples": 2000,
+            "seed": 42,
+            "n_rows": 36,
+            "n_groups": 36,
+            "draws_per_replicate": 36,
+            "resampled_row_count_range": [
+              36,
+              36
+            ],
+            "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+            "metrics": {
+              "accuracy": {
+                "estimate": 0.9166666666666666,
+                "ci95": [
+                  0.8326388888888889,
+                  1.0
+                ]
+              },
+              "macro_f1": {
+                "estimate": 0.9163636363636364,
+                "ci95": [
+                  0.8076845555918781,
+                  1.0
+                ]
+              }
+            }
+          },
+          "artifact_sha256": {
+            "run.json": "3ddcbe247b12c6103c244ab2dd27373fcb6504f5f4d26a7a25a000935ff48311",
+            "predictions.jsonl": "8fa3f7e7ee5153a6c9d6d49f41735b6f7614ca7d95603fe4a4f286116322c313",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "probability_kinds": [
+            "jev_choice_distribution"
+          ],
+          "resolved_models": [
+            "typesafe/jev-1.13-20260917"
+          ],
+          "resolved_revisions": [],
+          "inference_dtypes": [],
+          "devices": [],
+          "config": {
+            "api_key_env": "OPENROUTER_API_KEY",
+            "base_url": "https://openrouter.ai/api/v1",
+            "budget_guard": {
+              "aggregate_authorized_usd": "20.00",
+              "dataset": "wine",
+              "endpoint": "https://openrouter.ai/api/v1/systemone",
+              "ledger_driver_sha256": "3a6447218cba5025fef3aa58eb56d9045bd89173a35c4150544a87e7a55b6f92",
+              "ledger_id": "c5ed1256-3ca4-4c53-9c63-72705faabd1a",
+              "model_key": "jev_openrouter",
+              "native_protocol": "frozen_JevClassifier_Choice",
+              "price_source": "https://openrouter.ai/typesafe/jev-1.13",
+              "price_verified_on": "2026-09-22",
+              "prior_charged_or_reserved_usd": "5.293007000",
+              "prior_ledgers": {
+                "jev-budget.jsonl": {
+                  "cap": "2.50",
+                  "lock_sha256": "9dbd526daa535fbaa32584ab840c6d15d87fb655a1c7eea5d200581b3efc8f4d",
+                  "sha256": "2cee1170917a008bf750ac077595ead54f8d55081e9a6f3d8f90e7daa4c822e5"
+                },
+                "openai-budget.jsonl": {
+                  "cap": "7.50",
+                  "lock_sha256": "a76fae681be49c00a0138b9c3e52274a3cc853fc8f50e27c7917a01defc38278",
+                  "sha256": "81ed86d640896c5775191fc055979fdde4f0a6b906f79e864596ac7007f8352a"
+                }
+              },
+              "reserve_checks_included_in_latency": true,
+              "response_model_allowlist": [
+                "typesafe/jev-1.13",
+                "typesafe/jev-1.13-20260917"
+              ],
+              "route": "OpenRouter",
+              "seed": 42,
+              "shots_per_class": 4,
+              "stage_cap_usd": "14.70",
+              "tabular_wrapper_sha256": "53936be5c051b80cbee74943ec6544f29bc28044d99f5fd20226560f7163b230",
+              "wrapper_sha256": "12a4e66649a2f9533ba8bb16fd7bd386a0c9dfc808f400b4da2a6df26e5ce89f"
+            },
+            "model": "typesafe/jev-1.13",
+            "provider": "jev",
+            "shots_per_class": 4,
+            "timeout": 120
+          },
+          "n_test": 36,
+          "n_classes": 3,
+          "accuracy": 0.9166666666666666,
+          "macro_f1": 0.9163636363636364,
+          "balanced_accuracy": 0.9285714285714285,
+          "failure_rate": 0.0,
+          "n_failures": 0,
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              11,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              10,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "per_class": [
+            {
+              "label": 0,
+              "precision": 0.9230769230769231,
+              "recall": 1.0,
+              "f1": 0.96,
+              "support": 12
+            },
+            {
+              "label": 1,
+              "precision": 1.0,
+              "recall": 0.7857142857142857,
+              "f1": 0.88,
+              "support": 14
+            },
+            {
+              "label": 2,
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1": 0.9090909090909091,
+              "support": 10
+            }
+          ],
+          "valid_response_accuracy": 0.9166666666666666,
+          "latency_p50_s": 1.866339145519305,
+          "latency_p95_s": 3.680369187553879,
+          "prediction_time_s": 73.10321974824183,
+          "input_tokens": 102542,
+          "input_tokens_known_total": 102542,
+          "input_tokens_coverage": 1.0,
+          "output_tokens": 1368,
+          "output_tokens_known_total": 1368,
+          "output_tokens_coverage": 1.0,
+          "probability_coverage": 1.0,
+          "n_probability_rows": 36,
+          "probability_renormalized_rows": 0,
+          "zero_true_class_probability_rows": 0,
+          "log_loss": 0.22114673590465783,
+          "brier_sum": 0.11175000000000002,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "ece_15_equal_width": 0.1183333333333332,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 6,
+              "count": 1,
+              "mean_confidence": 0.44,
+              "accuracy": 0.0
+            },
+            {
+              "bin": 7,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 8,
+              "count": 1,
+              "mean_confidence": 0.54,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 9,
+              "count": 4,
+              "mean_confidence": 0.63,
+              "accuracy": 0.5
+            },
+            {
+              "bin": 10,
+              "count": 2,
+              "mean_confidence": 0.6950000000000001,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 11,
+              "count": 3,
+              "mean_confidence": 0.7733333333333334,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 12,
+              "count": 2,
+              "mean_confidence": 0.81,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 13,
+              "count": 8,
+              "mean_confidence": 0.9075,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 14,
+              "count": 15,
+              "mean_confidence": 0.9713333333333336,
+              "accuracy": 1.0
+            }
+          ],
+          "measurement_origin": "reused_original_tabular",
+          "source_prompt_family": "frozen original provider/model rendering",
+          "arm": "direct"
+        },
+        {
+          "dataset": "wine",
+          "model": "logistic_regression",
+          "display_model": "Logistic regression",
+          "method": "classical_tabular",
+          "train_per_class": 4,
+          "train_labels": 12,
+          "seed": 42,
+          "status": "complete",
+          "run_id": "wine__native_logistic_regression__c517f9ce4b63",
+          "source_path": "results/tabular/classical/wine__native_logistic_regression__c517f9ce4b63/run.json",
+          "group_bootstrap": {
+            "method": "unstratified group percentile bootstrap",
+            "group_definition": "identical serialized test text SHA256",
+            "samples": 2000,
+            "seed": 42,
+            "n_rows": 36,
+            "n_groups": 36,
+            "draws_per_replicate": 36,
+            "resampled_row_count_range": [
+              36,
+              36
+            ],
+            "conditional_on": "fixed split, fixed prompt/serialization, fixed training selection and fitted models",
+            "metrics": {
+              "accuracy": {
+                "estimate": 0.9722222222222222,
+                "ci95": [
+                  0.9166666666666666,
+                  1.0
+                ]
+              },
+              "macro_f1": {
+                "estimate": 0.9740129935032483,
+                "ci95": [
+                  0.9102956667029893,
+                  1.0
+                ]
+              }
+            }
+          },
+          "artifact_sha256": {
+            "run.json": "3a59bf74ba3f8650fbc34fb24f3d41f65d09e1ce13d99af62214b07dedd5423a",
+            "predictions.jsonl": "cd864ff667e944e5fc920592a30db24fb3903b2c1c2f0fa65589de646b5451c0",
+            "test_manifest.json": "edbfa3c757d7142e13a35ba40b53c590587e3e591508d70161dd433f881a5c76"
+          },
+          "probability_kinds": [
+            "native_uncalibrated"
+          ],
+          "resolved_models": [],
+          "resolved_revisions": [],
+          "inference_dtypes": [],
+          "devices": [],
+          "config": {
+            "feature_schema_sha256": "ed7f3c1d2a1d41e8a19a625d379ee057db1bb3cfae5dfde7646b86bdec13bd50",
+            "input_representation": "native_columns",
+            "model": "logistic_regression",
+            "native_records_sha256": "0e4fa56b0fae1a0af3605d6e83de93827ded6d228655a3de21fdbc3f06179846",
+            "selection": "fixed_parameters_no_validation_labels",
+            "tabular_classical_sha256": "9f929c3695888a11d7bb2a5ebdf383f9de03920d2dfdade4c2ae504d5e9ff214",
+            "tabular_data_sha256": "339ead1c818e05868d889a8d397a4eac522a3d949a6ea31a08f8b455f45b87a6",
+            "train_per_class": 4
+          },
+          "n_test": 36,
+          "n_classes": 3,
+          "accuracy": 0.9722222222222222,
+          "macro_f1": 0.9740129935032483,
+          "balanced_accuracy": 0.9722222222222222,
+          "failure_rate": 0.0,
+          "n_failures": 0,
+          "confusion_matrix": [
+            [
+              11,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              14,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              10,
+              0
+            ]
+          ],
+          "confusion_matrix_columns": [
+            0,
+            1,
+            2,
+            "failure"
+          ],
+          "per_class": [
+            {
+              "label": 0,
+              "precision": 1.0,
+              "recall": 0.9166666666666666,
+              "f1": 0.9565217391304348,
+              "support": 12
+            },
+            {
+              "label": 1,
+              "precision": 0.9333333333333333,
+              "recall": 1.0,
+              "f1": 0.9655172413793104,
+              "support": 14
+            },
+            {
+              "label": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 10
+            }
+          ],
+          "valid_response_accuracy": 0.9722222222222222,
+          "latency_p50_s": 3.231827738798327e-05,
+          "latency_p95_s": 3.231827738798327e-05,
+          "prediction_time_s": 0.0011634579859673977,
+          "input_tokens": null,
+          "input_tokens_known_total": 0,
+          "input_tokens_coverage": 0.0,
+          "output_tokens": null,
+          "output_tokens_known_total": 0,
+          "output_tokens_coverage": 0.0,
+          "probability_coverage": 1.0,
+          "n_probability_rows": 36,
+          "probability_renormalized_rows": 12,
+          "zero_true_class_probability_rows": 0,
+          "log_loss": 0.1722507631729814,
+          "brier_sum": 0.06904373030264525,
+          "chosen_label_argmax_disagreement_rows": 0,
+          "ece_15_equal_width": 0.14532755759537705,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 1,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 2,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 3,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 4,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 5,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 6,
+              "count": 0,
+              "mean_confidence": null,
+              "accuracy": null
+            },
+            {
+              "bin": 7,
+              "count": 1,
+              "mean_confidence": 0.516466271909992,
+              "accuracy": 0.0
+            },
+            {
+              "bin": 8,
+              "count": 1,
+              "mean_confidence": 0.5656266115847157,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 9,
+              "count": 3,
+              "mean_confidence": 0.6295913275812889,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 10,
+              "count": 3,
+              "mean_confidence": 0.7191412190298786,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 11,
+              "count": 1,
+              "mean_confidence": 0.740383165741522,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 12,
+              "count": 2,
+              "mean_confidence": 0.836495225110832,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 13,
+              "count": 13,
+              "mean_confidence": 0.9072448303616244,
+              "accuracy": 1.0
+            },
+            {
+              "bin": 14,
+              "count": 12,
+              "mean_confidence": 0.9554411280328248,
+              "accuracy": 1.0
+            }
+          ],
+          "measurement_origin": "reused_original_tabular",
+          "source_prompt_family": "frozen original provider/model rendering",
+          "arm": "classical"
+        }
+      ]
+    },
+    "02_trec_overrides": {
+      "dataset": "trec",
+      "model": "gpt-6-astra",
+      "display_model": "GPT-6 Astra",
+      "shots_per_class": 4,
+      "n_test": 200,
+      "source_run_id": "trec__gpt-6-astra__f4c124cbaa8e",
+      "review_run_id": "trec__astra__k4__jev-review",
+      "source_accuracy": 0.97,
+      "review_accuracy": 0.865,
+      "corrected": 3,
+      "harmed_wrong_label": 24,
+      "harmed_failure": 0,
+      "source_failures": 0,
+      "review_failures_including_upstream_skips": 0,
+      "review_stage_failures": 0,
+      "net_accuracy_pp": -10.5,
+      "paired_ci95_pp": [
+        -15.500000000000004,
+        -5.999999999999995
+      ],
+      "bootstrap_samples": 2000
+    },
+    "03_proposal_value": {
+      "scope": "All four actual-minus-no-proposal primary contrasts; no secondary overlay",
+      "values": [
+        {
+          "dataset": "breast_cancer",
+          "estimate_pp": 0.0,
+          "ci95_pp": [
+            -4.385964912280704,
+            4.385964912280704
+          ]
+        },
+        {
+          "dataset": "wine",
+          "estimate_pp": 0.0,
+          "ci95_pp": [
+            -13.888888888888884,
+            13.888888888888884
+          ]
+        },
+        {
+          "dataset": "sst2",
+          "estimate_pp": 0.5000000000000004,
+          "ci95_pp": [
+            -1.0000000000000009,
+            2.499999999999991
+          ]
+        },
+        {
+          "dataset": "trec",
+          "estimate_pp": -0.5000000000000004,
+          "ci95_pp": [
+            -3.0000000000000027,
+            1.5000000000000013
+          ]
+        }
+      ],
+      "bootstrap_samples": 2000,
+      "bootstrap_seed": 42
+    },
+    "04_trec_cost": {
+      "scope": "TREC four examples per class, same ordered 200 rows",
+      "astra_estimated_usd": "1.356350000",
+      "jev_alone_reported_usd": "0.008723022",
+      "jev_review_reported_usd": "0.009218622",
+      "chain_reconstructed_usd": "1.365568622",
+      "runs": [
+        "trec__gpt-6-astra__f4c124cbaa8e",
+        "trec__jev-1.13__bc52fb6a4b0f",
+        "trec__astra__k4__jev-review"
+      ]
+    },
+    "05_matched_label_context": {
+      "scope": "All four classical methods, Jev, Astra; all four datasets; four examples per class",
+      "values": [
+        {
+          "dataset": "breast_cancer",
+          "model": "gpt-6-astra",
+          "run_id": "breast_cancer__gpt-6-astra__6be368014170",
+          "accuracy": 0.9824561403508771,
+          "n_test": 114,
+          "train_labels": 8
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "typesafe/jev-1.13",
+          "run_id": "breast_cancer__jev-1.13__3d1cba817d2a",
+          "accuracy": 0.9298245614035088,
+          "n_test": 114,
+          "train_labels": 8
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "logistic_regression",
+          "run_id": "breast_cancer__native_logistic_regression__55222f2fa251",
+          "accuracy": 0.9473684210526315,
+          "n_test": 114,
+          "train_labels": 8
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "random_forest",
+          "run_id": "breast_cancer__native_random_forest__a42a202bf624",
+          "accuracy": 0.956140350877193,
+          "n_test": 114,
+          "train_labels": 8
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "xgboost",
+          "run_id": "breast_cancer__xgboost__9c76aff839d2",
+          "accuracy": 0.8859649122807017,
+          "n_test": 114,
+          "train_labels": 8
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "lightgbm",
+          "run_id": "breast_cancer__lightgbm__faf40cbee821",
+          "accuracy": 0.9210526315789473,
+          "n_test": 114,
+          "train_labels": 8
+        },
+        {
+          "dataset": "wine",
+          "model": "gpt-6-astra",
+          "run_id": "wine__gpt-6-astra__d5c2863bd80f",
+          "accuracy": 0.9722222222222222,
+          "n_test": 36,
+          "train_labels": 12
+        },
+        {
+          "dataset": "wine",
+          "model": "typesafe/jev-1.13",
+          "run_id": "wine__jev-1.13__33047fa693a8",
+          "accuracy": 0.9166666666666666,
+          "n_test": 36,
+          "train_labels": 12
+        },
+        {
+          "dataset": "wine",
+          "model": "logistic_regression",
+          "run_id": "wine__native_logistic_regression__c517f9ce4b63",
+          "accuracy": 0.9722222222222222,
+          "n_test": 36,
+          "train_labels": 12
+        },
+        {
+          "dataset": "wine",
+          "model": "random_forest",
+          "run_id": "wine__native_random_forest__b446bd3c19ff",
+          "accuracy": 0.9444444444444444,
+          "n_test": 36,
+          "train_labels": 12
+        },
+        {
+          "dataset": "wine",
+          "model": "xgboost",
+          "run_id": "wine__xgboost__381b6c451e40",
+          "accuracy": 0.7222222222222222,
+          "n_test": 36,
+          "train_labels": 12
+        },
+        {
+          "dataset": "wine",
+          "model": "lightgbm",
+          "run_id": "wine__lightgbm__209e83797064",
+          "accuracy": 0.8333333333333334,
+          "n_test": 36,
+          "train_labels": 12
+        },
+        {
+          "dataset": "sst2",
+          "model": "gpt-6-astra",
+          "run_id": "sst2__gpt-6-astra__e77320ccd3cf",
+          "accuracy": 0.975,
+          "n_test": 200,
+          "train_labels": 8
+        },
+        {
+          "dataset": "sst2",
+          "model": "typesafe/jev-1.13",
+          "run_id": "sst2__jev-1.13__a33c2b36ded6",
+          "accuracy": 0.965,
+          "n_test": 200,
+          "train_labels": 8
+        },
+        {
+          "dataset": "sst2",
+          "model": "logistic_regression",
+          "run_id": "sst2__logistic_regression__183b97812418",
+          "accuracy": 0.495,
+          "n_test": 200,
+          "train_labels": 8
+        },
+        {
+          "dataset": "sst2",
+          "model": "random_forest",
+          "run_id": "sst2__random_forest__a0595eb5fc13",
+          "accuracy": 0.53,
+          "n_test": 200,
+          "train_labels": 8
+        },
+        {
+          "dataset": "sst2",
+          "model": "xgboost",
+          "run_id": "sst2__xgboost__0545f69b4961",
+          "accuracy": 0.445,
+          "n_test": 200,
+          "train_labels": 8
+        },
+        {
+          "dataset": "sst2",
+          "model": "lightgbm",
+          "run_id": "sst2__lightgbm__d34c6efa477d",
+          "accuracy": 0.475,
+          "n_test": 200,
+          "train_labels": 8
+        },
+        {
+          "dataset": "trec",
+          "model": "gpt-6-astra",
+          "run_id": "trec__gpt-6-astra__f4c124cbaa8e",
+          "accuracy": 0.97,
+          "n_test": 200,
+          "train_labels": 24
+        },
+        {
+          "dataset": "trec",
+          "model": "typesafe/jev-1.13",
+          "run_id": "trec__jev-1.13__bc52fb6a4b0f",
+          "accuracy": 0.855,
+          "n_test": 200,
+          "train_labels": 24
+        },
+        {
+          "dataset": "trec",
+          "model": "logistic_regression",
+          "run_id": "trec__logistic_regression__3e1106289632",
+          "accuracy": 0.5,
+          "n_test": 200,
+          "train_labels": 24
+        },
+        {
+          "dataset": "trec",
+          "model": "random_forest",
+          "run_id": "trec__random_forest__d6298b0da6c1",
+          "accuracy": 0.49,
+          "n_test": 200,
+          "train_labels": 24
+        },
+        {
+          "dataset": "trec",
+          "model": "xgboost",
+          "run_id": "trec__xgboost__ba75eb4d936a",
+          "accuracy": 0.35,
+          "n_test": 200,
+          "train_labels": 24
+        },
+        {
+          "dataset": "trec",
+          "model": "lightgbm",
+          "run_id": "trec__lightgbm__fc14c8aa249e",
+          "accuracy": 0.375,
+          "n_test": 200,
+          "train_labels": 24
+        }
+      ]
+    },
+    "06_jev_few_shot": {
+      "scope": "All four datasets, original standalone Jev zero-shot and four-example-per-class runs",
+      "values": [
+        {
+          "dataset": "breast_cancer",
+          "zero_accuracy": 0.8421052631578947,
+          "few_accuracy": 0.9298245614035088,
+          "runs": [
+            "breast_cancer__jev-1.13__e30c52b19b9e",
+            "breast_cancer__jev-1.13__3d1cba817d2a"
+          ]
+        },
+        {
+          "dataset": "wine",
+          "zero_accuracy": 0.33333333333333326,
+          "few_accuracy": 0.9166666666666665,
+          "runs": [
+            "wine__jev-1.13__7daebee622e6",
+            "wine__jev-1.13__33047fa693a8"
+          ]
+        },
+        {
+          "dataset": "sst2",
+          "zero_accuracy": 0.935,
+          "few_accuracy": 0.965,
+          "runs": [
+            "sst2__jev-1.13__9d5a851767fc",
+            "sst2__jev-1.13__a33c2b36ded6"
+          ]
+        },
+        {
+          "dataset": "trec",
+          "zero_accuracy": 0.335,
+          "few_accuracy": 0.855,
+          "runs": [
+            "trec__jev-1.13__ce2f8d23bf30",
+            "trec__jev-1.13__bc52fb6a4b0f"
+          ]
+        }
+      ]
+    },
+    "07_all_review_conditions": {
+      "scope": "Complete original 48-condition source-to-review matrix",
+      "values": [
+        {
+          "dataset": "breast_cancer",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 0,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__dda8e08a1643",
+          "review_run_id": "breast_cancer__qwen_small__k0__jev-review",
+          "source_accuracy": 0.37719298245614036,
+          "review_accuracy": 0.8508771929824561,
+          "corrected": 54,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 47.36842105263158,
+          "paired_ci95_pp": [
+            38.59649122807017,
+            56.14035087719298
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 0,
+          "n_test": 36,
+          "source_run_id": "wine__Qwen2.5-0.5B-Instruct__6caaa1e6b4e8",
+          "review_run_id": "wine__qwen_small__k0__jev-review",
+          "source_accuracy": 0.3333333333333333,
+          "review_accuracy": 0.3333333333333333,
+          "corrected": 0,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 0.0,
+          "paired_ci95_pp": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "sst2__Qwen2.5-0.5B-Instruct__594a827ceab2",
+          "review_run_id": "sst2__qwen_small__k0__jev-review",
+          "source_accuracy": 0.5,
+          "review_accuracy": 0.935,
+          "corrected": 88,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 43.5,
+          "paired_ci95_pp": [
+            36.50000000000001,
+            50.500000000000014
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "trec__Qwen2.5-0.5B-Instruct__67b435872393",
+          "review_run_id": "trec__qwen_small__k0__jev-review",
+          "source_accuracy": 0.155,
+          "review_accuracy": 0.325,
+          "corrected": 60,
+          "harmed_wrong_label": 25,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 7,
+          "review_stage_failures": 7,
+          "net_accuracy_pp": 17.0,
+          "paired_ci95_pp": [
+            8.000000000000002,
+            25.5
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 4,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__Qwen2.5-0.5B-Instruct__4f3b067694b6",
+          "review_run_id": "breast_cancer__qwen_small__k4__jev-review",
+          "source_accuracy": 0.6140350877192983,
+          "review_accuracy": 0.9385964912280702,
+          "corrected": 41,
+          "harmed_wrong_label": 4,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 32.45614035087719,
+          "paired_ci95_pp": [
+            23.684210526315784,
+            42.10526315789473
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 4,
+          "n_test": 36,
+          "source_run_id": "wine__Qwen2.5-0.5B-Instruct__76dea05d8b42",
+          "review_run_id": "wine__qwen_small__k4__jev-review",
+          "source_accuracy": 0.3333333333333333,
+          "review_accuracy": 0.9166666666666666,
+          "corrected": 21,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 58.333333333333336,
+          "paired_ci95_pp": [
+            41.66666666666667,
+            75.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "sst2__Qwen2.5-0.5B-Instruct__9800b4c889cc",
+          "review_run_id": "sst2__qwen_small__k4__jev-review",
+          "source_accuracy": 0.85,
+          "review_accuracy": 0.965,
+          "corrected": 26,
+          "harmed_wrong_label": 3,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 11.5,
+          "paired_ci95_pp": [
+            6.499999999999995,
+            16.999999999999993
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "display_model": "Qwen2.5 0.5B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "trec__Qwen2.5-0.5B-Instruct__5d00e79e1d60",
+          "review_run_id": "trec__qwen_small__k4__jev-review",
+          "source_accuracy": 0.175,
+          "review_accuracy": 0.875,
+          "corrected": 143,
+          "harmed_wrong_label": 3,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 70.0,
+          "paired_ci95_pp": [
+            63.0,
+            76.5
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 0,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__3952bc9fbb3b",
+          "review_run_id": "breast_cancer__smollm2__k0__jev-review",
+          "source_accuracy": 0.37719298245614036,
+          "review_accuracy": 0.868421052631579,
+          "corrected": 57,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 49.12280701754386,
+          "paired_ci95_pp": [
+            39.47368421052632,
+            57.89473684210527
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 0,
+          "n_test": 36,
+          "source_run_id": "wine__SmolLM2-1.7B-Instruct__709bcc1f2998",
+          "review_run_id": "wine__smollm2__k0__jev-review",
+          "source_accuracy": 0.3333333333333333,
+          "review_accuracy": 0.3333333333333333,
+          "corrected": 0,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 0.0,
+          "paired_ci95_pp": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "sst2__SmolLM2-1.7B-Instruct__784f110db5d4",
+          "review_run_id": "sst2__smollm2__k0__jev-review",
+          "source_accuracy": 0.49,
+          "review_accuracy": 0.935,
+          "corrected": 90,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 44.5,
+          "paired_ci95_pp": [
+            37.5,
+            51.500000000000014
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "trec__SmolLM2-1.7B-Instruct__2801fb02a432",
+          "review_run_id": "trec__smollm2__k0__jev-review",
+          "source_accuracy": 0.02,
+          "review_accuracy": 0.325,
+          "corrected": 61,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 7,
+          "review_stage_failures": 7,
+          "net_accuracy_pp": 30.5,
+          "paired_ci95_pp": [
+            24.000000000000004,
+            37.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 4,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__SmolLM2-1.7B-Instruct__ca3bd779a9a8",
+          "review_run_id": "breast_cancer__smollm2__k4__jev-review",
+          "source_accuracy": 0.37719298245614036,
+          "review_accuracy": 0.8947368421052632,
+          "corrected": 62,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 2,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 6,
+          "review_stage_failures": 6,
+          "net_accuracy_pp": 51.75438596491228,
+          "paired_ci95_pp": [
+            41.2280701754386,
+            61.40350877192983
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 4,
+          "n_test": 36,
+          "source_run_id": "wine__SmolLM2-1.7B-Instruct__61b7e37b5455",
+          "review_run_id": "wine__smollm2__k4__jev-review",
+          "source_accuracy": 0.3333333333333333,
+          "review_accuracy": 0.8888888888888888,
+          "corrected": 20,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 55.55555555555556,
+          "paired_ci95_pp": [
+            38.88888888888889,
+            72.22222222222221
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "sst2__SmolLM2-1.7B-Instruct__45e5cd9672f3",
+          "review_run_id": "sst2__smollm2__k4__jev-review",
+          "source_accuracy": 0.7,
+          "review_accuracy": 0.965,
+          "corrected": 57,
+          "harmed_wrong_label": 4,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 26.5,
+          "paired_ci95_pp": [
+            19.500000000000007,
+            32.99999999999999
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "display_model": "SmolLM2 1.7B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "trec__SmolLM2-1.7B-Instruct__727fc703c17b",
+          "review_run_id": "trec__smollm2__k4__jev-review",
+          "source_accuracy": 0.275,
+          "review_accuracy": 0.845,
+          "corrected": 133,
+          "harmed_wrong_label": 19,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 2,
+          "review_stage_failures": 2,
+          "net_accuracy_pp": 57.0,
+          "paired_ci95_pp": [
+            47.5,
+            65.99999999999999
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 0,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__granite-3.3-2b-instruct__60f28b8df77a",
+          "review_run_id": "breast_cancer__granite__k0__jev-review",
+          "source_accuracy": 0.37719298245614036,
+          "review_accuracy": 0.8596491228070176,
+          "corrected": 57,
+          "harmed_wrong_label": 2,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 48.24561403508772,
+          "paired_ci95_pp": [
+            38.59649122807018,
+            57.89473684210527
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 0,
+          "n_test": 36,
+          "source_run_id": "wine__granite-3.3-2b-instruct__29b8530e4f40",
+          "review_run_id": "wine__granite__k0__jev-review",
+          "source_accuracy": 0.2777777777777778,
+          "review_accuracy": 0.3333333333333333,
+          "corrected": 12,
+          "harmed_wrong_label": 10,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": 5.555555555555555,
+          "paired_ci95_pp": [
+            -19.444444444444446,
+            30.555555555555557
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "sst2__granite-3.3-2b-instruct__70bbadf64a9a",
+          "review_run_id": "sst2__granite__k0__jev-review",
+          "source_accuracy": 0.8,
+          "review_accuracy": 0.935,
+          "corrected": 29,
+          "harmed_wrong_label": 2,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 13.5,
+          "paired_ci95_pp": [
+            8.499999999999996,
+            18.999999999999993
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "trec__granite-3.3-2b-instruct__0799ef2872ba",
+          "review_run_id": "trec__granite__k0__jev-review",
+          "source_accuracy": 0.46,
+          "review_accuracy": 0.395,
+          "corrected": 7,
+          "harmed_wrong_label": 19,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 3,
+          "review_stage_failures": 3,
+          "net_accuracy_pp": -6.5,
+          "paired_ci95_pp": [
+            -12.0,
+            -1.4999999999999958
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 4,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__granite-3.3-2b-instruct__97fecebfe0ba",
+          "review_run_id": "breast_cancer__granite__k4__jev-review",
+          "source_accuracy": 0.6140350877192983,
+          "review_accuracy": 0.9210526315789473,
+          "corrected": 38,
+          "harmed_wrong_label": 3,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 30.70175438596491,
+          "paired_ci95_pp": [
+            21.052631578947366,
+            40.35087719298245
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 4,
+          "n_test": 36,
+          "source_run_id": "wine__granite-3.3-2b-instruct__16efece16c12",
+          "review_run_id": "wine__granite__k4__jev-review",
+          "source_accuracy": 0.3333333333333333,
+          "review_accuracy": 0.9166666666666666,
+          "corrected": 21,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 58.333333333333336,
+          "paired_ci95_pp": [
+            41.66666666666667,
+            75.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "sst2__granite-3.3-2b-instruct__267442d7a2e7",
+          "review_run_id": "sst2__granite__k4__jev-review",
+          "source_accuracy": 0.94,
+          "review_accuracy": 0.96,
+          "corrected": 6,
+          "harmed_wrong_label": 2,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 2.0,
+          "paired_ci95_pp": [
+            -0.5000000000000004,
+            4.999999999999993
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "ibm-granite/granite-3.3-2b-instruct",
+          "display_model": "Granite 3.3 2B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "trec__granite-3.3-2b-instruct__1f5a5e8bda67",
+          "review_run_id": "trec__granite__k4__jev-review",
+          "source_accuracy": 0.635,
+          "review_accuracy": 0.855,
+          "corrected": 57,
+          "harmed_wrong_label": 11,
+          "harmed_failure": 2,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 4,
+          "review_stage_failures": 4,
+          "net_accuracy_pp": 22.0,
+          "paired_ci95_pp": [
+            14.499999999999991,
+            29.500000000000004
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 0,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__Qwen3-4B-Instruct-2507__1939b7a5ad23",
+          "review_run_id": "breast_cancer__qwen_main__k0__jev-review",
+          "source_accuracy": 0.6140350877192983,
+          "review_accuracy": 0.9298245614035088,
+          "corrected": 38,
+          "harmed_wrong_label": 2,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 31.57894736842105,
+          "paired_ci95_pp": [
+            21.92982456140351,
+            40.35087719298246
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 0,
+          "n_test": 36,
+          "source_run_id": "wine__Qwen3-4B-Instruct-2507__c923604a4ba1",
+          "review_run_id": "wine__qwen_main__k0__jev-review",
+          "source_accuracy": 0.3888888888888889,
+          "review_accuracy": 0.3611111111111111,
+          "corrected": 12,
+          "harmed_wrong_label": 13,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -2.7777777777777777,
+          "paired_ci95_pp": [
+            -30.555555555555557,
+            25.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "sst2__Qwen3-4B-Instruct-2507__0e4acd9aac6a",
+          "review_run_id": "sst2__qwen_main__k0__jev-review",
+          "source_accuracy": 0.915,
+          "review_accuracy": 0.94,
+          "corrected": 12,
+          "harmed_wrong_label": 6,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": 2.5,
+          "paired_ci95_pp": [
+            -1.9999999999999907,
+            6.999999999999995
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "trec__Qwen3-4B-Instruct-2507__2f1ff41bd14e",
+          "review_run_id": "trec__qwen_main__k0__jev-review",
+          "source_accuracy": 0.525,
+          "review_accuracy": 0.415,
+          "corrected": 6,
+          "harmed_wrong_label": 24,
+          "harmed_failure": 4,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 7,
+          "review_stage_failures": 7,
+          "net_accuracy_pp": -11.0,
+          "paired_ci95_pp": [
+            -16.500000000000004,
+            -5.499999999999999
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 4,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__Qwen3-4B-Instruct-2507__cd3baa813fe3",
+          "review_run_id": "breast_cancer__qwen3_4b__jev-review",
+          "source_accuracy": 0.8596491228070176,
+          "review_accuracy": 0.9298245614035088,
+          "corrected": 10,
+          "harmed_wrong_label": 2,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 7.017543859649122,
+          "paired_ci95_pp": [
+            1.754385964912275,
+            13.157894736842103
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 4,
+          "n_test": 36,
+          "source_run_id": "wine__Qwen3-4B-Instruct-2507__cea3e01ea8d0",
+          "review_run_id": "wine__qwen3_4b__jev-review",
+          "source_accuracy": 0.8055555555555556,
+          "review_accuracy": 0.8888888888888888,
+          "corrected": 3,
+          "harmed_wrong_label": 0,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 8.333333333333334,
+          "paired_ci95_pp": [
+            0.0,
+            19.444444444444443
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "sst2__Qwen3-4B-Instruct-2507__5823bb43da99",
+          "review_run_id": "sst2__qwen_main__k4__jev-review",
+          "source_accuracy": 0.955,
+          "review_accuracy": 0.96,
+          "corrected": 6,
+          "harmed_wrong_label": 4,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": 0.5,
+          "paired_ci95_pp": [
+            -2.500000000000002,
+            3.9999999999999925
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "Qwen/Qwen3-4B-Instruct-2507",
+          "display_model": "Qwen3 4B",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "trec__Qwen3-4B-Instruct-2507__c0b1cc9b3d0f",
+          "review_run_id": "trec__qwen_main__k4__jev-review",
+          "source_accuracy": 0.83,
+          "review_accuracy": 0.86,
+          "corrected": 23,
+          "harmed_wrong_label": 17,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 3.0,
+          "paired_ci95_pp": [
+            -3.499999999999992,
+            8.500000000000007
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 0,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__gpt-5.6-luna__b8612044e1e5",
+          "review_run_id": "breast_cancer__luna__k0__jev-review",
+          "source_accuracy": 0.7543859649122807,
+          "review_accuracy": 0.8771929824561403,
+          "corrected": 15,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 12.280701754385966,
+          "paired_ci95_pp": [
+            6.140350877192979,
+            18.42105263157895
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 0,
+          "n_test": 36,
+          "source_run_id": "wine__gpt-5.6-luna__e3ff7ad8c4ad",
+          "review_run_id": "wine__luna__k0__jev-review",
+          "source_accuracy": 0.4722222222222222,
+          "review_accuracy": 0.3888888888888889,
+          "corrected": 7,
+          "harmed_wrong_label": 10,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -8.333333333333334,
+          "paired_ci95_pp": [
+            -30.555555555555557,
+            13.88888888888889
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "sst2__gpt-5.6-luna__31e207fb95d3",
+          "review_run_id": "sst2__luna__k0__jev-review",
+          "source_accuracy": 0.925,
+          "review_accuracy": 0.945,
+          "corrected": 5,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 2.0,
+          "paired_ci95_pp": [
+            0.0,
+            4.5000000000000036
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "trec__gpt-5.6-luna__0434e88259a6",
+          "review_run_id": "trec__luna__k0__jev-review",
+          "source_accuracy": 0.525,
+          "review_accuracy": 0.395,
+          "corrected": 4,
+          "harmed_wrong_label": 27,
+          "harmed_failure": 3,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 4,
+          "review_stage_failures": 4,
+          "net_accuracy_pp": -13.0,
+          "paired_ci95_pp": [
+            -18.500000000000007,
+            -7.500000000000001
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 4,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__gpt-5.6-luna__6874301c84d2",
+          "review_run_id": "breast_cancer__luna__k4__jev-review",
+          "source_accuracy": 0.9122807017543859,
+          "review_accuracy": 0.9210526315789473,
+          "corrected": 3,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": 0.8771929824561403,
+          "paired_ci95_pp": [
+            -2.631578947368418,
+            5.263157894736836
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 4,
+          "n_test": 36,
+          "source_run_id": "wine__gpt-5.6-luna__bf0ee5396886",
+          "review_run_id": "wine__luna__k4__jev-review",
+          "source_accuracy": 0.8888888888888888,
+          "review_accuracy": 0.9166666666666666,
+          "corrected": 2,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 2.7777777777777777,
+          "paired_ci95_pp": [
+            -5.555555555555558,
+            11.111111111111116
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "sst2__gpt-5.6-luna__af6e2721cfa0",
+          "review_run_id": "sst2__luna__k4__jev-review",
+          "source_accuracy": 0.955,
+          "review_accuracy": 0.965,
+          "corrected": 4,
+          "harmed_wrong_label": 2,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": 1.0,
+          "paired_ci95_pp": [
+            -1.0125,
+            3.499999999999992
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "gpt-5.6-luna",
+          "display_model": "GPT-5.6 Luna",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "trec__gpt-5.6-luna__a183fc22ddc8",
+          "review_run_id": "trec__luna__k4__jev-review",
+          "source_accuracy": 0.85,
+          "review_accuracy": 0.85,
+          "corrected": 20,
+          "harmed_wrong_label": 20,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": 0.0,
+          "paired_ci95_pp": [
+            -6.000000000000005,
+            6.000000000000005
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 0,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__gpt-6-astra__c2361622445b",
+          "review_run_id": "breast_cancer__astra__k0__jev-review",
+          "source_accuracy": 0.9912280701754386,
+          "review_accuracy": 0.956140350877193,
+          "corrected": 0,
+          "harmed_wrong_label": 4,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -3.508771929824561,
+          "paired_ci95_pp": [
+            -7.017543859649122,
+            -0.8552631578948483
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 0,
+          "n_test": 36,
+          "source_run_id": "wine__gpt-6-astra__bb75b85e6193",
+          "review_run_id": "wine__astra__k0__jev-review",
+          "source_accuracy": 1.0,
+          "review_accuracy": 0.4444444444444444,
+          "corrected": 0,
+          "harmed_wrong_label": 20,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -55.55555555555556,
+          "paired_ci95_pp": [
+            -72.22222222222221,
+            -38.888888888888886
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "sst2__gpt-6-astra__9279b61f6e7a",
+          "review_run_id": "sst2__astra__k0__jev-review",
+          "source_accuracy": 0.97,
+          "review_accuracy": 0.935,
+          "corrected": 2,
+          "harmed_wrong_label": 8,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": -3.5,
+          "paired_ci95_pp": [
+            -6.999999999999995,
+            -0.5000000000000004
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 0,
+          "n_test": 200,
+          "source_run_id": "trec__gpt-6-astra__4788a3f7e01d",
+          "review_run_id": "trec__astra__k0__jev-review",
+          "source_accuracy": 0.97,
+          "review_accuracy": 0.42,
+          "corrected": 0,
+          "harmed_wrong_label": 100,
+          "harmed_failure": 10,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 10,
+          "review_stage_failures": 10,
+          "net_accuracy_pp": -55.0,
+          "paired_ci95_pp": [
+            -62.0,
+            -48.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "breast_cancer",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 4,
+          "n_test": 114,
+          "source_run_id": "breast_cancer__gpt-6-astra__6be368014170",
+          "review_run_id": "breast_cancer__astra__jev-review",
+          "source_accuracy": 0.9824561403508771,
+          "review_accuracy": 0.9385964912280702,
+          "corrected": 0,
+          "harmed_wrong_label": 4,
+          "harmed_failure": 1,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 1,
+          "net_accuracy_pp": -4.385964912280702,
+          "paired_ci95_pp": [
+            -8.771929824561397,
+            -0.8771929824561431
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "wine",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 4,
+          "n_test": 36,
+          "source_run_id": "wine__gpt-6-astra__d5c2863bd80f",
+          "review_run_id": "wine__astra__jev-review",
+          "source_accuracy": 0.9722222222222222,
+          "review_accuracy": 0.9444444444444444,
+          "corrected": 0,
+          "harmed_wrong_label": 1,
+          "harmed_failure": 0,
+          "source_failures": 1,
+          "review_failures_including_upstream_skips": 1,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -2.7777777777777777,
+          "paired_ci95_pp": [
+            -8.333333333333337,
+            0.0
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "sst2",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "sst2__gpt-6-astra__e77320ccd3cf",
+          "review_run_id": "sst2__astra__k4__jev-review",
+          "source_accuracy": 0.975,
+          "review_accuracy": 0.965,
+          "corrected": 1,
+          "harmed_wrong_label": 3,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -1.0,
+          "paired_ci95_pp": [
+            -3.0000000000000027,
+            1.0000000000000009
+          ],
+          "bootstrap_samples": 2000
+        },
+        {
+          "dataset": "trec",
+          "model": "gpt-6-astra",
+          "display_model": "GPT-6 Astra",
+          "shots_per_class": 4,
+          "n_test": 200,
+          "source_run_id": "trec__gpt-6-astra__f4c124cbaa8e",
+          "review_run_id": "trec__astra__k4__jev-review",
+          "source_accuracy": 0.97,
+          "review_accuracy": 0.865,
+          "corrected": 3,
+          "harmed_wrong_label": 24,
+          "harmed_failure": 0,
+          "source_failures": 0,
+          "review_failures_including_upstream_skips": 0,
+          "review_stage_failures": 0,
+          "net_accuracy_pp": -10.5,
+          "paired_ci95_pp": [
+            -15.500000000000004,
+            -5.999999999999995
+          ],
+          "bootstrap_samples": 2000
+        }
+      ]
+    }
+  }
+}

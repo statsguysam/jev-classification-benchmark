@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="810pt" height="684pt" viewBox="0 0 810 684" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 684 
+L 810 684 
+L 810 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 153.9 319.614545 
+L 393.499237 319.614545 
+L 393.499237 164.16 
+L 153.9 164.16 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 153.9 319.614545 
+L 153.9 164.16 
+" clip-path="url(#p62575e55be)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="153.9" y="331.471967" transform="rotate(-0 153.9 331.471967)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 252.096408 319.614545 
+L 252.096408 164.16 
+" clip-path="url(#p62575e55be)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="252.096408" y="331.471967" transform="rotate(-0 252.096408 331.471967)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 350.292817 319.614545 
+L 350.292817 164.16 
+" clip-path="url(#p62575e55be)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="350.292817" y="331.471967" transform="rotate(-0 350.292817 331.471967)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_4">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="183.192758" transform="rotate(-0 150.4 183.192758)">GPT-6 Astra</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="208.266072" transform="rotate(-0 150.4 208.266072)">Jev</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="233.339796" transform="rotate(-0 150.4 233.339796)">Logistic regression</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="258.413109" transform="rotate(-0 150.4 258.413109)">Random forest</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11"/>
+     <g id="text_8">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="283.486013" transform="rotate(-0 150.4 283.486013)">XGBoost</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12"/>
+     <g id="text_9">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="308.559737" transform="rotate(-0 150.4 308.559737)">LightGBM</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 153.9 171.055161 
+L 346.847329 171.055161 
+L 346.847329 187.352815 
+L 153.9 187.352815 
+z
+" clip-path="url(#p62575e55be)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 153.9 196.128475 
+L 336.510865 196.128475 
+L 336.510865 212.426129 
+L 153.9 212.426129 
+z
+" clip-path="url(#p62575e55be)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 153.9 221.201789 
+L 339.956353 221.201789 
+L 339.956353 237.499443 
+L 153.9 237.499443 
+z
+" clip-path="url(#p62575e55be)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 153.9 246.275103 
+L 341.679097 246.275103 
+L 341.679097 262.572757 
+L 153.9 262.572757 
+z
+" clip-path="url(#p62575e55be)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 153.9 271.348416 
+L 327.897145 271.348416 
+L 327.897145 287.64607 
+L 153.9 287.64607 
+z
+" clip-path="url(#p62575e55be)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 153.9 296.42173 
+L 334.788121 296.42173 
+L 334.788121 312.719384 
+L 153.9 312.719384 
+z
+" clip-path="url(#p62575e55be)" style="fill: #c28b36"/>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="181.931527" transform="rotate(-0 354.220673 181.931527)">98.2%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="207.004841" transform="rotate(-0 354.220673 207.004841)">93.0%</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="232.078155" transform="rotate(-0 354.220673 232.078155)">94.7%</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="257.151469" transform="rotate(-0 354.220673 257.151469)">95.6%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="282.224782" transform="rotate(-0 354.220673 282.224782)">88.6%</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="307.298096" transform="rotate(-0 354.220673 307.298096)">92.1%</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(153.9 135.756719)">Breast Cancer  |  Numerical</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(153.9 150.16)">114 test rows, 8 training labels</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_9">
+    <path d="M 542.050763 319.614545 
+L 781.65 319.614545 
+L 781.65 164.16 
+L 542.050763 164.16 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_4">
+     <g id="line2d_13">
+      <path d="M 542.050763 319.614545 
+L 542.050763 164.16 
+" clip-path="url(#pe1ffcd0a0e)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_17">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="542.050763" y="331.471967" transform="rotate(-0 542.050763 331.471967)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_15">
+      <path d="M 640.247172 319.614545 
+L 640.247172 164.16 
+" clip-path="url(#pe1ffcd0a0e)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_18">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="640.247172" y="331.471967" transform="rotate(-0 640.247172 331.471967)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_17">
+      <path d="M 738.44358 319.614545 
+L 738.44358 164.16 
+" clip-path="url(#pe1ffcd0a0e)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_19">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="738.44358" y="331.471967" transform="rotate(-0 738.44358 331.471967)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_7">
+     <g id="line2d_19"/>
+     <g id="text_20">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="183.192758" transform="rotate(-0 538.550763 183.192758)">GPT-6 Astra</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_20"/>
+     <g id="text_21">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="208.266072" transform="rotate(-0 538.550763 208.266072)">Jev</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_21"/>
+     <g id="text_22">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="233.339796" transform="rotate(-0 538.550763 233.339796)">Logistic regression</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_22"/>
+     <g id="text_23">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="258.413109" transform="rotate(-0 538.550763 258.413109)">Random forest</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_23"/>
+     <g id="text_24">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="283.486013" transform="rotate(-0 538.550763 283.486013)">XGBoost</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_24"/>
+     <g id="text_25">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="308.559737" transform="rotate(-0 538.550763 308.559737)">LightGBM</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_10">
+    <path d="M 542.050763 171.055161 
+L 732.988224 171.055161 
+L 732.988224 187.352815 
+L 542.050763 187.352815 
+z
+" clip-path="url(#pe1ffcd0a0e)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 542.050763 196.128475 
+L 722.077512 196.128475 
+L 722.077512 212.426129 
+L 542.050763 212.426129 
+z
+" clip-path="url(#pe1ffcd0a0e)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 542.050763 221.201789 
+L 732.988224 221.201789 
+L 732.988224 237.499443 
+L 542.050763 237.499443 
+z
+" clip-path="url(#pe1ffcd0a0e)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 542.050763 246.275103 
+L 727.532868 246.275103 
+L 727.532868 262.572757 
+L 542.050763 262.572757 
+z
+" clip-path="url(#pe1ffcd0a0e)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 542.050763 271.348416 
+L 683.89002 271.348416 
+L 683.89002 287.64607 
+L 542.050763 287.64607 
+z
+" clip-path="url(#pe1ffcd0a0e)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 542.050763 296.42173 
+L 705.711444 296.42173 
+L 705.711444 312.719384 
+L 542.050763 312.719384 
+z
+" clip-path="url(#pe1ffcd0a0e)" style="fill: #c28b36"/>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="181.931527" transform="rotate(-0 742.371437 181.931527)">97.2%</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="207.004841" transform="rotate(-0 742.371437 207.004841)">91.7%</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="232.078155" transform="rotate(-0 742.371437 232.078155)">97.2%</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="257.151469" transform="rotate(-0 742.371437 257.151469)">94.4%</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="282.224782" transform="rotate(-0 742.371437 282.224782)">72.2%</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="307.298096" transform="rotate(-0 742.371437 307.298096)">83.3%</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(542.050763 135.756719)">Wine  |  Numerical</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(542.050763 150.16)">36 test rows, 12 training labels</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_16">
+    <path d="M 153.9 557.46 
+L 393.499237 557.46 
+L 393.499237 402.005455 
+L 153.9 402.005455 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_5">
+    <g id="xtick_7">
+     <g id="line2d_25">
+      <path d="M 153.9 557.46 
+L 153.9 402.005455 
+" clip-path="url(#p8e4cd0fd86)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_26"/>
+     <g id="text_33">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="153.9" y="569.317422" transform="rotate(-0 153.9 569.317422)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_27">
+      <path d="M 252.096408 557.46 
+L 252.096408 402.005455 
+" clip-path="url(#p8e4cd0fd86)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_34">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="252.096408" y="569.317422" transform="rotate(-0 252.096408 569.317422)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_29">
+      <path d="M 350.292817 557.46 
+L 350.292817 402.005455 
+" clip-path="url(#p8e4cd0fd86)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_35">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="350.292817" y="569.317422" transform="rotate(-0 350.292817 569.317422)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_6">
+    <g id="ytick_13">
+     <g id="line2d_31"/>
+     <g id="text_36">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="421.038212" transform="rotate(-0 150.4 421.038212)">GPT-6 Astra</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_32"/>
+     <g id="text_37">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="446.111526" transform="rotate(-0 150.4 446.111526)">Jev</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_33"/>
+     <g id="text_38">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="471.18525" transform="rotate(-0 150.4 471.18525)">Logistic regression</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_34"/>
+     <g id="text_39">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="496.258564" transform="rotate(-0 150.4 496.258564)">Random forest</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_35"/>
+     <g id="text_40">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="521.331467" transform="rotate(-0 150.4 521.331467)">XGBoost</text>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_36"/>
+     <g id="text_41">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="150.4" y="546.405191" transform="rotate(-0 150.4 546.405191)">LightGBM</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_17">
+    <path d="M 153.9 408.900616 
+L 345.382996 408.900616 
+L 345.382996 425.19827 
+L 153.9 425.19827 
+z
+" clip-path="url(#p8e4cd0fd86)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 153.9 433.97393 
+L 343.419068 433.97393 
+L 343.419068 450.271584 
+L 153.9 450.271584 
+z
+" clip-path="url(#p8e4cd0fd86)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 153.9 459.047243 
+L 251.114444 459.047243 
+L 251.114444 475.344897 
+L 153.9 475.344897 
+z
+" clip-path="url(#p8e4cd0fd86)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 153.9 484.120557 
+L 257.988193 484.120557 
+L 257.988193 500.418211 
+L 153.9 500.418211 
+z
+" clip-path="url(#p8e4cd0fd86)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 153.9 509.193871 
+L 241.294804 509.193871 
+L 241.294804 525.491525 
+L 153.9 525.491525 
+z
+" clip-path="url(#p8e4cd0fd86)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 153.9 534.267185 
+L 247.186588 534.267185 
+L 247.186588 550.564839 
+L 153.9 550.564839 
+z
+" clip-path="url(#p8e4cd0fd86)" style="fill: #c28b36"/>
+   </g>
+   <g id="text_42">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="419.776982" transform="rotate(-0 354.220673 419.776982)">97.5%</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="444.850296" transform="rotate(-0 354.220673 444.850296)">96.5%</text>
+   </g>
+   <g id="text_44">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="469.923609" transform="rotate(-0 354.220673 469.923609)">49.5%</text>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="494.996923" transform="rotate(-0 354.220673 494.996923)">53.0%</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="520.070237" transform="rotate(-0 354.220673 520.070237)">44.5%</text>
+   </g>
+   <g id="text_47">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="354.220673" y="545.143551" transform="rotate(-0 354.220673 545.143551)">47.5%</text>
+   </g>
+   <g id="text_48">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(153.9 373.602173)">SST-2  |  Text</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(153.9 388.005455)">200 test rows, 8 training labels</text>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g id="patch_23">
+    <path d="M 542.050763 557.46 
+L 781.65 557.46 
+L 781.65 402.005455 
+L 542.050763 402.005455 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_7">
+    <g id="xtick_10">
+     <g id="line2d_37">
+      <path d="M 542.050763 557.46 
+L 542.050763 402.005455 
+" clip-path="url(#pc74e8b70e9)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_38"/>
+     <g id="text_49">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="542.050763" y="569.317422" transform="rotate(-0 542.050763 569.317422)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_39">
+      <path d="M 640.247172 557.46 
+L 640.247172 402.005455 
+" clip-path="url(#pc74e8b70e9)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_40"/>
+     <g id="text_50">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="640.247172" y="569.317422" transform="rotate(-0 640.247172 569.317422)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_41">
+      <path d="M 738.44358 557.46 
+L 738.44358 402.005455 
+" clip-path="url(#pc74e8b70e9)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_42"/>
+     <g id="text_51">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="738.44358" y="569.317422" transform="rotate(-0 738.44358 569.317422)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_8">
+    <g id="ytick_19">
+     <g id="line2d_43"/>
+     <g id="text_52">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="421.038212" transform="rotate(-0 538.550763 421.038212)">GPT-6 Astra</text>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_44"/>
+     <g id="text_53">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="446.111526" transform="rotate(-0 538.550763 446.111526)">Jev</text>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_45"/>
+     <g id="text_54">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="471.18525" transform="rotate(-0 538.550763 471.18525)">Logistic regression</text>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_46"/>
+     <g id="text_55">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="496.258564" transform="rotate(-0 538.550763 496.258564)">Random forest</text>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_47"/>
+     <g id="text_56">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="521.331467" transform="rotate(-0 538.550763 521.331467)">XGBoost</text>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_48"/>
+     <g id="text_57">
+      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="538.550763" y="546.405191" transform="rotate(-0 538.550763 546.405191)">LightGBM</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_24">
+    <path d="M 542.050763 408.900616 
+L 732.551796 408.900616 
+L 732.551796 425.19827 
+L 542.050763 425.19827 
+z
+" clip-path="url(#pc74e8b70e9)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 542.050763 433.97393 
+L 709.966622 433.97393 
+L 709.966622 450.271584 
+L 542.050763 450.271584 
+z
+" clip-path="url(#pc74e8b70e9)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 542.050763 459.047243 
+L 640.247172 459.047243 
+L 640.247172 475.344897 
+L 542.050763 475.344897 
+z
+" clip-path="url(#pc74e8b70e9)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 542.050763 484.120557 
+L 638.283244 484.120557 
+L 638.283244 500.418211 
+L 542.050763 500.418211 
+z
+" clip-path="url(#pc74e8b70e9)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 542.050763 509.193871 
+L 610.788249 509.193871 
+L 610.788249 525.491525 
+L 542.050763 525.491525 
+z
+" clip-path="url(#pc74e8b70e9)" style="fill: #c28b36"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 542.050763 534.267185 
+L 615.69807 534.267185 
+L 615.69807 550.564839 
+L 542.050763 550.564839 
+z
+" clip-path="url(#pc74e8b70e9)" style="fill: #c28b36"/>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="419.776982" transform="rotate(-0 742.371437 419.776982)">97.0%</text>
+   </g>
+   <g id="text_59">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="444.850296" transform="rotate(-0 742.371437 444.850296)">85.5%</text>
+   </g>
+   <g id="text_60">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="469.923609" transform="rotate(-0 742.371437 469.923609)">50.0%</text>
+   </g>
+   <g id="text_61">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="494.996923" transform="rotate(-0 742.371437 494.996923)">49.0%</text>
+   </g>
+   <g id="text_62">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="520.070237" transform="rotate(-0 742.371437 520.070237)">35.0%</text>
+   </g>
+   <g id="text_63">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="742.371437" y="545.143551" transform="rotate(-0 742.371437 545.143551)">37.5%</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(542.050763 373.602173)">TREC  |  Text</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; fill: #183448" transform="translate(542.050763 388.005455)">200 test rows, 24 training labels</text>
+   </g>
+  </g>
+  <g id="text_65">
+   <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="44.55" y="47.88" transform="rotate(-0 44.55 47.88)">The data type changed the comparison.</text>
+  </g>
+  <g id="text_66">
+   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #536978" x="44.55" y="87.552" transform="rotate(-0 44.55 87.552)">Same new training labels: four per class | All four classical methods shown</text>
+  </g>
+  <g id="text_67">
+   <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(44.55 584.568)">Classical models used numerical features directly and TF-IDF features for text.</text>
+   <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(44.55 600.768)">All methods received the same task-specific labels. LLMs and Jev also bring prior pretraining.</text>
+   <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(44.55 616.968)">One split and fixed recipes; these are few-shot results, not full-training rankings.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p62575e55be">
+   <rect x="153.9" y="164.16" width="239.599237" height="155.454545"/>
+  </clipPath>
+  <clipPath id="pe1ffcd0a0e">
+   <rect x="542.050763" y="164.16" width="239.599237" height="155.454545"/>
+  </clipPath>
+  <clipPath id="p8e4cd0fd86">
+   <rect x="153.9" y="402.005455" width="239.599237" height="155.454545"/>
+  </clipPath>
+  <clipPath id="pc74e8b70e9">
+   <rect x="542.050763" y="402.005455" width="239.599237" height="155.454545"/>
+  </clipPath>
+ </defs>
+</svg>

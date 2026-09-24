@@ -1,0 +1,44 @@
+[
+  {
+    "order": 1,
+    "marker": "INSERT FIGURE 1",
+    "path": "figures/01_wine_rescue.png",
+    "alt": "Wine comparison: Qwen alone, Qwen followed by Jev, Jev alone, and logistic regression trained on the same twelve examples."
+  },
+  {
+    "order": 2,
+    "marker": "INSERT FIGURE 2",
+    "path": "figures/02_trec_overrides.png",
+    "alt": "TREC decision changes: three corrected mistakes and twenty-four correct answers overturned, reducing the correct total from 194 to 173."
+  },
+  {
+    "order": 3,
+    "marker": "INSERT FIGURE 3",
+    "path": "figures/07_all_review_conditions.png",
+    "alt": "Accuracy change after Jev review for all forty-eight source, dataset and example-setting combinations."
+  },
+  {
+    "order": 4,
+    "marker": "INSERT FIGURE 4",
+    "path": "figures/03_proposal_value.png",
+    "alt": "Difference in Jev accuracy with a real Qwen3 proposal versus no proposal, with uncertainty ranges for all four datasets."
+  },
+  {
+    "order": 5,
+    "marker": "INSERT FIGURE 5",
+    "path": "figures/06_jev_few_shot.png",
+    "alt": "Jev standalone zero-shot versus four examples per class on the four datasets."
+  },
+  {
+    "order": 6,
+    "marker": "INSERT FIGURE 6",
+    "path": "figures/05_matched_label_context.png",
+    "alt": "Matched-label comparison across numerical and text tasks, including Jev, Astra and all four classical classifiers."
+  },
+  {
+    "order": 7,
+    "marker": "INSERT FIGURE 7",
+    "path": "figures/04_trec_cost.png",
+    "alt": "API cost and accuracy for Jev alone, Astra alone, and Astra followed by Jev on the same two hundred TREC questions."
+  }
+]

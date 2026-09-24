@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="756pt" height="504pt" viewBox="0 0 756 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 504 
+L 756 504 
+L 756 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 181.44 337.68 
+L 400.68 337.68 
+L 400.68 120.96 
+L 181.44 120.96 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 181.44 337.68 
+L 181.44 120.96 
+" clip-path="url(#pdd1f2e89d0)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="181.44" y="349.537422" transform="rotate(-0 181.44 349.537422)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 291.06 337.68 
+L 291.06 120.96 
+" clip-path="url(#pdd1f2e89d0)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="291.06" y="349.537422" transform="rotate(-0 291.06 349.537422)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 400.68 337.68 
+L 400.68 120.96 
+" clip-path="url(#pdd1f2e89d0)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="400.68" y="349.537422" transform="rotate(-0 400.68 349.537422)">100%</text>
+     </g>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="291.06" y="364.537422" transform="rotate(-0 291.06 364.537422)">Accuracy</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_5">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="177.94" y="166.154062" transform="rotate(-0 177.94 166.154062)">GPT-6 Astra alone</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_6">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="177.94" y="233.879062" transform="rotate(-0 177.94 233.879062)">Jev alone</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_7">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #536978" x="177.94" y="301.604062" transform="rotate(-0 177.94 301.604062)">Astra + Jev review</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 181.44 141.95475 
+L 394.1028 141.95475 
+L 394.1028 181.23525 
+L 181.44 181.23525 
+z
+" clip-path="url(#pdd1f2e89d0)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 181.44 209.67975 
+L 368.8902 209.67975 
+L 368.8902 248.96025 
+L 181.44 248.96025 
+z
+" clip-path="url(#pdd1f2e89d0)" style="fill: #69b5b3"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 181.44 277.40475 
+L 371.0826 277.40475 
+L 371.0826 316.68525 
+L 181.44 316.68525 
+z
+" clip-path="url(#pdd1f2e89d0)" style="fill: #087f8c"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #ffffff" x="387.5256" y="164.971953" transform="rotate(-0 387.5256 164.971953)">97.0%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #ffffff" x="362.313" y="232.696953" transform="rotate(-0 362.313 232.696953)">85.5%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #ffffff" x="364.5054" y="300.421953" transform="rotate(-0 364.5054 300.421953)">86.5%</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_6">
+    <path d="M 483.84 337.68 
+L 672.84 337.68 
+L 672.84 120.96 
+L 483.84 120.96 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_4">
+     <g id="line2d_10">
+      <path d="M 483.84 337.68 
+L 483.84 120.96 
+" clip-path="url(#p26197ca40b)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="483.84" y="349.538281" transform="rotate(-0 483.84 349.538281)">$0</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_12">
+      <path d="M 539.428235 337.68 
+L 539.428235 120.96 
+" clip-path="url(#p26197ca40b)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13"/>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="539.428235" y="349.538281" transform="rotate(-0 539.428235 349.538281)">$0.50</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_14">
+      <path d="M 595.016471 337.68 
+L 595.016471 120.96 
+" clip-path="url(#p26197ca40b)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15"/>
+     <g id="text_13">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="595.016471" y="349.538281" transform="rotate(-0 595.016471 349.538281)">$1.00</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_16">
+      <path d="M 650.604706 337.68 
+L 650.604706 120.96 
+" clip-path="url(#p26197ca40b)" style="fill: none; stroke: #e4eaf0; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_14">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="650.604706" y="349.538281" transform="rotate(-0 650.604706 349.538281)">$1.50</text>
+     </g>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536978" x="578.34" y="364.538281" transform="rotate(-0 578.34 364.538281)">API cost (USD)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4"/>
+   <g id="patch_7">
+    <path d="M 483.84 141.95475 
+L 634.634206 141.95475 
+L 634.634206 181.23525 
+L 483.84 181.23525 
+z
+" clip-path="url(#p26197ca40b)" style="fill: #527ba1"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 483.84 209.67975 
+L 484.809795 209.67975 
+L 484.809795 248.96025 
+L 483.84 248.96025 
+z
+" clip-path="url(#p26197ca40b)" style="fill: #69b5b3"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 483.84 277.40475 
+L 635.6591 277.40475 
+L 635.6591 316.68525 
+L 483.84 316.68525 
+z
+" clip-path="url(#p26197ca40b)" style="fill: #087f8c"/>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="639.637147" y="164.842559" transform="rotate(-0 639.637147 164.842559)">$1.3564</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="489.812736" y="232.567559" transform="rotate(-0 489.812736 232.567559)">$0.0087</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="640.662041" y="300.292559" transform="rotate(-0 640.662041 300.292559)">$1.3656</text>
+   </g>
+  </g>
+  <g id="text_19">
+   <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="41.58" y="35.28" transform="rotate(-0 41.58 35.28)">The review was cheap. Accuracy still fell.</text>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #536978" x="41.58" y="64.512" transform="rotate(-0 41.58 64.512)">TREC | Same 200 questions | Four examples per class | API costs for one pass</text>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #183448" x="41.58" y="400.68" transform="rotate(-0 41.58 400.68)">Jev review added about $0.0092, or 0.68%, to the Astra estimate.</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 10.2px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(41.58 440.136)">Astra: estimated from recorded tokens and dated standard rates. Jev: provider-reported charges.</text>
+   <text style="font-size: 10.2px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(41.58 455.436)">The pipeline total counts both stages once. Local compute, training and engineering were not priced.</text>
+   <text style="font-size: 10.2px; font-family: 'DejaVu Sans'; fill: #536978" transform="translate(41.58 470.736)">These are saved experimental costs, not current price quotes or a production savings estimate.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdd1f2e89d0">
+   <rect x="181.44" y="120.96" width="219.24" height="216.72"/>
+  </clipPath>
+  <clipPath id="p26197ca40b">
+   <rect x="483.84" y="120.96" width="189" height="216.72"/>
+  </clipPath>
+ </defs>
+</svg>
