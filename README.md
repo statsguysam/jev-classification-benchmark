@@ -4,6 +4,8 @@ A benchmark built around one question: **when does adding Jev as a reviewer impr
 
 The study compares six language models, Jev alone, an LLM's proposed class reviewed by Jev, and classical classifiers. The review experiment started with numerical tabular data and then used the same setup on two text datasets. Earlier text, mixed-tabular and LoRA experiments are linked below.
 
+The maintained Python package includes fixes for interrupted runs, malformed API responses and duplicate test IDs. The measured study retains its original source snapshot and checksums. The [runtime and reproduction guide](docs/RUNTIME_MAINTENANCE.md) explains how to run current code or audit the original experiments.
+
 ## What the results show
 
 Jev sometimes corrected a weak source and sometimes overruled a stronger answer. The key question was whether the source model helped Jev make a better decision than it could make on its own.
@@ -36,6 +38,8 @@ Every method sees the same test rows within its dataset. The two pipeline stages
 **All 68 conditions and 72 contrasts are complete and audited**, including 24 source-model conditions and 24 Jev reviews. Start with the [interpretation](results/numeric_expansion/INTERPRETATION.md), [findings](results/numeric_expansion/FINDINGS.md), [protocol](docs/EXPANDED_NUMERIC_PROTOCOL.md), [comparison data](results/numeric_expansion/COMPARISON.json) and [Colab guide](docs/EXPANDED_NUMERIC_REPRODUCTION.md).
 
 This study uses only Breast Cancer and Wine. The [first four review runs](results/numeric_decisions/INTERPRETATION.md) are preserved and reused in the expansion. Titanic and the earlier LoRA results belong to the separate tabular study below; the expansion adds no LoRA training.
+
+Historical script commands in the study sections below belong to the frozen workspace described in the [reproduction guide](docs/RUNTIME_MAINTENANCE.md). From the current checkout, `python scripts/reproduce_frozen_study.py audit` audits saved results without model calls. Do not change source pins to make historical scripts accept a different runtime.
 
 ```bash
 python -m pip install -e '.[dev,numeric,neural]' 'transformers==4.57.6'
@@ -161,12 +165,19 @@ Python 3.11–3.13 is required. From this repository:
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
-python -m pytest -q
+python -m pytest -q tests/current
 ```
 
-The base installation skips tests that require optional neural libraries. Install
-the neural extra and rerun the tests to include the local tensor/adapter checks;
-those tests use tiny models and do not download weights or make hosted calls.
+These tests exercise the maintained package, including interruption recovery,
+response validation and reproduction of saved numerical/text scores. The base
+installation skips checks that require optional neural libraries; those checks
+use tiny models without downloading weights or making hosted calls.
+
+With the full analysis dependencies and frozen prepared data available, run
+`python -m pytest -q` to include the complete original test suite in an isolated
+subprocess. The [runtime guide](docs/RUNTIME_MAINTENANCE.md) gives the fresh-checkout
+setup and separate dashboard checks. Historical source files are verified before
+they run; current code has its own implementation hash.
 
 Optional neural training/inference dependencies:
 

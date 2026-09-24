@@ -31,19 +31,17 @@ XGBoost treats unstored sparse entries as missing; the other estimators use zero
 
 ## Reproduce locally
 
-From the benchmark repository, generate the aggregate assets:
+From the benchmark repository, validate the current frontend and exporters against the frozen study:
 
 ```bash
-python scripts/summarize_expanded_numeric.py --bootstrap-samples 2000
-python scripts/build_expanded_numeric_dashboard.py
-python scripts/summarize_text_extension.py --bootstrap-samples 2000
-python scripts/build_text_extension_dashboard.py
-python scripts/build_dashboard_data.py --output dashboard/dist/data.json
+python scripts/reproduce_frozen_study.py current-dashboard
 ```
 
-Run the aggregate audit/export sequence after inference workers have stopped; a changing evidence file must fail verification rather than become a published snapshot. The numeric builder revalidates predictions, manifests, protocol and accounting. Its default mode requires all 68 completed conditions. The explicit `--allow-incomplete` flag supports a visibly unfinished reproduction with null pending scores. Both modes reject stale reports. The output allowlist excludes raw feature rows, prompts, credentials and local paths. Copy `dashboard/dist/numeric-data.json` into this site's `dist` directory when deploying from its separate checkout.
+This rebuilds and compares all four aggregate assets in an isolated checkout, then runs the exporter tests and JavaScript smoke suites. To inspect changed derived assets, add `--export-dashboard /tmp/jev-dashboard-review` with a new output directory. The [runtime guide](../docs/RUNTIME_MAINTENANCE.md) explains data preparation and the separation between maintained dashboard code and the original scientific implementation.
 
-The text builder likewise reaudits the evidence and requires complete conditions by default. Its explicit partial mode writes `dashboard/dist/text-data.json` with all 68 planned rows and 72 contrasts, retaining missing values and source links. Copy that aggregate asset to the separate site checkout when updating its text view. Source prompts, raw dataset text, credentials and local paths are excluded. Rebuilding either JSON asset does not publish the site.
+Run the aggregate audit/export sequence after inference workers have stopped; a changing evidence file must fail verification rather than become a published snapshot. The numeric builder revalidates predictions, manifests, protocol and accounting. Its default mode requires all 68 completed conditions. Inside a frozen workspace, the explicit `--allow-incomplete` flag supports a visibly unfinished reproduction with null pending scores. Both modes reject stale reports. The output allowlist excludes raw feature rows, prompts, credentials and local paths.
+
+The text builder likewise reaudits the evidence and requires complete conditions by default. Its explicit partial mode writes `dashboard/dist/text-data.json` with all 68 planned rows and 72 contrasts, retaining missing values and source links. Source prompts, raw dataset text, credentials and local paths are excluded. Rebuilding the JSON assets does not publish the site. When updating a separate site checkout, copy the complete reviewed `dashboard/dist` directory so the shared `decision-dashboard.js` controller stays in sync with both numerical and text pages.
 
 ```bash
 python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard/dist
@@ -64,4 +62,4 @@ The page also contains the [completed matched controls](../results/review_contro
 
 Both the local asset and private hosted page contain these completed results. Partial conditions are never scored. The [output-validation notes](../docs/OUTPUT_VALIDATION_NOTES.md) explain the distinction between an accepted wrong class and a rejected response. Original accuracy counts both as incorrect, while the breakdown keeps them separate; recovery results do not overwrite either category.
 
-Use the audited report/export order in the [completion reproduction guide](../docs/COMPLETION_REPRODUCTION.md), then rebuild with `python scripts/build_review_value_dashboard.py` and verify with `node dashboard/tests/review-dashboard.smoke.cjs dashboard`. Regenerate the sensitivity appendix after this asset because it records the asset hash. Only explicit aggregate fields are exported. See the [story](../results/review_value/STORY.md), [sharing figure](../results/review_value/figures/selective_review.png), and [draft post](../results/review_value/LINKEDIN_DRAFT.md). The deployment remains private.
+The current-dashboard command above also rebuilds and checks this view. For individual historical commands, use the frozen workspace and audited order in the [completion reproduction guide](../docs/COMPLETION_REPRODUCTION.md). Regenerate the sensitivity appendix after any change to this asset because it records the asset hash. Only explicit aggregate fields are exported. See the [story](../results/review_value/STORY.md), [sharing figure](../results/review_value/figures/selective_review.png), and [draft post](../results/review_value/LINKEDIN_DRAFT.md). The deployment remains private.

@@ -74,6 +74,18 @@ def _token_count(value: Any) -> int | None:
     return value if isinstance(value, int) and not isinstance(value, bool) and value >= 0 else None
 
 
+def _response_object(value: Any) -> dict:
+    if not isinstance(value, dict):
+        raise ProviderError("invalid_output: expected an API response object")
+    return value
+
+
+def _response_objects(value: Any) -> list[dict]:
+    if not isinstance(value, list) or any(not isinstance(item, dict) for item in value):
+        raise ProviderError("invalid_output: expected a list of API response objects")
+    return value
+
+
 class HTTPClassifier:
     """One request per prediction, without retries or implicit paid calls."""
 
@@ -149,7 +161,7 @@ class JevClassifier(HTTPClassifier):
             {"Authorization": f"Bearer {key}"} if key else {}, self.timeout,
         )
         self._record_usage(result, result.get("usage"), "input_tokens", "output_tokens")
-        answer = result["answers"]["classification"]
+        answer = _response_object(_response_object(result["answers"])["classification"])
         label = parse_label(answer["choice"], len(labels))
         probabilities = validate_probabilities(answer["probabilities"], len(labels))
         if probabilities[label] < max(probabilities) - 1e-6:
@@ -179,12 +191,13 @@ class OpenAIClassifier(HTTPClassifier):
                             {"Authorization": f"Bearer {key}"} if key else {}, self.timeout)
         self._record_usage(result, result.get("usage"), "prompt_tokens", "completion_tokens")
         self._last_metadata["system_fingerprint"] = result.get("system_fingerprint")
-        choice = result["choices"][0]
+        choice = _response_objects(result["choices"])[0]
         if choice.get("finish_reason") != "stop":
             raise ProviderError("invalid_output: response did not finish normally")
-        if choice["message"].get("refusal"):
+        message = _response_object(choice["message"])
+        if message.get("refusal"):
             raise ProviderError("invalid_output: model refused classification")
-        label = parse_label(choice["message"]["content"], len(labels))
+        label = parse_label(message["content"], len(labels))
         return Prediction(row_id, label, input_tokens=self._last_input_tokens,
                           output_tokens=self._last_output_tokens,
                           metadata={"resolved_model": result.get("model"),
@@ -209,7 +222,8 @@ class AnthropicClassifier(HTTPClassifier):
             })
         if result.get("stop_reason") != "end_turn":
             raise ProviderError("invalid_output: response did not finish normally")
-        content = "".join(block["text"] for block in result["content"] if block.get("type") == "text")
+        content = "".join(block["text"] for block in _response_objects(result["content"])
+                          if block.get("type") == "text")
         label = parse_label(content, len(labels))
         return Prediction(row_id, label, input_tokens=self._last_input_tokens,
                           output_tokens=self._last_output_tokens,
@@ -236,10 +250,11 @@ class GeminiClassifier(HTTPClassifier):
         if thoughts is not None:
             self._last_output_tokens = (self._last_output_tokens or 0) + thoughts
         self._last_metadata["thought_tokens"] = thoughts
-        candidate = result["candidates"][0]
+        candidate = _response_objects(result["candidates"])[0]
         if candidate.get("finishReason") != "STOP":
             raise ProviderError("invalid_output: response did not finish normally")
-        content = "".join(part["text"] for part in candidate["content"]["parts"]
+        parts = _response_objects(_response_object(candidate["content"])["parts"])
+        content = "".join(part["text"] for part in parts
                           if "text" in part and not part.get("thought", False))
         label = parse_label(content, len(labels))
         return Prediction(row_id, label, input_tokens=self._last_input_tokens,

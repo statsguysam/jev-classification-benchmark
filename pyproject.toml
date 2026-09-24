@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jev-classification-benchmark"
-version = "0.1.0"
-description = "Reproducible Jev, LLM, LoRA and classical text classification benchmarks"
+version = "0.1.1"
+description = "Reproducible Jev, LLM and classical classification benchmarks on numerical and text data"
 requires-python = ">=3.11,<3.14"
 dependencies = ["numpy>=1.26,<3", "scipy>=1.12,<2", "scikit-learn>=1.5,<2", "huggingface-hub>=0.34,<1", "pyarrow>=17,<24", "httpx>=0.27,<1"]
 
@@ -22,5 +22,5 @@ jevbench = "jevbench.cli:main"
 where = ["src"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests/current", "tests/test_frozen_suite.py"]
 pythonpath = ["src"]

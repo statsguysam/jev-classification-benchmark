@@ -1,0 +1,200 @@
+// Shared controller for numerical and text classification results.
+// The page configuration supplies dataset-specific labels and snapshot scope.
+// All filters, comparisons and exports use the loaded aggregate asset unchanged.
+function createDecisionDashboard(config) {
+  let DATA;
+  const $ = id => document.getElementById(id);
+  const initialState = {
+    dataset: config.defaultDataset,
+    shots: '4',
+    model: 'all',
+    metric: 'accuracy',
+    view: 'pairs',
+    nativeBudget: '4'
+  };
+  const state = {
+    ...initialState
+  };
+  const names = {
+    accuracy: 'Accuracy',
+    macro_f1: 'Macro-F1'
+  };
+  const esc = v => String(v).replace(/[&<>"']/g, c => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[c]);
+  const pct = v => v == null ? 'N/A' : `${(100 * v).toFixed(1)}%`;
+  const signed = v => v == null ? 'N/A' : `${v >= 0 ? '+' : ''}${(100 * v).toFixed(1)}`;
+  const interval = v => v ? `[${signed(v[0])}, ${signed(v[1])}]` : 'N/A';
+  const scoreCI = (r, m) => r[`${m}_ci95`] ? `${pct(r[m])} <small>[${r[`${m}_ci95`].map(pct).join(', ')}]</small>` : pct(r[m]);
+  function studyStatus(costs) {
+    return config.statusMessage(costs, DATA.completion);
+  }
+  const selected = () => DATA.runs.filter(r => r.dataset === state.dataset && r.train_per_class === Number(state.shots));
+  function pairs() {
+    const rows = selected();
+    return rows.filter(r => r.arm === 'base' && (state.model === 'all' || r.model === state.model)).map(base => {
+      const review = rows.find(r => r.source_run_id === base.run_id);
+      const direct = rows.find(r => r.arm === 'direct');
+      const kind = state.view === 'pairs' ? 'review_minus_source' : 'review_minus_jev_alone';
+      const compare = DATA.comparisons.find(c => c.kind === kind && c.a === review.run_id && c.b === (state.view === 'pairs' ? base : direct).run_id);
+      return {
+        base,
+        review,
+        direct,
+        compare
+      };
+    });
+  }
+  function table(headers, rows) {
+    return `<table class="numeric-table"><thead><tr>${headers.map(h => `<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  }
+  function chart(items) {
+    const m = state.metric,
+      x = v => 205 + 480 * v,
+      height = 70 + items.length * 52;
+    let svg = `<svg role="img" aria-label="${esc(names[m])}: source LLM, Jev review and Jev alone" viewBox="0 0 925 ${height}"><title>${esc(names[m])} on the selected ${esc(config.datasetKind)} dataset</title>`;
+    for (const tick of [0, .25, .5, .75, 1]) svg += `<line x1="${x(tick)}" x2="${x(tick)}" y1="30" y2="${height - 30}" stroke="#e2e7f0"/><text x="${x(tick)}" y="20" text-anchor="middle" fill="#627089" font-size="11">${100 * tick}%</text>`;
+    if (items.length && items[0].direct[m] != null) {
+      let d = items[0].direct[m];
+      svg += `<line x1="${x(d)}" x2="${x(d)}" y1="30" y2="${height - 30}" stroke="#008d99" stroke-dasharray="4 4"/>`;
+    }
+    items.forEach(({
+      base,
+      review,
+      direct
+    }, i) => {
+      const a = state.view === 'pairs' ? base : direct,
+        y = 52 + i * 52;
+      const complete = a[m] != null && review[m] != null;
+      svg += `<text x="185" y="${y + 4}" text-anchor="end" fill="#14223b" font-size="13">${esc(base.display_model)}</text>`;
+      if (!complete && !config.showPartialMarkers) {
+        svg += `<text x="910" y="${y + 4}" text-anchor="end" fill="#627089" font-size="13">${pct(a[m])} → ${pct(review[m])} (unavailable)</text>`;
+        return;
+      }
+      if (complete) {
+        const color = review[m] >= a[m] ? '#078c88' : '#b4444f';
+        svg += `<line x1="${x(a[m])}" x2="${x(review[m])}" y1="${y}" y2="${y}" stroke="${color}" stroke-width="3" opacity=".5"/>`;
+      }
+      if (a[m] != null) svg += `<circle cx="${x(a[m])}" cy="${y}" r="5" fill="#66748f"/>`;
+      if (review[m] != null) svg += `<path d="M${x(review[m])},${y - 6} l6,6 -6,6 -6,-6Z" fill="#008d99"/>`;
+      svg += `<text x="910" y="${y + 4}" text-anchor="end" fill="${complete ? '#14223b' : '#627089'}" font-size="13">${pct(a[m])} → ${pct(review[m])}${complete ? '' : ' (unavailable)'}</text>`;
+    });
+    return svg + '</svg>';
+  }
+  function render() {
+    const ds = DATA.datasets.find(d => d.id === state.dataset),
+      items = pairs(),
+      m = state.metric,
+      direct = selected().find(r => r.arm === 'direct');
+    $('rows').textContent = ds.n_test;
+    $('labels').textContent = Number(state.shots) * ds.n_classes;
+    $('direct-score').textContent = pct(direct[m]);
+    $('direct-note').textContent = `${names[m]} · ${direct.n_failures == null ? 'failure count unavailable' : `${direct.n_failures} failures`}`;
+    $('changes').textContent = !config.pendingChangesLabel || items.some(p => p.compare[`${m}_delta`] != null) ? `${items.filter(p => p.compare[`${m}_delta`] > 0).length} ↑ / ${items.filter(p => p.compare[`${m}_delta`] < 0).length} ↓` : 'Pending';
+    $('changes-note').textContent = `${items.filter(p => p.compare[`${m}_delta`] != null).length}/${items.length} comparisons complete; ties omitted`;
+    $('chart-title').textContent = state.view === 'pairs' ? 'Before and after Jev' : 'Does the source proposal add value?';
+    $('chart-context').textContent = `${ds.label} · ${config.describeFeatures(ds)} · ${state.shots === '0' ? 'zero-shot' : `${ds.n_classes * 4} training examples`} · dashed line: Jev alone`;
+    $('chart').innerHTML = chart(items);
+    document.querySelector('.source-dot').textContent = state.view === 'pairs' ? '● LLM alone' : '● Jev alone';
+    $('pair-table').innerHTML = table(['Source model', state.view === 'pairs' ? 'LLM alone' : 'Jev alone', 'LLM + Jev', 'Change (pp) · paired 95% CI', 'Fixed / harmed¹', 'Pipeline failures²', 'Review status'], items.map(({
+      base,
+      review,
+      direct,
+      compare
+    }) => {
+      const d = compare[`${m}_delta`],
+        t = review.review_transitions;
+      return [esc(base.display_model), pct((state.view === 'pairs' ? base : direct)[m]), pct(review[m]), `<span class="${d > 0 ? 'positive' : d < 0 ? 'negative' : ''}">${signed(d)}</span> <small>${interval(compare[`${m}_delta_ci95`])}</small>`, t ? `${t.wrong_to_correct} / ${t.correct_to_wrong}` : 'N/A', review.n_failures == null ? 'N/A' : `${review.n_failures} / ${review.n_test}`, review[m] == null ? 'Pending' : 'Complete'];
+    })) + `<p class="context-line">¹ Fixed/harmed counts changes from wrong to correct and correct to wrong between the source LLM and Jev, including failures. The intervals use one split and fixed model settings; they are not adjusted for multiple comparisons. ² A source failure counts as a pipeline failure, and no Jev call is made for that row.</p>`;
+    const native = DATA.runs.filter(r => r.dataset === state.dataset && r.arm === 'classical' && (state.nativeBudget === 'full' ? r.label_budget === 'full_training' : r.train_per_class === 4));
+    const ref = DATA.runs.find(r => r.dataset === state.dataset && r.arm === 'direct' && r.train_per_class === 4);
+    $('native-context').textContent = `Jev below always has ${ds.n_classes * 4} labels. Classical models have ${state.nativeBudget === 'full' ? ds.full_training_labels : ds.n_classes * 4} labels.${state.shots === '0' ? ' This reference table uses a different label budget from the zero-shot chart.' : ''}${state.nativeBudget === 'full' ? ' Full training uses more labels and is reported separately.' : ''}`;
+    $('native-table').innerHTML = table(['Method', 'Training labels', `${names[m]} · 95% CI`, 'Failures'], [ref, ...native].map(r => [esc(r.display_model), r.train_labels ?? 'N/A', scoreCI(r, m), r.n_failures == null ? 'N/A' : `${r.n_failures} / ${r.n_test}`]));
+    const q = new URLSearchParams({
+      dataset: state.dataset,
+      shots: state.shots,
+      model: state.model,
+      metric: state.metric,
+      view: state.view,
+      nativeBudget: state.nativeBudget
+    });
+    history.replaceState(null, '', `?${q}`);
+    $('status').textContent = `${DATA.completion.complete_runs}/${DATA.completion.expected_runs} conditions complete · ${studyStatus(DATA.costs)}`;
+  }
+  function exportCSV() {
+    const m = state.metric,
+      head = ['dataset', 'metric', 'shots_per_class', 'source_model', 'comparison', 'review_status', 'reference_score', 'review_score', 'delta_pp', 'delta_ci95_low_pp', 'delta_ci95_high_pp', 'corrected_from_source', 'harmed_from_source', 'pipeline_failures', 'source_failure_rows', 'review_stage_failure_rows', 'test_rows'];
+    const rows = pairs().map(({
+      base,
+      review,
+      direct,
+      compare
+    }) => [state.dataset, m, state.shots, base.model, compare.kind, review[m] == null ? 'pending' : 'complete', (state.view === 'pairs' ? base : direct)[m], review[m], compare[`${m}_delta`] == null ? '' : compare[`${m}_delta`] * 100, ...(compare[`${m}_delta_ci95`] ?? [null, null]).map(v => v == null ? '' : v * 100), review.review_transitions?.wrong_to_correct, review.review_transitions?.correct_to_wrong, review.n_failures, review.review_transitions?.source_failure_rows, review.review_transitions?.review_stage_failure_rows, review.n_test]);
+    const csv = [head, ...rows].map(r => r.map(v => '"' + String(v ?? '').replaceAll('"', '""') + '"').join(',')).join('\r\n');
+    const url = URL.createObjectURL(new Blob([csv], {
+      type: 'text/csv;charset=utf-8'
+    }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${config.csvPrefix}-${state.dataset}-${state.shots}-${m}.csv`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  async function boot() {
+    try {
+      const response = await fetch(config.dataFile);
+      if (!response.ok) throw new Error(`The ${config.datasetKind} results are still being finalized.`);
+      DATA = await response.json();
+      if (!['complete', 'in_progress_or_incomplete'].includes(DATA.completion?.status) || DATA.completion.expected_runs !== 68 || !Number.isInteger(DATA.completion.complete_runs) || DATA.completion.complete_runs < 0 || DATA.completion.complete_runs > 68) throw new Error(`The ${config.datasetKind} report has an unexpected completion state.`);
+      const models = DATA.models.filter(m => ['open_weight_llm', 'hosted_llm'].includes(m.family));
+      $('model').innerHTML = '<option value="all">All six models</option>' + models.map(m => `<option value="${esc(m.id)}">${esc(m.label)}</option>`).join('');
+      const query = new URLSearchParams(location.search);
+      for (const [key, id] of Object.entries({
+        dataset: 'dataset',
+        shots: 'shots',
+        model: 'model',
+        metric: 'metric',
+        view: 'view',
+        nativeBudget: 'native-budget'
+      })) {
+        const control = $(id),
+          requested = query.get(key);
+        if (requested && [...control.options].some(o => o.value === requested)) state[key] = requested;
+        control.value = state[key];
+        control.addEventListener('change', () => {
+          state[key] = control.value;
+          render();
+        });
+      }
+      $('reset').addEventListener('click', () => {
+        Object.assign(state, initialState);
+        for (const k of ['dataset', 'shots', 'model', 'metric', 'view']) $(k).value = state[k];
+        $('native-budget').value = '4';
+        render();
+      });
+      $('export').addEventListener('click', exportCSV);
+      $('limitations').innerHTML = DATA.limitations.map(t => `<li>${esc(t)}</li>`).join('');
+      const c = DATA.costs;
+      $('scope').innerHTML = `<p><strong>${DATA.completion.complete_runs}/${DATA.completion.expected_runs} conditions complete.</strong> Planned: 24 source LLM conditions, 24 reviews, four direct Jev references, and 16 classical references. Scores appear only when a source or review condition has results for every test row.</p>
+<p>Each source model uses the settings recorded with its run. Open models score the allowed class labels; hosted models generate a label. These comparisons use no additional fine-tuning.</p>
+<p><strong>${c.new_review_calls} new Jev requests.</strong> Known reported API cost: $${Number(c.known_reported_api_usd).toFixed(4)}; ${c.unknown_cost_calls} calls have unknown cost. Conservative accounting through this phase: $${Number(c.cumulative_reserved_usd).toFixed(2)} of $${Number(c.authorized_usd).toFixed(2)} authorized.</p>
+<p>This phase snapshot includes earlier work and excludes later controls and retries. It is not the final study total, a provider invoice or a production cost comparison. Local compute cost was not measured. ${esc(config.trainingNote)}</p><p><a href="${esc(config.findingsUrl)}">Detailed findings & raw evidence ↗</a> · <a href="https://github.com/statsguysam/jev-classification-benchmark/blob/main/results/completion_20260923/COSTS.md">Final study accounting ↗</a>
+</p>`;
+      render();
+    } catch (error) {
+      $('status').textContent = error.message;
+      $('export').disabled = true;
+    }
+  }
+  return {
+    boot,
+    render,
+    exportCSV,
+    state,
+    pairs
+  };
+}

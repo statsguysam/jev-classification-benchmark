@@ -6,6 +6,8 @@ sharing. It never includes .env files, data, model weights, or result directorie
 import hashlib
 import json
 from pathlib import Path
+import re
+import tomllib
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +33,37 @@ OPTIONAL_FILES = (
     "scripts/summarize_tabular.py", "scripts/summarize_tabular_costs.py", "scripts/plot_tabular.py",
     "notebooks/colab_tabular_benchmark.ipynb",
 )
+# These tests use generated fixtures and travel with the maintained package.
+# Frozen-study checks and saved-evidence comparisons require the full repository.
+PORTABLE_TEST_FILES = (
+    "tests/current/test_classical.py",
+    "tests/current/test_data.py",
+    "tests/current/test_lora.py",
+    "tests/current/test_metrics.py",
+    "tests/current/test_prompts.py",
+    "tests/current/test_providers.py",
+    "tests/current/test_runner.py",
+    "tests/current/test_runtime_regressions.py",
+)
+
+
+def portable_pyproject(content: bytes) -> bytes:
+    """Set the exported test target without changing the repository config."""
+    source = content.decode("utf-8")
+    section = re.search(r"(?ms)^\[tool\.pytest\.ini_options\]\n(.*?)(?=^\[|\Z)", source)
+    if section is None:
+        raise ValueError("Missing pytest configuration in pyproject.toml")
+    settings, replacements = re.subn(
+        r"(?m)^testpaths[ \t]*=[ \t]*\[[^\n]*\][ \t]*$",
+        'testpaths = ["tests/current"]', section.group(1),
+    )
+    if replacements != 1:
+        raise ValueError("Expected one single-line pytest testpaths setting")
+    updated = source[:section.start(1)] + settings + source[section.end(1):]
+    parsed = tomllib.loads(updated)
+    if parsed["tool"]["pytest"]["ini_options"]["testpaths"] != ["tests/current"]:
+        raise ValueError("Portable pytest configuration is invalid")
+    return updated.encode("utf-8")
 
 
 def clean_notebook(content: bytes, name: str = "colab_benchmark.ipynb") -> bytes:
@@ -55,8 +88,8 @@ def export(root: Path = ROOT) -> Path:
     destination.parent.mkdir(exist_ok=True)
     paths = [root / name for name in FIXED_FILES]
     paths.extend(root / name for name in OPTIONAL_FILES if (root / name).is_file())
-    for folder in ("src", "tests"):
-        paths.extend((root / folder).rglob("*.py"))
+    paths.extend((root / "src").rglob("*.py"))
+    paths.extend(root / name for name in PORTABLE_TEST_FILES)
     for name in ("LICENSE", "requirements-macos.lock.txt"):
         if (root / name).is_file():
             paths.append(root / name)
@@ -66,11 +99,16 @@ def export(root: Path = ROOT) -> Path:
             raise ValueError(f"Refusing source outside repository: {path.name}")
         content = path.read_bytes()
         relative = path.relative_to(root).as_posix()
-        payloads[relative] = clean_notebook(content, path.name) if path.suffix == ".ipynb" else content
+        if path.suffix == ".ipynb":
+            content = clean_notebook(content, path.name)
+        elif relative == "pyproject.toml":
+            content = portable_pyproject(content)
+        payloads[relative] = content
     payloads["bundle_manifest.json"] = (json.dumps({
         "schema_version": 1,
         "files_sha256": {name: hashlib.sha256(data).hexdigest() for name, data in sorted(payloads.items())},
         "note": "Source-only bundle; no data, weights, environment secrets, or measured results.",
+        "test_policy": "Maintained standalone tests only; frozen-study and saved-evidence tests require the full repository.",
     }, indent=2, sort_keys=True) + "\n").encode()
     temporary = destination.with_suffix(".tmp")
     with zipfile.ZipFile(temporary, "w", compression=zipfile.ZIP_DEFLATED) as archive:

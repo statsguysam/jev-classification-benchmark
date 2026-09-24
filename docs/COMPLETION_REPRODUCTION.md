@@ -6,6 +6,10 @@ failed-call recovery were handled. It supplements the original numerical, text
 and matched-control protocols; their predictions and pricing declarations remain
 part of the evidence.
 
+The active package now includes fixes made after this study. Use the verified
+archived runtime for the historical commands below. The [runtime guide](RUNTIME_MAINTENANCE.md)
+explains how current tests, original tests and saved evidence remain separate.
+
 ## Environment and frozen data
 
 From a fresh checkout, use Python 3.12 and install the analysis dependencies.
@@ -22,30 +26,33 @@ python -m pip install -e '.[dev,numeric]' \
   'matplotlib>=3.9,<4'
 ```
 
-Restore the ignored public datasets on a fresh checkout before running any
-summary. The historical failure audit also needs Titanic, even though the
-focused proposal-control study uses Breast Cancer, Wine, SST-2 and TREC.
-These preparation commands may download public dataset files; they make no
-model requests. Do not prepare over existing experiment evidence.
+On a fresh checkout, prepare the ignored public datasets with the archived code.
+This also restores the exact historical text manifests. It downloads pinned
+public data and makes no model requests. Skip this step when the prepared
+datasets already exist; the exporter refuses to replace them.
 
 ```bash
-python scripts/tabular_data.py --datasets titanic breast_cancer wine \
-  --output data/tabular-full --seed 42
-jevbench prepare sst2 trec --cache-dir data --output data/pilot \
-  --seed 42 --train-limit 10000 --validation-limit 1000 \
-  --test-limit 200 --max-text-chars 2000
-python scripts/restore_text_extension_data.py --candidate-root data/pilot
-HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
-  python scripts/restore_review_controls_payload.py
+python scripts/reproduce_frozen_study.py prepare-data --export-prepared data
 ```
 
-The text restoration checks every frozen row-file hash before restoring the
-historical manifest bytes. The control restoration reconstructs only the ignored
-`results/review_controls/prepared_full/requests.jsonl` from those frozen datasets
-and saved source predictions. It requires exact agreement with the versioned
-protocol and manifest, including all 1,714 request identities. An existing exact
-payload is verified; an existing changed or partial payload is never overwritten.
-Neither restoration makes API calls or allocates a budget.
+For a complete report check, run `python scripts/reproduce_frozen_study.py audit`.
+It rebuilds eight machine-readable reports in a temporary checkout and requires
+each to match the saved bytes. No original file is changed.
+
+To run the detailed commands below, create a persistent copy instead:
+
+```bash
+python scripts/reproduce_frozen_study.py stage \
+  --workspace artifacts/frozen-study-324d633
+cd artifacts/frozen-study-324d633
+export PYTHONPATH="$PWD/src:$PWD/scripts"
+```
+
+Keep the project environment activated. The remaining commands run from this
+copied checkout, which contains the original scripts and package, saved results
+and prepared data. The launcher also restores the ignored control request
+payload and verifies all 1,714 request identities against their frozen manifest.
+It does not load models or allocate a budget.
 
 ## Offline analysis
 

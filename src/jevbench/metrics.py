@@ -7,8 +7,11 @@ from .types import Row, Prediction
 def evaluate(rows: list[Row], predictions: list[Prediction], n_classes: int) -> dict:
     if not rows:
         raise ValueError("Cannot evaluate an empty test set")
+    test_ids = [row.id for row in rows]
+    if len(set(test_ids)) != len(test_ids):
+        raise ValueError("Test row IDs must be unique")
     by_id = {p.row_id: p for p in predictions}
-    if len(by_id) != len(predictions) or set(by_id) != {r.id for r in rows}:
+    if len(by_id) != len(predictions) or set(by_id) != set(test_ids):
         raise ValueError("Predictions must match test IDs exactly, with no duplicates")
     y = np.asarray([r.label for r in rows])
     ordered = [by_id[r.id] for r in rows]

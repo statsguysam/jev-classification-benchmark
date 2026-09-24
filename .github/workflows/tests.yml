@@ -14,73 +14,62 @@ jobs:
       - run: python -m pip install -e '.[dev,numeric]' 'nbformat>=5.10,<6' 'transformers==4.57.6' 'huggingface-hub==0.36.2' 'scikit-learn==1.9.1' 'numpy==2.5.3' 'scipy==1.18.1'
       - name: CPU tensor runtime for offline helper tests
         run: python -m pip install 'torch>=2.4,<3' --index-url https://download.pytorch.org/whl/cpu
-      - name: Recreate frozen numeric feature bundles
-        run: python scripts/tabular_data.py --datasets titanic breast_cancer wine --output data/tabular-full --seed 42
-      - name: Recreate and verify frozen text pilot bytes
-        run: |
-          jevbench prepare sst2 trec --cache-dir data --output data/pilot --seed 42 --train-limit 10000 --validation-limit 1000 --test-limit 200 --max-text-chars 2000
-          python scripts/restore_text_extension_data.py
-      - name: Restore ignored frozen proposal-control payload
+      - name: Verify the original study archive
+        run: python scripts/reproduce_frozen_study.py verify
+      - name: Recreate and verify frozen prepared datasets
+        run: python scripts/reproduce_frozen_study.py prepare-data --export-prepared data
+      - name: Current package regression tests
         env:
           HF_HUB_OFFLINE: '1'
           TRANSFORMERS_OFFLINE: '1'
-        run: python scripts/restore_review_controls_payload.py
-      - name: Reaudit completed validation scoring diagnostic without model loading
+        run: python -m pytest -q -rs tests/current
+      - name: Portable Colab source bundle and its default tests
         env:
           HF_HUB_OFFLINE: '1'
           TRANSFORMERS_OFFLINE: '1'
         run: |
-          python scripts/audit_validation_scoring_ablation.py
-          git diff --exit-code -- results/review_value/validation_scoring/AUDITED_SUMMARY.json results/review_value/validation_scoring/AUDITED_FINDINGS.md
-      - name: Base tests (neural-only tests skip without optional dependencies)
-        env:
-          HF_HUB_OFFLINE: '1'
-          TRANSFORMERS_OFFLINE: '1'
-        run: python -m pytest -q -rs
-      - name: Reconcile final cumulative benchmark accounting
-        run: |
-          python scripts/summarize_completion_costs.py
-          git diff --exit-code -- results/completion_20260923/COSTS.json results/completion_20260923/COSTS.md
-      - name: Validate dashboard source and measured data snapshot
-        run: |
-          node --check dashboard/dist/app.js
-          node dashboard/tests/dashboard.smoke.cjs
-          node --check dashboard/dist/numeric.js
-          node dashboard/tests/numeric-dashboard.smoke.cjs
-          node --check dashboard/dist/review.js
-          node dashboard/tests/review-dashboard.smoke.cjs
-          python scripts/build_review_value_dashboard.py
-          git diff --exit-code -- dashboard/dist/review-data.json
-          node --check dashboard/dist/text.js
-          node dashboard/tests/text-dashboard.smoke.cjs
-          python scripts/build_text_extension_dashboard.py --allow-incomplete --output /tmp/jev-text-dashboard-data.json
-          cmp /tmp/jev-text-dashboard-data.json dashboard/dist/text-data.json
-          python scripts/build_expanded_numeric_dashboard.py --allow-incomplete --output /tmp/jev-numeric-dashboard-data.json
-          cmp /tmp/jev-numeric-dashboard-data.json dashboard/dist/numeric-data.json
-          python scripts/build_dashboard_data.py --output /tmp/jev-dashboard-data.json
-          cmp /tmp/jev-dashboard-data.json dashboard/dist/data.json
-      - name: Validate unexecuted notebook and source bundle
+          python scripts/export_colab_bundle.py
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import tempfile
+          import zipfile
+
+          with tempfile.TemporaryDirectory(prefix='jev-colab-tests-') as temporary:
+              with zipfile.ZipFile('artifacts/jev-classification-benchmark-colab.zip') as archive:
+                  archive.extractall(temporary)
+              root = Path(temporary) / 'jev-classification-benchmark'
+              manifest = json.loads((root / 'bundle_manifest.json').read_text())
+              for name, expected in manifest['files_sha256'].items():
+                  assert hashlib.sha256((root / name).read_bytes()).hexdigest() == expected, name
+              environment = {**os.environ, 'PYTHONPATH': str(root / 'src')}
+              subprocess.run([sys.executable, '-c',
+                              'from pathlib import Path; import jevbench; '
+                              'assert Path(jevbench.__file__).resolve().is_relative_to(Path.cwd())'],
+                             cwd=root, env=environment, check=True)
+              subprocess.run([sys.executable, '-m', 'pytest', '-q', '-rs'],
+                             cwd=root, env=environment, check=True)
+          PY
+      - name: Complete original test suite in its frozen runtime
+        run: python scripts/reproduce_frozen_study.py test
+      - name: Reproduce saved scientific reports and final accounting
+        run: python scripts/reproduce_frozen_study.py audit
+      - name: Current dashboard exporters, frontend tests and aggregate snapshots
+        run: python scripts/reproduce_frozen_study.py current-dashboard
+      - name: Validate notebooks have no saved outputs
         run: |
           python - <<'PY'
-          import json
-          import runpy
-          import zipfile
           from pathlib import Path
           import nbformat
 
-          for notebook_path in Path('notebooks').glob('*.ipynb'):
-              notebook = nbformat.read(notebook_path, as_version=4)
+          for path in Path('notebooks').glob('*.ipynb'):
+              notebook = nbformat.read(path, as_version=4)
               nbformat.validate(notebook)
-              assert all(c.get('id') for c in notebook.cells)
-              assert all(not c.get('outputs') and c.get('execution_count') is None for c in notebook.cells)
-          bundle = runpy.run_path('scripts/export_colab_bundle.py')['export']()
-          with zipfile.ZipFile(bundle) as archive:
-              names = archive.namelist()
-              for name in names:
-                  parts = Path(name).parts
-                  assert parts[0] == 'jev-classification-benchmark'
-                  assert not {'data', 'models', 'results', '.git', '.venv'} & set(parts[1:])
-                  assert not any(part.startswith('.env') for part in parts)
-              exported = json.loads(archive.read('jev-classification-benchmark/notebooks/colab_benchmark.ipynb'))
-              nbformat.validate(exported)
+              assert all(cell.get('id') for cell in notebook.cells)
+              assert all(not cell.get('outputs') and cell.get('execution_count') is None
+                         for cell in notebook.cells)
           PY

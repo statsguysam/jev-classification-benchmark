@@ -2402,7 +2402,8 @@
   ],
   "provenance": {
     "bootstrap_samples": 2000,
-    "exporter_sha256": "fdfdf68215610234bdd689ba0605795525f2f060469cee5c264cb8d64a14f2d9",
+    "exporter_helper_sha256": "2959ee3063f29630d7b9ee3a52024b57df03fbb5f51b5d91f998275baaacfb9c",
+    "exporter_sha256": "32692c563f3d36cf3c4a68e39fd78647872fa00d117b04239ea115473c2e58b6",
     "protocol_sha256": "e279bde1f68499ea0f1bb7025b4f8edd3a904c6d7074c889f9263425b9dbd573",
     "report_builder_sha256": "bef6c994570a8bef1cbf9d647049bd1831d8bfa25260a5f3d5026b78f74dfb99",
     "seed": 42,
