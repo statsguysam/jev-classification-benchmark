@@ -1,6 +1,6 @@
-A 58-point accuracy gain made me ask whether we needed two models.
+I tested Jev to understand where it helps—and where a simpler classifier is enough.
 
-I wanted to understand where Jev’s bounded decisions—yes/no or a fixed category—actually help.
+The question was practical: how well does it handle bounded decisions, such as yes/no or a fixed category, compared with LLMs and classical ML?
 
 Zero-shot classification makes experimentation easier. Choosing a model still requires labeled evaluation data, checks on its confidence scores, and a fair comparison with practical alternatives. A small trained classifier belongs in that comparison too.
 
@@ -38,7 +38,7 @@ An allowed label can still be wrong. Confidence needs calibration checks. Cost a
 
 This is an exploratory pilot: 550 distinct test rows, one split per dataset, familiar public data and fixed recipes. Several small-model runs predicted one class throughout under our scoring method; this is not a general model ranking. Equal task labels don’t equalize pretraining. We haven’t established calibration or production cost savings here.
 
-What evidence would convince you to add a second model to a classification pipeline?
+When does adding Jev as a reviewer improve the final decision enough to justify the extra step?
 
 #MachineLearning #LLM #ModelEvaluation #TabularData
 
